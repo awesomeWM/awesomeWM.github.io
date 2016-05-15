@@ -1,0 +1,246 @@
+commit 0ee01cc3fe838079efd6484b4fa9b77f081c818c
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Oct 4 10:51:54 2010 +0200
+
+    change codename
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 4bdc716d8a63baa2e167758b57249df8f7de5836
+Author: Roman Kosenko <madkite@gmail.com>
+Date:   Sat Sep 18 23:08:20 2010 +0300
+
+    Fix image cropping/enlarging
+    
+    Function imlib_create_cropped_image() from imlib2 doesn't initialize
+    buffer for new image, so if we use crop bounds bigger than original ones
+    we need to erase garbage from derived image.
+    This bug produced colorful pressed buttons (FS#516, FS#822).
+    
+    Signed-off-by: Roman Kosenko <madkite@gmail.com>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit e6b99ae374aad5f9dc692942add920775b88f8ac
+Author: Gregor Best <gbe@ring0.de>
+Date:   Sun Sep 19 20:01:17 2010 +0200
+
+    naughty: localize obj
+    
+    Signed-off-by: Gregor Best <gbe@ring0.de>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 268fe91434eba882db59ff6962731d7c3d1fa031
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Sep 17 16:08:06 2010 +0200
+
+    widget layouts: Check the number of geometries
+    
+    If we called the widget layout for x widgets, but the layouts returned less
+    geometries than this, we silently ignored the left-over widgets. If the layouts
+    returned more geometries, we crashed.
+    
+    Fix this by verifying that the number of widgets and the number of geometries
+    are equal. If they are different, we use the smaller of the two.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 8c0a83f5ca6607afc26447b00c0b227a3571a2ff
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Sep 17 15:45:24 2010 +0200
+
+    Correctly unref widget_nodes
+    
+    While drawing the wibox, the C core builds up a list of widgets and their
+    associated geometry. This list consists of widget_node_t objects and is
+    constructed like this (This is from luaA_table2widgets()):
+    
+       widget_node_t w;
+       p_clear(&w, 1);
+       w.widget = luaA_object_ref_item(L, idx, -1);
+       widget_node_array_append(widgets, w);
+    
+    After we are done with this list of widget nodes, it is freed via
+    wibox_widget_node_array_wipe(). However, wibox_widget_node_array_wipe() passed
+    "&w" to luaA_object_unref_item() while it should have used "w.widget" (which is
+    what was returned from luaA_object_ref_item()). This made the unref fail and the
+    wibox was carrying around a reference to this widget forever. This was
+    effectively a memory leak.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 222fb4c9c5e3190c86d3a988b23cd3c9ef6400df
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Sep 16 19:02:15 2010 +0200
+
+    Fix a "table expected instead of nil" error
+    
+    It seems like with lots of bad luck, the garbage collector manages to "steal"
+    the table with the buttons right after we decided to use it. Evil collector!
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 74b5cddbace1be0ce8a11a1f15233ee6251fcdb3
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Sep 16 18:27:04 2010 +0200
+
+    Wibox: Unref old widgets table
+    
+    When setting a new widgets table, the wibox obviously should drop its reference
+    on the old widgets table.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 9114ed18467395e3793f34d0ed5501a1afed0774
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Sep 16 17:28:50 2010 +0200
+
+    {tag,task}list: Use a weak-valued table
+    
+    The data table is used to map objects (clients/tags) to the buttons associated
+    with them. This is done so that we don't have to re-create the button objects
+    each time this lists are updated.
+    
+    The problem was that this weak-keyed table was never cleared, because the value
+    had a strong reference to the key (via the button's signal):
+    
+    btn:connect_signal("press", function () b:emit_signal("press", o) end)
+    
+    "o" is the key in the table and btn is reachable from the value. This prevented
+    the garbage collection of the key. Using a weak-keyed and weak-valued table
+    fixes this.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 2134a3c2e9bf0cd59f48e7ef5af9078939f69b08
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Sep 14 22:14:38 2010 +0200
+
+    Partly revert cd53eb8d3f131360dc9bef4a0fd1ffffc0fbafb9
+    
+    Turns out there are files in themes/ which are still needed (e.g. the default
+    wallpaper and the layout icons).
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 1ee80cd5d088d9681d8a70bf2461bb80430c0686
+Author: Ignas Anikevicius (gns_ank) <anikevicius@gmail.com>
+Date:   Mon Sep 13 23:48:16 2010 +0300
+
+    Add match_any function and rule_any definition for different client matching.
+    
+    Signed-off-by: Ignas Anikevicius (gns_ank) <anikevicius@gmail.com>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit cd53eb8d3f131360dc9bef4a0fd1ffffc0fbafb9
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Mon Sep 13 16:36:26 2010 +0200
+
+    Use relative paths for the titlebar icons (FS#809)
+    
+    The current code used "if(MATCHES)" to decide if a path was inside the source
+    directory or the build directory. MATCHES uses regular expressions and so this
+    check failed miserably if the path contained any characters that have a special
+    meaning in regular expressions (e.g. "+").
+    
+    Fix this by only using paths inside the build dir for the icons. All icons are
+    copied from the source dir to the build dir so that we can freely assume that
+    everything is inside the build directory.
+    
+    Instead of trying to "transform" the existing paths from the source dir to the
+    build dir, we use "file(GLOB)"'s RELATIVE option that gives us relative path.
+    Together with the way "file(COPY)" interprets its arguments, that's all we need.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 2f739a5326f5c7f74f52a820091742186b72a1be
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Apr 24 11:49:57 2010 +0200
+
+    awesome.spawn(): Return the PID
+    
+    This modifies awesome.spawn() to return the process ID of the started process
+    which could e.g. be used for matching against _NET_WM_PID.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 7e2291ec3725181c50fb682e3409a25fef99c187
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Sep 8 10:17:52 2010 +0200
+
+    Revert "tag.lua: check name argument to add() is valid"
+    
+    This reverts commit 4f754a0d417ed5f73fdfb044e24b65a469f808ed.
+
+commit d56a5abd9936dbda82ed72620064d0300549e346
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Sep 3 17:43:36 2010 +0200
+
+    awful.placement.no_overlap: Ignore desktop clients
+    
+    EWMH describes desktop windows like this:
+    
+    "_NET_WM_WINDOW_TYPE_DESKTOP indicates a desktop feature. This can include a
+    single window containing desktop icons with the same dimensions as the screen,
+    allowing the desktop environment to have full control of the desktop, without
+    the need for proxying root window clicks."
+    
+    An example for such a window is nautilus' virtual root window. Naturally, such a
+    window would always overlap with any given client, so awful.placement.no_overlap
+    just didn't do anything at all. The fix is to ignore such clients for placement
+    calculations.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 92183caad07d59987993e24f5335d5ceb5b4f7f5
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Aug 31 18:48:09 2010 +0200
+
+    Systray: Correctly compute extents (FS#768)
+    
+    The systray bases its extents on the size of the wibox that it is contained in.
+    No idea how this is supposed to work when the systray doesn't get the full size,
+    but in a vertical wibox, using <height of wibox> * <number of icons in systray>
+    certainly doesn't work for computing the size.
+    
+    The fix isn't hard: Check the wibox' orientation when drawing and base our
+    calculation on its width if its orientation is different from East.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit e5d4ff6147f98bade75c0e853444adb98a934ddc
+Author: immerrr <immerrr@gmail.com>
+Date:   Tue Aug 31 13:48:59 2010 +0200
+
+    awful.prompt: insert selection at cursor position
+    
+    Signed-off-by: immerrr <immerrr@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 36b639801b5cbf1ecc0a6457a411b96d6303ec23
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Aug 26 21:15:01 2010 +0200
+
+    awful.placement: Fix a mis-calculation
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 26d97d0273d59b08a76f1904c630c12b6896e30e
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Aug 26 20:42:22 2010 +0200
+
+    awful.prompt: "Fix" for multi-byte characters
+    
+    If you entered a multi-byte character into a prompt and then changed your mind
+    and used backspace to fix the character, only the last byte of the character was
+    removed. Because pango is intelligent, it noticed the broken utf8 and
+    complained.
+    
+    So far nothing new. But since 711d78b50c23ef8 the textbox will throw a lua error
+    when it gets an invalid text (= pango complains). Throwing an unprotected lua
+    error in this context causes the keygrabber to be killed which stops the prompt.
+    
+    Fix this by removing bytes as long as there are bytes left that can be removed.
+    
+    This is FS#801.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>

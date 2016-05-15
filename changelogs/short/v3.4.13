@@ -1,0 +1,12 @@
+Julien Danjou (3):
+      Remove PREFIX, use CMAKE_INSTALL_PREFIX
+      Simplify client focus code
+      change codename
+
+Sébastien Luttringer (1):
+      awful.titlebar use height not width
+
+Uli Schlachter (2):
+      xerror: Print numeric infos about the error
+      Revert "Focus history: Don't ignore unfocusable clients"
+

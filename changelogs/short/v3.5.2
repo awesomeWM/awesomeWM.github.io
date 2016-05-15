@@ -1,0 +1,42 @@
+Alexander Kondratev (1):
+      fixed #1184. Calling movetotag method throw an error on a blank screen
+
+Björn Åström (1):
+      wibox.layout.fixed: Fix fill space
+
+David Mohr (1):
+      Revert "client: add a limit to the loop (FS#573)"
+
+Uli Schlachter (28):
+      Implement window gravity in ConfigureRequests (FS#1137)
+      awful.tooltip: Set the bg color correctly (FS#1148)
+      lua: Print traceback on startup errors
+      luadoc: Clients have a leader_window, not leader_id
+      Fix WM_CLIENT_LEADER handling
+      client: Ignore "fake" string property changes
+      wibox: Add widget geometry cache
+      draw: Add function for finding a visual by id
+      client.content: Use correct client size (FS#1150)
+      client.content: Return a cairo xcb surface
+      Stop linking against xcb-image
+      awful.titlebar: Add show, hide, toggle functions
+      Switch from libXcursor to libxcb-cursor
+      CMake: Look for both "ldoc" and "ldoc.lua"
+      Use $PATH when starting $SHELL
+      ewmh: remove _NET_DESKTOP_GEOMETRY support
+      screen: Make sure we always have a screen
+      Fix possible deadlock during startup
+      naughty: Verify image parameters coming from dbus (FS#1162)
+      awful.screen.focus: Don't move mouse to (0, 0) first (FS#1173)
+      awful.client.tiled: Ignore fullscreen (etc) clients (FS#1106)
+      client: Ignore transient_for causing loops (FS#1124)
+      screen: Fix screen equality comparison (FS#1151)
+      client: Don't move clients around across restarts (FS#1159)
+      Revert "client: Don't move clients around across restarts (FS#1159)"
+      event: Handle MotionNotify before ButtonPress/Release (FS#1136)
+      awful.tag.withcurrent: Also act on restarts (FS#1155)
+      change codename
+
+kardan (1):
+      honor appended -c option for --check
+

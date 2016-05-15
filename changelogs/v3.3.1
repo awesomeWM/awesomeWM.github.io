@@ -1,0 +1,34 @@
+commit 4477dd82ad4d65dcf4fcec55d300a5345e506a4c
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Jun 18 16:12:11 2009 +0200
+
+    change codename
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit f9f6e78aa571feb897b250a23bfdda9548cca6eb
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Jun 18 12:14:39 2009 +0200
+
+    client: fix icon value on changes
+    
+    Sometimes we unref the icon image, but we did not reset NULL, which
+    can make the client refering to a not-refed image.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 382dc83eb0dc7cc7c4c0ec889a9acf055cf845a8
+Author: Katherine McKinley <kate@lugh.net>
+Date:   Mon Jun 15 11:24:56 2009 +0200
+
+    draw: fix NULL pointer passed to pango_parse_markup()
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 318907efa46f80d5fa9aab0b92e1806072ba6d4f
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Jun 9 15:59:38 2009 +0200
+
+    spawn: fix crash with command starting with white space
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>

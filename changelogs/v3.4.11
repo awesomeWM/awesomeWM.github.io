@@ -1,0 +1,288 @@
+commit 3d4d1955dac08e2dda0b756da72ec9a98b75b230
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Nov 23 15:08:50 2011 +0100
+
+    change codename
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 09fdd0ee27af8dfedf4e6f1979b2acc87cc5475d
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Nov 10 19:48:51 2011 +0100
+
+    Fix the default config
+    
+    When I cherry-picked commit 2785d695ce from master, I didn't notice that it uses
+    connect_signal() which is add_signal() in 3.4-land. That was half a month ago.
+    Since then, no one complaint about this, so no one hit the problem yet?
+    
+    Ok, it is in the default config which I guess isn't what the people who use
+    git/3.4 run. Still, would have been nice to know that people actually test the
+    mess which I produce. :-(
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 4155303b8b7396e666a42933f82cf9f646eb4466
+Author: Perry Hargrave <resixian@gmail.com>
+Date:   Wed Nov 9 12:47:27 2011 -0800
+
+    Check wallpaper_cmd entries are valid (FS#938)
+    
+    wallpaper.is_valid(tw):
+        Checks that the table has only string entries.
+    
+    Signed-off-by: Perry Hargrave <resixian@gmail.com>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit adbc736b8ae622f28cd44430a5da4c2a0be992ac
+Author: Perry Hargrave <resixian@gmail.com>
+Date:   Wed Nov 9 12:34:30 2011 -0800
+
+    Prevent util.cycle from infinite loop (FS#938)
+    
+    If the first argument to cycle must be > 1 or else return nil
+    immediately.
+    
+    Signed-off-by: Perry Hargrave <resixian@gmail.com>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 3636b884d35b9736f98328891897c0c0aabe7d83
+Author: Majic <majic.one@gmail.com>
+Date:   Tue Nov 1 18:42:37 2011 -0700
+
+    Private naughty.getIcon() -> public awful.util.geticonpath()
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit bb3fc70fb3eeff4c3dfd6d716c05b3206a67f787
+Author: Massimiliano Brocchini <massimiliano.brocchini@gmail.com>
+Date:   Mon Oct 24 18:54:55 2011 +0200
+
+    search in prompt history
+    
+    Signed-off-by: Massimiliano Brocchini <massimiliano.brocchini@gmail.com>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 2785d695ce313c536a2b207305bcbfdf0eb81426
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Oct 23 17:36:56 2011 +0200
+
+    Signal runtime errors via a naughty popup
+    
+    Whenever awesome's C code calls into lua via a protected call, the debug::error
+    signal is emitted on errors. We now use this to give naughty popups for every
+    single error that happens. This should help people to notice errors easier.
+    
+    The only exception are mouse and key grabbers and config loading, those don't go
+    through debug::error. I guess that means that the grabbers need to be hooked up
+    to debug::error. :-)
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit be02406f7725bd28637b05f4b6ee51c09c82c34f
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Oct 23 22:30:46 2011 +0200
+
+    Signal config errors via a naughty popup
+    
+    If loading of any config file fails, awesome will now remember the error message
+    and make it available to lua. The default config is modified to open a naughty
+    popup on errors.
+    
+    This should help all those people who modify their config and then wonder why
+    there change is ignored, not noticing awesome's error message on stderr
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit bf8e6418f510c0d8179560e6fb323c6524f7df41
+Author: Massimiliano Brocchini <massimiliano.brocchini@gmail.com>
+Date:   Sat Oct 22 15:56:30 2011 +0200
+
+    no duplicate entries in prompt history
+    
+    Signed-off-by: Massimiliano Brocchini <massimiliano.brocchini@gmail.com>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 092813cd63828023a5474e479b3ade8a703262ee
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Oct 19 15:11:11 2011 +0200
+
+    Ungrab the server before parsing the config
+    
+    This moves the loading of the rc.lua and managing of pre-existing clients to
+    after we ungrab the server during startup. To make sure we have no races with
+    clients which start up parallel to awesome, we do the QueryTree for all the
+    clients that we have to manage before the ungrab, but start managing the clients
+    only after the ungrab.
+    
+    This means that we have already selected our event mask on the root window in
+    scan() and thus received an UnmapNotify event when we reparent windows into a
+    frame window. This has the effect that we immediately unmanage the client again,
+    whoops.
+    
+    To fix this, we grab the server again and remove our event mask on the root
+    window again while we reparent.
+    
+    This should hopefully fix all cases where we deadlock during startup because
+    pulseaudio wants to talk to the X server, but is being ignored because we have
+    the server grabbed while at the same time we are waiting for pulseaudio.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 0e44a6282ed4d0e81f83dbce28e9ccd5a481804e
+Author: Ignas Anikevicius (gns_ank) <anikevicius@gmail.com>
+Date:   Tue Oct 11 21:19:32 2011 +0100
+
+    Saving gama values in pngs to prevent compilation errors
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 8fd318286917224fccf1e8b9c273207ea257ca7d
+Author: David Palacio <dpalacio@orbitalibre.org>
+Date:   Tue Oct 4 10:30:28 2011 -0500
+
+    Ignore desktop clients on taglist widget
+    
+    Make the taglist widget skip unstickied and focused desktop clients
+    for status update by:
+     * Ignoring focused client if it is of desktop type
+     * Returning a list of clients from tag.clients without clients
+       of desktop type.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit cc0fc99a2c80d3c285240081b83fcef4e79eb429
+Author: David Palacio <dpalacio@orbitalibre.org>
+Date:   Tue Oct 4 10:22:43 2011 -0500
+
+    Desktop clients may not be visible on all tags.
+    
+    Usually desktop clients are on a sticky state. If the client
+    is not sticky, only show on selected tags.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit ddf8f096bfb9093f40fac2693b9a22a3e95b3669
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Oct 4 15:23:11 2011 +0200
+
+    naughty: fix image data copy
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 50bc79e5162691e29847026e515cfa518e4793e6
+Author: Jacques-Pascal Deplaix <jp.deplaix@gmail.com>
+Date:   Thu Sep 29 11:13:22 2011 +0200
+
+    awsetbg: Add the aspect option with feh
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit fccf12575faf7b119d469d2d36809270bf7ec8bf
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Sep 17 17:24:44 2011 +0200
+
+    Use awesome.conffile in menu
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit f0ca5e75056930da20127c17fb65fd34360db796
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Sep 17 17:21:34 2011 +0200
+
+    Set the conffile value before executing the code
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 8a04ce9c97e71cd5ce8057d984c1e98d6fdfef16
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Mon Sep 12 22:19:59 2011 +0200
+
+    Fix restacking with zaphod mode (FS#835)
+    
+    Boy was this code broken. It tried to stack windows ontop of each other which
+    were on different screens. However, since they didn't have the same parent, they
+    obviously couldn't be ontop of each other. The X server just reacted with a "wtf
+    are you doing?"-kind of error which means the restacking was ignored.
+    
+    The fix is to restack each screen on its own, completely ignoring any windows
+    from other screens.
+    
+    A big thanks goes to Siarhei Siamashka who bisected this issue and helped me
+    debugging it which took quite a while. Finally, he noticed that my first patch
+    was broken and also figured out the fix. Thanks!
+    
+    v2: Move the check on "client_need_stack_refresh" from
+    client_stack_refresh_screen() into client_stack_refresh(), so that all screens
+    are restacked instead of just the first one.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 49774897a4b1cdb809cc54ed0fc65feca9f059a1
+Author: Anurag Priyam <anurag08priyam@gmail.com>
+Date:   Sat Jul 23 12:47:34 2011 +0530
+
+    naughty: add helper function, toggle() - suspend/resume notifications
+    
+    Signed-off-by: Anurag Priyam <anurag08priyam@gmail.com>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 99a16e6467cfafac1f43697c54526e073b034c4d
+Author: Perry Hargrave <resixian@gmail.com>
+Date:   Thu Jul 7 09:50:00 2011 -0700
+
+    Update tasklist when client screen changes
+    
+    This handles corner case where a client has no tags (e.g. stickied), but
+    is moved across screens.
+    
+    Signed-off-by: Perry Hargrave <resixian@gmail.com>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 187cf6d9170b329e7062c079e0d67ac966ecd6bd
+Author: Perry Hargrave <resixian@gmail.com>
+Date:   Thu Jul 7 09:49:59 2011 -0700
+
+    movetoscreen:Dont refocus the selected client
+    
+    Signed-off-by: Perry Hargrave <resixian@gmail.com>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit d8883f89fcc372588c843903f1cfbf93623e0dd8
+Author: Perry Hargrave <resixian@gmail.com>
+Date:   Thu Jul 7 09:49:58 2011 -0700
+
+    Retain focus on clients moved across screens (fs#620)
+    
+    Signed-off-by: Perry Hargrave <resixian@gmail.com>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit a23817718e9def9762b95e68f862343b7af5174d
+Author: Perry Hargrave <resixian@gmail.com>
+Date:   Fri Jul 1 08:19:46 2011 -0700
+
+    FS#917: Dont move clients with fixed positions
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 9b2a988ab7783352b96461f8dd6a5f8758a86c55
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat May 21 13:41:32 2011 +0200
+
+    Make sure russian manpages are installed (FS#907)
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit c9f6b65c19e3e8ebd1bd4ca860a0e1fd66931e65
+Author: Arnaud Fontaine <arnau@debian.org>
+Date:   Wed Apr 27 15:44:35 2011 +0900
+
+    Update the code following release of xcb-util 0.3.8.
+    
+    xcb-util is now split into several repositories since 0.3.8. This
+    release also cleaned up the API a lot, thus update the code
+    accordingly.
+    
+    Signed-off-by: Arnaud Fontaine <arnau@debian.org>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>

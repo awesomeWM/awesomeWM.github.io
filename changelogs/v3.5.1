@@ -1,0 +1,755 @@
+commit ddfd9c0e798db58cfde847638380fedbefbe3e27
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Mon Apr 1 13:44:46 2013 +0200
+
+    change codename
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 2e921d90962e5f6c8a60c9453026aeab62784ea3
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Mar 31 18:15:25 2013 +0200
+
+    Fix minor memory leak in mouse_query_pointer()
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit a7c3f10ce5a1b3bcef932448c404eb37bec7d032
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Mar 31 18:07:49 2013 +0200
+
+    Send correct position in ConfigureNotify events (FS#1030)
+    
+    This event should contain the position of the top-left corner of the client's
+    content area. Thus, we have to add the border width to the position.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit ee1fe4dd59186e6ba109b3c8c25c836ce6e546d7
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Mar 29 16:07:13 2013 +0100
+
+    Revert "Support more than 5 mouse buttons" (FS#1082)
+    
+    This reverts commit bd8158495e059baa0e8ba525b813254451447f4a.
+    
+    The idea was to track the current list of pressed and depressed mouse buttons,
+    because we get button events for more than 5 buttons, but can only query the
+    state of the first 5 buttons.
+    
+    However, there are cases where we see button presses, but won't see the
+    corresponding release event. This is quite bad.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit fc49e2802528eb948fabe705a8b5f695775ec01c
+Author: Ross Lagerwall <rosslagerwall@gmail.com>
+Date:   Tue Mar 26 08:16:58 2013 +0000
+
+    naughty: Don't interpret markup in titles
+    
+    Since only the body text of a notification may contain markup,
+    by combining the two together and calling set_markup(), the
+    title would also get interpreted as if it had markup.
+    This could be seen with:
+    $ notify-send "Title & text" "<i>body text</i>"
+    
+    The unescaped & would get interpreted as broken markup and so
+    naughty would fall back to escaping everything which would make
+    the "<i>" tags be shown rather than interpreted.
+    
+    So, the title must always be escaped so that it is not interpreted
+    as markup.
+    
+    Signed-off-by: Ross Lagerwall <rosslagerwall@gmail.com>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 8af54130d6f5b025999b5c209e96c2e8472270cf
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Mar 24 22:32:53 2013 +0100
+
+    Fix wibox.layout.flex:fit() (FS#1126)
+    
+    The flex:fit() function was calling the fit() function of the widgets it
+    contained with too large values, trying to hand out more space than it had
+    available. This resulted in more space being requested than was available and
+    some weird layout issues resulted.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit e7912fc2a8ec74b25c5de28ed85cbfe3654c9b1b
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Fri Mar 22 00:59:05 2013 -0400
+
+    Fix mod4+[1-9] in default rc.lua
+    
+    The old code had flaws:
+    * If the tag chnaged screen, the code was unstable.
+    * If awful.tag.del was used, then it displayed an error
+    * If tags were added later, the keyboard shortcut were unavailable
+
+commit d5a3669e96db585da95cef9585612b191ad2dbca
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Fri Mar 22 00:52:02 2013 -0400
+
+    Add support for "geometry" argument for mouse events and awful.button
+
+commit e0a163cba0cc19a65a6dd68a14eaac288d7b1343
+Author: Jo De Boeck <deboeck.jo@gmail.com>
+Date:   Fri Jan 25 11:47:11 2013 +0200
+
+    Fix calculation of distance between clients
+    
+    This fixes move by direction
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit a484ef076d35284216009984e0386d0545b9ab36
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Jan 5 15:58:36 2013 -0500
+
+    Allow to disable taglist icons.
+    
+    This is used if the user want to use a custom drawing method.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 67710d0008781632b535da0355509c14183f04c5
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Thu Jan 3 20:56:36 2013 -0500
+
+    Add ability to set background images for empty tag
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit e920c74fd90569c42b054e6ba8786cc130dea487
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Thu Jan 3 21:00:33 2013 -0500
+
+    Add ability to disable tasklist icons and restore ability to set bg_images
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 1c76560da77bac9bb95ee47e666c7872b8dfe5eb
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Thu Jan 3 20:54:40 2013 -0500
+
+    Add external function for {tag,task,tab}list background image
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 7a47355c99e57705defae0d1b3d75b94032f6211
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Mar 17 22:18:48 2013 +0100
+
+    awful.mouse: Follow C API changes
+    
+    Whoops. This was broken ages ago. Thanks to Elv13 for making me notice.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit ed763b9ad39e17161c5571be360542ead4b41050
+Author: Poggles <sir.pogsalot@gmail.com>
+Date:   Sun Mar 17 13:07:00 2013 +0000
+
+    Speed up the RGBA->BGRA conversion (FS#1112)
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 2b0398c59bfb037582ce994c63b40ab6aee59bc0
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Mar 16 16:51:55 2013 +0100
+
+    awful.tag: Use sane tag index values (FS#1125)
+    
+    Since commit d8a93dafa316d, tags have an "index" property which decides about
+    the order in which they are displayed in the taglist. If a tag doesn't have this
+    property set, the next call to awful.tag.gettags() will fix this and "invent" an
+    index for this new tag.
+    
+    However, if multiple tags didn't have an "index" property, gettags() would
+    assign all of them the same index. The following call to table.sort() would then
+    do random magic to these tags (remember: table.sort() is not a stable sorting
+    algorithm, so it is allowed to randomly swap around entries which have the same
+    sorting key).
+    
+    Fix this by making sure that the new "index" properties are different from each
+    other.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 9d5e2a981a8e3c95c99a7af23323dfdd6bf7226f
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Mar 14 20:14:43 2013 +0100
+
+    rc.lua: Fix titlebar button events (FS#1116)
+    
+    Due to some layout changes, the client title widget is no longer assigned all
+    the remaining space. To work around this, we wrap the widget in a flex layout
+    which means that it asks for all the available space. This way, moving via the
+    titlebar works again.
+    
+    Additionally, these button events are now also assigned to the client's icon
+    widget. No idea why this wasn't done before...
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit bc1507f96d83a19b01039c6914c3a4bed0f196f5
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Mar 13 21:20:13 2013 +0100
+
+    Send correct size to fullscreen clients (FS#1093)
+    
+    Titlebars are not visible for fullscreen clients, so it doesn't make sense to
+    substract the area used for the titlebar in ConfigureNotify events.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit d8a93dafa316dd9f3f0b0cd2e4891a7e1295f4fa
+Author: cdump <andreevmaxim@gmail.com>
+Date:   Wed Jan 2 15:06:45 2013 +0100
+
+    awful.tag: add index property for custom tag order
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit d0ab8dc0c143efcb1d46cb7d9892cef9dc083f3b
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Mar 12 11:33:05 2013 +0100
+
+    Fix ignoring size hints
+    
+    The function c:geometry() should only honor size hints if this was enabled for
+    this client. Whoops.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 4540b8927a61d97d9536dd7500deeed688605a38
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Mar 10 15:00:05 2013 +0100
+
+    awful.util.spawn_with_shell: Use table as argument
+    
+    Thanks to the previous commit, spawn_with_shell() can now easily fix lots of
+    problems that we previously had with escaping the argument to the shell.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 3c40d6b470378d33d7c45b3f8f1e5049fb80c282
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Mar 10 14:54:58 2013 +0100
+
+    awesome.spawn: Accept tables as arguments
+    
+    With this change, awesome.spawn() can be called with a table as its command line
+    argument. This gets rid of lots of problems with escaping the arguments. For
+    example, the following call is now possible:
+    
+      awesome.spawn({ "bash", "-c", "echo \"foo\"" })
+    
+    Thanks to Ignas Anikevičius for inspiring me to this.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 4c3bac07ecc36110187450252f52950141bca0ea
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Mar 10 13:46:28 2013 +0100
+
+    wibox: Improve constructor functions for some layouts
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 23b30be106f7b131f1be297c974dca15b59cd895
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Mar 10 12:13:32 2013 +0100
+
+    Move size hints handling back into C (FS#1117)
+    
+    Having this in lua means that size hints are only applied after the client got
+    resized. The bad side effect of this is some flickering if awesome is being
+    slow. And apparently, it is slow for way too many people...
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 5365dfdb79d1ba8ef8010baba1a0a072a6eb2e01
+Author: Lukáš Hrázký <lukkash@email.cz>
+Date:   Sat Jan 19 15:59:27 2013 +0100
+
+    wibox.layout.constraint: fix the min and max strategies
+    
+    Fixes mixed up min/max strategies and other bugs in min and max. Also
+    removes enforcing the size in draw, adhering more to awesome's layout
+    concept.
+    
+    Signed-off-by: Lukáš Hrázký <lukkash@email.cz>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit c34e9780b2b279e294f527e457282dcbd82972fb
+Author: Ignas Anikevicius (gns_ank) <anikevicius@gmail.com>
+Date:   Sat Jan 19 13:25:33 2013 +0000
+
+    Remove F1-9 bindings from the manpages.
+    
+    There was a leftover info about marked client keybindings and the
+    default rc.lua doesn't have those.
+    
+    Signed-off-by: Ignas Anikevicius (gns_ank) <anikevicius@gmail.com>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 2876718210178db49f2316b7dcb90c611fe66454
+Author: Poggles <sir.pogsalot@gmail.com>
+Date:   Sat Jan 12 20:08:50 2013 +0000
+
+    Make awful.util.cycle() less while'y
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 2e38c085697b4e16e20013d8f7cb3da89c853e8c
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Mar 10 11:11:43 2013 +0100
+
+    wibox.wibox.systray: Allow multiple systrays
+    
+    This has to be removed because it breaks the fallback to the default config if
+    the first config already managed to create a systray widget. This doesn't mean
+    that it is suddenly possible to have the systray visible in more than one place,
+    it just means that awesome will no longer complain about this.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit b36b56058fed9b5b36884ba673a3214da607952e
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Mar 10 10:57:49 2013 +0100
+
+    naughty: Handle broken icon arguments better (FS#1076)
+    
+    Before this, surface.load() would throw a lua error because it couldn't load the
+    icon which broke naughty's state.
+    
+    With this commit, this error is caught and an error message is printed on stderr
+    instead.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 873d41bb5b63cbaec298cc274724d6b65418a59d
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Feb 20 14:22:41 2013 +0100
+
+    wibox.drawable: Redraw when moved
+    
+    Let's consider the following notification:
+    
+      naughty.notify({ text = "foo", bg = "#88888888", timeout=1 })
+      naughty.notify({ text = "foo", bg = "#88888888", timeout=2 })
+    
+    When the first notification disappears, the second one is moved and takes its
+    place. However, its content was not redrawn. This makes the pseudo-transparency
+    break and the wallpaper that is shown in the back of the notification doesn't
+    match the real wallpaper.
+    
+    Fix this by redrawing drawables when they get moved.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 5a2c4fa928554801dfbd807ec0d1f2a62ef25a4e
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Feb 25 11:49:43 2013 +0100
+
+    Remove NoDisplay from desktop file
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 2de450dff9741c01603478bda41c08259b8cb966
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Feb 20 14:19:31 2013 +0100
+
+    wibox.drawable: Don't redraw drawables without surfaces (FS#1079)
+    
+    Thanks to the previous commit, a drawable can no longer have a finished cairo
+    surface. Instead, it will now have a nil surface. This commit handles this new
+    possibility.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 983001613a46b760c15dd48aa64a87b020fda615
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Feb 20 14:09:19 2013 +0100
+
+    Drawable: Improve signal behavior
+    
+    When property::surface is emitted, the drawable didn't know its geometry yet,
+    which had weird side effects. Fix this by changing the C API a little. The
+    function drawable_set_surface() now no longer allows a NULL surface as its
+    argument.
+    
+    The required changes for the titlebar code also means that we no longer throw
+    away the double-buffering surface when a client is moved.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 470142acc34c5ec0f1e0a52fa6502b29d05ce024
+Author: Lukáš Hrázký <lukkash@email.cz>
+Date:   Sun Jan 20 15:00:29 2013 +0100
+
+    wibox.widget.textbox: return 0, 0 from fit() if either w or h is 0
+    
+    A hack around abusing the fact that width of a textbox is 0 when its
+    empty, while it's height is still set according to the font.
+    
+    Signed-off-by: Lukáš Hrázký <lukkash@email.cz>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 1881ceb9d3de9b52967cef2a024cd0737d80568d
+Author: Lukáš Hrázký <lukkash@email.cz>
+Date:   Sun Jan 20 15:00:28 2013 +0100
+
+    wibox.layout.flex: add set_max_widget_size() function
+    
+    The function can be used to set the maximum size the widget in the
+    flex layout should take.
+    
+    Signed-off-by: Lukáš Hrázký <lukkash@email.cz>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit ca7377701748204e5e491f1b7f1b1932a7b8c7a0
+Author: Stefan Haller <haliner@gmail.com>
+Date:   Sun Jan 20 15:35:10 2013 +0100
+
+    Raise the window on EWMH request.
+    
+    Additionally to handing over the focus to the window this commit raises
+    the window too. Otherwise a window which is hidden below other windows can
+    request the focus and because the window is not fully exposed, the user is
+    unaware which window has the input focus and is actually receiving the
+    keystrokes.
+    
+    Signed-off-by: Stefan Haller <haliner@googlemail.com>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit bd05219a7205b4e784bdd87b3f56846b04cd0db7
+Author: Poggles <sir.pogsalot@gmail.com>
+Date:   Tue Feb 19 03:53:58 2013 +0000
+
+    Make awful.layout.inc() accept a screen number
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit f859131bf33139671d4381d6fe1183e2686e18a0
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Feb 16 22:14:08 2013 +0100
+
+    wibox.widget.systray: Properly work when rotated (FS#1115)
+    
+    The systray widget's fit() function worked in the (rotated) user coordinate
+    space while the draw() function used device coordinates (unrotated). This meant
+    that width and height were swapped up in the calculations and the systray ended
+    up being way too small.
+    
+    Fix this by making the draw() function use user coordinates, too. This means
+    that it needs some new magic to detect a rotated coordinate space. This, in
+    turn, means that the systray is now automatically rotated when you put it into a
+    rotate layout.
+    
+    This might cause some minor breakage because people no longer need to call
+    :set_horizontal() on the widgets.
+    
+    Thanks a lot to Alexander Gehrke for his help!
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit f86a9c896cddc215704ddfe3779ad03545e71e72
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Feb 12 15:15:16 2013 +0100
+
+    gears.wallpaper: Create smaller image surface (FS#1087)
+    
+    When no wallpaper exists yet, instead of creating a black image surface which
+    covers all the screens, just create a surface for the screen which we need. This
+    means that way less pixels have to be uploaded to the X11 server, which should
+    be faster.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit bf72cf71eac834a46ed4d6e1755d7fd1ae57c104
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Mon Feb 11 16:19:28 2013 +0100
+
+    Refresh focus on FocusIn events
+    
+    To avoid some oddities, awesome sets the input focus lazily. Instead of
+    immediately sending everything to the X11 server, awesome just sets a flag "have
+    to update the focus later".
+    
+    However, this can cause problems. As Stefan noticed, awesome can forget about
+    focus changes on FocusIn events when such an event comes in while we still have
+    a pending focus change.
+    
+    The fix here is to send out the pending focus change before we record the fact
+    that another client now acquired the input focus.
+    
+    Reported-By: Stefan Haller <haliner@googlemail.com>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit e4be0017ff8338aefdfbae10a616c001029f68ca
+Author: Felix Bier <flx.bier@googlemail.com>
+Date:   Wed Jan 30 09:23:28 2013 +0100
+
+    Incorrect calculation of unused size (FS#1108)
+    
+    Signed-off-by: Felix Bier <flx.bier@googlemail.com>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit fca2f3e58d800f20581c0e764845a1bbdf346876
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Mon Feb 11 14:26:05 2013 +0100
+
+    gears.color: Accept cairo patterns as arguments
+    
+    This allows to use cairo patterns directly for any kind of "color". This makes
+    it easier to use things which aren't possible through gears.color.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 03759b48478eb716af8b62e01ef3b5140c582f58
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Feb 1 23:06:08 2013 +0100
+
+    Fix keyboard layouts
+    
+    Commit 08ca70c00d06c6 added support for Xlib cursor themes by making awesome use
+    Xlib for its X11 connection and for setting cursor icons. Everything else was
+    still done through xcb.
+    
+    However, an unexpected side effect of this is that Xlib enabled the XKB
+    extension without asking us. This changes the way that keyboard events are
+    reported which causes problems with various keyboard events.
+    
+    (Normally, Xlib hides these things by silently fixing up the events that it
+    hands out to applications. However, since we bypassed Xlib via xcb...)
+    
+    The fix is simple: Luckily Xlib provides a function for disabling its XKB
+    support which is just what we need.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 5024843e95b91a664128ccc082a980a1a25f5d5d
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Jan 24 18:54:35 2013 +0100
+
+    root.wallpaper: Use main connection for pixmap filling (FS#1087)
+    
+    Previously, cairo would often have to download the old wallpaper from the X11
+    server and then upload it again. It did this because it couldn't see that the
+    two X11 connections involved are actually connected to the same X11 server.
+    
+    This commit fixes this by setting up the pixmap from our main X11 connection.
+    This is the same connection that we use for accessing the "old" wallpaper and
+    thus cairo doesn't have to do stupid things.
+    
+    The big improvement with this is that this speeds up wallpaper setup a lot.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit cd5180f60f60789636fd5f9028dde91d338846bd
+Author: Thomas Jost <schnouki@schnouki.net>
+Date:   Thu Jan 10 13:58:40 2013 +0100
+
+    gears.wallpaper: Add wallpaper.fit
+    
+    Signed-off-by: Thomas Jost <schnouki@schnouki.net>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit b0a056f50a639d9c437b4a11f05cd8932d52eb0e
+Author: Alexander Yakushev <alex@bytopia.org>
+Date:   Wed Jan 2 12:41:35 2013 +0200
+
+    menubar: Treat KP_Enter as pressing Enter (FS#1072)
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 9631ada0d253780004853f14faa3a7cff82158a9
+Author: Ignas Anikevicius (gns_ank) <anikevicius@gmail.com>
+Date:   Thu Jan 10 02:22:46 2013 +0200
+
+    Menubar utils fix the wm_name matching once more.
+    
+    The previous attempt at making the utils.wm_name variable useful for
+    accessing some entries was silly. This is because a typical ShowOnlyIn
+    string would look as: 'Unity;Gnome;KDE;' and the matching currently is
+    done for the whole string, where as we need to match only a part of it.
+    
+    This small (hackish) commit fixes that, or do we wanna parse this line
+    of a .desktop file properly?
+    
+    Signed-off-by: Ignas Anikevicius (gns_ank) <anikevicius@gmail.com>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 6608b0aa1c8a89550f8d6944fdbdfd229886bc53
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Jan 8 22:06:25 2013 +0100
+
+    wibox.layout.align: Give middle widget full height
+    
+    I amended some change to commit 8560de597c3a1f349 which made the align layout's
+    middle widget really centered instead of being way too wide. However, this also
+    shrunk the widget on the "other" axis, too. This commit fixes that up.
+    
+    A big "sorry" to Lukáš for breaking his patch.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 23fe017bd4dc01330518887a2a6eda85dc59d5bc
+Author: uzsolt <udvzsolt@gmail.com>
+Date:   Wed Jan 2 12:13:45 2013 +0100
+
+    fix locale problem (decimal separator isn't dot but comma)
+    
+    If user changes locale with os.setlocale to a "dirty"
+    locale (which use comma as decimal separator (not dot), e.g.
+    hu_HU) `tonumber` will produce "0,6" instead of "0.6"
+    which causes bad comparision.
+    
+    Signed-off-by: uzsolt <udvzsolt@gmail.com>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 02ea5f9b238c691bc9cd91590ff69a998c2ec1e8
+Author: Lukáš Hrázký <lukkash@email.cz>
+Date:   Sat Jan 5 16:51:14 2013 +0100
+
+    awful.widget.common: remove unsed function
+    
+    Signed-off-by: Lukáš Hrázký <lukkash@email.cz>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit dd29a41c4e529629940769e67927f1065a22e01b
+Author: Lukáš Hrázký <lukkash@email.cz>
+Date:   Sat Jan 5 16:51:13 2013 +0100
+
+    tasklist: add a theme option for a plain task name
+    
+    If theme.tasklist_plain_task_name is set to true, the various client
+    state marks will not be prepended to the task name.
+    
+    Signed-off-by: Lukáš Hrázký <lukkash@email.cz>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 66e52229f795eba2eda54a64eb50ec6498402bed
+Author: Lukáš Hrázký <lukkash@email.cz>
+Date:   Sat Jan 5 16:12:52 2013 +0100
+
+    wibox.layout: add a new constraint layout
+    
+    This layout can be used to constraint the size of the widget it holds.
+    Depending on the strategy passed to it, the widget will have a minimum,
+    maximum or exact size that was set through this layout.
+    
+    Signed-off-by: Lukáš Hrázký <lukkash@email.cz>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 4463f89b1538850d770a2d392c387d9081880c4d
+Author: Lukáš Hrázký <lukkash@email.cz>
+Date:   Sat Jan 5 16:12:51 2013 +0100
+
+    {tag,task}list: add update_function and base_widget constructor arguments
+    
+    The arguments are optional, making it possible to use a custom function
+    to create the {tag,task}list layout. The base_widget arguments can be
+    used to override the base layout of the {tag,task}list widget.
+    
+    Signed-off-by: Lukáš Hrázký <lukkash@email.cz>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 8560de597c3a1f349907e6ef94cf343c86f63c30
+Author: Lukáš Hrázký <lukkash@email.cz>
+Date:   Sat Jan 5 16:12:50 2013 +0100
+
+    wibox.layout.align: make the middle widget really centered
+    
+    Centers the middle widget in the align layout in the remaining space
+    left by the widgets on the sides.
+    
+    Signed-off-by: Lukáš Hrázký <lukkash@email.cz>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit e38651bafb540e29c5c10d6efaea5b9c73f7edf0
+Author: Lukáš Hrázký <lukkash@email.cz>
+Date:   Sat Jan 5 16:12:49 2013 +0100
+
+    wibox.layout.align: don't take up all space in the other axis
+    
+    This adds a fit function to the align layout that makes sure that
+    the layout will not take up all the available space in the other
+    axis than it's direction. Eg. for horizontal align layout, it will
+    only take up the maximum of its widgets' heights in the vertical axis.
+    
+    Signed-off-by: Lukáš Hrázký <lukkash@email.cz>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit f6d9443c5d942877a5f6e1da8f1436bf962e6d3b
+Author: Lukáš Hrázký <lukkash@email.cz>
+Date:   Sat Jan 5 16:12:48 2013 +0100
+
+    wibox.layout.flex: fix the fit function
+    
+    The fit function of the flex layout is different from the fixed.fit one.
+    
+    Signed-off-by: Lukáš Hrázký <lukkash@email.cz>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 9d333113dd45da04846531c990568f74d898116d
+Author: Lukáš Hrázký <lukkash@email.cz>
+Date:   Sat Jan 5 16:12:47 2013 +0100
+
+    wibox.layout: remove unnecessary wrapping of draw and fit functions
+    
+    Signed-off-by: Lukáš Hrázký <lukkash@email.cz>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 987c2b9b30ced50fd4d312ef4092c7ba2de95cc5
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Jan 5 20:56:20 2013 +0100
+
+    awful.screen.getbycoord(): Always return a valid screen
+    
+    No callers expect a nil result from this function. In fact, this broke
+    awful.tooltip because it tried to get the workarea of screen nil.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 1fa23fef81ea1f8fe2dfcaf3bc597c9ad0891705
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Jan 5 20:54:38 2013 +0100
+
+    awful.tooltip: Don't place tooltips when text changes
+    
+    The tooltip is now only placed when it is made visible, not while it is
+    invisible.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 615186f30e863a0a9ae65d744d3c846d9126a591
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Jan 5 20:53:13 2013 +0100
+
+    Fix mouse.object_under_cursor() with drawins
+    
+    This was telling lua that no results are to be returned, but still tried to
+    return something. Thus, lua ignored the result.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 3a25e7822440e0873dcb9bd2238961da2ba06428
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Jan 5 20:52:00 2013 +0100
+
+    wibox.layout.rotate: Add some good constructor arguments
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit ae69b2db0333c7a8153d4478052db1fa3a95e931
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Jan 5 20:50:17 2013 +0100
+
+    wibox.layout.base: Use math.min/max
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>

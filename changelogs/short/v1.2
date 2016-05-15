@@ -1,0 +1,32 @@
+Julien Danjou (30):
+      simplify drawsquare()
+      update documentation
+      documentation update for tags
+      fix toggle floating with Button2 in tileleft layout, and prefix layout functions with layouts_
+      rename some tag_view UI callback functions and add uicb_tag_viewprev uicb_tag_viewnext as bindable
+      arrange() on maximize()
+      fix get_screen_info() and free() ScreenInfo in maximizing uicb functions
+      latest commit introduced a regression in multi-head tile support, fix that
+      new feature: add max layout
+      add a_strcmp function
+      use a_strcmp() instead of strcmp()
+      add support for Xinerama in max layout
+      fix typo in setnmaster test which broke the function
+      use sel to determine the right screen for current event instead of only XQueryPointer
+      new feature: add focus{next,prev}screen ui_callback functions
+      Add UICB_PROTO to common.h (new) to declare uicb_functions
+      documenta UICB_PROTO
+      add a LAYOUT_PROTO to common.h and use it
+      create a Tag struct type and use it
+      bug fix: return to last real floating/tiled state when unmaximizing
+      simplfiy drawstatus() remove screen useless arg
+      add a_strncpy functions
+      add a_strcpy() function to util.c
+      add a_strcat function to util
+      display layout nmaster/ncols vars in new tags without clients
+      add a_strncmp() to util.h and use a_str*() functions everywhere
+      move Regs into tag.c
+      add mwfact to statusbar printing
+      new feature: add swap{next,prev} for reordering visible windows
+      add common.h to dist target
+

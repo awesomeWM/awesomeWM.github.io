@@ -1,0 +1,426 @@
+Aleksei Gusev (3):
+      awful.widget.tasklist: added posibility to show c.name when iconified instead of <untitled>
+      awful.widget.tasklist: include sticky windows in the list
+      awful.client: removed focusing tag when the urgent window is sticky
+
+Alex Cornejo (5):
+      Fixed socket usage to work with AFS home folders.
+      Replaced double loop with a single one.
+      Changed socket interface to support fallbacks.
+      Removed unused display variable.
+      Styling inconsistencies
+
+Ali Polatel (2):
+      awful.widget.taglist: Fix label.all()
+      luaA_init: use Lua C API to add paths to package.path
+
+Christian Kuka (1):
+      awful.completion: add zsh completion
+
+Ciaran McCreesh (1):
+      Fix build with assertions enabled.
+
+Damien Leone (5):
+      awful.menu: optimizations
+      awful.menu: add keyboard navigation feature
+      awesomerc: add keybinding to open menu with keygrabber
+      awful.menu: add custom keybindings feature
+      beautiful: '~' now refers to user's home directory
+
+Fredrik Ax (1):
+      awesomerc: change tasklist button 3 default behaviour
+
+Gregor Best (8):
+      awful.layout.suit.magnifier: fix position of focused screen
+      awful.client: store floating geometry of clients in awful
+      themes.sky: add titlebar close buttons
+      awful.menu: fix error when using the keyboard to navigate on an empty menu
+      awful.menu: fix custom keybindings
+      naughty: add opacity option
+      image: initialize new images
+      image: export drawing routines to lua
+
+Johan Kiviniemi (3):
+      themes: Generate unfocused/inactive icons automatically
+      themes: Old ImageMagick compatibility
+      themes/sky: Titlebar icons: use current default theme paths
+
+Julien Danjou (246):
+      remove deprecated functions
+      buttons: change grabbing method
+      client: remove useless _AWESOME_FULLSCREEN
+      client: remove _AWESOME_TAGS property
+      event: implements Bob Marley version 2
+      awful.layout: make layout optional
+      awful.layout.suit.floating: simplify
+      draw: check harder for visual
+      awful.widget: split
+      wibox: add support for background image (FS#464)
+      dbus: add support for struct
+      dbus: add support for fixed size byte array
+      dbus: add support for fixed size array of double
+      dbus: add support for fixed size array of boolean
+      naughty: allow icon to be an image object
+      naughty: add support for hints.icon_data
+      tag: stop using otable
+      mouse: stop using otable
+      key: stop using otable
+      client: stop using otable
+      otable: Lua implementation
+      lib: use Lua implementation of otable
+      luaa: remove otable C implementation
+      luaa: wlen() will return -1 on error
+      swindow: change border_width handling
+      awful.completion: fix compatibility (FS#474)
+      awesomerc: Lua prompt has no completion
+      awful.hooks: fix dbus registration
+      client: export urgent flag manipulation
+      awful.prompt: close file after reading
+      util: add fd_set_close_on_exec()
+      build: depends on x11
+      struct: add void array
+      luaa: change looping detection algo (FS#488)
+      luaa: pop pushed value
+      luaa: only handle tables in loop check
+      luaa: split spawn() into spawn.c
+      luaa: documentation fix
+      luaa: add root.cursor()
+      awful.mouse: set the default cursor
+      client: remove useless icon_path
+      client: free icon name
+      client: store class and instance
+      build: do not depends on glib directly
+      Revert "event: add FocusOut handler"
+      client: move window function into window.c
+      luaa: use libxdg-basedir instead of our code
+      util: remove a_strsplit()
+      luaa: use only one xdgHandle for all
+      awful.remote: import with remote eval
+      import new awesome-client using D-Bus
+      awesome-client: remove socket code
+      buffer: remove useless buffer_add_xmlescaped()
+      version: remove product name
+      update AUTHORS
+      build: stop checking for readline
+      default theme: add fullscreen layout icons
+      dbus: refresh everything after message has been handled
+      luaa: fix luaA_getopt_*
+      widget: remove useless widget_calculate_offset()
+      image: cleanup header declaration
+      key: luaA_key_new is static
+      telak: fix default timer
+      gitignore: remove awesome-client
+      build: move manpages into their own directory
+      root: fix fake_input code
+      event: titlebar are parts of client
+      event: leave_notify: handle titlebar correctly
+      awful.titlebar: add floating
+      awful.titlebar: do not call update on changes
+      array: add foreach() statement
+      array: add a set of useful functions
+      client: change global linked list to an array
+      luaobject: import
+      luaa: split tostring creation
+      luaa: implement luaA_toudata() with simple pointer
+      luaa: checktype use both toudata
+      image: use new object system
+      widget: widget are now full Lua object
+      client: use new object system
+      wibox: use new Lua object system
+      tag: use new Lua object system
+      key: use new Lua object system
+      button: use new Lua object system
+      luaa: remove useless DO_LUA_*
+      luaa: remove luaA_checkudata
+      luaa: remove luaA_toudata()
+      luaa: rename luaA_toudata2() to luaA_toudata()
+      awful.client: do not use otable()
+      awful.tag: do not use otable() anymore
+      refcount: remove
+      awful.titlebar: remove otable usage
+      tabulous: stop using otable
+      telak: remove otable usage
+      awful.widget.common: remove otable usage
+      awful.widget.taglist: remove otable usage
+      awful.widget.tasklist: remove otable usage
+      otable: remove
+      awful.util: fix eval
+      client, wibox: unref image on garbage collection
+      wibox: fix memory leak with cursor
+      textbox: unref image on destruction
+      client: add support for _NET_STARTUP_ID
+      spawn: add support for startup-notification
+      awful.sn: add
+      key: cleanup modifiers system
+      awesome: use xcb_event error code
+      xutil: remove useless error functions
+      awful.util: add subset() function
+      awful.util: add table.concat()
+      key: stop ignoring arbitrary modifier
+      key: add support for modifier mask Any
+      xutil: fix proto of key mask translator
+      xutil: fix proto
+      awful.{key,button}: return a table
+      client: changing size hints does not arrange()
+      root: split out of luaa
+      screen: replace screens pointer by a screen_t array
+      widget: move definition into widget.h
+      wibox: move struct definition into wibox.h
+      client: move struct definition to client.h
+      tag: move struct definition into tag.h
+      struct: move void_array definition to luaa
+      config.h: always compile with Imlib2, so remove define
+      cleanup #includes
+      tag: reset screen later
+      lib: fix libs to use new awful.button
+      change default Lua code execution to Mod4+x
+      change default binding for run prompt to Mod4+r
+      stack: remove client_node type and inverse order
+      slist: remove
+      util: remove fd_set_close_on_exec()
+      atoms: drop useless strlen usage
+      color: simplify includes
+      property: make use of xcb_get_wm_class_from_reply() when possible
+      dbus: fix warning message
+      dbus: allow usage of the system bus
+      screen: remove index field
+      property: fix bad deletion of reply (FS#502)
+      Replace lua_newtable() with lua_createtable()
+      xutil: add xutil_key_mask_tostr()
+      key: add __index metamethod
+      mouse: split button out
+      xutil: remove useless conversion function
+      button: add support for AnyButton
+      event: add support for AnyModifier in grabbed button
+      Stop using variable size type, use stdtypes
+      tag: check that tag is not already attached before attaching (FS#509)
+      key: split luaA_pushmodifiers() out of index
+      button: add missing documentation for button element
+      button: return 0 on index with unknown elem
+      button: add support for modifiers in __index
+      buffer: add buffer_addsl() for literal strings
+      luaa: use buffer rather than asprintf()
+      util: remove useless asprintf macro
+      luaa: refresh all wiboxes on font change
+      client: remove useless window_configure calls (FS#511)
+      build: detect endianness at compile time
+      image: fix conversion on different endianness (FS#504)
+      luaa: optimize package path computing
+      luaa: use only one addsl
+      key: modularize modifiers set
+      key: check that modifier table is a table
+      key: add __newindex metamethod
+      button: add modifiers field in __newindex
+      dbus: do not exit on disconnection
+      dbus: fix cleanup code
+      manpages: fix awesome-client to talk about D-Bus
+      key: stop using keybinding_t and sorted array
+      event: modularize Lua callback handling
+      key: replace key_find() by generic callback
+      event: matching function can get data
+      awful.util: add table.hasitem()
+      awful.key: add a matching function
+      awful.key: export new()
+      awful.button: export new
+      awful.widget.button: export new correctly
+      awful.widget.launcher: export new correctly
+      spawn: use glib spawn module to catch error
+      keygrabber: use luaA_pushmodifiers()
+      awful.widget.launcher: export really new()
+      awful.widget.prompt: import
+      array: check that we are still in the tab
+      luaa: move version and release to awesome module
+      event: get keysym ignoring all modifiers
+      key: use right value for no symbol
+      keygrabber: use XStringToKeysym()
+      key: restore proper support of keysym resolution
+      themes: remove old themes
+      Revert "keygrabber: use XStringToKeysym()"
+      awful.key: fix typo
+      awful.key: fix modifier comparison in match()
+      dbus: use dbus_bool_t for pushing boolean
+      dbus: use dbus_bool_t when reading messages
+      awful.key: fix modifiers matching
+      beautiful: set metatable correctly
+      themes: simplify wallpaper_cmd
+      keygrabber: change key_press_lookup_string proto
+      key: move keysym resolution to key
+      key: looking up for a key use a keysym
+      key: stop using XKeysymToString()
+      key: add missing XKB entries
+      key: add support for XF86 keysyms
+      key: prefix XF86 keys names
+      event: mouse grabbing blocks other events
+      event: also push the wibox on widget button events
+      awful.titlebar: fix buttons bindings
+      event: push button state correctly to mouse grabber
+      build: bump xproto required version
+      array: fix foreach statement
+      key: add .keysym to return keysym name
+      awesome-client: we use bash extensions
+      awesome-client: use readline and no backslash
+      awful.util: add spawn_with_shell (FS#515)
+      awful.menu: set some vars as local
+      change codename
+      awful.{button,key}: fix @see
+      image: move empty creation
+      wibox: add missing documentation on objects
+      image: do not return update
+      image: fix new() documentation
+      luaa: fix memory leak in __gc
+      awful.widget: add support for __call on ta{g,sk}list widgets
+      button: change copy method
+      ta{g,sk}list: fix memory leak on removal
+      change codename
+      build: allow to specify cmake args
+      spawn: fix reference counting of sequences
+      spawn: call startup notification hooks on time out
+      awful.startup_notification: unregister events on time out
+      build: remove useless check for libs
+      spawn: fix hook call on timeout
+      swindow: fix draw_context_update for north and south orientation
+      widget: use orientation rather than position
+      root: fix screen in fake_input
+      root: fix arguments in fake_input
+      spawn: fix sequence ref count again
+      build: remove ncurses stuff
+      change codename
+      awful.tag: call property hook on icon changes
+      main: fix typo in fatal()
+      lib: stop using unpack where not needed
+      Revert "client: handle struts (a lot) better"
+      Revert "client, mouse: improve struts a bit"
+      change codename
+      change codename
+
+Lionel Ott (2):
+      Added AlignMiddle to alignment_t structure
+      Implemented bottom and middle alignment for textbox backgrounds
+
+M. Dietrich (1):
+      fix loop over config files if none was found
+
+Maarten Maathuis (14):
+      unbreak "client: stop using otable"
+      titlebar: redo the handling "a bit"
+      client: allow special non-transient windows to be !above
+      client: fix typo
+      client, mouse: improve struts a bit
+      client: add a "struts" property
+      client: add dockable.{set/get}
+      client: fix luadoc typo
+      client: handle struts (a lot) better
+      screen, client: clamp strut size to relevant dimension
+      event: add FocusOut handler
+      event: also filter leave notify events
+      client: fix luadoc typo, minimize should be minimized
+      layout: rearrange ban/unban sequence to avoid seeing the background during tag switch
+
+Mariusz Ceier (5):
+      Fix for FocusIn event handler
+      Focus events handlers
+      Focus stealing prevention - should fix FS#497
+      Fix focus hooks calls
+      Fix foreach macro
+
+Matus Telgarsky (2):
+      graph: fix for missing allocation
+      cosmetic fix for line drawing in graphs
+
+Nikos Ntarmos (5):
+      No need for & as capi.awesome.spawn double-forks
+      build: prepend ${PREFIX} to SYSCONFDIR if not set (FS#468)
+      libxdg-basedir 1.0.0 compatibility
+      Fix toggletag
+      Fix display misbehaving as a wpsetter.
+
+Thomas Brunko (1):
+      awful.titlebar: more buttons added
+
+Uli Schlachter (53):
+      wibox: fix a (harmless) X protocol error message
+      awesome-client: Don't go into an endless loop if awesome dies
+      Remove unused tokens from common/tokenize.gperf
+      socket: set close on exec
+      luaa: close accepted socket on exec
+      wibox: add wibox_need_update()
+      Rename LAYER_OUTOFSPACE to LAYER_COUNT
+      Move the definition of globalconf into a header file
+      Remove the argument to awesome_refresh()
+      client_stack(): Only stack windows once per mainloop
+      wibox_position_update(): Skip wibox if wibox.screen is nil
+      Don't update a wibox' position when it is created
+      Add wibox_map() helper function
+      Make sure a wibox does not display garbage when made visible
+      Only arrange screen for non-floating wiboxes
+      Some minor code optimization
+      Split wibox_position_update() up
+      Remove the code for floating wiboxes from wibox_position_update_non_floating()
+      Fix a small memleak in window_opacity_get()
+      Minor code optimization / pretification
+      Change xcolor_t::initialized into a bool
+      naughty: fix typo
+      Move xcolor into its own source files
+      Move some code into a helper function
+      Fix a integer overflow issue
+      Add new color management api
+      Add an API for converting a xcolor_t to a color_t
+      Make the draw_*() functions take a color_t*
+      Make the image code use color instead of xcolor
+      Rename luaA_pushcolor() to luaA_pushxcolor()
+      Add luaA_pushcolor() for pushing color_t*
+      Convert the graph widget to color_t
+      Convert the imagebox widget to color_t
+      Convert the progressbar widget to color_t
+      Convert the textbox widget to color_t
+      Add some comments to make things clearer
+      awesome-client: Use rlwrap if it is available
+      Fix a wrong leading space in gperf.sh's shebang
+      Remove some useless use of cat
+      Fix a bashism in gperf.sh
+      Use 'sh' instead of 'sh -e'
+      Use tr [:lower:] [:upper:] instead of the a-z one
+      Use _LDFLAGS instead of _LIBRARIES
+      Get the shell for spawn_with_shell earlier
+      Don't use obsolete table.foreach() in the default config
+      Remove a wrong space
+      awesome-client: Properly exit when dbus-send isn't found
+      awesome-client: Fix bashism
+      awesome-client: Use /bin/sh instead of /bin/bash
+      Restructure the code in ewmh_window_icon_from_reply() slightly
+      Check that the property is as long as it should be
+      Fix a harmless compiler warning
+      Fix a couple of harmless compiler warnings
+
+Vincent Mauge (1):
+      Remove useless loop in hide()
+
+dcurtis@cs.uiowa.edu (2):
+      awful.layout: store name into module
+      awful.layout: do not use global env
+
+koniu (15):
+      screen: do not hardcode the 'default' tag
+      awful.widget.taglist: dont show name if icon_only property is set
+      awful.widget.taglist: remove needless taglist_squares conditions
+      awful.util.table.concat: take any number of arguments
+      awful.util: rename table.concat to table.join
+      awful.util.table.join: fix typo
+      awful.titlebar: fix typo
+      awful.util: table.join support for non-integer keys
+      awful.util: table.join ignore nil arguments
+      awful.util: add missing - to show pread in luadoc
+      awful.tag: fix typo
+      awful.titlebar: allow titlebar_font in themes
+      awful.prompt: fix delete
+      naughty: fix bug in re-indexing popups if removing older to make space
+      awesomerc: allow 'false' in floatapps
+
+perry (3):
+      file modified to follow lua syntax, change suffix accordingly
+      file modified to follow lua syntax, change suffix accordingly
+      beautiful: theme are now handled in Lua
+
+qsd (1):
+      wibox: fix Left and Right wibox position computing (FS#512)
+

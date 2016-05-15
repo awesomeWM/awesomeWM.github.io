@@ -1,0 +1,3562 @@
+commit 854b59d7715aa9b0c60ec6c48b56fec6d2e97b02
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Jun 4 11:46:25 2009 +0200
+
+    change codename
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 907a5379a30c04d86d08046993cde2b61401df43
+Author: M. Dietrich <mdt@emdete.de>
+Date:   Mon Jun 1 13:01:31 2009 +0200
+
+    fix loop over config files if none was found
+    
+    if no file was found the string is just "\0" and neads a head
+    controled while
+    
+    if no config file was found exit awesome with an error message
+    (fail early!)
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 7795f623dd3e2e3ba2eaf553c1468c3d52357207
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue May 26 16:51:06 2009 +0200
+
+    change codename
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 42fdee57a29216aa3e16c905dda458a1a1011f1d
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon May 25 15:26:13 2009 +0200
+
+    Revert "client, mouse: improve struts a bit"
+    
+    This reverts commit 47efde17f51c630f9182c5999376e335c5c383a1.
+    
+    Conflicts:
+    
+    	lib/awful/mouse.lua.in
+    	screen.c
+
+commit fba4accc143d1acfb272a403249cc96597957fc8
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon May 25 15:05:26 2009 +0200
+
+    Revert "client: handle struts (a lot) better"
+    
+    This reverts commit 264a81f3fbbe26d2092610bfe9cbe1c65abaa487.
+    
+    Conflicts:
+    
+    	client.c
+    	client.h
+    	lib/awful/mouse.lua.in
+    	screen.c
+    	structs.h
+    	wibox.c
+
+commit df0df1bc37fa2ff60768493c78bf70355e320739
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun May 24 12:17:15 2009 +0200
+
+    Fix a couple of harmless compiler warnings
+    
+    In each widget's *_geometry function, two warnings were generated, e.g.:
+     warning: ‘geometry.y’ is used uninitialized in this function
+     warning: ‘geometry.x’ is used uninitialized in this function
+    
+    Found by gogonkt with GCC 4.2.4 on gentoo.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit ce6eb868893ffa0aa4380817fd99e3c85dfb74f9
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun May 24 12:00:28 2009 +0200
+
+    Fix a harmless compiler warning
+    
+    GCC 4.2.4 on gentoo:
+     awesome-3.3-rc3/mousegrabber.c: In function ‘luaA_mousegrabber_run’:
+     awesome-3.3-rc3/mousegrabber.c:37: warning: ‘root’ may be used uninitialized in this function
+     awesome-3.3-rc3/mousegrabber.c:37: note: ‘root’ was declared here
+    
+    Thanks to gogonkt for reporting this.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit b546328ae948ab2974a2eb07f2ef98ecc6f34779
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon May 25 11:14:08 2009 +0200
+
+    lib: stop using unpack where not needed
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 40710e43ba517b63b42579228d4efd0e7c42954a
+Author: Johan Kiviniemi <devel@johan.kiviniemi.name>
+Date:   Tue May 19 23:47:24 2009 +0300
+
+    themes/sky: Titlebar icons: use current default theme paths
+    
+    Signed-off-by: Johan Kiviniemi <devel@johan.kiviniemi.name>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit e278b6cefdc4a2b61f54c902d61c5af80fc21456
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue May 19 11:43:46 2009 +0200
+
+    main: fix typo in fatal()
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 572622590ab296bde4cb4678fad0c768c9490580
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue May 12 11:08:43 2009 +0200
+
+    Check that the property is as long as it should be
+    
+    Before this, a _NET_WM_ICON could have been 5 bytes long but still claiming
+    that the image it describes is 100x100 pixel in size.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 3e64d05c3cf0f336bb1aabaecfb38b19f35d880e
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue May 12 11:05:34 2009 +0200
+
+    Restructure the code in ewmh_window_icon_from_reply() slightly
+    
+    This is just a preparation for the following commit.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit bd0a57d9f8bc2f52ad996c2c6b51d75d3439db64
+Author: Johan Kiviniemi <devel@johan.kiviniemi.name>
+Date:   Mon May 18 18:50:53 2009 +0300
+
+    themes: Old ImageMagick compatibility
+    
+    Verified to build with ImageMagick 6.2.4.
+    
+    Signed-off-by: Johan Kiviniemi <devel@johan.kiviniemi.name>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit a891ffbe2d6ce61771b1e317abc176c243fed41f
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon May 18 16:42:03 2009 +0200
+
+    awful.tag: call property hook on icon changes
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit ad44a1d8dc65df736fe8fc2a9c3004800af8ec3e
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon May 18 11:13:21 2009 +0200
+
+    change codename
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit d0d4598ae6f101ea7f2e514f9e9e975eac5c1d45
+Author: koniu <gkusnierz@gmail.com>
+Date:   Sun May 17 20:05:10 2009 +0100
+
+    awesomerc: allow 'false' in floatapps
+    
+    Signed-off-by: koniu <gkusnierz@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit acd6c64f55180e3dde7968e66e96a068273784df
+Author: Johan Kiviniemi <devel@johan.kiviniemi.name>
+Date:   Sat May 16 17:27:00 2009 +0300
+
+    themes: Generate unfocused/inactive icons automatically
+    
+    Additionally, use the alpha channel so that the unfocused icons look
+    good on any background, not just black.
+    
+    This adds ImageMagick as a build dependency.
+    
+    Signed-off-by: Johan Kiviniemi <devel@johan.kiviniemi.name>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 7a6b340dbbc56c4467e60e9835223a26619ed9ca
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri May 15 19:52:43 2009 +0200
+
+    build: remove ncurses stuff
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit f5591745a646f2c457bc3179d0d579702b41f896
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue May 12 08:11:35 2009 +0200
+
+    spawn: fix sequence ref count again
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 18fd559da7c616c7b87a652919d18fe40d6d1c5f
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon May 11 08:19:15 2009 +0200
+
+    root: fix arguments in fake_input
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 309932be3259e86e2e3b5f8d97728e8858aa032b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon May 11 08:16:40 2009 +0200
+
+    root: fix screen in fake_input
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 0ca7a0fd7178bcde0ffbd8f348c97bde2fc75fe9
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sun May 10 16:17:39 2009 +0200
+
+    widget: use orientation rather than position
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit aa324d6e2b9b994efab509c739ff17c14dbf9a2a
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sun May 10 16:05:38 2009 +0200
+
+    swindow: fix draw_context_update for north and south orientation
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 7bd08e683cee803bd9d3248fe6f940499ce33ca0
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat May 9 21:11:29 2009 +0200
+
+    awesome-client: Use /bin/sh instead of /bin/bash
+    
+    All bashisms should be fixed (hopefully).
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit b04aaa8ad590f59e4ece27ffb8427edc0cfc3cbb
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat May 9 21:11:06 2009 +0200
+
+    awesome-client: Fix bashism
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 9e49865d3fc0e63b3f94ad20a6f4b22d3174e164
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat May 9 21:10:24 2009 +0200
+
+    awesome-client: Properly exit when dbus-send isn't found
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit d3eaaf7b50803ffda2685a8bac9dc759eb0d7edc
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat May 9 21:07:26 2009 +0200
+
+    Remove a wrong space
+    
+    Thanks to damjan for finding this.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 57b717aba6661064d6f69a4825eb67a031f88681
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat May 9 20:31:26 2009 +0200
+
+    Don't use obsolete table.foreach() in the default config
+    
+    This replaces those repetitive calls to table.foreach() with one call to
+    awful.util.table.join() which gets passed all the tables returned from the
+    awful.key() calls.
+    
+    Thanks to anrxc for testing this.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit f931e0cb8eef222f2de7986c4e25ca4b809fd43c
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat May 9 13:28:57 2009 +0200
+
+    Get the shell for spawn_with_shell earlier
+    
+    My local config got a module which denies functions from adding new functions
+    to the global context or to a module's local context. I use this for catching
+    typos (think misspelled variable names).
+    
+    This patch "fixes" a false-positive which was caused by this.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 56d6e3726b1898253627c132256863dd467a632a
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat May 9 19:59:27 2009 +0200
+
+    Use _LDFLAGS instead of _LIBRARIES
+    
+    The _LDFLAGS vars which pkg_check_modules() set also include -L flags which
+    are necessary so that the linker can find the libs it needs to find.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 02e39eb8e06d48e677e4aca70137c503b4aafaaf
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat May 9 20:12:20 2009 +0200
+
+    Use tr [:lower:] [:upper:] instead of the a-z one
+    
+    The 'old' tr call produced garbled output with sun's tr.
+    
+    The current common/tokenize.gperf file only uses a-z, 1-5 and _. Thus the
+    dropped conversions don't hurt atm. If they should ever become necessary again,
+    we need to find another, more portable way to doing this.
+    
+    Thanks to evocallaghan aka Edward O'Callaghan for trying to build awesome on
+    SunOS and providing some hints on how to fix it.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 886d62fb59f204fa74eafb8e81d68414c86d8cf1
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat May 9 20:07:54 2009 +0200
+
+    Use 'sh' instead of 'sh -e'
+    
+    'sh -e' makes the shell script die if any command returns an error which isn't
+    caught. While this is a nice feature, this script doesn't actually need this.
+    Not using this shell feature makes the script more portable.
+    
+    Thanks to Edward O'Callaghan aka eocallagha for stumbling upon this.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 90d6c799ff3e3f1d9947ef8027937f6102a43870
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat May 9 19:54:47 2009 +0200
+
+    Fix a bashism in gperf.sh
+    
+    This (hopefully) fixes a bug reported by evocallaghan with ksh.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit cf4630dbe1dc7f2644b24b673676f4bf48f23a28
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat May 9 19:14:56 2009 +0200
+
+    Remove some useless use of cat
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit d9c71f4e235bd2b4d26b2a24cd5805f9519b5707
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat May 9 19:13:25 2009 +0200
+
+    Fix a wrong leading space in gperf.sh's shebang
+    
+    While this space doesn't hurt on any modern OS (afaik), it does break stuff
+    on the old ones and is non-standard. Removing it won't hurt, so...
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit dd4d435db9a03e38f8afe41cdc67d9158ccd5bd2
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sun May 10 01:10:39 2009 +0200
+
+    spawn: fix hook call on timeout
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 0a1bf94036aaa4201d7b2f0f869afe321088de9d
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat May 9 19:58:16 2009 +0200
+
+    build: remove useless check for libs
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 70dffba6b1f33ba83be4362d8c80d920e3e7c753
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat May 9 16:03:41 2009 +0200
+
+    awful.startup_notification: unregister events on time out
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 3abec42c81ead8a2286d76641df351ef1f88a4d6
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat May 9 16:03:27 2009 +0200
+
+    spawn: call startup notification hooks on time out
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit ff46fd7e0a663b861f89dc25fbbe9c6d965ddd06
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat May 9 15:48:45 2009 +0200
+
+    spawn: fix reference counting of sequences
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 238dc06ae46c70f40fcc025ef26e64f6c284eb71
+Author: Ali Polatel <polatel@gmail.com>
+Date:   Sat May 9 11:09:21 2009 +0300
+
+    luaA_init: use Lua C API to add paths to package.path
+    
+    This is cleaner and it should be a bit faster than using
+    luaL_dostring().
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 99f763d833480765e1fbb86247eedcdc6a001695
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri May 8 19:54:38 2009 +0200
+
+    build: allow to specify cmake args
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit b33cb3b89c58c9db958bd5908016815cfbaf60a7
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri May 8 15:14:17 2009 +0200
+
+    change codename
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 35cd125ebd4ccb220607c6d496a625393a35dd47
+Author: koniu <gkusnierz@gmail.com>
+Date:   Fri May 8 12:08:09 2009 +0100
+
+    naughty: fix bug in re-indexing popups if removing older to make space
+    
+    Signed-off-by: koniu <gkusnierz@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 5039c24ed013bed9d683505a7315f6b954e6b8b4
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri May 8 14:36:39 2009 +0200
+
+    ta{g,sk}list: fix memory leak on removal
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 95180799ccc695badf8762d3949dc990bdeaa464
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri May 8 14:00:43 2009 +0200
+
+    button: change copy method
+    
+    We know also copy release.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit fe35104bc21692f9f89aeff24d0dd8a9c0309dff
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri May 8 11:59:38 2009 +0200
+
+    awful.widget: add support for __call on ta{g,sk}list widgets
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 43902aed69224f08174ca6066b76190c2b9b6fad
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri May 8 09:53:20 2009 +0200
+
+    luaa: fix memory leak in __gc
+    
+    We need to wipe the ref_array.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 3849e6d747c7cc0e0864c1a1665e4d2e39a78a0d
+Author: koniu <gkusnierz@gmail.com>
+Date:   Thu May 7 21:03:04 2009 +0100
+
+    awful.prompt: fix delete
+    
+    Signed-off-by: koniu <gkusnierz@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 5344818677f7cc2f81ac06335057fee950a9c7b7
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu May 7 20:24:46 2009 +0200
+
+    image: fix new() documentation
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 8828d629f434ed2fd689350a60723fffeb79a088
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon May 4 18:11:49 2009 +0200
+
+    image: do not return update
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit fd40431e29f8bf194bfbfbeb2612733f9f084fec
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu May 7 15:03:45 2009 +0200
+
+    wibox: add missing documentation on objects
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit d1e9c0d5e9e8fe86abfadfae271301d08f201067
+Author: Vincent Mauge <vmauge@gmail.com>
+Date:   Wed May 6 23:46:39 2009 +0200
+
+    Remove useless loop in hide()
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 3fca4e067784eb6a2704da56b92bce121bf6b8c6
+Author: Ali Polatel <polatel@gmail.com>
+Date:   Mon May 4 17:18:58 2009 +0300
+
+    awful.widget.taglist: Fix label.all()
+    
+    awful.util.escape() may return nil
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 024ee30fe59d38fbebcdcd99ed75a0e050df2e7a
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon May 4 10:49:45 2009 +0200
+
+    image: move empty creation
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 933dc50db9297ee339045d0c0a475c3f52b08f21
+Author: Ciaran McCreesh <ciaran.mccreesh@googlemail.com>
+Date:   Mon May 4 00:49:54 2009 +0100
+
+    Fix build with assertions enabled.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 34802872b27d4d17ebcbb0792e24841b854f691b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri May 1 15:37:17 2009 +0200
+
+    awful.{button,key}: fix @see
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit dadeb9bf86c1cc484bc0f370f457980bb79b081b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri May 1 15:17:10 2009 +0200
+
+    change codename
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 97863c1f0855459d0f37dea7804d2b7f2c21614e
+Author: koniu <gkusnierz@gmail.com>
+Date:   Fri May 1 03:16:17 2009 +0100
+
+    awful.titlebar: allow titlebar_font in themes
+    
+    Signed-off-by: koniu <gkusnierz@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit e584da44ae91a45ad258672b138c2a7894218b62
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Apr 30 02:12:23 2009 +0200
+
+    awful.menu: set some vars as local
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 2b0d3f6ab238844bc5a07ed00da24053367e62b0
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Apr 30 00:39:51 2009 +0200
+
+    awful.util: add spawn_with_shell (FS#515)
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit b38ebbeac1caf3b722de584fff728557d94eb38d
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Apr 30 00:27:03 2009 +0200
+
+    awesome-client: use readline and no backslash
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 4f1eac6fa5631a45626056a42e9a20d371eeb1eb
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Apr 30 00:26:53 2009 +0200
+
+    awesome-client: we use bash extensions
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit c378343a64b02a73341caf55ae6b36b83bf67080
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Apr 30 00:11:13 2009 +0200
+
+    key: add .keysym to return keysym name
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 7010ffd1646fc1cb5dc8aa3f784ec1eead1b7cf8
+Author: Mariusz Ceier <mceier@gmail.com>
+Date:   Wed Apr 29 20:37:45 2009 +0200
+
+    Fix foreach macro
+    
+    Fixes support of break/continue statement
+    
+    Signed-off-by: Mariusz Ceier <mceier@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 505245a5ff672cbf48a6856203f3d09668e50145
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Apr 29 18:32:44 2009 +0200
+
+    array: fix foreach statement
+    
+    We continously check for len, and build var upon each iteration so we
+    are sure we never go away in memory.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 7d9c796607402c382861a942f6230dc5b08db913
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Apr 29 18:34:07 2009 +0200
+
+    build: bump xproto required version
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 63a7b50531c8e3873e5ddf7b9f226eb3aa634cea
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Apr 29 17:20:12 2009 +0200
+
+    event: push button state correctly to mouse grabber
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 5ad3eb80217c5e047a9bfe475b7d702cf7b7175d
+Author: Nikos Ntarmos <ntarmos@cs.uoi.gr>
+Date:   Wed Apr 29 16:20:30 2009 +0300
+
+    Fix display misbehaving as a wpsetter.
+    
+    ImageMagick's display returns 1 if it is to draw on the root window.
+    Teach awsetbg that this is not an error condition.
+    
+    Signed-off-by: Nikos Ntarmos <ntarmos@cs.uoi.gr>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 4400f1234d3fef39240c7cdf6d6dc9a32525dd97
+Author: koniu <gkusnierz@gmail.com>
+Date:   Wed Apr 29 13:58:41 2009 +0100
+
+    awful.tag: fix typo
+    
+    Adds a missing dash in comments to show history.restore in apidoc.
+    
+    Signed-off-by: koniu <gkusnierz@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit e43d2b76eff040b0830c7e4c49a04eacff78430c
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Apr 29 15:05:23 2009 +0200
+
+    awful.titlebar: fix buttons bindings
+    
+    A recent commit change and fix what was pushed upon click on widget.
+    We used to get only wibox (bug) but now we get widget, wibox.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 7d20e63bc0da7e14784a7b40412810e088d1a653
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Apr 29 14:59:29 2009 +0200
+
+    event: also push the wibox on widget button events
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit d3e3c0c9228c5ec346f8305db6312453d0ec495b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Apr 29 13:59:13 2009 +0200
+
+    event: mouse grabbing blocks other events
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit f05c1bc86c94107b550614e91ad87e0257bd8e62
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Apr 29 11:27:07 2009 +0200
+
+    key: prefix XF86 keys names
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 7d59a773a7c6c51633365cde5f938fcb9a2c907c
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Apr 29 11:24:06 2009 +0200
+
+    key: add support for XF86 keysyms
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 2e8557f04e28ddd9e66b2e225430716eb35d0616
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Apr 29 11:05:58 2009 +0200
+
+    key: add missing XKB entries
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 2c9a19bafba852a884a54718d8e7f57d91a7de32
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Apr 29 10:45:16 2009 +0200
+
+    key: stop using XKeysymToString()
+    
+    It does not return the same thing.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit e44d62cb09f2e0899bfba120d0eb198cce560941
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Apr 29 10:43:54 2009 +0200
+
+    key: looking up for a key use a keysym
+    
+    We do not resolve keycode anymore.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit bea4aa7f601d3dd42f6e552093c7a8336c2bec6c
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Apr 29 10:39:06 2009 +0200
+
+    key: move keysym resolution to key
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit ba48d8784d179bd682f2d2404448f07f862c70a7
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Apr 29 10:36:48 2009 +0200
+
+    keygrabber: change key_press_lookup_string proto
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 30821f80a90d7dfd07e9df750d3abb300cd88f15
+Author: Matus Telgarsky <mtelgars@cs.ucsd.edu>
+Date:   Tue Apr 28 17:47:41 2009 -0700
+
+    cosmetic fix for line drawing in graphs
+    
+    When drawing graphs in line mode and growing right, instead of filling
+    in the last pixel (as the comments indicate is the intention), a line is
+    drawn to what is actually the first y value in the graph.  This is
+    because the index variable has already been incremented.  To fix it,
+    decrement it (correcting for modulus).  Patch attached.  Note I didn't
+    try it, since i am too lazy to update all the xcb stuff, but made sure
+    the patch goes cleanly against current head.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit ff8c2fe4603ae26f31e8e49f5aa59fb4b973719e
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Apr 28 23:15:48 2009 +0200
+
+    themes: simplify wallpaper_cmd
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit d2be74e1feda72c7812365d14282b81a1538c2ef
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Apr 28 22:54:55 2009 +0200
+
+    beautiful: set metatable correctly
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 79a53769de7848618847e062f6e8b18f7c6cbea9
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Apr 28 22:48:24 2009 +0200
+
+    awful.key: fix modifiers matching
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 0c800d96129226bb6199297a126c7b77305e232d
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Apr 28 22:40:02 2009 +0200
+
+    dbus: use dbus_bool_t when reading messages
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 6993f088b109377e8a2539375fa77f152a6fa166
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Apr 28 22:37:48 2009 +0200
+
+    dbus: use dbus_bool_t for pushing boolean
+    
+    dbus_bool_t is 32 bits (has to be for the wire protocol) but our bool is
+    only 8 bits.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 8629522884ed44c051c2f441e2359dae8e48059c
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Apr 28 20:02:10 2009 +0200
+
+    awful.key: fix modifier comparison in match()
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 75203f0f9437bd77d28d801e9cb373c30504fc76
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Apr 28 19:55:26 2009 +0200
+
+    awful.key: fix typo
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 66767605eeedc7e5744b9e9d64c7be25aecb8f27
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Apr 28 19:47:39 2009 +0200
+
+    Revert "keygrabber: use XStringToKeysym()"
+    
+    This reverts commit 6ca27c7c4c992fc35641bcd12bd77e5f9cbf36ba.
+
+commit ee77fce1cec6a99bdfa04b368affb759825c7ae5
+Author: Mariusz Ceier <mceier@gmail.com>
+Date:   Tue Apr 28 10:54:10 2009 +0200
+
+    Fix focus hooks calls
+    
+    This patch fixes focus hooks calls - for every call to focus hook, there
+    should be call to unfocus hook.
+    
+    Focus related info:
+    In this shape, awesome doesn't support multiple focused clients, that
+    means it follows the rule "there is only a single focus", which is not
+    true for MPX. To change this, I think it will need some magic with
+    FocusOut events handling and changes to some structures
+    (e.g. globalconf.screen_focus, screen_t.client_focus should be arrays) :p
+    Now we don't need to handle FocusOut events.
+    
+    Signed-off-by: Mariusz Ceier <mceier@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit cb0f88dfc76f7f1d9a2fa9c85e6492efca0d2f07
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Apr 28 19:36:44 2009 +0200
+
+    themes: remove old themes
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 5e284c4ab3aa12da0686a89637144fd6aa827d4e
+Author: perry <perry.hargrave@gmail.com>
+Date:   Tue Apr 28 19:40:14 2009 +0200
+
+    beautiful: theme are now handled in Lua
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit f2c104ba78c3b88fdc2e895825e96b21e030be38
+Author: perry <perry.hargrave@gmail.com>
+Date:   Mon Apr 27 23:53:05 2009 -0700
+
+    file modified to follow lua syntax, change suffix accordingly
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 8b9ee91ff5bb2bf4c2db7d1d094a83aeb652bd8f
+Author: perry <perry.hargrave@gmail.com>
+Date:   Mon Apr 27 23:51:15 2009 -0700
+
+    file modified to follow lua syntax, change suffix accordingly
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 600299a19f36ac43223650c8b47ad827512c957d
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Apr 28 18:17:16 2009 +0200
+
+    key: restore proper support of keysym resolution
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 6ca27c7c4c992fc35641bcd12bd77e5f9cbf36ba
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Apr 28 17:45:26 2009 +0200
+
+    keygrabber: use XStringToKeysym()
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit ffb5e464928db7da5592fffd661802a44cf24dec
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Apr 28 17:35:12 2009 +0200
+
+    key: use right value for no symbol
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit ca7af35f8a29866d2a10f7a3cc4b158eff3fea55
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Apr 28 17:26:15 2009 +0200
+
+    event: get keysym ignoring all modifiers
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 3eb14d7c76107b352c3223e9233ca9af4be70010
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Apr 28 16:21:50 2009 +0200
+
+    luaa: move version and release to awesome module
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 56225a39fe56638340c47b7f82afe9d8b29e022a
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Apr 28 08:34:13 2009 +0200
+
+    array: check that we are still in the tab
+    
+    If the array is modified while we are running the foreach() loop, the
+    tab of the array may be reallocated, so var can be totally out of the
+    memory: check for that.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 1cbb1c06667de926bfcda1ce1221060e449569a7
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 27 22:08:33 2009 +0200
+
+    awful.widget.prompt: import
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit c6a63d9250b410f3b01671ae26e621262b7c876a
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 27 21:55:41 2009 +0200
+
+    awful.widget.launcher: export really new()
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit e0c56d36e6281d4365623b278fb574cb5b692a51
+Author: qsd <xeyrion@gmail.com>
+Date:   Mon Apr 27 21:48:43 2009 +0200
+
+    wibox: fix Left and Right wibox position computing (FS#512)
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit e61ab85f5d3cbf2bce561ef936d0e52468fbc7e1
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 27 21:04:15 2009 +0200
+
+    keygrabber: use luaA_pushmodifiers()
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 0705fbf29d6f5d566b2cfd7daf15d9cde9c9a529
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 27 20:18:39 2009 +0200
+
+    spawn: use glib spawn module to catch error
+    
+    This is a lot better than our previous code. We can now report execution
+    error to Lua directly.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 57aeb2b85e24b41f80ace34944996585f3b067f7
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 27 18:40:35 2009 +0200
+
+    awful.widget.launcher: export new correctly
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 24be8643eb8173d9389f68c453ce73a04d1165dd
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 27 18:39:55 2009 +0200
+
+    awful.widget.button: export new correctly
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 512a5d86e762695f3b8dd009cf349ef2da15d015
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 27 18:39:09 2009 +0200
+
+    awful.button: export new
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit f71d8055ef5909bf0939ac803b502b68e304e470
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 27 18:38:00 2009 +0200
+
+    awful.key: export new()
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit b496122b0967801079a78f203ebb4d90ff98fff2
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 27 18:35:04 2009 +0200
+
+    awful.key: add a matching function
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit cd84fd5ebd60e7f67c9f77007193cebb6c614684
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 27 18:33:15 2009 +0200
+
+    awful.util: add table.hasitem()
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit efad1b984371025b12769005e42c1035cb783e68
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 27 17:56:06 2009 +0200
+
+    event: matching function can get data
+    
+    This allows us to not request keysym computation upon each match test.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit e2b4fae3e2371ddd9221458a77a1cd42e30fe284
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 27 17:52:36 2009 +0200
+
+    key: replace key_find() by generic callback
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit d80c6e9c33e6f391d1a8e59d60074d608cfbacfb
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 27 17:46:15 2009 +0200
+
+    event: modularize Lua callback handling
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit e9794c7cbdf2cdf10679d0528339941a8593682f
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 27 16:10:58 2009 +0200
+
+    key: stop using keybinding_t and sorted array
+    
+    That is necessary because key_find() assume we always get one and only
+    one keybinding for an event, which is wrong, since we can have several.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 0cbedbbb7f4933b8d5677f893af1925df04a2fa9
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 27 15:09:42 2009 +0200
+
+    manpages: fix awesome-client to talk about D-Bus
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 2dffbe9c7232362114a32339fb3bb42d55c4c274
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 27 14:54:09 2009 +0200
+
+    dbus: fix cleanup code
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 3831c84a845de09996161984664d848d3c026ae6
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 27 14:49:58 2009 +0200
+
+    dbus: do not exit on disconnection
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 39c351d112f7633ba496b973067a511920c96dd3
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 27 14:32:39 2009 +0200
+
+    button: add modifiers field in __newindex
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 061152b8743716fe4bbefd673afc0180c123f8f9
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 27 14:31:57 2009 +0200
+
+    key: add __newindex metamethod
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit d571edf1acd3c1b43fea798c8ea6c6f301c02617
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 27 14:13:54 2009 +0200
+
+    key: check that modifier table is a table
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 6d8ae5585084aa581957abfa7b4ada01829c40ad
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 27 14:12:24 2009 +0200
+
+    key: modularize modifiers set
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 85c5bffbcce211b2cae60cf897f1c19cf2b49b08
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 27 13:36:26 2009 +0200
+
+    luaa: use only one addsl
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 9ac5cea397567c8edac22a0b53b8f9a56ee9121b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 27 12:22:54 2009 +0200
+
+    luaa: optimize package path computing
+    
+    This is just for fun.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 14b090e5667f84a6b2de192b80053f9e068044df
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 27 12:09:04 2009 +0200
+
+    image: fix conversion on different endianness (FS#504)
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit b780be757851eefbad64085006ccae806b3e5aeb
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 27 12:06:24 2009 +0200
+
+    build: detect endianness at compile time
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 620fde1213648a714b49c8245f1ba21f2fe24ed1
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 27 11:21:02 2009 +0200
+
+    client: remove useless window_configure calls (FS#511)
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 39e907f5d8e81fc1bd230d1fe843325bc9f08db5
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 27 11:17:16 2009 +0200
+
+    luaa: refresh all wiboxes on font change
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 324387bfed4855abbba5f30d1aa891f0b6a30950
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sun Apr 26 20:22:44 2009 +0200
+
+    util: remove useless asprintf macro
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 0b61a38c7a7ef882f053ac3bdd30d33eaa151e85
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sun Apr 26 20:22:10 2009 +0200
+
+    luaa: use buffer rather than asprintf()
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 6ff72afd904a5716370d0d28d4b24eef2750abbf
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sun Apr 26 20:21:54 2009 +0200
+
+    buffer: add buffer_addsl() for literal strings
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 42bcd7288d915a81039d8da6e193f2bc31affcd9
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sun Apr 26 19:44:25 2009 +0200
+
+    button: add support for modifiers in __index
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 5476665ba2d92b42cf732dcf7dfbbb82d317d35d
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sun Apr 26 19:43:54 2009 +0200
+
+    button: return 0 on index with unknown elem
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 9b4cd23539b636389e0dd86764d50423a761d6e6
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sun Apr 26 19:43:23 2009 +0200
+
+    button: add missing documentation for button element
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit e0715147049298ba7dd7df299728fade079f51b6
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sun Apr 26 19:41:53 2009 +0200
+
+    key: split luaA_pushmodifiers() out of index
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 566e40638b8a204e38c4b9a88afbc8149ab971c6
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sun Apr 26 15:13:41 2009 +0200
+
+    tag: check that tag is not already attached before attaching (FS#509)
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit c2dc99190390b2850a7608ff84c1dae7ef2d9191
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sun Apr 26 13:01:37 2009 +0200
+
+    Stop using variable size type, use stdtypes
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 503283ac282e70378a588c929d6aec20e235cedd
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sun Apr 26 12:47:17 2009 +0200
+
+    event: add support for AnyModifier in grabbed button
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 21e8c0c89e33024113df35076b1b1509ee0c0041
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sun Apr 26 12:34:30 2009 +0200
+
+    button: add support for AnyButton
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit cbcbb68f7e1c36480ff3a55b7734e66b07703013
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sun Apr 26 12:34:13 2009 +0200
+
+    xutil: remove useless conversion function
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 308ef7de5d79de9e6c1d17833fd166e4b924dd25
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sun Apr 26 10:46:09 2009 +0200
+
+    mouse: split button out
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit c8b758ac489bb4a614342b8b1b766872ca873546
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 25 16:00:08 2009 +0200
+
+    key: add __index metamethod
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 6ee3e9d7c02b6ecbe0f5b74843081ab6b5860839
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 25 15:59:22 2009 +0200
+
+    xutil: add xutil_key_mask_tostr()
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit dc29720ef7ddc1d78a244ae1896e572b73db1800
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 25 15:04:27 2009 +0200
+
+    Replace lua_newtable() with lua_createtable()
+    
+    Lua can preallocate space in table for array or non-array elements type.
+    This should improve performance when setting table, so when we can we
+    use lua_createtable() since this is just a gain.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit e8de7a4605edb22391ee02ead1e478dc2afe300a
+Author: Mariusz Ceier <mceier@gmail.com>
+Date:   Thu Apr 23 18:05:30 2009 +0200
+
+    Focus stealing prevention - should fix FS#497
+    
+    We should prevent focus stealing, in case when there are e.g. 2 clients
+    on separate tags, first client has focus, and we receive FocusIn event
+    for second (invisible) client.
+    
+    This patch adds prevention in the focus update handler. It sets focus
+    on previously focused client, when FocusIn event destination is
+    invisible(untagged) client.
+    
+    This should fix FS#497.
+    
+    Signed-off-by: Mariusz Ceier <mceier@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit a91e31dbe673c25332e3b794202d51cc4775a526
+Author: Nikos Ntarmos <ntarmos@cs.uoi.gr>
+Date:   Thu Apr 23 13:53:24 2009 +0300
+
+    Fix toggletag
+    
+    awful.client.toggletag assumes that the tags array is indexed by tag
+    objects. This appears to not be the case after v3.2-31-g6430738, when
+    client objects stopped using otables. This patch makes toggletag iterate
+    through the client tag array till it finds the entry to remove,
+    otherwise it appends the new entry at the end.
+    
+    Signed-off-by: Nikos Ntarmos <ntarmos@cs.uoi.gr>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 241ff97666c4fce42d62ef8a24dbc5f733225f00
+Author: koniu <gkusnierz@gmail.com>
+Date:   Thu Apr 23 09:12:53 2009 +0100
+
+    awful.util: add missing - to show pread in luadoc
+    
+    Signed-off-by: koniu <gkusnierz@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit daf7192868dd3a123734bea25f52f01e0e419ccc
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Apr 21 08:46:36 2009 +0200
+
+    property: fix bad deletion of reply (FS#502)
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 37071c5f6fd6552967471ed761c2044a1dc0a610
+Author: koniu <gkusnierz@gmail.com>
+Date:   Sat Apr 18 22:22:15 2009 +0100
+
+    awful.util: table.join ignore nil arguments
+    
+    Signed-off-by: koniu <gkusnierz@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit b9ca6b4961fa68d8e0f49730b27275bb8cb8e4c8
+Author: koniu <gkusnierz@gmail.com>
+Date:   Sat Apr 18 21:44:36 2009 +0100
+
+    awful.util: table.join support for non-integer keys
+    
+    Signed-off-by: koniu <gkusnierz@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 715f95555a88130998ef734d249c5c4caa1cedc3
+Author: Nikos Ntarmos <ntarmos@cs.uoi.gr>
+Date:   Sat Apr 18 18:50:55 2009 +0200
+
+    libxdg-basedir 1.0.0 compatibility
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 4a34693bfb8db7cb546a3f3138c59a8c28eaf6a7
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 18 17:51:31 2009 +0200
+
+    screen: remove index field
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 41eb19f76fd07b7c9b671f0a76a4a923c85dda51
+Author: Damien Leone <damien.leone@fensalir.fr>
+Date:   Sat Apr 18 16:05:18 2009 +0200
+
+    beautiful: '~' now refers to user's home directory
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 467737250cac2c52f0f73856c350b04bd5dd1fbd
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 18 16:07:31 2009 +0200
+
+    dbus: allow usage of the system bus
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit fac192f6efdba30c7d84a98085e4709c2ecab330
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 18 15:00:10 2009 +0200
+
+    dbus: fix warning message
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 0b93186f09276a244d35e62c2f9ae48ad20af6ec
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 18 14:20:06 2009 +0200
+
+    property: make use of xcb_get_wm_class_from_reply() when possible
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit b6db5137fc503ff6c191bed25757d20e5210ad62
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Apr 18 12:26:31 2009 +0200
+
+    awesome-client: Use rlwrap if it is available
+    
+    This should make this more usable again. The old C version used readline, if
+    possible and now the new bash version does too. :)
+    
+    The idea to use rlwrap is from jd and it's a good one.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 9b35ad7983df365cad15322588c20b86aff7ded2
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 18 14:00:34 2009 +0200
+
+    color: simplify includes
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 7beda0321a8764be8d307a9693fbbfa4fcf7dce1
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Apr 18 08:56:46 2009 +0200
+
+    Add some comments to make things clearer
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 708636b5bf56537a026a10f1d142d4a11f99bb55
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Apr 17 19:08:04 2009 +0200
+
+    Convert the textbox widget to color_t
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 829caf45ba82961019d2f91672b88e82cab3fdee
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Apr 17 19:06:08 2009 +0200
+
+    Convert the progressbar widget to color_t
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 69082ddf5f5b98bfe86e099176f900a0ca50fa15
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Apr 17 18:59:50 2009 +0200
+
+    Convert the imagebox widget to color_t
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 3216a849b50c4462ba1245da30da1f4584132c3d
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Apr 17 18:58:27 2009 +0200
+
+    Convert the graph widget to color_t
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 7f663ad563af039f336e3d849ee7fdb728112930
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Apr 17 18:57:59 2009 +0200
+
+    Add luaA_pushcolor() for pushing color_t*
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 99b521b2c7ac5b91cffa8fcb7f1f07a5aa1e71bc
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Apr 18 11:55:29 2009 +0200
+
+    Rename luaA_pushcolor() to luaA_pushxcolor()
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit d19d679f2ac0f2ac620198bb80a93ff0860a183e
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Apr 17 18:49:27 2009 +0200
+
+    Make the image code use color instead of xcolor
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 37862c83c0b500fec258da23db78469ce099f3a7
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Apr 17 18:40:43 2009 +0200
+
+    Make the draw_*() functions take a color_t*
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 293f2a312df7c9a263405c1ac2af20ca585bda9c
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Apr 17 18:20:06 2009 +0200
+
+    Add an API for converting a xcolor_t to a color_t
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 19e30e56d0c78fa295a0b4a15ea7238d7b559360
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Apr 17 18:08:26 2009 +0200
+
+    Add new color management api
+    
+    This api is intended for uses where you don't need a color's pixel value but
+    only the color components.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit b38881b1238808d6fa52924019affb2c336476ff
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Apr 17 19:44:50 2009 +0200
+
+    Fix a integer overflow issue
+    
+    Alpha of 0xff resulted in RGB_8TO16(0xff) == 0x10000. This was cast to uint8_t
+    which resulted in alpha being set to 0.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 388ef61158d1a3d6c6798932a3fc85a3004363ba
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Apr 17 18:02:04 2009 +0200
+
+    Move some code into a helper function
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 5dadaa59a9b3b23d282da6ca954ba0b3e7697c2a
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Apr 17 17:39:31 2009 +0200
+
+    Move xcolor into its own source files
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 24b82772d268dc8933f481d605cdc98321111616
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 18 13:37:01 2009 +0200
+
+    atoms: drop useless strlen usage
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 9d48852fedd1e33d5ab591007f30419d887133a3
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 18 11:39:06 2009 +0200
+
+    util: remove fd_set_close_on_exec()
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 4b83d526d622d34cb5e4f1dd42175637ce16d04b
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Apr 18 10:34:39 2009 +0200
+
+    naughty: fix typo
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit a6f60c8e4162bf166bed13534a9b29c4ea7dd12f
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 17 23:27:16 2009 +0200
+
+    slist: remove
+    
+    We do not use linked list anymore.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 80e935455d606916bf58fd204d905ca1ee8a43d1
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 17 23:26:26 2009 +0200
+
+    stack: remove client_node type and inverse order
+    
+    We now use a client_array_t which is more efficient and we reverse the
+    array order compared to before.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit faf394c2edd51f40e2f684216afd34800597fa19
+Author: koniu <gkusnierz@gmail.com>
+Date:   Fri Apr 17 18:45:20 2009 +0100
+
+    awful.titlebar: fix typo
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit ad887a77bf0dcea4f7e4f3ed28b44ab5a1982f67
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 17 18:20:06 2009 +0200
+
+    change default binding for run prompt to Mod4+r
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 76e978597f00f6c6d480b7d49b09a8100581d41b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 17 18:19:37 2009 +0200
+
+    change default Lua code execution to Mod4+x
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 21978546ebaa53200540c624e6d277f36edf63eb
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 17 18:08:52 2009 +0200
+
+    lib: fix libs to use new awful.button
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 5e0c84b9fbb3a0da0098e7d12a4343aaacced6fc
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 17 17:21:59 2009 +0200
+
+    tag: reset screen later
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit f473a107b0641ecde965e190b4f9e94955d08ab7
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 17 16:52:25 2009 +0200
+
+    cleanup #includes
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 62ec664d0f787759db306a380165d2d87a9a1d5d
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 17 16:34:00 2009 +0200
+
+    config.h: always compile with Imlib2, so remove define
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit a415926b78750cb557366385717fb8edb5cb9533
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 17 16:23:40 2009 +0200
+
+    struct: move void_array definition to luaa
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 6fe35b138749617225cb1ba35bac14db796d2e25
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 17 16:20:39 2009 +0200
+
+    tag: move struct definition into tag.h
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit de94a2cb126404a5ea9b8621193f7af3058857bf
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 17 16:19:55 2009 +0200
+
+    client: move struct definition to client.h
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 93c782f524967db5d022a97120ff29678d2e9f42
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 17 16:18:14 2009 +0200
+
+    wibox: move struct definition into wibox.h
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 416f88f84f40260d54a60654eeb00b409dc4694c
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 17 16:15:19 2009 +0200
+
+    widget: move definition into widget.h
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 486ef71a7f39a75e7c4635fb20c15713a60d71b5
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 17 16:14:09 2009 +0200
+
+    screen: replace screens pointer by a screen_t array
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 9a66456f905a1f438a931a7d1fba9853fe934d09
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 17 11:50:20 2009 +0200
+
+    root: split out of luaa
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 9bb2c2d1e979baed730dc68a866a03d03bc4d475
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 17 11:43:56 2009 +0200
+
+    client: changing size hints does not arrange()
+    
+    It just calls property hook.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 937cab0a3028bf79713895987d3e890161ddb095
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 17 11:13:22 2009 +0200
+
+    awful.{key,button}: return a table
+    
+    Fix a wrong assertian that actually:
+    function a() return 1, 2, 3 end
+    c = { a(), a() }
+    Won't make #c == 6 but c == 4 because only the last call to a() will
+    fill the table with 3 results.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit ece9eb887479df64818d3356d5eb66a0897ce00f
+Author: Gregor Best <farhaven@googlemail.com>
+Date:   Thu Apr 16 03:05:16 2009 +0200
+
+    image: export drawing routines to lua
+    
+    Signed-off-by: Gregor Best <farhaven@googlemail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 4431d676796a536c45e6bae59c421f5bc8f4510c
+Author: Gregor Best <farhaven@googlemail.com>
+Date:   Thu Apr 16 03:04:08 2009 +0200
+
+    image: initialize new images
+    
+    Signed-off-by: Gregor Best <farhaven@googlemail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 92c482dbeef5107ba0f1ff92072486e86f37a578
+Author: koniu <gkusnierz@gmail.com>
+Date:   Wed Apr 15 21:53:14 2009 +0100
+
+    awful.util.table.join: fix typo
+    
+    Signed-off-by: koniu <gkusnierz@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 94b2232c4f2a2b20cd6ba1d17a8ae35796ccc2a3
+Author: koniu <gkusnierz@gmail.com>
+Date:   Wed Apr 15 20:33:21 2009 +0100
+
+    awful.util: rename table.concat to table.join
+    
+    This is to avoid confusion with Lua's table.concat which takes a table
+    and returns a string of all its elements concatenated with a given
+    separator.
+    
+    Signed-off-by: koniu <gkusnierz@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 8cbb65d5c2cdfcc61fc9969d37a304ccd9dc6bba
+Author: koniu <gkusnierz@gmail.com>
+Date:   Wed Apr 15 20:29:00 2009 +0100
+
+    awful.util.table.concat: take any number of arguments
+    
+    Allows joining more than 2 tables at a time
+    
+    Signed-off-by: koniu <gkusnierz@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit efc3cc4c1508b5be50e31c10f052968a1011569d
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Apr 15 14:05:45 2009 +0200
+
+    xutil: fix proto
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 5db54fc731fca1eaf634e8770e9bc85bc13903cc
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Apr 15 14:03:17 2009 +0200
+
+    xutil: fix proto of key mask translator
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit f168bbdfa4768171c1b1762654008f43bb56bbee
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Apr 15 13:59:22 2009 +0200
+
+    key: add support for modifier mask Any
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 1a18088da5a96f19c5f7ddaab96e33f00314ce6d
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Apr 14 17:53:22 2009 +0200
+
+    key: stop ignoring arbitrary modifier
+    
+    Before, we used to ignore Mod2 and Lock.
+    This is now configurable.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 0215aa5b42cd1bba1535b7ba1e6eca13a2eff9ea
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Apr 15 10:46:34 2009 +0200
+
+    awful.util: add table.concat()
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit d0b7cc9c97ba3c54011e5e54b881a4cdab9cd054
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Apr 15 10:31:41 2009 +0200
+
+    awful.util: add subset() function
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit d5596c06ede0472dd1f504b8b87d1076ed9d861a
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Apr 14 11:54:48 2009 +0200
+
+    xutil: remove useless error functions
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit d834e19a23aa808201323df3513cdcf1dc4e0d0b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Apr 14 11:49:55 2009 +0200
+
+    awesome: use xcb_event error code
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit cda33ca3e63e91a550952807bd3c6d7db8d40c5e
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 11 18:02:31 2009 +0200
+
+    key: cleanup modifiers system
+    
+    We stop retrieving useless key, since we have constant.
+    We also grab correctly all keycode for a keysym.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 40c300afed9ca724e657ee2772d181ecfd88cd1b
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Mon Apr 13 20:57:40 2009 +0200
+
+    Change xcolor_t::initialized into a bool
+    
+    The code already assigns "true" to this, but it's not yet a boolean variable.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 7b91cf259c373b92ee0d4f12c16ef0af7c100cfa
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Mon Apr 13 14:17:03 2009 +0200
+
+    Minor code optimization / pretification
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 7b2627cbf9ba91c0d88d1d6168f253904137a618
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Mon Apr 13 14:13:34 2009 +0200
+
+    Fix a small memleak in window_opacity_get()
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 1c147a6d7694a98cba148bda3778ca04eea27583
+Author: Matus Telgarsky <mtelgars@cs.ucsd.edu>
+Date:   Tue Apr 14 19:36:37 2009 -0700
+
+    graph: fix for missing allocation
+    
+    resizing graph widgets (by setting the width parameter) was failing to
+    update the caches draw_to and draw_from.  I have attached a 2-line patch
+    remedying this.  The bug wasn't caught earlier because the default size,
+    80, is bigger than what people typically use.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 27c80c1950ca0a09caaeaf1a5bec0d448317df65
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 3 16:30:38 2009 +0200
+
+    awful.sn: add
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit f4221a1fdfd0c23d006443f4a384903af70103e8
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 3 16:30:18 2009 +0200
+
+    spawn: add support for startup-notification
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit e4f7e99c3fce7c5c4d42499562a56fac0c47c532
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 4 13:04:19 2009 +0200
+
+    client: add support for _NET_STARTUP_ID
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit bdf2b082bfec6b97db162249fe2d108d8b973ffa
+Author: Maarten Maathuis <madman2003@gmail.com>
+Date:   Mon Apr 13 15:32:41 2009 +0200
+
+    layout: rearrange ban/unban sequence to avoid seeing the background during tag switch
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 3e8506e6cb6606a0ae15fc0f01f8f7cee517dbb6
+Author: koniu <gkusnierz@gmail.com>
+Date:   Mon Apr 13 11:36:09 2009 +0100
+
+    awful.widget.taglist: remove needless taglist_squares conditions
+    
+    Signed-off-by: koniu <gkusnierz@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 045d4c823b49f5a4d2fd6d49f7f6d3b097860399
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 13 12:43:00 2009 +0200
+
+    textbox: unref image on destruction
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 9b61434f7e350d0fd5530e2b226608ef85113059
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 13 12:40:33 2009 +0200
+
+    wibox: fix memory leak with cursor
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit a08794d7cd03c680203216186bdf09a88479684d
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 13 12:36:23 2009 +0200
+
+    client, wibox: unref image on garbage collection
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit f0a11b9628cef93999caa952e4623ceaf91e3666
+Author: koniu <gkusnierz@gmail.com>
+Date:   Mon Apr 13 03:54:46 2009 +0100
+
+    awful.widget.taglist: dont show name if icon_only property is set
+    
+    Signed-off-by: koniu <gkusnierz@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit bee45f1b4af28a4a04a14994d92a951e7ae6fe32
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Apr 12 21:11:46 2009 +0200
+
+    Remove the code for floating wiboxes from wibox_position_update_non_floating()
+    
+    The last commit moved the handling of floating wiboxes into its own function,
+    so the checks for floating wiboxes in here can be removed.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit b4b08fd9263fec907863b90c649c8168202c8295
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Apr 12 21:08:59 2009 +0200
+
+    Split wibox_position_update() up
+    
+    Floating wiboxes are much easier to handle, so they deserve their own
+    function.
+    This function, wibox_position_update_floating() does exactly the same things
+    wibox_position_update() did before. No behaviour change involved.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 62bfc2e9ac24992ca47892cae7dfbf773d538ab3
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Apr 12 21:04:05 2009 +0200
+
+    Some minor code optimization
+    
+    It's just easier to read this way. :)
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 34554d895843980e969abd99c936b8a18d543db9
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Apr 11 14:15:41 2009 +0200
+
+    Only arrange screen for non-floating wiboxes
+    
+    Floating wiboxes dont influence client's position and thus no arrange
+    is necessary.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit bf837f5d4108774bcd6de2feb25609add8df5420
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sun Apr 12 17:38:10 2009 +0200
+
+    awful.util: fix eval
+    
+    Do not need return actually.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 834a6089999993448c03dafed7e928ddbd9606ca
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 11 14:17:46 2009 +0200
+
+    otable: remove
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 81b46f9694defc984a2ec119101cf3b7835cb0bb
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 11 14:15:45 2009 +0200
+
+    awful.widget.tasklist: remove otable usage
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 2dfbd6ea2c406377182b5858eb29958374426a3c
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 11 14:14:50 2009 +0200
+
+    awful.widget.taglist: remove otable usage
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 4db50647fe8303aa94b33fa87fce6df909255145
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 11 14:13:20 2009 +0200
+
+    awful.widget.common: remove otable usage
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 6b3c57970ef1ac676ed75da72915f03a7faf956a
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 11 14:11:13 2009 +0200
+
+    telak: remove otable usage
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit c47b5daf7574b1cf1368fed1c91fa10779a147bb
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 11 14:09:07 2009 +0200
+
+    tabulous: stop using otable
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 527bbfa0e0e504cffcaec547e68878cd2d809e7b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 11 14:07:45 2009 +0200
+
+    awful.titlebar: remove otable usage
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 3173e698dad1ba37db8670c7b6f45636e37afa4b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 11 14:05:30 2009 +0200
+
+    refcount: remove
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 22b0fe81401551a9b87943f965153ed8d9212964
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 11 14:04:51 2009 +0200
+
+    awful.tag: do not use otable() anymore
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit e4ab810154c5a68daa3729713c1d8c97ed0eb7ba
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 11 14:01:30 2009 +0200
+
+    awful.client: do not use otable()
+    
+    We use a weak-keyed-table, that's enought and quicker.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit a4a745d505e52f0a9b8501c398de1666ee856e5b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 11 13:39:15 2009 +0200
+
+    luaa: rename luaA_toudata2() to luaA_toudata()
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 7da55e899bdf0a6864abc78b2138dc52b847303c
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 11 13:38:20 2009 +0200
+
+    luaa: remove luaA_toudata()
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit d728875969800b7f4c4de8a4c98c6fa974ad143b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 11 13:37:41 2009 +0200
+
+    luaa: remove luaA_checkudata
+    
+    We do not need it with the new system.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 7b75f9711d6a55f641fd9f1506fd065b87b4fab1
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 11 13:37:12 2009 +0200
+
+    luaa: remove useless DO_LUA_*
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 29b5fd1f251d4303e60802fa4c67fb19ded1b1a5
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 11 13:36:41 2009 +0200
+
+    button: use new Lua object system
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 5f6aed4e3d943f89620c5542e9d5159f7b36d9ae
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 11 12:40:56 2009 +0200
+
+    key: use new Lua object system
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 4531a3a17c4f76c917f82336a8760a1396a1f723
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 11 11:45:55 2009 +0200
+
+    tag: use new Lua object system
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 5931bf752dfad4dfb472d22593bfca59a0d3c9f8
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 11 00:27:06 2009 +0200
+
+    wibox: use new Lua object system
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 81033d391bc31f8c63b2511310ae036a2d00eaed
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 10 15:23:55 2009 +0200
+
+    client: use new object system
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit b1a59aca0789190cb46d4300998e884ffd618caa
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Apr 9 15:12:17 2009 +0200
+
+    widget: widget are now full Lua object
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 541d4f565ffe8ca074b596a4df4a0987a8d53242
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Apr 9 11:38:56 2009 +0200
+
+    image: use new object system
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 38a79ca9f0641bc84595f3c5de3fb32fa6e9c1b3
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Apr 9 14:54:19 2009 +0200
+
+    luaa: checktype use both toudata
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 70cbf6bedbda1151b35aae0fa0d4bd87e48792b8
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Apr 9 13:23:57 2009 +0200
+
+    luaa: implement luaA_toudata() with simple pointer
+    
+    This is needed for new object system.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 74e4200176dfeca0522e5f83d41a22607219a6ae
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Apr 9 11:34:38 2009 +0200
+
+    luaa: split tostring creation
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit a1480ef7d88ff82bc4e04e564463fe1ac9856889
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Apr 9 10:57:00 2009 +0200
+
+    luaobject: import
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit be752cc81c68b47af5a6645a2405e3be5d3ee6af
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Apr 9 17:17:10 2009 +0200
+
+    client: change global linked list to an array
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 87c3c02b727ca18dceeb33b0b00c2f911c47023b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Apr 9 17:16:39 2009 +0200
+
+    array: add a set of useful functions
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit e145afec53d639c264dbfa0b538e485b749df8a9
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Apr 9 17:16:08 2009 +0200
+
+    array: add foreach() statement
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 82dd52ad691b3a8eff84cb678566940680fb62ee
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sun Apr 12 15:05:33 2009 +0200
+
+    awful.titlebar: do not call update on changes
+    
+    We have hooks to do that.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit d63b850b98812ef7e4ac4b34c454f5428f00edc1
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sun Apr 12 15:00:11 2009 +0200
+
+    awful.titlebar: add floating
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 6178417b61a337befae10a5d156d3a184631aa83
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sun Apr 12 14:32:36 2009 +0200
+
+    event: leave_notify: handle titlebar correctly
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 9f34d20f08dcb12daadc3cdbe02cf0fe1a0e30a2
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sun Apr 12 14:29:53 2009 +0200
+
+    event: titlebar are parts of client
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 991c7956290fe4aed82737d1fc67ef2f42caf462
+Author: Thomas Brunko <brthomas@gmx.net>
+Date:   Sun Apr 12 13:54:29 2009 +0200
+
+    awful.titlebar: more buttons added
+    
+    This is a new version of 'titlebar.lua'. There are now additional buttons for:
+    - setting the 'ontop' attribute
+    - setting the 'sticky' attribute
+    - maximizing the client
+    In addition to changing the state of the client the buttons also show if the
+    corresponding state is active for a client. All new buttons now require 4
+    images for:
+    - unfocused window, state inactive (i.e. ontop == false)
+    - unfocused window, state active (i.e. ontop == true)
+    - focused window, state inactive (i.e. ontop == false)
+    - focused window, state active (i.e. ontop == true)
+    It's not difficult to add more buttons with any kind of functionality. User
+    configuration is currently restricted to theming of the buttons. Buttons are
+    disabled simply by not configuring them in the theme.  The icons for the new
+    buttons are taken from kde4. They're not really pretty but they're OK to
+    demonstrate the new features.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 46ffccd8e2348a623a33d7d3cd96ef8e8cb1ea63
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sun Apr 12 01:55:37 2009 +0200
+
+    root: fix fake_input code
+    
+    This code actually belongs to 'root' since it does not send events to a
+    client but simply to X.
+    The window argument is only used in motion event, so fix that also.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit f6e4b76845cb6303ea5d93905da3b543cb961ba6
+Author: Maarten Maathuis <madman2003@gmail.com>
+Date:   Sat Apr 11 18:52:46 2009 +0200
+
+    client: fix luadoc typo, minimize should be minimized
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 0fcba4363a0bb1acee0db37023c6dd87c0374659
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 11 16:11:43 2009 +0200
+
+    build: move manpages into their own directory
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 71903013211e0ea3dead41bf8de854caf101d59f
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 11 16:10:42 2009 +0200
+
+    gitignore: remove awesome-client
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit d4ea61f4d334b7aa89c53b4d238f076bd6673f3c
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 11 14:11:44 2009 +0200
+
+    telak: fix default timer
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit dc82832ccfad42dc964db2e47a2e6f4cbea3316e
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Apr 11 13:26:58 2009 +0200
+
+    Make sure a wibox does not display garbage when made visible
+    
+    This moves the call to wibox_draw() into wibox_map() which fixes garbage
+    being displayed if a wibox is made visible by setting its .visible.
+    
+    Since wibox_draw() already calls simplewindow_refresh_pixmap(), that call is
+    dropped. Because wibox_need_update() just makes sure wibox_draw() is later
+    called, we can replace the call to wibox_draw() by this call. This should avoid
+    superflous updates.
+    
+    Found by lua code like this:
+    
+    local w = wibox({ position = "floating", bg = "#ff0000" })
+    w.visible = false
+    w.screen = 1
+    <do some other stuff>
+    w.visible = true
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit ff34fd2f3b271f39bccb2dc916c7b740789826b4
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Apr 11 13:14:50 2009 +0200
+
+    Add wibox_map() helper function
+    
+    This moves some common code into a helper function to reduce code
+    duplication and open-coding that function all the time.
+    
+    This commit doesn't cause any behaviour change at all.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 4574d879887496dd74b432ccfc4cffc2e4b435a6
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Apr 10 20:23:43 2009 +0200
+
+    Don't update a wibox' position when it is created
+    
+    For a floating wibox which isn't visible, all what wibox_position_update()
+    does is setting the geometry fields in the simplewindow struct. Since the next
+    thing luaA_wibox_new() does is setting the wibox' geometry, this call makes
+    no sense.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 99a8dbeaf7af174134860b4da50ec4ec7bfc9e45
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Apr 10 20:16:57 2009 +0200
+
+    wibox_position_update(): Skip wibox if wibox.screen is nil
+    
+    If a wibox's screen is set to nil, this is reflected by setting the screen
+    struct member to SCREEN_UNDEF.
+    SCREEN_UNDEF is defined as -1. If we allow such a wibox in
+    wibox_position_update(), bad things will happen (globalconf.screens[-1]).
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 67c96cbebc145633ac5d9b509906f4748fd6eded
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 11 11:59:10 2009 +0200
+
+    key: luaA_key_new is static
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 301affeaedc692f194f929c4cdf195c0ab07022e
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 11 11:50:55 2009 +0200
+
+    image: cleanup header declaration
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 46ce0c1da124d6652161b5a4c43223af9bb8fc88
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 11 11:50:12 2009 +0200
+
+    widget: remove useless widget_calculate_offset()
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 680e51049e83c2a964e0ca947958ed95913e6d6a
+Author: Gregor Best <farhaven@googlemail.com>
+Date:   Fri Apr 10 23:18:51 2009 +0200
+
+    naughty: add opacity option
+    
+    Signed-off-by: Gregor Best <farhaven@googlemail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit e24df900bb10700daa059c33e6ee4a13321d053c
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Apr 9 12:47:19 2009 +0200
+
+    luaa: fix luaA_getopt_*
+    
+    We let an element on the stack, that's bad.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 2a6d5d207d7f51ea8468a396b4ef371160ba3fa4
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Apr 10 18:15:48 2009 +0200
+
+    client_stack(): Only stack windows once per mainloop
+    
+    I was creating 2000 wiboxes in a loop (don't ask) and creating them took
+    forever. According to callgrind, there were about 2 million calls to
+    xcb_configure_window() and most (if not all) of them were from client_stack().
+    Awesome spent 70% of its cpu time in these client_stack() calls.
+    
+    client_stack() is O(N^2) on the number of clients (it walks the list of clients
+    itself twice and each call to client_stack_above() walks the list too) and O(N)
+    on the number of wiboxes (it walks the wibox list twice). So obviously calls to
+    it should be rare.
+    
+    This patch makes client_stack() only set a flag which is later checked. This
+    should reduce the number of restacks to the bare minimum. With this patch,
+    neither xcb_configure_window() nor anything else client_stack() related shows
+    up as having a lot of calls or using much cpu time.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 4b8260895233a28faa77ea15c3158b12037bd42f
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Apr 10 17:39:11 2009 +0200
+
+    Remove the argument to awesome_refresh()
+    
+    awesome_refresh() had a xcb_connection_t as first argument. Since there is
+    only one connection to the X server, this argument doesn't really have any
+    alternatives to globalconf.connection and thus makes no sense.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 95457c5ab78cc9eed23e8c8306d2594c81ede121
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Apr 10 13:28:21 2009 +0200
+
+    Move the definition of globalconf into a header file
+    
+    Pretty much every single source file needs this struct, so it makes sense to
+    define it in a common header instead of in every single .c file.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 82329ad78a499fd83274f81a7ec92a32edc1f5ef
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Apr 9 15:11:00 2009 +0200
+
+    dbus: refresh everything after message has been handled
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit a076806ce06ba18dca5e4438205166146f14fc43
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Apr 10 12:11:35 2009 +0200
+
+    Rename LAYER_OUTOFSPACE to LAYER_COUNT
+    
+    The name LAYER_OUTOFSPACE suggests that this is a real layer on which windows
+    can be put, but it's only used as an integer which describes the maximum
+    allowed / used layer.
+    Therefor, renaming it to LAYER_COUNT and adding a comment which describes this
+    might make sense.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 8f5f965fab70b7af6cc84e0c217f7a3917842219
+Author: koniu <gkusnierz@gmail.com>
+Date:   Thu Apr 9 01:04:41 2009 +0100
+
+    screen: do not hardcode the 'default' tag
+    
+    Signed-off-by: koniu <gkusnierz@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 7fa363d3fe305d9a797d1b06c6fc528afd13a15d
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Apr 8 20:32:55 2009 +0200
+
+    default theme: add fullscreen layout icons
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit a1280fe02addb98159d4d1fd10ab16b7c2ea858b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Apr 8 20:07:45 2009 +0200
+
+    build: stop checking for readline
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit ae1fb5ab688ef0e5878ab0352ae062043d242dd3
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Apr 8 19:00:32 2009 +0200
+
+    update AUTHORS
+    
+    * Nikos is back
+    * Update years of Damien and Gregor
+    * Add Maarten
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 09b166d71e1470e94a5a1cfda21a412300df6877
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Apr 8 18:53:53 2009 +0200
+
+    version: remove product name
+    
+    We only ship one binary now.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit c95e73ee619c8a31a13ae9bf578ae9214a0c19f3
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Apr 8 18:08:44 2009 +0200
+
+    buffer: remove useless buffer_add_xmlescaped()
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 7dbb02adf39418f1ef396d4d62e5f0e9feb1071e
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Apr 8 17:48:52 2009 +0200
+
+    awesome-client: remove socket code
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit f79cd42c33218d15f217eaae53b2a8f9df7c2c45
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Apr 8 17:30:18 2009 +0200
+
+    import new awesome-client using D-Bus
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 36f4e6cb8a30c1ac89c45fbf5c62e7c42db202c4
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Apr 8 17:08:26 2009 +0200
+
+    awful.remote: import with remote eval
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit f7bca3271c63de9cc94857d7ed4294b817469220
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Apr 8 15:47:31 2009 +0200
+
+    luaa: use only one xdgHandle for all
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 62397eac957041b1d4b4e09e49b6e8496a4375f9
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Apr 7 18:25:37 2009 +0200
+
+    wibox: add wibox_need_update()
+    
+    This moves some common code into the new function wibox_need_update().
+    
+    This patch is based on a patch from Julien Danjou.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit d4412544123d3b8b1467118206c11535796abb4b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Apr 7 18:00:55 2009 +0200
+
+    util: remove a_strsplit()
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 7af34ed244d0a0bc15dfe665ef88170db175654d
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Apr 7 17:57:01 2009 +0200
+
+    luaa: use libxdg-basedir instead of our code
+    
+    This is clearly more clear and portable.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit e53c77540dd3fc6b7f7c1ea6a8b896ed8d5247cb
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Apr 7 15:58:09 2009 +0200
+
+    client: move window function into window.c
+    
+    This should light client.c a bit.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 904502552faf7880044138746f3ed42ad9d15847
+Author: Mariusz Ceier <mceier@gmail.com>
+Date:   Tue Apr 7 14:20:22 2009 +0200
+
+    Focus events handlers
+    
+    - We are tracking focus, using FocusIn/FocusOut events handlers, so user
+      should never be confused about which client has focus
+    - window_setfocus function generates focus change requests to the X server
+    - client_focus uses window_setfocus to set input focus
+    - revert_to when setting input focus set to Parent, compliant with
+      ICCCM convention ([1])
+    - DEBUG flag for those who want to debug focus handlers
+    
+    Most of the changes, are compliant with X11 handbook ([0]), but some
+    where obtained experimentally.
+    
+    Kudos to Maarten Maathuis who helped a lot with this.
+    
+    [0]
+    http://cgit.freedesktop.org/xorg/doc/xorg-docs/plain/hardcopy/X11/xlib.PS.gz
+    
+    [1] http://tronche.com/gui/x/icccm/sec-4.html#s-4.2.7
+    
+    Signed-off-by: Maarten Maathuis <madman2003@gmail.com>
+    Signed-off-by: Mariusz Ceier <mceier@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 4d6bf949a83e54a52a14133560940ae1a95c5b80
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Apr 6 13:27:53 2009 +0200
+
+    Revert "event: add FocusOut handler"
+    
+    This reverts commit 31ba9620657e0bb427e130ce13d82b958db65fc2.
+
+commit 63f2dd3908dc199b7a544f5c802ad5524343968e
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 4 16:42:08 2009 +0200
+
+    build: do not depends on glib directly
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 97fb463e76d50fcb546998f449861dea6684af0d
+Author: Maarten Maathuis <madman2003@gmail.com>
+Date:   Sat Apr 4 16:16:02 2009 +0200
+
+    event: also filter leave notify events
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 31ba9620657e0bb427e130ce13d82b958db65fc2
+Author: Maarten Maathuis <madman2003@gmail.com>
+Date:   Sat Apr 4 16:16:01 2009 +0200
+
+    event: add FocusOut handler
+    
+    - I don't see why we should guess about what we recieved and whatnot.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 0d6d6c4fa711ed735f8d7359f9473e218baedcb5
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 4 13:41:17 2009 +0200
+
+    client: store class and instance
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 208406ea9009726c84aa31af5cf8ea93042209e0
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 4 13:03:15 2009 +0200
+
+    client: free icon name
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit eaec928b8ca09228590d3c90a0660dc60efe5995
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Apr 4 13:02:30 2009 +0200
+
+    client: remove useless icon_path
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit b14b52b60c94e7449633615cab45d692edca7a06
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 3 17:15:14 2009 +0200
+
+    awful.mouse: set the default cursor
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 97baf01cec7a5e4652526ed1c8188412c303e842
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 3 17:11:51 2009 +0200
+
+    luaa: add root.cursor()
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit e4b9b2b2b44472a45bef0d18be5430f43e1e00d0
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 3 17:06:44 2009 +0200
+
+    luaa: documentation fix
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit c40609642bed3c88930d89c1c63ed868aec79d14
+Author: Mariusz Ceier <mceier@gmail.com>
+Date:   Fri Apr 3 13:05:03 2009 +0200
+
+    Fix for FocusIn event handler
+    
+    10.7.1 chapter of X11 ([0]) describes many cases when FocusIn event is
+    generated. We are interested only in one FocusIn event type - the one
+    that is sent to window that gains focus.
+    Previous 'if' failed in some cases ([1]), this one should be better.
+    
+    [0]
+    http://cgit.freedesktop.org/xorg/doc/xorg-docs/plain/hardcopy/X11/xlib.PS.gz
+    page 211
+    
+    [1] http://www.mail-archive.com/awesome-devel@naquadah.org/msg01958.html
+    
+    Signed-off-by: Mariusz Ceier <mceier@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit cbf55449a32899be314f7b48bfc481530532a368
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 3 13:09:17 2009 +0200
+
+    luaa: split spawn() into spawn.c
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 16606c6744f14805b2e643207389e49d6ed372da
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 3 11:44:08 2009 +0200
+
+    luaa: only handle tables in loop check
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit c036c8d234c64f487feccc98845c5e392efd00a1
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 3 11:24:03 2009 +0200
+
+    luaa: pop pushed value
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 4605bf5d55f7b8868ff020e35997f0127f0146e2
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 3 11:07:18 2009 +0200
+
+    luaa: change looping detection algo (FS#488)
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 3bf7d2ba2b0d7a41a251d050ced44d66c7bb340d
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Apr 3 11:07:04 2009 +0200
+
+    struct: add void array
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 992ee7e30461e642f32342c50d4227441ee02646
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Apr 2 17:33:55 2009 +0200
+
+    build: depends on x11
+    
+    at least for XStringToKeysym()
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 24a506e3c577952156f9d26bd63842a17ee24e0a
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Apr 2 13:34:16 2009 +0200
+
+    luaa: close accepted socket on exec
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 4722ba6c100208c90071d834fee9b94b537e7352
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Apr 2 13:33:11 2009 +0200
+
+    socket: set close on exec
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 9a7381d02a94898775b1d3422627aa643893f0b5
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Apr 2 13:32:35 2009 +0200
+
+    util: add fd_set_close_on_exec()
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 40d821354a5d8e9ee6c0876a4a261819b0c3e7c4
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Apr 2 13:39:52 2009 +0200
+
+    awful.prompt: close file after reading
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit f24f6529627ed62b6e78ea0c9e5120c983fbad5e
+Author: Nikos Ntarmos <ntarmos@gmail.com>
+Date:   Wed Apr 1 17:56:02 2009 +0200
+
+    build: prepend ${PREFIX} to SYSCONFDIR if not set (FS#468)
+    
+    Also fixes what seemed like a typo in the env checking for
+    XDG_CONFIG_DIR.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit db68ae2ebe36765f7d884a97c43043cf87d7609b
+Author: Maarten Maathuis <madman2003@gmail.com>
+Date:   Mon Mar 30 19:40:02 2009 +0200
+
+    screen, client: clamp strut size to relevant dimension
+    
+    - gnome-panel (for example) requests the space for all it's windows
+    - this approach can never work for multiple applications, so we clamp it
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 264a81f3fbbe26d2092610bfe9cbe1c65abaa487
+Author: Maarten Maathuis <madman2003@gmail.com>
+Date:   Mon Mar 30 19:40:01 2009 +0200
+
+    client: handle struts (a lot) better
+    
+    - WINDOW_TYPE_DOCK are chosen first.
+    - Top/Bottom take precedence over Left/Right.
+    - Struts are automatically updated.
+    - Automatically avoid overlap with other struts or wibox'es.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit addfd7b39f499fbf1ac2ab4d6bc372490e2ac20e
+Author: Gregor Best <farhaven@googlemail.com>
+Date:   Mon Mar 30 23:46:11 2009 +0200
+
+    awful.menu: fix custom keybindings
+    
+    Signed-off-by: Gregor Best <farhaven@googlemail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit e9acefa24e4f358269e44ffceb5f06707c7191f3
+Author: Gregor Best <farhaven@googlemail.com>
+Date:   Mon Mar 30 23:45:29 2009 +0200
+
+    awful.menu: fix error when using the keyboard to navigate on an empty menu
+    
+    Signed-off-by: Gregor Best <farhaven@googlemail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit b437db6ab0e0d3f29fbdf04b708c0555b2f50b69
+Author: Nikos Ntarmos <ntarmos@cs.uoi.gr>
+Date:   Sun Mar 29 21:47:44 2009 +0300
+
+    No need for & as capi.awesome.spawn double-forks
+    
+    Just a minor change: since capi.awesome.spawn does a double fork, there
+    is no need to use a '&' to background the spawned process.
+    
+    Cheers.
+    
+    \n\n
+    
+    From 843d7cc255afb8d07e7c91a3a9d1ed706bc07c88 Mon Sep 17 00:00:00 2001
+    From: Nikos Ntarmos <ntarmos@cs.uoi.gr>
+    Date: Sun, 29 Mar 2009 21:40:57 +0300
+    Subject: [PATCH] No need for & as capi.awesome.spawn double-forks
+    
+    Signed-off-by: Nikos Ntarmos <ntarmos@cs.uoi.gr>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 106e6ed5ab87150347e002b2a5999bf80f84423a
+Author: Alex Cornejo <acornejo@gmail.com>
+Date:   Sun Mar 29 14:26:39 2009 -0400
+
+    Styling inconsistencies
+    
+    Cheers,
+    
+    Alex
+    
+    From b5816ec55073507d4527ad3a77eae1878adb30d3 Mon Sep 17 00:00:00 2001
+    From: Alex Cornejo <acornejo@gmail.com>
+    Date: Sun, 29 Mar 2009 14:24:27 -0400
+    Subject: [PATCH] Fixed some styling issues.
+    
+    Noticed in the latest pull that a commit introduced a lot of styling
+    inconsistencies, decided to remove those and others found by a simple
+    grep.
+    
+    Signed-off-by: Alex Cornejo <acornejo@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 638f9651e5f5f9d9a72f8534e0dd937a98afc571
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Mar 27 16:59:56 2009 +0100
+
+    Remove unused tokens from common/tokenize.gperf
+    
+    This list was generated with the following shell script snippet:
+    
+    for x in $(tr "[a-z]" "[A-Z]" < common/tokenize.gperf)
+    do
+      y="A_TK_$x"
+      if git grep " $y[:)]" > /dev/null
+      then
+        : echo found: $y
+      else
+        echo not found: $y
+      fi
+    done
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit b26a21ab0ca46ec4a034c575cc2a705178580e58
+Author: Maarten Maathuis <madman2003@gmail.com>
+Date:   Thu Mar 26 22:58:17 2009 +0100
+
+    client: fix luadoc typo
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 0bab6e81b9ea699f68d89c7522638bc9440a1b2e
+Author: Maarten Maathuis <madman2003@gmail.com>
+Date:   Thu Mar 26 22:22:05 2009 +0100
+
+    client: add dockable.{set/get}
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 9aeda907382736358604fadd60a8f2a1ba629cbb
+Author: Maarten Maathuis <madman2003@gmail.com>
+Date:   Thu Mar 26 22:13:46 2009 +0100
+
+    client: add a "struts" property
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 47efde17f51c630f9182c5999376e335c5c383a1
+Author: Maarten Maathuis <madman2003@gmail.com>
+Date:   Thu Mar 26 22:13:45 2009 +0100
+
+    client, mouse: improve struts a bit
+    
+    - struts are now additive
+    - allow multiple docks at the edge of the screen, trigger is approaching workarea from inside
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit bf0329d8a3b13bcbf9fc35b7ff449aa445d9180e
+Author: Maarten Maathuis <madman2003@gmail.com>
+Date:   Thu Mar 26 22:13:44 2009 +0100
+
+    client: fix typo
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit cf163797782038562fed70de52f65298ba87226c
+Author: Maarten Maathuis <madman2003@gmail.com>
+Date:   Thu Mar 26 22:13:43 2009 +0100
+
+    client: allow special non-transient windows to be !above
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 68970a3f56155cc95ec8c8369b8d8f120991fed2
+Author: Maarten Maathuis <madman2003@gmail.com>
+Date:   Thu Mar 26 22:13:42 2009 +0100
+
+    titlebar: redo the handling "a bit"
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 07d8168a4524e453de626ec56b1dc8548e1f93bb
+Author: Alex Cornejo <acornejo@gmail.com>
+Date:   Thu Mar 26 14:12:24 2009 -0400
+
+    Removed unused display variable.
+    
+    I just realized this variable was unused in the original code, and in my
+    patched version. I removed it.
+    
+    Signed-off-by: Alex Cornejo <acornejo@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 07b8751ad98b18842efa70ebeac00e9140f2c5e0
+Author: Aleksei Gusev <aleksei.gusev@gmail.com>
+Date:   Sat Mar 28 09:25:19 2009 +0100
+
+    awful.client: removed focusing tag when the urgent window is sticky
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 66483beeee910807c6bd9340ac76fb1bdf3d6305
+Author: Aleksei Gusev <aleksei.gusev@gmail.com>
+Date:   Wed Mar 25 14:51:14 2009 +0100
+
+    awful.widget.tasklist: include sticky windows in the list
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 209039b22bcc65d1aa8194086ab0f786a4fde2d2
+Author: Gregor Best <farhaven@googlemail.com>
+Date:   Tue Mar 24 15:54:43 2009 +0100
+
+    themes.sky: add titlebar close buttons
+    
+    Signed-off-by: Gregor Best <farhaven@googlemail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit ac6ded12a8912a27fbc98f0031bc649ae8f1f26a
+Author: Aleksei Gusev <aleksei.gusev@gmail.com>
+Date:   Tue Mar 24 14:09:43 2009 +0100
+
+    awful.widget.tasklist: added posibility to show c.name when iconified instead of <untitled>
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 2689852e45d4a9818f9b0951811f23d273350c61
+Author: Alex Cornejo <acornejo@gmail.com>
+Date:   Thu Mar 19 20:59:40 2009 -0400
+
+    Changed socket interface to support fallbacks.
+    
+    Now we support a list of fallback targets when opening the socket, and
+    socket binding/connect is done inside socket.* instead of luaa.c or
+    awesome-client.c
+    
+    Signed-off-by: Alex Cornejo <acornejo@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit f0bb0b374bf234652a7bc84e1dd57c3bc2620c4f
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Mar 20 08:04:31 2009 +0100
+
+    client: export urgent flag manipulation
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit cec968633591c47bec0825ddab49cd81aadd8003
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Mar 20 07:59:16 2009 +0100
+
+    awful.hooks: fix dbus registration
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit a0d36316c4f9b66b6cf4968a968e947772baadf2
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Mar 19 11:04:04 2009 +0100
+
+    awesomerc: Lua prompt has no completion
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 405b5d0123eba5bc8104ce064949c1bc90052c85
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Mar 19 11:03:04 2009 +0100
+
+    awful.completion: fix compatibility (FS#474)
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 7fc8f4abc73f78139467efcab693ec04214b8846
+Author: Alex Cornejo <acornejo@gmail.com>
+Date:   Tue Mar 17 18:47:41 2009 -0400
+
+    Replaced double loop with a single one.
+    
+    Unless I am missing something there is no purpose of using two loops
+    instead of one.
+    
+    Signed-off-by: Alex Cornejo <acornejo@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 96cf05f00285c3789e9bb49722951300ad2581ad
+Author: Alex Cornejo <acornejo@gmail.com>
+Date:   Tue Mar 17 18:41:52 2009 -0400
+
+    Fixed socket usage to work with AFS home folders.
+    
+    On corporate/university environments it is not uncommon for the home
+    folder of each user to be hosted on OpenAFS (so you can work from any
+    terminal and IT services can backup everything at will).
+    
+    However it is not possible to create sockets in AFS, hence when awesome
+    attempts to create a socket at ~/.awesome-ctl it fails. To fix this
+    awesome now uses /tmp/.awesome-ctl as a fallback before giving up.
+    
+    Signed-off-by: Alex Cornejo <acornejo@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 691b732f1ab74de967372482d0ba42ad668b4a75
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Mar 17 20:01:38 2009 +0100
+
+    awesome-client: Don't go into an endless loop if awesome dies
+    
+    This patch makes awesome-client give up after 10 tries when it lost the
+    connection to awesome. Also it now waits for some time between reconnect
+    attempts.
+    I like the behaviour of this, but some of the code seems a little icky...
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 7f7aac4583f0fcc3accf17757a85bfb72f16f79f
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Mar 17 19:50:21 2009 +0100
+
+    wibox: fix a (harmless) X protocol error message
+    
+    When creating a wibox the call to simplewindow_orientation_set() caused a
+    pixmap to be allocated, but the width and height weren't initialized yet.
+    Thus, awesome tried to create a 0x0 pixmap which the X server doesn't like.
+    
+    This fixes the error and I haven't noticed any bad effects due to this patch.
+    Plus this should avoid some unneeded pixmap allocations. ;)
+    
+    W: awesome: xerror:289: X error: request=CreatePixmap, error=BadValue
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 6395db433188385b91c87a8831ad0eb970cb5e5e
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Mar 17 17:58:28 2009 +0100
+
+    swindow: change border_width handling
+    
+    It's now outside of the geometry.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 5ee16fb72d4fbd34f2e975979471342e6b79fa6f
+Author: Fredrik Ax <frax@ioi.dk>
+Date:   Tue Mar 17 09:59:24 2009 +0100
+
+    awesomerc: change tasklist button 3 default behaviour
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 5afd2586970e23165c900e03e6ee600e6d5a8ccd
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sun Mar 15 10:01:25 2009 +0100
+
+    luaa: wlen() will return -1 on error
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 31aa7e66eb590ab4fb18ac0458dabdf97c1dec59
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Mar 14 17:20:17 2009 +0100
+
+    luaa: remove otable C implementation
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit eac5936393d28da8bc271b3513dfc9d5c5f27647
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Mar 14 17:19:58 2009 +0100
+
+    lib: use Lua implementation of otable
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 58679a328b51b36fb61824dcb7c782fa6b12e4b8
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Mar 14 17:19:47 2009 +0100
+
+    otable: Lua implementation
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 0f8c71e17f287647dcf363be6954081b93af8ad3
+Author: Maarten Maathuis <madman2003@gmail.com>
+Date:   Sat Mar 14 15:48:37 2009 +0100
+
+    unbreak "client: stop using otable"
+    
+    - Some tag icons were disappearing.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 6430738f1744c5734da6f5a7177b2ef33c0f9265
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Mar 14 13:47:50 2009 +0100
+
+    client: stop using otable
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit b14036171d3f7d8d07203bc6a1a22b52797b93c1
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Mar 14 13:38:53 2009 +0100
+
+    key: stop using otable
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit a4373e65cf515f0c68ece9ad1540e1d71e8d2c65
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Mar 14 13:34:38 2009 +0100
+
+    mouse: stop using otable
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit adf0fd32342fb48cc79af84540c771df44844fd0
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Mar 14 13:33:52 2009 +0100
+
+    tag: stop using otable
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit f0ca12837ac90e69b645519486f503f4b8235834
+Author: Gregor Best <farhaven@googlemail.com>
+Date:   Thu Mar 12 20:11:52 2009 +0100
+
+    awful.client: store floating geometry of clients in awful
+    
+    Signed-off-by: Gregor Best <farhaven@googlemail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 2d816fd80c8a6a316fac9dd8e643124ffb03fd93
+Author: Gregor Best <farhaven@googlemail.com>
+Date:   Fri Mar 13 22:23:35 2009 +0100
+
+    awful.layout.suit.magnifier: fix position of focused screen
+    
+    Signed-off-by: Gregor Best <farhaven@googlemail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 2aeb2304e799ef7fbc910a8bdd978b53593be033
+Author: Damien Leone <damien.leone@fensalir.fr>
+Date:   Mon Mar 9 14:22:13 2009 +0100
+
+    awful.menu: add custom keybindings feature
+
+commit c29f57a5af6ecc5e1794b7dd1356faa1dde4cf8c
+Author: Damien Leone <damien.leone@fensalir.fr>
+Date:   Mon Mar 9 14:14:29 2009 +0100
+
+    awesomerc: add keybinding to open menu with keygrabber
+
+commit effb03a9768d26fab5ab4dc5c830b7421355f786
+Author: Damien Leone <damien.leone@fensalir.fr>
+Date:   Mon Mar 9 14:14:01 2009 +0100
+
+    awful.menu: add keyboard navigation feature
+
+commit 031ebc6d98d6bc8c62bae0a417963b10a536001f
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Mar 11 19:04:12 2009 +0100
+
+    naughty: add support for hints.icon_data
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 311a485319c0816ba7ce90b0f08c155291b3f9f3
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Mar 11 17:11:06 2009 +0100
+
+    naughty: allow icon to be an image object
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 56e7262cc5d37090ea4058a6900e3db11d97e3d7
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Mar 11 16:22:21 2009 +0100
+
+    dbus: add support for fixed size array of boolean
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit d61068f5d532a325ae3555cd05a3cdbdb6a44a9e
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Mar 11 16:20:11 2009 +0100
+
+    dbus: add support for fixed size array of double
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 7e36c9df9186d6d3b4f55953d50c2e253fc1bd32
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Mar 11 16:19:40 2009 +0100
+
+    dbus: add support for fixed size byte array
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 6e1c9875c57811906e04f29856811f08ae08561f
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Mar 11 16:19:30 2009 +0100
+
+    dbus: add support for struct
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit e823596e5ab23ec3a46efdbbbd979dc5cc06f51a
+Author: Damien Leone <damien.leone@fensalir.fr>
+Date:   Wed Mar 4 19:42:25 2009 +0100
+
+    awful.menu: optimizations
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 858802537ff86214c10e6518b4bcd7eadc7617cf
+Author: Lionel Ott <white.magic@gmx.de>
+Date:   Fri Mar 6 13:44:07 2009 +0100
+
+    Implemented bottom and middle alignment for textbox backgrounds
+    
+    - background images of textbox widgets can now be aligned vertically
+      to the bottom and middle aswell as the top
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 970b56658026425af014eee6f7bf7bf9a4a1cc7a
+Author: Lionel Ott <white.magic@gmx.de>
+Date:   Fri Mar 6 13:43:03 2009 +0100
+
+    Added AlignMiddle to alignment_t structure
+    
+    - Added AlignMiddle to denote a vertically centered element
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit cc54c32c5ff6f91b46174a53fb7d427509e34250
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Mar 3 10:22:39 2009 +0100
+
+    wibox: add support for background image (FS#464)
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit e56f8f30d0d66f90cae4843b0366f2c594f84fad
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Feb 27 17:22:03 2009 +0100
+
+    awful.widget: split
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit c70f284b450484b5432bcd1f4d6a46ae6de74f79
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Feb 27 17:11:02 2009 +0100
+
+    draw: check harder for visual
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 41296008a3c31d65a4d941fe4c9da1f13efef8af
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Feb 27 15:40:30 2009 +0100
+
+    awful.layout.suit.floating: simplify
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 122e1cc28a987ff40771b4e871d6fbd2db8c62fb
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Feb 27 15:40:01 2009 +0100
+
+    awful.layout: make layout optional
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 84ee8f1f92c1a2b5fe99716d17082e9a3f3d019e
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Mar 6 14:01:29 2009 +0100
+
+    event: implements Bob Marley version 2
+    
+    Version 1 was supposed to store somehow the mouse coordinates to drop
+    spurious EnterNotify.
+    
+    Now, we use a simpler way: we just tell the X server we do not want to
+    receive this events while we are arranging, since we would get spurious
+    ones.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 17e2d9e58f6ee5530421eaab6874e2950d7a58fd
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Feb 26 12:40:24 2009 +0100
+
+    client: remove _AWESOME_TAGS property
+    
+    We use EWMH hints.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit cc2b8f4e89cc600a514be26785a256928e25d87f
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Feb 26 12:36:52 2009 +0100
+
+    client: remove useless _AWESOME_FULLSCREEN
+    
+    We use EWMH hints, it's enough.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit c635d3e2d13aa06bac7d232ad4c22135302c4f82
+Author: Christian Kuka <ckuka@madkooky.de>
+Date:   Thu Feb 26 12:20:13 2009 +0100
+
+    awful.completion: add zsh completion
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 2a2166d85690f156a42868753cc20e298348cbe3
+Author: dcurtis@cs.uiowa.edu <dcurtis@cs.uiowa.edu>
+Date:   Tue Feb 24 14:50:46 2009 -0600
+
+    awful.layout: do not use global env
+    
+    Layouts are passed a data structure that holds all the
+    information they need to render the clients.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit a2fe3919f2b12abf1f8ef260f0dce79ecb4c608a
+Author: dcurtis@cs.uiowa.edu <dcurtis@cs.uiowa.edu>
+Date:   Tue Feb 24 14:46:29 2009 -0600
+
+    awful.layout: store name into module
+    
+    Layouts now store their name as a string and their arrange function
+    in a table rather than being stored as the entire module.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 8745d691fe8195b0debd54eb49e9321057650669
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Feb 24 17:32:48 2009 +0100
+
+    buttons: change grabbing method
+    
+    We stop grabbing buttons on root windows. We select button press and
+    release events, and then we check that we have a bindings for them.
+    This allow to simply grab buttons on client once, and not redo such
+    things on arrange or mouse-over-window changes.
+    
+    Most window managers do like this, anyway.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 5154cfc19feabbb521c9828db369a6229edc3a38
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Feb 26 12:29:37 2009 +0100
+
+    remove deprecated functions
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>

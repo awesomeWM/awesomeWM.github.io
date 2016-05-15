@@ -1,0 +1,507 @@
+Alex Cornejo (1):
+      Fixed bug in xcb version checking.
+
+Andrei 'Garoth' Thorp (1):
+      sky-theme: Initial import and integration
+
+Andrei Thorp (1):
+      Added swapbydirection to client.lua.in in awful.
+
+Damien Leone (12):
+      awful.menu: import
+      awesomerc: added menu stuff
+      awful.menu: align text when item doesn't have icon
+      default theme: fix typo in icon path
+      awesomerc.lua: use nano by default if no editor found in env
+      awful.menu: change menu parameters to use a table, add height and width parameters
+      awful.menu: prevent menus from poping outside the work area
+      awful.menu: fix screen width computation
+      awful.menu: add custom theme and fix various bugs
+      awful.menu: add a close function and fix various bugs
+      awful.menu: add menu_toggle parameter
+      awesomerc: add menu_toggle parameter for the menu launcher
+
+Espen Wiborg (2):
+      awful.widget: Implement taglist.label.noempty in terms of label.all
+      revelation: Add arrow key behavior
+
+Ez (1):
+      awful.client: fix urgent.jumpto
+
+Félix C. Morency (1):
+      build: set minimum xcb version required
+
+Gregor Best (23):
+      add beautiful support to invaders.lua and change Garoth' name
+      Change enemy colors
+      Fix 1800 points bug and finally get beautiful support working
+      Various changes to awful.util and invaders
+      Increased Invaders difficulty
+      invaders: change enemy distribution
+      invaders: add luadoc comments
+      invaders: clean code
+      invaders: change points per enemy
+      invaders: remove unused graphics
+      invaders: fix indention and spacing
+      invaders: remove useless shots table
+      invaders: code cleanup
+      invaders: code cleanup
+      invaders: replace ammo with round display
+      invaders: fix broken screenshot path
+      beautiful: add get_image function
+      default theme: add layout icons
+      awesomerc: add support for layout icons from theme
+      invaders: add pause button
+      invaders: fix highscore display
+      awesomerc/default theme: define awesome icon in theme instead of rc
+      awful.widget: fix tasklist urgent background
+
+Gwenhael Le Moine (1):
+      Fine tuned 'fairh' and 'fairv' layouts.
+
+Julien Danjou (369):
+      awful: strip alpha channel in pango colors
+      awesome-client: fix memleak in history
+      awesome-client: read on !tty
+      luaa: fix typo
+      mouse: rework mouse buttons API, support release events
+      draw: add support for top and left bg_margin
+      awful: add button widget in awful
+      awful: titlebars use awful.widget.button now
+      client: check for visibility before arranging
+      client: add support for the sticky attribute
+      client: remove useless skip attribute
+      client: rework all stacking stuff
+      client: export fullscreen
+      statusbar: add statusbar_getbywin()
+      event: simplify widget get by coords
+      widget: add support for mouse enter and leave events
+      awful: button reset on mouse leave
+      hooks: rename mouseover to mouse_over and simplify config
+      client: split X props; handle fullscreen status
+      mouse: simplify button push
+      awful: button handle enter if mouse button pushed
+      awful: implement under_mouse placement
+      titlebar: remove/add now handle border
+      client: now support fullcoords, with border and titlebar included
+      awful: add no_overlap and no_offscreen placement
+      placement: deprecate in favor of awful.placement
+      client: remove deprecated focus_{set,get}
+      mouse: cosmetic
+      keygrabber: push an hash table instead of indexed table
+      client: store size hints
+      client: use a type attribute for NET WM window type
+      client: export window type
+      awful: refuse to set titlebar on no-normal windows
+      titlebar: restack clients on titlebar add
+      client: support input focus hints
+      client: honorsizehints is now default
+      awful: create a new launcher widget
+      awesomerc: logo is now a launcher
+      ewmh: add support for _NET_WM_STRUT_PARTIAL
+      client: manage take phys_screen as arg
+      screen: move screen_getbycoord()
+      statusbar: only rebuild when necessary
+      lua: export AWESOME_RELEASE
+      tasklist: ignore some windows type
+      client: inline isvisible()
+      client: stop default tagging of sticky windows
+      screen: invalidate widget cache on move
+      mouse: redraw statusbar rt on screen move
+      ewmh: avoid useless p_new
+      awesomerc: simplify
+      client: split minimized out of hidden
+      event: unmanage or external reparenting (FS#41)
+      client: floating state is only for normal type
+      client: add a DOCK layer
+      awful: filter focus by type
+      lua: deprecate and replace {font,colors}_set
+      lua: push color without alpha is not needed
+      common: move draw, xscreen and swindow out
+      image: add new image type
+      ewmh: store netwm icon as draw_image_t
+      client: merge icon_path and netwm icon
+      widgets: replace appicon by imagebox
+      property: use xcb property handler system
+      client: open transient windows on the same screen
+      xutil: inline xutil_error_delete
+      draw: remove GdkPixBuf support
+      draw: iconv is local
+      image: merge draw_image_t and image_t
+      image: add function to create from argb32 data
+      image: add rotate and crop methods
+      ewmh: add support for _NET_WM_STATE_TOGGLE
+      ewmh: update window hints
+      client: deprecate visible_get
+      client: introduce isvisible()
+      client: client.get() supports screen as argument
+      awful: stop using deprecated visible_get()
+      xscreen: remove useless screensinfo_delete
+      screen: merge with xscreen, remove screens_info
+      xutil: do not return pointer, init struct instead
+      titlebar: remove old position attribute
+      statusbar: remove width_user
+      systray: use a_ functions
+      statusbar: remove phys_screen attribute
+      screen: store statusbars as array
+      util: import orientation
+      draw: merge draw context into swindow
+      swindow: do not store phys_screen; store border color
+      window: remove spurious printf
+      event: fix left/right events
+      event: add partial redraw
+      wibox: merge statusbar and titlebar types
+      use more precise types
+      wibox: remove name
+      wibox: wibox_refresh merge statusbar and titlebar
+      wibox: merge statusbars and titlebars Lua objects
+      luaa: remove useless csio2 variable
+      awesome-client: handle disconnection
+      keygrabber: add support for XKB_KEYS
+      client: resize returns void
+      client: add property hook
+      wibox: add full geometry
+      wibox: add ontop attribute
+      util: remove off position
+      awesome-client: reconnect if disconnected
+      wibox: rework, merge titlebar
+      awful: use minimized rather than hidden in tasklist label
+      event: only grab root if mouse is on root
+      build: add xproto dep
+      build: imlib2 is no more optional
+      build: xproto 7.0.10 is enough
+      build: remove useless imlib2 option
+      Revert "build: xproto 7.0.10 is enough"
+      build: do not do build link if it exists
+      wibox: compute phys_screen on right index
+      titlebar: fix border color setting
+      awful: split in several modules
+      awful.client: remove useless vars
+      awful.prompt: fix history save
+      awful.prompt: add math lib
+      client: export size hints
+      lua: add awesome.conffile()
+      awful: add helper to check configuration file syntax
+      tabulous: store tags in otable
+      lua: add --check option
+      awful.util: use loadfile instead of loadstring
+      awful.util: fix wrong variable
+      lua: merge font and colors setters code, add comments
+      xutil: store cursor font as static
+      xutil: use token for keys
+      draw: allow text to be on multiple lines
+      taglist: set correctly area height
+      awful.client: use right data array
+      awful.client: maximize works in floating layout
+      awful: add compatibility with old function names from util
+      awful.widget: use margin instead of spaces
+      widget: move widget_{set,get}
+      awful.placement: fix no_overlap (FS#335)
+      awesome: init systray earlier
+      client: push splash and dialog on modal layer
+      ewmh: order WINDOW_TYPE
+      desktop: change description
+      doc: change description in README
+      icons: reduce square size
+      wibox: handle position on new correctly
+      lua: return on socket init failure
+      layout: add fullscreen
+      event: handle background changes
+      client: change isprotodel to hasproto()
+      property: check input flag set (FS#340)
+      util: fix strsplit end buffer
+      wibox: newindex allow border color change
+      awful.titlebar: do not build args
+      wibox: update position correctly for titlebar
+      wibox: modify border color live
+      luaa: send back but do not block (FS#338)
+      awesomerc: split promptbox by screen (FS#332)
+      wibox: initialize wibox borders correctly (FS#343)
+      image: add crop_and_scale() method
+      invaders: import
+      luaa: add luaA_toudata()
+      client: do not allow to modify name
+      mouse: add index on button, permit object cloning
+      util: document xmemdup()
+      luaa: add stack dumping debug function
+      luaa: split luaA_register() out of luaA_registerfct()
+      hooks: add clients hook
+      imagebox: add support for background color
+      invaders: crush png files
+      client: export skip_taskbar
+      event: get coordinates of visible widgets only
+      Rewrite {tag,task}list in Lua.
+      lua: check for ref value before getting them
+      graph: use array instead of linked list
+      progressbar: use bar array rather than linked list
+      awful.widget: tasklist to update on name changes
+      widgets: clear private struct
+      client: icon_name is stored and watched
+      client, screen: use geometry rather coords as keyword
+      awesomerc: use geometry
+      libs: use geometry instead of coords
+      wibox: handle widget_node_t as array rather than list
+      structs: move some define out
+      widget: bug fix when widget->len = 0
+      event: handle enter widget on window enter
+      event: reset wibox widget mouse_over on leave
+      image: add width and height attributes
+      imagebox: fix luadoc fields
+      graph, progressbar: fix bar/plot additions
+      widgets: use a geometry callback
+      awful.menu: add support for functions
+      awful.util: add support for config dir
+      awesomerc: use awful.util.getdir rather than env
+      image: add argb32() method
+      awesomerc: fix editor when nil
+      awful.menu: add a menu for listing clients
+      awful.titlebar: use pairs instead of ipairs
+      draw: remove useless AlignAuto
+      widget: store supported align and use to render flex widgets
+      awful.widget: fix taglist label without beautiful (FS#353)
+      wibox: draw before map to avoid artefacts
+      wibox: support for border when not floating
+      widget: return self for buttons
+      mouse: fix button delete
+      awful.client: rename focus and swap bydirection
+      mouse: move declaration from structs to mouse header
+      cnode: move struct to cnode header
+      remove a bunch of useless #include-s
+      event: save mouse position in wibox events
+      awful.menu: escape client name in clients menu
+      awesomerc: remove tabulous
+      widget: unref callbacks on delete
+      luaa: merge tostring() with DO_LUA_NEW
+      awesomerc: remove useless wibox name
+      icons: crush
+      hooks: split out of luaa
+      wibox: check for table loops
+      awful: fix marking
+      keybinding: store in globalconf
+      event: regrab keys on keyboard mapping change (FS#365)
+      client: better handling of transient windows stacking
+      mouse: drop alpha channel in infobox
+      wibox: stack correctly on attach
+      lua: color pushlstring gets real len
+      client: fix ontop wibox stacking
+      awful.client: remove dumb comment line
+      wibox: check floating size
+      wibox: copy pixmap after mapping
+      client: fullscreen do not care about padding
+      awful.client: deprecate swap()
+      imagebox: fix index return value
+      imagebox: allow to not resize images
+      draw: support top and bottom as align
+      imagebox: support vertical alignment
+      awesomerc: use fullgeometry in mouse warping (FS#351)
+      draw: remove phys_screen from font handling
+      swindow: set phys_screen correctly in draw context
+      awful.screen: fix focus doc
+      awful.screen: enhance doc
+      client: move to screen after checking hints
+      widget: make name optional
+      luaa: new warning function
+      widget: unknown type are no fatal anymore
+      widget: add compatibility code for taglist and tasklist widgets
+      mouse: add compatibility code for mouse()
+      widget: add mouse_add compatibility
+      luaa: change deprecate() with more useful info
+      luaa: add compatibility for mouse_add
+      hooks: fix mouseover compat
+      draw: stop exporting draw_text_markup_expand
+      image: allow empty image creation
+      awesomerc: remove useless names
+      awesomerc: reduce header
+      awesomerc: fix spacing
+      awesomerc: move awesome icon in top left corner
+      client: handle fixed window stacking and DIALOG windows
+      max: use phys_screen to get focus client (FS#366)
+      textbox: add ellipsize and wrap mode support
+      luaa: add support for meta __ipairs
+      tag: stop checking for tag duplication and be less picky, only warn user
+      wibox: only warn on looping table
+      screen: only warn if no tag left
+      change codename
+      awful, tabulous: change titles
+      awful.beautiful: fix comments
+      awful.client: rename master to getmaster
+      awful.completion: doc fixes
+      awful.menu: rewrite to be more object compliant
+      textbox: document wrap and ellipsize
+      luaa: add XDG_CONFIG_DIR as include path
+      luaa: just expand path
+      awesomerc: upgrade swap binding
+      luaa: clean XDG_CONDIG_DIR package path adding
+      luaa: split include out of load, do it on init
+      awful.menu: fix icon widget if no image given
+      theme: use white icon
+      awful, beautiful: getimage rather belongs in beautiful
+      image: check image width and height
+      beautiful: drop getimage()
+      util: check asprintf return
+      awful.widget: check for image
+      tag: return after warn
+      themes: move theme icons to themes/
+      client: fix fixed size detection and resize blocking
+      client: reduce transient client flickering
+      awful.client: fix master compat
+      awesomerc: use getmaster()
+      theme: fix paths
+      imagebox: don't draw anything is not enough space (FS#368)
+      client: add support for transient_for in Lua
+      awful.widget: fix tags removal
+      luaaA: add luaA_unregister()
+      keygrabber: add stop() method
+      tag: reset client tag props on #tags change
+      awful.menu: store active child
+      stack: add stack_client_append()
+      client: add client_lower()
+      client: add lower() method
+      awful.util: deprecate write on stderr
+      awful.titlebar: fix theme support
+      STYLE: add missing semi colon
+      tag: fix bad len retrieval
+      client: document and rename size_hints
+      revelation: import
+      beautiful: merge awful.beautiful, stop registering system
+      awful.prompt: fix typo
+      awful.prompt add in history also on 'j' and 'm'
+      awful.prompt: merge some keys
+      awful.prompt: stop grabbing keyboard before calling callback
+      AUTHORS: add D. Leone, G. Best and koniu
+      luaa: add {new,}index to awesome lib, use for font
+      luaa: add support for conffile in index
+      luaa: use fg/bg as keys for colors
+      beautiful: change description
+      titlebar: wipe simplewindow before unrefing wibox (FS#373)
+      luaa: add more deprecation information
+      client: return real floating status
+      change codename
+      client: merge fullgeometry with geometry
+      client: do not resend border width on resize
+      client: register floating geom if it comes from floating
+      awesome.1: remove tabulous bindings
+      client: fix translator for fixed window, add BELOW (FS#377)
+      buffer: use a_strlen()
+      wibox: kick systray on detach
+      magnifier: use border size when n = 1
+      client: geometry() honors size hints hint
+      awful.widget: document taglist_squares_resize and fix
+      awesomerc.5: update
+      awesome.1: add missing key bindings
+      config check: be more precise about what we check
+      client: fix titlebar stacking
+      dbus: refer to D-BUs
+      awful.widget: fix name on minimize
+      tag: unref after calling hook
+      tag: always call tagged hook with 2 args
+      luaa: check that function is not NIL before pushing and calling
+      build: do not use git dashed command
+      change codename
+      awsetbg: remove -B option
+      awsetbg: add manpage
+      naughty: fix font support
+      theme: change default background
+      keygrabber: remove duplicate case (FS#386)
+      awful.prompt: return true since we unregistered (FS#383)
+      awesomerc: add missing check for client.focus
+      awesomerc: typo
+      theme: change default background
+      awesomerc: use byidx()
+      naughty: notify() returns notification object
+      awful.client: fix iteration over removed elements
+      change codename
+      draw: height computing honor margin top
+      draw: fix text alignment on small width
+      awful.widget: update taglist on focus change
+      awful.widget: tasklist need update on arrange
+      lua: do not use otable where table are enough
+      Revert "lua: do not use otable where table are enough"
+      awful.widget: store buttons in tasklist
+      hooks: call tags hooks with more arg
+      awful.widget: stop using useless closures in taglist
+      change codename
+      client: check KDE dock app before
+      client: fix returned value for non transient windows
+      awful.titlebar: do not overwrite mouse bindings on close
+      wibox: setvisible checks for screen
+      luaa: check that object is a table before calling lua_next()
+      wibox: remove spurious fprintf()
+      luaa: pop element if we do not call lua_next()
+      change codename
+
+Konstantin Stepanov (1):
+      socket: fix proto not supported under FreeBSD (FS#349)
+
+MATSUU Takuto (4):
+      awsetbg: mkdir recursive
+      awsetbg: enhance display command
+      awsomerc: fix awful eval
+      build: add x11-xcb as dep
+
+Maarten Maathuis (10):
+      magnifier: Also resize in the case of a single window.
+      magnifier: Focus on the parent if a non-tiled window has a transient_for.
+      titlebar: generate mouse_enter and button events for the entire titlebar (and redirect them to the client)
+      client: Make sure the titlebar is visible.
+      client: fix typo
+      client: drop unnecesary resize
+      awful.client: fix luadoc syntax for visible function.
+      awesomerc: delay client focus until after it's on the right tag.
+      magnifier: try harder to find parent of dialog
+      awful.client: fix minor luadoc issue
+
+Maxime COSTE (1):
+      tabulous: do not swap clients in display
+
+Michael Hofmann (2):
+      client: stack wiboxes on top of desktop windows
+      awful.widget: fix iteration over removed elements
+
+Nathan Weizenbaum (3):
+      gitignore: add binaries
+      awesome-client, socket, lua: make awesome-client into a true REPL
+      awful: shift+tab cycles backwards through prompts
+
+Norbert Zeh (3):
+      tile: evenly distribute slave clients over slave columns
+      awful.widget: allow customization of tag icon
+      Made the fair layout really fair
+
+Pawel F (1):
+      awsetbg: add habak support
+
+Radosław Szkodziński (1):
+      tasklist: add support for backward ordering - tasklist.invert
+
+Sébastien Gross (2):
+      awsetbg: Add montage(1) support
+      awful.prompt: Add support for KP_Return
+
+Thomas Harning Jr (1):
+      awful.titlebar: Pull in missing dependencies and grab theme details
+
+koniu (22):
+      naughty: import
+      naughty: destroy() now takes object instead idx (FS #350)
+      naughty: icon_size added to config and notify()
+      naughty: destroy oldest if no room for new popup
+      naughty: new option 'config.hover_timeout'
+      naughty: config.icon_size works now (FS#359)
+      naughty: new notify() parameter 'run'
+      naughty: cleanup of some code repetitions
+      awful.prompt: add underline style to in run() args
+      naughty: check workarea in get_offset, not at load
+      naughty: fix a bug in destroy()
+      naughty: popup size can now adjust to icon height
+      naughty: text-icon separator uses margin now
+      naughty: new config option 'margin' + 2 renamed
+      awful.prompt: add new field 'text' to run() args
+      naughty: new argument 'width' in notify()
+      awful.prompt: new arg 'selectall' in add()
+      awful.prompt: add trail space in prompt_text_with_cursor()
+      naughty: arg 'screen' to notify() is now respected
+      naughty: fix beautiful support properly
+      naughty: fix a bug with variable width popups
+      awsetbg: add solid xsetroot fallback if no real wpsetters
+

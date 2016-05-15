@@ -1,0 +1,370 @@
+Fabienne Ducroquet (1):
+      mirror layout
+
+Hans Ulrich Niedermann (17):
+      Generate misc headers in the builddir, not srcdir
+      Use pre-defined values for build infos (ifdef)
+      fix header generators for out-of-source builds
+      Compile executable with correct version number
+      Common version message for awesome and -client
+      Add --(help|version) to awesome-message
+      Terser version update message
+      Honor GIT_DIR setting when determining version
+      Use getopt_long properly
+      Use proper prog name 'awesome-message' in messages
+      Use getopt_long() in awesome Simplify getopt_long usage in awesome-message.
+      Ship forgotten UPGRADE file
+      More verbose warnings if doc tools not present
+      Generate man pages IFF doc tools are present
+      Check whether 'xmlto man' actually works
+      Add make targets replacing the running awesome
+      Determine screen number from $DISPLAY for restarts
+
+Julien Danjou (302):
+      rename NameFuncLink to name_func_list_t
+      cosmetic
+      change ifdef
+      add list header
+      use lists functions for Client
+      use list functions for rules
+      use list functions for Key
+      use list functions for Button
+      use list function for Widget
+      rename LayoutsList to LayoutList
+      use list functions for statusbar
+      statusbar_draw is static
+      use list functions for Tag
+      use list functions for TagClientLink
+      use list functions for Layout
+      use cycle functions
+      rename prev to next
+      focuslist now uses list functions
+      rename is_tag_match_rules() to tag_match_rule()
+      insert and use rule_matching_client()
+      documentation update
+      rename FocusList to client_node_t
+      doc update
+      use a_str functions
+      doc update, and window_settrans return status
+      use a_strncpy
+      introduce Layout var
+      draw rectangle take an Area as arg
+      draw_text takes a Area as arg
+      rename tag_view to tag_view_byindex
+      clean some tag stuff
+      rename TagClientLink to tag_client_node_t
+      split config.h, and move DO_SLIST()
+      rewrite client_manage()
+      tag_client_with_rule() only tag is a rule match
+      respect rules
+      add icons for new layouts
+      auto generate uicb list
+      print warning if uicb not documented
+      cosmetic
+      rename view_prev_selected
+      autogenerate widget list
+      autogenerate layout list
+      move gen scripts in build-utils
+      add Display as arg
+      rename viewprev_selected to view_prev_selected to match uicb name
+      push
+      fix bug with statusbar recovering each others (FS#37)
+      preinit in config.c
+      make tag_view_prev and next to by cycling
+      fix swap
+      resize on floating set
+      use client_setfloating() to change floating attribute
+      move clients' uicb away from layout.c
+      doc
+      fix bug in swap
+      make swapnext cycling
+      drop EnterWindow events after a keypress
+      add client_find_next_visible()
+      draw a background for icons in tasklist
+      XSync after each event
+      rename tileup/down to top/bottom
+      change tile() to take a Position as argument
+      add more functions to manipulate tags
+      add tag_view() function
+      store screen in tag
+      add prefix##_list_next_cycle
+      use tag_list_next_cycle()
+      add a new cache system for arrange()ing
+      init geometry, and do not need to set need_arrange, setfloating() does it
+      clean out some need_arrange uneeded
+      restack() unconditionnaly
+      use client_setfloating()
+      arg is useless now
+      add a common infra to drop events
+      don't leave unused pixels
+      simplify restack()
+      drop some restack code which seems useless to me
+      ignore layoutgen.h
+      call restack() only when focus()ing
+      raise floatings windows on arrange if needed
+      simplify, use get_current_layout
+      add support for keycode instead of only string
+      cosmetic
+      move list.h and util.[ch] to common/
+      move awesome-client-common to common/
+      initial x,y coords are set with respect to statusbars (FS#45)
+      call get_screen_bycoord() anyway
+      don't draw if we do not have space too
+      stop using get_screen_count()
+      detect clone screens (FS#42)
+      textbox width is limited to unused space
+      remove printf()s
+      add tag_view_byinde()
+      use tag_view_byindex()
+      break on first button found
+      grab buttons on all root windows
+      check cairo errors
+      print cairo errors
+      move BUTTONMASK away from header
+      add some code for creating SimpleWindow-s and use it for statusbar
+      remove unused attribute
+      do not return nothing on errors
+      store simple window geometry
+      add simplewindow_move() function and use it for statusbar
+      change align type
+      return XMoveWindow status, remove useless #include
+      fullscreen respect padding
+      fix bottom statusbar position
+      rework statusbar stuff
+      stop being stupid, use only one Drawable
+      draw nothing is icon is invalid
+      add function to copy drawable to window
+      use simplewindow function to refresh and rework left/right pixmap handling
+      fix restart stuff
+      kick out rotate option
+      replace some code using switch and warn()
+      realloc smaller if xinerama_screen_number != screen registered
+      rename nscreens to nscreen
+      save client props on floating
+      don't regive focus to already focused window
+      make draw functions more independant
+      move draw files to common/
+      stop waiting for events in queue
+      use client_setfloating() in uicb_togglefloating()
+      cosmetic
+      cosmetic
+      return if no widget match
+      refresh stuff even in socket events
+      add some useless infos in version :-)
+      add support for machine type too
+      raise window on move
+      fix bar left position
+      remove drop event infrastructure
+      remove opacity_unfocused
+      remove selscreen arg
+      rewrite focus() a bit
+      warn() on XErrors
+      Revert "rewrite focus() a bit"
+      reduce errors list allowed
+      do not drop XSetInputFocus errors; but we can not give focus to unmapped windows
+      rewrite focus handling
+      handle focus history on arrange()
+      replace bad code for configurenotify
+      remove allow_lower_float option
+      unused var
+      add sloppy_focus_raise option
+      remove focus_move_pointer option
+      fix handling of window raisings
+      set floppy_raise_focus to false by default
+      change default font
+      always grab Button1
+      split out simple window handling
+      clean some stuff
+      update authors, add Marco Candrian & Hans Ulrich Niedermann
+      simplify header inclusion
+      ignore awesome-version-internal.h
+      first proto of awmessage
+      rename to awesome-message to be respect awesome naming scheme
+      use a boolean value
+      rename initxcolor to draw_color_new() and move it to draw.c
+      use draw_color_new()
+      rename draw_get_context() to draw_context_new()
+      rename focus() to client_focus()
+      missing include
+      tmp_color can be uninitialized
+      fix header
+      windows can be swaped with mouse in tiled layout
+      handle screen changes
+      allow to refresh layout when resizing to see in live what's happening
+      better between-screen-moving handling, and allow for live re-arrange()-ing
+      use c->screen geometry, not display's
+      type: screen != phys_screen
+      add area_match_coords() and area_match_area()
+      remove printf()
+      use client's screen here
+      maximized windows shouldn't be handled
+      drop some EnterWindow events on swap/zoom
+      add support for smart windows placement in floating layout
+      respect border widths
+      rename some client functions
+      move define
+      rename get_current_tags to tags_get_current()
+      change padding_left to padding for progressbar
+      remove unused function
+      better use of the space in smart placement
+      rework include
+      change define
+      rename some screens function
+      add new awesome-check program to check configuration file syntax
+      change prev_selected
+      handle CFG_SUCCESS case
+      remove awesome-check, move that to an -k option to awesome
+      remove awesome-check
+      rename opts to awesome_opts
+      split out config stuff
+      awesome-run use awesome config file
+      reuse cairo context stuff
+      fix option parsing
+      don't compute position if program or user specified ones
+      prioritize UnmapEvent-s
+      not size, position
+      simply ignore XSetInputFocus errors
+      add UPGRADE to dist
+      convert text to draw to UTF-8
+      readd some code to check where the mouse is on tag switching
+      fix was_selected tag attribute handling
+      unban() all clients before execing or quitting awesome
+      add --check and --config, better usage printing
+      Revert "remove opacity_unfocused"
+      fix segfault in client_zoom
+      fix uninit warning
+      introduce fuzzy logic: fix problem with not_master
+      fix declaration order and assign values
+      add scratch window support
+      stop raising like dumb
+      tasklist can now show focused only client
+      remove focustitle widget
+      rename netwmicon to focusicon
+      rename align to text_align
+      set window name to awesome-message
+      add align option to widget to specify their alignment
+      use PROGNAME
+      focus scratch window when it appears, and don't select it for focusing in history
+      fix wrong coords computing with left/right statusbar click
+      drop error about killing client already killed
+      make draw_text multibyte UTF-8 aware
+      focus on maximize()
+      change focus raising
+      check iso2utf8 return
+      return good pointer and free good pointer
+      call grab with phys_screen
+      simplify buf handling
+      return the right buffer, iconv modify one
+      fix memory leak in smart_placement (with area_list_remove) and fix the algo
+      set widget alignment for graph
+      set skip focus on skip taskbar
+      use get_current_layout()
+      rename get_current_layout to layout_get_current()
+      check transient and isfixed for setting floating state, even if we can loadprops
+      do not draw win that skip focus
+      fix stacking issues
+      check that loadawesomeprops() set view on at least one tag
+      remove {load,save}awesomeprops()
+      change draw_color_new() proto to fill the struct and return status
+      floating placement can be chosen by config
+      add under_mouse placement aglo
+      fix LEFT and TOP offscreen appearance
+      finish list with NULL
+      do not die on unknown placement: take the first one
+      rename screen to phys_screen to avoid confusion
+      fix screen_get_bycoord()
+      check widgets position
+      use physical screen
+      check if the unmapped client is not the scratchpad
+      fix argv copy
+      documentation update
+      rename awesome-version.[ch] to version.[ch]
+      rename awclient.[ch] to socket.[ch]
+      fix awesome-version-internal define
+      documentation update and some cosmetic
+      Merge branch 'master' of ssh://git.naquadah.org/var/cache/git/awesome
+      move awesomerc manpages to section 5 (File format)
+      add widget name in warnings
+      add support for flex -> AlignFlex
+      textbox can be flex-aligned
+      support for include() in configuration file
+      add include() statement in awesomerc manpage
+      do not use cfg_print() to generate default configuration file: fwrite() the default one
+      add comments for simplewindow functions
+      replace drop_events arch by x,y pointer coordinates saving
+      ignore BadMatch error for XConfigureWindow() calls
+      change awesomerc manpage ignore
+      Keep floating windows on top of the stack
+      [awesome-message] config_parse() now returns status as int
+      Comment event.c functions
+      Simplify grabkeys() function
+      Rename events functions from handle_event... to event_handle
+      Merge branch 'master' of ssh://git.naquadah.org/var/cache/git/awesome
+      Comments widgets functions
+      Add comments to some layout functions
+      Add some comments to window functions
+      Remove useless call to get_phys_screen() in grabkeys()
+      Move grabkeys() out of event, and move it into window; clean and remove setup() function in awesome.c
+      Merge branch 'master' of ssh://git.naquadah.org/var/cache/git/awesome
+      Verify user input for tag values (mwfact, nmaster and ncol)
+      Write our own cfg_awesome_include() function to do check before calling confuse's one
+      Add support for ~ in include() from awesome
+      Bugfix in client_toggletag and checking if not tag selected
+      Add support for package codename into codename-stamp (like version)
+      Add a manpage for awesome-message
+      Add some global options to awesomerc.5
+      Update awesomerc.5 documentation
+      Remove useless tab_border option.
+      Fix segmentation fault on no layout available
+      Use tag code in case of no tag, not ours.
+      Add a note about writing documentation
+      Check for EWMH hints after reloading client props
+      Remove transparency prop on focus
+      Fix a bug with sleep()
+      Stop adding useless space at the end of each default awesomerc line
+      Fix a bug in uicb_spawn when using IP address in DISPLAY
+
+MATSUU Takuto (1):
+      transparency rule support
+
+Matthieu Pasini (1):
+      modkey should not be required when not needed in key definition
+
+Michael Kaminsky (1):
+      Fix segfault after viewing same tag twice and  doing a tag_prev_selected.
+
+Nathan LaFreniere (2):
+      add delay option to awesome-message
+      switch KeySym to KeyCode
+
+Nikos Ntarmos (1):
+      set need_arrange on client_resize
+
+Pasini Matthieu (1):
+      tag_setncol and tag_setnmaster shouldn't go over the numbers of clients
+
+Thomas Janu (1):
+      awesomerc-documentatin
+
+marco candrian (20):
+      graph-widgets works with floats now
+      max values must be > 0 on the graph-widget
+      Documentation for the new graph options
+      Additional graph widget options
+      Fix for the problem that cairo draws over the given path on very sharp angles
+      graph widget adopted to the latest statusbar changes
+      fix for cairo_arc
+      draw_rectangle_gradient() for the progressbar widget; + fg_full option
+      awesomerc.1 update: fg_full for the progressbar
+      adds fg_half as an option to the progressbar
+      awesomerc(1) update for progressbar widget option fg_half
+      Adds fg_middle + fg_end color option for the graph widget
+      awesomerc(1): fg_middle + fg_end color options for the graph widget added
+      rename of fg_middle/fg_half to fg_center and fg_full to fg_end
+      little memory leak fix *shrug*
+      trailing whitespaces removed
+      cairo_destroy() added
+      client_moveresize fix
+      border width taken into account on pointer movement
+      Is the pointer inside client with including the borders...
+

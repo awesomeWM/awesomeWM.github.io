@@ -1,0 +1,91 @@
+Julien Danjou (89):
+      remove useless #include
+      doc update for client.h
+      optimize a little isvisible()
+      change urxvt by x-terminal-emulator in default config
+      remove set_default_configuration()
+      change initfont proto
+      change initcolor() proto
+      add -c option to specify configuration file
+      make moveresize work with +/- as others
+      bug fix: apply selected layouts for tag in uicb_tag_view{next,prev}
+      introduce get_xinerama_screen_bycoord(...)
+      introduce get_screen_count(...) function
+      use get_screen_count instead of ScreenCount where needed
+      use real_screen for X functions, not logical screen
+      don't modify display if we're on Xinerama
+      Fix screen detection in keypress for supporting Xinerama
+      fix get_screen_bycoord() and add move_mouse_pointer_to_screen() for focus{next,prev}screen()
+      cosmetic
+      give good screen to manage()
+      bug fix: previous commit broke Zaphod mode in spawn()
+      make scan() aware of Xinerama
+      max layout is now Xinerama aware
+      make Statusbar optional in get_display_info()
+      resize() now update client screen number in Xinerama
+      make manage() more Xinerama efficient
+      make a lot of function in event and statusbar creation/handling Xinerama aware
+      fix bug in mouseresize with Xinerama
+      add uicb_movetoscreen()
+      tile layout is Xinerama compliant
+      I was too happy, I forgot some printf
+      bug fix: XClassHint not copied correctly
+      introduce move_client_to_screen to move a client in a new screen and tag it with good tags
+      introduce get_real_scree()
+      use get_real_screen() in initcolor()
+      return DefaultScreen instead of 0
+      use get_real_screen() in a lot of places
+      add uicb_exec
+      use PATH_MAX instead of _POSIX_PATH_MAX
+      enhance windows screen moving when windows are floating
+      use real_screen in grabbuttons(), fix Xinerama support
+      fix bug in Xinerama when mouse is not in the same screen that mouse
+      Revert "fix bug in Xinerama when mouse is not in the same screen that mouse"
+      arrange on old_screen, not on event screen
+      change x-terminal-emulator to xterm
+      inverse setmwfact value in tileleft layout
+      free ScreenInfo unconditionnally
+      store phys_screen
+      store display in awesomeconf
+      fix a bug in a height computing
+      fix snap in Xinerama
+      restore fullscreen support on Xinerama
+      Xft support
+      move uicb_ to end of file
+      set inline in header file
+      simplify get_screen_info()
+      remove duplicate line
+      remove TODO file ; using bugs list from web site
+      bug fix: set not matched tags to False instead of nothing
+      new feature: uicb_setlayout can no go backward ; binding Button3 click on layout symbol statusbar for reverse layout switching
+      change behaviour of uicb_setlayout: no arg now reset to first/default layout ; add bindings in default config
+      set version to 1.3-devel
+      remove alpha layer; bug otherwise
+      change default colors
+      add .gitignore for *.o and awesome binary
+      document detach function
+      remove useless extern variables
+      remove stack from externs
+      update documentation for screen.c
+      add documentation for uicb_movetoscreen()
+      remove useless extern Client sel in tile layout
+      add documentation to move_mouse_pointer_to_screen()
+      add documentation for arrange()
+      bugfix: snap windows to statusbar, not screen edges
+      bugfix: don't put new clients on top without computing statusbar position
+      bugfix: mouse wheel on root window works in Xinerama too
+      cosmetic: remove lines with empty spaces at end
+      bugfix: don't do stuff RootWindow() with non existent screen (Xinerama)
+      bugfix: add a pixel more for tags drawing, this allows all fonts size to work
+      bugfix: give one more pixel to not cut status text with some fonts
+      better fix for font height problem
+      bugfix: die nicely if no default layout
+      new feature: add mouse wheel support on tags name
+      compute x one time only
+      new feature: mouse wheel on statusbar do focus{next,prev}
+      new feature: mouse wheel on layout symbol switch to prev/next
+      bugfix: allow cycling back in uicb_setlayout()
+      movetoscreen works with +/- and cycle
+      set version to 1.3
+      fix typo
+

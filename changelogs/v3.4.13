@@ -1,0 +1,53 @@
+commit 226678ec7f6b899b865d3bd403221e3b21364cde
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sun Jul 15 12:12:21 2012 +0200
+
+    change codename
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit c084eb5b085287e4fb2661e834197cf8cf233215
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Jul 6 17:32:53 2012 +0200
+
+    Revert "Focus history: Don't ignore unfocusable clients"
+    
+    This reverts commit c0dffca646c1a02276da510bf3587fb7fad8e0e9 which caused
+    FS#1011. This is just too much breakage which can't easily be fixed in 3.4.
+
+commit 9f05eaf652a96792b8e8aee677b05a820bac52b6
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Jun 28 14:05:14 2012 +0200
+
+    Simplify client focus code
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 4b61aefca6fe5ed97101474ee5bc641ad02a9018
+Author: Sébastien Luttringer <seblu@seblu.net>
+Date:   Sat Jun 16 03:13:04 2012 +0200
+
+    awful.titlebar use height not width
+    
+    Signed-off-by: Sébastien Luttringer <seblu@seblu.net>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 7f6a67013743ab214e993ea461a0a9786859a92a
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Jun 15 10:02:25 2012 +0200
+
+    xerror: Print numeric infos about the error
+    
+    xcb_event_get_{request,error}_label() return NULL for non-core requests and
+    error codes. Obviously, that's not really helpful at all, so also print the
+    numeric information about what failed.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 2e7e7ae57f3e17a774e16324881a8f4069b4bbdc
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Jun 11 14:47:01 2012 +0200
+
+    Remove PREFIX, use CMAKE_INSTALL_PREFIX
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>

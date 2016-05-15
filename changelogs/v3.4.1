@@ -1,0 +1,167 @@
+commit 44edd4a75e21261815c84fab0cd08e8b9ee4c74e
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Nov 9 14:52:15 2009 +0100
+
+    change codename
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 82dd61a6926fa7d044bb8ef11807ba2a2e81384e
+Author: bob <evilbob127@gmail.com>
+Date:   Sun Nov 8 20:40:38 2009 +0100
+
+    awful.rules: add "callback" option when a rule matches
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit c912da0189a76a03fbaf99620fa898b643d3511a
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Nov 8 11:03:56 2009 +0100
+
+    wibox: check if a wibox' window exists before modifying it
+    
+    If you change the .bg of an existing wibox which isn't attached to any screen
+    yet, then there is no window for which we can update the XCB_CW_BACK_PIXEL.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 8ed6d60a25e5e14cce7219e0d5690381c61c60d1
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Nov 7 20:36:56 2009 +0100
+
+    wibox: make sure no garbage is painted to the screen
+    
+    Wiboxes are lazily updated. This means that we could receive an expose event on
+    them between making them visible and actually painting their content.
+    
+    Due to this we were copying undefined content to the wibox, because the pixmap
+    was only created just now, but it wasn't actually filled with anything yet.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 12977febeeb47acd7f4fdff2990786b021dd0ea9
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Nov 7 20:06:46 2009 +0100
+
+    Set a wibox' bit gravity to NorthWest.
+    
+    After the last patch, after each resize the X server fills the complete wibox
+    with its background color which means that the widgets will still flicker. This
+    patch fixes this by setting the wibox' bit gravity to NorthWest.
+    
+    This means that if a wibox is enlarged, only the new, larger part will be filled
+    with the wibox' background color and the rest of the wibox' content will be left
+    intact. With this patch I couldn't see any flickering anymore.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 02ea8feb54e56136a44eb0eab78e52d4d67c85c3
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Nov 7 20:02:22 2009 +0100
+
+    wibox: Set a proper back pixel
+    
+    Currently wiboxes have their background set to "inherit parent pixmap". That
+    means that each time a wibox is e.g. resized, the X server sets the wibox'
+    content to the wallpaper and then immediately awesome redraws the wibox with the
+    proper background. This causes flicker when you e.g. resize clients which have a
+    titlebar.
+    
+    With this patch, wiboxes get their proper background color for their "back
+    pixel" value. Now, instead of showing the wallpaper, the X server will fill the
+    complete wibox with its background color.
+    
+    With this patch, the actual widgets will still flicker. Also, if the wibox has a
+    background image, this image obviously won't be used by the X server and we get
+    some flicker again. My next patch will address these issues.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 2577f945d6450656e9da02f2e5f9910324190030
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Nov 6 12:45:46 2009 +0100
+
+    naughty: convert <br> tag to \n
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit a146ad7e19f31945077057ff2d4251427253dcfb
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Nov 6 12:39:48 2009 +0100
+
+    awful.layout: emit arrange signal
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 50690e7a48b8107662ac633fbea8a31d9051bd02
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Oct 27 11:18:16 2009 +0100
+
+    mouse: coords() get silent parameter
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 21223cabd9431686ecb7a0be57a792889f3dea60
+Author: Lukas Hrazky <lukkash@email.cz>
+Date:   Sun Oct 25 21:15:54 2009 +0100
+
+    progressbar: remove minimum size limit
+    
+    Signed-off-by: Lukas Hrazky <lukkash@email.cz>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit dea2a1f30f185a87050721356432e94b54e6a942
+Author: Lukas Hrazky <lukkash@email.cz>
+Date:   Sun Oct 25 12:59:25 2009 +0100
+
+    progressbar/graph: fix rounding and graph drawing
+    
+    Signed-off-by: Lukas Hrazky <lukkash@email.cz>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 735e6123629a8b8f348e59a8b7f31a37db016647
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Oct 26 11:11:17 2009 +0100
+
+    awful.tag: fix new when layout is nil
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit b853f2df0a24d1bc3500b2149dbe1e07bf06e9ba
+Author: Zsolt Udvari <udvzsolt@gmail.com>
+Date:   Mon Oct 26 10:58:39 2009 +0100
+
+    awful.tag: allow table as layout argument (FS#670)
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 148e095fa97013df9a2061494d473a6c4ad9358e
+Author: Anton Bobrov <bobrov@bober.localdomain>
+Date:   Sun Oct 25 00:05:09 2009 +1100
+
+    awful.rules: apply accumulated rule properties (FS#669)
+    
+    To avoid the screen flickering, when two rules have different tags
+    with true switchtotag.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit e7819ec2118b082f401681bed1903149f1e19c23
+Author: Damjan <gdamjan@gmail.com>
+Date:   Mon Oct 26 10:07:15 2009 +0100
+
+    awful.menu: fix gap (FS#665)
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 06eeb410934ce92e764927daeb1b2fa8d4802d3b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Oct 21 11:41:20 2009 +0200
+
+    ewmh: fix toggle on maximized_horizontal
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>

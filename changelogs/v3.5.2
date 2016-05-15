@@ -1,0 +1,441 @@
+commit 8125cda2a858708ec98642b30cf59a26d6b39831
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Oct 12 18:48:49 2013 +0200
+
+    change codename
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 4abf42b92f0f4b7676da4952dde86b0fce055240
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Oct 8 10:45:22 2013 +0200
+
+    awful.tag.withcurrent: Also act on restarts (FS#1155)
+    
+    When awesome restarts because a new screen was added or removed, clients can end
+    up being on a different screen than before the restart. However, the tags will
+    be carried across the restart. This means that a client could end up being
+    tagged with a tag from another screen. This results in weird behavior of tag
+    switches and confuses users.
+    
+    To work around this, remove the client from any tags that are on a different
+    screen during startup. If the client ends up without any tags, it will then be
+    tagged with the currently selected tags.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit efd243b6d70b9c549c184c3c0b84c481453411e0
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Oct 6 10:34:37 2013 +0200
+
+    event: Handle MotionNotify before ButtonPress/Release (FS#1136)
+    
+    The above-mentioned bug report says that a window cannot be moved via its
+    titlebar if you move the move quickly while clicking.
+    
+    The reason for this was awesome's "event compression": We don't handle all
+    MotionNotify events, because they can come in big quantities. Instead, we only
+    want to handle the latest one and ignore all earlier ones (the mouse isn't in
+    that position anymore anyway).
+    
+    The problem now appears if a MotionNotify is moved across a ButtonPress event
+    and the ButtonPress is what should cause the window to be moved. Awesome first
+    handles the ButtonPress event normally and starts grabbing mouse input. Then,
+    our event loop feeds us with an old MotionNotify event in which the button was
+    not pressed yet. The code for moving clients gets a motion event in which no
+    mouse button is pressed, concludes that the move is done and ungrabs the mouse
+    again, even though the button is still physically pressed.
+    
+    Fix this by making sure that MotionNotify events are never moved across
+    ButtonPress or ButtonRelease events. We already did this for EnterNotify and
+    LeaveNotify events for similar reasons.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit db167ebe80d3a85fed16f5bacc2ce4225074e45c
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Oct 6 10:22:49 2013 +0200
+
+    Revert "client: Don't move clients around across restarts (FS#1159)"
+    
+    This reverts commit c3bca6ac344577781858e06c83e310b69ac9a4e0.
+    
+    This caused problems where clients would always spawn on the top-left screen and
+    couldn't be moved around. This was because lua placed them on the other screen,
+    but when the titlebar got added, their top-left corner was moved over again.
+
+commit c3bca6ac344577781858e06c83e310b69ac9a4e0
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Oct 4 16:12:06 2013 +0200
+
+    client: Don't move clients around across restarts (FS#1159)
+    
+    This kind of forces every client to have a window gravity of "static".
+    
+    This fixes most of the problem of clients moving around across restarts due to
+    the titlebar. What is left is that they move due to the border width which
+    should be handled in another patch. Also, another patch should make this honor
+    the client's actual window gravity.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 0bdaed2704c3b6315366f6c1f3d098cf707febe6
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Oct 4 15:24:09 2013 +0200
+
+    screen: Fix screen equality comparison (FS#1151)
+    
+    We did some black magic which broke and was replaced with more black magic. This
+    now broke using screen objects as table indexes:
+    
+      $ echo 'local l, s = {}, screen[1] ; l[s] = 42 ; return l[s]' | awesome-client
+      double 42
+      $ echo 'local l, s = {}, screen[1] ; l[s] = 42 ; return l[screen[1]]' | awesome-client
+      <no output>
+    
+    Fix this by using just a single lua userdata for representing a screen object.
+    
+    It would be even better if screens were allocated with lua, but that doesn't
+    really provide any benefits right now and would be more complicated...
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit ed66fda1f1d390db18383810c6f91e5aec6ebf16
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Oct 4 14:31:48 2013 +0200
+
+    client: Ignore transient_for causing loops (FS#1124)
+    
+    Lots of code assumes that it can recursively follow a client's transient_for
+    field until it reached an end without a transient_for client. Instead of fixing
+    all those places to properly handle loops, this patch just makes us ignore
+    WM_TRANSIENT_FOR if the property causes a loop.
+    
+    This means that it can be a little random which WM_TRANSIENT_FOR property is
+    ignored, because it will always be the one that happens to complete the cycle. I
+    don't think that this is bad, because there shouldn't be any loops in the first
+    place.
+    
+    Lots-of-kudos-to: David Mohr <david@mcbf.net>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit e858163a0fc7226a7299af65083a6fea0824fa9a
+Author: David Mohr <david@mcbf.net>
+Date:   Sat Mar 16 15:25:54 2013 -0600
+
+    Revert "client: add a limit to the loop (FS#573)"
+    
+    This reverts commit b8de5f2d43e1c560d3b8cad2eb63b379ae547b9c.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit f3573dbb198a06bd12bfb0b7c6a8fcabad417dcd
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Oct 4 12:04:16 2013 +0200
+
+    awful.client.tiled: Ignore fullscreen (etc) clients (FS#1106)
+    
+    I am looking forward to the bug reports requesting awful.client.floating.set(c,
+    true) to also automatically un-fullscreen the client...
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit a6466864f945d3a5526a89efcf31375e82969a20
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Oct 4 11:27:35 2013 +0200
+
+    awful.screen.focus: Don't move mouse to (0, 0) first (FS#1173)
+    
+    Setting mouse.screen moves the pointer to the top left corner of that screen.
+    However, the very next line would then move the pointer elsewhere again. Thus,
+    the first one wasn't needed at all.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 436862983604aee6840ba5034db5ad150dbd42f1
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Oct 4 11:21:47 2013 +0200
+
+    naughty: Verify image parameters coming from dbus (FS#1162)
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 9b7873392228e8ebab407144f1aacaead4f9733d
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Oct 4 10:01:03 2013 +0200
+
+    Fix possible deadlock during startup
+    
+    For setting up the wallpaper, awesome needs a second connection to the X11
+    server (isn't SetCloseDownMode just great?).
+    
+    However, it was possible to have a dead-lock with our main connection due to
+    this. Awesome does a GrabServer during startup so that nothing else can use the
+    X11 server while we set ourselves up. The server is ungrabbed right before the
+    lua config is read. However, nothing makes sure that this ungrab request really
+    is sent to the server instead of just waiting in xcb's output buffer.
+    
+    The dead-lock would now happen if we try to establish a second connection to the
+    X11 server before the ungrab request was flushed on the main connection. The
+    server will wait for the ungrab on the first connection, awesome is waiting for
+    the second connection to be successfully established.
+    
+    Fix this by making sure the UngrabServer request is flushed before parsing the
+    config file.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 8792d6a4ba3577de79d5cfb0ef738b64424e4552
+Author: Björn Åström <bjoast@gmail.com>
+Date:   Thu Oct 3 07:11:09 2013 +0200
+
+    wibox.layout.fixed: Fix fill space
+    
+    The last widget always took up the remaining
+    space even though fill_space(false)
+    had been called on the layout.
+    
+    This got broken in commit 9d333113dd4.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 81b5e6e54bad698aa9bcc1cadc39df308ef8cd59
+Author: Alexander Kondratev <caa@ipap.ru>
+Date:   Mon Sep 30 14:41:57 2013 +0400
+
+    fixed #1184. Calling movetotag method throw an error on a blank screen
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit fd8f2e23eeeec8d77f997d63b229fdc861beff03
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Sep 27 23:07:33 2013 +0200
+
+    screen: Make sure we always have a screen
+    
+    It is possible to configure RANDR so that no outputs are available. This means
+    awesome would be running with zero screens which leads to all kinds of
+    funnyness.
+    
+    Work around this by falling back to other configuration mechanisms if we get no
+    screens from one of them. After all, screen_scan_x11() will always be able to
+    add a screen.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 17038017289b662ac2af81580a91dfc122745fac
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Sep 27 23:01:49 2013 +0200
+
+    ewmh: remove _NET_DESKTOP_GEOMETRY support
+    
+    Our tag concept doesn't really fit into ewmh. Thus, we were setting this
+    property to a way too small value anyway (just the size of the first screen in
+    case of multiple screens).
+    
+    Since this property is optional in ewmh, let's just drop it.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 381d840a8245c06c88656edc26ed715ad3a53c50
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Sep 27 16:22:55 2013 +0200
+
+    Use $PATH when starting $SHELL
+    
+    If $SHELL is set to "bash", previously awesome failed to restart itself, because
+    it could not find "bash". This commit makes awesome use execlp() instead of
+    execl() which means that $PATH is searched if the started command does not
+    contain a slash and this problem is fixed.
+    
+    $SHELL is specified in POSIX and it doesn't seem to require an absolute path
+    name.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit abd8246c1bb8827d33c13a21fb9550c1345b1697
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Sep 19 17:05:20 2013 +0200
+
+    CMake: Look for both "ldoc" and "ldoc.lua"
+    
+    At least debian uses "ldoc" for the binary name instead of "ldoc.lua" while
+    upstream seems to prefer the later...
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit aaa771f8879e0a16dfcaa7f5f6c60cc356498c18
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Sep 19 16:48:10 2013 +0200
+
+    Switch from libXcursor to libxcb-cursor
+    
+    Thanks to Michael Stapelberg, there is now a xcb-only port of libXcursor which
+    does everything we need. This patch switches awesome over to that new library.
+    
+    Since the only reason for using XOpenDisplay() instead of xcb_connect() was so
+    that we can use libXcursor, we can get back to that older state again. This
+    means that this effectively reverts the following commits:
+    
+    531f8b415c65e9754a907e72f984ab0f6cbfc3a9 "Added initial support for Xlib cursor themes"
+    77243cd09aa862da10d18f6d549ef10d3c775d2b "Add x11-xcb to the pkg-config checks"
+    779d43fc462411d84adf757a178e938c6ba9d3b8 "Don't let Xlib own the event queue"
+    03759b48478eb716af8b62e01ef3b5140c582f58 "Fix keyboard layouts"
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit d82342e38693f6e8399ea4df744fa1e5584c2a91
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Sep 19 14:37:07 2013 +0200
+
+    awful.titlebar: Add show, hide, toggle functions
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit bcea1aab66ec9fa8253ab078f9a766451c7e2a48
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Mon Sep 16 12:12:16 2013 +0200
+
+    Stop linking against xcb-image
+    
+    Since the previous commit we don't use this library any more.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 813fb94ce8f30062df3ee529c7a910af9e5b75bf
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Mon Sep 16 12:09:40 2013 +0200
+
+    client.content: Return a cairo xcb surface
+    
+    We no longer have to turn the client's content into an image buffer "by hand".
+    Instead, we can just use cairo for the job.
+    
+    Even more exciting, we don't need to turn this into an image buffer at all. We
+    can just directly return a cairo xcb surface for the client window. Depending on
+    how lua will use this surface, this could make it possible to avoid having to
+    create the image buffer at all!
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 11bef0795a450865b589c1c906bf97141436d314
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Mon Sep 16 12:06:10 2013 +0200
+
+    client.content: Use correct client size (FS#1150)
+    
+    The size saved in c->geometry also includes the titlebars. Thus, for getting the
+    window content, we have to subtract this from the size.
+    
+    Before this, the call to xcb_image_get() was failing with a BadMatch error,
+    because we were asking for an area that is outside of the actual client's
+    window's geometry.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit bb304c80a35ecd92e42ead3f4632e4701e211c1a
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Mon Sep 16 11:59:00 2013 +0200
+
+    draw: Add function for finding a visual by id
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 3edd21656070601ccbfdb9498716bb5c1ef54de8
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Aug 21 12:26:47 2013 +0200
+
+    wibox: Add widget geometry cache
+    
+    This commit adds and uses wibox.layout.base.fit_widget(). This function is a
+    wrapper for widget:fit() that caches the result and thus speeds things up.
+    
+    This is necessary because some layouts call :fit() from their :fit() and :draw()
+    functions. Nesting such layouts means that at the widget at the tail of the
+    stack gets its :fit() function called quite often. If this function is not
+    blazingly fast, this results in noticeable slowness.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit a0e45e878e450d890a0ab541d48d8dd6c1ede943
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Aug 1 11:48:03 2013 +0200
+
+    client: Ignore "fake" string property changes
+    
+    I noticed high CPU usage while using asunder. The reason was that asunder
+    re-sets its window name every 0.1 seconds (and awesome's drawing code is way too
+    slow).
+    
+    A semi-fix for this is to ignore string property changes if the old and new
+    value for the property are equal.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 14722aa6e43f7108eddceb1306c3d5f91cb538e9
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Jun 19 19:23:19 2013 +0200
+
+    Fix WM_CLIENT_LEADER handling
+    
+    This was broken since 5d0a81c8bf48. Whoops.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 5b5dd0a19807298e8f63bc9a541177993a86a0e3
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Jun 19 19:15:02 2013 +0200
+
+    luadoc: Clients have a leader_window, not leader_id
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 57bec371f70f121785cd062dca3b86f18fd685fd
+Author: kardan <kardan@riseup.net>
+Date:   Wed Jun 12 14:15:54 2013 +0200
+
+    honor appended -c option for --check
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 0c62831eea5e651577928ef8b09c947565eaed7d
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Jun 8 13:21:14 2013 +0200
+
+    lua: Print traceback on startup errors
+    
+    We do some special magic so that we can have tracebacks on errors messages.
+    However, the code for parsing the rc.lua called it without this magic and thus
+    errors didn't have tracebacks.
+    
+    This is bad, because if something goes wrong in e.g. wibox.widget.textbox, you
+    don't really have any clue where this error is coming from.
+    
+    Fix this by adding our "print traceback on error"-magic here, too.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 14daf85fe91780e4ef49465c94e1cfb671391f0d
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Mon May 13 19:27:19 2013 +0200
+
+    awful.tooltip: Set the bg color correctly (FS#1148)
+    
+    Well, whoops. There is no .bg property on wiboxes for quite a while already, it
+    is now a :set_bg member function.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 2d3103345e3a266eaf1d5261ef37e36ac5498ecc
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Apr 7 11:57:40 2013 +0200
+
+    Implement window gravity in ConfigureRequests (FS#1137)
+    
+    Previously, awesome didn't move windows when they sent a ConfigureRequest (and
+    it also shrunk them by the size of titlebars, before it forgot to add these).
+    This commit adds proper gravity support to ConfigureRequest handling.
+    
+    This was tested with test-gravity from metacity (in src/wm-tester).
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>

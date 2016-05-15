@@ -1,0 +1,465 @@
+Aldo Cortesi (43):
+      Vim swap file in .gitignore
+      Add doc to .gitignore.
+      Fix crashing bug triggered through awesome-client
+      Use strtok in run_uicb, in preparation for improving error reporting.
+      Add a warn utility function, and use it to improve error reporting in run_uicb.
+      Use warn function throughout project.
+      Add a way to define key bindings in bulk, like this:
+      Remove some redundant gcc flags.
+      Comment typos.
+      Remove inline declarations in client.h - these don't match what's in the the .c anyway.
+      Improve the call signature of get_current_tag and get_current_layout.
+      Refactor draw.c
+      Remove stubs for reloadconfig.
+      Refactor statusbar.c
+      Widget-ise the statusbar.
+      Fix compilation warning related to parsing of statusbar widgets config.
+      Massive, massive interface refactoring.
+      Various doc comment fixes.
+      Fix compiler warning re unused argument, and improve the function interface while we're at it.
+      Simplify widget draw interface.
+      The beginnings of a more flexible widget configuration.
+      Solidify widgets.
+      Make empty status bar look nice.
+      Add basic framework for uicb_widget_tell. For now, it does nothing, but stay tuned.
+      The arg to uicb_ functions is no longer const.
+      Refactor the focus.c interface to use globalconf.
+      Add more requirements to README.
+      Use WidgetList for lookups, rather than recreating the data.
+      This patch is a first draft of independently targetable textboxes, and a protocol to speak to them. Given a textbox widget definition like this:
+      Make drawtext interface more general.
+      Make "Statusbar statusbar" the  in VirtScreen "Statusbar *statusbar". This is more consistent with the rest of the interface, and will make our life easier when we have mulitiple statusbars per screen.
+      Continue to simplify interfaces that require arguments in globalconf. Today I focus on screen.c.
+      The preferred line length is 80 characters.
+      Make textbox foreground and background configurable.
+      Remove single occurance of die, and then remove die itself.
+      Documentation generation fixes.
+      Make sure all uicb_ functions have doxygen annotations.
+      Make doxygen documentation less cluttered.
+      Change awesome_config -> AwesomeConf.
+      Clean interface of statusbar_init.
+      Remove un-needed function.
+      Clean interface of statusbar_update_position.
+      Clean get_screen_info and get_display_info.
+
+Arnaud Fontaine (1):
+      fix XGetTransientForHint() call
+
+Fabienne Ducroquet (1):
+      Fix client_togglehorizontalmax and client_toggleverticalmax
+
+Hans Ulrich Niedermann (16):
+      switch to autotools as build system
+      Document AWESOME_CFLAGS, and use only with gcc
+      Include sub-Makefiles directly, then remove them
+      Ship icons in dist tarball
+      Substitute icon path in awesomerc (1/2)
+      Substitute icon path in awesomerc (2/2)
+      More detailed elaboration on build requirements
+      autogen.sh: Change to source directory first
+      autogen.sh: update package version when necessary
+      On tarball creation, check package/git version
+      Add version generation script, version stamp file
+      Use consistent wording in version check
+      Mute version check (unless it fails)
+      Catch too many awesome command line options
+      Reformat automake options in configure.ac
+      Add check for --help and --version support
+
+Julien Danjou (332):
+      split awesomeconf and screen config
+      honor aspect ratio by default
+      fix wrong key for reloadconfig key binding
+      fix typo
+      use VirtScreen arg for tag_client_with_current_selected()
+      save default configuration file on first run without conf file
+      remove dual-config: awesomerc is now preprocessed and compiled in awesome
+      remove comments or it will fail libconfuse
+      cosmetic
+      Add uicb_screen_focus to switch to a specified screen.
+      remove awesome: for warn() calls
+      prefix eprint() with awesome:
+      remove -fgnu89-inline
+      use a linked list for handling tag <-> client relationship
+      remove useless client_reattach_after()
+      rename statusbar uicb and add uicb_statusbar_set_position
+      untag client on unmanage
+      we should reset client_sel on untag
+      prefix some client functions with client
+      run_uicb() is static
+      cosmetic
+      fix some includes and add copyright
+      remove my name from -v and accept --version
+      rename isvisible() to client_isvisible() and move it in client.c
+      move tag_client_with_rules() from client.c to tag.c
+      fix some #include
+      add spiral and dwindle layouts (fibonacci)
+      remove nlayouts
+      make tags a linked list instead of array
+      rename loadprops to client_loadprops
+      rename statusbar functions
+      fix memory leak on exit
+      add a focus history
+      rename description
+      untag everything on rules applying
+      uicb_screen_focus honors focus history
+      fix tag_view prev/next segfault
+      rework widget.c
+      remove useless #include
+      cosmetic and don't cast for nothing
+      cosmetic
+      first try to get widget configurable
+      remove default reloadconfig un manpage
+      finish with NULL
+      add uicb_focus_history and bind with -1 to Mod4+Tab by default
+      change default conf to work with new widget layout
+      move things around
+      don't allow ncol to be <= 0
+      add warning about get_current_tag()
+      update titleinfo with the right window
+      good fix for ncol = 0, last was wrong
+      support for more complete $DISPLAY variable
+      declare real_display as const
+      fix compilation errors with new globalconf stuff
+      add Aldo as AUTHORS
+      cosmetic
+      new widget to draw icons from PNG image
+      push iconbox.c
+      cosmetic + copyright
+      add copyright
+      add copyright
+      cosmetics and add copyright
+      cosmetic
+      renders right widget from last to first
+      new widget: add support for netwmicon
+      cosmetic
+      proper alignement
+      add netwmicon in default configuration
+      allow to shrink net_wm_icon to statusbar size
+      rename a bunch of draw functions
+      rename a bunch of widget functions
+      change info in copyright
+      remove ScreenInfo typedef and move Area into screen.h
+      cosmetic
+      use a_strdup
+      simplify
+      new width: progressbar
+      better computing for margin
+      add support for Urgency hint
+      add new UICB: uicb_focus_client_byname
+      introduce get_current_tags() and deprecate get_current_{tag,layout}()
+      compute textlen also
+      use image instead of symbols for layouts
+      change "default" in textbox to "text" and set it to a good default
+      it's not width but height which defines ratio
+      store location and width of each widgets
+      remove get_current_tag() call
+      use get_curent_tags() in tile.c
+      remove calls to get_current_tag()
+      switch to get_current_tags() in mouse.c
+      switch to get_current_tags() in screen.c
+      switch to get_current_tags() in layout.c
+      use get_current_tags() for focus, fix some bugs with multiple selected tags
+      switch to get_current_tags() in event.c
+      switch to get_current_tags() in client.c
+      remove deprecated functions
+      call with phys_screen and not logical screen
+      simplify proto
+      missing CFG_END
+      fix p_delete
+      add mouse bindings to status bar
+      O3
+      handle signals
+      set support for _NET_WM_ICON
+      add support for _NET_CLIENT_LIST
+      bug fix with move_client_to_screen and proto simplification of tag_with_current_selected()
+      install shared data (icons) in /usr/local/share
+      cosmetic
+      externalize EWMH handling
+      move ewmh_update_net_client_list() into ewmh.c
+      add copyright notice
+      add support for _NET_NUMBER_OF_DESKTOPS
+      add support for _NET_CURRENT_DESKTOP
+      add support for _NET_DESKTOP_NAMES
+      focus_get_latest_client_for_tags() now supports Tag **, use it for widgets
+      add support for _NET_ACTIVE_WINDOW
+      simplify sel handling
+      fix warning
+      add support for NET_CLOSE_WINDOW
+      add support for NET_WM_STATE and NET_WM_STATE_STICKY
+      simplify tag_client() and untag_client() proto
+      simplify is_client_tagged() proto
+      remove Display from Client struct
+      split screen section parsing in another static fct
+      don't die for parsing errors, set up a minimal conf
+      don't XSync everything, and remove max flag on move/resize + redraw statusbar
+      maximize resize in a volatile way
+      use focus history when focus(NULL)
+      indent
+      move tclink in awesomeconf
+      cosmetic
+      bug fix in focus_get_latest_client_for_tags: restore tags on each roll
+      windows that start in Withdrawstate are skipped in focus list
+      update EWMH info before applying rules
+      skip skippable windows when looking for a client
+      change uicb_focus_history() to use focus_get_latest_client_for_tags() which now takes an index as arg
+      allow to resize mwfact with mouse
+      optimize mwfact resizing with mouse
+      drop PointerMotion events while resizing
+      add support for _NET_WM_STATE_FULLSCREEN
+      handle configure request for windows we don't handle
+      add support for _NET_WM_WINDOW_TYPE_DOCK
+      add support for _NET_WM_ICON_NAME
+      add support for _NET_WM_WINDOW_TYPE_SPLASH
+      add support for _NET_CURRENT_DESKTOP messages
+      optimize PNG files
+      allow textbox widgets to have their own font
+      add support for fg/bg colors and dedicated font for focustitle widget
+      optimize loop
+      remove useless checks
+      merge draw_get_image_{width,height}() into draw_get_image_size()
+      add vim filetype
+      fix colors handling
+      rework draw stuff
+      split the display part of statusbar_draw(), move it to new statusbar_display(), and call it for expose events
+      bug fix: reset widget->width to 0
+      fix size stuff for square
+      remove textwidth_primitive
+      don't display if statusbar off
+      fix default layouts icons path
+      draw_text don't pad with font->height / 2 by default: padding is now an arg
+      allow textbox to have special width
+      documente some functions and simplify client_saveprops() proto
+      code documentation update
+      remove Display as arg from window_*() fcts
+      document widgets
+      free old statusbar drawable
+      add CFGF_NO_TITLE_DUPES flag to widgets sections
+      add CFGF_NO_TITLE_DUPES to screen and tag sections
+      allow to set the statusbar height
+      allow to set statusbar width
+      allow to have several statusbar
+      don't stick textbox size to the first textsize sent via widget_tell
+      update manpage for several statusbar
+      draw statusbar after init
+      clean some awesome.c stuff
+      simplify some stuff, cosmetic
+      change warn() message and use simply , as strtok delimiter
+      fix maximized windows in floating layout
+      replace UICB_PROTO macro by a typedef
+      remove LAYOUT_PROTO, use a LayoutArrange typedef
+      use LayoutArrange and Uicb type into config.h ; move some functions from layout.c to client.c
+      remove common.h
+      generate graphs
+      rework headers inclusion
+      cosmetic
+      Revert "remove borders modification on maximize()"
+      add a borders option to client_maximize() to (not) handle border removal
+      use sel->border instead of globalconf borders
+      implement not_master rules option (FS#6)
+      implement xproperty rule matching (FS#5)
+      optimize rule usage
+      use NULL value by default
+      add resize option to iconbox
+      simplify update
+      add 2008 copyright notice
+      new uicb: tag_create
+      fixed windows can be moved
+      remove some get_phys_screen() calls
+      get rid of Client phys_screen
+      bug fix: wrong tag tested
+      add new tasklist widget
+      simply add draw_rectangle instead of drawtext
+      add support for _NET_WM_STATE_SKIP_TASKBAR
+      remove debug printf
+      fix widget and icons layouts installation
+      use white icons by default
+      remove default textbox
+      remove useless #include
+      replace focustitle by tasklist in default config
+      add a align option to draw_text
+      add draw_get_align() to translate string to enum
+      add align option to textbox
+      add align option to focustitle
+      add align option to tasklist
+      various manpage update: tasklist, align, …
+      cosmetic
+      use right statusbar in various widgets
+      move NetWMIcon get to ewmh.c
+      set widget->width to the right size(TM)
+      add option to show appicons in tasklist
+      add default binding to restart awesome
+      optimize if statements
+      add support for right/left statusbar position and clicks
+      taglist now supports clicks if statusbar is right/left
+      fix window placement for left positionned statusbar
+      restore -O3 flag
+      fix various uninit vars
+      add sloppy_focus option to allow click-to-focus
+      fix memory leak on icon get
+      break on detach or for() will fail to assign ->next
+      add new_become_master option to disable new client becoming automaticaly master
+      remove setborder uicb
+      document font, add boolean type
+      add xprop for rules, change tags to regex and documente regex
+      typedef enum Position
+      typedef enum Alignment
+      add AWESOME_CFLAGS with various warning
+      use Area in Widget
+      add support for x,y coords supplying in widgets
+      change README for autogen.sh
+      use switch instead of if/elseif/else
+      fix comparisons
+      use 2 vars for knowing if users supplied coords
+      store widget height
+      add support for y coords in clics
+      allow negativ coords
+      install layouts icons
+      add various autostuff to ignore
+      honor configrequest
+      Revert "honor configrequest"
+      simplify client_resize
+      remove flags attribute
+      use Area to store window geoms
+      use Area as arg for client_resize
+      send window_configure on configrequest for floating
+      simplify window_configure() args
+      add get_current_layout() to get current layout :-)
+      Rewrite everything about client geoemtry, resize, etc.
+      respect config for resizing
+      apply rules after configurerequest
+      fix move to screen with floating/non-floating win
+      add manpages to .gitignore
+      remove unused variable
+      remove cleanup stuff, we don't need them, and they are not complete
+      simplify unmanage code
+      add auto option to float in rules
+      fix rearrange
+      add support for _NET_WM_WINDOW_TYPE_DIALOG
+      rework uicb, cosmetic, use a_str functions
+      cosmetic
+      remove Display arg of xgettextprop()
+      remove useless AWESOMEPROPS_ATOM() define
+      rename textwidth to draw_textwidth
+      fix some weird conditions with fullscreen/max/arrange
+      restack on max
+      try to fix SDL/OpenGL apps
+      force windows to tile mode
+      last fix did not work as expected
+      Revert "force windows to tile mode" - it's useful afterall to not consider "no value" as "false"
+      add show_all option to tasklist
+      move toggle floating function to layout.c and fix problem when moving with mouse tiled windows
+      add comment about XGetWA
+      add a_strncat()
+      modify the tell function to respect spaces
+      use a cache system for status bar
+      awesome-client send now everything in one message
+      add new_get_focus option
+      only invalidate cache if client is urgent
+      cache is already invalidated
+      no need to restore focus
+      no need to refocus
+      fix swapping when already master
+      remove ggdb3 flag
+      fix some cache flags
+      check if client is not NULL
+      do not install LICENSE file
+      stop dropping EnterWindow event
+      invalidate LAYOUTS unconditionnaly
+      change Layout linked list to by cycling
+      cosmetic
+      add tag_create UICB documentation
+      grab root buttons click on first run
+      use ev->same_screen var
+      fix screen changes with maximized windows
+      remove printf
+      fix documentation
+      does not set only floating, also resize
+      fix flags assignment
+      invalidate only if we focus a new client
+      use phys_screen not screen
+      invalidate cache on tag switching
+      fix widget invalidation
+      fix comment
+      do not try to guess where we should XSync(), XSync after bunch of XEvents
+      fix maximization on floating layouts
+      invalidate cache
+      drop EnterWindow events to keep focus
+      better fix for max windows
+      drop EnterWindow event to keep focus
+      allow version without v (for real release)
+      readd border size on geom
+      enhance uicb documentation
+      fix typo
+      missing CFG_END
+      use previous statusbar to get screen size
+      add support for Button6 and Button7
+      resize with floating geom when setting floating
+      don't draw if icon is not valid
+      fix a bug in the tasklist loop that made clicking on tasklist focusing a wrong client
+      use info from the right screen
+      move attribute noreturn
+
+Laurent Fousse (1):
+      document new layouts
+
+Nikos Ntarmos (25):
+      minor documentation fix
+      awesome crashes when non-focused client exits/dies
+      mouse button press on the statusbar causes segfault
+      check for EWMH.initial_state
+      Typo in screen.c:get_display_area causing display area to be miscalculated
+      remove borders modification on maximize()
+      uicb_tag_view not working correctly with null argument
+      widgets/textbox.c area.x miscalculation due to variable width
+      use default config file on parsing errors
+      autoscale graph widget
+      Clipping instead of ignoring for progressbar widget
+      partial support for mouse bindings on root window when window displayed
+      Add a 'flush'-like function to awesome-client
+      Call XQueryPointer on arrange(...) to see if the pointer is over a client window and reset the mouse key bindings if it's over the root
+      Don't draw a square on the taglist for skipped windows
+      Locale and international text in widgets
+      Fix for 'windows showing up in tile-mode and not before already floated'
+      add nscreen var to store screen count
+      restart on XRandR event
+      XFree data returned by XineramaQueryScreens in get_screen_count(...)
+      check for subwindow
+      don't draw the border of skip'ed windows
+      Simplify textbox_tell
+      Fix for windows showing up in tile-mode and not before already floated (FS#22)
+      don't draw the border of skip'ed windows
+
+Rico Schiekel (1):
+      tell textbox widget colors
+
+Robert Millar (1):
+      Custom netwm icons, scaling icons!
+
+Thomas Guebels (1):
+      add mouse bindings to use mouse wheel on focustitle widget
+
+calmar (3):
+      Some awesomerc info add-ons.
+      fix border color
+      awesomerc update
+
+marco candrian (16):
+      awesomerc man page
+      additonal settings for the progressbar
+      awesomerc: [MULTI] + explanations about <...> items
+      typo fix, and some cleanup
+      autogen.sh added
+      adding option 'x' and 'y' and general cleanup
+      graph widget added
+      documentation for the graph-widget
+      rounding on progressbar fixed
+      not needed i_tmp variable removed and using h_index instead
+      padding_left defaults to 0. Easier for x/y users.
+      uicb 'statusbar_toggle' allows a statusbar-identifier (manpage update)
+      manpage update (scale, max and awesomerc(1))
+      SYNOPSIS and DESCRIPTION changes
+      direct calculating of the line length to draw
+      an emtpy line flushes data into awesome (in awesome-client)
+

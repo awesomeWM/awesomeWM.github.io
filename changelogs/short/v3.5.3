@@ -1,0 +1,121 @@
+Björn Åström (1):
+      drawable: Support for true transparency (FS#1210)
+
+Campbell Barton (1):
+      Remove raise call from mouse.client.move
+
+Daniel Hahler (14):
+      Do not raise clients in client_manage
+      Add a "deep" option to awful.util.table.clone
+      Fallback to comparing layout names in awful.layout.inc
+      Add client.maximized (a shortcut for ~_horizontal and ~_vertical)
+      Minor doc fixes
+      awful.rules: add does_match and matching_rules functions (FS#1224)
+      Factor `awful.rules.apply_do` out of `apply`
+      Only set client's urgent after startup
+      Set c.screen in ewmh.tag and before tags in rules.execute
+      Expand '~' in the path for beautiful.init
+      Drop focus:raise() in magnifier.arrange
+      Set c.screen in ewmh.tag and before tags in rules.execute
+      Add and improve some comments to awesomerc.lua
+      Fix the call to tag.history.restore from tag.delete
+
+Emmanuel Lepage Vallee (2):
+      Add end to end support for spawning tracking using startup notifications
+      Fix tag screen switching
+
+Enrico Scholz (1):
+      menu: do not double escape name in 'menu:clients()' (FS#1202)
+
+Fabienne Ducroquet (1):
+      layouts: spiral: Avoid gaps between windows
+
+Jan Larres (1):
+      taglist: Add [bg|fg]_empty
+
+Massimiliano Brocchini (3):
+      prompt: fix search term ctrl+up/ctrl+down when starting from existing entries
+      prompt: search in prompt history using exact string match
+      prompt: CTRL+DELETE deletes history entries
+
+Rocco Aliberti (3):
+      awesomerc: Fix set menu clients width (FS#1200)
+      awful.menu.clients: Remove useless line (FS#1200)
+      wibox.layout.margin: Add margins color parameter
+
+Uli Schlachter (71):
+      luadoc: Document screen outputs
+      Print libxcb error codes for broken connections
+      tasklist: Add default colors for broken themes
+      Really ignore loops in transient_for (FS#1124)
+      awful.tag.delete: Deactivate tags
+      awful.menu: Add missing "local" declaration
+      menubar: Fix API docs
+      awful.tag.viewmore: Make screen optional (FS#1203)
+      Finish C-side support for window shapes (FS#1051)
+      awful.menu.clients: Fix API (FS#1200)
+      naughty: fix ldoc
+      Add awesome.composite_manager_running
+      wibox.drawable: Cache the wallpaper
+      client: Add c.blob property
+      Improve the check for another window manager
+      Update the luadoc for the C API
+      client: Add request::activate signal (FS#848)
+      awful.ewmh: Correctly handle bw change for maximized clients
+      client: Emit property::screen after geometry
+      awful.ewmh: Enforce client geometry (FS#764,FS#1216)
+      root.wallpaper: Cleanup and correctness fixes
+      Revert "awful.ewmh: Enforce client geometry (FS#764,FS#1216)"
+      mouse.screen: Lie when we have no clue where the pointer is
+      Measure the time a main loop iteration takes
+      Update fields for capi.awesome in C comment
+      Improve fatal signal handling
+      awful.util.spawn*: Remove obsolete screen argument
+      Make objects properly inherit signals from classes
+      Add awesome.register_xproperty (FS#1212)
+      Revert "client: Add c.blob property"
+      Fix handling of _NET_CURRENT_DESKTOP messages (FS#1219,FS#1217)
+      xproperty: Don't limit property lengths
+      spawn: Don't try to spawn with empty argv (FS#1225)
+      awesome.spawn(): Check table arguments better
+      spawn: Remove useless argv[0] calculation
+      drawin: Inline drawin_init() into its only caller
+      drawin: Don't unconditionally redraw when made visible
+      awful.tooltip: Work with all gears.colors as foreground
+      drawin: Only redraw on move with translucent background
+      Redraw titlebars more intelligently
+      Fix cairo surface memory leak
+      drawable: Add pixmap member
+      root: Make sure cairo doesn't cache our temporary connection
+      Add awesome.startup
+      awful.client.movetoscreen: Don't untag clients completely (FS#1196)
+      ewmh: Factor out common code into a helper function
+      EWMH: Ignore invalid _NET_WM_DESKTOP
+      ewmh: Use client_set_sticky() for making clients sticky
+      EWMH: Handle _NET_WM_DESKTOP in lua
+      Drawable: Ignore exposes when we have nothing to draw
+      Fixup indentation
+      Bump minimum lgi dependency to 0.7.0
+      awful.rules: Emit request::activate on the client
+      luaa: Remove lots of unused code
+      awful.client: Add marked and unmarked signals (FS#1227)
+      imagebox: Avoid division by zero
+      wibox.layout.base.fit_widget: Enforce sane width and height
+      window: Factor out helper functions for xproperties
+      awesome: Add get_* and set_xproperty
+      xproperty: Emit on "awesome" for root window properties
+      rc.lua: Raise all clients by default (regression, FS#1234)
+      Make debug::index::miss and newindex work on classes and all objects
+      awesome.startup_errors: Never emit debug::index::miss
+      beautiful: Don't use non-existant API
+      gears.color.create_opaque_pattern: Fix for SurfacePatterns (FS#1236)
+      drawin: Correctly add property::shape_* signals
+      Revert "Set c.screen in ewmh.tag and before tags in rules.execute"
+      Revert "awful.client.movetoscreen: Don't untag clients completely (FS#1196)"
+      awful.tag.withcurrent: Try harder at finding a tag (FS#1196)
+      Ignore enter/leave events when unmanaging a window (FS#1239)
+      change codename
+
+heithe (1):
+      Add awful.titlebar.widget.minimizebutton
+

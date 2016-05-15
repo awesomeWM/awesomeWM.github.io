@@ -1,0 +1,198 @@
+Julien Danjou (196):
+      remove bpos from global var, added in jdwmconf
+      rename handler functions
+      remove doc on clean
+      documentation
+      remove extern seltags, put it in jdwmconf
+      move prevtags in jdwmconf also
+      include config.h
+      deprected nexttiled, add IS_TILED macro to check if a client is tiled to current tags
+      add taglayouts in jdwmconf as tag_layouts
+      remove prop[] from static and global
+      remove prop from global and static, use in fcts
+      remove blank lines
+      remove textw function, change it with a macro
+      fix segfault with transparency
+      Rework settrans - set setclienttrans static - remove current_opacity arg of setclienttrans, not useful
+      remove nexttiled
+      cosmetic: remove useless ;
+      make loadprops more dynamic
+      bug fix, size of prop was not good
+      make prop dynamicly allocated
+      make prop in save() dynamic
+      make prop saveprops() dynamicly allocated too
+      make prop local and malloced
+      documentation
+      documentation of uicb_view()
+      remove useless string.h inclusion
+      set *handler as local to main, not global/extern, and set handler functions no-static
+      remove global selscreen variable and remove unused vars from setup()
+      simplify for()
+      document set_default_config
+      remove initlayout function
+      remove global bh/blw and add a Statusbar type
+      move bpos to Statusbar struct and change name of default_statubar_position in jdwmconf
+      remove jdwmprops as global var, replaced by a macro
+      remove sw/sh, calculate each time
+      remove global var screen, compute it
+      move barwin to Statusbar
+      remove sx and sy since they are always 0, LOL
+      add libconfig requirement
+      add settrans bindings and comment file
+      add resize_hints config
+      cosmetic
+      rename jdwm to awesome
+      change man page a bit
+      rename last jdwm to awesome and make config a little more robust
+      remove WMDelete
+      remove WMProtocols
+      remove WMName
+      remove WMState
+      remove wmatom
+      remove NetWMName
+      move some netatom back but only in setup()
+      change compileregs proto, simplify
+      change compileregs proto, simplify
+      Merge branch 'master' of ssh://git.naquadah.org/var/cache/git/awesome
+      fix regression
+      Merge branch 'master' of ssh://git.naquadah.org/var/cache/git/awesome
+      export netatom or we die
+      fix regression in restack()
+      documentation and simplify uicb_settrans
+      add several useful functions grabbed from madmutt
+      use more safe functions and update #inlcude
+      remove unmapped attribute
+      simplify grid layout
+      change incnmaster to setnmaster
+      Revert "remove unmapped attribute"
+      optimize drawtext a little
+      move things away from doc
+      cosmectic, move x in if block
+      cosmetic and remove usless default/break
+      chance license to GPLv2
+      typo
+      remove otherwm
+      rename gettextprop to xgettextprop and move it to util.c
+      remove wa(x,y,h,w) from global vars, add functions to compute them
+      remove DC from global in draw.c
+      add DC to arrange()
+      remove focus/restack call, useless
+      remove useless extern dc in spiral
+      remove useless extern DC also in grid layout
+      remove uicb_reload functions, cannot work for now
+      setup() now take DC as arg
+      scan() and cleanup take DC as arg
+      cosmetic
+      add DC to uicb_*() args
+      move cursor in DC
+      rename spawn to uicb_spawn and fix buggy proto
+      add XShape support
+      add support for XRandR
+      bug fix: forgot to add DC to uicb_ in tile.c
+      fix bug with parsing barpos
+      add Xinerama support for tile layout
+      set version to devel
+      fix default config: setnmaster s/1/+1/
+      add screen.[ch] to handle Xinerama config, and deprecate get_wa*()
+      add get_display_info function to screen.c and use it for getting windows_area geom
+      stop using deprecated get_windows_area*()
+      add compute_new_value_from_arg() to do the +/- job in uicb fcts
+      use compute function in settrans()
+      use compute_new_value_from_arg in uicb_setmwfact
+      allow nmaster to be 0
+      cosmetic
+      support ncols for non-master wins
+      remove bstack layout
+      remove grid layout
+      fix barbot displaying
+      add uicb_setncols(), clean config, really use config in tile.c
+      rename drawstatus to drawstatusbar
+      no idea why we should redraw statusbar here, so removing
+      remove static vars from tile layout
+      cosmectic
+      rename some vars
+      optimize computing a bit
+      optimize mh computing
+      move drawable to statusbar struct
+      change key for statusbar position config
+      create statusbar.c and move things from draw.c
+      move updatebarpos to statusbar.c
+      move uicb_togglebar to statusbar.c
+      bug fix: reset current_col to 0 (Xinerama problem)
+      fix vlc bug
+      simplify
+      try to load fixed font if other fails
+      add initstatusbar() to init statusbar!
+      store screen of client, first step to multi head support
+      load and save awesome props now take screen as arg
+      add screen args to grabkeys()
+      add screen args to focus()
+      add screen to drawstatusbar
+      get_display_info take screen and screen is stored in statusbar struct
+      get_screen_info get screen as arg
+      add screen arg to _tile
+      restack and arrange take screen as arg
+      remove DefaultRootWindow from grabbuttons, use c->screen to grab real RootWindow
+      remove Default* where possible
+      remove some Default{Root,Screen} from event handlers
+      remove another DefaultRootWindow
+      first multihead support
+      add screen arg to uicb*
+      spawn X client in the right head and add screen arg to layouts
+      execute command where the mouse is, not where sel is
+      don't grab keys if we don't know them
+      add TODO file
+      don't grab keys if we don't know them
+      add TODO file
+      Merge branch 'master' of ssh://git.naquadah.org/var/cache/git/awesome
+      don't grab keys if we don't know them
+      add TODO file
+      enhance multihead support, with N conf/dc
+      remove a DefaultScreen()
+      rework IS_TILED with screen
+      fix some bug (typo ?) with event handling in multihead
+      misplaced return
+      is_visible check for screen
+      remove DefaultScreen ; don't know if it's good, hoping
+      cosmetic
+      fix: do have_randr/shape copy in all conf
+      delete conf+elem and dc on cleanup
+      cosmetic
+      move this fucking netatom stuff elsewhere or we overflow
+      bug fix: wheel on root was infinite looping
+      switch to -O3
+      Merge branch 'master' of ssh://git.naquadah.org/var/cache/git/awesome
+      allow tiled window to be resize/moved, setting them to the floating state
+      bug fix: correctly check if tag is occupied by checking screen number
+      bug fix: move/resize with tiled windows
+      move netatom localy
+      add WM_ICON todo
+      cleanup
+      add a die() function to util
+      stop making awesomelibconf global and store screen number in awesome_configs
+      juste change 0 with EXIT_SUCCESS
+      better proto for drawsquare
+      update TODO
+      update TODO (bis)
+      comment client.h
+      simplify focus, get screen from awesomeconf
+      simplify arrange and restack
+      simplify manage(), remove screen arg
+      remove screen arg from uicb*
+      simplify load/saveawesomeprops
+      remove screen from layouts arrange() arg
+      fix dist target in Makefile
+      change DefaultScreen to the right screen
+      fix potential bug with movemouse
+      remove attribute unused, since it's used
+      cosmetic
+      allow awesome to be run without configuration file
+      it's pretty ok
+      remove spiral from layouts
+      stop using get_window_area* fct, and remove it
+      update manpage
+      set version to devel
+      add uicb_setborder to change conf borderpx while running
+      add binding for set border in default conf
+      fix the ultimate bug when restarting awesome, client misdisplayed
+

@@ -1,0 +1,54 @@
+commit a8ce6ee2aea52654f0a0fd1ee64460cd7c9616a9
+Author: Arnaud Fontaine <arnau@debian.org>
+Date:   Mon Aug 3 17:38:50 2009 +0200
+
+    update to libxcb 1.4 and xcb-util 0.3.6
+    
+    These new versions provide similar fields to Xlib for errors
+    (major_code, minor_code and resource_id).
+
+commit 1c748155125988dc60abe8b58e6c0e51941ae162
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Aug 25 11:37:43 2009 +0200
+
+    change codename
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 47f3a4b3df2f1d31416331a675560596c70fdf09
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Aug 25 11:17:00 2009 +0200
+
+    Clear the signal mask for child processes
+    
+    This adds a callback function which glib calls after it fork()'d and did all the
+    necessary setup. This callback function clears our signal mask.
+    
+    This is necessary because libev 3.8 and later use signalfd and therefor have to
+    add those signals to the signal mask. Processes started through awesome would
+    inherit this signal mask and I can tell you, some app which ignores ctrl-c
+    confuses people a lot.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 7e5097aa09cd4e4ed76205bc882e22de60cd83b3
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Aug 25 11:05:58 2009 +0200
+
+    Inline g_spawn_command_line_async() into awesome
+    
+    This adds a new function spawn_proc_helper() which just contains a copy of
+    g_spawn_command_line_async()'s source code. This means that there should be no
+    behavior change at all here.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 2f350462624548e2e6b616ca77046c4dd09801c4
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Aug 24 15:23:22 2009 +0200
+
+    client: add a limit to the loop (FS#573)
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>

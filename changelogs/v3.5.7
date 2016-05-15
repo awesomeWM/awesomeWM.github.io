@@ -1,0 +1,410 @@
+commit 1098bee582b797c42a694f2f61a65cb0cb90356b
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Jan 15 16:51:19 2016 +0100
+
+    change codename
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 1c27a69131428e9e733374c2a3676ca4ecee45d2
+Author: Kimball Thurston <kdt3rd@gmail.com>
+Date:   Tue Dec 22 21:46:17 2015 -0800
+
+    Fix focus handling with multiple awesome instances
+    
+    When there are multiple X11 screens (i.e. :0.0 and :0.1) for zaphod mode
+    style X setups, this triggers a refresh of focus when the instance
+    running on a particular root receives the mouse
+    
+    Fixes https://github.com/awesomeWM/awesome/issues/599.
+
+commit 91743f01b8a26793a780686f5896c76928120f5b
+Author: Daniel Hahler <git@thequod.de>
+Date:   Fri Nov 6 22:12:22 2015 +0100
+
+    Add .travis.yml from master, ignoring functional tests
+    
+    Closes https://github.com/awesomeWM/awesome/pull/554.
+
+commit 4bc44ee1414f8155079f4904191ab65ecffc25cf
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Feb 15 12:16:03 2015 +0100
+
+    objects: Add .valid property (Fixes #110)
+    
+    This property is especially useful for client objects which are unusable after
+    unmanage. "Unusuable" here means that pretty much everything you do with the
+    client object results in a lua error.
+    
+    Syntax is c.valid.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 0bf4771e51f1a10f08ee242138941cdbbcc84291
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Nov 1 17:53:53 2015 +0100
+
+    Spawn: Improve handling of startup notification
+    
+    The ID for startup notification is transmitted to the spawned process via the
+    DESKTOP_STARTUP_ID environment variable. Before this commit, we set this
+    variable in the main process. This meant that if we started something "without"
+    a startup id, then it might get the ID that was used by the last spawn and which
+    was still saved in our env. Fix this by setting the environment variable only
+    after fork().
+    
+    Small anecdote: The above wasn't enough to make Daniel's test case succeed and
+    at first I couldn't figure out why.
+    
+    Turns out that rxvt-unicode doesn't unset the DESKTOP_STARTUP_ID environment
+    variable (I think it should, according to some spec), even though it supports
+    startup notification. So awesome was already started with DESKTOP_STARTUP_ID set
+    and thus all spawned processes used this ID.
+    
+    Fix this by explicitly unsetting DESKTOP_STARTUP_ID if we don't set any new
+    value (even though this breaks encapsulation; we shouldn't have to care about
+    this "implementation detail" of libstartup-notification).
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit ff799a0f5dba06beed9f13939237899e53ff8fd8
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Oct 16 17:30:46 2015 +0200
+
+    Grab client keys on the client window (#496)
+    
+    Before this, we grabbed the keys on the frame window. That meant we only got key
+    events for things that nothing else grabbed directly on the key window.
+    
+    After this, we grab directly on the client window itself and so we "fight" with
+    everything else which wants to grab keys. I don't actually know how the winner
+    is decided... First come, first serve, the rest gets an error?
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit facf51b8cbd614457e46efc8250707ba76d35bf6
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Oct 10 17:45:24 2015 +0200
+
+    Apply window gravity for border width changes
+    
+    Together with the previous changes, this also fixes the initial positions for
+    metacity's test-gravity.c.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 9c7cc12e5f1628b8dff65f78b0d513ee894aa598
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Oct 10 17:44:11 2015 +0200
+
+    Apply window gravity for titlebar resizes
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit cd5cd52c20f44d53d8a47060f3d91b7d6fec925f
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Oct 10 17:42:25 2015 +0200
+
+    Refactor code a little
+    
+    The previous commit added some variables and this commit makes the surrounding
+    code use these new variables as well.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit bbf88211b4fe86288d1e918d1758681130438589
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Oct 10 17:41:05 2015 +0200
+
+    Apply window gravity when a window moves itself
+    
+    This just makes us do what ICCCM requires us to do. Tested via metacity's
+    test-gravity.c.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 4313d93c6c5b09565ed331c3e9a7653069d5337d
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Oct 10 17:38:51 2015 +0200
+
+    Fix obvious typo in xwindow_translate_for_gravity()
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 821e3e7e2cf1f301f83b790d66452913f92324ef
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Oct 10 22:25:56 2015 +0200
+
+    Make awesome.quit() during startup work
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit e7fbbf47e5ec30cba1ef55e0af6601c1b04e004f
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Oct 10 21:13:40 2015 +0200
+
+    Fix client_apply_size_hints()
+    
+    The bit that indicates that the base size is set is
+    XCB_ICCCM_SIZE_HINT_BASE_SIZE. However, instead this code checked
+    XCB_ICCCM_SIZE_HINT_P_SIZE which is set to indicate how the initial window
+    position is chosen. So we were checking the complete wrong bit. Whoops...
+    
+    Fixes: https://github.com/awesomeWM/awesome/issues/456
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 9b5ab994b024a42df38724a093509afe8eb89a8e
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Sep 23 20:48:56 2015 +0200
+
+    Never explicitly focus the root window
+    
+    Whenever client.focus == nil, we set the input focus to the root window to
+    express "nothing has the input focus". However, thanks to the way X11 input
+    works, this means that whatever is under the mouse cursor gets keyboard input
+    events. This can easily be reproduced with urxvt and some small addition to the
+    config to unfocus things.
+    
+    This commit changes things. Instead of focusing the root window, we create a
+    special "no focus" window that gets focused if we want nothing to have the
+    focus.
+    
+    Closes https://github.com/awesomeWM/awesome/pull/470.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit abf7d1546cc4fcc2b61edd6fab2436beb61e0356
+Author: Kazunobu Kuriyama <kazunobu.kuriyama@gmail.com>
+Date:   Mon Sep 28 14:41:04 2015 +0900
+
+    Fix the definition of A_STRNEQ_CASE
+    
+    Replace A_STRCASEEQ whose definition is not given anywhere with A_STREQ_CASE.
+    
+    Closes https://github.com/awesomeWM/awesome/pull/488.
+
+commit de8fd4ffd4998e51164e4bc734fe74d11d358a56
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Sep 17 17:03:36 2015 +0200
+
+    Handle enter/leave events with detail=Inferior correctly
+    
+    There is a client window C. Around this window, awesome adds a frame window F.
+    When the pointer is inside of C and then moves inside of F, we get a LeaveNotify
+    with detail=Inferior, but from our point of view, the pointer is still inside of
+    C, because F is contained in C.
+    
+    Similarly, if the pointer is in F and moves to C, we get an EnterNotify with
+    detail=Inferior that we should ignore. However, for an EnterNotify the pointer
+    can now be inside of a titlebar, so this case has to be handled now.
+    
+    The above explains the enter/leave behavior for clients. Let's now think about
+    titlebars: When the pointer moves from C to F, it cannot be in any titlebar any
+    more, so we must generate a leave event on that titlebar. Similar when the
+    pointer moves from F to C, but in this case we also have to figure out which
+    titlebar now contains the pointer.
+    
+    This patch makes the code handle these events with detail=Inferior correctly.
+    
+    Closes https://github.com/awesomeWM/awesome/pull/461.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit a638310e89fe69b8f2e1364f7359a497469cd1bc
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Nov 6 21:29:27 2015 +0100
+
+    Fix compilation
+    
+    This fixes a bad cherry-pick from commit db087fdda72af25.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit ac72f8e5a086f352da66525aa14174d2502b146b
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Sep 17 16:32:56 2015 +0200
+
+    Fix enter/leave events on titlebars
+    
+    This adds a global variable that tracks the drawable that is currently under the
+    mouse cursor. This new variable is then used so that we get consistent behavior
+    for enter/leave signals. Such signals are now also generated when a MotionNotify
+    event tells us that the pointer is now in a different titlebar.
+    
+    Before this, it was possible that we did not generate a leave event on a
+    titlebar since the LeaveNotify contains the cursor position after the leave and
+    we did not manage to figure out which titlebar was left.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit f320cc74d0ec4111ef04b3523a55970167d28f36
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Aug 12 10:26:27 2015 +0200
+
+    Force systray redraw on BG color change
+    
+    This commit makes awesome track the current background color of the systray
+    window. When Lua applies another color, a redraw of all icons is forced.
+    
+    Fixes: https://github.com/awesomeWM/awesome/issues/359
+    Closes: https://github.com/awesomeWM/awesome/pull/402
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit d37cc7e9dfe968f65752e9dafefdce057862b1a0
+Author: Daniel Hahler <git@thequod.de>
+Date:   Wed Jul 29 19:04:00 2015 +0200
+
+    awesome_atexit: keep client order always
+    
+    This is not only useful for soft restarts, but also when TERMinating
+    awesome during development/testing.
+    
+    The drawback appears to be that it would leak a property on the root
+    window in case it is really meant to be quit.
+    
+    Closes https://github.com/awesomeWM/awesome/pull/374.
+
+commit db087fdda72af25fcfbdf0ca34e349a6e6b3c7fa
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Jul 26 17:03:10 2015 +0200
+
+    Keep client order across restarts
+    
+    This saves the order of clients in a property called AWESOME_CLIENT_ORDER on the
+    root window during shutdown. During startup, after managing all existing
+    windows, we force the client list into the order described by this property
+    (overwriting any changes that Lua possibly did).
+    
+    This code should safely handle cases where the property doesn't contain all
+    existing clients or contains a client which doesn't exist anymore.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 0412acfdc02295973e3c216bda6ce4349dc86f80
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Jul 26 15:59:34 2015 +0200
+
+    Keep stacking order across restarts
+    
+    ReparentWindow puts the window at the top of the stacking order. Thus, we have
+    to reparent clients back to the root window in the stacking order.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 581ccc80ad8a3b2d8f7ac5608ee1d18906bfe258
+Author: Daniel Hahler <git@thequod.de>
+Date:   Sat Jun 20 01:56:05 2015 +0200
+
+    cmake: s/ESCAPE_QUOTE/ESCAPE_QUOTES
+    
+    This appears to be the correct name for 2.8.12 [1] already, but CMake
+    3.2.3 complains loud(er) now.
+    
+    1: http://www.cmake.org/cmake/help/v2.8.12/cmake.html#command:configure_file
+
+commit 925e6ecc171bdec65bf1f6ccafea2a0ce1724bf3
+Author: Daniel Hahler <git@thequod.de>
+Date:   Sat Jun 20 02:08:04 2015 +0200
+
+    Make stdout/stderr line buffered
+    
+    This improves the behaviour with print()ing for debugging, when the
+    output is redirected to a file.
+    
+    I was using `setbuf(…, 0)` initially, but it makes sense to buffer it
+    per line.  This uses `setvbuf` instead of `setlinebuf`, which might not
+    be available everywhere.
+    
+    Closes https://github.com/awesomeWM/awesome/pull/267
+
+commit 4c517cf9d32a6926bf97ac06fcec55b67d9db7bb
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Jun 13 11:18:47 2015 +0200
+
+    Screen __index: Don't turn argument into a string
+    
+    Calling lua_tostring() on a number/integer, turns that stack slot into a string.
+    This patch changes the code to only call lua_tostring() if the function argument
+    really is a string.
+    
+    This partly also caused https://github.com/awesomeWM/awesome/issues/238.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 84f09d9c69d8844dc2fa02f26745a6471bad7df7
+Author: ▟ ▖▟ ▖ <dodo.the.last@gmail.com>
+Date:   Sat Apr 18 08:53:57 2015 +0200
+
+    awful.menu: update t new layout api
+    
+    Apparently the style to get the direction of a wibox.layout.* changed
+    from calling get_dir to just accessing the attribute dir.
+
+commit 00d466204f965c43a00e581317c5f0e24923097e
+Author: Heiko Becker <heirecka@exherbo.org>
+Date:   Fri Mar 27 09:40:42 2015 +0100
+
+    awesomeConfig.cmake: Allow setting AWESOME_DATA_DIR
+    
+    The motivation behind this patch is my distro moving to a multiarch
+    layout. While binaries, libraries, etc. are are installed into
+    /usr/{host}/{bin,lib,...} architecture-independent data should still
+    go to /usr/share.
+
+commit 2efc09d103693ad130b79577996cfa4e0f6b8f40
+Author: Daniel Hahler <git@thequod.de>
+Date:   Tue Mar 17 16:23:40 2015 +0100
+
+    tag.lua: add "property::icon_only" signal
+    
+    Thanks @NormalRa for the patch.
+    
+    Fixes #138.
+
+commit c03ee8ab362d9960d4742cb9c3baffa61db215c8
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Feb 25 21:52:03 2015 +0100
+
+    Ignore more events while minimizing a client
+    
+    When minimizing a client, we temporarily ignore events for the client window (so
+    that we don't get the UnmapNotify event that we are causing for the unmap) and
+    for the root window (I don't actually know why, no "harmful" events should be
+    caused...).
+    
+    However, we weren't ignoring events on the frame window itself. This commit
+    fixes that oversight.
+    
+    The problem here is that the pointer could be inside the window that is being
+    minimized. When we then unmap said window, the pointer will now be inside of the
+    frame window and the X11 server will thus generate an EnterNotify. When we
+    handle this event later on, we emit mouse::enter on the client and e.g. the
+    default config then focuses this client, which undoes the minimization.
+    
+    This fixes a regression introduced in commit 3aeac3870ca4855 and fixes #92.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 89fd49f48cea35a0a78691c3839cc0b8df2ade1c
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Jan 17 19:44:04 2015 +0100
+
+    a_dbus_message_iter: Handle DBUS_TYPE_DOUBLE
+    
+    Fixes #78 on GitHub.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 635223b5fe599d94de4ab44d27500041f121e081
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Jan 11 10:42:45 2015 +0100
+
+    Remove titlebars from clients during shutdown (FS#1159)
+    
+    This reparents all clients back to their proper position during shutdown, so
+    that their top-left corner is now where their titlebar's top-left corner was.
+    Hopefully, this fixes floating clients moving around across a restart.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>

@@ -1,0 +1,574 @@
+commit 4ea1753f348e9b4da808b124065fbbd005db4e6f
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Aug 25 10:50:48 2010 +0200
+
+    Change codename
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit c73b1c8d4e13afe5727551f7103043c26e01cf47
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Aug 17 21:33:07 2010 +0200
+
+    Revert "Don't call "focus" hook in client_focus()"
+    
+    This reverts commit 27f9c0177a9d37e5b19732f7e9ff67860ab4bd48.
+    
+    This commit broke code like the following because reading client.focus would
+    still return the previously focused client:
+    
+    awful.client.focus.byidx(1)
+    if client.focus then client.focus:raise() end
+
+commit 5fafe8d0eb3737bdbbcf97079786ba6e8d91bbda
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Aug 17 20:52:32 2010 +0200
+
+    Fixes for maximized clients
+    
+    When a client is maximized and then has a titlebar added / removed, we need some
+    special magic to make sure it still gets the correct geometry. This is now done
+    by maximizing the client again.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 6d1130b40812268ccb93add146da47c6e9904051
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Aug 17 18:06:40 2010 +0200
+
+    Ignore the titlebar geometry on fullscreen clients
+    
+    When a client is fullscreen, it should cover the full screen. There's no point
+    in trying to do clever things if the titlebar is banned anyway.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 5a5177876894ac7d1fef54d306e26da8ab9e2524
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Aug 17 18:04:33 2010 +0200
+
+    Unban the titlebar when leaving fullscreen
+    
+    When entering fullscreen, we remove the titlebar via titlebar_ban(). Obviously,
+    it makes sense to unban the titlebar again when leaving fullscreen. :)
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 6ed3b618449be3804daf3b60163a7c202558c52e
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Aug 15 13:17:07 2010 +0200
+
+    Don't call "focus" hook in client_focus()
+    
+    Later on that call will be done through a FocusIn event.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 4862212c14e88c7e1813c97ab78ccd44f9af708a
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Aug 12 14:52:23 2010 +0200
+
+    Use globalconf.timestamp
+    
+    This makes us use globalconf.timestamp instead of XCB_CURRENT_TIME in the places
+    where it makes sense.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 5225683d9b6f7a291214749391b4a28c9e51d27a
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Aug 12 14:37:39 2010 +0200
+
+    Track the last timestamp received from the server
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit b938ce00b51ab583f1ae08dd31b3fa2f873856bc
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Aug 12 14:32:27 2010 +0200
+
+    Always unban a client that we are trying to focus
+    
+    Previously, if a client had nofocus == true, it wasn't unminimized if sth tried
+    to focus it. Also, if this client had the WM_TAKE_FOCUS protocol, the focusing
+    would fail since it's an error to set the input focus to an unviewable window.
+    
+    For consistency, this also moves the code that sets a client's minimized
+    property to false into client_unban() since it doesn't make sense to have a
+    minimized client unbanned (i.e. visible).
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 0e798d0d764cbb2738c13f0c70cd1f35395fea1a
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Aug 12 13:18:40 2010 +0200
+
+    Check "focusable" in awful.client.focus.filter(c)
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 9d1ae71cbfe73888bfd0005aed60e08bbe8adfd7
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Aug 12 13:08:55 2010 +0200
+
+    Add "focusable" property to client objects
+    
+    If this property is true, setting "client.focus" to this client might have some
+    effect. If it is false, setting "client.focus" will be ignored completely.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 6f199400204c7c791e0596b607e08b32b3b8591c
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Aug 1 16:00:03 2010 +0200
+
+    prompt: Only show error messages
+    
+    Ever since awesome.spawn() also returns the pid of the started process, the
+    prompt accidentally displayed the pid of processes that it started.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 8cbfd442a0b14d13f30682af8b5bf9da73091128
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Jul 30 14:17:27 2010 +0200
+
+    Correctly read a textbox' ellipsize and wrap properties
+    
+    The old code used the wrong constants which meant we always returned "word" for
+    wrap and "end" for ellipsize.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit ce4088bbf7ccce428579aa530c000fac36cac9cb
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Mon Aug 9 11:27:13 2010 +0200
+
+    client_unmanage: Update WM_STATE later
+    
+    According to ICCCM, if a client wants to reuse one of its windows, it has to
+    wait until the WM updated WM_STATE. This means updating WM_STATE should be the
+    very last thing we do when unmanaging a window.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 4d9211c8c3a338b770078c83153bdc495dbb2a29
+Author: Gregor Best <gbe@ring0.de>
+Date:   Sun Aug 8 18:31:07 2010 +0200
+
+    fix some deprecated atom constants
+    
+    Signed-off-by: Gregor Best <gbe@ring0.de>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit a2c6dde410de7dc9522cb9b64e729d9a06a9f8af
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Aug 8 18:19:15 2010 +0200
+
+    Remove all uses of attribute "unused"
+    
+    Awesome is built with -Wno-unused-parameter which means there is no point in
+    explicitly marking arguments as unused.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 7b06933f5b39a280c471f235f6e8dcdb9521b795
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Aug 8 18:06:47 2010 +0200
+
+    Brown paper bag commit
+    
+    I removed the function, but forgot to remove the prototype. Whoops!
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 5e761f8c24e822913304f701d527c1018b96fd9d
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Aug 8 17:54:13 2010 +0200
+
+    Remove some more unused function arguments
+    
+    We no longer use libxcb-event, so we don't have to follow it's API any more.
+    This means the pointless arguments and return values can be removed.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 43bba587fb7897833b0af66f5acc896b17154c16
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Aug 8 17:35:48 2010 +0200
+
+    Stop using most of libxcb-event
+    
+    Upstream removed most of the code from libxcb-event and there is no
+    event-related stuff left in this library. We now no longer use any of the parts
+    that were removed.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit d79578c91819da75579af6b99a9bd9d3bad1f060
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Aug 8 16:54:36 2010 +0200
+
+    Remove some unused function arguments
+    
+    We no longer have to follow libxcb-property's API for these function, so we can
+    remove arguments which we don't use anyway.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 721f33d5cc6ab05a4436c16bb6ea41de1725594a
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Aug 8 16:45:56 2010 +0200
+
+    Stop using libxcb-property
+    
+    libxcb-property will be dropped from xcb-utils in the next release, because
+    upstream thinks it's not really useful and well-designed.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 54ff33fb049c67d1ed0894a0cdb207f2d06dda3b
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Aug 7 13:28:44 2010 +0200
+
+    Avoid some round-trips on startup
+    
+    This makes awesome prefetch some of the data it needs during startup to avoid
+    some useless round-trips to the server.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 8d59512cccefc65b83c508fbf9dcb3073dc2c5c9
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Jul 30 14:15:42 2010 +0200
+
+    Naughty: Handle invalid UTF-8 more sanely
+    
+    Previously, if setting the textbox's text failed this caused more problems later
+    on. This commit makes sure that an invalid text never breaks pango.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 457913a0e8d711edfb2e6e086fed05dd663cee35
+Author: Konstantin Stepanov <kstep@p-nut.info>
+Date:   Sun Jul 25 14:48:14 2010 +0300
+
+    stack graph mode works with max_value
+    
+    Signed-off-by: Konstantin Stepanov <kstep@p-nut.info>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit a77209c7fe0caf7de273e062014c3841393e3cf4
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Aug 3 11:25:54 2010 +0200
+
+    Fix an unbalanced lua stack operation
+    
+    ewmh_process_state_atom() does a luaA_object_push() at its beginning, but it
+    doesn't pop that object again. Fix this by, well, popping the object at the end
+    of the function again.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 402870687b017714f4e8440e9fa9c7d4b77639f5
+Author: Ignas Anikevicius (gns_ank) <anikevicius@gmail.com>
+Date:   Mon Aug 2 20:25:30 2010 +0200
+
+    Functionality for deleting a tag using awful.tag.
+    
+    tag.delete(t, fb):
+        Delete tags if certain criteria are met:
+            - There are no clients assigned exclusively to this tag.
+            - Stickied clients have somewhere to go, 'fb' the fallback tag
+    
+        If after deleting there is no tag selected then try and
+        history.restore() or select the first tag on the screen.
+    
+        Return true if successful and nil otherwise.
+    
+    Signed-off-by: Perry Hargrave <perry.hargrave@gmail.com>
+    Signed-off-by: Ignas Anikevicius <anikevicius@gmail.com>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit cc33cd17a0cf1f90634df1f12b0938ef9ccda58d
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Jul 25 09:26:27 2010 +0200
+
+    Remove systray icons from the save set
+    
+    This commits makes awesome remove systray windows from the save set when they
+    are unmapped. This happens for the same reason as with normal client windows.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit db958cafb450a3850c22a0e5fc38db8b77196703
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Jul 24 19:44:28 2010 +0200
+
+    Remove windows from the save set in unmanage
+    
+    While a window is in the save set, it will automatically be made visible again
+    when awesome exits/dies. This makes sure that the next window manager will pick
+    this window up and handle it properly again.
+    
+    But when a window explicitly asks not to be visible, it doesn't want to be
+    visible. Even if awesome dies. So we should remove the client's window from the
+    save set in client_unmanage.
+    
+    Thanks to anrxc and his xwrits.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit d45d31ebaec9a771aa919b2bf8865695e4ebcac8
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Jul 24 15:29:55 2010 +0200
+
+    awful.placement: Honor border width
+    
+    While calculating if part of the window is outside the visible region, this code
+    should also add the border width. (FS#684)
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 84676561da8a1d5cd0680d36cb664bec49ba5543
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Jul 23 12:22:03 2010 +0200
+
+    Make fullscreen stacking respect EWMH
+    
+    Fullscreen windows should only get their own layer when they have the input
+    focus. When they are unfocused they should be treated normally (FS#560).
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 9977802d7eaf3c912c9290bf13ce80fe164660a9
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Jul 22 10:32:57 2010 +0200
+
+    Improve aspect size handling
+    
+    The window is now no longer enlarged to make it fit into its aspect ratio, but
+    only ever made lower. This was verified with a small test app that sets a min
+    aspect ratio of 0.5 and max aspect ratio of 2.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 227b71921d7a642b328e35faec797248be665d94
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Jul 22 10:02:06 2010 +0200
+
+    Fix some size hint mixups
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit f372388de9252011fa98ee07ae8fb4954dd8ae36
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Jul 22 09:42:04 2010 +0200
+
+    Fix a minor ICCCM incompatibility
+    
+    ICCCM says that the min size should be used for the base size if no base size is
+    specified. The only exception is when calculating the aspect ratio of the
+    window, in that case only the "real" base size may be used.
+    
+    Awesome didn't do this last part before.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 418f3d0b37af2f3c57235e1af206a105983b137e
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Jul 22 09:23:13 2010 +0200
+
+    Minor cleanup
+    
+    Or'ing into a bool feels dirty and the struct members should all be documented.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit cc31fc32e6689e7d0b36bc41fe8c8554407e5021
+Author: Daniel Graña <dangra@gmail.com>
+Date:   Fri May 21 16:18:12 2010 -0300
+
+    Register systray only if systray widgets are attached. (FS#503)
+    
+    Signed-off-by: Daniel Graña <dangra@gmail.com>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 6de41161f1b9ac5e3c9c66e786db613efeae2205
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Jul 21 17:48:58 2010 +0200
+
+    Ignore size hints on fullscreen windows
+    
+    If a window is fullscreen it is supposed to cover the full screen. Obeying size
+    hints makes no sense in this case.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit b90aa39dc975ff75400a99ac7b17e711fe30cf0f
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Jul 18 16:20:24 2010 +0200
+
+    Fix a brown paper bag bug in d7d70714d7943ac4
+    
+    I cherry-picked this commit from master and there was a conflict. I fixed this
+    up by hand and apparently failed here.
+    
+    Instead of first saving the systray window and then destroying the wibox, this
+    first destroyed the wibox and then tried to save the systray, but it was already
+    destroyed in the previous step. Just swapping these two calls fixes this.
+    
+    Thanks to anrxc for making me notice how much I fail.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 312094ace3ad540f9793cf5b114c0cc0db0ee7a2
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Jul 18 14:32:37 2010 +0200
+
+    Avoid some flickering when a new window opens
+    
+    A new window is by default above all other windows. This means that when we map
+    it and then *later* move it to the correct place in the stacking order (thanks
+    to lazy restacking), the window on the top of the stack has to redraw itself.
+    
+    I noticed this via naughty notifies redrawing themselves after opening a browser
+    window.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit d7d70714d7943ac4201072b0605fb923ba1f29a0
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Jul 18 09:54:30 2010 +0200
+
+    Kick out the systray when wiping a wibox
+    
+    When a wibox is destroyed or detached from a screen, it is wiped to clean up its
+    resources. This also includes destroying the window which is associated with the
+    wibox.
+    
+    The problem here is that if the wibox contains the systray, the systray window
+    would automatically be destroyed since all childs of a window are destroyed when
+    said window is destroyed. To fix this, we kick out the systray window before
+    destroying the wibox' window.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 94a0349c6227cd5781eb3809737e628787d5840d
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Jul 16 19:52:42 2010 +0200
+
+    Clear a draw_text_context_t during wipe()
+    
+    This fixes a bug where pango was called with already-freed arguments because
+    wipe() didn't zero out those variables and a later init() failed.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 5487906487c33962fc1a6a6a28c9efbf2af78339
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Jul 16 19:35:51 2010 +0200
+
+    Naughty: Catch invalid markup in notifications
+    
+    Previously, an invalid markup caused an empty popup. Since the C core now throws
+    a lua error on invalid markup, we have a way to notice that something is wrong.
+    
+    This patch first tries to set the notification's text the same way we did
+    previously. If that fails, everything is escaped and the result is used as the
+    text for the notification.
+    
+    Thanks to farhaven/Gregor Best for the initial version of this and for the
+    string.gsub() call I stole from him. :)
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 62a0189f05222b3a944c58b10f1651f107471a33
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Jul 16 19:16:04 2010 +0200
+
+    textbox: Throw a lua error on invalid markup
+    
+    Idea by JD, inspired from a patch by farhaven.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 0655f1361534b444e63bf60ee35a76a0f2e5de46
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Jul 16 18:54:57 2010 +0200
+
+    Read a textbox' text correctly
+    
+    Previously, querying a textbox' .text property would return the text with all
+    pango markup stripped.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 64855b41cd8f7bb152f28498d16cdb27994b66da
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Jul 15 19:21:02 2010 +0200
+
+    Handle errors in the config better
+    
+    luaA_loadrc() now returns a failure when executing the config file causes an
+    error.
+    Previously it returned a success which meant the next config file wasn't tried.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit a6f2c73c6792f4442d2242c13845467217ad85f0
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Jul 14 21:37:07 2010 +0200
+
+    Don't manually unban all windows on exit
+    
+    The last commit made sure the X server does this for us instead. No need to do
+    that work twice.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 985bafaf84c0f318bac2aec29eaa91dbae536796
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Jul 14 21:35:06 2010 +0200
+
+    Add all managed client windows to the safe set
+    
+    When an application loses its connection to the X11 server, all the windows in
+    its save-set are saved by reparenting them back to their closest ancestor. Also,
+    to they are unconditionally mapped. This second property is exactly what we
+    need: All windows should be in mapped state, else the next window manager which
+    starts up won't be managing them.
+    
+    This should fix all bugs where clients where lost due to a restart, yay! :)
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 4a7f0abf4ffecb52957d1df8500a013d0b5cdb04
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Jul 14 17:42:53 2010 +0200
+
+    Don't reparent systray windows on exit
+    
+    Since the last commit, systray windows will automatically be reparented by the
+    X11 server. This means we no longer have to do this ourselves.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 775ea16efa21c708ebe8dbace039defbfcc145e7
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Jul 14 17:26:55 2010 +0200
+
+    Add systray windows to the save-set
+    
+    When an X11 client disconnects from the X server, all of its windows are
+    destroyed. This also means that all the sub-windows of those windows are
+    destroyed which is not necessary what one wants to happen.
+    
+    To work around this, X11 has a "save-set". All the windows that are in the
+    save-set are reparented to their closest ancestor when they would normally be
+    destroyed. This is just what this code needs. :)
+    
+    (The windows in the save-set are also mapped when they are saved, dunno if this
+    hurts here or not)
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>

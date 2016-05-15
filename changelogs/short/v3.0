@@ -1,0 +1,1455 @@
+Alex Cornejo (8):
+      Remove old confuse structures and include.
+      Added get_class to client.
+      [tasklist] Fix incorrect icon background.
+      Added magnifier icons.
+      Handle urgency hint in awful.
+      statusbar: systray inherits the bg color.
+      Added troubleshooting section.
+      layout: add fair layout
+
+Arnaud Fontaine (60):
+      Port Awesome to XCB
+      Copy properly a window text property
+      Use unchecked instead of checked call because the error has to be in the error queue
+      Set properly the border width of a new window
+      Rewrite code which query xinerama screens to fix a double free
+      Fix incorrect call of xcb_configure_window()
+      Cosmetic
+      Fix x_get_transient_for_hint() based on XGetTransientForHint()
+      Remove useless x_select_input() which leaded to useless requests
+      When handling a ConfigureRequest, send a ConfigureWindow according to the event value mask.
+      Allow to specify hexadecimal colors in configuration
+      Translate properly a KeyCode to a KeySym and a string (XKB support missing ATM).
+      * Remove buggy ignore_motion_events. * Add xcb_aux_sync() in order to fix problem when moving or resizing a window.
+      Fix typo when checking GetGeometry reply
+      * Make key symbols table, NumLock, ShiftLock and CapsLock global variables. * Get CapsLock and ShiftLock masks properly and fix XLookupString() XCB equivalent.
+      Prefix xutil functions properly
+      Get properly windows geometry when handling existing windows at Awesome startup
+      Fix incorrect porting of XCreateFontCursor()
+      Cosmetic
+      Remove useless xutil_root_window()
+      Move xcb_event_handler code to xutil
+      [mouse] Fix regression in moving
+      Remove xsync option (no XCB equivalent of XSynchronize)
+      [client] Send properly the ClientMessage request when killing a client
+      [common/xutil.c] Rewrite xgettextprop properly for UTF8_STRING
+      [common/xutil.c] Free ClassHint reply
+      Cleanup of TODO messages
+      [awesome] Send geometry requests and then process the replies in scan()
+      Desallocate replies and events properly
+      Cosmetic
+      [awesome-menu] Convert properly a KeySym to a character
+      [client] Fix xcb_get_wm_normal_hints() which now returns an allocated pointer
+      [configure.ac] Add AC_PATH_X as we still need Xlib for keyboard related functions
+      [xutil] Fix missing applied mask when getting request code in xutil_get_error().         Thanks to Matthieu Pasini.
+      Cosmetic
+      [xutil] check whether the error code and request are actually defined
+      [client] Fix regression (closed windows still mapped on the screen)
+      [client] Useless accessors functions have been removed from xcb-util/icccm which had a bug making urgency hint unusable.
+      [awesome-menu] rewrite getline by avoiding useless free and setting                errno in case of error.
+      [all] Implement an atom cache in xutil as an ordered linked-list
+      [client] Add client_redraw (FS#170)
+      [awesome-client] Replace deprecated client_zoom by client_swap in documentation
+      [iconbox] Get rid of GCC warning
+      [client] Send requests to the X server and treat replies as late as possible
+      [configure.ac] Check whether cairo-xcb is installed
+      [event] Optimize xcb pointer and geometry queries.
+      awesomerc: fix typo
+      Replace xcb_aux_get_screen() by a safer function
+      Always use unchecked xcb functions
+      xutil: rename xutil functions according to the rest of code.
+      draw: make xcolor_init() asynchronous.
+      xembed: make xembed_info_get() asynchronous
+      xutil: make xutil_lock_mask_get() asynchronous
+      ewmh: make ewmh_window_icon_get() asynchronous
+      window: make window_getstate() asynchronous and rename this function         according to the rest of code.
+      window: rename functions according to the rest of code
+      client: when redrawing a window, set the mouse focus on this window if         it has been performed on this window.
+      awesome: get rid of unecessary malloc in scan()
+      Update to new xcb-util library.
+      systray: rely on xcb_atom_name_by_screen available since xcb-util 0.3.0
+
+Byron Clark (3):
+      awful: mouse.screen_get only uses passed screen
+      Stop spamming the log when there is no image present.
+      progressbar: fix newindex
+
+Damien Leone (10):
+      beautiful: remove useless var and close file
+      awful: add focusbydirection() (FS#166)
+      beautiful: allow extra spaces in theme file
+      awful: add prompt history
+      awful: fix empty command adding
+      awful: fix index init
+      awful: Patch prompt so it can handle different files
+      awesomerc: Change prompt.run parameters so it can handle history
+      default theme: add documentation about taglist_squares and [taglist|tasklist|titlebar] specific variables
+      awful: fix theme.taglist_squares usage
+
+Fabienne Ducroquet (5):
+      Add functions to change the layout
+      Add shortcuts to change the layout
+      Rearrange the screen when changing layout
+      [client] Save geometry of windows when resizing in floating layout
+      libs: fix callback call and untab
+
+Felix C. Morency (5):
+      * Removed config.h.in from .gitignore since CMake-based build-system needs it
+      * Added CMake-based build system necessary files
+      * Removed old makefile system
+      cmake: fixed source package generation, again
+      cmake: fixed out-of-source build
+
+Félix C. Morency (19):
+      * Gzip and install man pages
+      * Fixed man install relative to prefix
+      * Fixed man page generation
+      * Fixed CPack package generation
+      * Fixed man page generation
+      * Fixed CPack package generation
+      * Fixed merge problem
+      * Fixed install path
+      Fixed loose loop construct support and cmake min version
+      * Fixed header generation
+      cmake: Fixed source package generation
+      make cpack use destdir instead
+      added sysconfdir support
+      set cmake policy 2.6 if supported
+      fixed out-of-source luac file generation
+      cmake: Specify that the project's language is C
+      build: fix theme install path
+      build: use cmake modules to find curses and lua
+      build: fix minimum required cmake version
+
+Gregor Best (1):
+      awesomerc: use gmatch instead of deprecated gfind
+
+Jay Bromley (2):
+      client: return instance and class (FS#236)
+      awesomerc: improve management of floating/predefined tags (FS#241)
+
+Julien Danjou (991):
+      Fix Xinerama detection
+      [screen] Use default screen on Xinerama for root window
+      [ewmh] Fix data type in EWMH icon
+      [awesome-menu] Fix uninitialized variable
+      [scan] Remove alloca() usage and simplify some stuff
+      [xutil/awesome] Cosmetic
+      [ewmh/awesome] Comsmetics
+      [uicb] Rename functions
+      [draw/config] Cosmetics
+      [xutil] Rework some stuff and rename xgettextprop()
+      [xutil] Remove map_raised
+      [mouse] Rewrite mouse functions
+      [authors] Add Arnaud Fontaine
+      [events] Wait for events rather than poll
+      [client] Stack according to client on all screens
+      [awesome-menu] Fix quitting
+      [event] Cosmetic and manage enhancement
+      [layout] Optimize xcb pointer query
+      [mouse] Drop motion events
+      [swindow] Store gc
+      [swindow] Rename SimpleWindow to simple_window_t
+      [statusbar] Remove statusbar_display
+      [draw] Build with GTK by default instead of Imlib2
+      [mouse] Do not overwrite events when moving
+      [swindow] Free GC, make refresh inline
+      [util/rules] Move Fuzzy from rules to util
+      [rules] Rewrite rule matching more efficiently
+      [bobmarley] Fix the query pointer request placement
+      [doc] Update README according switch from imlib2 to GTK by default
+      [xutil] Do not use strncmp here
+      [xutil] Make the request earlier
+      [placement] Cosmetic
+      [all] Rename Layer to layer_t
+      [titlebar] Rename Titlebar to titlebar_t
+      [rules] Rename Rule to rule_t
+      [config] Rename data structure for mouse buttons and keys
+      [util] Change Alignment type to alignment_t
+      [util] Change Position type to position_t
+      [util] Change Fuzzy type to fuzzy_t
+      [uicb] Rename Uicb type to uicb_t
+      [widgets] Rename Widget type to widget_t
+      [statusbar] Rename Statusbar type to statusbar_t
+      [client] Rename Client type to client_t
+      [draw] Do not declare vars in blocs
+      [events] resync after leaving the while loop
+      [tag] Rename Tag type to tag_t
+      [util] Add position_to_str()
+      [common] Add support for pango markup (FS#171)
+      [util] Fix warning for position returning
+      [client] Escape clients name
+      [xutil] Use memcpy() instead of strncpy() for safety
+      [titlebar] Add string to format
+      [dbus] first support
+      [titlebar] Fix buffer allocation
+      [draw] Add support for bg in draw_text and use ellipsize from pango
+      [textbox] Remove bg property in widget_tell
+      [draw] Tell pango about padding
+      [textbox] Clean things which became useless with markup
+      [draw] Draw style background in draw text if no bg in markup
+      [draw] Use g_markup API to parse bg elements
+      [draw] Handle error on end of feeding into XML parser
+      [xutil] Use a_strndup()
+      [draw] Rebuild the pango markups while parsing ours
+      [draw] Simplify <markup> adding
+      [draw] Implement a more generic markup parser
+      [markup] Add generic substitution of elements and use it for titlebar
+      [dbus] Remove unused var
+      [emptybox] Remove
+      [tasklist] Remove styles; use drawtext format
+      [titlebar] Fix compilation warning
+      [client] Pass signed to xutil_gettextprop()
+      [draw] Make text_align part of markup format
+      [taglist] Prefix tag function
+      [taglist] Stop using styles, use markup string
+      [draw] Add margin code inside markup string
+      [tasklist] Rename showclient_t type correctly
+      [draw] Rename DrawCtx to draw_context_t
+      [screen] Rename ScreensInfo to screen_info_t
+      [config] Rename Key to keybinding_t
+      [draw] Rework shadow Signed-off-by: Julien Danjou <julien@danjou.info>
+      [config] Do not set background by default
+      [taglist] Honors style; use pointers instead of hard copies
+      [markup] Escape text on reconstruct
+      [client] Free markup data
+      [markup] Simplify
+      [titlebar] Fix height initialization parsing
+      [client] Do not escape in client's name attribution
+      [markup] Re-escape text on re-insertion
+      [taglist] Fix memory leak in parsing and escape title
+      [markup] Print the unparseable text on error
+      [doc] Add dbus
+      [xutil] Convert len to signed size
+      [dbus] init var
+      [draw] Fix memory leak on bad markup parsing
+      [markup] Fix bad allocation size
+      [markup] Fix memory leak in text handling
+      [client] Fix potential memory leak on client string parsing errors
+      [xutil] Rewrite gettextprop() proto
+      [build] Add glib dep
+      [window] Add proper documentation of some functions
+      [uicb] Documentation enhancement
+      [widget] Documentation fix
+      [client] Documentation update Signed-off-by: Julien Danjou <julien@danjou.info>
+      [client] introduce client_style_get() and use it in tasklist/titlebar
+      [draw] Make draw_text using a const pointer to a style
+      [window] Fix possible memleak in window_setshape(), and remove useless ungrab() Signed-off-by: Julien Danjou <julien@danjou.info>
+      [rules] Cosmetic
+      [uicb] Use bool instead of int for returning status
+      [markup] Fix memory leak
+      [dbus] Rename conn
+      [dbus] Poll on dbus connection fd
+      [dbus] Implement widget.set method
+      [client] Merge focus{prev,next} and swap{prev,next}
+      [widgets] Cosmetic, and allow more bindings in tasklist
+      [awesome] Remove checking for value before p_delete()'ing memory
+      [xcb] Remove useless file
+      [awesome] Remove useless includes
+      [config] Use golden ratio by default for mwfact
+      [client] Merge vertical and horizontalmax inside togglemax
+      [util] Add a_strtobool() function
+      [graph] Cosmetic
+      [client] Merge zoom with swap, change togglefloating to setfloating
+      [swindow] Store border width
+      [client] Fix bug with atoi() and make uicb focus take 0 as arg
+      [client] Remove erronous call to xcb_change_window_attributes() for borders
+      [swindow] Add border manipulation function
+      [awesome] use EXIT_FAILURE as exit code on error
+      [config] Remove client_zoom in default config file
+      [uicb] Stop autogenerating uicb list
+      [config] Use a string array as args for uicb
+      [tag] Add missing elements in tag_push_to_screen()
+      [markup] Check for error before warning
+      [iconbox] Use a_strtobool()
+      [markup] Check that str is not NULL
+      [event] Remove useless arguments to event_handle_mouse_button_press()
+      [statusbar] Separate widget cache inside widets and sbars
+      [draw] Remove useless default_screen
+      [swindow] Permit to delete NULL swindow
+      [draw] Inline draw_context_delete() and check that it's != NULL
+      [everything] Switch from libconfuse to Lua
+      [client] Execute hook on real focus
+      [lua] Fix Lua lib path
+      [build] Fix compilation issue with Lua pkg insalled as lua
+      [lua] Use luaL_register() instead of deprecated luaL_openlib()
+      [scratch] Remove scratch client support.
+      [build] Use autoheader & config.h
+      [tag] Make static and remove useless functions
+      [client] Remove useless client_get_byname()
+      [statusbar] statusbar_position_update() is static
+      [dbus] Fix widget.set() API call
+      [dbus/widget] Correctly invalidate statusbars on update
+      [lua] Remove deprecated luaL_openlib() calls
+      [widget] Remove useless warn()
+      [client/tasklist] Reactivate icon drawing with client.icon_set()
+      [awesome] Remove the two level event loops
+      [layout] Change {layout,statusbar}_refresh proto
+      [awesomerc] Add wheel mouse bindings on root window
+      Revert "[awesome] Remove the two level event loops"
+      [awesome] Make layout and statusbar refresh threaded
+      [build] Check for pthread
+      [config] Simplify default config
+      [draw] Make sure that font is not NULL before freeing
+      [lua] Add awesome.font_set() to set the default font
+      [lua] Fix wrong proto
+      [awesome] Initialize glib thread system
+      [taglist] Count tag references
+      [awful] Fix tag.view{prev,next}
+      [lua] Remove useless extern widget
+      [layout] Return NULL
+      [client] Remove ismax attribute.
+      [lua] Remove regex matching
+      [layout] Rename LayoutArrange to layout_t
+      [mouse] Rename Button to button_t
+      [widget] Merge common functions.
+      [lua] Add name_get() method and make mplayer floating by default
+      [tag] Add lua function to get/set tag's name.
+      [widget] Add lua function to get/set widget's name.
+      [awesomerc] Fix mplayer matching
+      [titlebar] Fix inconsitent API with text*
+      [util] Add name_func_rlookup()
+      [tag] Add function to manipulate layouts
+      [lua] Add an hook on arrange
+      [awful] Export some function under tag, add layout_get
+      [draw] Fix compilation errors with Imlib2
+      [awesomerc] Add a iconbox for layoutbox
+      [lua] Add colors_set() function
+      [widget] Add a visible attribute to widgets and Lua functions
+      [xscreen] Add some documentation
+      [focus] Rewrite focus handling on arrange.
+      [client] Create luaA_client_userdata_new() function
+      [util] warn() and eprint() now print \n
+      [client] Remove newcomer attribute
+      [awesomerc] Set border on newclient
+      [tag] Add luaA_tag_userdata_new() function
+      Rename AwesomeConf to awesome_t
+      Rename VirtScreen to screen_t
+      [statusbar] Respect width paramater on creation
+      [iconbox] Do not draw iconbox if not enough size
+      [statusbar] Add align option
+      [widget] Add luaA_widget_userdata_new() function
+      [client] Check that tag and client are on the same screen
+      [statusbar] Fix event handling on child window
+      [widget] Rename WidgetConstructor to widget_constructor_t
+      [widget] Print error on unkown widget type
+      [statusbar] Check for names and uniqness before adding, add remove function
+      [widget] Fix warning
+      Revert "[client] Remove ismax attribute."
+      [tag] Check that tag has not been added before.
+      [statusbar] Remove todo.
+      [client] Add client.name_set() function and hook on title update
+      [focus] Split client_node functions out
+      [client] Add proper stacking support
+      [client] Push client on stack list on manage
+      [doc] Add new Lua based documentation generator for API
+      [layout] Pass screen number on arrange; fix layoutbox
+      [client] Rework raise and mouse stuff
+      [build] Print a newline after printing comments
+      [awesomerc] Use white icon by default
+      [doc] Add header in API section
+      [build] List all function in manpage
+      [lua] Document some functions
+      [build] Use good path to Lua interpreter
+      [layout] Stop starting a thread for layout freshing
+      [statusbar] Implement multi-threading per statusbar
+      [statusbar] Fix potential error if statusbar is Off on start
+      [statusbar] Need arrange on every position change
+      [statusbar] Force X to sync after drawing statusbar
+      [lua] Add a hook on standard fd activity
+      [statusbar] Add position_get() function for statusbars
+      [lua] Split screen.* out of awesome.*
+      [tag] Fix tag add checking
+      Revert "[lua] Add a hook on standard fd activity"
+      [taglist] Fix taglist drawing
+      [tile] Cosmetic
+      [client] Fix client_resize() comments
+      [layout] Arrange after focus is gave
+      [layouts] Add magnifier layout
+      [magnifier] Check for n > 0 Signed-off-by: Julien Danjou <julien@danjou.info>
+      [magnifier] Use mwfact
+      [client] Focus even if we think we already have focus
+      [awesomerc] Only raise on focus with keyboard
+      [client] Need arrange on focus
+      [layouts] Max and Magnifier need to raise clients
+      [magnifier] Use the focus stacking order
+      [max] Only raise if focused window is tiled
+      [awesomerc] Disable sloppy focus for magnifier
+      [lua] Finish screen luaL_reg with NULL
+      [awesomerc] Make layout box clickable by default
+      [xutil] Add support to mouse button 8 and 9
+      [xutil] Fix typo
+      [statusbar] Add doc
+      [lua] Documentation fix for mouseover hook
+      [widget] Documentation update.
+      [build] Fix a bug in function name identifying
+      [tag] Documentation update
+      [xutil] Fix typo
+      [client] Add a hook on urgent flag
+      [lua] Add new keybinding interface
+      [progressbar] Cosmetic
+      [doc] Update awesome.1 manpage
+      [client] Add and honor the noborder attribute
+      [mouse] Fix client resize in tiled mode and multi head
+      [progressbar] Remove useless = NULL
+      [util] Rewrite a_strndup()
+      [client] Fix border_set documentation
+      [awesomerc] Raise on button1 click
+      [statusbar] Add fake transparency
+      [tasklist] Remove useless draw_rectangle()
+      [lua] Add a timed hook
+      [statusbar] Remove spurious printf
+      [xutil] Fix strdup() usage
+      [xutil] Add list_attach_after() and use it for cache atom
+      [build] Link against ncurses for readline
+      [mouse] Fix resize in floating and mouse wrapping
+      [markup] Stop recomputing len, use slen
+      [statusbar] Fix multithread issue
+      [xutil] Move xcolor_t into draw
+      [draw] Rename draw_color_new() to xcolor_new()
+      [draw] Remove multiple strlen() calls
+      [draw] Add alpha channel support
+      [statusbar] Add alpha channel support
+      [screen] Fix documentation
+      [statusbar] Fix left and right statusbars alpha support
+      [awesomerc] Add a default hook timer to have time
+      [awesomerc] Fix typo
+      [statusbar] Remove multi-threading code
+      [hooks] Fix timer resolution
+      [awesomerc] Raise on tasklist click
+      [awesomerc] Add example with real date
+      [hooks] Initialize lastrun to 0
+      [client] Add unmanage function
+      [widgets] Make draw functions statusbar-less dependents
+      [widget] Add tasklist show property
+      [awesomerc] Simplify floating binding
+      [widget] Make button press event statusbar indep
+      [statusbar] Add a flag to know if user specified width
+      [list] Remove useless DO_SLIST_UNREF
+      [widget] Remove useless drawing args
+      [widget] Split out widget rendering
+      [titlebar] Rewrote titlebar based on widgets
+      [titlebar] Remove dead code
+      [titlebar] Store titlebar inside client
+      [widget] Move widget_get to statusbar
+      [titlebar] Redraw on widget_add
+      [titlebar] Add titlebar_widget_get()
+      [client] Add titlebar_get()
+      [screen] Rename Padding to padding_t
+      [screen] s/get_display_area/display_area_get/
+      [screen] s/screen_get_area/screen_area_get/
+      [common] Use pixmap instead of drawable type
+      [titlebar] Add titlebar_client_get()
+      [refcount] Check for pointer existence
+      [lua] Fix garbage collectors
+      [lua] Check for object validity
+      [build] Fix lua detection
+      [lua] Add object as argument to mouse click function
+      [version] Typo
+      [awesomerc] Fix taglist mouse bindings
+      [client] Various documentation update and fixes
+      [event] Simplify event_handle_maprequest()
+      [mouse] Use different cursors for corners
+      [build] Replace $() with ``
+      [xutil] Move cursor creation to xutil
+      [draw] Rename var
+      [widget] Stop using useless screen fct
+      [screen] s/move_client_to_screen/screen_client_moveto/
+      [statusbar] Use new userdata fct
+      [mouse] Add optionnal argument to specify corner to grab when resizing
+      [awful] Add client.movetoscreen()
+      [awesome-client] Fix manpage
+      Replace tags by workspaces
+      [mouse] Fix bug with floating
+      [focus] Fix bogus arguments
+      [client] Add support for hide/unhide
+      Revert "Replace tags by workspaces" This reverts commit 00f966ea047ec4f464770af03044602ac5781c2c.
+      [draw] Do inline UTF-8 conversion
+      [tabulous] First import
+      [awful] Add a check in toggletag
+      [client] Loadprops use screen_t
+      [build] Fix gendoc spaces
+      [keygrab] Add keygrabbing infrastructure
+      [hooks] Rename newclient to `manage', add unmanage hook
+      [client] Add ishidden() method
+      [client] Documentation update
+      [titlebar] Allow nil to be arg of titlebar_set()
+      [lua] Fix gettop() usages
+      [client] Fix typo
+      [keygrabber] Fix key mapping
+      [keygrabber] Add keys between XK_Home and XK_Begin
+      [client] Fix titlebar destruction
+      [client] Fix border width setting
+      [awful] Add a tagging system to manipulate windows
+      [lua] Typo in comment
+      [progressbar] Stop duplicating code
+      [manpage] Update
+      [progressbar] Rewrite progressbar with linked list
+      [awful] Fix a bug in escape(), add unescape
+      [awful] Escape menu command
+      [graph] Rename Data to graph_data_t
+      [graph] Rewrite with linked list
+      [client] Restack clients on manage
+      [lua] Add several boolean functions
+      mouse: make infobox optional
+      Fix comments typos
+      statusbar: add widget_remove()
+      statusbar: fix removal segfault
+      graph: use round()
+      draw: simplify draw_graph()
+      draw: make draw_setup_cairo_color_source() alpha aware
+      graph: allow graphs to overlap
+      graph: draw everything in one loop
+      build: fix restart targets
+      build: compile and install lua libraries
+      ewmh: add modal windows support and a modal layout
+      structs: remove titlebar's buttons
+      mouse: make button bindings objects
+      ewmh: add support for _NET_WM_STATE_HIDDEN
+      awful: add eval() and more check in menu
+      awesomerc: add default binding to eval() Lua code
+      draw: switch GTK dependency to GDK and GdkPixbuf
+      mouse: garbage collector for mouse objects
+      xutil: fix potential leak
+      textbox: rename data type
+      xutil: support NULL as atom cache
+      systray: import widget
+      widget: add support for destructor
+      widgets: add destructors functions
+      systray: add support for multiple physical screens
+      systray: check for embedder window on startup
+      init: call only once window_root_grabbuttons() on start
+      systray: attach systray to external window, not statusbar
+      systray: handle window that are on phys_screen only
+      placement: rename FloatingPlacement to floating_placement_t
+      systray: fix systray initialization
+      titlebar: add colors_set() function
+      widget: check background pixmap != 0
+      widget: use the right root window
+      systray: fix send_event on init
+      xembed: simplify
+      client: split out atom requests
+      client: split out atom request on kill
+      widget: fix documentation
+      widget: stop deleting data, destructor does
+      lua: _gc are now macros
+      lua: __eq methods are not macros
+      swindow: only send one event for moveresize
+      awesomerc: fix incncol binding
+      build: fix typo
+      README: add libev
+      draw: remove draw_image_from_file()
+      draw: remove useless draw_get_image_size()
+      draw: markup now supports image as background
+      build: add -Wno-unused-parameter
+      systray: support running without any systray widget
+      window: rework root_grabbuttons()
+      window: optimize atom retrieval
+      xshape: remove, nothing prove it's really useful
+      awful: add a cursor in the menu
+      awful: simplify menu args
+      awful: add some control with modkeys
+      widget: use PIXMAP atom directly
+      ewmh: add _NET_SUPPORTING_WM_CHECK support
+      ewmh: add support for _NET_CLIENT_LIST_STACKING
+      ewmh: add support for _NET_WORKAREA
+      ewmh: cosmetic
+      ewmh: set _NET_WM_NAME
+      ewmh: add fake _NET_WM_VISIBLE_NAME support
+      ewmh: add fake _NET_WM_VISIBLE_ICON_NAME support
+      ewmh: add support for _NET_WM_STATE_DEMANDS_ATTENTION
+      ewmh: fix stacking change property
+      ewmh: fix various client list updates
+      ewmh: add support for _NET_WM_DESKTOP
+      awful: fix a bug with backspace in menu
+      ewmh: add support for _NET_WM_PID
+      ewmh: s/NetWMIcon/netwm_icon_t/
+      titlebar: add support for border, refactorize code
+      build: build with -fno-strict-aliasing
+      titlebar: update titlebar.new() documentation for borders
+      titlebar: add border_set() method
+      awful: add C-g support in menu
+      awful: support completion callback
+      swindow: do not resize if nothing to do
+      titlebar: fix titlebar rendering in tiled mode
+      tag: tag.get() now returns an 'hash' table
+      titlebar: check for widget uniqness
+      titlebar: set above client edge border
+      titlebar: use client_getbytitlebar() to get client
+      statusbar: check for widget uniqness
+      tag: introduce geti() to get tag with numbers as index
+      lua: userdata_new is now macro
+      titlebar: check for client before drawing
+      widget: allow widgets to be added several times
+      tag: fix comments typo
+      fix comments typo
+      awful: enable bash completion
+      awful: use env to find bash
+      awful: menu supports for C-w
+      awful: fix bug with no completion
+      awful: add support for Home and End keys
+      awful: fix completion #command == 0
+      awful: better eval()
+      util: remove useless compute_new_value_from_arg()
+      util: rename eprint() to fatal()
+      awesome: fix documentation position
+      awful: fix typo in eval()
+      mouse: fix coords_get() documentation
+      ewmh: fix _NET_WORKAREA setting
+      awful: simplify function declaration
+      build: move Lua libs to lib
+      awful: fix completion declaration
+      ewmh: add support for _NET_WM_WINDOW_TYPE_DESKTOP
+      client: set ICONIC on hidden, WITHDRAWN on ban
+      cmake: clean stuff
+      cmake: remove last tabs
+      cmake: add cpack source stuff
+      cmake: set real awesome-client sources
+      cmake: reset cflags
+      cmake: minimum version to 2.6
+      scan: manage withdrawn windows on start
+      comments fixing
+      awful: comments some functions
+      awful: bugfix
+      awful: bug fix in swap
+      awful: fix screen.focus()
+      build: add -Wmissing-format-attribute
+      client: do not send request for WM_NAME
+      buffer: add various code documentation
+      misc: add Pierre as author
+      add Michael as author
+      area_t: make it smaller, use arrays instead of lists.
+      build: fix bashisms
+      awesomerc: fix mplayer
+      client: move floating_placement_set()
+      draw: remove draw_get_image_size()
+      draw: store parser_data made by extents call
+      mouse: fix uninit var
+      textbox: use tokenize
+      draw: rename on_event() to on_element()
+      draw: use tokenize() in markup parsing
+      util: remove useless fuzzy
+      use more tokenizer, with len
+      iconbox: use tokenize
+      taglist: use tokenize
+      tasklist: tokenize
+      cosmetic
+      systray: restack on client raise
+      Revert "Use gcc to find places needing a a_tokenize call."
+      client: fix placement doc
+      mouse: don't pass parser data, useless
+      placement: fix smart
+      client: use a_str()
+      draw: add background alignment
+      util: tokenize a_strtobool()
+      draw: add resize for bg
+      build: fix argument generation
+      doc: fix README
+      titlebar: fix position init
+      build: fix hostname search
+      client: fix raising of systray windows
+      client: rename hide API
+      layout: remove useless check
+      systray: fix message
+      lua: remap on restart
+      systray: fix scan() and stop managing XEMBED
+      systray: raise on manage
+      systray: send event with NO_EVENT mask
+      systray: fix stack and send event
+      systray: set handler before ewmh/systray init
+      systray: set orientation
+      event: spurious printf removal
+      version: print compilation options
+      build: use GdkPixBuf by default
+      doc: fix README with cmake and -DWITH_ switches
+      draw: use len param in draw_align_fromstr()
+      version: add GdkPixBuf version
+      "recent version" has no mean
+      awful: add more documentation
+      awful: rename menu to prompt
+      Merge commit 'madcoder/master'
+      client: set fullscreen/modal windows on top of statusbars
+      awesomerc: use table for floating rules
+      client: honor size hints is now by client
+      ewmh: remove unused value
+      iconbox: remove
+      widget: use __index to get method
+      lua: split getopt_string/getopt_lstring; fix mouse corner
+      tabulous: add documentation, cleanup
+      client: split out of setfloating layer handling
+      widget: add missing mouse_remove in index()
+      statusbar: replace getfield/optstring with luaA_getopt_string()
+      widget: new widget index method
+      draw: markup bg image do not change the size
+      draw: honor bg_resize
+      widgets: handle image size in text data
+      widgets: s/lstack/luastack/
+      graph: add comments
+      awful: fix to use new widget API
+      remove useless #include
+      update AUTHORS file
+      textbox: remove wrong comment
+      lua-src: fix a bug if l is nil, add , as optional
+      widgets: add documentation support
+      xutil: stop leaking atom name, and don't dup on cache hit
+      draw: stop leaking image on double parsing
+      xutil: stop leaking atom when called with no cache
+      xutil: make atoms cache an array
+      widgets: add newindex support
+      textbox: use newindex
+      textbox: use newindex API
+      tasklist: use newindex API
+      tasklist: bug fix in show
+      taglist: use newindex API
+      client: split stack/raise
+      event: map window if they ask for
+      screen: merge tag_client_with_current_selected() code
+      awesomerc: use layouts[1] as default layout for tags
+      client: save props on raise
+      client: delete _AWESOME_PROPERTIES on unmanage
+      event: only map if the client is visible
+      graph: use newindex API
+      draw: xcolor_t store color name
+      graph: add bg and border color on __index
+      draw: really copy colors
+      titlebar: fix index
+      systray: do not manage windows twice
+      systray: add KDE work around
+      systray: move KDE handling into client_manage()
+      lua: remove luaA_name_init
+      lua: replace .new() by __call meth
+      progressbar: use newindex API
+      atom: new atom infra
+      atoms: add all used atoms
+      atoms: autogenerate atom list
+      xembed: remove useless comments
+      build: add a Makefile to run cmake automagically
+      build: fix mode
+      mouse: fix args for mouse.coords_set()
+      awfuL; give focus to sel on screen change
+      tag: add {new,}index, use it for selected
+      tag: remove mwfact_{get,set}, use {new,}index
+      tag: use index for nmaster
+      tag: use index for ncol
+      tag: use index for name
+      draw: iso2utf now gets len as arg
+      awful: fix UTF-8 char in prompt
+      draw: len is mandatory
+      tag: layout use index
+      widget: visible is now part of index
+      widgets: don't tokenize twice
+      widget: move name into index
+      draw: add draw_align_tostr()
+      statusbar: introduce index, use it for align_set
+      util: position_tostr() return const
+      statusbar: merge colors_set() into index
+      titlebar: ref widget on get()
+      statusbar: widget_get() returns a dict
+      statusbar: merge position_{set,get} into index
+      build: rework makefile Signed-off-by: Julien Danjou <julien@danjou.info>
+      titlebar: add index
+      statusbar: merge border_set() into index
+      titlebar: merge colors_set() into index
+      lua: introduce luaA_usemetatable
+      client: add index, move name functions
+      client: merge hide into index
+      statusbar: fix background color setting
+      client: merge icon path into index
+      client: missing break
+      client: merge opacity into index
+      client: merge floating_{set,get} into index
+      client: merge honorsizehints into index
+      client: merge border_set into index
+      client: merge screen_{set,get} into index
+      client: merge floating placement into index
+      client: merge class hints into index
+      client: merge coords function into index
+      client: merge titlebar_{set,get} into index
+      lua: move padding to screen
+      statusbar: fix the loop on widget_remove
+      titlebar: fix memory leak on error, add widget_remove
+      mouse: add __index
+      mouse: add newindex, merge coords
+      mouse: merge screen_get() into index
+      build: add support for documentation of __index
+      widget: documente index
+      build: add support for __index in widgets
+      textbox: documente index
+      doxygen: add lfield
+      version: enhance printing
+      client: use atom name to update title
+      dbus: add client support
+      dbus: remove spurious printf
+      util: add a_strsplit()
+      config: use XDG for loading config
+      dbus: simply execute call
+      client: fix title update
+      client: add support for pid
+      lua: fix bug when $XDG_CONFIG_HOME is set
+      config: fix load paths
+      draw: use only one iconv for all
+      draw: add support for border around text
+      draw: bug fix on bg parsing
+      awesomerc: document markup
+      token: remove useless tokens
+      hooks: init correctly to REFNIL and factorize set
+      tasklist: use a callback for label
+      awesomerc: display icons when client is floating
+      lua: check f against REFNIL
+      documentation update and disallow tag name change
+      tasklist: stop using client markup
+      draw: remove useless draw_circle
+      lua: pop error
+      taglist: use callback function to get print text
+      tasklist: use len and set it to 0 if no text
+      draw: text extents now gets len as arg
+      systray: use snprintf() result, not strlen
+      lua: optimize docmd, don't check len and use const
+      xutil: use sizeof() instead of strlen
+      socket: stop strlen() twice
+      draw: add char len as arg of xcolor_init()
+      draw: draw_text takes len as arg
+      draw: export draw_text_markup_expand() and check for data before wipe
+      tasklist: use common markup parsing
+      event: use ewmh restart
+      client: check for focus on unmanage before removing client
+      awesomerc: fix screen computing in window tagging
+      remove spurious semi colon
+      fix ARRAY_TYPE decl
+      tag: allow for tag name modification
+      tag: remove add(), use screen attribute
+      statusbar: use screen attribute to add to screen
+      lua: fix color string push
+      titlebar: fix color initialization
+      statusbar: fix color initialization
+      awesomerc: enable smart placement by default
+      widget: remove unused WIDGET_CACHE_LAYOUTS
+      taglist: remove show_empty attribute
+      array: remove spurious semi colon
+      tasklist: use label to determine which objects are drawn
+      awesomerc: fix string escape
+      various documentation update for _index()
+      awful: movetotag: check that tag and client screen are identical
+      awful: toggletag: check that tag and client screen are identical
+      event: handle iconify request
+      xutil: use xcb_get_wm_transient_for instead of xutil fct
+      client: use xcb API for urgency
+      awful: add default taglist label function
+      lua: dofunction is no more a macro
+      ta{g,sk}list: check dofunction return value
+      awful: add several label function for tasklist
+      awful: move taglist label in label.all
+      taglist: factorize tda lookup
+      widget: add detach callbacks
+      tasklist: add tags as cache element (FS#227)
+      awesomerc: fix default lua eval prompt
+      client: call unfocus hook after unfocusing
+      textbox: fix background size computing
+      awful: add titlebar support
+      icons: crush buttons
+      build: dist create bz2 too
+      ewmh: introduce and use netwm_icon_delete()
+      appicon: new widget, used in titlebar
+      awful: add move and resize mouse bindings
+      build: install awful (FS#238)
+      awful: readd support for square in taglist
+      awful: move floating icon in tasklist dir
+      lua: add workspace_get()
+      awful: add maximize function
+      taglist: fix width with background image
+      icons: resize
+      client: update titlebar geometry on border width change
+      draw: set_markup wants NONULL arg
+      client: update titlebar geometry on floating
+      awful: implement tag history
+      lua: stop computing len twice
+      lua: expand package.path more
+      titlebar: use need_update system (like statusbar, …)
+      client: add refcount for clients
+      focus: remove focus history
+      screen: move screen.focus to awful
+      event: redraw titlebar right after config req
+      lua: stop using version_string()
+      awesomerc: make titlebar optional and disabled by default
+      awful: implement focus history
+      awesomerc: move history in its own arrange() register
+      awful: move awful hook registration in awful
+      awful: automatize titlebar update
+      awful: fix typo for unmanage hook
+      awful: make sel prio over urgent
+      awful: bugfix in label
+      awful: really handle select
+      README: add xcb-util minimum version
+      set next codename
+      bui;d fix dist script
+      textbox: fix first drawing
+      lua: add ?/init.lua as valid lib path
+      build: any target need cmake first
+      libs: rewrite as module
+      build: fake C api as module
+      awful: add unregister() for hooks
+      awful: check that text is not nil
+      awful,tabulous: fix copyright for luadoc
+      awesomerc: cosmetic
+      build: set sysconfdir to /etc by default
+      build: remove xcb-shape dependency, useless
+      widget: check value len of request
+      widget: call draw() even if it's invisible
+      remove two levels polling
+      systray: fix visible attribute
+      rewrite two levels polling
+      fix memory leak in event polling
+      statusbar: handle systray invisibility
+      systray: remove has_systray
+      statusbar: support systray kick out
+      doc: add SIGHUP
+      beautiful: import
+      beautiful: fix Damien's mail address
+      remove goto statement
+      client: reduce server grabbing time
+      awful: fix titlebar creation
+      mouse: factorize xcb_aux_sync calls
+      widget: optimize cache invalidation
+      awful: add beautiful support
+      libs: add vim modeline
+      event: fix memory leak on client size hints update
+      mouse: fix memory leak on resize
+      client: fix memory leak in client title update
+      remove useless include
+      lua: refresh after cs event
+      awful: indentation fix
+      client: change screen if screen is !=
+      awesomerc: add colons
+      ewmh: check tags tab size
+      awful: check for sel.screen after sel
+      lua: implement objecttable
+      lua: exports client.tags and tags.clients
+      tag: check for screen number before invalidate
+      lua: remove spurious \n
+      tag: add support for tag screen change
+      awful: use tag screen number
+      statusbar: widgets is now an array
+      titlebar: replace client_get() by client attribute
+      titlebar: widgets are now returned/set as array
+      awesomerc: revert titlebar off
+      awful: check for selected
+      titlebar: add position in __index
+      titlebar: add position in __newindex
+      mouse: refresh titlebars on the fly
+      change codename
+      beautiful: fix luadoc module name
+      client: allow screen change only if xinerama is active
+      taglist: append area even if function fails
+      lua: add support for __pairs and __next metamethods
+      lua: arrays use __next and __pairs metamethods
+      lua: fix __next, must return 2 values
+      systray: ignore XEMBED_MAPPED, everyone is not XEMBED aware
+      Revert "Alternative export method of arrays from C to Lua"
+      lua: rename luaA_function to luaA_ref
+      client: add support for WM_CLIENT_MACHINE
+      clients: add icon_name support
+      client: rewrite focus()
+      client: implement maybevisible(), and use it for maprequest
+      version: spell D-Bus correctly
+      event: mark arrange on map
+      build: remove xcb-render, not used
+      client: fix windows managed on startup
+      Revert "client: fix windows managed on startup"
+      xutil: allow gettextprop() to be called without text
+      clients: manage client with _AWESOME_PROPERTIES
+      screen: introduce screen objects
+      awesomerc: support no layout
+      tag: allow view only if tag has a screen
+      screen: export tags array
+      tag: remove get and geti methods
+      awful: init index history at run
+      ewmh: store NET_WM icon
+      lua: fix otable __newindex
+      awful: prompt history index is local to prompt
+      clients: fix manage on restart
+      awful: maximize now toggles
+      awesomerc: make gimp floating by default
+      themes: default set a default wallpaper if possible
+      build: add desktop file (FS#257)
+      lua: remove spurious debug printf
+      client: deprecate client_get() and client_set()
+      build: fix desktop file install path
+      build: man path is now configurable
+      awesomerc: stop setting mwfact
+      awful: switch screen focus even, don't care for windows
+      awful: check for name not nil
+      textbox: allow nil as value for text
+      awesomerc: add default binding to access class/instance
+      build: fix theme installation (FS#263)
+      gitignore: remove all files
+      keybinding: honor modifier state correctly (FS#264)
+      screen: make tags array overwritable
+      tag: unref later
+      keybinding: ignore shift when getting keysym
+      keygrabber: include header file for key_getkeysym()
+      client: export tags as a function
+      tag: export clients as a function
+      screen: implement tags set/get as function
+      tag: export clients as simple table
+      textbox: stop parsing text on each draw
+      draw: do not delete image on text rendering
+      awful: make timer not every one second
+      screen: export padding as a function
+      screen: fix screen number on error
+      screen: reset statusbar and windows properly on padding changes
+      scan: fix array indice
+      zaphod: restore support
+      textbox: overwrite extents to 0 on nil
+      client: rework and document opacity field
+      change codename
+      awesomerc: remove widgets info, add file location
+      lua: otable can now be index by object values
+      awful: don't compare with ws coords
+      refcount: unrefing does not invalid object
+      keybinding: register fct with dedicated fct
+      build remove -f to hostname since some OS don't support it
+      awesome.1: add missing documentation on M+C+I
+      awesomerc: use sub directory for history
+      mouse: snap also on scren without titlebars
+      mouse: fix client snapping
+      lib: add @release tag
+      draw: stop parsing Pango markup twice, store AttrList
+      draw: better GError handling
+      add note about display manager
+      build: link with Imlib2 by default
+      build: remove code for cmake < 2.6
+      xutil: remove XUTIL_ANY_MODIFIER
+      xutil: remove useless XUTIL_ANY_KEY define
+      draw: support for top margin
+      titlebar: set to NULL after unref()
+      util: remove useless position Auto
+      statusbar: widget is now a function
+      widgets: generic set/get for list
+      client: make coords a method
+      mouse: coords is a function now
+      awful: fix toggletag (FS#277)
+      mouse: fix coords() set
+      awful: create history dir if does not exists
+      beautiful: set wallpaper of each screen
+      client: print deprecate warning before return
+      utils: add awsetbg to set background
+      README: add LuaFileSystem as required
+      awesomerc: add an explicit sentence
+      awesomerc: readd iconbox
+      awful: avoid concat of nil
+      widget: invalidate on visible change
+      awesomerc: swap icon and prompt
+      token: remove useless tokens
+      client: simplify condition in visible get
+      change codename
+      gperf: remove -m option, not recognize by FreeBSD
+      build: add -export-dynamic flag
+      build: look for libs in /usr/local/lib
+      build: handle multi luac names
+      build: first luac lookups are not fatal
+      magnifier: implements mwfact as surface factor
+      awful: drop lfs in favor of mkdir -p
+      magnifier: simplify formula
+      magnifier: use all space if no other window
+      widget: invalidate on visible flag change
+      screen: remove useless documentation
+      screen: fix padding doc
+      Lua API documentation fixes
+      draw: fix extra area computing
+      util: strndup really stop and add null termination
+      socket: use more robust socket name handling
+      use xcb_flush; move refresh stuff in common function
+      client: fix bad commit
+      dbus, lua: set CLOEXEC on fds
+      socket, lua: use xcb_parse_display
+      lua: snprintf include trailing \0 in size
+      doc: remove LFS dep
+      client: add support for WM_WINDOW_ROLE access
+      socket: fix memory leak
+      client: wipe class hint struct
+      draw: wipe text in parser data
+      socket, awesome-client: fix computing if DISPLAY unset
+      awesomerc: revert timer removal
+      build: remove unused cpack stuff
+      build: remove unused vars
+      build: change codename
+      graph: add documentation
+      progressbar: fix vertical type and document fields
+      progressbar: add fake struct to build doc
+      Use xcb_aux_sync to register error
+      taglist: fix memory leak with array area
+      update STYLE, add PATCHES
+      xutil: set text and len even if we ignore them
+      xutil: check for text and len
+      draw: unref attr_list on parser data wipe
+      Remove 2-level polling
+      awful: update titlebar after adding it
+      awful: one of fg or bg urgent is enough
+      build: stop using dashed git commands
+      systray: reparent windows
+      textbox: reinit draw parser data
+      draw: remove useless vars
+      keybinding: documentation fix
+      build: ignore lvalue
+      factorize quit/exec elements, and reparent systray
+      systray: add some cleanup code
+      awful: does not allow a window to have no tag
+      client: call need_arrange before changing attribute
+      client: do not call need_arrange, use mayvisible
+      awful: add pread() function
+      change codename
+      build: stop compiling Lua libs
+      client: screen focus is handled by phys_screen
+      build: add minimal version checks for xcb-util
+      event: handle mapping notify events
+      awful: check for bg,fg focus (FS#304)
+      util: fix a_exec, use it for spawn
+      grab server on initialization
+      keybinding: ignore Mod5 when getting keysym
+      keybinding: ignore LOCK
+      awful: add client.setslave()
+      core: ungrab before init dbus
+      textbox: do not invalidate on _index
+      client: execute urgent hook also when removing urgent hint
+      icons: optimize size
+      awful: fix comments typo
+      awsetbg: fix typo
+      cmake: add version
+      README: change xcb-util required version
+      xutil: init reply
+      update to new xcb-event
+      keybinding: allow individual non-alphabetic characters to be used in bindings
+      change codename
+
+Kanru Chen (11):
+      draw: fix shadow stroke
+      config: Fix default config path and documents.
+      event: remap on restart
+      length of static string s should be sizeof(s)-1
+      layout: arrange before focus is gave
+      client: expose .urgent
+      event: Ungrab root when mouse enters client window.
+      lua: refresh after calling timer hooks.
+      awesomerc: put systray into statusbar
+      statusbar: don't refresh screen if statusbar is not assigned one.
+      graph: fix xcolor reqs index.
+
+Konstantin (4):
+      util: fix freebsd support
+      awful.lua - use new tags.clients to enum clients in taglist.label.all
+      Alternative export method of arrays from C to Lua
+      awful: add no empty show for taglist
+
+Kristof Provost (1):
+      Reload awesome on SIGHUP
+
+Leon Winter (1):
+      awful: add urgent client fast switching
+
+Lucas de Vries (21):
+      [awful] Move the mouse when switching screen focus
+      [awful] Add a couple of trivial functions
+      [taglist] Add show_empty option
+      [awful] Handle hooks
+      [tasklist] Add show_icons property handling
+      [taglist] Fix taglist bugs in show_empty=false mode
+      [tabulous] Improve
+      [awful/tabulous] Tagging to marking, add tabulous keybindings
+      [tabulous] Fix untabbing last tab
+      [awesomerc] fix tabulous new tabbed view binding
+      [tabulous] Allow merging tabbed views through client_tab
+      [tabulous] Fix duplicate clients when merging tabbed views
+      [tabulous] Fix unhide clients in untab_all
+      [tabulous] Fix merge to wrong tabindex
+      [awesomerc] put colors in variables, change default colors
+      [awesomerc] set default mwfact to the golden ratio again
+      [statusbar] add colors_set
+      awful: also display selected tags in widget.taglist.label.noempty
+      awful: make displaying the taglist squares a theme variable
+      awful: don't try to spawn nil or empty commands
+      awful: add done_callback
+
+MATSUU Takuto (4):
+      build: set minimal cmake version to 2.4.7
+      cmake 2.4 has no LIMIT syntax in file command
+      awful: add some shortcut keys in prompt
+      build: fix gdkpixbuf dependency
+
+Marc Lagrange (1):
+      awful: permit user defined images for squares
+
+Matt McCormick (thewtex) (5):
+      get rid of slashes before + in manpage
+      add default tabbing keys to manpage
+      sort, categorize keybindings in manpage
+      make man page comply with 'man man-pages'
+      manpage changes with slashes before plus
+
+Matteo Landi (3):
+      awful: allow coloring the taglist and the tasklist
+      beautiful: remove tabulations in key/value parsing
+      awful: titlebar support for changing the close button
+
+Matthew McCormick (thewtex (1):
+      build: deal with not-existant .version_stamp
+
+Matthew William Cox (1):
+      Fix default search path for configurations
+
+Maxime COSTE (4):
+      awful: add support for programmable bash completion
+      tabulous: made tabulous tab aware
+      tabulous: fixed deprecated focus_get/set calls
+      tabulous: Handle external raise of hidden windows
+
+Michael Gehring (113):
+      [build] Link with ncurses during test
+      [build] Fix "Link with ncurses during test"
+      exit if loading/parsing of configuration file fails
+      remove bogus commandline options
+      make D-BUS optional
+      [draw] fix --with-imlib2 build
+      [mouse] show correct geometry on resize (FS#203)
+      rename draw_image to draw_image_from_file
+      add draw_image_new, draw_image_delete, draw_image
+      unify draw_image_from_file
+      stop reloading image on every draw
+      [mouse] remove spurious xcb_aux_sync
+      [mouse] add some Pointer related utility functions
+      [mouse] improved floating client resizeing
+      [mouse] Grab Pointer before warping it.
+      [mouse] Rework tiled resizing
+      [mouse] Use different cursors for vert./horiz. resize
+      [cleanup] random doxygen fixes
+      add lua commands
+      adapt gendoc.lua to work with the new lua commands
+      testdrive new doxygen commands
+      Move default color/font initialization out of luaA_parserc
+      [lua] Split luaA_parserc into luaA_init/parserc
+      [build] Install awesomerc.lua to $sysconfdir/awesome
+      [lua] Fall back to default config file
+      [doxygen] Convert Lua documentation
+      [doxygen] Add \lvalue and convert existing doc.
+      update event handler documentation.
+      random updates/fixes
+      mouse: use xcb_*_pointer_unchecked
+      mouse: keep mwfact within sensible bounds
+      mouse: user mouse_*_pointer wrappers
+      mouse: move mouse_track_mouse_drag
+      mouse: add mouse_get_client_under_pointer
+      mouse: rework mouse_client_move
+      mouse: split out snap-to-corner logic
+      mouse: allow resizing in magnifier layout
+      mouse: comment typos/spelling
+      mouse: keep mwfact withing reasonable bounds again
+      mouse: resize_floating update cursor/corner
+      client: add hassizehints
+      client: export client_geometry_hints
+      mouse: make float resize work better with sizehints
+      cmake: configure awesome.doxygen
+      cmake: fix awesomerc.lua.in variable names
+      cmake: add basic git version stamp
+      cmake: add libev check
+      cmake: generate apigendoc.txt
+      cmake: use $HOSTNAME and $USER for COMPILE_{BY,HOSTNAME}
+      cmake: fix icon install path
+      cmake: add vim modeline
+      cleanup .gitignore
+      cmake: awful/tabulous live in lib/ now
+      cmake: variables that are used in .in files need absolute path
+      cmake: gtk -> gdk/gdk-pixbuf
+      cmake: remove second ${LIB_EV} in target_libraries
+      cmake: make d-bus and imlib optional again
+      cmake: macroify CONFIGURE_FILE
+      cmake: provide PREFIX as shorthand for CMAKE_INSTALL_PREFIX
+      cmake: UsePkgConfig module is not used
+      gitignore: add cpack configuration files
+      cmake: it's Imlib2 not Imlib
+      cmake: add WITH_IMLIB2 WITH_DBUS to config.h.in
+      cmake: group external utilities
+      cmake: move doxygen target to CMakeLists.txt
+      cmake: make building manpages an option
+      cmake: remove unnecessary variables
+      cmake: restructure required/optional libs
+      cmake: awesome-client: stop linking to X libs
+      cmake: add vim fold markers
+      cmake: macroify FIND_LIBRARY/check
+      cmake: move cmake 2.4 compatibility settings on top
+      cmake: make generated headers a real target with dependecies
+      cmake: install LICENSE/README/...
+      cmake: scan sources for lua exports
+      cmake: cmake < 2.6 doesn't know FILE(STRINGS ...)
+      cmake: make lua api documentation a target with dependencies
+      cmake: make manpages have dependecies again
+      cmake: stop deleting the source when gzipping manpages
+      cmake: figure out man section from filename
+      cmake: make out-of-source build work with readonly source dir
+      cmake: consolidate version strings
+      cmake: bring back release codename
+      cmake: update git version every build
+      cmake: remove old build-utils
+      cmake: make out-of-source build work with RO source dir again
+      cmake: move gperf commands to generated_sources
+      cmake: typo
+      cmake: use BUILD_DIR/SOURCE_DIR shorthands
+      cmake: switch cmake commands to lowercase
+      cmake: indent
+      cmake: build/install luadoc for awful and tabulous
+      cmake: use luadoc for functions exported from C
+      awesomerc.5.txt don't include the api documentation
+      mouse: move/resize return if grabbing the pointer fails.
+      build: implement make dist using git-archive
+      cmake: awesome-client depends on generated sources
+      cmake: only awesome-client needs to link readline
+      cmake: make building luadoc an option
+      cmake: cleanup paths variables/fix AWESOME_CONF_PATH
+      cmake: compile lua libs
+      cmake: cache PREFIX/SYSCONFDIR so they are editable via ccmake
+      cmake: use PREFIX instead of CMAKE_INSTALL_PREFIX
+      cmake: hide CMAKE_INSTALL_PREFIX in ccmake
+      widgets: remove unnecessary #includes
+      cmake: always exit with an error if a required library can't be found
+      cmake: exit if a required utility is not found
+      lua: lua_open is deprecated in 5.1. use luaL_newstate
+      use ON/OFF in cmake option docs
+      awesome.1: update config file path
+      awesome.1: update keybindings
+      version: fix #include order
+      build: add pangocairo dependency
+
+Michal Nowak (2):
+      build: enable distro specific doc's path
+      build: make xsession path configurable
+
+Nathan Weizenbaum (1):
+      keybinding: only warn when a keysym really couldn't be found.
+
+Niv Sardi (1):
+      Add history to awesome-client
+
+Pierre Habouzit (78):
+      fix unsafe macros
+      improve .gitignore
+      Fix a couple of warnings.
+      fix prototypes
+      bogus guard: you mean WITH_DBUS not HAVE_DBUS
+      Use libev for the event loop.
+      Plug dbus in the event loop.
+      Migrate the lua server to the libev.
+      And migrate the rest of the loop to the libev.
+      The X socket MUST keep us alive.
+      add mouse.coords_get()
+      Add a snipplet for mouse warping.
+      Let mouse_query_pointer return the current mask as well.
+      Do not wark is a button is pressed.
+      Add decent CFLAGS.
+      fix unitialized value warnings
+      Add p_grow.
+      Add a simple array generic type.
+      No need to copy the parser each time it's allocated.
+      Make refcounting safer.
+      add {un,}likely macros
+      Add extensible buffers to awesome.
+      Use extensible buffers in markup parsing.
+      Remove lots and lots of useless mallocs.
+      And use a buffer in the drawing stuff.
+      Add buffer_add_xmlescaped, and malloc--
+      Rework the markup_parser_* allocation  API.
+      markup substitutions enhancements.
+      Finish markup parsing rewrite to avoid mallocs.
+      fix typo
+      Stupid memory leak fixed.
+      wipe elements overwritten by a splice
+      Use gperf to tokenize some strings.
+      use gperf
+      Use more gperf stuff.
+      And more gperf.
+      Use gcc to find places needing a a_tokenize call.
+      Fix idiotic bug: we must initialize memory on the stack.
+      don't include tokenize.[hc] in the manpages target for now
+      we want case sensitivity
+      Add draw_parser_data_{init,wipe}.
+      Split DO_ARRAY in two parts.
+      Add type and memset safe alloca wrapper.
+      fix stupid array bug: missing sizeof()
+      Replace tag_t lists with arrays.
+      Be more on the safe side.
+      fix typo
+      Avoid lists of tag/client pairs, use an array per tag.
+      Fix draw_align_fromstr calls.
+      Calling destructor on splice is wrong, take doesn't want it e.g.
+      Put keybindings in arrays.
+      Put keybindings in binary searchable arrays.
+      More ignores.
+      Calling destructor on splice is wrong, take doesn't want it e.g.
+      Put keybindings in arrays.
+      Put keybindings in binary searchable arrays.
+      More ignores.
+      Divert lua string.len to a multibyte aware implementation.
+      Ignore keys that have a multibyte length of more than 1.
+      0 may be a valid function, LUA_REFNIL is what we want.
+      Move CLEANMASK to xutil.h, remove useless #Includes
+      Make event handler setup private to the event module.
+      actually call our xcb events setup function
+      If awesome believes we have the focus, well, do not unfocus ourselves.
+      ignore more files
+      Don't be silly and use our metatable rather than duplicating the effort.
+      Allow modules to have their own __index for magic purposes.
+      MIN/MAX multi-evaluate their arguments.
+      Simplify keygrabber.
+      update ignore list
+      Hide keybindings away 1/2
+      Hide keybidings_t away, subsequent simplifications 2/2
+      Add stricter warnings wrt prototypes.
+      Build system improvements.
+      Revamp the toplevel Makefile.
+      Add a tags target, cmake already knows install needs build.
+      Streamline xcolor_t.
+      Get rid of the color name, and generate a #RGBA value on the fly if needed.
+
+Radoslaw Szkodzinski (1):
+      Clean up dependency list in README
+
+TANABE Ken-ichi (2):
+      Add client_zoom
+      Fix missing index in tag manipulation
+
+Thomas Janu (1):
+      Layer 0 is also usable now
+
+Vladimir Kirillov (1):
+      util: do not include alloca on OpenBSD
+
+Wolfgang Kroener (1):
+      add ewmh stacking layers
+
+marc lagrange (1):
+      [awful] Add escape function
+
+marco candrian (21):
+      replace 'command' with 'new_value'
+      [widgets/progressbar] initial lua adjusting
+      [widgets/progressbar] add needed values to _tell for dynamic change (lua)
+      [widgets/progressbar] autocreate data section when they get mentioned
+      [widgets/progressbar] add missing 'border_width' for lua interface
+      [widgets/progressbar] cosmetic / typo fixing
+      [progressbar] allow floats for incoming values
+      [progressbar] allow setting a range (min_value + max_value) for the bar
+      [progressbar] remove tmp variable stuff formerly used for check_settings
+      [graph] lua transition
+      [graph] re-add draw_style ('bottom', 'top' and 'line')
+      [tasklist] 'tags', 'focus', 'all', are new_value's
+      [awful] client_moveresize(+/- x-offset, +/- y-offset, +/- width, +/- height)
+      [graph] rename 'max' to 'max_value' (like in the progressbar)
+      [docs] awesomerc.5: graph and text box documentation added
+      awesomerc.5: tasklist and taglist documented.
+      awesomerc.5: some improvements on tag- and tasklist.
+      awesomerc.5: single quotes needs to be escaped.
+      add fg_off to set + fix copy/paste typo
+      progressbar: cosmetic
+      widgets: use vector_t for the color-gradients course.
+
+martin f. krafft (1):
+      make pinentry a floating window
+

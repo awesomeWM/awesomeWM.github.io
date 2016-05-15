@@ -1,0 +1,360 @@
+commit 1bbb3cb6e2f44ec56f8f109262182c515562f388
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon May 10 14:39:57 2010 +0200
+
+    update codename
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 0b532fa35125ae62b636142dc99ca9ce9cf41a31
+Author: Christian Kuka <christian@kuka.cc>
+Date:   Sun May 2 15:17:15 2010 +0200
+
+    German translation of manpages
+    
+    Signed-off-by: Christian Kuka <christian@kuka.cc>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 1e3409f461039d8f6fe218f696e39d0323445288
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Apr 27 16:28:02 2010 +0200
+
+    awful.menu.clients: Raise the newly focused client
+    
+    Raising it makes it more obvious that the focus was really changed and makes
+    working with the client easier since it's, well, raised.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit b205854de16ff349c29331c6101271852b5b2e4b
+Author: Andrei 'Garoth' Thorp <garoth@gmail.com>
+Date:   Mon Apr 26 19:56:43 2010 -0400
+
+    docs: progressbar.lua.in missing a dash to prevent luadoc generation
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 650afbb9ad5702df7f80b59ed25201d4056de5a7
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Apr 25 17:43:29 2010 +0200
+
+    Check for xwininfo before using it
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 8083c6149be9fb2bafb1e68dba292a0026b16211
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Apr 24 17:52:52 2010 +0200
+
+    Update API docs for recent change to spawn
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 3749c59aab7a72cd78b44e7e816db033f1ab06df
+Author: Sergey Mironov <ierton@gmail.com>
+Date:   Tue Apr 13 20:54:28 2010 +0400
+
+    awful.menu: Change menu:show() args set
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit b08b81568571883084dc30167ea0041085b7d3b8
+Author: Sergey Mironov <ierton@gmail.com>
+Date:   Tue Apr 13 21:11:53 2010 +0400
+
+    awful.menu: Add menu position argument
+    
+    Patch allows user to define menu position in pixels when
+    showing menu in keyboard-driven mode.
+    Note: Patch changes signature of show() and toggle() functions.
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 3e3c26c019f4566476b3ebf70a86412b8764f38d
+Author: Yves Frederix <yves.frederix@gmail.com>
+Date:   Sun Apr 11 12:37:14 2010 +0200
+
+    awful.menu: add item_enter in access key handling
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 0179eb3d9be1514751731f9dfc9fd7263b221529
+Author: Sergey Mironov <ierton@gmail.com>
+Date:   Sun Apr 11 12:55:56 2010 +0400
+
+    awful.menu: Fix menu hide/show overloading
+    
+    Fixes bug that prevents calling user-defined menu methods
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 0844350a6235613f190142506b70fcc438590785
+Author: Diego Moreda <diego.plan9@gmail.com>
+Date:   Fri Apr 9 19:44:58 2010 +0000
+
+    Added Spanish translation of the man pages
+    
+    Signed-off-by: Diego Moreda <diego.plan9@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 8a38090a8a7472fd5b12d39f08344dfe1e658405
+Author: Diego Moreda <diego.plan9@gmail.com>
+Date:   Fri Apr 9 11:43:42 2010 +0200
+
+    Basic support for manpages in multiple languages
+    
+    On 09/04/2010, Julien Danjou <julien@danjou.info> wrote:
+    >
+    > Well, I cannot find anything to say against this patch, so I've merged
+    > it.
+    >
+    
+    Thanks for the kind comments and for your quick reply, I'm glad you
+    find this contribution useful.
+    
+    I also noticed that in the previous patch there is a line that was not
+    supposed to be there, since its purpose was to help debugging the
+    cmake file. My apologies for that: I have removed it and attached the
+    corresponding patch (against the already patched version).
+    
+     Signed-off-by: Diego Moreda <diego.plan9@gmail.com>
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit a189abe92efaf7af35aa299b4b7715734c695984
+Author: Diego Moreda <diego.plan9@gmail.com>
+Date:   Thu Apr 8 22:42:27 2010 +0000
+
+    Basic support for manpages in multiple languages
+    
+    The patch changes the path where the manual pages are compiled, resulting in
+    a tree structure that follows the man-db convention: the man pages of each
+    language are stored in a subdirectory of the main man path. For example, the
+    input file "$AWESOME_SRC/manpages/awesome.1.fr.txt" would be compiled as
+    "$BUILD_DIR/manpages/fr/man1/awesome.1". The installation step just copies
+    the resulting directory (in the example, "$BUILD_DIR/manpages/") into the
+    global man path of the system, excluding the temporary files.
+    
+    The input .txt files for the translations are not added directly to
+    AWE_MAN_FILES: instead, the new variable AWE_MAN_LANGS stores the language
+    names and their input file names are generated automatically. The main
+    reason of this modification is that it was more convenient for my testing
+    purposes: this behaviour can be changed back with minor modifications to the
+    code. This patch is supposed to be a first draft, after all, and it is far
+    from being perfect, but I hope it is of help.
+    
+    Signed-off-by: Diego Moreda <diego.plan9@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit e6a1f8bac9cffaeb64006e68160ec4ceb5a20688
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Mon Mar 29 11:21:20 2010 +0200
+
+    Use WM_STATE_NORMAL as default
+    
+    If a window didn't have a WM_STATE set, xwindow_get_state_reply() returned 0
+    which just happened to be XCB_WM_STATE_WITHDRAWN. This caused issues in scan().
+    
+    Instead, we now assume a window is in state normal if no state is explicitly
+    set, which makes a lot more sense and fixes actual bugs.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 34d4cce4ac7dca2e0204da5264900a0939d419e8
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Mon Mar 29 11:17:51 2010 +0200
+
+    Check for UNMAPPED instead of UNVIEWABLE
+    
+    A window is unmapped if it is not mapped (oh noes! ;). If it is mapped, it can
+    be either mapped or unviewable. If any of its ancestors is unmapped, it's
+    unviewable, else it's unmapped
+    
+    Since this code looks at children of the root window, it should never be seeing
+    clients which are unviewable (can one unmap the root window at all...?). What
+    this really wants to check for is unmapped, so this patch implements this.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 0a9746f53e1e5ea5f13739aba31d4f9a08a8c87f
+Author: Duflot Jean-Luc <jl.duflot@laposte.net>
+Date:   Mon Mar 29 17:43:21 2010 +0200
+
+    Add french manpages
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit dc5b09d3b04e41c30ada13065839395f8af21eb3
+Author: Adrian C. (anrxc) <anrxc@sysphere.org>
+Date:   Thu Mar 25 05:24:10 2010 +0100
+
+    awful.widget: add graph stack property
+    
+    Initial implementation of stacked graphs. Adds two new methods,
+    set_stack (false by default) and set_stack_colors (i.e. {"red",
+    "white", "blue"}). The order of the colors matters, because the
+    add_value method now accepts an (optional) last argument, an index of
+    a color from your stack color group.
+    
+    Signed-off-by: Adrian C. (anrxc) <anrxc@sysphere.org>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 167770d06f724ec095e4c41bb2360f45772baa9d
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Mar 25 10:31:31 2010 +0100
+
+    Do not check if we have enough space to draw (FS#731)
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit a3163c40afc1afd0fc36f45213bd22a5597e6abc
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Mar 25 10:25:20 2010 +0100
+
+    Move wmsetbg as a last option (FS#737)
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit a68185647a5fcb8840582b2e352123c720401a9b
+Author: Adrian C. (anrxc) <anrxc@sysphere.org>
+Date:   Tue Mar 23 00:51:29 2010 +0100
+
+    awful.wibox: update struts on align()
+    
+    Setting width or height (horizontal or vertical) to an arbitrary value
+    causes the wibox not to be stretched. Instead the align() function is
+    called, which might not modify any wibox property in many situations,
+    or none when align parameter was not provided by the user. The major
+    side effect is that wibox struts were never updated and clients
+    covered the wibox (until a first signal handler caused struts to be
+    updated).
+    
+    Signed-off-by: Adrian C. (anrxc) <anrxc@sysphere.org>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 241a0ae706363a812069f0d5a2892eb195024bae
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Oct 2 18:08:31 2009 +0200
+
+    theme/default: change default background
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 463b76d42a0f1ec3e2ec414b659050d553c3331c
+Author: Adrian C. (anrxc) <anrxc@sysphere.org>
+Date:   Sun Mar 21 18:42:21 2010 +0100
+
+    awful.widget: add progressbar ticks property
+    
+    Second implementation of the progressbar ticks. Adds set_ticks,
+    set_ticks_gap and set_ticks_size methods. Default gap is 1, size 4 in
+    respect to the default progressbar width of 100px.
+    
+    Signed-off-by: Adrian C. (anrxc) <anrxc@sysphere.org>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 612616aee64983f0c530dc951fcfc1356f0ab51f
+Author: Ari Entlich <atrigent@ccs.neu.edu>
+Date:   Mon Mar 22 14:17:27 2010 +0100
+
+    Fix possible memory corruption (FS#734)
+    
+    The memory referred to by the reply argument of
+    property_update_wm_protocols is automatically free'd
+    by xcb later on, so it is not safe to simply use the
+    value of reply in our own data structures. If we did
+    this, future calls to xcb_get_wm_protocols_reply_wipe
+    free the data which has already been free'd by xcb,
+    causing a double-free and corrupting the heap. In
+    addition, it isn't safe to use free'd memory as if
+    it is still allocated. Instead, duplicate the data
+    referred to by reply and use the duplicate instead.
+    
+    It seems to me as if the duplication should actually
+    be done in xcb_get_wm_protocols_from_reply, but I'm
+    not really sure. If that is the case, this is simply
+    a work-around until xcb can be fixed.
+    
+    Signed-off-by: Ari Entlich <atrigent@ccs.neu.edu>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 38435bb3207506a92c25a8c99945fcee14b3217f
+Author: Pierre Mazière <pierre.maziere@gmail.com>
+Date:   Fri Mar 19 03:19:14 2010 +0100
+
+    Avoid wibox borders to be recovered by clients
+    
+    Signed-off-by: Pierre Mazière <pierre.maziere@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 05e2ab4d50549e03a3b76a6dd3ae8150899b0e06
+Author: Pierre Mazière <pierre.maziere@gmail.com>
+Date:   Fri Mar 19 03:17:20 2010 +0100
+
+    fix wibox origin when stretched
+    
+    Signed-off-by: Pierre Mazière <pierre.maziere@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 4c00ad63a97bd94bfe995f5096bd77e373b1b970
+Author: Pierre Mazière <pierre.maziere@gmail.com>
+Date:   Wed Mar 17 13:22:45 2010 +0100
+
+    Add the possibity for dynamic menu
+    
+    Return the label of the selected menu item as an argument for the
+    callback function
+    
+    Signed-off-by: Pierre Mazière <pierre.maziere@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 3d8aad10d09ef44d4eae6f1e9df80756ca8ec86e
+Author: Maciej Blizinski <maciej.blizinski@gmail.com>
+Date:   Mon Mar 15 09:58:37 2010 +0100
+
+    Fix gperf usage (FS#740)
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit fda2c091db6843985f6fbc17106c6899b70e2c14
+Author: Adrian C. (anrxc) <anrxc@sysphere.org>
+Date:   Thu Mar 4 03:46:45 2010 +0100
+
+    awesomerc: add Mod4+t to set client on-Top
+    
+    Signed-off-by: Adrian C. (anrxc) <anrxc@sysphere.org>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 20d16fb6ac4988416a3e80fcf2b00e2d758b3605
+Author: Adrian C. (anrxc) <anrxc@sysphere.org>
+Date:   Thu Mar 4 02:19:53 2010 +0100
+
+    awful.wibox: update position on height/width property change
+    
+    Changing the width or height of a (right or bottom positioned)wibox,
+    after it was initialized, to a value different than used when it was
+    created would leave the wibox in a wrong position. Position was off by
+    as many pixels as the difference between the old and the new
+    value. Now every wibox is repositioned to reflect this new setup.
+    
+    Signed-off-by: Adrian C. (anrxc) <anrxc@sysphere.org>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 09cf4f2c86564ad5080f38e756a721067b436f44
+Author: Gregor Best <gbe@ring0.de>
+Date:   Wed Mar 3 00:07:10 2010 +0100
+
+    client: _really_ honor size hints
+    
+    If c->honor_size_hints is set to false and the client indicates through
+    its hints that it wants to be fixed size (by setting min and max width
+    equal), size hints are not ignored due to client_isfixed not taking
+    honor_size_hints being false into account. This commit fixes that.
+    
+    Signed-off-by: Gregor Best <gbe@ring0.de>
+    Signed-off-by: Julien Danjou <julien@danjou.info>

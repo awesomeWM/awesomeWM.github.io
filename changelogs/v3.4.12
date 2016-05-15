@@ -1,0 +1,278 @@
+commit d90fe225e0ccec16d29f40b8bb0d6459b8f5af79
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Jun 11 13:57:35 2012 +0200
+
+    change codename
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit af1dcc431c2544332b2eee4990c9fb03a87ea8df
+Author: Sébastien Luttringer <seblu@seblu.net>
+Date:   Wed Jun 6 17:25:45 2012 +0200
+
+    Get keygrabber running state
+    
+    Add a function keygrabber.isrunning() which return a boolean state of
+    keygrabber
+    
+    Signed-off-by: Sébastien Luttringer <seblu@seblu.net>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 0cbb3b4770969ca588ecdd116cb79cdda5385a71
+Author: Sébastien Luttringer <seblu@seblu.net>
+Date:   Wed Jun 6 00:35:11 2012 +0200
+
+    Get mousegrabber running state
+    
+    Add a function mousegrabber.isrunning() which return a boolean state of
+    mousegrabber
+    
+    Signed-off-by: Sébastien Luttringer <seblu@seblu.net>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 5d99804f9e2b6bbba9254ecfaf0d0f88e025adcc
+Author: Thomas Moschny <thomas.moschny@gmx.de>
+Date:   Wed May 30 18:15:17 2012 +0200
+
+    Desktop file fixes.
+    
+    - Remove an extra space after the group header.
+    - Add required key 'Type'.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 938ba52201d7f7d9694ea222a18f013de1dc711f
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat May 5 10:04:51 2012 +0200
+
+    awful.client.setslave: Fix for not-visible clients
+    
+    Previously, setslave() put a client only at the end of the list of visible
+    clients. Obviously this means that it didn't do anything helpful if the target
+    client was not visible.
+    
+    Fix this by iterating over all clients on the target screen instead of just the
+    visible ones.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 05d991d452d76cda29b9fb10e4d95f09fa341294
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Apr 6 19:21:40 2012 +0200
+
+    Taglist: Add {bg,fg}_occupied theme options
+    
+    This commit adds a new {bg,fg}_occupied option to the taglist. These control the
+    background and foreground color that unselected but occupied tags get in the
+    taglist. Occupied here means that at least one client is tagged with that tag.
+    
+    Thanks to NougatRillettes for submitting this.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit c0dffca646c1a02276da510bf3587fb7fad8e0e9
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Apr 6 12:19:12 2012 +0200
+
+    Focus history: Don't ignore unfocusable clients
+    
+    The only caller of focus.history.add() should be the "focus" signal, so at that
+    time the unfocusable client already does have the focus. At that point, there is
+    no reason why this shouldn't be recorded in the focus history.
+    
+    (And yes, unfocusable clients can be focused. Don't ask.)
+    
+    This should hopefully fix FS#778.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 7298b3835d07f83c640da02b29700ae86e6d28d4
+Author: Corey Thompson <cmtptr@gmail.com>
+Date:   Sun Mar 25 11:41:12 2012 -0400
+
+    Remove "encoding=utf-8" from Vim modelines
+    
+    Signed-off-by: Corey Thompson <cmtptr@gmail.com>
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 7a837bd2a6ff441ffde1d9cd7b7c71e39165e23b
+Author: TsT <tst2005@gmail.com>
+Date:   Tue Mar 6 00:07:41 2012 +0100
+
+    table.foreach is deprecated: now use for + pairs
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit d89b7bb8619bdeb454d5a67a1a37e6881be22cb3
+Author: TsT <tst2005@gmail.com>
+Date:   Tue Mar 6 00:03:09 2012 +0100
+
+    mistake fix: "b" local variable declaration is missing
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 4ff0a8d14d5edc82f41ba0a274ac107f8726e342
+Author: Duflot Jean-Luc <jl.duflot@laposte.net>
+Date:   Tue Feb 21 12:51:58 2012 +0100
+
+    Update french manpages
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 9f2a79a2d069402585557f90f6788fb1d0dc00ac
+Author: Anurag Priyam <anurag08priyam@gmail.com>
+Date:   Fri Feb 17 02:32:28 2012 +0530
+
+    add awful.client.cycle
+    
+    add awful.client.cycle to iterate through clients that match a given condition
+    
+    A common use case is to cycle through clients that match a given rule and take
+    certain action on them: raise, set or get property, etc.; see usage example in
+    the docs.
+    
+    Signed-off-by: Anurag Priyam <anurag08priyam@gmail.com>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 55ee0d4dabbcc9a7a5b918936824280b7f2b958c
+Author: Anurag Priyam <anurag08priyam@gmail.com>
+Date:   Fri Feb 17 02:30:41 2012 +0530
+
+    add awful.util.table.cycle
+    
+    awful.util.table.cycle iterates through elements of the table that match the
+    given condition.
+    
+    This will help writing concise code when one wants to apply a function to
+    (read, take some action) on a select list of elements in a table (of say,
+    clients and tags).
+    
+    Conflicts:
+    
+    	lib/awful/util.lua.in
+    
+    Signed-off-by: Anurag Priyam <anurag08priyam@gmail.com>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit cf784bc825e37ac42a48e006c7d74599cfcf59ec
+Author: Axel Beckert <abe@deuxchevaux.org>
+Date:   Tue Jan 10 22:05:04 2012 +0100
+
+    awful.tag.inc*: properly pass tag parameter to set*
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 50b10529fc4bdbc5daf13a985aabfe9fc6aa64f4
+Author: Anurag Priyam <anurag08priyam@gmail.com>
+Date:   Tue Jan 10 15:52:11 2012 +0530
+
+    awful.tooltip docs: replace references to undefined variable 'K' with 'myclock'
+    
+    Most probably, the original author chose to use 'K' first, switched to
+    'myclock' later, and forgot to update remaining occurrences of 'K'.
+    
+    Signed-off-by: Anurag Priyam <anurag08priyam@gmail.com>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 6c48655d401d3c5ffd701a7348e385373c1d0d95
+Author: Arvydas Sidorenko <asido4@gmail.com>
+Date:   Fri Dec 30 15:36:27 2011 +0100
+
+    Original sky theme dwindle and spiral icons
+    
+    There was a few days ago a bug report about missing icons with provided
+    link to the original ones. My previous patch was with icons made
+    by me using the ones from default theme, just changed the color.
+    Probably you should ignore it and use this one unless you like
+    my made more.
+    
+    Signed-off-by: Arvydas Sidorenko <asido4@gmail.com>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 87ce51d2e97df531ec7eed73beef59613d4cadda
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Dec 27 11:23:51 2011 +0100
+
+    naughty: remove score system, merge presets
+    
+    Scoring is broken, it's more useful to merge all presets, and declares that
+    order matters.
+
+commit 0f5d2d56b914cce8690bea3e79f10bfcaf321896
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Dec 22 10:23:25 2011 +0100
+
+    Fix mousegrabber run documentation
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit d3d8160e273b56d0262d2570cfa6bcb76b9ea771
+Author: Thomas Moschny <thomas.moschny@gmx.de>
+Date:   Wed Dec 14 20:00:53 2011 +0100
+
+    Fix build with glib2 2.31.0
+    
+    Starting with glib2 2.31.0, It is no longer possible to
+    include individual headers (like "ghash.h") -- you must
+    #include <glib.h>.
+    
+    Signed-off-by: Thomas Moschny <thomas.moschny@gmx.de>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit cacba79d49027ed4f75df311e588292dfae55854
+Author: Corey Thompson <cmtptr@gmail.com>
+Date:   Thu Dec 8 21:45:59 2011 -0500
+
+    Initialize floating_geometry on property::border_width signal (FS#826)
+    
+    Initializing the client property "floating_geometry" on the
+    property::geometry signal is problematic since this is emitted before
+    client_set_border_width(), causing the internal client geometry to get
+    stored and later passed to client:geometry() which assumes it includes
+    titlebar and borders.
+    
+    Signed-off-by: Corey Thompson <cmtptr@gmail.com>
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 2fa20703ff4ce92aa24fada74fd9962e69e5286a
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Dec 9 10:43:15 2011 +0100
+
+    awsetbg: xli is reported as ok
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 8a42071cb9174281a28ce63c62cbff232c88f39b
+Author: Rob Hoelz <rob@hoelz.ro>
+Date:   Wed Dec 7 09:13:25 2011 -0600
+
+    Allow usage of strings as key names for root.fake_input
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 7013b9bb70d95c660698848be1c3c1179ae68a1e
+Author: Corey Thompson <cmtptr@gmail.com>
+Date:   Sat Dec 3 20:03:40 2011 -0500
+
+    Bump duplicated commands to the most recent in command prompt history
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 7205dfde57a259f49ddb479803c2a01e38c32c9f
+Author: Gianluca Fiore <forod.g@gmail.com>
+Date:   Thu Dec 1 11:18:05 2011 +0100
+
+    Add italian translation
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit d3021e67729a01e891c8eb04a8afd696fb63b0ce
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Nov 27 11:14:25 2011 +0100
+
+    Beautiful: Handle invalid wallpaper_cmd better (FS#941)
+    
+    Biggest plus is that this no longer errors out when wallpaper_cmd isn't a table.
+    Second biggest plus is that this now prints a warning.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>

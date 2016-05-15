@@ -1,0 +1,70 @@
+commit 84a2a34aa6c5ed140ca9ccdeaa6245a82f2f852a
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Aug 18 11:06:17 2008 +0200
+
+    mouse: fix client snapping
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+    
+    Conflicts:
+    
+    	mouse.c
+
+commit deb3cc26d8ce37c539d692a203cbad577c96330c
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Aug 2 18:32:19 2008 +0200
+
+    Revert "awesomerc: fix xterm -e in case of others terms"
+    
+    This reverts commit 9de637afee8ce8588bb8618351c396bbc3f233c2.
+    
+    Conflicts:
+    
+    	awesomerc.in
+
+commit 4ee816510fbf81066030ff405539899fcac5aae6
+Author: Hannes <mr_creosote@mutantwatch.de>
+Date:   Fri Aug 1 10:34:15 2008 +0200
+
+    awesome-menu: match string mode and autocomplete
+    
+    I'm made some simple modifications of awesome-menu.c
+    to achieve the following:
+    
+    1. Match the string entered by the user with the whole search string.
+    So far, it only matches from the start of the string. For menu entries
+    like 'gksu synaptic', the default behaviour is very inconvenient,
+    because obviously, I don't want to enter the 'gksu' part every time.
+    Another example: I have iceweasel, iceape and icedove installed.
+    Entering 'wea' is enough to find 'iceweasel' exclusively if the whole
+    string is searched. 'ice', on the other hand, won't do much good.
+    
+    2. If there's just one single match, select that one automatically.
+    This saves hitting tab once in the cases when the choice is obvious
+    (because there is only one).
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit c12f0ff3aaa510b0f13a61f47d4f588fb1dbade9
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Jul 28 17:41:34 2008 +0200
+
+    awesomerc: fix default path in menu launching
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit 6d84d8246bb68ee1243060b16cbc127ad91e3040
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Jul 28 17:33:22 2008 +0200
+
+    awesomerc: fix subprocess (FS#193)
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>
+
+commit c4f498fa149fc50d09f356e0ec0132d33286abde
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Jul 28 17:18:42 2008 +0200
+
+    tasklist: add tags as cache element (FS#227)
+    
+    Signed-off-by: Julien Danjou <julien@danjou.info>

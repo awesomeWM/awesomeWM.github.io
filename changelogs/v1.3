@@ -1,0 +1,545 @@
+commit d4f1b99c93c7da10af774500f3c007e77a765c5d
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Oct 5 17:02:59 2007 +0200
+
+    fix typo
+
+commit 6a7d435db0cef85fa985682b5fb991fca6dd9bd0
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Oct 5 17:01:00 2007 +0200
+
+    set version to 1.3
+
+commit ba58d5e94be4e402f08ab8902e3fab3b689da2b2
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Oct 5 16:58:28 2007 +0200
+
+    movetoscreen works with +/- and cycle
+
+commit 0792d6c5acff7ccfa11eda74c0756c1931259ab3
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Oct 5 13:52:38 2007 +0200
+
+    bugfix: allow cycling back in uicb_setlayout()
+
+commit 9ec4e30a85ba826c4ea68e422675d56854dd0bec
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Oct 5 13:51:19 2007 +0200
+
+    new feature: mouse wheel on layout symbol switch to prev/next
+
+commit ca35643a5dc387f04ddceaf4ae1d903afe923fdb
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Oct 5 12:08:20 2007 +0200
+
+    new feature: mouse wheel on statusbar do focus{next,prev}
+
+commit eb414ce447f8118bba716fca4af46fff8981016b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Oct 5 12:01:32 2007 +0200
+
+    compute x one time only
+
+commit b00f9ab1f641aeebc83356030b6e37699fea497d
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Oct 5 10:53:39 2007 +0200
+
+    new feature: add mouse wheel support on tags name
+
+commit 96e80f1e8371db1ce04f8863b7197e3a38d6fc46
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Oct 5 09:37:40 2007 +0200
+
+    bugfix: die nicely if no default layout
+
+commit d7aac7b811057628ef696c5e2a3b57470b7a7e65
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Oct 4 17:35:47 2007 +0200
+
+    better fix for font height problem
+    
+    Thanks to Arnaud Fontaine
+
+commit 2e0b2911e3109d2cf51dda75d68d7d108eebdb6a
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Oct 4 15:56:20 2007 +0200
+
+    bugfix: give one more pixel to not cut status text with some fonts
+
+commit 1c5cd1ec579ebd10a8109cfbba1a8e0acd70860d
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Oct 4 12:55:19 2007 +0200
+
+    bugfix: add a pixel more for tags drawing, this allows all fonts size to work
+
+commit 99ef84e621d7c9e1b6444993b6b7af42ce1b47fb
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Oct 3 20:46:03 2007 +0200
+
+    bugfix: don't do stuff RootWindow() with non existent screen (Xinerama)
+
+commit 97a2085705ff866550534a95dd3b206caa18db55
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Oct 3 17:26:14 2007 +0200
+
+    cosmetic: remove lines with empty spaces at end
+
+commit e1318b53c2e5ef1dd82edda9e5ea7af9d5c387ef
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Oct 3 17:17:46 2007 +0200
+
+    bugfix: mouse wheel on root window works in Xinerama too
+
+commit 067861a9428aa9bb2bf83934a1ff850bde1507a7
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Oct 3 16:18:45 2007 +0200
+
+    bugfix: don't put new clients on top without computing statusbar position
+
+commit 2db2dfdc7c26159babc5aac9b749c91f3fbeae43
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Oct 3 15:05:47 2007 +0200
+
+    bugfix: snap windows to statusbar, not screen edges
+
+commit bf2561a5e885e8133031918e155d79fc0a37b1bb
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Oct 3 00:33:16 2007 +0200
+
+    add documentation for arrange()
+
+commit d193c2471bdcd46283931c5c25aa662fba40688c
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Oct 3 00:32:00 2007 +0200
+
+    add documentation to move_mouse_pointer_to_screen()
+
+commit b0933b177cc4aa58d3a0125e29025f2c3532aa00
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Oct 3 00:30:15 2007 +0200
+
+    remove useless extern Client sel in tile layout
+
+commit 47aff1a86060219c14c98e12b7e067cc52316dd6
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Oct 3 00:22:29 2007 +0200
+
+    add documentation for uicb_movetoscreen()
+
+commit e9332cfef823232e4a8c9b0bc06a8a0d29fd7a9a
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Oct 3 00:20:34 2007 +0200
+
+    update documentation for screen.c
+
+commit cd46ec6378c6d1ecbb84271e0ec39a6aefbb41bf
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Oct 3 00:15:50 2007 +0200
+
+    remove stack from externs
+
+commit 5ecb754d621d8700a843a1af53327ff6788d0ccd
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Oct 3 00:14:39 2007 +0200
+
+    remove useless extern variables
+
+commit 7e1be2be50db6ce068430c2275a8046fd2e74bc3
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Oct 3 00:13:09 2007 +0200
+
+    document detach function
+
+commit 7358c9d24c55f89fcc7557d91a6af50c4f1c1ce3
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Oct 2 18:45:13 2007 +0200
+
+    add .gitignore for *.o and awesome binary
+
+commit 757c2c77f8af4b8d9c829b1c6d55095175707369
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Oct 2 17:15:08 2007 +0200
+
+    change default colors
+
+commit 0745844db5c984bb540e35ba1be9032e48870a68
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Oct 2 17:06:38 2007 +0200
+
+    remove alpha layer; bug otherwise
+
+commit 728bcb09be7e8db2f8fd08fc3acea2aead567146
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Oct 2 15:10:53 2007 +0200
+
+    set version to 1.3-devel
+    
+    We will follow this kind of schema from now.
+
+commit d76902653a3826490df481ebeae732bcd6bb5f38
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Oct 2 14:28:39 2007 +0200
+
+    change behaviour of uicb_setlayout: no arg now reset to first/default layout ; add bindings in default config
+
+commit 4c4fb83e81e05987639cce6dd27353db70183db7
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Oct 2 14:22:51 2007 +0200
+
+    new feature: uicb_setlayout can no go backward ; binding Button3 click on layout symbol statusbar for reverse layout switching
+
+commit 17ec9220772686266b39acfacff084a2e50ebcee
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Oct 2 10:36:49 2007 +0200
+
+    bug fix: set not matched tags to False instead of nothing
+
+commit 5b8c8784c231d70e632cb843ec7b6e472c7a4079
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Oct 2 10:31:16 2007 +0200
+
+    remove TODO file ; using bugs list from web site
+
+commit e2c315cf85c279e9ac1dce7431032b2e6e66e415
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Oct 2 00:43:47 2007 +0200
+
+    remove duplicate line
+
+commit 950605b1a03c728208166a44200cc04cacc9d6b3
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Oct 1 20:58:29 2007 +0200
+
+    simplify get_screen_info()
+
+commit 2ea22c721ce2e2e5eed2a06d9a4883d7f05747a8
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Oct 1 20:44:02 2007 +0200
+
+    set inline in header file
+
+commit f1ef5c2dddd3a4b6430b625e032bd018d29ef8bc
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Oct 1 20:42:59 2007 +0200
+
+    move uicb_ to end of file
+
+commit 272f4b1c2a1e6162fd45bd701d0c56dfe861dc31
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Oct 1 19:22:57 2007 +0200
+
+    Xft support
+
+commit 7204cbdc4698a4714b48f0a84516a6f07d8169c0
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Oct 1 16:43:01 2007 +0200
+
+    restore fullscreen support on Xinerama
+
+commit 7fff452234792ccdeea7fd5394875bcf9be3d289
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Oct 1 16:25:45 2007 +0200
+
+    fix snap in Xinerama
+
+commit 8d63ecd3aa507faf637e738bc3b5f7d36c44e114
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Oct 1 15:44:14 2007 +0200
+
+    fix a bug in a height computing
+
+commit 9c747d19866c2858095ec1d797c116601fa599d6
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Oct 1 15:31:43 2007 +0200
+
+    store display in awesomeconf
+
+commit 8c531e2a81c929deaee6e22b1f8e8c154dc27be2
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Oct 1 15:23:05 2007 +0200
+
+    store phys_screen
+
+commit bdeb1eaca449dea50f631d8bd6b96fd93ea1bf35
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Oct 1 14:25:56 2007 +0200
+
+    free ScreenInfo unconditionnally
+
+commit 784e120fa27f3ab716b6a4711a0148a6f99070c4
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Oct 1 13:00:13 2007 +0200
+
+    inverse setmwfact value in tileleft layout
+
+commit 1695d811e44fd2b8066346bf94f794936a83b495
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Oct 1 12:50:43 2007 +0200
+
+    change x-terminal-emulator to xterm
+
+commit 6e4942711f067e03d5c24ef02d74b91af9bf345d
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Oct 1 12:46:59 2007 +0200
+
+    arrange on old_screen, not on event screen
+
+commit 47ec01e5719e0a0e53f82d3a33b3128214c390f9
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Oct 1 12:43:05 2007 +0200
+
+    Revert "fix bug in Xinerama when mouse is not in the same screen that mouse"
+    
+    This reverts commit 845984fed09cef55f296d0a7db05ebf77a4e6436.
+
+commit 845984fed09cef55f296d0a7db05ebf77a4e6436
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Oct 1 11:28:21 2007 +0200
+
+    fix bug in Xinerama when mouse is not in the same screen that mouse
+
+commit 3e385c3bea3eed38a929c0d0a73d71fac98af1e0
+Author: Julien Danjou <julien@danjou.info>
+Date:   Sat Sep 29 13:09:45 2007 +0200
+
+    use real_screen in grabbuttons(), fix Xinerama support
+
+commit 7beabd32d3bbdff942b0c9d61b4a406c56e8b806
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Sep 28 16:40:20 2007 +0200
+
+    enhance windows screen moving when windows are floating
+
+commit ca169340b1ee5f88c8ef117f08aa186433ccb0e4
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Sep 28 13:42:13 2007 +0200
+
+    use PATH_MAX instead of _POSIX_PATH_MAX
+
+commit a6943aa3f3394a8bee310770f0d10a8849ca5c05
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Sep 28 13:39:46 2007 +0200
+
+    add uicb_exec
+
+commit 659adaab5e0d5602bb1a4d2939bb68fbc5659cac
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Sep 28 11:55:08 2007 +0200
+
+    use get_real_screen() in a lot of places
+
+commit 9692e398d510f185d5311f0def1c65ecec08049b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Sep 28 11:41:03 2007 +0200
+
+    return DefaultScreen instead of 0
+
+commit 6efc6de67ed7d697a91224ca6fc7ef029d8caded
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Sep 28 11:37:36 2007 +0200
+
+    use get_real_screen() in initcolor()
+
+commit d4211d3bfbe0833825089721cb21a15fca7fbedc
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Sep 28 11:36:39 2007 +0200
+
+    introduce get_real_scree()
+
+commit 8112ec2cca6a4f24688589eaf24204ffaa94bd36
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Sep 28 11:30:51 2007 +0200
+
+    introduce move_client_to_screen to move a client in a new screen and tag it with good tags
+
+commit ab738c9cab51060189cc55a09d2e6e8a9841f7e3
+Author: Julien Danjou <julien@danjou.info>
+Date:   Fri Sep 28 10:46:34 2007 +0200
+
+    bug fix: XClassHint not copied correctly
+    
+    Thanks Nikos Ntarmos <ntarmos@ceid.upatras.gr>
+
+commit 30c9d74dd26ad7cb498feca85b88bec767a7de70
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Sep 27 22:31:06 2007 +0200
+
+    I was too happy, I forgot some printf
+
+commit 57e9f1c02c29911025c71a1f5f782a0f3d155e18
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Sep 27 22:29:36 2007 +0200
+
+    tile layout is Xinerama compliant
+
+commit ca363aa2486020143f93b401d70b3ff4636ce56c
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Sep 27 21:51:05 2007 +0200
+
+    add uicb_movetoscreen()
+
+commit ed4f0c20fe85347fb390ed43f86599aa547da588
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Sep 27 21:32:48 2007 +0200
+
+    fix bug in mouseresize with Xinerama
+
+commit 11cbd79c626e84c41ea02a837e413ea6405a647c
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Sep 27 21:22:35 2007 +0200
+
+    make a lot of function in event and statusbar creation/handling Xinerama aware
+
+commit 2680d34a6444f70b29acb6f6e627a90194e4234f
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Sep 27 21:22:01 2007 +0200
+
+    make manage() more Xinerama efficient
+
+commit bbb3a8cfbf9676f62d3fabb3de3445ac8c8640d5
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Sep 27 20:19:36 2007 +0200
+
+    resize() now update client screen number in Xinerama
+
+commit 14da15bbc945d5e3129fb397dd49d9ceefa08e82
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Sep 27 20:11:31 2007 +0200
+
+    make Statusbar optional in get_display_info()
+
+commit 972ea8f83224b42bb8484e74de4e978bfa9d623f
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Sep 27 19:34:41 2007 +0200
+
+    max layout is now Xinerama aware
+
+commit d3ace8b9e8b0a910e61983e08f4d80cccb217ccd
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Sep 27 19:21:47 2007 +0200
+
+    make scan() aware of Xinerama
+
+commit 990bc8d6f23b6e5b2eaed611622bbd1c757409d8
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Sep 27 19:18:19 2007 +0200
+
+    bug fix: previous commit broke Zaphod mode in spawn()
+
+commit b76d5d67220a59b7273e8f9304b5ec3595221e03
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Sep 27 18:57:22 2007 +0200
+
+    give good screen to manage()
+
+commit 783a10f1468c5021aef8cf8c2306157319a96c94
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Sep 27 18:57:03 2007 +0200
+
+    cosmetic
+
+commit ac193f82ad2d9a3b36eeeee0d1589479bc705967
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Sep 27 17:57:57 2007 +0200
+
+    fix get_screen_bycoord() and add move_mouse_pointer_to_screen() for focus{next,prev}screen()
+
+commit 491b5611c265f8a76db8964751dbdea345dad655
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Sep 27 17:53:01 2007 +0200
+
+    Fix screen detection in keypress for supporting Xinerama
+
+commit 3bba90fa38b172fec426a39eea8aa75d01a7a2b1
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Sep 27 17:52:28 2007 +0200
+
+    don't modify display if we're on Xinerama
+
+commit ecf79693a2189f5d823df483325b30a79a67d278
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Sep 27 17:12:51 2007 +0200
+
+    use real_screen for X functions, not logical screen
+
+commit bdd408cd6c77da06b69db13f527a8ea2af811249
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Sep 27 16:34:51 2007 +0200
+
+    use get_screen_count instead of ScreenCount where needed
+
+commit 4662cf109eab95c8418d9fbc11c495e0e67c1f03
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Sep 27 15:29:14 2007 +0200
+
+    introduce get_screen_count(...) function
+
+commit ca163343515737e154b71858b1dbe683367d0a1b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Sep 27 15:07:07 2007 +0200
+
+    introduce get_xinerama_screen_bycoord(...)
+    
+    this allows to retrieve the xinerama screen of a client with its coordinates
+
+commit 486dd410ca38b83eddb1ae9c7f8af39944bd111b
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Sep 27 16:22:02 2007 +0200
+
+    bug fix: apply selected layouts for tag in uicb_tag_view{next,prev}
+    
+    Thanks Jordà Polo <jorda@ettin.org>
+
+commit b4cc86abf00e40f4a89bbaf46182396e4c17d335
+Author: Julien Danjou <julien@danjou.info>
+Date:   Thu Sep 27 12:30:18 2007 +0200
+
+    make moveresize work with +/- as others
+
+commit 9dad2fd85cf7e28294b30ce21d2640252fd23c89
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Sep 26 21:22:30 2007 +0200
+
+    add -c option to specify configuration file
+
+commit c81d40f15eab8d42c583db84e22b80f7a3f7ed5f
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Sep 26 20:21:09 2007 +0200
+
+    change initcolor() proto
+
+commit 6f3e0a3a2ddc1483d4bedf8839dcb2294e73f2c1
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Sep 26 20:18:49 2007 +0200
+
+    change initfont proto
+
+commit bf0ddca24705d036c25cbb1bc4860d29865f003e
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Sep 26 20:16:04 2007 +0200
+
+    remove set_default_configuration()
+
+commit 6d776458729acc38b153a5cad84ad5181c7045bb
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Sep 26 20:00:16 2007 +0200
+
+    change urxvt by x-terminal-emulator in default config
+
+commit 2c149b25d3b375545797d7f213a7dcc138f8ba23
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Sep 26 18:56:58 2007 +0200
+
+    optimize a little isvisible()
+
+commit d34146fcec4ec28896b76a22703b91a0f7af1efd
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Sep 26 16:30:17 2007 +0200
+
+    doc update for client.h
+
+commit 4f65ea5fcd1dd048e53bba010d9d2408f95e78f1
+Author: Julien Danjou <julien@danjou.info>
+Date:   Wed Sep 26 11:35:38 2007 +0200
+
+    remove useless #include
