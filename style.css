@@ -5,8 +5,10 @@
  */
 
 /* html5 compat */
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section {
+article,
+header,
+footer,
+nav {
 	display: block;
 }
 
@@ -56,8 +58,7 @@ footer,header,hgroup,menu,nav,section {
 	border-bottom: 1px solid #000;
 }
 
-.inlinecontent,
-.inlineenclosure {
+.inlinecontent {
 	margin-top: .4em;
 }
 
@@ -201,13 +202,6 @@ div.recentchanges {
 	margin-top: 1em;
 }
 
-.archivepagedate {
-	font-style: italic;
-}
-.archivepage {
-	margin-bottom: 1em;
-}
-
 .error {
 	color: #C00;
 }
@@ -281,7 +275,6 @@ div.progress-done {
 @media print {
 	.actions { display: none; }
 	.tags { display: none; }
-	.trails { display: none; }
 	.feedbutton { display: none; }
 	#searchform { display: none; }
 	.blogform, #blogform { display: none; }
@@ -322,7 +315,6 @@ div.progress-done {
 .popup .paren,
 .popup .expand {
 	display: none;
-	text-align: left;
 }
 .popup:hover .balloon,
 .popup:focus .balloon {
@@ -465,40 +457,40 @@ li.L8 { list-style: upper-alpha; }
 	display: none;
 }
 
-/* login selector */
-#login_choice {
+/* openid selector */
+#openid_choice {
 	display: none;
 }
-#login_input_area {
+#openid_input_area {
 	clear: both;
 	padding: 10px;
 }
-#login_btns, #login_btns br {
+#openid_btns, #openid_btns br {
 	clear: both;
 }
-#login_highlight {
+#openid_highlight {
 	background-color: black;
 	float: left;
 }
-.login_large_btn {
+.openid_large_btn {
 	padding: 1em 1.5em;
 	border: 1px solid #DDD;
 	margin: 3px;
 	float: left;
 }
-.login_small_btn {
+.openid_small_btn {
 	padding: 4px 4px;
 	border: 1px solid #DDD;
 	margin: 3px;
 	float: left;
 }
-a.login_large_btn:focus {
+a.openid_large_btn:focus {
 	outline: none;
 }
-a.login_large_btn:focus {
+a.openid_large_btn:focus {
 	outline-style: none;
 }
-.login_selected {
+.openid_selected {
 	border: 4px solid #DDD;
 }
 
@@ -508,88 +500,4 @@ a.login_large_btn:focus {
 }
 .fileupload-content .ui-progressbar-value {
 	background: url(ikiwiki/images/pbar-ani.gif);
-}
-
-.trails {
-	margin-top: 1em;
-	margin-bottom: 1em;
-}
-.trail {
-	display: block;
-	clear: both;
-	position: relative;
-}
-
-.trailprev {
-	display: block;
-	text-align: left;
-	position: absolute;
-	top: 0%;
-	left: 3%;
-	width: 30%;
-}
-
-.trailup {
-	display: block;
-	text-align: center;
-	margin-left: 35%;
-	margin-right: 35%;
-}
-
-.trailnext {
-	display: block;
-	text-align: right;
-	position: absolute;
-	top: 0%;
-	width: 30%;
-	right: 3%;
-}
-
-.trailsep {
-	display: none;
-}
-
-/* mobile/small-screen-friendly layout */
-@media (max-width: 600px) {
-	.sidebar {
-		width: auto;
-		float: none;
-		margin-top: 0;
-		border: none;
-	}
-
-	/* if the mobile browser is new enough, use flex layout to shuffle
-	 * the sidebar to the end */
-	.page {
-		display: -webkit-box;
-		display: -webkit-flexbox;
-		display: -webkit-flex;
-		display: -moz-box;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-orient: vertical;
-		-webkit-flex-direction: tb;
-		-webkit-flex-direction: column;
-		-webkit-flex-flow: column;
-		-ms-flex-direction: column;
-		flex-direction: column;
-	}
-	#pageheader {
-		-webkit-box-ordinal-group: -1;
-		-webkit-order: -1;
-		-ms-box-ordinal-group: -1;
-		-ms-flex-order: -1;
-		order: -1;
-	}
-	.sidebar, #footer {
-		-webkit-box-ordinal-group: 1;
-		-webkit-order: 1;
-		-ms-box-ordinal-group: 1;
-		-ms-flex-order: 1;
-		order: 1;
-	}
-
-	.blogform, #blogform {
-		padding: 4px 4px;
-	}
 }

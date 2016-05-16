@@ -18,12 +18,12 @@ Arnaud Fontaine (60):
       Cosmetic
       Fix x_get_transient_for_hint() based on XGetTransientForHint()
       Remove useless x_select_input() which leaded to useless requests
-      When handling a ConfigureRequest, send a ConfigureWindow according to the event value mask.
+      When handling a ConfigureRequest, send a ConfigureWindow according to     the event value mask.
       Allow to specify hexadecimal colors in configuration
-      Translate properly a KeyCode to a KeySym and a string (XKB support missing ATM).
-      * Remove buggy ignore_motion_events. * Add xcb_aux_sync() in order to fix problem when moving or resizing a window.
+      Translate properly a KeyCode to a KeySym and a string (XKB support     missing ATM).
+      * Remove buggy ignore_motion_events.     * Add xcb_aux_sync() in order to fix problem when moving or resizing a window.
       Fix typo when checking GetGeometry reply
-      * Make key symbols table, NumLock, ShiftLock and CapsLock global variables. * Get CapsLock and ShiftLock masks properly and fix XLookupString() XCB equivalent.
+      * Make key symbols table, NumLock, ShiftLock and CapsLock global variables.     * Get CapsLock and ShiftLock masks properly and fix XLookupString() XCB equivalent.
       Prefix xutil functions properly
       Get properly windows geometry when handling existing windows at Awesome startup
       Fix incorrect porting of XCreateFontCursor()
@@ -42,12 +42,12 @@ Arnaud Fontaine (60):
       [awesome-menu] Convert properly a KeySym to a character
       [client] Fix xcb_get_wm_normal_hints() which now returns an allocated pointer
       [configure.ac] Add AC_PATH_X as we still need Xlib for keyboard related functions
-      [xutil] Fix missing applied mask when getting request code in xutil_get_error().         Thanks to Matthieu Pasini.
+      [xutil] Fix missing applied mask when getting request code in xutil_get_error().             Thanks to Matthieu Pasini.
       Cosmetic
       [xutil] check whether the error code and request are actually defined
       [client] Fix regression (closed windows still mapped on the screen)
-      [client] Useless accessors functions have been removed from xcb-util/icccm which had a bug making urgency hint unusable.
-      [awesome-menu] rewrite getline by avoiding useless free and setting                errno in case of error.
+      [client] Useless accessors functions have been removed from     xcb-util/icccm which had a bug making urgency hint unusable.
+      [awesome-menu] rewrite getline by avoiding useless free and setting                    errno in case of error.
       [all] Implement an atom cache in xutil as an ordered linked-list
       [client] Add client_redraw (FS#170)
       [awesome-client] Replace deprecated client_zoom by client_swap in documentation
@@ -63,9 +63,9 @@ Arnaud Fontaine (60):
       xembed: make xembed_info_get() asynchronous
       xutil: make xutil_lock_mask_get() asynchronous
       ewmh: make ewmh_window_icon_get() asynchronous
-      window: make window_getstate() asynchronous and rename this function         according to the rest of code.
+      window: make window_getstate() asynchronous and rename this function             according to the rest of code.
       window: rename functions according to the rest of code
-      client: when redrawing a window, set the mouse focus on this window if         it has been performed on this window.
+      client: when redrawing a window, set the mouse focus on this window if             it has been performed on this window.
       awesome: get rid of unecessary malloc in scan()
       Update to new xcb-util library.
       systray: rely on xcb_atom_name_by_screen available since xcb-util 0.3.0
@@ -209,7 +209,7 @@ Julien Danjou (991):
       [draw] Rename DrawCtx to draw_context_t
       [screen] Rename ScreensInfo to screen_info_t
       [config] Rename Key to keybinding_t
-      [draw] Rework shadow Signed-off-by: Julien Danjou <julien@danjou.info>
+      [draw] Rework shadow     Signed-off-by: Julien Danjou <julien@danjou.info>
       [config] Do not set background by default
       [taglist] Honors style; use pointers instead of hard copies
       [markup] Escape text on reconstruct
@@ -232,10 +232,10 @@ Julien Danjou (991):
       [window] Add proper documentation of some functions
       [uicb] Documentation enhancement
       [widget] Documentation fix
-      [client] Documentation update Signed-off-by: Julien Danjou <julien@danjou.info>
+      [client] Documentation update     Signed-off-by: Julien Danjou <julien@danjou.info>
       [client] introduce client_style_get() and use it in tasklist/titlebar
       [draw] Make draw_text using a const pointer to a style
-      [window] Fix possible memleak in window_setshape(), and remove useless ungrab() Signed-off-by: Julien Danjou <julien@danjou.info>
+      [window] Fix possible memleak in window_setshape(), and remove useless ungrab()     Signed-off-by: Julien Danjou <julien@danjou.info>
       [rules] Cosmetic
       [uicb] Use bool instead of int for returning status
       [markup] Fix memory leak
@@ -367,7 +367,7 @@ Julien Danjou (991):
       [client] Fix client_resize() comments
       [layout] Arrange after focus is gave
       [layouts] Add magnifier layout
-      [magnifier] Check for n > 0 Signed-off-by: Julien Danjou <julien@danjou.info>
+      [magnifier] Check for n > 0     Signed-off-by: Julien Danjou <julien@danjou.info>
       [magnifier] Use mwfact
       [client] Focus even if we think we already have focus
       [awesomerc] Only raise on focus with keyboard
@@ -464,7 +464,7 @@ Julien Danjou (991):
       [mouse] Fix bug with floating
       [focus] Fix bogus arguments
       [client] Add support for hide/unhide
-      Revert "Replace tags by workspaces" This reverts commit 00f966ea047ec4f464770af03044602ac5781c2c.
+      Revert "Replace tags by workspaces"     This reverts commit 00f966ea047ec4f464770af03044602ac5781c2c.
       [draw] Do inline UTF-8 conversion
       [tabulous] First import
       [awful] Add a check in toggletag
@@ -747,7 +747,7 @@ Julien Danjou (991):
       titlebar: ref widget on get()
       statusbar: widget_get() returns a dict
       statusbar: merge position_{set,get} into index
-      build: rework makefile Signed-off-by: Julien Danjou <julien@danjou.info>
+      build: rework makefile     Signed-off-by: Julien Danjou <julien@danjou.info>
       titlebar: add index
       statusbar: merge border_set() into index
       titlebar: merge colors_set() into index

@@ -8,7 +8,7 @@ Aldo Cortesi (43):
       Add a way to define key bindings in bulk, like this:
       Remove some redundant gcc flags.
       Comment typos.
-      Remove inline declarations in client.h - these don't match what's in the the .c anyway.
+      Remove inline declarations in client.h - these don't match what's in the the .c     anyway.
       Improve the call signature of get_current_tag and get_current_layout.
       Refactor draw.c
       Remove stubs for reloadconfig.
@@ -17,20 +17,20 @@ Aldo Cortesi (43):
       Fix compilation warning related to parsing of statusbar widgets config.
       Massive, massive interface refactoring.
       Various doc comment fixes.
-      Fix compiler warning re unused argument, and improve the function interface while we're at it.
+      Fix compiler warning re unused argument, and improve the function interface     while we're at it.
       Simplify widget draw interface.
       The beginnings of a more flexible widget configuration.
       Solidify widgets.
       Make empty status bar look nice.
-      Add basic framework for uicb_widget_tell. For now, it does nothing, but stay tuned.
+      Add basic framework for uicb_widget_tell. For now, it does nothing, but stay     tuned.
       The arg to uicb_ functions is no longer const.
       Refactor the focus.c interface to use globalconf.
       Add more requirements to README.
       Use WidgetList for lookups, rather than recreating the data.
-      This patch is a first draft of independently targetable textboxes, and a protocol to speak to them. Given a textbox widget definition like this:
+      This patch is a first draft of independently targetable textboxes, and a     protocol to speak to them. Given a textbox widget definition like this:
       Make drawtext interface more general.
-      Make "Statusbar statusbar" the  in VirtScreen "Statusbar *statusbar". This is more consistent with the rest of the interface, and will make our life easier when we have mulitiple statusbars per screen.
-      Continue to simplify interfaces that require arguments in globalconf. Today I focus on screen.c.
+      Make "Statusbar statusbar" the  in VirtScreen "Statusbar *statusbar". This is     more consistent with the rest of the interface, and will make our life easier     when we have mulitiple statusbars per screen.
+      Continue to simplify interfaces that require arguments in globalconf.     Today I focus on screen.c.
       The preferred line length is 80 characters.
       Make textbox foreground and background configurable.
       Remove single occurance of die, and then remove die itself.
@@ -418,7 +418,7 @@ Nikos Ntarmos (25):
       Clipping instead of ignoring for progressbar widget
       partial support for mouse bindings on root window when window displayed
       Add a 'flush'-like function to awesome-client
-      Call XQueryPointer on arrange(...) to see if the pointer is over a client window and reset the mouse key bindings if it's over the root
+      Call XQueryPointer on arrange(...) to see if the pointer is over a client window     and reset the mouse key bindings if it's over the root
       Don't draw a square on the taglist for skipped windows
       Locale and international text in widgets
       Fix for 'windows showing up in tile-mode and not before already floated'

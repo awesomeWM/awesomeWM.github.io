@@ -13,11 +13,9 @@
 <!--//--><![CDATA[//><!--
     (function() {
         var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
-        
         s.type = 'text/javascript';
         s.async = true;
-        s.src = 'http://api.flattr.com/js/0.5.0/load.js?mode=auto';
-        
+        s.src = 'https://api.flattr.com/js/0.6/load.js?mode=auto';
         t.parentNode.insertBefore(s, t);
     })();//--><!]]>
 </script>
@@ -59,81 +57,78 @@
 <pre><code>[[!google  foo]]
 [[!wikipedia  War_of_1812]]
 [[!debbug  12345]]
-Check the [[!google  ikiwiki desc="google search for %s"]].
+Check the [[!cia  ikiwiki desc="CIA page for %s"]].
 </code></pre>
 
 <p>This page controls what shortcut links the wiki supports.</p>
 
 <ul>
-<li>Tastenkürzel google verweist nach <i>https://encrypted.google.com/search?q=%s</i></li>
-<li>Tastenkürzel archive verweist nach <i>http://web.archive.org/*/%S</i></li>
-<li>Tastenkürzel gmap verweist nach <i>https://maps.google.com/maps?q=%s</i></li>
-<li>Tastenkürzel gmsg verweist nach <i>https://groups.google.com/groups?selm=%s</i></li>
-<li>Tastenkürzel wikipedia verweist nach <i>https://en.wikipedia.org/wiki/%W</i></li>
-<li>Tastenkürzel wikitravel verweist nach <i>https://wikitravel.org/en/%s</i></li>
-<li>Tastenkürzel wiktionary verweist nach <i>https://en.wiktionary.org/wiki/%s</i></li>
-<li>Tastenkürzel debbug verweist nach <i>http://bugs.debian.org/%S</i></li>
-<li>Tastenkürzel deblist verweist nach <i>https://lists.debian.org/debian-%s</i></li>
-<li>Tastenkürzel debpkg verweist nach <i>http://packages.debian.org/%s</i></li>
-<li>Tastenkürzel debpkgsid verweist nach <i>http://packages.debian.org/sid/%s</i></li>
-<li>Tastenkürzel debpts verweist nach <i>http://packages.qa.debian.org/%s</i></li>
-<li>Tastenkürzel debmsg verweist nach <i>https://lists.debian.org/msgid-search/%s</i></li>
-<li>Tastenkürzel debrt verweist nach <i>https://rt.debian.org/Ticket/Display.html?id=%s</i></li>
-<li>Tastenkürzel debss verweist nach <i>http://snapshot.debian.org/package/%s/</i>
+<li>shortcut google points to <i>https://encrypted.google.com/search?q=%s</i></li>
+<li>shortcut archive points to <i>http://web.archive.org/*/%S</i></li>
+<li>shortcut gmap points to <i>https://maps.google.com/maps?q=%s</i></li>
+<li>shortcut gmsg points to <i>https://groups.google.com/groups?selm=%s</i></li>
+<li>shortcut wikipedia points to <i>https://en.wikipedia.org/wiki/%s</i></li>
+<li>shortcut wikitravel points to <i>https://wikitravel.org/en/%s</i></li>
+<li>shortcut wiktionary points to <i>https://en.wiktionary.org/wiki/%s</i></li>
+<li>shortcut debbug points to <i>http://bugs.debian.org/%S</i></li>
+<li>shortcut deblist points to <i>https://lists.debian.org/debian-%s</i></li>
+<li>shortcut debpkg points to <i>http://packages.debian.org/%s</i></li>
+<li>shortcut debpkgsid points to <i>http://packages.debian.org/sid/%s</i></li>
+<li>shortcut debpts points to <i>http://packages.qa.debian.org/%s</i></li>
+<li>shortcut debmsg points to <i>https://lists.debian.org/msgid-search/%s</i></li>
+<li>shortcut debrt points to <i>https://rt.debian.org/Ticket/Display.html?id=%s</i></li>
+<li>shortcut debss points to <i>http://snapshot.debian.org/package/%s/</i>
 
 <ul>
 <li>Usage: <code>[[!debss  package]]</code> or <code>[[!debss  package/version]]</code>.  See <a href="http://snapshot.debian.org/">http://snapshot.debian.org/</a> for details.</li>
 </ul>
 </li>
-<li>Tastenkürzel debwiki verweist nach <i>https://wiki.debian.org/%S</i></li>
-<li>Tastenkürzel fdobug verweist nach <i>https://bugs.freedesktop.org/show_bug.cgi?id=%s</i></li>
-<li>Tastenkürzel fdolist verweist nach <i>http://lists.freedesktop.org/mailman/listinfo/%s</i></li>
-<li>Tastenkürzel gnomebug verweist nach <i>https://bugzilla.gnome.org/show_bug.cgi?id=%s</i></li>
-<li>Tastenkürzel linuxbug verweist nach <i>https://bugzilla.kernel.org/show_bug.cgi?id=%s</i></li>
-<li>Tastenkürzel mozbug verweist nach <i>https://bugzilla.mozilla.org/show_bug.cgi?id=%s</i></li>
-<li>Tastenkürzel gnulist verweist nach <i>https://lists.gnu.org/mailman/listinfo/%s</i></li>
-<li>Tastenkürzel marcmsg verweist nach <i>http://marc.info/?i=%s</i></li>
-<li>Tastenkürzel marclist verweist nach <i>http://marc.info/?l=%s</i></li>
-<li>Tastenkürzel gmane verweist nach <i>http://dir.gmane.org/gmane.%s</i></li>
-<li>Tastenkürzel gmanemsg verweist nach <i>http://mid.gmane.org/%s</i></li>
-<li>Tastenkürzel cpan verweist nach <i>http://search.cpan.org/search?mode=dist&amp;query=%s</i></li>
-<li>Tastenkürzel ctan verweist nach <i>http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=%s</i></li>
-<li>Tastenkürzel hoogle verweist nach <i>http://haskell.org/hoogle/?q=%s</i></li>
-<li>Tastenkürzel iki verweist nach <i>http://ikiwiki.info/%S/</i></li>
-<li>Tastenkürzel ljuser verweist nach <i>http://%s.livejournal.com/</i></li>
-<li>Tastenkürzel rfc verweist nach <i>https://www.ietf.org/rfc/rfc%s.txt</i></li>
-<li>Tastenkürzel c2 verweist nach <i>http://c2.com/cgi/wiki?%s</i></li>
-<li>Tastenkürzel meatballwiki verweist nach <i>http://www.usemod.com/cgi-bin/mb.pl?%s</i></li>
-<li>Tastenkürzel emacswiki verweist nach <i>http://www.emacswiki.org/cgi-bin/wiki/%s</i></li>
-<li>Tastenkürzel haskellwiki verweist nach <i>http://haskell.org/haskellwiki/%s</i></li>
-<li>Tastenkürzel dict verweist nach <i>http://www.dict.org/bin/Dict?Form=Dict1&amp;Strategy=<em>&amp;Database=</em>&amp;Query=%s</i></li>
-<li>Tastenkürzel imdb verweist nach <i>http://imdb.com/find?q=%s</i></li>
-<li>Tastenkürzel gpg verweist nach <i>http://pgpkeys.mit.edu:11371/pks/lookup?op=vindex&amp;exact=on&amp;search=0x%s</i></li>
-<li>Tastenkürzel perldoc verweist nach <i>http://perldoc.perl.org/search.html?q=%s</i></li>
-<li>Tastenkürzel whois verweist nach <i>http://reports.internic.net/cgi/whois?whois_nic=%s&amp;type=domain</i></li>
-<li>Tastenkürzel cve verweist nach <i>https://cve.mitre.org/cgi-bin/cvename.cgi?name=%s</i></li>
-<li>Tastenkürzel flickr verweist nach <i>https://secure.flickr.com/photos/%s</i></li>
-<li>Tastenkürzel man verweist nach <i>http://manpages.debian.org/%s</i></li>
-<li>Tastenkürzel ohloh verweist nach <i>https://www.ohloh.net/p/%s</i></li>
-<li>Tastenkürzel cpanrt verweist nach <i>https://rt.cpan.org/Ticket/Display.html?id=%s</i></li>
-<li>Tastenkürzel novellbug verweist nach <i>https://bugzilla.novell.com/show_bug.cgi?id=%s</i></li>
-<li>Tastenkürzel ubupkg verweist nach <i>http://packages.ubuntu.com/%s</i></li>
-<li>Tastenkürzel mozillazinekb verweist nach <i>http://kb.mozillazine.org/%s</i></li>
-<li>Tastenkürzel freebsdwiki verweist nach <i>http://wiki.freebsd.org/%s</i></li>
-<li>Tastenkürzel hackage verweist nach <i>http://hackage.haskell.org/package/%s</i></li>
-<li>Tastenkürzel pkgsrc verweist nach <i>http://pkgsrc.se/%S</i></li>
-<li>Tastenkürzel doi verweist nach <i>http://dx.doi.org/%s</i></li>
-<li>Tastenkürzel arxiv verweist nach <i>http://arxiv.org/abs/%s</i></li>
+<li>shortcut debwiki points to <i>https://wiki.debian.org/%s</i></li>
+<li>shortcut fdobug points to <i>https://bugs.freedesktop.org/show_bug.cgi?id=%s</i></li>
+<li>shortcut fdolist points to <i>http://lists.freedesktop.org/mailman/listinfo/%s</i></li>
+<li>shortcut gnomebug points to <i>https://bugzilla.gnome.org/show_bug.cgi?id=%s</i></li>
+<li>shortcut linuxbug points to <i>https://bugzilla.kernel.org/show_bug.cgi?id=%s</i></li>
+<li>shortcut mozbug points to <i>https://bugzilla.mozilla.org/show_bug.cgi?id=%s</i></li>
+<li>shortcut gnulist points to <i>https://lists.gnu.org/mailman/listinfo/%s</i></li>
+<li>shortcut marcmsg points to <i>http://marc.info/?i=%s</i></li>
+<li>shortcut marclist points to <i>http://marc.info/?l=%s</i></li>
+<li>shortcut gmane points to <i>http://dir.gmane.org/gmane.%s</i></li>
+<li>shortcut gmanemsg points to <i>http://mid.gmane.org/%s</i></li>
+<li>shortcut cpan points to <i>http://search.cpan.org/search?mode=dist&amp;query=%s</i></li>
+<li>shortcut ctan points to <i>http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=%s</i></li>
+<li>shortcut hoogle points to <i>http://haskell.org/hoogle/?q=%s</i></li>
+<li>shortcut iki points to <i>http://ikiwiki.info/%S/</i></li>
+<li>shortcut ljuser points to <i>http://%s.livejournal.com/</i></li>
+<li>shortcut rfc points to <i>https://www.ietf.org/rfc/rfc%s.txt</i></li>
+<li>shortcut c2 points to <i>http://c2.com/cgi/wiki?%s</i></li>
+<li>shortcut meatballwiki points to <i>http://www.usemod.com/cgi-bin/mb.pl?%s</i></li>
+<li>shortcut emacswiki points to <i>http://www.emacswiki.org/cgi-bin/wiki/%s</i></li>
+<li>shortcut haskellwiki points to <i>http://haskell.org/haskellwiki/%s</i></li>
+<li>shortcut dict points to <i>http://www.dict.org/bin/Dict?Form=Dict1&amp;Strategy=<em>&amp;Database=</em>&amp;Query=%s</i></li>
+<li>shortcut imdb points to <i>http://imdb.com/find?q=%s</i></li>
+<li>shortcut gpg points to <i>http://pgpkeys.mit.edu:11371/pks/lookup?op=vindex&amp;exact=on&amp;search=0x%s</i></li>
+<li>shortcut perldoc points to <i>http://perldoc.perl.org/search.html?q=%s</i></li>
+<li>shortcut whois points to <i>http://reports.internic.net/cgi/whois?whois_nic=%s&amp;type=domain</i></li>
+<li>shortcut cve points to <i>https://cve.mitre.org/cgi-bin/cvename.cgi?name=%s</i></li>
+<li>shortcut cia points to <i>http://cia.vc/stats/project/%s</i></li>
+<li>shortcut ciauser points to <i>http://cia.vc/stats/user/%s</i></li>
+<li>shortcut flickr points to <i>https://secure.flickr.com/photos/%s</i></li>
+<li>shortcut man points to <i>http://linux.die.net/man/%s</i></li>
+<li>shortcut ohloh points to <i>https://www.ohloh.net/p/%s</i></li>
+<li>shortcut cpanrt points to <i>https://rt.cpan.org/Ticket/Display.html?id=%s</i></li>
+<li>shortcut novellbug points to <i>https://bugzilla.novell.com/show_bug.cgi?id=%s</i></li>
+<li>shortcut ubupkg points to <i>http://packages.ubuntu.com/%s</i></li>
+<li>shortcut mozillazinekb points to <i>http://kb.mozillazine.org/%s</i></li>
+<li>shortcut freebsdwiki points to <i>http://wiki.freebsd.org/%s</i></li>
+<li>shortcut hackage points to <i>http://hackage.haskell.org/package/%s</i></li>
 </ul>
 
 
 <p>To add a new shortcut, use the <code>shortcut</code>
 <a href="../ikiwiki/directive/">directive</a>. In the url, "%s" is replaced with the
 text passed to the named shortcut, after <a href="https://en.wikipedia.org/wiki/url%5Fencoding">url encoding</a>
-it, and '%S' is replaced with the raw, non-encoded text.
-Additionally, <code>%W</code> is replaced with the text encoded just right for
-Wikipedia. The optional <code>desc</code> parameter controls the description of
-the link.</p>
+it, and '%S' is replaced with the raw, non-encoded text. The optional
+<code>desc</code> parameter controls the description of the link.</p>
 
 <p>Remember that the <code>name</code> you give the shortcut will become a new
 <a href="../ikiwiki/directive/">directive</a>.  Avoid using a <code>name</code> that conflicts
@@ -169,7 +164,8 @@ ikiwiki will include your shortcut in the standard underlay.</p>
 
     
 
-    <SCRIPT type='text/javascript' language='JavaScript' src='http://www.ohloh.net/projects/8909/badge_js'></SCRIPT> 
+    <script type='text/javascript' src='https://www.openhub.net/p/awesome/widgets/project_factoids_stats?format=js'></script>
+
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 <input type="hidden" name="cmd" value="_donations">
 <input type="hidden" name="business" value="julien@danjou.info">
@@ -193,7 +189,7 @@ href="http://awesome.naquadah.org"></a>
     
 
     <div class="pagedate">
-        Last edited <span class="date">Mo 09 Mai 2016 22:59:50 CEST</span>
+        Last edited <span class="date">Tue 14 Feb 2012 04:21:43 PM UTC</span>
     </div>
 
     </div>

@@ -13,7 +13,7 @@ Julien Danjou (196):
       remove blank lines
       remove textw function, change it with a macro
       fix segfault with transparency
-      Rework settrans - set setclienttrans static - remove current_opacity arg of setclienttrans, not useful
+      Rework settrans     - set setclienttrans static     - remove current_opacity arg of setclienttrans, not useful
       remove nexttiled
       cosmetic: remove useless ;
       make loadprops more dynamic
