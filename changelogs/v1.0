@@ -201,7 +201,7 @@ Date:   Sun Sep 16 15:55:37 2007 +0200
     allow tiled window to be resize/moved, setting them to the floating state
 
 commit dd61895a03fc735e7af3c8970a3df3e0dd46d146
-Merge: f8c86ac ab8558d
+Merge: f8c86acc ab8558d8
 Author: Julien Danjou <julien@danjou.info>
 Date:   Sun Sep 16 15:08:04 2007 +0200
 
@@ -306,7 +306,7 @@ Date:   Sun Sep 16 02:14:37 2007 +0200
     don't grab keys if we don't know them
 
 commit ab8558d87c706b73ead969df7ca87aa46e0b1e02
-Merge: 09f3258 6f900bd
+Merge: 09f3258d 6f900bd8
 Author: Julien Danjou <julien@danjou.info>
 Date:   Sun Sep 16 02:39:43 2007 +0200
 
@@ -843,7 +843,7 @@ Date:   Tue Sep 11 10:17:38 2007 +0200
     export netatom or we die
 
 commit 26c2d2795d2b9cf35cd08c0204531d8b18f88f03
-Merge: abef496 74eff0c
+Merge: abef4969 74eff0c1
 Author: Julien Danjou <julien@danjou.info>
 Date:   Mon Sep 10 17:20:39 2007 +0200
 
@@ -856,7 +856,7 @@ Date:   Mon Sep 10 17:18:43 2007 +0200
     fix regression
 
 commit 74eff0c1979e248cb084b48ef60f0e86943a87ab
-Merge: 1ad4adf 0c8394f
+Merge: 1ad4adf9 0c8394fd
 Author: Julien Danjou <julien@danjou.info>
 Date:   Mon Sep 10 17:07:23 2007 +0200
 

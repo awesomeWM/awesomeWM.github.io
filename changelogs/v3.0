@@ -1847,7 +1847,7 @@ Date:   Mon Aug 11 02:21:21 2008 +0200
     
     Conflicts:
     
-    	lua.h
+            lua.h
 
 commit adebbb5df2835e8f073ad52ec3cbec0478dc7c0e
 Author: Julien Danjou <julien@danjou.info>
@@ -4724,7 +4724,7 @@ Date:   Wed Jun 25 12:46:53 2008 +0200
     cmake: compile lua libs
 
 commit fee4116e3dbb279b88cff10d4e1291f50dc320e0
-Merge: 232fb69 ead90f6
+Merge: 232fb692 ead90f61
 Author: Julien Danjou <julien@danjou.info>
 Date:   Wed Jun 25 11:48:22 2008 +0200
 
@@ -9706,7 +9706,7 @@ Date:   Wed May 21 15:28:39 2008 +0200
     
     Conflicts:
     
-    	awesome.c
+            awesome.c
     
     Signed-off-by: Julien Danjou <julien@danjou.info>
 

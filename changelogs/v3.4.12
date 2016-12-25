@@ -149,7 +149,7 @@ Date:   Fri Feb 17 02:30:41 2012 +0530
     
     Conflicts:
     
-    	lib/awful/util.lua.in
+            lib/awful/util.lua.in
     
     Signed-off-by: Anurag Priyam <anurag08priyam@gmail.com>
     Signed-off-by: Uli Schlachter <psychon@znc.in>

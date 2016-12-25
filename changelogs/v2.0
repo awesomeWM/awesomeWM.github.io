@@ -260,9 +260,9 @@ Date:   Sat Nov 17 12:35:20 2007 +0200
     
     CAVEAT: Exiting on error may break setups such as:
     
-    	while true; do
-    		echo "some text"
-    	done | /path/to/awesome-client
+            while true; do
+                    echo "some text"
+            done | /path/to/awesome-client
     
     which relied on awesome-client continuing to send to the given socket
     (although failing) until EOF was encountered on stdin.

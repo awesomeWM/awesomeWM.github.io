@@ -58,7 +58,8 @@ nav {
 	border-bottom: 1px solid #000;
 }
 
-.inlinecontent {
+.inlinecontent,
+.inlineenclosure {
 	margin-top: .4em;
 }
 
@@ -202,6 +203,13 @@ div.recentchanges {
 	margin-top: 1em;
 }
 
+.archivepagedate {
+	font-style: italic;
+}
+.archivepage {
+	margin-bottom: 1em;
+}
+
 .error {
 	color: #C00;
 }
@@ -275,6 +283,7 @@ div.progress-done {
 @media print {
 	.actions { display: none; }
 	.tags { display: none; }
+	.trails { display: none; }
 	.feedbutton { display: none; }
 	#searchform { display: none; }
 	.blogform, #blogform { display: none; }
@@ -315,6 +324,7 @@ div.progress-done {
 .popup .paren,
 .popup .expand {
 	display: none;
+	text-align: left;
 }
 .popup:hover .balloon,
 .popup:focus .balloon {
@@ -500,4 +510,43 @@ a.openid_large_btn:focus {
 }
 .fileupload-content .ui-progressbar-value {
 	background: url(ikiwiki/images/pbar-ani.gif);
+}
+
+.trails {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+.trail {
+	display: block;
+	clear: both;
+	position: relative;
+}
+
+.trailprev {
+	display: block;
+	text-align: left;
+	position: absolute;
+	top: 0%;
+	left: 3%;
+	width: 30%;
+}
+
+.trailup {
+	display: block;
+	text-align: center;
+	margin-left: 35%;
+	margin-right: 35%;
+}
+
+.trailnext {
+	display: block;
+	text-align: right;
+	position: absolute;
+	top: 0%;
+	width: 30%;
+	right: 3%;
+}
+
+.trailsep {
+	display: none;
 }
