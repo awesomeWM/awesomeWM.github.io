@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>doc - awesome window manager</title>
+<title>doing a release - awesome window manager</title>
 <link rel="icon" href="../images/icons/aw_16.png" type="image/png" />
 <link rel="stylesheet" href="../style.css" type="text/css" />
 <link rel="stylesheet" href="../local.css" type="text/css" />
@@ -43,25 +43,77 @@
     
 
     <div id="content">
-    <!--    <h1>doc</h1> -->
+    <!--    <h1>doing a release</h1> -->
         <div id="left">
           <div class="flattr">
             <a class="FlattrButton" style="display:none;"
                href="https://awesomewm.org"></a>
           </div>
-          <h1>Documentation</h1>
+          <h2>How to do a release</h2>
+
+<h3>Local preparations</h3>
+
+<p>The following steps are done in a checkout of the <em>awesome</em> git repository.</p>
 
 <ul>
-<li>LUA API documentation built by <a href="http://stevedonovan.github.io/ldoc/">ldoc</a>
+<li>The codename:
 
 <ul>
-<li><a href="api">Lua API documentation for the stable release</a></li>
-<li><a href="../apidoc/">Lua API documentation for Git master (development version)</a></li>
+<li>Pick some codename that  is not already listed in <a href="../releases/">Releases</a>.</li>
+<li>jd always picked a song title, you should do the same.</li>
+<li>Edit <code>awesomeConfig.cmake</code> and change the argument in <code>set(CODENAME "Foo")</code>.</li>
+<li><code>git commit -sm 'change codename' awesomeConfig.cmake</code></li>
 </ul>
 </li>
-<li><a href="manpages/awesome.1.html">awesome(1) manpage</a></li>
-<li><a href="manpages/awesomerc.5.html">awesomerc(5) manpage</a></li>
-<li><a href="manpages/awesome-client.1.html">awesome-client(1) manpage</a></li>
+<li>Git sign with <code>git tag -s vX.Y -m 'awesome vX.Y</code>'</li>
+<li>Run <code>make dist</code> to create tarballs. You need to have GPG set up correctly, because the tarballs will be signed.</li>
+<li>Copy the tarballs and the signatures into the awesome-releases repository and
+commit the result.</li>
+</ul>
+
+
+<p>The following steps are done in a checkout of the <em>awesome-www</em> git repository.</p>
+
+<ul>
+<li>Create a release-branch via <code>git checkout -b release</code>.</li>
+<li>Add the release version and date to <a href="../releases/">Releases</a>.</li>
+<li>Update <code>download.mdwn</code> to add version information and links.</li>
+<li>Go into the 'src' submodule, and update it to vX.Y with <code>git pull
+path/to/your/awesome/repo tag vX.Y &amp;&amp; git checkout vX.Y</code>.</li>
+<li>Commit <code>download.mdwn</code> and <code>src</code> with <code>git commit -sm 'vX.Y' download.mdwn src</code>.</li>
+</ul>
+
+
+<h3>The final steps</h3>
+
+<ul>
+<li>Push the new commits
+
+<ul>
+<li>In the awesome-releases repository</li>
+<li>In the awesome-www repository (push just the release branch!)</li>
+<li>In the awesome repository (make sure the tag is also pushed!)</li>
+</ul>
+</li>
+<li>Create a pull request to the awesome-www repository for the release branch.
+This makes sure that the Travis build will be successful when merging into the
+master branch.</li>
+<li>Create the release on GitHub:
+
+<ul>
+<li>Go to the GitHub release page <a href="https://github.com/awesomeWM/awesome/releases/new">https://github.com/awesomeWM/awesome/releases/new</a>.</li>
+<li>Enter <code>vX.Y</code> into the "Tag version"-field. GitHub should recognize this as
+an existing tag.</li>
+<li>Enter <code>Awesome vX.Y</code> into the "Release title" field.</li>
+<li>Come up with something good for the description field. A nice idea is to
+mention some highlights and to link to a porting document.</li>
+<li>Attach the tarballs and signatures created by <code>make dist</code>.</li>
+</ul>
+</li>
+<li>Check the links to the downloads on the webpage.</li>
+<li>Change the topic on IRC.</li>
+<li>Verify the pull request to the awesome-www repository built successful and
+merge it into the master branch.</li>
 </ul>
 
 
