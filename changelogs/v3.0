@@ -4723,13 +4723,6 @@ Date:   Wed Jun 25 12:46:53 2008 +0200
 
     cmake: compile lua libs
 
-commit fee4116e3dbb279b88cff10d4e1291f50dc320e0
-Merge: 232fb692 ead90f61
-Author: Julien Danjou <julien@danjou.info>
-Date:   Wed Jun 25 11:48:22 2008 +0200
-
-    Merge commit 'madcoder/master'
-
 commit ead90f618c46f7296afcbc5c268ce638efd58ef6
 Author: Pierre Habouzit <madcoder@debian.org>
 Date:   Wed Jun 25 11:45:57 2008 +0200

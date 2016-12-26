@@ -4,15 +4,6 @@ Date:   Tue Dec 20 22:36:39 2016 -0500
 
     change codename
 
-commit 44698ed22729f28b84cc6a3073d8899b956fd951
-Merge: 3f9da426 69915fb6
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Dec 25 16:22:22 2016 +0100
-
-    Merge pull request #1295 from blueyed/travis-fix-test-each-commit
-    
-    Travis: fix testing each commit
-
 commit 69915fb6585ec483844635d02992d7c75cc6fc25
 Author: Daniel Hahler <git@thequod.de>
 Date:   Sun Dec 25 13:13:33 2016 +0100
@@ -86,27 +77,11 @@ Date:   Sun Dec 25 13:05:26 2016 +0100
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit 090741199745aa49ad5086243a06440255a984f1
-Merge: fb874122 4d2a1d55
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun Dec 25 11:09:58 2016 +0100
-
-    Merge branch 'force-drawable-screen' of https://github.com/psychon/awesome
-
 commit fb874122ba1ac06a3af29c39c5abe6415e77bbf8
 Author: Daniel Hahler <github@thequod.de>
 Date:   Sun Dec 25 03:46:28 2016 +0100
 
     tests/run.sh: SHELL=/bin/sh, HOME=/dev/null (#1291)
-
-commit d5b3fa8be05a2ef159b51e3458aa7e8416c205a3
-Merge: da415e0f 8c9a1b54
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Dec 25 03:43:50 2016 +0100
-
-    Merge pull request #1290 from blueyed/tests-run-shellcheck-etc
-    
-    tests/run.sh: shellcheck and other fixes
 
 commit da415e0f9afe262a1a09bb3e8fc1ca314f373627
 Author: Daniel Hahler <github@thequod.de>
@@ -155,29 +130,11 @@ Date:   Fri Dec 23 19:13:25 2016 +0100
     Fixes: https://github.com/awesomeWM/awesome/issues/1254
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit c349ff9206fcb2111b089ddf2d250e2eac20b6e0
-Merge: 7ed27ce7 52e31367
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Wed Dec 21 12:52:44 2016 -0500
-
-    Merge pull request #1283 from Elv13/add_porting_tips
-    
-    doc: Add a porting guide.
-
 commit 52e31367a794865715e4833557410b9e86419e5c
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Tue Dec 20 21:59:07 2016 -0500
 
     doc: Add a porting guide.
-
-commit 7ed27ce781bbfc46c8709e456ed363060fb91b09
-Merge: 8935ed2a a9308494
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Wed Dec 21 11:44:54 2016 -0500
-
-    Merge pull request #1279 from Elv13/tag_doc
-    
-    Tag & keybindings doc
 
 commit a93084947a1533878ee9d406113aabfaeb361cda
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -224,15 +181,6 @@ Date:   Tue Dec 20 20:03:03 2016 -0500
     Remove traces of the old URL (#1280)
     
     **WARNING**: This breaks the API
-
-commit 13fdaa080c0e72306e3ffed7878de547b50cad6e
-Merge: 1b42816e 11af40b9
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Mon Dec 19 14:29:09 2016 -0500
-
-    Merge pull request #1277 from psychon/fix-typo
-    
-    Fix luacheck installation on Travis
 
 commit 11af40b916f596067451f4759bbfeb89f338033e
 Author: Uli Schlachter <psychon@znc.in>
@@ -340,29 +288,11 @@ Date:   Sun Nov 27 18:09:10 2016 +0100
     Fixes: https://github.com/awesomeWM/awesome/issues/1237
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit ab38876b0d32b8e8b34f973e1cca239ebc6df4a6
-Merge: 620f64f2 530e64e9
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Fri Dec 16 16:37:54 2016 -0500
-
-    Merge pull request #1272 from kiike/fix-docs-grammar
-    
-    Fix typos, grammar in docs
-
 commit 530e64e9ec9755af34c3fd7d24ef7a287fe0dd5a
 Author: Enric Morales <me@enric.me>
 Date:   Fri Dec 16 22:02:35 2016 +0100
 
     Fix more typos
-
-commit 620f64f29d40137735a26a2a71b0b4daabca244b
-Merge: aafca9f0 5ff29bb0
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Fri Dec 16 12:59:03 2016 -0500
-
-    Merge pull request #1274 from Elv13/more_spawn_doc
-    
-    More spawn doc
 
 commit 5ff29bb00e1221f503d1fa937c9dfd039372abef
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -398,24 +328,6 @@ Date:   Wed Dec 14 20:26:38 2016 -0500
     
     Data mined from the IRC logs by checking for a "?" from users who
     had not spoken for >= 5 hours.
-
-commit aafca9f004ce634b00e60f64bf65b4817eff0f10
-Merge: 9fb4d4a9 731ddfe9
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Thu Dec 15 13:55:05 2016 -0500
-
-    Merge pull request #1269 from psychon/remove-doing-a-release
-    
-    Remove docs/doing_a_release.md
-
-commit 9fb4d4a90bdc05c6babbb97b8ff88261f939e813
-Merge: 65ec7644 329a3021
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Wed Dec 14 23:17:59 2016 -0500
-
-    Merge pull request #1271 from psychon/executable-flag
-    
-    Remove the executable bit from ewmh.c and awesomerc.lua
 
 commit 4bed437d50b14746014bb460d5ef89758d7ff52c
 Author: Enric Morales <me@enric.me>
@@ -471,15 +383,6 @@ Date:   Tue Dec 13 17:48:13 2016 +0100
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit 65ec7644168bb78fe30acea9a219ea263e5b5abe
-Merge: f22c067e 7961b8ec
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Mon Dec 12 13:07:18 2016 -0500
-
-    Merge pull request #1267 from Elv13/fix_rules_screen_mismatch
-    
-    Fix more rules screen mismatch
-
 commit 7961b8ec4bb3731027ee165e3876749fe7aa380a
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Mon Dec 12 12:47:35 2016 -0500
@@ -519,15 +422,6 @@ Date:   Sun Dec 11 22:47:15 2016 -0500
     
     While at it, also ensure that the screen is consistent.
 
-commit f22c067efd2fb1c43bce07a312f11d5d8d544f0f
-Merge: 08892d5a 828d6f2c
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Mon Dec 12 10:26:39 2016 -0500
-
-    Merge pull request #1265 from Elv13/improve_deprecation
-    
-    Improve deprecation messages
-
 commit c96aa9866e437795589fd6cc8a3be3d6a6085aa1
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Sun Dec 11 22:38:40 2016 -0500
@@ -538,24 +432,6 @@ Date:   Sun Dec 11 22:38:40 2016 -0500
     has to be done.
     
     This is a follow up of 6f7019b2d0, see #1236.
-
-commit 08892d5a20c81b025f495212a50713a69c5e6f95
-Merge: 2ca95cd7 6aa42ff8
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sun Dec 11 15:00:59 2016 -0500
-
-    Merge pull request #1263 from Elv13/fix_bad_deprecation
-    
-    doc: Change the working of the module aliases
-
-commit 2ca95cd75c657ce18f5d32fd92a2d2bef8eba9e3
-Merge: 81f8a308 52fbf493
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sun Dec 11 14:59:04 2016 -0500
-
-    Merge pull request #1264 from Elv13/improve_prompt
-    
-    Improve prompt
 
 commit 828d6f2cd9843e8d18868f8f605afcb4e4402dd8
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -605,15 +481,6 @@ Date:   Sun Dec 11 14:19:25 2016 -0500
     empty callback is ugly.
     
     Fixes #1180
-
-commit 81f8a3085e34980ef4d3425f48aeaaecfd1581ac
-Merge: 548b15e8 0a189794
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sun Dec 11 11:42:19 2016 -0500
-
-    Merge pull request #1262 from Elv13/changelog
-    
-    Add a NEWS file with the v4.0 changelog
 
 commit 0a1897946c35c217865e3689f01ddff0839b6dc2
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -675,15 +542,6 @@ Date:   Fri Dec 9 20:24:22 2016 -0500
     of a better layout documentation.
     
     Fix #1246
-
-commit 91d970aed6ee7a9d4e49eb862ea39cc26b5bd19c
-Merge: 13e8088d 9a509222
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sat Dec 10 02:20:52 2016 +0100
-
-    Merge pull request #1261 from psychon/fix-some-ldoc-see
-    
-    Fix some ldoc see
 
 commit 13e8088d622a63790d08560d4fc6834d4c20da77
 Author: Uli Schlachter <psychon@users.noreply.github.com>
@@ -829,15 +687,6 @@ Date:   Fri Dec 2 20:30:10 2016 +0100
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit 883b5934c0f0d15dcab7056ede760b30a578c5c5
-Merge: 4cb11b87 771f5a13
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Thu Dec 1 19:53:17 2016 -0500
-
-    Merge pull request #1236 from Elv13/fix_new_tag_rule
-    
-    rules.new_tag: Fix when the tag screen doesn't match the client
-
 commit 771f5a13c6841bf6ef2bafaa85b63ab935281e9d
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Thu Dec 1 19:34:46 2016 -0500
@@ -856,15 +705,6 @@ Author: Michael Beaumont <mjboamail@gmail.com>
 Date:   Thu Dec 1 22:04:57 2016 +0100
 
     Fix awful.tag.add ignoring props.index (#1245)
-
-commit 1d5f70e40df1be29ec3c5db40a5769538bfb8c0f
-Merge: 5158f39c 3a7e14e5
-Author: Daniel Hahler <github@thequod.de>
-Date:   Thu Dec 1 18:13:20 2016 +0100
-
-    Merge pull request #1240 from psychon/fix-sn-callbacks
-    
-    Fix spawn callbacks
 
 commit 5158f39c49c8179603a6f3ca1a175ee47ca2ecc6
 Author: Daniel Hahler <github@thequod.de>
@@ -899,15 +739,6 @@ Date:   Mon Nov 28 20:58:28 2016 +0100
     
     Fixes: https://github.com/awesomeWM/awesome/issues/1218
     Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit 005e1b3ff00e39fa68ff5c2db0877c29127c3961
-Merge: 333cd649 6558164e
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Wed Nov 30 08:13:10 2016 -0500
-
-    Merge pull request #1227 from morethanoneanimal/gears-color-refactoring
-    
-    gears.color refactoring
 
 commit 6558164e534a736ebb5f4bfbddd6fa0b93a30374
 Author: MoreThanOneAnimal <MoreThanOneAnimal@gmail.com>
@@ -977,24 +808,6 @@ Date:   Fri Nov 25 22:41:58 2016 +0100
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit 156f8001239f5bf100f71743de5b6cf56cc6fe4e
-Merge: c42213ca e1ccfe91
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Fri Nov 25 02:56:41 2016 -0500
-
-    Merge pull request #1232 from blueyed/doc-fix-client
-    
-    doc: fix client context doc
-
-commit c42213caff54428b36d425c4c6d8d0ffa90c60c7
-Merge: 326271f7 fc13b1b4
-Author: Daniel Hahler <github@thequod.de>
-Date:   Tue Nov 22 03:08:35 2016 +0100
-
-    Merge pull request #1143 from awesomeWM/doc-fix-wibox.widget.base
-    
-    Doc fixes for wibox.widget.base
-
 commit fc13b1b4ebf70ef5e8496cb30eb46e5c4d5de550
 Author: Daniel Hahler <git@thequod.de>
 Date:   Tue Nov 22 02:36:16 2016 +0100
@@ -1045,15 +858,6 @@ Date:   Wed Mar 23 01:15:16 2016 +0100
 
     feat(awful: hotkeys_popup): add possibility to create new widget instance
 
-commit 5aa4a16fb261f3891916e96562b576a1862a3f83
-Merge: 55689b4c 61d4f431
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Wed Nov 16 16:56:03 2016 -0500
-
-    Merge pull request #1222 from morethanoneanimal/master
-    
-    Use unmodified command for the command history.
-
 commit 55689b4cc7e350e00132c9f1ccb304e984ca4722
 Author: Daniel Hahler <github@thequod.de>
 Date:   Wed Nov 16 11:14:19 2016 +0100
@@ -1068,15 +872,6 @@ Date:   Tue Nov 15 23:25:31 2016 -0800
     
     Closes awesomeWM/awesome#1104.
 
-commit 9b335b5bf16f67d690df193b0e5a71a7a6a1381a
-Merge: 4efdd2f5 2d5a1798
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Tue Nov 15 17:05:18 2016 -0500
-
-    Merge pull request #1220 from Elv13/tl_doc_fix
-    
-    doc: Document tasklist_plain_task_name
-
 commit 2d5a1798afd324bedf1b62f1f7a0ff2f777cb77c
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Tue Nov 15 01:07:25 2016 -0500
@@ -1090,24 +885,6 @@ Author: Yauhen Kirylau <actionless.loveless@gmail.com>
 Date:   Mon Nov 14 13:31:59 2016 +0100
 
     docs(readme): add xcb-util-xrm to dependencies' list
-
-commit 588cbc16aa2f272c7596469f51c56ffc8b67a102
-Merge: 92a494a7 a4748164
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Mon Nov 7 19:24:15 2016 -0500
-
-    Merge pull request #1206 from psychon/xkb
-    
-    Implement some fallbacks if XKB is unavailable
-
-commit 92a494a79980a4761698da612e8790177fd3fbc6
-Merge: cf96296f 77123834
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Mon Nov 7 19:23:48 2016 -0500
-
-    Merge pull request #1182 from psychon/screen_swap
-    
-    Screen swap
 
 commit cf96296f2795a0932ff227d074e3a81c1aa771d2
 Author: Daniel Hahler <github@thequod.de>
@@ -1329,15 +1106,6 @@ Date:   Tue Oct 25 00:22:36 2016 +0200
     Fixes: https://github.com/awesomeWM/awesome/issues/1159
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit 80832601fc8996cb98707241150c9b8283e4c805
-Merge: 3bd045b5 56d4cdfa
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sat Oct 22 17:46:38 2016 +0200
-
-    Merge pull request #1161 from psychon/ldoc-errors
-    
-    Ignore warnings from ldoc by default
-
 commit 56d4cdfa329080820fa65fcee3c87dea486be43c
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Sat Oct 22 11:21:27 2016 +0200
@@ -1404,13 +1172,6 @@ Date:   Sat Oct 22 10:44:54 2016 +0200
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit 7292be1add20bf98069ed889db61debeafbe1edd
-Merge: ed3aac71 a6af703c
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sat Oct 22 10:31:45 2016 +0200
-
-    Merge branch 'fix-missing-args' of https://github.com/hexchain/awesome
-
 commit ed3aac711d4646a6dec0c676ab47cb93cc29a0ad
 Author: Uli Schlachter <psychon@users.noreply.github.com>
 Date:   Sat Oct 22 00:54:08 2016 +0200
@@ -1470,24 +1231,6 @@ Date:   Tue Oct 18 12:40:47 2016 +0800
     
     Signed-off-by: Haochen Tong <i@hexchain.org>
 
-commit 6b90ed7e736581490b4d6c4c858a027002ecb675
-Merge: e0018dc0 07f3a178
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Wed Oct 12 15:52:15 2016 -0400
-
-    Merge pull request #1169 from Elv13/fix_prompt_deprecation_warnings
-    
-    Fix prompt deprecation warnings
-
-commit e0018dc02a007a1c9ad3a95d5393c28719844154
-Merge: de121975 072ff10c
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Wed Oct 12 02:40:47 2016 -0400
-
-    Merge pull request #1121 from Elv13/add_slider_widget
-    
-    Add a slider widget
-
 commit 072ff10cf0ae96fdf9b65deb6d1d81b0bea9ec52
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Thu Aug 4 18:12:59 2016 -0400
@@ -1508,15 +1251,6 @@ Date:   Tue Oct 11 18:20:42 2016 -0400
     
     An oversaw in a previous commit introduced deprecation warnings
     on the default config.
-
-commit de121975bf3755057583183e92d8705ac1c05f90
-Merge: c9f085f4 19fe2339
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Mon Oct 10 18:01:32 2016 -0400
-
-    Merge pull request #1165 from psychon/fix-deprecation-warning
-    
-    Corner layout: Fix deprecation warning
 
 commit c9f085f4394e4875425d90e9c5d71e6a388c0b4f
 Author: Uli Schlachter <psychon@users.noreply.github.com>
@@ -1577,15 +1311,6 @@ Date:   Fri Oct 7 23:32:58 2016 +0200
     > rlwrap: error: My terminal reports width=0 (is it emacs?) I can't
     > handle this, sorry!
 
-commit 05d962f7784790c141217ba0c6d7e2a8a1b68ab2
-Merge: 06f02f60 ab789e57
-Author: Daniel Hahler <github@thequod.de>
-Date:   Fri Oct 7 22:00:23 2016 +0200
-
-    Merge pull request #1147 from psychon/remove_weak_tables
-    
-    Remove some weak tables
-
 commit 06f02f60040ee7596aefd202fc419a60c809bffe
 Author: Uli Schlachter <psychon@users.noreply.github.com>
 Date:   Fri Oct 7 00:46:57 2016 +0200
@@ -1604,29 +1329,6 @@ Date:   Fri Oct 7 00:46:57 2016 +0200
     actually closed.
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit c79e49b985834178f1143280dae1f5bc95550051
-Merge: 01a9cb20 ef50f755
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Thu Oct 6 15:17:11 2016 -0400
-
-    Merge pull request #1124 from Elv13/prompt_args_refactor
-    
-    Prompt args refactor
-
-commit 01a9cb2031fcbdec7e2d27ab6f11e0be3860b621
-Merge: f2744c28 0183372a
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Thu Oct 6 20:59:38 2016 +0200
-
-    Merge branch 'drawable-visibility' of https://github.com/psychon/awesome
-
-commit f2744c28eeb221becde5bf50fa5382f9584768b9
-Merge: b0b1e212 680bccf4
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Thu Oct 6 20:59:14 2016 +0200
-
-    Merge branch 'widget-mouse-signals' of https://github.com/psychon/awesome
 
 commit b0b1e212ec0639b171c156c0639b13ff68f40afe
 Author: Uli Schlachter <psychon@users.noreply.github.com>
@@ -1883,24 +1585,6 @@ Date:   Tue Oct 4 21:18:18 2016 +0200
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit 26d3c5eb1aa3a9f5930dcae609580649f62289ad
-Merge: 5b9ad224 c214a9b1
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Tue Oct 4 09:03:10 2016 -0400
-
-    Merge pull request #1123 from Elv13/focus_stealing_filter
-    
-    Support focus stealing filters
-
-commit 5b9ad22447f0ad49c28bd9c868d6a3ab34722c22
-Merge: d513e2c4 dd959eec
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Tue Oct 4 09:02:16 2016 -0400
-
-    Merge pull request #1136 from Elv13/fix_missing_rclua
-    
-    build: Fix make install when ldoc is missing
-
 commit c214a9b111bc69bfd820dfb465d5a6399c97a88d
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Tue Oct 4 00:40:34 2016 -0400
@@ -1975,15 +1659,6 @@ Date:   Sun Oct 2 16:03:11 2016 +0200
     This adds a tparam alias "@screen" for "@tparam screen" (when used to
     document e.g. arguments for callbacks), and "@screen_or_idx" when a
     function accepts a "screen" or "number".
-
-commit c84b900b8760c936f57d2740adb70d207727386a
-Merge: da6012da 86bc5796
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Oct 2 16:02:15 2016 +0200
-
-    Merge pull request #1135 from blueyed/improve-examples-CMakeLists
-    
-    Improve tests/examples/CMakeLists.txt
 
 commit 86bc57964934fcaeeb665dbf0880365c388b1bf7
 Author: Daniel Hahler <git@thequod.de>
@@ -2069,20 +1744,6 @@ Date:   Fri Sep 30 11:02:09 2016 +0200
     of files and I'm lazy.
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit 502b4139bad5f91306505b3ca148ae00deafae89
-Merge: cd3d82d6 8dc6c5f5
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Fri Sep 30 10:17:35 2016 +0200
-
-    Merge branch 'faster-client-deamon'
-
-commit cd3d82d6f91955b564650423abd56f495c3155ef
-Merge: fb5d9957 19094de6
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Fri Sep 30 10:11:07 2016 +0200
-
-    Merge branch 'speedup-ignore_enterleave'
 
 commit 8dc6c5f5025ad672ae109a55e365012da3a6e573
 Author: Uli Schlachter <psychon@znc.in>
@@ -2188,15 +1849,6 @@ Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Wed Sep 28 17:29:56 2016 -0400
 
     tests: Fix a luacheck issue.
-
-commit 7f74c783cd174edb241fcfa2a695cdc78927982d
-Merge: 749980bf fb4a48b7
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Mon Sep 26 15:38:35 2016 -0400
-
-    Merge pull request #1119 from Elv13/upstream_shape_api_p4.03
-    
-    Upstream shape api p4.03
 
 commit fb4a48b744d145ecdcc8b4356a1f46e29fe814b7
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -2374,15 +2026,6 @@ Date:   Sat Jul 23 18:32:37 2016 -0400
 
     progressbar: Deprecate width, height and vertical properties.
 
-commit 749980bf33f4a6c6c10c88c342efd4db45b459b4
-Merge: cea5d415 260aeba7
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Mon Sep 26 01:08:38 2016 -0400
-
-    Merge pull request #1113 from Elv13/upstream_shape_api_p4.02
-    
-    Upstream shape API p4.02
-
 commit 260aeba78bcdfae15fa51deb449d1392cc5ee1de
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Sun Sep 11 01:48:45 2016 -0400
@@ -2528,15 +2171,6 @@ Date:   Sun Sep 25 20:28:27 2016 +0200
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit 8dc98e8c51580f33608a93591a8aa373e7102b3a
-Merge: 9b7e655a a430ac1e
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Sep 25 13:00:31 2016 +0200
-
-    Merge pull request #1115 from psychon/timeouts
-    
-    Don't use sleep to implement timeouts in the test runner
-
 commit a430ac1e233b54e12b37894e0a9a0c449ed5de43
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Sun Sep 25 06:00:15 2016 +0200
@@ -2548,24 +2182,6 @@ Date:   Sun Sep 25 06:00:15 2016 +0200
     detect timeouts and print a matching message.
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit 9b7e655afea8f68343365708d388dcbe532621ce
-Merge: cf419fb3 93ed7fd4
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Sep 25 01:35:55 2016 +0200
-
-    Merge pull request #1111 from psychon/assorted-fixes
-    
-    Some assorted fixes
-
-commit cf419fb3254d88d6f81bc5eec5b48d5d9bad14fd
-Merge: c7f5a9ac de3a8bb5
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sat Sep 24 15:00:57 2016 -0400
-
-    Merge pull request #1112 from Elv13/upstream_shape_api_p4.01
-    
-    Upstream shape API p4.01
 
 commit de3a8bb5fb4cb2b4f309e058d2a4783ba862a419
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -2869,16 +2485,6 @@ Date:   Fri Sep 23 23:50:17 2016 -0400
     of c.screen. After that, any other c.screen changes can be
     considered bugs.
 
-commit 204e2ffadaf447e6ac5e724e271a3331f964783e
-Merge: b4d6bfa4 1c177cab
-Author: Daniel Hahler <git@thequod.de>
-Date:   Wed Sep 21 22:16:12 2016 +0200
-
-    Merge pull request #1099 from Elv13/fix_1091
-    
-    Closes https://github.com/awesomeWM/awesome/pull/1099.
-    Fixes https://github.com/awesomeWM/awesome/issues/1091.
-
 commit 1c177cabce1557f6eacf517dee0e8ff0f4cb02fe
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Thu Sep 15 16:50:28 2016 -0400
@@ -2943,29 +2549,11 @@ Date:   Sun Sep 18 12:50:40 2016 +0200
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit 3e562dfa537d8b02250bb06b61db0c633e962dad
-Merge: 1be0964d baaff93a
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Sep 18 12:49:52 2016 +0200
-
-    Merge pull request #1097 from psychon/lazy_client_geometry_update
-    
-    Lazy client geometry update
-
 commit e8649d0a296a8a014fbd9e98182c78bfae2b9ed3
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Thu Sep 15 16:50:10 2016 -0400
 
     screen: Add a function to get the client preferred screen
-
-commit 1be0964d8a6bd25f85dfce29e52c14fa6303a8c4
-Merge: f02b73b0 0fbb02f9
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Thu Sep 15 16:45:56 2016 -0400
-
-    Merge pull request #1085 from Elv13/remove_dead_code
-    
-    ewmh: Remove dead code
 
 commit 0fbb02f95cf48c848ccd3fe5bfb811421cde55c7
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -2982,24 +2570,6 @@ Date:   Sun Sep 11 02:17:22 2016 -0400
     maximized. The new code organization shift this responsability
     to awful.placement. However, it doesn't yet fully implement the
     previous logic.
-
-commit f02b73b0eef38a959a4338536bf382b61c8b27fb
-Merge: e67fe5e2 5844bd0a
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Thu Sep 15 16:01:19 2016 -0400
-
-    Merge pull request #1066 from Akulen/fix_gap_ignore
-    
-    awful.tag: Add `gap_single_client` property and user changeable defau…
-
-commit e67fe5e29ec35e8d88ee0555e1b03452435a4116
-Merge: 25f2b034 bcab5c71
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Thu Sep 15 15:49:26 2016 -0400
-
-    Merge pull request #1095 from hishamhm/minimize-compat-3.5
-    
-    Compatibility tweak for minimize and 3.5 themes
 
 commit baaff93a7349a9da67b4b8f291a62820828f14bd
 Author: Uli Schlachter <psychon@znc.in>
@@ -3071,15 +2641,6 @@ Date:   Wed Sep 14 23:11:00 2016 +0200
 
     awful.tag: moved defaults to a local variable
 
-commit 25f2b034906d235c2bde8f005e1f6daeb7aa5681
-Merge: 0363b3a7 df5caa06
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Mon Sep 12 22:42:52 2016 -0400
-
-    Merge pull request #1078 from hoelzro/master
-    
-    Return success/failure for dbus.connect_signal
-
 commit 0363b3a72bd9a7b1ffe40ed788c82fead5b041f2
 Author: Uli Schlachter <psychon@users.noreply.github.com>
 Date:   Mon Sep 12 23:46:47 2016 +0200
@@ -3094,33 +2655,6 @@ Author: Akulen <tomas@rigaux.com>
 Date:   Tue Aug 30 18:25:05 2016 +0200
 
     awful.tag: Add `gap_single_client` property and user changeable defaults.
-
-commit 39aace50e90fa22d1100e65e9f1dde121a1ea480
-Merge: 67e82047 0394b768
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sun Sep 11 04:40:35 2016 -0400
-
-    Merge pull request #1084 from Elv13/use_screen_props
-    
-    Use screen props
-
-commit 67e82047b0bba2bb521018c65e6572e560398bc1
-Merge: cf1556bf e6612091
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sun Sep 11 04:39:26 2016 -0400
-
-    Merge pull request #1081 from Elv13/fix_screen_memory_leak
-    
-    screen: Fix a memory leak.
-
-commit cf1556bfdd22e5737394aea348250e11944f4759
-Merge: e86ddaab 9b96b4b4
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sun Sep 11 04:38:09 2016 -0400
-
-    Merge pull request #1082 from Elv13/fix_1018
-    
-    resize: Use the right mouse cursor
 
 commit 0394b768a03ea1b1e43aa00baeab02b0d814e8d7
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -3176,15 +2710,6 @@ Date:   Sun Sep 11 01:49:57 2016 -0400
 
     menubar: Do not use the deprecated geometry access
 
-commit e86ddaab564f91cfe4900a1db3b664b952cbecce
-Merge: 587cc530 12ea5e23
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sun Sep 11 00:47:45 2016 -0400
-
-    Merge pull request #1083 from Elv13/menubar-priority-category-fix
-    
-    Menubar priority category fix
-
 commit 12ea5e2318c8ec5cd07df66419fc2a92ff229933
 Author: modk <github@modk.org>
 Date:   Sun Jul 17 17:23:35 2016 +0200
@@ -3228,24 +2753,6 @@ Date:   Fri Sep 9 07:43:56 2016 -0500
     This change has dbus.connect_signal adopt the standard Lua error
     convention of returning a truthy value upon success, or nil and an error
     message upon failure.
-
-commit 587cc530c7b35e4231a8bdbdd2fdbb2989d584de
-Merge: 7a4bdca9 9ca57a83
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Wed Sep 7 16:20:20 2016 -0400
-
-    Merge pull request #1067 from BlueUsername/tiling-to-floating-window-fix
-    
-    Fix a bug moving between a tiled and a floating screen.
-
-commit 7a4bdca9c29b02e58b47c6328b920e2377541610
-Merge: 1be737be 12b72d61
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Wed Sep 7 01:23:58 2016 -0400
-
-    Merge pull request #1056 from Elv13/better_tag_index
-    
-    Test multiple screens on the CI + fixes
 
 commit 12b72d6164a75319b3f8200bbbc02c5c6b9a9343
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -3382,24 +2889,6 @@ Date:   Fri Sep 2 18:14:43 2016 +0200
 
     awful.widget.tasklist: Add an align option (#1065)
 
-commit 2e97b68dacfa09dc38ce8f2602c89470a901b759
-Merge: c2755cbd cf89f108
-Author: Daniel Hahler <github@thequod.de>
-Date:   Fri Sep 2 18:13:32 2016 +0200
-
-    Merge pull request #1062 from psychon/use-awesome-client-arguments
-    
-    Make use of awesome-client commands
-
-commit c2755cbde905b32c82d74ed4770bc56ca1650edb
-Merge: 08e4c304 e1d5c0c9
-Author: Daniel Hahler <github@thequod.de>
-Date:   Fri Sep 2 18:12:49 2016 +0200
-
-    Merge pull request #1063 from psychon/getopt_errors
-    
-    Getopt errors
-
 commit cf89f108aca88e1257cba1defea279af4a447bd3
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Tue Aug 30 18:00:35 2016 +0200
@@ -3514,15 +3003,6 @@ Date:   Tue Aug 30 06:57:40 2016 -0400
     
     Let the default font be used, just as everywhere else.
 
-commit 68aae5ff622201d431027d43478ac1f87f5f12ed
-Merge: 99489584 01db39f5
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Mon Aug 22 18:09:03 2016 -0400
-
-    Merge pull request #1051 from Elv13/fix_tag_index
-    
-    tag: Fix index calculation.
-
 commit 01db39f5bbe106fddcb117e6fcb03e91ba057ac3
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Mon Aug 22 17:27:31 2016 -0400
@@ -3574,15 +3054,6 @@ Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Sun Aug 21 04:28:59 2016 -0400
 
     doc: Fix a typo (Disonnect -> Disconnect)
-
-commit ba2750cf91d75e32d4f1066133a7f7290c541eca
-Merge: 76d0c458 4aada376
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sat Aug 20 16:40:36 2016 -0400
-
-    Merge pull request #929 from Elv13/geometry_overhaul_p3.03
-    
-    Geometry overhaul part 3.03 (final part for 3.6)
 
 commit 4aada37682081f1a2c44bef323cfe1adf3f4056e
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -3659,15 +3130,6 @@ Date:   Sat May 28 22:08:47 2016 -0400
     Apparently, __index cannot return multiple values, so the previous
     code wasn't working.
 
-commit 76d0c458b08ee3fb990bb5cf8261a6a9e0694e52
-Merge: c22b9396 732b170c
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sat Aug 20 16:01:54 2016 -0400
-
-    Merge pull request #1031 from Elv13/add_recursive_signal
-    
-    Add recursive signal for widgets trees.
-
 commit 732b170cb0a30d5b9f4744c8e367ba07162cb463
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Wed Aug 17 02:55:13 2016 -0400
@@ -3709,15 +3171,6 @@ Date:   Sat Aug 20 18:59:01 2016 +0200
 
     doc: fix missing parenthesis with client examples (#1046)
 
-commit e723d183e89091772075d96941b2c1905dd8e87c
-Merge: cbda3876 71049a67
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sat Aug 20 18:58:11 2016 +0200
-
-    Merge pull request #1011 from psychon/commandline-search
-    
-    Commandline option to add a directory to Lua's search path.
-
 commit 71049a67f7674b60f53d8574d8b03267c9c54cc8
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Sun Jul 24 15:03:05 2016 +0200
@@ -3748,15 +3201,6 @@ Date:   Sun Jul 24 14:51:52 2016 +0200
     man pages: Update synopsis
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit cbda3876773570c73edd3a72189062662a183f9d
-Merge: 23ad19d9 e8dfe36c
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sat Aug 20 00:15:57 2016 -0400
-
-    Merge pull request #1008 from blueyed/tests-run-from-tests-dir
-    
-    tests/run: change to script dir first
 
 commit ec923e96fcf784de452a7d0fa6442f19aee8b37f
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -3795,15 +3239,6 @@ Date:   Sun Aug 14 02:25:20 2016 +0200
     
     This also wraps (most of) the "cd" commands in a subshell, to ensure
     being in the repo directory all the time (except for $BUILD_IN_DIR).
-
-commit 40b1a999801c4d4e7dff87869ab26c5fed025c2d
-Merge: 0d1331e5 9d69448a
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sat Aug 13 14:22:46 2016 -0400
-
-    Merge pull request #1041 from Elv13/fix_1039
-    
-    Fix #1039
 
 commit 0d1331e592def338727b7f57f8882479aa446bbe
 Author: Daniel Hahler <github@thequod.de>
@@ -3851,29 +3286,11 @@ Date:   Thu Aug 11 13:03:17 2016 -0400
     Close #1035
     Fix #1029
 
-commit 03dc4767d550a5c4fa5e45dbab4dbbfcd5b6bd49
-Merge: 4ef524d7 f5f8998d
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Wed Aug 10 12:17:49 2016 -0400
-
-    Merge pull request #1036 from cmertz/master
-    
-    remove client.jumpto deprecation warnings
-
 commit f5f8998d0c346cdb49f5fd1865b2f7da6881c6bd
 Author: cmertz <chris@nimel.de>
 Date:   Wed Aug 10 13:02:02 2016 +0200
 
     use c:jump_to instead of client.jumpto
-
-commit 4ef524d76e4819c7fb0dc4b77107ee9b47b1a394
-Merge: b470f8df da62aec0
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Tue Aug 9 19:13:18 2016 -0400
-
-    Merge pull request #1034 from Elv13/fix_spawn_crash
-    
-    spawn: Fix crash when called with an empty table.
 
 commit da62aec055c21e68d1c9df46f28581b510c62a0a
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -3893,15 +3310,6 @@ Date:   Tue Aug 9 18:29:22 2016 -0400
     was probed and this caused an invalid read and crash.
     
     Fix #1033
-
-commit b470f8dfcf3a0ef4ef73707fa04088b18b2576ae
-Merge: 128933c1 3587de57
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Tue Aug 2 14:03:07 2016 -0400
-
-    Merge pull request #1026 from Elv13/misc_fixes
-    
-    Misc fixes
 
 commit 3587de5721131b95cde560e9f10d4eb6caff5647
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -3949,33 +3357,6 @@ Date:   Sat Jul 30 15:49:46 2016 -0400
 
     awful.mouse: Fix 4 invalid function names
 
-commit e47233901157509e8636f8f25f412f5f4db4c9ea
-Merge: 739ab8ad 6e8b4f99
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Wed Jul 27 21:34:53 2016 -0400
-
-    Merge pull request #1013 from psychon/screen_area_signals
-    
-    Screen area signals
-
-commit 739ab8adc2d7208d8ad06234904f432ae122d626
-Merge: e8c8a5e7 ed34df11
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Wed Jul 27 21:33:35 2016 -0400
-
-    Merge pull request #1017 from juw/master
-    
-    Change move and resize cursors
-
-commit e8c8a5e7fe8a158ea9a8679380e9aa1ee1a6e85c
-Merge: 78171ea0 2231158a
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Wed Jul 27 20:54:34 2016 -0400
-
-    Merge pull request #1020 from cmertz/master
-    
-    restore client.border_width after fullscreen
-
 commit 2231158adf727a1fc9aa043604ae1f20bdf398fb
 Author: cmertz <chris@nimel.de>
 Date:   Wed Jul 27 13:43:28 2016 +0200
@@ -3999,24 +3380,6 @@ Author: Julian Wollrath <jwollrath@web.de>
 Date:   Tue Jul 26 14:57:05 2016 +0200
 
     Change move and resize cursors
-
-commit 78171ea038dc74d1d0d33e8b9201a6eb81c41352
-Merge: 0b4c4a03 79394c09
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sun Jul 24 14:58:07 2016 -0400
-
-    Merge pull request #1010 from Elv13/fix_declarative_widgets
-    
-    widgets: Apply attributes before adding the widgets
-
-commit 0b4c4a03b943f389d478c2d77d339c9819c40a10
-Merge: 2926d02e c159ad3a
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sun Jul 24 14:57:17 2016 -0400
-
-    Merge pull request #1009 from Elv13/add_event_metadata
-    
-    drawable: Add more data to the find_widgets metadata table
 
 commit 6e8b4f99f84f47415ad89204dd0b840416de1772
 Author: Uli Schlachter <psychon@znc.in>
@@ -4060,15 +3423,6 @@ Date:   Sat Jul 23 17:24:11 2016 -0400
     For example, some layouts may place the widgets in a different order
     depending on some attreibutes.
 
-commit 2926d02e968984b6fc2672627e7bd1138af26684
-Merge: 2e827202 0fe53210
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sat Jul 23 17:01:37 2016 -0400
-
-    Merge pull request #1006 from actionless/fix-minimize-recolor
-    
-    fix(themes: xresources: assets): recolor for minimize_focus
-
 commit c159ad3ab24b96d383fb0a6a11d2a395df9655d5
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Sat Jul 23 00:57:29 2016 -0400
@@ -4111,15 +3465,6 @@ Date:   Sun Jul 17 15:27:45 2016 +0200
 
     fix(themes: xresources: assets): recolor for minimize_focus
 
-commit 34cc04ec979cdc95e5134edbe3ee6a92e8977c4c
-Merge: 2cfa117a a87d7524
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sat Jul 16 22:59:54 2016 -0400
-
-    Merge pull request #972 from Elv13/prompt_fix
-    
-    prompt: Fix hooks when number or caps lock are set
-
 commit a87d75246f0e3b0c9c9cf538a7f04280f2727f6b
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Sun Jun 19 00:23:46 2016 -0400
@@ -4160,15 +3505,6 @@ Date:   Sat Jul 9 19:18:02 2016 +0200
     --version`.
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit 25b6d31e97ab44808c01f57a6a42220c66c4179b
-Merge: 2e13c120 7f74c7c8
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sat Jul 9 19:17:48 2016 +0200
-
-    Merge pull request #994 from psychon/fix-drawable-bgimage
-    
-    Fix drawable bgimage
 
 commit 2e13c120e85864d3ae333e64d4b74038d77389ce
 Author: Uli Schlachter <psychon@users.noreply.github.com>
@@ -4355,15 +3691,6 @@ Date:   Mon Jul 4 14:31:38 2016 -0400
     as seen in #920 screenshot from @actionless, there is instances
     where this produce a invalid rectangle.
 
-commit 0c909e8d315dc2f2c80652c1f09f56df465a0433
-Merge: 6eca36d7 722879bc
-Author: Daniel Hahler <github@thequod.de>
-Date:   Mon Jun 27 19:29:08 2016 +0200
-
-    Merge pull request #979 from Elv13/mix_fix
-    
-    Misc fixes
-
 commit 722879bcf7e901e9a6224a560e072a101cb081c8
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Mon Jun 27 02:15:32 2016 -0400
@@ -4389,15 +3716,6 @@ Date:   Fri Jun 24 15:59:02 2016 -0400
 
     progressbar: Add missing includes documentation variables
 
-commit d3ccd04291da0f6e5b3b10d7c98b2db80f6573ca
-Merge: 36e47fb1 b0d42e25
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Mon Jun 20 01:20:15 2016 -0400
-
-    Merge pull request #970 from salorium/master
-    
-    Correct name variable
-
 commit b0d42e258a3385dbfc63bbb44429047bf7e98f7c
 Author: Salorium <salorium@hotmail.fr>
 Date:   Sat Jun 18 11:12:47 2016 +0200
@@ -4411,15 +3729,6 @@ Date:   Sun Jun 12 17:28:32 2016 -0400
     tests: Don't use arbitrary build dir path (#898)
     
     Calling the test script by hand from the build dir stopped working.
-
-commit 0a3af71779745c91f4aa39226f08c11861009716
-Merge: f5cfc03e 4b1ac543
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sun Jun 12 14:35:45 2016 -0400
-
-    Merge pull request #959 from Elv13/cairo_lgi_doc
-    
-    doc: Add a Cairo/LGI introduction page
 
 commit f5cfc03e49628a535e8ea6e33bfd827f9c4bb92d
 Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
@@ -4437,15 +3746,6 @@ Date:   Sun Jun 12 07:09:09 2016 -0400
     
     Then this history would try to restore an inactive tag without
     a screen. Bad things will then happen.
-
-commit 2173d1989241642fcb262d64cd039a09fbd5aec5
-Merge: d2b9bb8c 7488f80b
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Jun 12 00:33:54 2016 +0200
-
-    Merge pull request #945 from psychon/tests-runner
-    
-    Tests runner
 
 commit 4b1ac54386583dc368f7fc54a0caef04f2603d20
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -4614,15 +3914,6 @@ Date:   Sat Jun 4 15:41:41 2016 +0200
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit d9cd0a4f0e8c996958a8931e06e79ddff0b7ca1c
-Merge: ffe64727 0857f6f1
-Author: Daniel Hahler <github@thequod.de>
-Date:   Tue Jun 7 22:58:14 2016 +0200
-
-    Merge pull request #948 from psychon/deprecate-add-signal
-    
-    Deprecate add_signal
-
 commit ffe64727fe3e360cf018180485954b02c5814d7a
 Author: Uli Schlachter <psychon@users.noreply.github.com>
 Date:   Tue Jun 7 22:57:01 2016 +0200
@@ -4638,24 +3929,6 @@ Date:   Tue Jun 7 22:57:01 2016 +0200
     monkey-patching the function that prints the warnings into a no-op.
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit efb8e65b15818b6c71c3b5412dee2e022cf2b865
-Merge: 7da51d7c a21c0baa
-Author: Daniel Hahler <github@thequod.de>
-Date:   Tue Jun 7 21:13:35 2016 +0200
-
-    Merge pull request #886 from psychon/fake-screen-resize
-    
-    Fake screen resize
-
-commit 7da51d7c338c3bd515c511838f3b7e466286afcf
-Merge: b84b03f1 a057718d
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Mon Jun 6 06:35:28 2016 -0400
-
-    Merge pull request #955 from Elv13/fix_multiscreen
-    
-    mouse: Fix moving clients between screens
 
 commit a057718d4d4cd5fc2dc3ea535d019ce75979cc55
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -4699,15 +3972,6 @@ Date:   Sun Jun 5 22:00:11 2016 +0200
     
     Fixes: https://github.com/awesomeWM/awesome/issues/928
     Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit 809111eb674cd7a7e3da8ff91c91fdc350aa3893
-Merge: 8ff60f03 eaa80fef
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Jun 5 17:32:09 2016 +0200
-
-    Merge pull request #937 from blueyed/travis-kill-stale-awesome
-    
-    Travis: kill awesome after max. 60s per test file
 
 commit 8ff60f034f23b1bbadb0ef1544161570593a55dc
 Author: Max <silverhammermba+github@gmail.com>
@@ -4827,13 +4091,6 @@ Date:   Sat Jun 4 12:03:38 2016 +0200
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit a569487ba265e4008c109670d010ef4708ae0ff3
-Merge: 4e35d1fd 0befee6d
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sat Jun 4 16:01:17 2016 +0200
-
-    Merge branch 'dev_fix_desktop' of https://github.com/schmellow/awesome
-
 commit 0befee6dfa61a0107fe8da6d59a53fb8df78b743
 Author: Mikhail Schemelev <schmellow@localhost.localdomain>
 Date:   Sun May 15 16:31:57 2016 +0300
@@ -4866,29 +4123,11 @@ Date:   Sat Jun 4 00:51:23 2016 +0200
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit 007d3d7a146755f98583f7e9d34bc0981666a0c4
-Merge: 51ce375f badf3385
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sat Jun 4 00:29:02 2016 +0200
-
-    Merge pull request #926 from psychon/signals-and-hostname
-    
-    Signals and hostname
-
 commit 51ce375f015737803953baefad14635ae85fce30
 Author: Daniel Hahler <github@thequod.de>
 Date:   Fri Jun 3 00:40:02 2016 +0200
 
     tooltip: improve doc, call self.timer_function with self (#381)
-
-commit 12f42fc9cc0d078e64f59788f1aa20808767f1e3
-Merge: 36bb9b44 ec076ca4
-Author: Daniel Hahler <github@thequod.de>
-Date:   Wed Jun 1 00:14:47 2016 +0200
-
-    Merge pull request #904 from psychon/xembed-fixes
-    
-    Some Xembed fixes
 
 commit 36bb9b4476245519f2bdea7dde33903aa3d552bd
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -4901,15 +4140,6 @@ Date:   Tue May 31 14:30:14 2016 -0400
     
     This caused some confusion that this attribute was a widget.
     It wasn't.
-
-commit 690772abc7e156d9b13e57946237e56086e7076f
-Merge: fc659b79 4b0209f4
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Tue May 31 14:17:07 2016 -0400
-
-    Merge pull request #931 from jmitchener/add_fullscreen_description
-    
-    Add description to fullscreen client key
 
 commit ec076ca4bd6669095ae426cf087e4dc91caa7398
 Author: Uli Schlachter <psychon@znc.in>
@@ -4926,15 +4156,6 @@ Date:   Sat May 14 14:30:22 2016 +0200
     because we didn't get bug reports about it yet.
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit fc659b79ce0cdfea1a41af994032bc319ddd6bc1
-Merge: 9f74416e 756862df
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Mon May 30 23:22:40 2016 -0400
-
-    Merge pull request #923 from Elv13/widget_api_refactor
-    
-    Widget api refactor
 
 commit 756862dff6de262e8773ca845f168e2bf9c116af
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -5487,15 +4708,6 @@ Date:   Fri May 27 19:08:18 2016 +0200
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit e8da309cf1d86d6f881f5e2a68f395d2df1f5f09
-Merge: f2282575 dbcb850d
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Thu May 19 13:36:47 2016 -0400
-
-    Merge pull request #919 from Elv13/add_wibox_ctr_args
-    
-    wibox: Add more constructor arguments
-
 commit dbcb850de94067526e1278c0b95dbe2ec81784ed
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Thu May 19 00:49:44 2016 -0400
@@ -5539,29 +4751,11 @@ Date:   Thu May 19 00:05:47 2016 -0400
     
     Fixes #916
 
-commit f228257512f749e9fe51bd0454477b44f933b89c
-Merge: 3fd292e1 938de72b
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Wed May 18 21:07:53 2016 -0400
-
-    Merge pull request #918 from actionless/fix-wibar-visible
-    
-    fix(awful: wibar): visible arg was ignored
-
 commit 938de72ba79ee75ea43fa56fcff5015031ada73b
 Author: actionless <actionless.loveless@gmail.com>
 Date:   Thu May 19 00:21:22 2016 +0200
 
     fix(awful: wibar): visible arg was ignored
-
-commit 3fd292e1ff576a0a8f0ed65a6b7d49fdca880056
-Merge: c1d3f291 6e6c4c3a
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Wed May 18 16:01:30 2016 -0400
-
-    Merge pull request #912 from Elv13/fix_tag_delete_race
-    
-    tag: Avoid a race condition when deleting tags.
 
 commit 6e6c4c3a5d46d893a8ce3cd9cc84af9463406bbe
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -5573,24 +4767,6 @@ Date:   Mon May 16 19:17:17 2016 -0400
     cleaned too early. This caused code connecting to "property::activated"
     to be called with the tag already partially deleted. For code depending
     on those properties, such as radical.impl.taglist, this caused errors.
-
-commit c1d3f291feda7ca6cfcb0fa1338f90c77bf9b239
-Merge: a41fb9a6 625a5dd4
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Wed May 18 15:20:43 2016 -0400
-
-    Merge pull request #913 from Elv13/gear_obj_props
-    
-    Gear.object properties
-
-commit a41fb9a6610c06b75fb01f67840fbf5710af980c
-Merge: 32eeaa95 bb5ee50d
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Wed May 18 14:16:49 2016 -0400
-
-    Merge pull request #915 from Elv13/undo_layoutbox_fail-fix
-    
-    layoutbox: Revert 25f4f24791
 
 commit bb5ee50de9482dde6a42b34a4f2c9b13ee7b8e26
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -5657,15 +4833,6 @@ Date:   Tue May 17 00:34:09 2016 -0400
     
     Once widespread, this implementation will replace the one found
     in wibox.widget.base_widget.
-
-commit 32eeaa9513c1391056382c01a7fde05b32c867ed
-Merge: 72725ef7 11e77d51
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Mon May 16 14:13:38 2016 -0400
-
-    Merge pull request #878 from Elv13/geometry_overhaul_p3.02
-    
-    Geometry overhaul part 3.02: Wibars
 
 commit 11e77d51914402b947b544a2eb6d025c4a3e0d9a
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -5741,15 +4908,6 @@ Date:   Mon May 16 03:10:58 2016 +0200
     
     Fixes: https://github.com/awesomeWM/awesome/issues/740
     Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit eea8de50574a3cf4d366149ccc7557fc4f5fd724
-Merge: f9fa8538 4d7e8c80
-Author: Daniel Hahler <github@thequod.de>
-Date:   Mon May 16 03:08:22 2016 +0200
-
-    Merge pull request #899 from Jajauma/naughty-action-text
-    
-    naughty: display improvement of the notification client actions
 
 commit 52208bc728e250504f804018d06d7e94b872657d
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -5922,15 +5080,6 @@ Date:   Sun May 15 01:10:11 2016 -0400
     
     For consistency with other objects.
 
-commit f9fa8538b9ae8eea587abf988506a72f9398600e
-Merge: 7d792cea ae738db5
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sun May 15 16:02:03 2016 -0400
-
-    Merge pull request #909 from psychon/screen-getbycoord
-    
-    Fix awful.screen.getbycoord
-
 commit 4d7e8c804e02aa05b389c973fde198e8f89be578
 Author: Jajauma <jajauma@2ch.hk>
 Date:   Thu May 12 00:50:06 2016 +0300
@@ -5958,41 +5107,6 @@ Date:   Thu May 12 00:17:40 2016 +0300
     use of a localized action description for that purpose.
     
     1) https://developer.gnome.org/notification-spec/
-
-commit 7d792cea7da301c7553bbe0669c4f7e09692b9f2
-Merge: 959913dc 11f3c7b8
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun May 15 16:47:57 2016 +0200
-
-    Merge branch 'allow-to-disable-history-tracking' of https://github.com/awesomewm/awesome
-
-commit 959913dcd2533d7553c631e67cfe05cb1474b925
-Merge: 8b3f263d cbdf4036
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun May 15 16:39:33 2016 +0200
-
-    Merge branch 'fix_window_type_fallback' of https://github.com/psychon/awesome
-
-commit 8b3f263de30ee782498902d4f0660be20547271b
-Merge: c71b3d9f c25c0527
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun May 15 16:31:14 2016 +0200
-
-    Merge branch 'traceback-with-failed-to-load-error' of https://github.com/blueyed/awesome
-
-commit c71b3d9f38084ad73c9de16b722abfd39c3e56a7
-Merge: 15cb1daf aed571eb
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun May 15 16:16:40 2016 +0200
-
-    Merge branch 'wallpaper-while-randr-change' of https://github.com/psychon/awesome
-
-commit 15cb1daff8bd316f9b10ff424dd24344a5c79c48
-Merge: 394ff065 11553b93
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun May 15 16:15:45 2016 +0200
-
-    Merge branch 'workarea-change-on-wibox-move' of https://github.com/psychon/awesome
 
 commit ae738db58a230ea5c7e3a94467b11671dad38427
 Author: Uli Schlachter <psychon@znc.in>
@@ -6087,15 +5201,6 @@ Date:   Sat May 14 13:13:20 2016 +0200
     Fixes: https://github.com/awesomeWM/awesome/issues/892
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit 63dad3f8ae1ed12d0b1b6035a96b921d78f8c70a
-Merge: c1d9e58f df1cc6d0
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Thu May 12 17:25:17 2016 -0400
-
-    Merge pull request #874 from Elv13/add_botton_test
-    
-    Awful.widget.button buttons are not released when the mouse leave the widget
-
 commit c25c0527a61de21963aa4bfa44135995be2dbbf9
 Author: Daniel Hahler <git@thequod.de>
 Date:   Wed May 11 21:50:02 2016 +0200
@@ -6119,15 +5224,6 @@ Date:   Mon May 9 23:14:55 2016 -0400
     This isn't correct, but it avoid a bug where the button stay
     pressed forever if the mouse leave while it's pressed.
 
-commit c1d9e58f94860a3de7300bca1f85a05ae7077321
-Merge: a6d61ed3 64f3677c
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Tue May 10 14:54:22 2016 -0400
-
-    Merge pull request #890 from psychon/fix-merge-mistake
-    
-    Fix screen.fake_add()
-
 commit 64f3677c96a43c71cb7804c9d54a760814bc58d4
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Mon May 9 19:22:21 2016 +0200
@@ -6143,48 +5239,6 @@ Date:   Mon May 9 19:22:21 2016 +0200
     Fix this by calling in fake_add() the helper function added in 08845c7a4b.
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit a6d61ed39e7e2dbf45c713e51d0f947058775650
-Merge: 9d30bf87 b0571a81
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Mon May 9 18:42:49 2016 +0200
-
-    Merge branch 'doc_shared' of https://github.com/Elv13/awesome-1
-
-commit 9d30bf87ae9b8db0e7376d8e400ba55e3cdb1d41
-Merge: 208327be bebdaf4e
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Mon May 9 18:42:09 2016 +0200
-
-    Merge branch 'more-travis-variance' of https://github.com/psychon/awesome
-
-commit 208327bed0d31318e84709a2ff041e2daf58f25f
-Merge: 1ab3f435 7dad0b3b
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Mon May 9 18:42:04 2016 +0200
-
-    Merge branch 'superflous-enter-leave' of https://github.com/psychon/awesome
-
-commit 1ab3f43575e79357be0e81e7c5aed5900f373704
-Merge: c62da0dc beb9b7f9
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Mon May 9 18:41:02 2016 +0200
-
-    Merge branch 'useful-env-vars' of https://github.com/psychon/awesome
-
-commit c62da0dcc76f7790135531d6f5537e762abe5c18
-Merge: 4c9280d2 014f68a8
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Mon May 9 18:40:50 2016 +0200
-
-    Merge branch 'fake-screen2' of https://github.com/psychon/awesome
-
-commit 4c9280d2bb7794fe76ec807f908335bae95f2f4d
-Merge: 30eafb11 ede88d8b
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Mon May 9 18:40:35 2016 +0200
-
-    Merge branch 'no-screens' of https://github.com/psychon/awesome
 
 commit b0571a8128c82ba26ccf0d77bde86cee81a495a8
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -6233,15 +5287,6 @@ Date:   Mon May 9 01:05:53 2016 +0200
     This made the apidoc script stop before the merge/push.
     
     This also adds "EXIT CODE" information in case there is a non-zero exit.
-
-commit c89cfa85f3c407b08413e3a3cff1e08f6cc373b9
-Merge: 58209cd8 08845c7a
-Author: Daniel Hahler <github@thequod.de>
-Date:   Mon May 9 00:50:46 2016 +0200
-
-    Merge pull request #880 from psychon/workarea-cache
-    
-    Cache a screen's workarea
 
 commit 58209cd89ea21672557e9f3e0f6a08456bc79c17
 Author: Daniel Hahler <github@thequod.de>
@@ -6489,33 +5534,6 @@ Date:   Sat Apr 16 17:47:52 2016 +0200
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit d497cdf081043f6a33fc0a5202eec0409cc97a90
-Merge: 2d4b8d86 6b4a2625
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sun May 8 01:03:16 2016 -0400
-
-    Merge pull request #875 from psychon/sn-fix
-    
-    Startup-Notification fix
-
-commit 2d4b8d86a533ebbc2123170d3e228a60aa179c16
-Merge: 50401834 0c575ee3
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Thu May 5 16:40:31 2016 -0400
-
-    Merge pull request #862 from psychon/import-some-docs
-    
-    Import some docs
-
-commit 504018343bdede242d2f43dc706881f349b11f3b
-Merge: 3945f13f 58ecc69a
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Thu May 5 16:23:11 2016 -0400
-
-    Merge pull request #873 from Elv13/geometry_overhaul_p3.01
-    
-    Geometry overhaul p3.01
-
 commit 6b4a2625cb1334f47934cc7089395e92b8d0c773
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Thu May 5 18:33:18 2016 +0200
@@ -6672,24 +5690,6 @@ Date:   Sun May 1 18:06:18 2016 +0200
     
     Closes https://github.com/awesomeWM/awesome/pull/866.
 
-commit 6b6cbf4a1f3dad1fe77d728560ed511390fa9a23
-Merge: e4623d0e 9a42ae87
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun May 1 17:00:05 2016 +0200
-
-    Merge pull request #828 from psychon/screen-scan2
-    
-    Stop restarting on RandR changes
-
-commit e4623d0e2015676495d8fe42064500c7900ed3cd
-Merge: dbd09313 a37f12c0
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun May 1 16:56:07 2016 +0200
-
-    Merge pull request #864 from psychon/menubar-query-file-type
-    
-    menubar.utils.parse_dir: Ask Gio for file type
-
 commit 9a42ae87cfc683d0388c4a44199d903214d1839e
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Sun May 1 10:12:04 2016 +0200
@@ -6844,15 +5844,6 @@ Date:   Sat Apr 30 11:54:16 2016 +0200
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit dbd093134346f433bebe545aed4e3021d61596ab
-Merge: cf4324fd 3dab42e6
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sat Apr 30 23:29:29 2016 -0400
-
-    Merge pull request #844 from Elv13/geometry_overhaul_p2
-    
-    Geometry overhaul part 2.5
-
 commit a37f12c0a15dfdd1ce393241087ef470c4dc9899
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Sat Apr 30 19:20:59 2016 +0200
@@ -6875,15 +5866,6 @@ Date:   Sat Apr 30 19:20:59 2016 +0200
     
     Fixes: https://github.com/awesomeWM/awesome/issues/863
     Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit cf4324fd5fe38d6a2e698cc619cf30075ae43fe0
-Merge: a1e340d1 daf05e6e
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sat Apr 30 15:53:13 2016 +0200
-
-    Merge pull request #858 from psychon/wallpaper-function
-    
-    Wallpaper function
 
 commit 3dab42e6a29fbedfb258207d818046f322291995
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -7186,27 +6168,6 @@ Date:   Thu Apr 28 16:47:01 2016 -0400
 
     shims: Add the request:: signals
 
-commit a1e340d11860f691235708bf047931863b754946
-Merge: a60b718d 4eb80853
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sat Apr 30 09:11:50 2016 +0200
-
-    Merge branch 'replace-popen-to-async' of https://github.com/actionless/awesome
-
-commit a60b718db27010e2982c6a7e1c80c646639d66b3
-Merge: 2da981af 02b6f989
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sat Apr 30 09:11:33 2016 +0200
-
-    Merge branch 'placement-fallback-to-screen.workarea' of https://github.com/blueyed/awesome
-
-commit 2da981afdd702f4dae4d123bfd8c31b9c06ee3d1
-Merge: 20109010 c6fafe06
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sat Apr 30 09:10:26 2016 +0200
-
-    Merge branch 'screen-gc' of https://github.com/psychon/awesome
-
 commit ede88d8bcea8328741bdace92a0527b3996a9a21
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Thu Apr 28 17:42:15 2016 +0200
@@ -7228,15 +6189,6 @@ Author: actionless <actionless.loveless@gmail.com>
 Date:   Tue Mar 1 03:17:13 2016 +0100
 
     feat(lib: menubar): replace io.popen to lgi
-
-commit 201090100b4f62288c2f78c1a467c961750cb089
-Merge: 693a87ef 14f7d20d
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Thu Apr 28 00:06:11 2016 -0400
-
-    Merge pull request #854 from actionless/use-gio-in-awful-util-is-dir
-    
-    refactor(awful: util): use lgi.Gio for is_dir
 
 commit 693a87ef2e9dffc0b2ff374286ed2ec89d1ac189
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -7386,15 +6338,6 @@ Date:   Tue Apr 26 00:48:19 2016 +0200
     
     Closes https://github.com/awesomeWM/awesome/issues/813.
 
-commit dace6d37217e09f67361745f245c68eb9b3a07a7
-Merge: 58a6cdb4 cdb5a0f0
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Mon Apr 25 15:09:29 2016 -0400
-
-    Merge pull request #849 from actionless/fix-awful-rule-floating
-    
-    fix(awful: rules): floating property
-
 commit cdb5a0f04627e0410a3ff7130c2f65c1036b4ac0
 Author: actionless <actionless.loveless@gmail.com>
 Date:   Mon Apr 25 15:43:14 2016 +0200
@@ -7420,29 +6363,6 @@ Date:   Wed Apr 20 22:34:16 2016 +0200
     Use gears.protected_call with awful.rules callbacks (#843)
     
     Fixes https://github.com/awesomeWM/awesome/issues/840#issuecomment-211823483.
-
-commit cdc6909bc7822dd5b2caa5cc4d4407206e16499e
-Merge: 761e244b d736850e
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Wed Apr 20 00:39:45 2016 -0400
-
-    Merge pull request #824 from Elv13/rules_refactor
-    
-    Rules refactor, part 1
-    
-    This fix the following awful.rules bugs:
-    
-     * **x**: Broken when "border_width" is set or left titlebars are used
-     * **y**: Borken when"border_width" is set or top titlebars are used
-     * **width**: See above + right litlebar
-     * **height**: Same as above
-     * **switchtotag**: Have a race with the "manage" -> "tag.withcurrent" code in `awful.tag`
-     * **tag**: Had dead code
-     * **screen**: Had a race condition with switchtotag
-     * **urgent**: Had a race with screen and another with switchtotag+focus
-     * **focusable**: Was broken yet again when request::activate was introduced (and also because of FS1098, that I also fixed)
-     * **no_overlap**: The "no_overlap" call in rc.lua "manage" section conflict with the geometry rules as the hints are not set (idk why).
-     * **size_hints_honor**: If set to false, it would be applied too late, causing height and width offsets due to placement or various geometry related properties
 
 commit d736850e6058537dea4c9ec9b52ffc5ca9030458
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -7617,15 +6537,6 @@ Date:   Tue Apr 19 22:37:14 2016 +0200
 
     Handle `awful.util.deprecate('Use …')` style (#837)
 
-commit 4d49f76e164edc713807cd157b2bfff3bfe0b409
-Merge: 5ebe073c 473df11e
-Author: Daniel Hahler <github@thequod.de>
-Date:   Tue Apr 19 10:49:24 2016 +0200
-
-    Merge pull request #838 from blueyed/streamline-util.deprecate-calls
-    
-    Streamline/cleanup util.deprecate calls
-
 commit fe8beaeaacf1011e0de82da95e6eb65c53f0e2e9
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Mon Apr 18 23:56:23 2016 -0400
@@ -7697,24 +6608,6 @@ Date:   Mon Apr 18 22:35:50 2016 +0200
 
     .travis.yml: improve comments
 
-commit e0d1814685b9116b81d10d5a68aa9f9f9f022618
-Merge: bc2ddfe8 5eec87e0
-Author: Daniel Hahler <github@thequod.de>
-Date:   Mon Apr 18 22:22:27 2016 +0200
-
-    Merge pull request #812 from blueyed/travis-luajit-from-source
-    
-    Travis: build luajit from source (2.0.4 as of now)
-
-commit bc2ddfe82dba5f8b884a602f52a1a3c01d9836fd
-Merge: 58068ff5 bb47aa58
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Mon Apr 18 04:27:11 2016 -0400
-
-    Merge pull request #820 from Elv13/layout_tests
-    
-    tests: Test all client layouts
-
 commit bb47aa5861bf0ca9ce9407bd68a0360106e48d42
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Sat Apr 9 02:57:56 2016 -0400
@@ -7775,33 +6668,6 @@ Date:   Mon Apr 18 00:55:22 2016 -0400
     
     Add the "number" equivalent functions for the integers one
     introduced by the last commit.
-
-commit 58068ff538c92c94802b6c093596769723fa3e2f
-Merge: 8cfdc0c5 76266abc
-Author: Daniel Hahler <github@thequod.de>
-Date:   Mon Apr 18 00:36:17 2016 +0200
-
-    Merge pull request #831 from psychon/naughty-no-screen
-    
-    naughty: Print notification content in "no screen" warning
-
-commit 8cfdc0c59334cc7f624b82ba03d36c00e9ce4c66
-Merge: 3fe85a8f 7d866318
-Author: Daniel Hahler <github@thequod.de>
-Date:   Mon Apr 18 00:34:51 2016 +0200
-
-    Merge pull request #833 from psychon/cmake-output
-    
-    More cmake output
-
-commit 3fe85a8f050a3407e479ec88beb62d9617acd70c
-Merge: 3e75e800 3c3e2dae
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sun Apr 17 16:44:21 2016 -0400
-
-    Merge pull request #830 from aroig/gh/deprecation-warning
-    
-    fix deprecation warning
 
 commit 3c3e2daeb23cb9d33042dad47f58bd7b9c2d15f7
 Author: Abdo Roig-Maranges <abdo.roig@gmail.com>
@@ -7864,36 +6730,6 @@ Date:   Fri Apr 15 19:38:09 2016 +0200
     objects/screen.c:307:1: warning: no previous prototype for ‘screen_scan_randr_monitors’ [-Wmissing-prototypes]
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit bf652914dd2bbfa716ac7f520733f6a0b89cb103
-Merge: cd55c579 79e16cf9
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Fri Apr 15 19:35:23 2016 +0200
-
-    Merge branch 'rules-screen' of https://github.com/psychon/awesome
-
-commit cd55c5793709242edc54b22c1219e063aa38e9fa
-Merge: 723a4ee1 7863a5e6
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Fri Apr 15 19:35:12 2016 +0200
-
-    Merge branch 'root-size' of https://github.com/psychon/awesome
-
-commit 723a4ee13b23762595a40879bbc3913721f5db5c
-Merge: e2cd174c 70d095df
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Fri Apr 15 19:34:08 2016 +0200
-
-    Merge branch 'master' of https://github.com/kiryl/awesome
-
-commit e2cd174c1a5473363c08516912fbb8bcfb89efb9
-Merge: ae96ed08 af6586a7
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Fri Apr 15 03:38:25 2016 -0400
-
-    Merge pull request #827 from Elv13/fix_path
-    
-    build: Be more careful about the use of ..
 
 commit af6586a72313c610b8dbcd429d7bed316b2d3a3b
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -8027,15 +6863,6 @@ Date:   Sun Apr 10 11:01:53 2016 +0200
     awful.rules: Fix a typo in the docs
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit ae96ed0827fc933db4e8023be7e8b3e80bcb260f
-Merge: cf9e45e5 f9add1c4
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Mon Apr 11 23:58:22 2016 -0400
-
-    Merge pull request #790 from Elv13/client_properties
-    
-    Client, tag and screen API cleanup.
 
 commit f9add1c49af0167d6071c26be239402bf3188c31
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -8291,13 +7118,6 @@ Date:   Fri Apr 8 02:45:29 2016 -0400
 
     awful.key: Add a function to execute keybindings
 
-commit cf9e45e5d916d7adc770eb1ed243620e41c70485
-Merge: 8d956103 8a63c589
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun Apr 10 11:46:06 2016 +0200
-
-    Merge branch 'randr-stuff'
-
 commit 8d9561036311621697711ec744c9a8bb13b407cd
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Sun Apr 10 03:22:23 2016 -0400
@@ -8374,15 +7194,6 @@ Date:   Sat Apr 9 15:14:48 2016 +0200
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit 6e8337e26a6578743c60d9cba4534ba809a898c0
-Merge: b6810576 8a0738a4
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Wed Apr 6 23:44:44 2016 -0400
-
-    Merge pull request #810 from Elv13/del_gears_screen
-    
-    gears.screen: Merge into awful.screen
-
 commit 8a0738a4bc2195b7dae97831a2e71307029cee1b
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Tue Apr 5 00:01:31 2016 -0400
@@ -8452,15 +7263,6 @@ Date:   Tue Apr 5 00:31:45 2016 +0200
     
     Ref: https://github.com/awesomeWM/awesome/issues/796
 
-commit b87dac50750dbca1b5267dc1447af93e5875a2e2
-Merge: 742717ec c431f065
-Author: Daniel Hahler <git@thequod.de>
-Date:   Tue Apr 5 00:29:03 2016 +0200
-
-    Merge branch 'travis-fix-apidoc-revs'
-    
-    Closes https://github.com/awesomeWM/awesome/pull/807.
-
 commit c431f06538c206fcf0cbac18d5424e3da750d080
 Author: Daniel Hahler <git@thequod.de>
 Date:   Tue Apr 5 00:28:21 2016 +0200
@@ -8517,35 +7319,6 @@ Date:   Mon Apr 4 20:41:22 2016 +0200
 
     Travis: update luarocks: 2.2.2 => 2.3.0
 
-commit 6d550d478c01a5d00194a55924b28cba6c50f6b3
-Merge: ae17c66e c86c8737
-Author: Daniel Hahler <github@thequod.de>
-Date:   Mon Apr 4 20:37:13 2016 +0200
-
-    Merge pull request #800 from blueyed/doc-fixes
-    
-    Some minor doc/typo fixes
-
-commit ae17c66e272dbb8baa3bb91a7c1d0bf50c8bc438
-Merge: 187b3263 b643279e
-Author: Daniel Hahler <github@thequod.de>
-Date:   Mon Apr 4 20:34:12 2016 +0200
-
-    Merge pull request #798 from blueyed/fix-crash-in-screen_getbycoord
-    
-    Fix crash in screen_getbycoord without any screens [ci skip]
-
-commit 187b32630fef2fe2db35d678a0ef789033eddd40
-Merge: e24cb901 449974ca
-Author: Daniel Hahler <github@thequod.de>
-Date:   Mon Apr 4 20:33:45 2016 +0200
-
-    Merge pull request #797 from blueyed/display-screen-count-with-checkscreen
-    
-    luaA_checkscreen: display number of existing screens with error
-    
-    [ci skip]
-
 commit c86c873779660cea655c43e4b2f879fed3ea55c2
 Author: Daniel Hahler <git@thequod.de>
 Date:   Mon Apr 4 20:28:54 2016 +0200
@@ -8587,61 +7360,11 @@ Date:   Mon Apr 4 00:56:11 2016 -0400
 
     Typo: Ajust -> Adjust
 
-commit bb8a9dd2975cb3b71bd9dd64332dd72269edebb3
-Merge: 3e5b1b3b 4819be4f
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sun Apr 3 23:54:16 2016 -0400
-
-    Merge pull request #792 from Elv13/fix_build
-    
-    Fix a build breakage accidentally introduced by a merging pull requests
-    
-    The build failed because both PR were developed in parallel and made different
-    assumptions. Last week new test framework assumed only CAPI normally print on stderr and #787
-    assume printing warnings on stderr has no consequences. Both assumptions were true when the
-    code was published, but they no longer were by the time #787 was merged.
-
 commit 4819be4f4f3037ef3ff2c3f932d59ff8524d791d
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Sun Apr 3 23:38:42 2016 -0400
 
     build: Do not exit when gears.debug.print_warning are issued
-
-commit 3e5b1b3ba9b9f91f3ec78c1f547adb405c10bb6a
-Merge: 3ad0a9d8 222f0a13
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Apr 3 18:35:27 2016 +0200
-
-    Merge pull request #782 from psychon/wallpaper-change
-    
-    Changes to wallpaper change
-
-commit 3ad0a9d8d2078be1d7bb8de7a1fdd93cf61cf3e4
-Merge: 0f615670 e6037b47
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Apr 3 18:35:08 2016 +0200
-
-    Merge pull request #780 from psychon/screen-add-signal
-    
-    Add screen add signal
-
-commit 0f615670e391f28857cd4aaed84d8ee198300869
-Merge: c93ac524 c04718a1
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Apr 3 18:34:04 2016 +0200
-
-    Merge pull request #787 from awesomeWM/lgi-stream-end
-    
-    awful.spawn: Reliably detect end-of-file
-
-commit c93ac5243f0d33057149915402ac6e17ceeefc0e
-Merge: 8a09ef70 ef5ec333
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sat Apr 2 22:06:23 2016 -0400
-
-    Merge pull request #785 from Elv13/geometry_overhaul_p1
-    
-    Geometry overhaul part 1
 
 commit 8a09ef707ae32f2f79a41536e6308785a41c1dd6
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -8788,15 +7511,6 @@ Date:   Thu Mar 31 05:04:10 2016 -0400
 
     shims: Add property::workarea
 
-commit b1a93e454081cba84fa7d7a115b5eaf0141890cc
-Merge: fdc25bbb c64c223e
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Thu Mar 31 04:50:32 2016 -0400
-
-    Merge pull request #773 from Elv13/add_testing_framework
-    
-    tests: Add a new GUI testing framework
-
 commit c64c223edec8b6f5eddbb4ebfde8f310fc11a9d2
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Tue Mar 29 00:42:31 2016 -0400
@@ -8841,24 +7555,6 @@ Date:   Tue Mar 29 00:10:37 2016 -0400
     
     It can be saved directly to a PNG or SVG file or used as a cairo
     surface or pattern.
-
-commit fdc25bbb998ae4744cb727ea0244547ca2ab5a2d
-Merge: 0953db56 20bfcdc6
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Thu Mar 31 00:30:35 2016 -0400
-
-    Merge pull request #789 from aroig/gh/layout-names
-    
-    fixes to keyboard layout names
-
-commit 0953db56d81ed3746f0cd07aa4321bfecb9c3a1f
-Merge: 025ba1d5 18ef42ab
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Wed Mar 30 23:32:12 2016 -0400
-
-    Merge pull request #757 from Elv13/properties
-    
-    C-API objects properties
 
 commit 18ef42abfca99002c0231bdfd540ffb24520c83e
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -8908,15 +7604,6 @@ Date:   Sun Mar 13 03:42:57 2016 -0400
 
     gears.object: Add a new "property fallback" object type
 
-commit 025ba1d524961538c605112be8a98b89eb67e278
-Merge: 99536144 af7495de
-Author: Daniel Hahler <github@thequod.de>
-Date:   Tue Mar 29 18:46:49 2016 +0200
-
-    Merge pull request #788 from aroig/gh/fix-number-check
-    
-    Fix number check for the screen argument in movetoscreen
-
 commit af7495de5a6fa9a6d8ecdf768a2f2a699c910cc8
 Author: Abdo Roig-Maranges <abdo.roig@gmail.com>
 Date:   Tue Mar 29 17:03:07 2016 +0200
@@ -8941,17 +7628,6 @@ Date:   Mon Mar 28 04:35:16 2016 -0400
     awful.screen: Fix addition between object and number
     
     Fix #784
-
-commit e8c7e573cbac40dc157839fbae6e4199ffd5aabd
-Merge: 4731712a 182f21b4
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sun Mar 27 17:05:02 2016 -0400
-
-    Merge pull request #778 from Elv13/dummy2
-    
-    Call collectgarbage() more often
-    
-    This may or may not fix a random test failure on Travis with LuaJIT (5.1).
 
 commit 222f0a133cb73a9e8cf747e1f841b07a581f09df
 Author: Uli Schlachter <psychon@znc.in>
@@ -9061,13 +7737,6 @@ Date:   Sat Mar 26 18:25:51 2016 +0100
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit 4731712af2d44f26d86d280ced02eb46113ad942
-Merge: 8ef96bcd 3ffbb8b2
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun Mar 27 10:50:39 2016 +0200
-
-    Merge branch 'return-screen-objects'
-
 commit 3ffbb8b2b8d2ac14afb1f6c701412a1b7a6070a1
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Sun Mar 27 10:22:14 2016 +0200
@@ -9137,24 +7806,6 @@ Date:   Sat Mar 26 05:14:56 2016 -0400
     
     Try to avoid a race condition when testing awful.layout
 
-commit e83832f41a9365e788ca2d32ef61c5af76f124ab
-Merge: 770cfa45 a3542c63
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sat Mar 26 03:41:22 2016 -0400
-
-    Merge pull request #776 from Elv13/awful_screen_improvments
-    
-    Awful screen improvements
-
-commit 770cfa45530a4b82b5bdb25e5a4c9b982f9d42d7
-Merge: b2fabfee 35ece57a
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sat Mar 26 03:40:42 2016 -0400
-
-    Merge pull request #775 from Elv13/margins_redraw
-    
-    Margins redraw
-
 commit a3542c638a69fe4f20384a574635b362ad58358f
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Sat Mar 26 03:22:20 2016 -0400
@@ -9194,24 +7845,6 @@ Date:   Sat Mar 26 03:05:17 2016 -0400
 
     awful.screen.padding: Support padding number value
 
-commit b2fabfeea16b707f1e1cce44660ea675d3ac002b
-Merge: 5715acfd 2eb085c2
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sat Mar 26 01:51:17 2016 -0400
-
-    Merge pull request #770 from Elv13/background_clip
-    
-    wibox.background: Add shape clip support
-
-commit 5715acfd189c91a507e3beb3cf317c160ac17c2d
-Merge: d2c5e362 f1816474
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sat Mar 26 01:50:00 2016 -0400
-
-    Merge pull request #767 from Elv13/widget_alias
-    
-    wibox: Add widget and layout metatable for widget creation
-
 commit 35ece57a78bad6ac4243c0d0026141938d3ad719
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Sat Mar 26 01:46:47 2016 -0400
@@ -9230,29 +7863,11 @@ Date:   Wed Mar 23 18:12:04 2016 -0400
 
     Fix a documentation typo
 
-commit d3d0de12457278f0f7515c7cb7dd55cc54d5a13f
-Merge: a4078621 03f5f5b7
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Wed Mar 23 06:00:19 2016 -0400
-
-    Merge pull request #771 from Elv13/doc_argb
-    
-    cmd: Document --no-argb in --help
-
 commit 03f5f5b7f9dd8dc4ccff434620cb56c51c1bddd3
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Tue Mar 22 03:26:13 2016 -0400
 
     cmd: Document --no-argb in --help
-
-commit a40786215bcb38916d324c54179ff93379b9b023
-Merge: 951e0309 24fa4ba6
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Mon Mar 21 18:32:02 2016 -0400
-
-    Merge pull request #768 from bmwiedemann/master
-    
-    dont add timestamps to created images
 
 commit 2eb085c263f097f21aecad041c140a288f77530b
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -9277,15 +7892,6 @@ Date:   Sat Mar 19 16:51:20 2016 -0400
     Calling wibox.widget.base.make_widget_declarative{} is too long, so this
     commit add wibox.widget{} and wibox.layout{} alias.
 
-commit 951e0309f54c184ddbab64a2ce139fa064faae3d
-Merge: 1fff8cc2 02cdb510
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Thu Mar 17 16:48:50 2016 -0400
-
-    Merge pull request #763 from psychon/luacov-shapes
-    
-    Run shape-example-generation under LuaCov
-
 commit 02cdb5103b6d7485621a25b89207c20cacda7587
 Author: Uli Schlachter <uli.schlachter@informatik.uni-oldenburg.de>
 Date:   Thu Mar 17 09:40:16 2016 +0100
@@ -9295,15 +7901,6 @@ Date:   Thu Mar 17 09:40:16 2016 +0100
     This is ugly, but at least it works. Hopefully...
     
     Signed-off-by: Uli Schlachter <uli.schlachter@informatik.uni-oldenburg.de>
-
-commit 1fff8cc24ce8d49d30b404a3b1be08d4f37fd6c3
-Merge: 491f17f3 f6556b14
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Wed Mar 16 22:17:10 2016 -0400
-
-    Merge pull request #753 from Elv13/add_shapes
-    
-    Add shapes and test coverage
 
 commit f6556b145f6449ab1459001ab06738796281361f
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -9377,33 +7974,6 @@ Date:   Wed Mar 9 23:40:50 2016 -0500
 
     shape: Minor fixes
 
-commit 491f17f32bbad13c55da79d94c8a6f384414c262
-Merge: e19f73c6 7739a6a7
-Author: Daniel Hahler <github@thequod.de>
-Date:   Wed Mar 16 03:09:56 2016 +0100
-
-    Merge pull request #732 from psychon/nicer-tooltip
-    
-    Nicer tooltip API
-
-commit e19f73c6bff75c69247ff0fe3beb1c6893bcded5
-Merge: 236624c0 0283bab5
-Author: Daniel Hahler <github@thequod.de>
-Date:   Tue Mar 15 00:23:51 2016 +0100
-
-    Merge pull request #79 from akdor1154/versioningFix
-    
-    Implement basic DEB/RPM packaging
-
-commit 236624c0fbeb46c829cf6f4adce1316571ce023d
-Merge: dc687c0e d4218da0
-Author: Daniel Hahler <git@thequod.de>
-Date:   Sun Mar 13 17:18:28 2016 +0100
-
-    Merge branch 'docs-fix-contributing-guide'
-    
-    Closes https://github.com/awesomeWM/awesome/pull/752.
-
 commit d4218da053dafcb80a3677978ca3150223928015
 Author: Daniel Hahler <git@thequod.de>
 Date:   Sun Mar 13 17:17:34 2016 +0100
@@ -9419,15 +7989,6 @@ Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Sat Mar 12 21:14:09 2016 -0500
 
     wibox: Clone missing signals
-
-commit b1b848b1274a3a49cdc78e1fb1e98a1c7dcd8b37
-Merge: c5526ca3 3d660ba3
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Fri Mar 11 07:07:33 2016 -0500
-
-    Merge pull request #754 from Elv13/add_volatile
-    
-    awful.tag: Add "volatile" property
 
 commit 3d660ba37e4f1e2c0477c8c8dff93d4ced2f8ab9
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -9452,60 +8013,6 @@ Date:   Wed Mar 9 00:12:53 2016 +0100
     Closes https://github.com/awesomeWM/awesome/pull/750.
     Closes https://github.com/awesomeWM/awesome/pull/752.
 
-commit c5526ca336431faceca6c3e741ef1fdd8318a79b
-Merge: 395a8285 95e5bdf5
-Author: Daniel Hahler <github@thequod.de>
-Date:   Mon Mar 7 00:26:22 2016 +0100
-
-    Merge pull request #746 from psychon/indexless-screen-iteration
-    
-    Indexless screen iteration
-
-commit 395a8285e5c6356278f49e7b2b7ad9c0bb7ed3dc
-Merge: d1e2cfa1 7f43608d
-Author: Daniel Hahler <github@thequod.de>
-Date:   Mon Mar 7 00:26:00 2016 +0100
-
-    Merge pull request #744 from psychon/dbus-string
-    
-    Some dbus.c string-related things.
-
-commit d1e2cfa1355cfb9eb1b810f92883f6a7780daefb
-Merge: 9f5e6c38 2e2e3f07
-Author: Daniel Hahler <github@thequod.de>
-Date:   Mon Mar 7 00:25:47 2016 +0100
-
-    Merge pull request #741 from psychon/systray-screen
-    
-    Improvements on the systray / default to displaying the systray on the primary screen
-
-commit 9f5e6c3827359a79e13f1b6f4cd3c797b67527e3
-Merge: cc5415b3 2d842173
-Author: Daniel Hahler <github@thequod.de>
-Date:   Mon Mar 7 00:25:35 2016 +0100
-
-    Merge pull request #743 from psychon/keygrabber-errors
-    
-    Keygrabber errors
-
-commit cc5415b389d9b527763b0b1890f1f0922b724301
-Merge: 7fce4ba7 3730086b
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Mar 6 15:13:16 2016 +0100
-
-    Merge pull request #736 from blueyed/fix-integration-tests-runner
-    
-    tests/run.sh: avoid warnings by setting up fg/bg/colors in xrdb
-
-commit 7fce4ba7dd613500b172b31d649e9f36d5b02e87
-Merge: 93e50b2e 89b2ea6c
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Mar 6 15:10:53 2016 +0100
-
-    Merge pull request #748 from blueyed/minor
-    
-    Minor doc/style fixes
-
 commit 89b2ea6c08d51711d36a606d8e3bee68b5a445fd
 Author: Daniel Hahler <git@thequod.de>
 Date:   Sun Mar 6 14:46:39 2016 +0100
@@ -9519,13 +8026,6 @@ Author: Daniel Hahler <git@thequod.de>
 Date:   Sun Mar 6 14:46:13 2016 +0100
 
     Minor doc fixes
-
-commit 93e50b2e23019a82297ca04f262c521f792c7a8b
-Merge: 693c2254 a5a106f9
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun Mar 6 14:19:00 2016 +0100
-
-    Merge branch 'lua-index-handlers' of https://github.com/psychon/awesome
 
 commit 95e5bdf5d250b67525b22bbed615c9016e78638c
 Author: Uli Schlachter <psychon@znc.in>
@@ -9546,15 +8046,6 @@ Date:   Sun Mar 6 13:25:10 2016 +0100
     This is a preparation for getting rid of screen indices.
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit 693c2254455ceeafd46eb33d49bbdde8a70ac899
-Merge: ab408103 dd78f8e6
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Mar 6 14:04:47 2016 +0100
-
-    Merge pull request #745 from psychon/small-things
-    
-    Small things
 
 commit dd78f8e6f260f45dea9816c4fdb0add0c6752841
 Author: Uli Schlachter <psychon@znc.in>
@@ -9743,24 +8234,6 @@ Date:   Wed Mar 2 20:00:44 2016 +0100
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit ab408103eee8e2854c5dcbd577580c40ed836dce
-Merge: 249a3f7c a256c967
-Author: Daniel Hahler <github@thequod.de>
-Date:   Fri Mar 4 11:25:58 2016 +0100
-
-    Merge pull request #734 from blueyed/readme-apidocs
-    
-    doc: link to automatically built docs for master
-
-commit 249a3f7ce08245b33afc576765219f1a30fc5a7f
-Merge: 9ee69ad8 78ed3abe
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Fri Mar 4 04:24:34 2016 -0500
-
-    Merge pull request #737 from Elv13/minor_widget_enhancements
-    
-    wibox.widget: Minor enhancements
-
 commit 78ed3abe1afff0b16b8fb2c9aceab1040621c4cf
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Fri Mar 4 00:24:38 2016 -0500
@@ -9770,24 +8243,6 @@ Date:   Fri Mar 4 00:24:38 2016 -0500
      * Better widget names when using the declarative syntax
      * Add ratio.get_ratio to avoid using the private API
      * Also support `set_widget` when swapping widgets
-
-commit 9ee69ad8ada001327799f1f6ab5b02a7267fc588
-Merge: 2de25840 167f5e28
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Fri Mar 4 04:13:43 2016 -0500
-
-    Merge pull request #731 from Elv13/fix_awful_place
-    
-    RFC awful.placement: Use math.ceil()
-
-commit 2de258409421761a86ffab09d2bb244f2752ff16
-Merge: 7c7295a2 2aa15c94
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Fri Mar 4 04:12:01 2016 -0500
-
-    Merge pull request #738 from awesomeWM/add_transparent
-    
-    gears.color: Add transparent constant
 
 commit 2aa15c94542027c187e954e0dba36b9688d4d223
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -9812,24 +8267,6 @@ Date:   Fri Mar 4 01:41:43 2016 +0100
 
     tests/run.sh: avoid warnings by setting up fg/bg/colors in xrdb
 
-commit 7c7295a282df90b1a0d127b74dbb98813129cbad
-Merge: a1687dc7 b05b6991
-Author: Daniel Hahler <github@thequod.de>
-Date:   Thu Mar 3 22:16:48 2016 +0100
-
-    Merge pull request #716 from psychon/wallpaper_cleanup
-    
-    Wallpaper cleanup
-
-commit a1687dc72edda812a737a8966dbe718a4bb007cd
-Merge: ef19a821 b93d6a4b
-Author: Daniel Hahler <github@thequod.de>
-Date:   Thu Mar 3 22:15:11 2016 +0100
-
-    Merge pull request #730 from actionless/fix-menubar-pagination-again
-    
-    fix(lib: menubar): take in account common list padding
-
 commit ef19a8213a572957432bb0da14de77eb2524d683
 Author: Daniel Hahler <git@thequod.de>
 Date:   Tue Mar 1 22:55:27 2016 +0100
@@ -9847,38 +8284,11 @@ Date:   Thu Mar 3 22:05:59 2016 +0100
     
     [ci skip]
 
-commit 3be5343e835b8b478aec62b31a43fdd48e2957e8
-Merge: 68bde9d5 a78f2359
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Thu Mar 3 02:06:58 2016 -0500
-
-    Merge pull request #709 from psychon/implement-set-children-sanely
-    
-    Implement set children sanely
-
 commit b93d6a4b2569cfb5731f97ff119d4d13bec36cda
 Author: actionless <actionless.loveless@gmail.com>
 Date:   Wed Mar 2 02:22:08 2016 +0100
 
     fix(lib: menubar): take in account common list padding
-
-commit 68bde9d584342750c6ec8905763c4a4d5cf888a2
-Merge: 97b26ab3 0278d5f1
-Author: Daniel Hahler <github@thequod.de>
-Date:   Tue Mar 1 23:01:32 2016 +0100
-
-    Merge pull request #717 from blueyed/callback-for-client.jumpto
-    
-    Add callback support for client.jumpto
-
-commit 97b26ab3ef6e526c8dbe984f2c0a5974cb17ff0f
-Merge: a189f2b1 b40b69d3
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Tue Mar 1 00:30:10 2016 -0500
-
-    Merge pull request #727 from psychon/fix-wibox.layout.mirror
-    
-    Fix the mirror layout
 
 commit b40b69d379f7d198c21d2d849bf4310dcfad4bb5
 Author: Uli Schlachter <psychon@znc.in>
@@ -9899,13 +8309,6 @@ Date:   Mon Feb 29 22:09:18 2016 +0100
     Fixes: https://github.com/awesomeWM/awesome/issues/718
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit a189f2b13f382e9c57b388c31f4ab58dfb766450
-Merge: 512e966b b8b270a9
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Mon Feb 29 20:59:21 2016 +0100
-
-    Merge branch 'Return-nil-in-xrdb_get_value' of https://github.com/psychon/awesome
-
 commit b8b270a91e3b9759f43309ce1367ceff56870707
 Author: Uli Schlachter <psychon@users.noreply.github.com>
 Date:   Mon Feb 29 11:13:58 2016 +0100
@@ -9915,38 +8318,11 @@ Date:   Mon Feb 29 11:13:58 2016 +0100
     The documentation states that this function returns nil if the property does not
     exist, but it actually returned nothing. And yes, in Lua this is a difference...
 
-commit 512e966be7cac2665058ed598040539f3f130d15
-Merge: b010849c 924e8892
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Mon Feb 29 04:29:22 2016 -0500
-
-    Merge pull request #721 from Elv13/fix_awful_screen
-    
-    awful.screen: Fix regression
-
 commit 924e8892710f6b5c5a0fadfc23d7592cb2e9760d
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Mon Feb 29 03:09:16 2016 -0500
 
     awful.screen: Fix regression
-
-commit b010849c3c9b471a5a2a252431751b66e99ebd17
-Merge: 78f93940 19f874a7
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Mon Feb 29 04:16:17 2016 -0500
-
-    Merge pull request #722 from Elv13/expose_graph
-    
-    awful.widget.graph: Expose private data
-
-commit 78f93940c734493703f7a43bfb9bb1c1c2cac6c9
-Merge: 9503110e 07631ccc
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Mon Feb 29 04:10:14 2016 -0500
-
-    Merge pull request #720 from Elv13/allow_no_tag
-    
-    awful.layout: Allow parameters to be called when no tags is selected
 
 commit 19f874a73fa84ddac16a1f01f01898ae4ec796d3
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -9974,60 +8350,6 @@ Date:   Sun Feb 28 22:45:15 2016 +0100
     more dynamic handling of the client not being visible, e.g. moving it to
     the current tag, instead of merging.
 
-commit 9503110e449a4563fecf2065d6b276bfa12a9c96
-Merge: 4ba8386f e49b1de0
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Feb 28 22:21:18 2016 +0100
-
-    Merge pull request #714 from psychon/tooltip-windows
-    
-    Less tooltip windows
-
-commit 4ba8386f7bfdba7da6917d59835d0be93e83f69d
-Merge: 87a3233b ee7a4137
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Feb 28 22:16:32 2016 +0100
-
-    Merge pull request #715 from psychon/lazy_border_update
-    
-    Lazily apply changes to border_width and border_color
-
-commit 87a3233be8b4e696270173c3138b821f5e3a5639
-Merge: f874b0ad aae960e9
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Feb 28 22:16:22 2016 +0100
-
-    Merge pull request #713 from psychon/no_focus_window
-    
-    Make client key bindings for e.g. xeyes work again
-
-commit f874b0ad2e2ce0129dcf009715ed7540cac5508e
-Merge: d1f43d89 8560c6d2
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Feb 28 22:16:13 2016 +0100
-
-    Merge pull request #712 from psychon/protected_calls
-    
-    Protected calls (gears.protected_call)
-
-commit d1f43d895fb7ac1e6fa73af5e36771a6efe28443
-Merge: 2bcff5af b02b2f79
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Feb 28 22:16:03 2016 +0100
-
-    Merge pull request #710 from psychon/primary-screen
-    
-    Primary screen
-
-commit 2bcff5af278279182be1fb9b239b83f46f765f4b
-Merge: 9205feea d56b5c03
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Feb 28 22:15:37 2016 +0100
-
-    Merge pull request #708 from psychon/less_screen_indicies2
-    
-    Less screen indicies
-
 commit 9205feea5e6fb23769af45e5f2253814598ad522
 Author: Daniel Hahler <git@thequod.de>
 Date:   Fri Feb 26 22:22:01 2016 +0100
@@ -10045,24 +8367,6 @@ Date:   Fri Feb 26 22:19:35 2016 +0100
     This patch also makes sure that entries are unique (by Exec/Name).
     
     Closes https://github.com/awesomeWM/awesome/pull/711.
-
-commit b84f2141448f45d0b7bdbed3a31a1eb24a8adc79
-Merge: 43f485b6 f6ccda84
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Feb 28 22:09:51 2016 +0100
-
-    Merge pull request #706 from psychon/maximized-workarea-changed
-    
-    Maximized workarea changed
-
-commit 43f485b6cf075a5fff6337bf02bc7918e1fb5a16
-Merge: f9d15691 d598a411
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Feb 28 22:09:04 2016 +0100
-
-    Merge pull request #707 from psychon/bullet_proof_transient_for
-    
-    Bullet proof transient_for
 
 commit b05b699129cd4cc7b488745deaa7461666a97bf3
 Author: Uli Schlachter <psychon@znc.in>
@@ -10148,13 +8452,6 @@ Date:   Sun Feb 28 13:29:25 2016 +0100
     
     Fixes: https://github.com/awesomeWM/awesome/issues/699
     Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit f9d15691b8b24d404ebdefd5f2d290f01b4e9dd2
-Merge: a2301ae8 504c105c
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun Feb 28 13:04:08 2016 +0100
-
-    Merge branch 'new-watch-widget' of https://github.com/actionless/awesome
 
 commit 8560c6d2af9c6d8747b0f0df587ad6bb97633921
 Author: Uli Schlachter <psychon@znc.in>
@@ -10539,24 +8836,6 @@ Date:   Wed Feb 17 18:40:01 2016 +0100
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit a6dd6b4a201545644fb1fc6819d83773d6177c0d
-Merge: 1bd28382 43dba09c
-Author: Daniel Hahler <github@thequod.de>
-Date:   Wed Feb 17 17:15:08 2016 +0100
-
-    Merge pull request #676 from psychon/luacheck
-    
-    Luacheck
-
-commit 1bd28382056a7726d79780f9a1b3f24c5e9d65bf
-Merge: 976b03f8 4b9584fd
-Author: Daniel Hahler <github@thequod.de>
-Date:   Wed Feb 17 17:14:51 2016 +0100
-
-    Merge pull request #701 from psychon/client-gravity-fullscreen
-    
-    Fix awful.ewmh to handle window gravities
-
 commit 43dba09c28aa273034711089f675664702a78ca0
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Sun Feb 7 15:29:04 2016 +0100
@@ -10597,42 +8876,6 @@ Date:   Tue Feb 16 19:31:20 2016 +0100
     the following" by temporarily claiming "please don't ever focus me".
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit 796c2fba51d7a9c8208b6b1b7e3d4b8d0c0ace36
-Merge: bbab3213 426da4f8
-Author: Daniel Hahler <github@thequod.de>
-Date:   Tue Feb 16 01:03:59 2016 +0100
-
-    Merge pull request #695 from psychon/fix-bugs-luacheck-found
-    
-    Fix bugs luacheck found
-
-commit bbab32131485b9d706c620527c84f3221565676c
-Merge: 9257c96b e5d3b2a2
-Author: Daniel Hahler <github@thequod.de>
-Date:   Tue Feb 16 01:03:37 2016 +0100
-
-    Merge pull request #702 from psychon/fix-test-urgent
-    
-    Fix test-urgent.lua
-
-commit 9257c96b7c73beb655174ec7fb8bf7961d828a28
-Merge: ff46d33f f87da55d
-Author: Daniel Hahler <github@thequod.de>
-Date:   Tue Feb 16 01:03:06 2016 +0100
-
-    Merge pull request #690 from psychon/make-test-runner-more-robust
-    
-    Make the functional test runner more robust
-
-commit ff46d33f7c2e2182e87200d8eb99da8508574e57
-Merge: 8802560c 029a6a18
-Author: Daniel Hahler <github@thequod.de>
-Date:   Tue Feb 16 01:02:50 2016 +0100
-
-    Merge pull request #700 from psychon/lua-compat
-    
-    Travis: Lua 5.3: Disable Lua 5.2 compatibility
 
 commit e5d3b2a25c534b6078adcd486335615658841b3e
 Author: Uli Schlachter <psychon@znc.in>
@@ -10692,15 +8935,6 @@ Date:   Mon Feb 15 20:51:52 2016 +0100
     removed.
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit 8802560c4adc356d1777778dd528bef403969e2d
-Merge: 065dd0d2 d462e107
-Author: Uli Schlachter <psychon@users.noreply.github.com>
-Date:   Mon Feb 15 10:03:41 2016 +0100
-
-    Merge pull request #698 from actionless/fix-awful-prompt-after-luacheck
-    
-    fix(awful: prompt): fix variable name after luacheck fixup
 
 commit d462e107901bc873557703abf06dd71d2b616492
 Author: actionless <actionless.loveless@gmail.com>
@@ -10780,50 +9014,6 @@ Date:   Sun Feb 7 13:57:35 2016 +0100
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit 065dd0d2138e0718d52e606ebebb4b10e7cd0c09
-Merge: 1ea3ba6f 801d2976
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun Feb 14 14:34:37 2016 +0100
-
-    Merge branch 'easy-async-spawn' of https://github.com/actionless/awesome
-
-commit 1ea3ba6f308e37d7a0a515079e9761232c2d1719
-Merge: 99ef5822 3bc8aa2d
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun Feb 14 14:33:51 2016 +0100
-
-    Merge branch 'fix-images-in-doc' of https://github.com/awesomeWM/awesome
-
-commit 99ef5822b042972f2bc1a8d026edfb31f9273d0a
-Merge: 191991d0 2c77f9dc
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun Feb 14 14:33:06 2016 +0100
-
-    Merge branch 'more-luacheck-fixes' of https://github.com/psychon/awesome
-
-commit 191991d0260b103733e497fc6cf17ce00e39e7f8
-Merge: b73ebabb 432908dd
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun Feb 14 14:32:42 2016 +0100
-
-    Merge branch 'coveralls' of https://github.com/psychon/awesome
-
-commit b73ebabbfae112e3c3a21a870d14342fd3663ab6
-Merge: 10ff22a7 a0d4d729
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun Feb 14 14:32:28 2016 +0100
-
-    Merge branch 'remove-awful-mouse-finder' of https://github.com/psychon/awesome
-
-commit 10ff22a75db724efa0f4d8ac5a03a937f8b742f5
-Merge: 0a15ea91 f2b6f583
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sat Feb 13 15:09:21 2016 +0100
-
-    Merge pull request #693 from psychon/enable-titlebars-by-default
-    
-    Enable titlebars by default
-
 commit 3bc8aa2d4030aaa6bd4eb3ebeb590b86b79e6599
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Sat Feb 13 08:04:14 2016 +0100
@@ -10852,24 +9042,6 @@ Date:   Fri Feb 12 18:12:21 2016 +0100
     
     Fixes: https://github.com/awesomeWM/awesome/issues/689
     Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit 0a15ea91311423da0b9623d4f92482bd570896dc
-Merge: de3d97fb 6a4df17e
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Fri Feb 12 21:36:42 2016 -0500
-
-    Merge pull request #691 from psychon/fix-titlebars
-    
-    Fix missing import from commit 7842f92f089b
-
-commit de3d97fb0daf46ce7fb14ef916ba608d8defd2d3
-Merge: 66b93ffd 2501f128
-Author: Daniel Hahler <github@thequod.de>
-Date:   Fri Feb 12 23:00:26 2016 +0100
-
-    Merge pull request #682 from actionless/vim-bindings-improvements
-    
-    chore(awful: hotkeys: vim): small improvements in hotkeys descriptions
 
 commit f2b6f5835e49cc269a125219cd1728004182f3e8
 Author: Uli Schlachter <psychon@znc.in>
@@ -11014,15 +9186,6 @@ Date:   Thu Feb 11 00:26:57 2016 +0100
 
     chore(awful: hotkeys: vim): small improvements in hotkeys descriptions
 
-commit 66b93ffded9e112088dd6c17b77cadc075fef9aa
-Merge: bb85e100 7ec74839
-Author: Daniel Hahler <github@thequod.de>
-Date:   Thu Feb 11 23:36:56 2016 +0100
-
-    Merge pull request #687 from psychon/fix-harmless-luacheck-warnings
-    
-    Fix harmless luacheck warnings
-
 commit 7ec74839289940edacc7402aeced0a494f3fec55
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Sun Feb 7 16:00:31 2016 +0100
@@ -11098,56 +9261,11 @@ Date:   Sun Feb 7 12:53:26 2016 +0100
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit bb85e10042ea68a46561ddf9428f0616c626c7f9
-Merge: 58954f7f 901771e5
-Author: Daniel Hahler <github@thequod.de>
-Date:   Thu Feb 11 21:52:22 2016 +0100
-
-    Merge pull request #685 from actionless/hotkeys_extended_mathes
-    
-    feat(awful: hotkeys): extended matching rules
-
-commit 58954f7f08ec2c58b4906cda1c9595c906a9ddf5
-Merge: 2a57f033 94e9a030
-Author: Daniel Hahler <github@thequod.de>
-Date:   Thu Feb 11 21:51:44 2016 +0100
-
-    Merge pull request #675 from psychon/remove-gears.sort
-    
-    Remove gears.sort
-
 commit 2a57f0335f933a6a6c73c96749e535fad7af86ca
 Author: Daniel Hahler <git@thequod.de>
 Date:   Thu Feb 11 21:40:22 2016 +0100
 
     .travis.yml: fix indent
-
-commit 33b2277df9f15b743f49a202a9a580486d4cd6bb
-Merge: 7e57ca30 6d6cf207
-Author: Daniel Hahler <github@thequod.de>
-Date:   Thu Feb 11 21:26:32 2016 +0100
-
-    Merge pull request #649 from psychon/make-benchmark-less-exact
-    
-    Make benchmarks less exact
-
-commit 7e57ca30ff3c2a9dee9223937dd1826420ab1146
-Merge: 196e85d2 e2d75dbc
-Author: Daniel Hahler <github@thequod.de>
-Date:   Thu Feb 11 21:24:57 2016 +0100
-
-    Merge pull request #651 from psychon/client-leaks
-    
-    Client leaks
-
-commit 196e85d2a388fdceac91f7be2a1151eff8c21ba0
-Merge: 89cab7a5 d09ece6b
-Author: Daniel Hahler <github@thequod.de>
-Date:   Thu Feb 11 21:23:58 2016 +0100
-
-    Merge pull request #671 from psychon/number_vs_int
-    
-    Use int instead of number
 
 commit 901771e51b3d607b8e77f6eac6129f0736fa959b
 Author: actionless <actionless.loveless@gmail.com>
@@ -11155,38 +9273,11 @@ Date:   Thu Feb 11 12:33:02 2016 +0100
 
     feat(awful: hotkeys): extended matching rules
 
-commit 89cab7a52a0b4a5435c18ec5c82a61028ed2595a
-Merge: 4a45db9e cb896ca8
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Thu Feb 11 04:05:10 2016 -0500
-
-    Merge pull request #684 from Elv13/decl_widget2
-    
-    wibox.widget: Add method to create declarative widgets directly
-
 commit cb896ca87f4274ea0741f855d1de2893cf7046f4
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Thu Feb 11 03:51:40 2016 -0500
 
     wibox.widget: Add method to create declarative widgets directly
-
-commit 4a45db9eb062004e9c6e523f67577de5c7a7b1b4
-Merge: dd7b7bf4 0a39d196
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Thu Feb 11 03:44:49 2016 -0500
-
-    Merge pull request #642 from Elv13/upstream_dynamic_p6
-    
-    Add ratio and stack layouts
-
-commit dd7b7bf48fcbaf6e16ad06a4c1a8f3a96511bfa2
-Merge: d59bdec3 4aaedb0f
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Thu Feb 11 03:44:16 2016 -0500
-
-    Merge pull request #683 from actionless/fix-hotkeys-sorting
-    
-    fix(awful: hotkeys): fix sorting of hotkeys
 
 commit d59bdec32fa2b28b47b5d0b056102ee07e5ccd9a
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -11241,24 +9332,6 @@ Author: actionless <actionless.loveless@gmail.com>
 Date:   Thu Feb 11 00:54:47 2016 +0100
 
     fix(awful: hotkeys): fix sorting of hotkeys
-
-commit ff8f2aef27bc62a8cbeae9de81dbd1e3845852d2
-Merge: cd584fda 4a20f9e5
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Wed Feb 10 03:59:06 2016 -0500
-
-    Merge pull request #678 from Elv13/bgimage
-    
-    Extend bgimage support
-
-commit cd584fda55ff40b01bc5e8106f38c977ea7d0a99
-Merge: 72076833 b1e69dba
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Wed Feb 10 03:58:31 2016 -0500
-
-    Merge pull request #486 from Elv13/new_widget_syntax
-    
-    widget: Add a new container declaration syntax
 
 commit b1e69dba8c606cb9a962aff8d9d5b39668f7f96d
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -11389,38 +9462,11 @@ Date:   Sat Feb 6 13:46:46 2016 +0100
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit 720768330c34f4486c03fcb77e7c2f4cf84a6f6a
-Merge: 8e6de49d 33c943d9
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sat Feb 6 03:48:13 2016 -0500
-
-    Merge pull request #664 from Elv13/background_border
-    
-    widget.background: Add shape border support
-
 commit 33c943d9b8480c73717338d500615dcda7f004b9
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Mon Feb 1 23:39:03 2016 -0500
 
     widget.background: Add shape border support
-
-commit 8e6de49dbd9daea0cdeb5d3b047517f7eb3dff5e
-Merge: 213b4d52 8a9ae1a0
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Fri Feb 5 21:12:57 2016 -0500
-
-    Merge pull request #665 from actionless/hotkeys-merge-descriptions
-    
-    feat(awful: hotkeys widget): merge hotkeys with the same modifiers and descriptions
-
-commit 213b4d52aa3b298770881f3c88d071f35bee3000
-Merge: cd63caba 5d27aa81
-Author: Daniel Hahler <github@thequod.de>
-Date:   Fri Feb 5 00:13:21 2016 +0100
-
-    Merge pull request #657 from baguette/master
-    
-    Add `screen::change` signal for Xrandr output change notification events
 
 commit e2d75dbcfd6ba8ee821fef690d17ca3bce07fdeb
 Author: Uli Schlachter <psychon@znc.in>
@@ -11491,15 +9537,6 @@ Author: actionless <actionless.loveless@gmail.com>
 Date:   Thu Feb 4 12:55:54 2016 +0100
 
     feat(awful: hotkeys widget): merge hotkeys with the same modifiers and descriptions
-
-commit 19437930a29e91f1e5d29e0864099701bbc0db18
-Merge: 1f5dae8c e6151735
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Thu Feb 4 03:09:38 2016 -0500
-
-    Merge pull request #630 from Elv13/upstream_dynamic_p5
-    
-    Multiple `wibox.layout` enhancements
 
 commit 1f5dae8c182fb216f8217c02bd0bce93e05fb413
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -11583,15 +9620,6 @@ Date:   Fri Jan 15 22:05:24 2016 -0500
     
     Allow to replace copy pasted code used to apply class heritage in
     much of wibox.widget
-
-commit 502c3631d28cbceab0a6f3e50f0440b4c62ca2c8
-Merge: 4c8128ea 348cd3a5
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Tue Feb 2 04:06:31 2016 -0500
-
-    Merge pull request #655 from Elv13/upstream_shape_api_p3
-    
-    Add various methods to improve the new shape API
 
 commit 348cd3a590077ea441435aad19a5d45c085f094f
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -11765,42 +9793,6 @@ Date:   Thu Jan 21 22:48:26 2016 -0500
     
     Fix a copy/paste mistake.
 
-commit 3cffeb3f536a6088f40663337966bd1c20b3be1f
-Merge: cb267e56 781f8d30
-Author: Daniel Hahler <github@thequod.de>
-Date:   Wed Jan 20 00:01:21 2016 +0100
-
-    Merge pull request #636 from psychon/fix-integration-tests
-    
-    test/run.sh: Handle updated beauitful.init call in default config
-
-commit cb267e56d5c5b83d38374d569a737e6c6db47bc3
-Merge: 7ffb238a e7a8df29
-Author: Daniel Hahler <github@thequod.de>
-Date:   Wed Jan 20 00:01:09 2016 +0100
-
-    Merge pull request #637 from psychon/set_markup
-    
-    Make wibox.widget.textbox:set_markup() throw Lua errors less often
-
-commit 7ffb238ae8e90bba5048a09653e1c620ac657774
-Merge: 2736c75e cd0503f5
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Mon Jan 18 22:47:56 2016 -0500
-
-    Merge pull request #633 from Elv13/upstream_dynamic_p4
-    
-    layout: Support layout with a constructor
-
-commit 2736c75e439834ca3c3e36a8c98a1a3abf3285cf
-Merge: 123c3d41 67132e90
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Mon Jan 18 22:46:59 2016 -0500
-
-    Merge pull request #632 from Elv13/upstream_dynamic_p3
-    
-    awful.layout: Split the layout parameters computation from 'arrange'
-
 commit 67132e904d38ff3d68cffaefd0073efbeadcdea7
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Sat Jan 16 04:01:29 2016 -0500
@@ -11812,33 +9804,6 @@ Date:   Sat Jan 16 04:01:29 2016 -0500
     
     In the current layout system, there is no layout object, but to allow
     tabs and dynamic tagging features like ion3, layouts cannot be stateless.
-
-commit 123c3d4114115fc33b4576099fbac06763689233
-Merge: 72d30659 ab0e3b61
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Mon Jan 18 22:41:15 2016 -0500
-
-    Merge pull request #631 from Elv13/upstream_dynamic_p2
-    
-    tag: Refactor awful.tag.setproperty to call setters
-
-commit 72d3065937006e4f80da6fa5e5bff7eae00bd40d
-Merge: cbd366d1 d01c1d2d
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Mon Jan 18 17:51:58 2016 -0500
-
-    Merge pull request #638 from Elv13/upstream_shape_api
-    
-    Upstream shape api
-
-commit cbd366d1a1ebd54250d72242cfba4308b7281330
-Merge: d202c1f1 81019487
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Mon Jan 18 17:39:43 2016 -0500
-
-    Merge pull request #612 from Elv13/fix_awful.client_idx
-    
-    awful.client.idx: Avoid error when called with a floating client
 
 commit 81019487f051b841f54bd7236c620a5bbec1af40
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -11876,15 +9841,6 @@ Date:   Mon Jan 18 17:20:32 2016 -0500
     If accepted upstream, other shapes, such as arrow and powerline
     will also be added. This commit introsuce the 2 most common
     shapes, rounded rectangle and rounded bar.
-
-commit d202c1f1c2e6f9f2d6198c655926844e1c6fbb05
-Merge: 23d60b06 55190646
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Mon Jan 18 16:40:07 2016 -0500
-
-    Merge pull request #629 from Elv13/upstream_dynamic_p1
-    
-    client: Add swapped, raised and lowered signals
 
 commit b74b8ea0cdf753e05b131b705691863c04425b3f
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -12020,48 +9976,6 @@ Date:   Sun Jan 17 16:16:39 2016 +0100
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit 62495daa666766db1b98b932ce7b5d19387b1ac6
-Merge: 3793c339 13679688
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun Jan 17 16:01:18 2016 +0100
-
-    Merge branch 'naughty-version' of https://github.com/psychon/awesome
-
-commit 3793c339cecad30359fb38ad387ced914a60b9ca
-Merge: fd8d35cb 76b1d348
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun Jan 17 16:01:03 2016 +0100
-
-    Merge branch 'surface-errors' of https://github.com/psychon/awesome
-
-commit fd8d35cb121256fccf4a2b6772bb5a779e01cd93
-Merge: ab5f9d3d 7546c236
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun Jan 17 16:00:39 2016 +0100
-
-    Merge branch 'async-spawn-optional-callbacks' of https://github.com/actionless/awesome
-
-commit ab5f9d3d745d0b7d2b2a62251eb37dfbe15c62fa
-Merge: 2ab98f5e 79d3dc00
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun Jan 17 16:00:19 2016 +0100
-
-    Merge branch 'handle_long_colors' of https://github.com/psychon/awesome
-
-commit 2ab98f5e4ad8bf09fe9e43237d2860de19d531f4
-Merge: 1aed092f 2d7fc8bc
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun Jan 17 16:00:11 2016 +0100
-
-    Merge branch 'rgb-xresources' of https://github.com/actionless/awesome
-
-commit 1aed092fea494ce5c458f60a6bec9a1c0e8c490f
-Merge: 0d1c98a3 20c9723c
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun Jan 17 15:59:54 2016 +0100
-
-    Merge branch 'util-getdir' of https://github.com/psychon/awesome
-
 commit 79d3dc003a34bf6828784480949ada273bca2be0
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Sun Jan 17 14:27:29 2016 +0100
@@ -12099,24 +10013,6 @@ Date:   Sun Jan 3 03:29:21 2016 -0500
     
     This allow to introduce logic for each properties and improve
     awful.tag.add and execute logic when setting properties.
-
-commit 0d1c98a31445a8f1036ecba39e58586bdcae335b
-Merge: 68f44a9c e74eb977
-Author: Daniel Hahler <github@thequod.de>
-Date:   Fri Jan 15 21:36:30 2016 +0100
-
-    Merge pull request #618 from actionless/titlebar-optional-tooltips
-    
-    feat(awful: titlebar): make tooltips optional
-
-commit 68f44a9cbe7e589063ecddd794439b8e0db13728
-Merge: 8b3087dc f19b38d4
-Author: Daniel Hahler <github@thequod.de>
-Date:   Fri Jan 15 21:31:58 2016 +0100
-
-    Merge pull request #625 from actionless/fix-hotkeys-widget-multiscreen
-    
-    fix(awful: hotkeys): caching on multiscreen setup
 
 commit 1367968824b11689b5005f07f3f5f05b67094fc9
 Author: Uli Schlachter <psychon@znc.in>
@@ -12332,24 +10228,6 @@ Date:   Tue Dec 29 05:17:52 2015 -0500
     
     Closes https://github.com/awesomeWM/awesome/pull/613.
 
-commit 9fec4f71bcfb905df861ad42b85678ac7b153747
-Merge: 90895037 16994f3b
-Author: Daniel Hahler <github@thequod.de>
-Date:   Wed Dec 23 18:14:07 2015 +0100
-
-    Merge pull request #605 from psychon/api-doc
-    
-    Fix API documentation broken in eb8577a424c2fc69d
-
-commit 908950376ef9b4b82d14afa718243aedadc9f161
-Merge: 4ad516c6 b2be471f
-Author: Daniel Hahler <github@thequod.de>
-Date:   Wed Dec 23 18:10:18 2015 +0100
-
-    Merge pull request #609 from psychon/icons
-    
-    Fix client icons
-
 commit b2be471fafbf1d5cdff94aa69f278c66783d8e86
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Wed Dec 23 14:19:18 2015 +0100
@@ -12458,24 +10336,6 @@ Date:   Sun Dec 13 17:54:37 2015 +0100
     Ref: https://github.com/awesomeWM/awesome/issues/415
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit 15a242d1953c14625ecb153c82331a5aa077596f
-Merge: f7fcee76 ea94f7f7
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Dec 13 15:41:13 2015 +0100
-
-    Merge pull request #578 from lukash/client_icon_size
-    
-    Add an option to set the preferred client icon size
-
-commit f7fcee76dfe89b9415a6404dde688df7852de3d9
-Merge: ae5d4b55 9031a813
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sat Dec 12 21:19:32 2015 +0100
-
-    Merge pull request #594 from blueyed/pr-552
-    
-    Add an optional filter to `awful.menu.clients`
-
 commit 9031a813968beb0af565703aecb1e9e41ebc28b1
 Author: Daniel Hahler <git@thequod.de>
 Date:   Sat Dec 12 20:10:27 2015 +0100
@@ -12487,42 +10347,6 @@ Author: Dario Gjorgjevski <dario.gjorgjevski@gmail.com>
 Date:   Wed Nov 4 12:00:41 2015 +0100
 
     Add an optional filter to `awful.menu.clients`
-
-commit ae5d4b55122739efa20f6668886b39c840f6ddd9
-Merge: 833b10eb 1c8aa0f5
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sat Dec 12 20:01:32 2015 +0100
-
-    Merge pull request #571 from psychon/scrolling_layout
-    
-    Add a scroll layout
-
-commit 833b10eb9b2f85a313a0a332fe6362e85af5bff1
-Merge: 98198776 feb7b367
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sat Dec 12 19:13:53 2015 +0100
-
-    Merge pull request #593 from psychon/editorconfig
-    
-    Vim modelines and editorconfig
-
-commit 981987764e48175b68395988bb3f0b35af0583b9
-Merge: 69da6ee0 f4077def
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sat Dec 12 19:13:28 2015 +0100
-
-    Merge pull request #586 from psychon/widget_funcs
-    
-    Widgets: set_width / set_height
-
-commit 69da6ee0dbacb1acd91a6149e147d5242e32f0d2
-Merge: e39504a3 469433e1
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sat Dec 12 19:10:48 2015 +0100
-
-    Merge pull request #576 from psychon/spawn_exit_code
-    
-    At exit code support to spawn
 
 commit feb7b3672867a1526903ff0ea290f46fdc7acc6e
 Author: Uli Schlachter <psychon@znc.in>
@@ -12937,17 +10761,6 @@ Date:   Sat Nov 7 11:48:10 2015 +0100
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit c9c60810ccc14333cc5b58f2f68c68336065babc
-Merge: 234100eb 6f2424e9
-Author: Daniel Hahler <git@thequod.de>
-Date:   Thu Nov 19 22:22:52 2015 +0100
-
-    Merge pull request #558 from psychon/xkb-detectable-autorepeat
-    
-    Xkb detectable autorepeat
-    
-    Closes https://github.com/awesomeWM/awesome/pull/558.
-
 commit 234100ebdfbbf4762ad9ac0a21b481990f2a49e9
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Sat Nov 7 13:55:04 2015 +0100
@@ -12996,15 +10809,6 @@ Date:   Sun Nov 15 19:36:15 2015 +0100
     wibox.drawable: Make screen_getbycoord() local
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit aec751f0ea3006062749d0d637b347c4f1264666
-Merge: bef7dfad ba0d8e38
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Nov 8 15:13:49 2015 +0100
-
-    Merge pull request #483 from blueyed/Elv13-prompt_hook_v2
-    
-    Prompt hook v2
 
 commit ba0d8e38e5bcac99b2d643dd581fb89380ff4a4e
 Author: Daniel Hahler <git@thequod.de>
@@ -13097,37 +10901,6 @@ Date:   Sat Nov 7 12:24:21 2015 +0100
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit bef7dfad47d9fd769ac7dce15e6158ce368c66a0
-Merge: 83ed6521 339e2b0e
-Author: Daniel Hahler <github@thequod.de>
-Date:   Thu Nov 5 23:24:54 2015 +0100
-
-    Merge pull request #544 from blueyed/client-snid-should-be-nil-without-snid
-    
-    c.startup_id should be nil when launched without startup notification support
-
-commit 83ed65212d162f9082c30a17d0a5f9f2f4afe588
-Merge: f1598881 085bc00a
-Author: Daniel Hahler <git@thequod.de>
-Date:   Thu Nov 5 23:08:00 2015 +0100
-
-    Merge pull request #531 from psychon/property_geometry
-    
-    Property geometry
-    
-    Closes https://github.com/awesomeWM/awesome/pull/531.
-
-commit f1598881a4b64c79e8c1193287bab625dddbd9f6
-Merge: 2bca03cb a69d901c
-Author: Daniel Hahler <git@thequod.de>
-Date:   Thu Nov 5 23:07:28 2015 +0100
-
-    Merge pull request #537 from psychon/timer-signals
-    
-    gears.timer: Add start and stop signals (#348)
-    
-    Closes https://github.com/awesomeWM/awesome/pull/537.
-
 commit 2bca03cb873dd66a6d91092f3dac48c8878bfe58
 Author: Daniel Hahler <git@thequod.de>
 Date:   Mon Nov 2 21:22:56 2015 +0100
@@ -13212,33 +10985,11 @@ Date:   Sun Nov 1 17:08:20 2015 +0100
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit 1222b5b5fdfc647643ca509c22da71a91a510bb9
-Merge: 9b355889 4577e32a
-Author: Daniel Hahler <git@thequod.de>
-Date:   Fri Oct 30 20:31:15 2015 +0100
-
-    Merge pull request #535 from psychon/textbox_preferred_size
-    
-    Add functions for querying a textbox's preferred size
-    
-    Closes https://github.com/awesomeWM/awesome/pull/535.
-
 commit 9b3558899b203aa48eaa5d1f8e36dda506fcd6cb
 Author: Daniel Hahler <git@thequod.de>
 Date:   Fri Oct 30 00:02:19 2015 +0100
 
     travis-apidoc: swap 'relevant' and 'boilerplate' commits
-
-commit 751db72de6b0bae98ad94a1f32c6434b6f050f7f
-Merge: b655b74c a648b27a
-Author: Daniel Hahler <git@thequod.de>
-Date:   Thu Oct 29 23:24:16 2015 +0100
-
-    Merge pull request #523 from blueyed/fix-menubar
-    
-    Some menubar / icon theme fixes
-    
-    Closes https://github.com/awesomeWM/awesome/pull/523.
 
 commit b655b74cb92342c9537a3b2dfeaee4f216959970
 Author: Daniel Hahler <git@thequod.de>
@@ -13250,15 +11001,6 @@ Date:   Wed Oct 28 01:21:16 2015 +0100
     
     It should not have been triggered for
     https://travis-ci.org/awesomeWM/awesome/jobs/87792709#L3334.
-
-commit 48a57055dcda6bdbb535b69299b4b0daa9973cd0
-Merge: 0a11cd0c b9db1d03
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Tue Oct 27 20:08:05 2015 -0400
-
-    Merge pull request #542 from awesomeWM/actionless_keybindings
-    
-    feat(awesomerc): add descriptions for some keybindings
 
 commit b9db1d032a37e0a2f1501de6ef0e4acb6b645275
 Author: actionless <actionless.loveless@gmail.com>
@@ -13273,18 +11015,6 @@ Date:   Wed Sep 9 23:15:43 2015 +0300
     Make client.movetotag emit request::activate on client
     
     Closes https://github.com/awesomeWM/awesome/pull/439.
-
-commit 872c321e819a080ff4afec8608823a826f0ca17c
-Merge: 112ce3b4 b1b28528
-Author: Daniel Hahler <git@thequod.de>
-Date:   Mon Oct 26 23:07:40 2015 +0100
-
-    Merge pull request #507 from psychon/closest_screen
-    
-    Update the definition of "closest screen" to take into account that a
-    screen is a rectangle and not just the top-left corner.
-    
-    Closes https://github.com/awesomeWM/awesome/pull/507.
 
 commit 112ce3b419245bdae8e12252415c0da9d3059349
 Author: Uli Schlachter <psychon@znc.in>
@@ -13478,28 +11208,6 @@ Date:   Wed Oct 14 19:35:23 2015 +0200
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit e3253db406ab93f07ccad30be6e8955b20ad46b5
-Merge: 60c21bfb 4bffa7e4
-Author: Daniel Hahler <git@thequod.de>
-Date:   Wed Oct 14 16:26:28 2015 +0200
-
-    Merge pull request #528 from blueyed/doc-spawn-spawn
-    
-    Doc fixes: spawn.spawn and long/wrapped lines
-    
-    Closes https://github.com/awesomeWM/awesome/pull/528.
-
-commit 60c21bfb4efa94835b436205c82059abccfd87d1
-Merge: fbfa6b89 555ccc15
-Author: Daniel Hahler <git@thequod.de>
-Date:   Wed Oct 14 16:25:01 2015 +0200
-
-    Merge pull request #529 from blueyed/doc-fixes
-    
-    Some more doc fixes
-    
-    Closes https://github.com/awesomeWM/awesome/pull/529.
-
 commit 555ccc15a8fb19836b5412dea940f401d33b7e91
 Author: Daniel Hahler <git@thequod.de>
 Date:   Wed Jul 29 04:14:39 2015 +0200
@@ -13614,15 +11322,6 @@ Date:   Tue Oct 13 12:00:33 2015 +0200
 
     ewmh.activate: document focus handling
 
-commit 017660de489ac729dceabe6ef8be2f097c53cf39
-Merge: 208db47b b092ef82
-Author: Daniel Hahler <github@thequod.de>
-Date:   Tue Oct 13 12:32:02 2015 +0200
-
-    Merge pull request #527 from blueyed/client-focus-history-get-stacked
-    
-    client.focus.history.get: use stacked client list
-
 commit b092ef82ec9967068c484b3b86dc232b07636ab1
 Author: Daniel Hahler <git@thequod.de>
 Date:   Tue Oct 13 12:20:36 2015 +0200
@@ -13639,42 +11338,6 @@ Date:   Tue Oct 13 12:17:54 2015 +0200
     case nothing was found.
     
     Ref: https://github.com/awesomeWM/awesome/pull/526
-
-commit 208db47b2debe30b1445f19dffcdd6f608478d49
-Merge: c0fd79a3 b2aaefd0
-Author: Daniel Hahler <github@thequod.de>
-Date:   Tue Oct 13 11:34:37 2015 +0200
-
-    Merge pull request #505 from psychon/fix_window_gravities
-    
-    Fix window gravities
-
-commit c0fd79a3183b8aae8b21d3d35e0ac320385601e6
-Merge: 75aea608 d03762c3
-Author: Daniel Hahler <github@thequod.de>
-Date:   Tue Oct 13 11:34:22 2015 +0200
-
-    Merge pull request #508 from psychon/systray_only_in_wibox
-    
-    systray: Make sure the widget is only placed in a wibox
-
-commit 75aea6086d5ebf210214c09da93fec5a4cecd077
-Merge: 71ae967a 4daa6e8b
-Author: Daniel Hahler <github@thequod.de>
-Date:   Tue Oct 13 11:34:12 2015 +0200
-
-    Merge pull request #509 from psychon/systray_substructure_redirect
-    
-    Select SubstructureRedirect on our systray window
-
-commit 71ae967a84289dde2f467b0465511e78cd57d683
-Merge: 0060ea9d 27233997
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Oct 11 18:21:10 2015 +0200
-
-    Merge pull request #517 from blueyed/move-is_readable_directory
-    
-    Move is_readable_directory to awful.util.dir_readable
 
 commit 0060ea9d63b3e1e6ed9a254a04612d1143e561a0
 Author: Uli Schlachter <psychon@znc.in>
@@ -13705,37 +11368,6 @@ Date:   Sun Oct 11 14:06:27 2015 +0200
 
     Default config: use shorter `awful.spawn`
 
-commit 0478b946fb07906928319905adb8fc9c1b0af899
-Merge: 4803e155 f6e633ee
-Author: Daniel Hahler <git@thequod.de>
-Date:   Sun Oct 11 13:26:38 2015 +0200
-
-    Merge pull request #513 from psychon/WM_Sn_selection
-    
-    Various selection stuff that ICCCM requires us to do.
-    
-    Fixes https://awesome.naquadah.org/bugs/index.php?do=details&task_id=782.
-    Fixes https://github.com/awesomeWM/awesome/issues/292.
-    Closes https://github.com/awesomeWM/awesome/pull/513.
-
-commit 4803e1552d625cdf448486f70c85ab8fb8d3c307
-Merge: f2926406 7ed29196
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Oct 11 13:25:44 2015 +0200
-
-    Merge pull request #514 from psychon/quit_during_startup
-    
-    Make awesome.quit() during startup work
-
-commit f29264064f3633d9875c525b3945151190031cad
-Merge: 79e86d40 79fa6ad0
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Oct 11 13:25:34 2015 +0200
-
-    Merge pull request #510 from psychon/fixups_size_hints
-    
-    Fix client_apply_size_hints()
-
 commit 79e86d409ae7a996f94d19d404d363ae00f813e1
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Sun Oct 11 12:42:50 2015 +0200
@@ -13751,15 +11383,6 @@ Author: Daniel Hahler <git@thequod.de>
 Date:   Sun Oct 11 13:14:15 2015 +0200
 
     Move is_readable_directory to awful.util.dir_readable
-
-commit da92c31826b191328d591247144237af0afdb545
-Merge: 6902e4bf 765a5f57
-Author: Daniel Hahler <git@thequod.de>
-Date:   Sun Oct 11 13:10:24 2015 +0200
-
-    Merge branch 'fix-icon_theme' [#515]
-    
-    Closes https://github.com/awesomeWM/awesome/pull/515.
 
 commit 765a5f57906ffe1941369147d4b4b072ae164949
 Author: Daniel Hahler <git@thequod.de>
@@ -13917,55 +11540,6 @@ Date:   Sat Oct 10 20:10:23 2015 +0200
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit b34a65344834fae7dea7e1c4c2f71a3a8b4d5ef5
-Merge: 22305f3a 702fa196
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sat Oct 10 19:58:45 2015 +0200
-
-    Merge branch 'master' of https://github.com/everslick/awesome
-
-commit 22305f3abf5b4b8b1663b949c4370406e8a32277
-Merge: b1493c8f 27fb1707
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sat Oct 10 19:57:45 2015 +0200
-
-    Merge branch 'client_resize_do-prefer-current' of https://github.com/blueyed/awesome
-
-commit b1493c8f76389f00be1275ad3a164fa556869610
-Merge: e3199edc 9ae945c9
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sat Oct 10 19:54:23 2015 +0200
-
-    Merge branch 'enhance_menubar_icon_path_lookup' of https://github.com/nuko8/awesome
-
-commit e3199edca160a2aa43d9273bbc772a8b8c6141eb
-Merge: a66517bb 4095eb91
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sat Oct 10 19:52:41 2015 +0200
-
-    Merge branch 'snid_callback' of https://github.com/Elv13/awesome-1
-
-commit a66517bb7553da5e0a3c61a9edaa45d7fdf19087
-Merge: b89918d0 fa1dea6d
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sat Oct 10 19:52:11 2015 +0200
-
-    Merge branch 'test-runner-for-bisect' of https://github.com/blueyed/awesome
-
-commit b89918d0f14e2963cb2185e0ebf6409a7b7a52f7
-Merge: e15df8cb 4003331b
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sat Oct 10 19:51:00 2015 +0200
-
-    Merge branch 'remember-mouse-pos-per-screen' of https://github.com/Bew78LesellB/awesome
-
-commit e15df8cba95b0bcf85351398d2f1399366e754c8
-Merge: 67faf52b dcdd6038
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sat Oct 10 19:50:18 2015 +0200
-
-    Merge branch 'client-movetoscreen-raise-true' of https://github.com/blueyed/awesome
-
 commit b2aaefd095c964491f2c93aa01ec7f0fcc9c340f
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Sat Oct 10 17:45:24 2015 +0200
@@ -14084,15 +11658,6 @@ Date:   Sat Oct 3 14:54:17 2015 +0200
 
     Improve test runner to be usable for git-bisect
 
-commit ee0e9badfa18a22596debaf612e691884ee3270e
-Merge: 5f6bbdfc 0e300993
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Wed Sep 30 17:25:39 2015 -0400
-
-    Merge pull request #491 from actionless/awful-key-data
-    
-    feat(lib: awful: key): save current hotkeys
-
 commit 0e3009936c4b4531ae7350da42bfde8ec9b31c09
 Author: actionless <actionless.loveless@gmail.com>
 Date:   Wed Sep 30 13:17:12 2015 +0200
@@ -14167,17 +11732,6 @@ Date:   Wed Sep 23 20:48:56 2015 +0200
     Closes https://github.com/awesomeWM/awesome/pull/470.
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit dd657c0531c735b80ec47d5eab41b4ff2f966c70
-Merge: d544421c 3e9fdea6
-Author: Daniel Hahler <git@thequod.de>
-Date:   Mon Sep 28 23:35:54 2015 +0200
-
-    Merge pull request #479 from psychon/leaks
-    
-    Add integration tests checking for leaks and fix some results.
-    
-    Closes https://github.com/awesomeWM/awesome/pull/479.
 
 commit d544421c67831446fc7af6bb8e218884a076b731
 Author: Daniel Hahler <git@thequod.de>
@@ -14419,42 +11973,6 @@ Date:   Mon Sep 21 17:17:20 2015 +0900
        if `icon_theme.lua` together with `index_theme.lua` works as
        expected.
 
-commit bf630de74ef0d078d26cd7d0b6f75e44effa00e3
-Merge: bd39a70b 81e59cdf
-Author: Daniel Hahler <github@thequod.de>
-Date:   Fri Sep 25 10:16:03 2015 +0200
-
-    Merge pull request #438 from blueyed/ewmh-activate-raise-always
-    
-    ewmh.activate: raise a client always
-
-commit bd39a70b628153de1321b58615926b0afc59fbc2
-Merge: 81a2baba b824d002
-Author: Daniel Hahler <github@thequod.de>
-Date:   Fri Sep 25 10:15:25 2015 +0200
-
-    Merge pull request #474 from blueyed/ewmh-activate-only-focus-visible
-    
-    ewmh.activate: only focus visible clients
-
-commit 81a2baba30baca2b6823c97db2a4146267786e67
-Merge: 2ab0267a 5431b18f
-Author: Daniel Hahler <github@thequod.de>
-Date:   Fri Sep 25 10:15:00 2015 +0200
-
-    Merge pull request #475 from blueyed/rename-client_maybevisible
-    
-    Rename client_maybevisible to client_on_selected_tags
-
-commit 2ab0267a5ee81a129f082370696ccea98c0da330
-Merge: 0414a579 116c90c8
-Author: Daniel Hahler <github@thequod.de>
-Date:   Fri Sep 25 10:14:46 2015 +0200
-
-    Merge pull request #476 from blueyed/taglist-handle-urgent-always
-    
-    awful.widget.taglist: handle/display urgent property always
-
 commit 116c90c8d89052a2923146a88ac7837209a690d9
 Author: Daniel Hahler <git@thequod.de>
 Date:   Fri Sep 25 01:29:00 2015 +0200
@@ -14521,17 +12039,6 @@ Date:   Tue Sep 22 00:19:20 2015 +0200
     
     Closes https://github.com/awesomeWM/awesome/pull/465.
 
-commit 4e22cf02e640ad9f3e0ecb6a7ee06b2811661bc6
-Merge: dfcbf20d 5b60bc21
-Author: Daniel Hahler <git@thequod.de>
-Date:   Wed Sep 23 20:59:32 2015 +0200
-
-    Merge pull request #384 from blueyed/more-robust-errors
-    
-    More robust errors: make sure errors are strings
-    
-    Closes https://github.com/awesomeWM/awesome/pull/384.
-
 commit dfcbf20d81cb01903a63cbff85473c9ccdd0bdd8
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Sat Sep 19 13:57:18 2015 +0200
@@ -14588,20 +12095,6 @@ Date:   Mon Sep 21 23:59:35 2015 +0200
     
     Closes https://github.com/awesomeWM/awesome/pull/464.
 
-commit 28ffdb050e5386f268c5045c1b57ff5bce9a60ad
-Merge: 8d603081 14be9092
-Author: Daniel Hahler <git@thequod.de>
-Date:   Mon Sep 21 21:16:36 2015 +0200
-
-    Merge pull request #454 from psychon/remove_gears.debug.assert
-    
-    Remove gears.debug.assert
-    
-    Closes https://github.com/awesomeWM/awesome/pull/454.
-    
-    Conflicts:
-            lib/gears/matrix.lua
-
 commit 8d6030819b0aed14bbfc28cf7d9536051571633a
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Thu Sep 17 14:35:09 2015 +0200
@@ -14617,28 +12110,6 @@ Date:   Thu Sep 17 14:35:09 2015 +0200
     Closes https://github.com/awesomeWM/awesome/pull/457.
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit b0d7e6bb6c4a5624726609c4c83c8313c043c74d
-Merge: 21dbe262 41a8fabf
-Author: Daniel Hahler <git@thequod.de>
-Date:   Mon Sep 21 21:12:36 2015 +0200
-
-    Merge pull request #458 from psychon/explicit_widget_deps
-    
-    Explicitly track dependencies between widgets
-    
-    Closes https://github.com/awesomeWM/awesome/pull/458.
-
-commit 21dbe262fb36ce4af5d4824caf8285d7370861b6
-Merge: b7669161 b134318f
-Author: Daniel Hahler <git@thequod.de>
-Date:   Mon Sep 21 21:11:09 2015 +0200
-
-    Merge pull request #462 from psychon/gears.matrix2
-    
-    Implement full matrix operations in gears.matrix
-    
-    Closes https://github.com/awesomeWM/awesome/pull/462.
 
 commit b134318f1986d43777150a84e4379b1feb831c9b
 Author: Uli Schlachter <psychon@znc.in>
@@ -14869,17 +12340,6 @@ Date:   Mon Sep 7 23:13:36 2015 +0900
     
     Closes https://github.com/awesomeWM/awesome/pull/440.
 
-commit 19ae63cf1353cccbbb0a6c15646bf153075d51cd
-Merge: b3136c13 a005ad22
-Author: Daniel Hahler <git@thequod.de>
-Date:   Sun Sep 13 14:41:41 2015 +0200
-
-    Merge pull request #433 from nuko8/keyboardlayout-ext
-    
-    keyboardlayout: Extend allowable 'group_names' pattern range
-    
-    Closes https://github.com/awesomeWM/awesome/pull/433.
-
 commit b3136c1329cbc290891a384f88fef9282633474d
 Author: actionless <actionless.loveless@gmail.com>
 Date:   Thu Aug 6 21:39:09 2015 +0200
@@ -14955,13 +12415,6 @@ Date:   Thu Sep 10 20:45:29 2015 +0200
     Ref: https://github.com/awesomeWM/awesome/pull/441.
     
     Closes https://github.com/awesomeWM/awesome/pull/444.
-
-commit ca9242da4b0fb5d2607a46c9ede5a0f882f901bc
-Merge: 52154d0f 5e577a10
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Fri Sep 11 17:17:06 2015 +0200
-
-    Merge branch 'new_widget_system3'
 
 commit 5e577a10abebfb4280ff2497139b603b76ce67c1
 Author: Uli Schlachter <psychon@znc.in>
@@ -15335,28 +12788,6 @@ Date:   Thu Sep 3 19:57:57 2015 +0200
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit 2b2c230f434c3619e33a8debd9b463c398bf5b1f
-Merge: 7c8e97ca 95743683
-Author: Daniel Hahler <git@thequod.de>
-Date:   Thu Sep 3 08:53:17 2015 +0200
-
-    Merge pull request #323 from actionless/grow-master
-    
-    Add "master_fill_policy" tag property and its support in "tile" and "corner" layouts
-    
-    Closes https://github.com/awesomeWM/awesome/pull/323/files.
-
-commit 7c8e97ca31281b088bdd8fc881cfb11e52c46686
-Merge: c7d37579 3c4a80ca
-Author: Daniel Hahler <git@thequod.de>
-Date:   Wed Sep 2 22:36:05 2015 +0200
-
-    Merge pull request #406 from psychon/spawn_with_pipes2
-    
-    Spawn with pipes
-    
-    Closes https://github.com/awesomeWM/awesome/pull/406.
-
 commit 3c4a80ca7e9500a57ebdac9bb0cf84ff8a363e12
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Thu Aug 13 11:00:12 2015 +0200
@@ -15391,17 +12822,6 @@ Date:   Mon Jul 13 23:47:37 2015 +0200
     arguments: `font_focus`, `font_urgent` and `font_minimized`.
     
     Closes https://github.com/awesomeWM/awesome/pull/313.
-
-commit f957d1f96b246e691bea07e4d490483c305e4254
-Merge: 62622f79 bcc1751f
-Author: Daniel Hahler <git@thequod.de>
-Date:   Wed Sep 2 22:12:09 2015 +0200
-
-    Merge pull request #408 from psychon/strict-fit
-    
-    Strict fit
-    
-    Closes https://github.com/awesomeWM/awesome/pull/408.
 
 commit 62622f79358c9037f33b0c592b7a9b4ea29371ab
 Author: Daniel Hahler <git@thequod.de>
@@ -15471,48 +12891,6 @@ Date:   Thu Aug 13 15:42:39 2015 +0200
     This also fixes a messed up argument order for horizontal align layouts.
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit 769d6acb649ecf4efc926d4a44587445dfe7f993
-Merge: 564fae89 b47eabf4
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun Aug 23 17:05:30 2015 +0200
-
-    Merge branch 'add-resize-option' of https://github.com/actionless/awesome
-
-commit 564fae893477e09b87b6bb525aab9bad44a4ba6d
-Merge: 56c22cde 36850772
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun Aug 23 15:36:55 2015 +0200
-
-    Merge branch 'add_gears_matrix'
-
-commit 56c22cde770e179121791481b00450cf90a00a7c
-Merge: b61e9d98 1ebc34b5
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun Aug 23 15:33:43 2015 +0200
-
-    Merge branch 'widget_context'
-
-commit b61e9d98594515ca514da10540c3b02b0bda1aca
-Merge: cb34144b 4bfddbb3
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun Aug 23 15:30:29 2015 +0200
-
-    Merge branch 'Xvfb-noreset'
-
-commit cb34144bf89ee3cb5f60e10decb1afb19e27402b
-Merge: 190beb3e d2407c3d
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun Aug 23 15:29:22 2015 +0200
-
-    Merge branch 'master' of https://github.com/kindlycat/awesome
-
-commit 190beb3e8ea95e3f333f3885ae434255c1178945
-Merge: 9408b61a 05da320c
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun Aug 23 15:27:10 2015 +0200
-
-    Merge branch 'tooltips-replace-on-geometry-changes' of https://github.com/blueyed/awesome
 
 commit 9408b61a974bc351e285592f36b2e325c66d5cf2
 Author: Uli Schlachter <psychon@znc.in>
@@ -15632,28 +13010,6 @@ Date:   Wed Aug 12 10:26:27 2015 +0200
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit f8ad2cd152aae840fd8e5de0f78b0d2c8efb473e
-Merge: 0bcc4aa5 11473aa4
-Author: Daniel Hahler <git@thequod.de>
-Date:   Wed Aug 12 16:38:33 2015 +0200
-
-    Merge pull request #320 from blueyed/widget-handle-non-int-geom
-    
-    Drawin: handle non-integer margins / geometry
-    
-    Closes https://github.com/awesomeWM/awesome/pull/320.
-
-commit 0bcc4aa505fc9e94e05db3679281372f1893ee43
-Merge: 9cbab8fa 57ec268b
-Author: Daniel Hahler <git@thequod.de>
-Date:   Wed Aug 12 16:37:11 2015 +0200
-
-    Merge pull request #324 from blueyed/improve-transient_for
-    
-    Improve transient for handling.
-    
-    Closes https://github.com/awesomeWM/awesome/pull/324.
-
 commit 57ec268b8e0e3666a29a25305f68e6031a2d9e48
 Author: Daniel Hahler <git@thequod.de>
 Date:   Sun Mar 29 20:20:53 2015 +0200
@@ -15707,17 +13063,6 @@ Date:   Thu Jul 16 15:33:20 2015 +0200
     
     Closes https://github.com/awesomeWM/awesome/pull/320.
 
-commit 9cbab8fa08d1edc576a22e53cb04473d1ccc55c3
-Merge: b959200b 251673f8
-Author: Daniel Hahler <git@thequod.de>
-Date:   Wed Aug 12 13:23:31 2015 +0200
-
-    Merge pull request #388 from blueyed/placement-next-to-mouse
-    
-    Add placement.next_to_mouse, use it for tooltips.
-    
-    Closes https://github.com/awesomeWM/awesome/pull/388.
-
 commit 251673f8b23691af0fbc6b49f5c6a86b32080420
 Author: Daniel Hahler <git@thequod.de>
 Date:   Sun Aug 2 19:38:26 2015 +0200
@@ -15732,28 +13077,6 @@ Author: Daniel Hahler <git@thequod.de>
 Date:   Sun Aug 2 19:36:56 2015 +0200
 
     Add awful.placement.next_to_mouse
-
-commit b959200bd08de1bec1881e960e9750b19c702c49
-Merge: d1bb53de 74276b3a
-Author: Daniel Hahler <git@thequod.de>
-Date:   Wed Aug 12 13:21:39 2015 +0200
-
-    Merge pull request #401 from psychon/simpler-timers
-    
-    Simpler timers
-    
-    Closes https://github.com/awesomeWM/awesome/pull/401.
-
-commit d1bb53de188689049003f9d5dd24e4242c47a251
-Merge: a166f868 cbba6157
-Author: Daniel Hahler <git@thequod.de>
-Date:   Wed Aug 12 13:18:04 2015 +0200
-
-    Merge pull request #393 from psychon/ci-script-improvements
-    
-    Ci script improvements
-    
-    Closes https://github.com/awesomeWM/awesome/pull/393.
 
 commit 1ebc34b5e9c31b82013ed7ef2c59716d31333267
 Author: Uli Schlachter <psychon@znc.in>
@@ -15951,20 +13274,6 @@ Date:   Wed Aug 5 17:10:56 2015 +0200
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit a166f868649762d541c1b674bc4a34caba5901f3
-Merge: fe027345 008cae50
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Wed Aug 12 09:40:12 2015 +0200
-
-    Merge branch 'keyboardlayout_no_layout_entry' of https://github.com/psychon/awesome
-
-commit fe027345dee212f416fa679a86f7915184e5f53b
-Merge: e4777393 ccaa8154
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Wed Aug 12 09:39:32 2015 +0200
-
-    Merge branch 'do-not-require-xdotool' of https://github.com/blueyed/awesome
-
 commit b47eabf4f042c16c72350b02bd22d51659bf29d3
 Author: actionless <actionless.loveless@gmail.com>
 Date:   Tue Aug 11 22:43:17 2015 +0200
@@ -16125,17 +13434,6 @@ Date:   Sat Aug 1 19:16:41 2015 +0200
     
     Closes https://github.com/awesomeWM/awesome/pull/385.
 
-commit aa93a8eac92a7aa5e578f05a710c46b8fd044955
-Merge: 87ee4808 9883d348
-Author: Daniel Hahler <git@thequod.de>
-Date:   Sun Aug 2 15:38:38 2015 +0200
-
-    Merge branch 'tooltips'
-    
-    Minor fixes / improvements to tooltips.
-    
-    Closes https://github.com/awesomeWM/awesome/pull/373.
-
 commit 9883d3484dd8b335f589235103fab6fe4d80c81f
 Author: Daniel Hahler <git@thequod.de>
 Date:   Wed Jul 29 21:03:58 2015 +0200
@@ -16220,15 +13518,6 @@ Date:   Sat Aug 1 18:23:52 2015 +0200
     
     Ref: https://github.com/awesomeWM/awesome/issues/301
 
-commit 65e9d6d59f018e113a12653f9f8d7452771dd692
-Merge: 1118ec44 0ea2bbb1
-Author: Daniel Hahler <git@thequod.de>
-Date:   Sat Aug 1 17:48:34 2015 +0200
-
-    Add dpi handling to naughty, awful.menu and awful.widget.common
-    
-    Closes https://github.com/awesomeWM/awesome/pull/312.
-
 commit 0ea2bbb126374c34339c6e635ade289157691ba2
 Author: Daniel Hahler <git@thequod.de>
 Date:   Wed Jul 15 18:38:57 2015 +0200
@@ -16303,15 +13592,6 @@ Date:   Wed Jul 29 18:44:18 2015 +0200
     
     Closes https://github.com/awesomeWM/awesome/pull/372.
 
-commit 896ab0a286285a6dac9f0b3f8a344159c905cbc2
-Merge: 9494f3f0 d3b682f2
-Author: Daniel Hahler <git@thequod.de>
-Date:   Sat Aug 1 11:22:00 2015 +0200
-
-    Merge pull request #376 from blueyed/more-tostring
-    
-    More tostring metamethods for drawable and wibox
-
 commit d3b682f2b684316580f7a83027c3ea0741389d0a
 Author: Daniel Hahler <git@thequod.de>
 Date:   Wed Jul 29 21:14:40 2015 +0200
@@ -16331,15 +13611,6 @@ Date:   Wed Jul 29 21:09:08 2015 +0200
     make_widget: keep original "tostring" value in parenthesis
     
     This provides the usual table ID, which can be useful during debugging.
-
-commit 9494f3f0c3c5a750ee50d96f4669565aaf4221ab
-Merge: 475b469f 904b7a88
-Author: Daniel Hahler <git@thequod.de>
-Date:   Sat Aug 1 11:19:11 2015 +0200
-
-    Merge pull request #377 from blueyed/naughty-focused-screen
-    
-    Naughty: default to focused screen
 
 commit 475b469f9620768e7470cb166716b29f740fbec4
 Author: Daniel Hahler <git@thequod.de>
@@ -16513,15 +13784,6 @@ Date:   Wed Jul 22 02:42:35 2015 +0200
     Follow-up to cbe684e (https://github.com/awesomeWM/awesome/pull/94).
     Closes https://github.com/awesomeWM/awesome/pull/334.
 
-commit c602eb4ff71135f44f0ff42f809338aba9c2231d
-Merge: c9454921 a239b2ca
-Author: Daniel Hahler <github@thequod.de>
-Date:   Mon Jul 27 13:58:35 2015 +0200
-
-    Merge pull request #352 from psychon/gears_cache
-    
-    Add gears.cache: a generic cache which may loose values at any time
-
 commit c94549217613281e86565946149bb9cf3b3c67b9
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Sun Jul 26 17:03:10 2015 +0200
@@ -16644,15 +13906,6 @@ Author: Daniel Hahler <git@thequod.de>
 Date:   Sat Jul 25 23:33:40 2015 +0200
 
     awesome-client: do not send empty requests
-
-commit 410a6e5bb266be5b5e0d5d61d6891c5fb5d1c8d2
-Merge: 0af7ce37 d22a65a1
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sat Jul 25 23:26:22 2015 +0200
-
-    Merge pull request #155 from silverhammermba/pango_color
-    
-    Replace color_strip_alpha with check_pango_color
 
 commit 27fb1707444b7767e569bb43cad5ab6402b8224b
 Author: Daniel Hahler <git@thequod.de>
@@ -16825,15 +14078,6 @@ Date:   Mon Jul 13 19:27:38 2015 +0200
     
     Closes https://github.com/awesomeWM/awesome/pull/308.
 
-commit 5a9ec82b95256b5cfbae0d76e081b029ac4ab5a0
-Merge: f070c4e0 6e97b5f8
-Author: Daniel Hahler <git@thequod.de>
-Date:   Wed Jul 22 13:54:56 2015 +0200
-
-    Merge branch 'better-error-handling'
-    
-    Closes https://github.com/awesomeWM/awesome/pull/311
-
 commit 6e97b5f8c559b22d5de749ef680711bd578f418d
 Author: Daniel Hahler <git@thequod.de>
 Date:   Thu Jul 16 15:25:39 2015 +0200
@@ -16992,15 +14236,6 @@ Date:   Wed Jul 15 18:47:20 2015 +0200
     
     Closes https://github.com/awesomeWM/awesome/pull/321.
 
-commit 8917972c16c510956d39fbd8c340fd197835d7f7
-Merge: 430fe7f7 18e9bfbc
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Thu Jul 16 12:38:15 2015 -0400
-
-    Merge pull request #315 from Elv13/fix_wfact
-    
-    client: do not assume that wfact exists
-
 commit 430fe7f7104140f0b32194e1ede6ccef75ab5370
 Author: Daniel Hahler <git@thequod.de>
 Date:   Thu Jul 16 17:05:46 2015 +0200
@@ -17058,15 +14293,6 @@ Date:   Tue Jul 14 00:20:31 2015 +0200
        (which wasn't the case with /bin/sh not pointing at bash before).
     
     Closes https://github.com/awesomeWM/awesome/pull/304.
-
-commit f37a3544de99217982028001df0877d28f1c8f3c
-Merge: d4c7a7ce 94814c75
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Jul 12 20:53:39 2015 +0200
-
-    Merge pull request #307 from blueyed/minor-style
-    
-    Various minor style / doc / comment fixes
 
 commit 94814c7512b2d5d1e6aaab4decc4881c49230b12
 Author: Daniel Hahler <git@thequod.de>
@@ -17258,24 +14484,6 @@ Date:   Tue Jul 7 18:07:59 2015 +0200
     a lot of signals.
     This patch makes it only call the last one through `timer.delayed_call`.
 
-commit 49bf6350179b1cfd989b4f00f111e82521ca5e52
-Merge: a09fee24 367ad2d9
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Tue Jul 7 16:24:12 2015 -0400
-
-    Merge pull request #297 from blueyed/tag-delete-single-call-to-client-tags
-    
-    awful.tag.delete: single call to #c:tags()
-
-commit a09fee243cdcdca9d897be85d883dafa038c3e4b
-Merge: d361eeab 63b19efe
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Tue Jul 7 16:09:22 2015 -0400
-
-    Merge pull request #295 from blueyed/doc-signals
-    
-    doc: signals: minor improvements, mainly for "tagged"
-
 commit 367ad2d9a64f0a7726da3225725700becc298ba5
 Author: Daniel Hahler <git@thequod.de>
 Date:   Tue Jul 7 18:42:24 2015 +0200
@@ -17347,24 +14555,6 @@ Date:   Sun Jul 5 14:45:51 2015 +0200
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit d51a647003908a9e052e6592a947e90342476a3c
-Merge: 768a5b18 c961622f
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Fri Jul 3 15:51:15 2015 -0400
-
-    Merge pull request #279 from actionless/useless_gapv3
-    
-    Useless gap v3
-
-commit 768a5b181e1cd5f2d05fa2b1c7adbf1826f70e15
-Merge: 33a6ade4 1992e1e4
-Author: Daniel Hahler <github@thequod.de>
-Date:   Fri Jul 3 19:11:09 2015 +0200
-
-    Merge pull request #273 from blueyed/cmake-no-recurse-into-build-dir
-    
-    awesomeConfig.cmake: do not use GLOB_RECURSE with *.c/*.h
-
 commit c961622fc053c0c52ac369b804aeef1a0a9e3b9d
 Author: actionless <actionless.loveless@gmail.com>
 Date:   Fri Jul 3 02:15:52 2015 +0200
@@ -17406,15 +14596,6 @@ Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Sun Feb 22 19:29:18 2015 +0000
 
     Add useless gap utility functions
-
-commit 33a6ade4d7e9cf7f3263745ff946737f4c41303e
-Merge: cec04b26 cb7f4b06
-Author: Daniel Hahler <github@thequod.de>
-Date:   Thu Jun 25 07:00:22 2015 +0200
-
-    Merge pull request #224 from blueyed/request-focus-signal
-    
-    Add 'request::focus' signal, use it with autofocus
 
 commit cb7f4b06eb80f6e6ac6c54df50d1f6ded50b53ce
 Author: Daniel Hahler <git@thequod.de>
@@ -17497,15 +14678,6 @@ Date:   Thu May 14 22:57:22 2015 +0200
     
     Closes https://github.com/awesomeWM/awesome/pull/229
 
-commit 61275ccba07bc6cbac14cffe1dca7b7f79b42747
-Merge: 38840c91 d990e791
-Author: Daniel Hahler <git@thequod.de>
-Date:   Thu Jun 25 06:37:42 2015 +0200
-
-    Merge branch 'psychon-weak_connect'
-    
-    Closes https://github.com/awesomeWM/awesome/pull/263
-
 commit d990e7918fd6dcf6fea98a1ac528c8fd95a03955
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Sun Jun 14 14:27:43 2015 +0200
@@ -17547,15 +14719,6 @@ Date:   Sun Jun 21 23:26:08 2015 +0200
     
     Closes https://github.com/awesomeWM/awesome/pull/270
 
-commit 7d430cf51a1d3e39a5a239b26a42691e9f759305
-Merge: 32b58425 ccb68431
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Mon Jun 22 16:28:42 2015 -0400
-
-    Merge pull request #274 from blueyed/spawn-warn-for-errors
-    
-    Call `warn` in case of errors in luaA_spawn
-
 commit 1992e1e42939f6ae25d74bc5e262ed4326aae1a9
 Author: Daniel Hahler <git@thequod.de>
 Date:   Mon Jun 22 13:29:42 2015 +0200
@@ -17589,15 +14752,6 @@ Author: actionless <actionless.loveless@gmail.com>
 Date:   Sun Jun 21 23:53:43 2015 +0200
 
     fix: rename the rest of *.lua.in files
-
-commit d4d5bbcd5d0206c86d390d5aaa1579e00177c85d
-Merge: 3b366f99 d2e25c35
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Jun 21 21:33:22 2015 +0200
-
-    Merge pull request #266 from awesomeWM/juw-docs
-    
-    docs: move documentation to C source
 
 commit 3b366f993c0e66e179a8482b2adb974a533374d3
 Author: Daniel Hahler <git@thequod.de>
@@ -17710,15 +14864,6 @@ Author: Heiko Becker <heirecka@exherbo.org>
 Date:   Sun Sep 7 19:33:18 2014 +0200
 
     Use version agnostic FindLua from cmake-3.0.0
-
-commit 4bea4554fba0df450904b27ff65419bbb4b8f138
-Merge: e25bc558 c2ee98b6
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Fri Jun 19 16:09:26 2015 -0400
-
-    Merge pull request #265 from blueyed/doc-improve-key
-    
-    doc: improve doc for key.key and awful.key
 
 commit e25bc558c42cba1304fa6d67e089d6f0e8452171
 Author: Daniel Hahler <git@thequod.de>
@@ -17914,26 +15059,6 @@ Date:   Wed Jun 10 18:06:02 2015 +0200
     This should improve performance and make it more reliable in general
     (also in terms of timeouts when cloning).
 
-commit 84d764f3ba2c8da7b9a40fa971be39674378f38b
-Merge: e30a8c19 594c01dc
-Author: Daniel Hahler <git@thequod.de>
-Date:   Wed Jun 10 17:51:41 2015 +0200
-
-    Merge pull request #227 from petoju/master
-    
-    Support for XKB - changing keyboard layouts
-    
-    Closes https://github.com/awesomeWM/awesome/pull/227
-
-commit e30a8c198af3af3aa7ac45111e0aa7b07fe02d8b
-Merge: 9c443adc e8fb93d2
-Author: Daniel Hahler <github@thequod.de>
-Date:   Mon Jun 1 23:38:08 2015 +0200
-
-    Merge pull request #243 from Elv13/fix_lua53
-    
-    Lua: use pushinteger for int type
-
 commit 594c01dc361d17d88dacae61efaef28c1705e8ef
 Author: Peter Junos <petoju@gmail.com>
 Date:   Wed May 27 02:09:34 2015 +0200
@@ -18061,15 +15186,6 @@ Date:   Wed May 13 11:36:05 2015 +0800
     
     Closes https://github.com/awesomeWM/awesome/pull/222.
 
-commit bafa12ca24850210e0474776539828d1b331e713
-Merge: 3618d95b 3b146b83
-Author: Daniel Hahler <github@thequod.de>
-Date:   Tue May 19 16:00:29 2015 +0200
-
-    Merge pull request #221 from anatol/master
-    
-    Use table.unpack() with Lua5.2 instead of deprecated unpack()
-
 commit 3618d95b11e4b01c95eae87d1c2f0137eb9059af
 Author: Daniel Hahler <git@thequod.de>
 Date:   Wed May 13 12:52:22 2015 +0200
@@ -18103,29 +15219,11 @@ Date:   Sun Apr 26 04:00:50 2015 +0200
     
     Closes https://github.com/awesomeWM/awesome/pull/208.
 
-commit dbd5aea7be9da8df9e26ca2de77ce943e0b6673b
-Merge: 344965a3 4845a73d
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Fri Apr 24 16:54:13 2015 -0400
-
-    Merge pull request #210 from Bew78LesellB/patch-1
-    
-    Update finder.lua.in
-
 commit 4845a73df234f0310102b5d5294516cc365db734
 Author: bew78 - lesell_b <Bew78LesellB@users.noreply.github.com>
 Date:   Fri Apr 24 22:47:06 2015 +0200
 
     Update finder.lua.in
-
-commit 344965a328feef76bee78fdb8dbb64562775b970
-Merge: d2ddb337 fc39db37
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Apr 19 19:02:32 2015 +0200
-
-    Merge pull request #206 from dodo/menu-fixes
-    
-    Fixes for awful.menu
 
 commit d2ddb3370830241c8ec3b5a23e3055a6b7f9f299
 Author: Daniel Hahler <git@thequod.de>
@@ -18170,24 +15268,6 @@ Date:   Sat Apr 18 08:53:57 2015 +0200
     Apparently the style to get the direction of a wibox.layout.* changed
     from calling get_dir to just accessing the attribute dir.
 
-commit 2f24ec69e10b5e7ad2cc4f328c45c0e3f51bac97
-Merge: 40e76cf9 d9b1d549
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Fri Apr 17 11:23:16 2015 -0400
-
-    Merge pull request #149 from lexa/master
-    
-    xkb: implementation of keyboard layout switcher
-
-commit 40e76cf92b9489360a84a20e247513c6064c325b
-Merge: c24862bd e1fa04a1
-Author: Daniel Hahler <github@thequod.de>
-Date:   Fri Apr 17 17:20:29 2015 +0200
-
-    Merge pull request #175 from blueyed/ewmh-fullmax-fix-offscreen
-    
-    ewmh: screen_change: fix off-screen geometries
-
 commit c24862bd45467b8d48a62e484c170a18bd9a940f
 Author: Julien Danjou <julien@danjou.info>
 Date:   Sat Apr 11 17:54:19 2015 +0200
@@ -18199,22 +15279,6 @@ Date:   Sat Apr 11 17:54:19 2015 +0200
     the original author of the awesome logo.
     
     Signed-off-by: Julien Danjou <julien@danjou.info>
-
-commit b4787f0252b3997593ebe8d1bcd946ea12e479e7
-Merge: 7ec0ae39 a899a466
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Apr 5 13:58:03 2015 +0200
-
-    Merge pull request #186 from blueyed/parse_command-handle-parse-error
-    
-    Set &error in parse_command, return it from luaA_spawn
-
-commit 7ec0ae39df42a364497fd2d6435d5cde5e1543c6
-Merge: 594825c9 0dcbf126
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sat Apr 4 10:03:22 2015 +0200
-
-    Merge branch 'master' of https://github.com/heirecka/awesome
 
 commit a899a46664d1267b488cf361aa10345d1735776e
 Author: Daniel Hahler <git@thequod.de>
@@ -18284,15 +15348,6 @@ Date:   Tue Mar 17 16:23:40 2015 +0100
     
     Fixes #138.
 
-commit 25a750cd4bb05f7e9c409ab5af588e55ab6c4216
-Merge: 4636b111 df173f7d
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Sat Mar 14 13:43:06 2015 -0400
-
-    Merge pull request #165 from psychon/unfocus-client
-    
-    Make client.focus = nil work (Closes #164)
-
 commit df173f7ddd27d4500558148ad2d3a93ab1737985
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Sat Mar 14 09:06:12 2015 +0100
@@ -18329,15 +15384,6 @@ Date:   Mon Feb 23 19:08:24 2015 +0300
     configuration can be set by tools like setxkbmap or by any third-party
     tools.
 
-commit dde5b1b4d1a1ecae1bf395b229318489a42356f8
-Merge: 98dd0d6b 5b81a0db
-Author: Daniel Hahler <git@thequod.de>
-Date:   Sat Feb 28 23:54:24 2015 +0100
-
-    Merge branch 'taptap-notification-text-update'
-    
-    Closes https://github.com/awesomeWM/awesome/pull/145
-
 commit 5b81a0db6079f5087bf5cf6290ce5973bd7d3b6d
 Author: taptap <alexey.e.egorov@gmail.com>
 Date:   Fri Feb 27 23:45:03 2015 +0300
@@ -18348,15 +15394,6 @@ Date:   Fri Feb 27 23:45:03 2015 +0300
     notifications, which is necessary for OSD creation by means of naughty.
     
     Signed-off-by: taptap <alexey.e.egorov@gmail.com>
-
-commit 98dd0d6b63c0b77b29f625dada299745ccccb444
-Merge: 20ca9893 ca89f0f3
-Author: Daniel Hahler <git@thequod.de>
-Date:   Sat Feb 28 23:22:29 2015 +0100
-
-    Merge branch 'docs-overhaul'
-    
-    Closes https://github.com/awesomeWM/awesome/pull/146
 
 commit ca89f0f3114b9ef9686ff0cb35a74cd4fc3a57e5
 Author: Julian Wollrath <jwollrath@web.de>
@@ -18802,24 +15839,6 @@ Date:   Wed Feb 25 21:52:03 2015 +0100
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit 2f0a7f9de40bb82b44c1115efab7fb3049bc4833
-Merge: 20cdb5d4 c88c51f7
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Tue Feb 24 20:52:19 2015 +0000
-
-    Merge pull request #150 from Elv13/fix_arrange_error
-    
-    layout: Fix delayed arrange regression
-
-commit 20cdb5d4397f1cf5b3886c4ed83be55bbb747036
-Merge: 015e3e98 025b2841
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Tue Feb 24 15:55:44 2015 +0000
-
-    Merge pull request #152 from blueyed/autofocus-use-request-activate
-    
-    autofocus: emit `request::activate` signal
-
 commit 025b2841da655eeaed353c0dd880557d2c5e2c23
 Author: Daniel Hahler <git@thequod.de>
 Date:   Tue Feb 24 15:33:49 2015 +0100
@@ -18831,15 +15850,6 @@ Date:   Tue Feb 24 15:33:49 2015 +0100
     
     Using the `request::activate` signal makes the autofocus handler more
     flexible, and will raise the focused client by default.
-
-commit 015e3e985b1b1aacf5c0170b9873facf7cbce91d
-Merge: 649b0ce5 2a9b1d00
-Author: Daniel Hahler <github@thequod.de>
-Date:   Tue Feb 24 12:21:23 2015 +0100
-
-    Merge pull request #144 from actionless/menubar-paginated-scroll
-    
-    feat(lib: menubar): add paginated scrolling
 
 commit 2a9b1d00e1e127380dd5c51463b30db1584b9fe6
 Author: actionless <actionless.loveless@gmail.com>
@@ -18854,15 +15864,6 @@ Date:   Sun Feb 22 22:32:16 2015 +0000
 
     layout: Fix delayed arrange regression
 
-commit 649b0ce52d5daf89918a591bb5028a7e1ad9e922
-Merge: d1984a7a 517d6049
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Feb 22 21:40:53 2015 +0100
-
-    Merge pull request #147 from kmiller13/master
-    
-    Add middle anchors for naughty notifications
-
 commit 517d6049c871488a12134d8f53983d4052ce7874
 Author: Kenton <kmiller13@users.noreply.github.com>
 Date:   Sat Feb 21 17:37:30 2015 -0500
@@ -18870,42 +15871,6 @@ Date:   Sat Feb 21 17:37:30 2015 -0500
     added middle anchors for naughty notifications
     
     top_middle and bottom_middle can be used as position arguments for new naughty.notifications
-
-commit d1984a7a1f210ee0c8be3b8d68f956c2e647b207
-Merge: 6bffd193 5140ef17
-Author: Daniel Hahler <github@thequod.de>
-Date:   Fri Feb 20 23:25:38 2015 +0100
-
-    Merge pull request #95 from blueyed/signal-client-property-screen-old
-    
-    Send old_screen with "property::screen" client signal
-
-commit 6bffd1938a273f4ad71bbb8ec24400f9f2b8fe21
-Merge: 696f93f4 289bc26a
-Author: Daniel Hahler <github@thequod.de>
-Date:   Thu Feb 19 22:39:28 2015 +0100
-
-    Merge pull request #132 from awesomeWM/doc-fixes
-    
-    A new set of doc fixes / improvements
-
-commit 696f93f4d57ac0f7be80883f56b76ca63a03def0
-Merge: aa0b9bec 5d0fc566
-Author: Daniel Hahler <github@thequod.de>
-Date:   Thu Feb 19 22:38:38 2015 +0100
-
-    Merge pull request #123 from blueyed/tooltip-add-delay_show
-    
-    awful.tooltip: add "delay_show" arg
-
-commit aa0b9becf78b4f05bb22dec0648ff612f5101b02
-Merge: c26a9617 52ec0ebd
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Thu Feb 19 19:33:36 2015 +0000
-
-    Merge pull request #101 from silverhammermba/drylayouts
-    
-    DRY off layout code
 
 commit 5d0fc566e996c59ebf917daf16afcec4ec31f41e
 Author: Daniel Hahler <git@thequod.de>
@@ -18926,42 +15891,6 @@ Date:   Wed Feb 18 12:49:21 2015 +0100
     therefore needs to explicitly require them.
     
     Ref: https://github.com/awesomeWM/awesome/pull/139
-
-commit 9c80d7989d60fa700c6c982e168627f067826aba
-Merge: 9702fc63 2dc14b10
-Author: Daniel Hahler <github@thequod.de>
-Date:   Wed Feb 18 23:34:42 2015 +0100
-
-    Merge pull request #124 from blueyed/cmake-add-dirty-to-git-describe
-    
-    cmake: add '--dirty' flag to 'git describe' for version
-
-commit 9702fc63c69832fbcbb72d2c331ec8ae23dbf7dc
-Merge: e36b2549 9f8dff8a
-Author: Daniel Hahler <github@thequod.de>
-Date:   Wed Feb 18 23:34:29 2015 +0100
-
-    Merge pull request #125 from blueyed/fix-placement-no-offscreen-xy-at-0
-    
-    awful.placement.no_offscreen: no negative x/y
-
-commit e36b2549e71a98e1833c33a72a699acd244b8051
-Merge: 6c0a21ec 8b6acb83
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Wed Feb 18 21:04:42 2015 +0000
-
-    Merge pull request #137 from blueyed/fix-urgent-tags
-    
-    awful.tag: fix call to update_urgent from client_untagged
-
-commit 6c0a21ec0427a5a55a96bd66927c3656254fbb55
-Merge: c9f08fb7 6adeafde
-Author: Daniel Hahler <github@thequod.de>
-Date:   Wed Feb 18 21:37:56 2015 +0100
-
-    Merge pull request #142 from psychon/check-cairo-setup
-    
-    Test if cairo-xcb is usable during startup
 
 commit 6adeafdec3cc5f5d44e2ac8eeb370d9eaf9be7d6
 Author: Uli Schlachter <psychon@znc.in>
@@ -18998,15 +15927,6 @@ Author: Daniel Hahler <git@thequod.de>
 Date:   Tue Feb 17 15:23:42 2015 +0100
 
     doc: link to github in README for bugs
-
-commit 2328b57ff0babe37aa8dd1e5f341c6dba5a1d735
-Merge: a4d42048 246de56a
-Author: Daniel Hahler <git@thequod.de>
-Date:   Tue Feb 17 14:12:40 2015 +0100
-
-    Merge branch 'autofocus-delayed-call'
-    
-    Fixes #134.
 
 commit 289bc26a3c7b8902d3745f1dd8e3a86c08933cab
 Author: Daniel Hahler <git@thequod.de>
@@ -19082,24 +16002,6 @@ Date:   Sat Jan 31 22:34:43 2015 +0100
     
     This should improve layout re-arranging with 2+ screens.
 
-commit a4d42048c22cf394f8f9937222012f6f63f764da
-Merge: a791e695 f5610fa9
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Feb 15 13:13:46 2015 +0100
-
-    Merge pull request #128 from psychon/client-valid
-    
-    objects: Add .valid property (Fixes #110)
-
-commit a791e695bba7d5efa8ccb8507f20a741f9411c5d
-Merge: 17776051 0d17ac0d
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Feb 15 13:12:57 2015 +0100
-
-    Merge pull request #121 from awesomeWM/doc-fix-tooltip
-    
-    doc: fix/improve markup for awful.tooltip
-
 commit f5610fa9203c609f0761e75c1a66707e4e2b7d39
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Sun Feb 15 12:16:03 2015 +0100
@@ -19129,15 +16031,6 @@ Date:   Sat Feb 14 20:31:53 2015 +0100
 
     doc: fix/improve markup for awful.tooltip
 
-commit 72659a5ebbf3b19486a7a6bd1065035f136c667e
-Merge: 3ad76159 8919faa7
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Feb 15 11:49:50 2015 +0100
-
-    Merge pull request #122 from blueyed/fix-ldoc-doxygen-warnings
-    
-    doc: fix doxygen settings / warnings
-
 commit 3ad76159079daa6075b07f394c8c8fa1ffc30641
 Author: Daniel Hahler <git@thequod.de>
 Date:   Sun Feb 15 11:28:07 2015 +0100
@@ -19153,30 +16046,6 @@ Date:   Sun Feb 15 10:52:35 2015 +0100
     This works around a crash and is not really required.
     
     Fixes https://github.com/awesomeWM/awesome/issues/127.
-
-commit 8531fef0d334299f4586a9762529c6e2c5ded56f
-Merge: f2aa8d39 5d7d3fa6
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sun Feb 15 01:47:25 2015 +0100
-
-    Merge pull request #119 from psychon/apply_size_hints
-    
-    Add c:apply_size_hints() to client objects
-
-commit f2aa8d39edf1427a635a0be3cbc96c7b2f54eb5b
-Merge: e30935c9 1306a543
-Author: Daniel Hahler <git@thequod.de>
-Date:   Sat Feb 14 23:22:01 2015 +0100
-
-    Merge branch 'ewmh_urgent_v1'
-    
-     - Fix / revert changing of file modes for: lib/awful/tag.lua.in,
-       lib/awful/widget/taglist.lua.in, objects/client.c and property.h.
-     - Fix typo / punctuation in doc.
-     - Use `capi.client.connect_signal` instead of `add_signal`
-       (Ref: https://github.com/Elv13/awesome-1/commit/b292b09#commitcomment-9750466).
-    
-    Pull request: https://github.com/awesomeWM/awesome/pull/33
 
 commit 9f8dff8a14e5423ff4dafc250623f4207efaaf8b
 Author: Daniel Hahler <git@thequod.de>
@@ -19201,33 +16070,6 @@ Date:   Sat Feb 14 21:30:29 2015 +0100
 
     cmake: add '--dirty' flag to 'git describe' for version
 
-commit e30935c9341900b792e6e7e77216f99930b7b7e7
-Merge: 6183d858 f4538637
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sat Feb 14 20:58:46 2015 +0100
-
-    Merge pull request #91 from Ram-Z/icon_only
-    
-    widget/taglist: don't add margin when icon_only = true
-
-commit 6183d8587aa53ad222a4dcfe5dcb9cd939caa569
-Merge: 6bd9a21c 2174b80c
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sat Feb 14 20:55:04 2015 +0100
-
-    Merge pull request #118 from blueyed/fix-proper-activate-via-rules
-    
-    Properly fix activating an "invisible" client via rules
-
-commit 6bd9a21c39b21d2f45b3cfa60e08eb9f6339f2dd
-Merge: dc6b2202 fd1b6b15
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sat Feb 14 20:45:34 2015 +0100
-
-    Merge pull request #120 from psychon/emit_startup
-    
-    Emit startup signal (#108)
-
 commit 8919faa7b3eb7616d6e55933da518eb93b8ab4f0
 Author: Daniel Hahler <git@thequod.de>
 Date:   Sat Feb 14 18:55:42 2015 +0100
@@ -19251,15 +16093,6 @@ Date:   Mon Jan 26 16:50:15 2015 +0000
     
     Fixes FS#1199 - widgets add an unnecessary margin if icon_only= true
     https://awesome.naquadah.org/bugs/index.php?do=details&task_id=1199
-
-commit dc6b22022458dad0cb7ff0e6a85ef92314c1b4e3
-Merge: 8fa13092 e510799a
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sat Feb 14 17:12:17 2015 +0100
-
-    Merge pull request #97 from blueyed/client-set-name
-    
-    Add support for setting client.name
 
 commit e510799a7c33bd58513abf7478ca6652883a2ca3
 Author: Daniel Hahler <git@thequod.de>
@@ -19288,15 +16121,6 @@ Date:   Sat Feb 14 15:41:11 2015 +0100
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit 8fa13092790041d462d7cc114853e5e10d93421f
-Merge: 74106462 0a76e41c
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sat Feb 14 15:38:36 2015 +0100
-
-    Merge pull request #105 from blueyed/awful-util-deprecate-once-per-traceback
-    
-    awful.util.deprecate: display deprecations only once
-
 commit 0a76e41cb850e67c34085a4e3aa87b11424588d7
 Author: Daniel Hahler <git@thequod.de>
 Date:   Tue Feb 10 00:59:15 2015 +0100
@@ -19323,15 +16147,6 @@ Date:   Thu Feb 12 23:09:27 2015 +0100
     This uses timer.delayed_call to arrange the layouts only once per main
     loop.
 
-commit ffa0001d3495e1313780a7ab44a814dd8527db07
-Merge: b4d67779 c8cbada8
-Author: Daniel Hahler <github@thequod.de>
-Date:   Sat Feb 14 14:55:28 2015 +0100
-
-    Merge pull request #96 from blueyed/emit-tag-history-update-from-restore
-    
-    Emit tag::history::update signal from tag.history.restore
-
 commit 2174b80c3fbb4ad6d380069dd02f7883f1258333
 Author: Daniel Hahler <git@thequod.de>
 Date:   Sat Feb 14 14:09:10 2015 +0100
@@ -19341,16 +16156,6 @@ Date:   Sat Feb 14 14:09:10 2015 +0100
     This removes the check for `client_maybevisible`, which now allows for
     `client.focus = c` from Lua for clients that do not are assigned to a
     tag yet.
-
-commit b77e23c04717f4997088cc6aa66ea28d540c32d7
-Merge: b4d67779 76ede0ef
-Author: Daniel Hahler <git@thequod.de>
-Date:   Sat Feb 14 14:37:25 2015 +0100
-
-    Merge branch 'partly-revert-pr-87' into fix-proper-activate-via-rules
-    
-    This reverts PR #87, except for f562b4a ("luaA_object_emit_signal: check
-    for valid object").
 
 commit 76ede0ef45228535a78146f30883b13b7d741d61
 Author: Daniel Hahler <git@thequod.de>
@@ -19386,24 +16191,6 @@ Date:   Sat Feb 14 13:38:01 2015 +0100
     actually test the right thing and I took the liberty to add some more tests.
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit c74b11fee819df1130cd6f3770626d1b99bc6d15
-Merge: 5fde04c4 f562b4a6
-Author: Daniel Hahler <github@thequod.de>
-Date:   Fri Feb 13 02:02:15 2015 +0100
-
-    Merge pull request #87 from blueyed/fix-client-visible-during-activate
-    
-    awful.rules.execute: use delayed_call for emitting request::activate
-
-commit 5fde04c4cf61130e78b19d9323d5fbb430f1939b
-Merge: 627f8ea2 a0e7f88b
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Wed Feb 11 23:48:49 2015 +0000
-
-    Merge pull request #104 from blueyed/util.file_readable-check-for-not-dir
-    
-    awful.util.file_readable: return false for dirs
 
 commit 1306a543c287cf8e8cbe5c9f26e313a6bc9c2112
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
@@ -19475,33 +16262,6 @@ Date:   Wed Jan 21 12:38:49 2015 +0100
     to get `awesome.startup` right.
     
     Ref: https://github.com/awesomeWM/awesome/commit/90fde139#commitcomment-9308225
-
-commit 3ab3bb900ae327b6c6992f028a7c94210eb7fc86
-Merge: 3d3c2167 4557b59a
-Author: Daniel Hahler <github@thequod.de>
-Date:   Tue Feb 10 09:33:33 2015 +0100
-
-    Merge pull request #93 from blueyed/enforce-client-geometry
-    
-    awful.ewmh: Enforce client geometry (FS#764, FS#1216)
-
-commit 3d3c2167058de0a1a1dae4c3cf9b9a609705e2f0
-Merge: 2d54ee27 a6718a4a
-Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
-Date:   Mon Feb 9 19:50:18 2015 +0000
-
-    Merge pull request #106 from blueyed/traceback-with-imagebox-set_image-error
-    
-    Print debug.traceback() with imagebox:set_image, when reading image failed
-
-commit 2d54ee271dee96fa127ab982289cb5feac06abbe
-Merge: 3a160c93 60e04d3a
-Author: Daniel Hahler <git@thequod.de>
-Date:   Mon Feb 9 20:40:02 2015 +0100
-
-    Merge branch 'menubar-icons'
-    
-    Closes: https://github.com/awesomeWM/awesome/pull/100
 
 commit 60e04d3ae3606e815c7e8599ba4485fe4891ac04
 Author: Daniel Hahler <git@thequod.de>
@@ -19614,20 +16374,6 @@ Date:   Wed Jan 21 09:23:47 2015 +0100
     completion: quote strings passed to the shell
     
     The strings passed to the shell completion machinery need to be quoted.
-
-commit 0469cb4481c10a1bf0f378a9b8b8d4305c34ce25
-Merge: 70bcdef1 d268dba0
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Fri Jan 23 21:02:03 2015 +0100
-
-    Merge branch 'pr=desktop-name' of git://github.com/roysc/awesome
-
-commit 70bcdef1fdf2455021110defb4c9209d63bb1209
-Merge: 254e50d8 0c06d378
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Fri Jan 23 21:01:17 2015 +0100
-
-    Merge branch 'master' of git://github.com/AlexisBRENON/awesome
 
 commit 254e50d88c5f58cb8b736dbb4681d020ddb88919
 Author: Uli Schlachter <psychon@znc.in>
@@ -19845,34 +16591,6 @@ Date:   Sat Jan 10 16:53:59 2015 +0100
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit 0f02ed0e15adfec476e86777dc7529af9b008267
-Merge: ed3f93ce 6f5ec2ab
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sat Jan 10 12:56:46 2015 +0100
-
-    Merge branch 'patch-1' of git://github.com/findkiko/awesome
-
-commit ed3f93ceb9be8e0f3973c383c57cef7c192d9bec
-Merge: 462518f9 8261e02a
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sat Jan 10 01:22:47 2015 +0100
-
-    Merge branch 'simplify-calc_timeout' of git://github.com/blueyed/awesome
-
-commit 462518f92638dddf0e06bf03fd29c216c39fea1b
-Merge: 33196d39 ac5f8c69
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sat Jan 10 01:22:23 2015 +0100
-
-    Merge branch 'master' of git://github.com/barlik/awesome
-
-commit 33196d39ecf0d60477f1b210e1f4fe1bfe0078b4
-Merge: 3aeac387 28a6468f
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sat Jan 10 01:20:16 2015 +0100
-
-    Merge branch 'notification_actions_master' of git://github.com/fbarthelery/awesome
-
 commit 3aeac3870ca48550a165af3e8f0a81b2b01376b3
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Sat Jan 10 00:04:11 2015 +0100
@@ -20079,53 +16797,11 @@ Date:   Sun Nov 30 15:27:28 2014 -0800
     
     Is there a reason it shouldn't be on by default? I'm not familiar enough with the code-base to tell if it will clash with anything.
 
-commit bbbfcf126a0f5086c00f51bdd6b180b5915bb772
-Merge: 933c0e43 7c4010ee
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sat Nov 8 23:55:57 2014 +0100
-
-    Merge branch 'fix-ldoc-set-spacing' of git://github.com/actionless/awesome
-
-commit 933c0e4325cb1189fc4c4e8650a65006513c416e
-Merge: 6f992f13 0b33e4c9
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sat Nov 8 23:55:16 2014 +0100
-
-    Merge branch 'fix_FS1155' of git://github.com/Elv13/awesome-1
-
 commit 7c4010eea341385f2ef32f1cad8f5e501ccc183b
 Author: actionless <actionless.loveless@gmail.com>
 Date:   Sat Nov 8 01:08:26 2014 +0100
 
     fix(lib: wibox: layout): fixed ldoc for set_spacing method
-
-commit 6f992f13b0de9aaf5c6ccf3e444538e9d747da57
-Merge: 44fb6e4d 848aadf9
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Fri Nov 7 22:12:42 2014 +0100
-
-    Merge branch 'layout_spacing' of git://github.com/Elv13/awesome-1
-
-commit 44fb6e4de23ca9b1fa475fb824e9fe1c82a18c9e
-Merge: 14e7274c d2168a98
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Fri Nov 7 21:48:40 2014 +0100
-
-    Merge branch 'ewmh-activate-on-startup' of git://github.com/blueyed/awesome
-
-commit 14e7274cc7206a74308d10bfce71ddbb07b7d6f4
-Merge: 904b679b 37684abe
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Fri Nov 7 21:46:59 2014 +0100
-
-    Merge branch 'request_context_v2' of git://github.com/Elv13/awesome-1
-
-commit 904b679bc671a8b2a4627a6758cd680e27375d4c
-Merge: 8d7b0fee 45ad4459
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Fri Nov 7 21:46:09 2014 +0100
-
-    Merge branch 'tag_index_v1' of git://github.com/Elv13/awesome-1
 
 commit d2168a9889e57dab12345a166e3093a4945f8bab
 Author: Daniel Hahler <git@thequod.de>
@@ -20174,39 +16850,11 @@ Date:   Sat Oct 18 21:41:38 2014 +0200
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit 1c72186cbcf0100609f7ecc258990e4c6bfaac82
-Merge: a764afb8 3ff24467
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sat Oct 18 10:02:13 2014 +0200
-
-    Merge branch 'fix_tag_remove_v1' of git://github.com/Elv13/awesome-1
-
-commit a764afb81e1ce5f8a7700f96edde1ef553eb1848
-Merge: dd2f805e 4120e006
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sat Oct 18 10:01:00 2014 +0200
-
-    Merge branch 'layout_unit_testability_V2' of git://github.com/Elv13/awesome-1
-
 commit 848aadf95cd5a28674c7ee3b11ecfdcbe7aabbc8
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Sat Oct 18 01:17:46 2014 -0400
 
     wibox.layout: Add fixed and flex layouts widget spacing property
-
-commit dd2f805e09dee8afeeb4bdd78a5bce6e3829152b
-Merge: f3874e2f dfaef973
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Fri Oct 17 10:37:50 2014 +0200
-
-    Merge branch 'tag_swap_V2' of git://github.com/Elv13/awesome-1
-
-commit f3874e2fc413d5c6759ebce6f95480c627229f09
-Merge: cf9db056 6d20094c
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Fri Oct 17 10:36:54 2014 +0200
-
-    Merge branch 'fix_tag_history_V2' of git://github.com/Elv13/awesome-1
 
 commit cf9db056f957f26b9b63c67b61568e36bbd01c66
 Author: Uli Schlachter <psychon@znc.in>
@@ -20326,13 +16974,6 @@ Date:   Sun Oct 5 10:47:39 2014 +0200
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit 57b6433b5317bb746a61a6aa84d6b66d506a5245
-Merge: a113fe0f f2f6eb68
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Thu Sep 25 21:11:41 2014 +0200
-
-    Merge branch 'menubar-skip-comments-in-desktop-files' of git://github.com/blueyed/awesome
-
 commit f2f6eb68214df6369486c55563b957c3572a1c9d
 Author: Daniel Hahler <git@thequod.de>
 Date:   Thu Sep 25 02:47:40 2014 +0200
@@ -20384,13 +17025,6 @@ Date:   Tue Sep 2 22:07:53 2014 +0200
     
     Fixes https://awesome.naquadah.org/bugs/index.php?do=details&task_id=1252
 
-commit a64f8b1385945bd0d949fcb22f9ec1b1c28ad6d9
-Merge: 93905348 b6d32b13
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Tue Sep 2 14:21:42 2014 +0200
-
-    Merge branch 'fix-ldoc-usage' of git://github.com/blueyed/awesome
-
 commit b6d32b136e750af010c69b39d0e268c747f25ffa
 Author: Daniel Hahler <git@thequod.de>
 Date:   Thu Aug 28 19:45:46 2014 +0200
@@ -20405,13 +17039,6 @@ Date:   Fri Jun 13 13:36:30 2014 +0200
     
     multiple tag selection wasn't highlighting properly when *_occupied is set in theme table
 
-commit e3c594823a08b607cde1ccf182a5869f78c63cfd
-Merge: 0dc6b7f7 1e6f9f22
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun Aug 24 11:56:03 2014 +0200
-
-    Merge branch 'master' of git://github.com/tusj/awesome
-
 commit 0dc6b7f7246e7bab87c8a3065d482b85c2d31dd0
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Sun Aug 24 11:54:12 2014 +0200
@@ -20421,13 +17048,6 @@ Date:   Sun Aug 24 11:54:12 2014 +0200
     by introducing some extra variables that server as some documentation.
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit 19429864688165e2e4cc17ab432519ffb7447792
-Merge: 6bc81f5a b6cdccda
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun Aug 24 11:46:13 2014 +0200
-
-    Merge branch 'patch-1' of git://github.com/SammysHP/awesome
 
 commit 6bc81f5a361e758e3cc0dbb367c16a9fce63d3e9
 Author: Uli Schlachter <psychon@znc.in>
@@ -20478,13 +17098,6 @@ Date:   Wed Aug 20 11:40:50 2014 +0200
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit d4d729e216e260a1e70bb9c82702f9112937bb4c
-Merge: e4f352f3 ac50f4b4
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Wed Aug 20 11:32:52 2014 +0200
-
-    Merge branch 'master' of git://github.com/memeplex/awesome
-
 commit e4f352f3904c00f36d62e04df3dba853c73948e2
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Wed Aug 20 11:26:09 2014 +0200
@@ -20529,13 +17142,6 @@ Date:   Sun Jun 8 20:18:09 2014 +0200
     gears.wallpaper: Center maximized if no offset set
     
     maximized() used to align the image with (0,0) so that it is shifted to the right or bottom. Most wallpapers are designed from the center, so this behavior is not desired usually. With this commit the wallpaper is centered when no offset is set. To get the old behavior use {x=0, y=0} for the offset parameter.
-
-commit 9a0ba0ff5791f247fb8a0067f304ef1e4822028f
-Merge: 3dd0c442 aedcd90d
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun May 11 17:28:29 2014 +0200
-
-    Merge branch 'fix-clients-length' of https://github.com/tail/awesome
 
 commit 3dd0c442a031f174000950981154139879933ab0
 Author: Uli Schlachter <psychon@znc.in>
@@ -20597,13 +17203,6 @@ Date:   Mon Apr 21 19:30:03 2014 +0200
     function.
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit b6816aec2af2ef8e4700ced6c270884b70553539
-Merge: a90f0c97 6d04528b
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Mon Apr 21 11:35:16 2014 +0200
-
-    Merge remote-tracking branch 'blueyed/remember-layout-across-restarts'
 
 commit a90f0c977540fb01ca62bfb6a4361f0182abb9cd
 Author: Uli Schlachter <psychon@znc.in>
@@ -20691,13 +17290,6 @@ Date:   Sun Apr 13 12:22:24 2014 +0200
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit d76d3e0b6a00b8b289b3801ba197e0dae732a92d
-Merge: 1090719d b4b6e6c1
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sat Apr 12 16:15:11 2014 +0200
-
-    Merge git://github.com/Teknocrat/awesome
-
 commit 1090719d677c86e90a1394a34f0effb418728493
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Sat Apr 12 12:18:34 2014 +0200
@@ -20774,13 +17366,6 @@ Date:   Wed Apr 9 21:49:27 2014 +0200
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit 945c6c6223954e603cb3db2cf2d04e5505387b69
-Merge: 7349f3b9 8ceb8212
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Tue Apr 8 23:47:54 2014 +0200
-
-    Merge remote-tracking branch 'blueyed/README'
-
 commit 7349f3b902cf8bc3dc425963e449ce3201dfc537
 Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Sat Mar 15 18:53:01 2014 -0400
@@ -20836,13 +17421,6 @@ Date:   Wed Apr 2 22:48:06 2014 +0200
     Fix this by just not drawing anything if there is no space available.
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit afa50904fb1c79a24ddda8fb242afe2dcc1de841
-Merge: a7902f62 df23964b
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Tue Apr 1 16:31:03 2014 +0200
-
-    Merge remote-tracking branch 'blueyed/awful-rules-optional-callback'
 
 commit a7902f626049662e889230615b55fce0d295aa2d
 Author: Uli Schlachter <psychon@znc.in>
@@ -21077,13 +17655,6 @@ Date:   Sat Mar 29 21:41:47 2014 +0100
     
     Signed-off-by: Uli Schlachter <psychon@znc.in>
 
-commit 2dc28b29e905fb794cbdd3c7c747ef2f9c2bffce
-Merge: fac9b665 c11153c6
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sat Mar 29 18:12:37 2014 +0100
-
-    Merge remote-tracking branch 'blueyed/fix-restore-in-tag.delete'
-
 commit fac9b6659210d994986cb4f3fceb0ffd33add7cc
 Author: Daniel Hahler <git@thequod.de>
 Date:   Fri Mar 28 15:17:41 2014 +0100
@@ -21103,13 +17674,6 @@ Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
 Date:   Wed Mar 26 18:56:10 2014 -0400
 
     Make 'layouts' global
-
-commit 1c19d4c655c18f235862216f264b6b9e7da2be29
-Merge: 163fc18a bc4a5f38
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Fri Mar 28 13:18:22 2014 +0100
-
-    Merge remote-tracking branch 'blueyed/fix-tag-signal-handler-wrt-startup'
 
 commit 163fc18ab844385fe021d88599005490958b8397
 Author: Uli Schlachter <psychon@znc.in>
@@ -21164,20 +17728,6 @@ Date:   Wed Mar 26 14:28:04 2014 +0100
     unintuitive, special behavior. Instead, when someone wants us to set a screen,
     we really should do so.
 
-commit a73bcd732a4b5ef081775a6e23c496220b09d124
-Merge: 6116c902 fc9284fc
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Mon Mar 24 22:22:11 2014 +0100
-
-    Merge remote-tracking branch 'blueyed/magnifier-fix-raising'
-
-commit 6116c90210b24f2348f7e9a7fcae117a8a8fac4c
-Merge: 981acad2 8194d555
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Mon Mar 24 22:18:27 2014 +0100
-
-    Merge remote-tracking branch 'blueyed/client-set-screen-with-tags'
-
 commit 981acad29d96582eab69ddaf08cff22e2a3aaf41
 Author: Uli Schlachter <psychon@znc.in>
 Date:   Mon Mar 24 22:05:21 2014 +0100
@@ -21226,20 +17776,6 @@ Date:   Mon Mar 24 09:49:30 2014 +0100
     Revert "Set c.screen in ewmh.tag and before tags in rules.execute"
     
     This reverts commit 3f9c439311a95fe6bdf083f09363ae196d8e1140.
-
-commit ca434a7e3a6d9136af09e3a69de714bf221ce34d
-Merge: 92b86a56 56c8e6fe
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Mon Mar 24 09:23:04 2014 +0100
-
-    Merge remote-tracking branch 'blueyed/expand-tilde-path-in-beautiful-init'
-
-commit 92b86a56f75bf1794df374ab1c6c81d0df287480
-Merge: e13d8489 3f9c4393
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Mon Mar 24 09:21:13 2014 +0100
-
-    Merge remote-tracking branch 'blueyed/client-set-screen-with-tags'
 
 commit c11153c6309a3cd03829dbca2e62d5b857ba92f2
 Author: Daniel Hahler <git@thequod.de>

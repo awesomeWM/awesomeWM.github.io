@@ -53,7 +53,7 @@ Da Risk (3):
       Add luadoc for dbus.emit_signal()
       naughty: make sendNotificationClosed() and sendActionInvoked() local
 
-Daniel Hahler (539):
+Daniel Hahler (369):
       Emit tag::history::update signal from tag.history.restore
       Add a "deep" option to awful.util.table.clone
       Fallback to comparing layout names in awful.layout.inc
@@ -90,59 +90,35 @@ Daniel Hahler (539):
       Move building of icon lookup path into get_icon_lookup_path
       menubar: icon_formats: svg is supported
       menubar: get_icon_lookup_path: only look in apps/ with icon_themes
-      Merge branch 'menubar-icons'
-      Merge pull request #93 from blueyed/enforce-client-geometry
       awful.rules.execute: use delayed_call for emitting request::activate
       Revert "Partly revert commit 90fde1393f"
       luaA_object_emit_signal: check for valid object
       Remove 'enc=utf-8' from Vim modelines
-      Merge pull request #87 from blueyed/fix-client-visible-during-activate
       Revert "Revert "Partly revert commit 90fde1393f""
       Revert "awful.rules.execute: use delayed_call for emitting request::activate"
-      Merge branch 'partly-revert-pr-87' into fix-proper-activate-via-rules
       client_focus_update: allow "invisible" clients
-      Merge pull request #96 from blueyed/emit-tag-history-update-from-restore
       Do layout.arrange only once per main loop
       Use lgi.GLib.String():append(tb):hash()
-      Merge pull request #105 from blueyed/awful-util-deprecate-once-per-traceback
       Add support for setting client.name
-      Merge pull request #97 from blueyed/client-set-name
       doc: remove obsolete doxygen settings
       doc: fix warnings from doxygen
-      Merge pull request #120 from psychon/emit_startup
-      Merge pull request #118 from blueyed/fix-proper-activate-via-rules
-      Merge pull request #91 from Ram-Z/icon_only
       cmake: add '--dirty' flag to 'git describe' for version
       awful.placement.no_offscreen: no negative x/y
-      Merge branch 'ewmh_urgent_v1'
-      Merge pull request #119 from psychon/apply_size_hints
       awful.util.deprecate: do not use glib.String() for the hash
       doc: BUGS: link to Github issues, the old tracker is readonly
-      Merge pull request #122 from blueyed/fix-ldoc-doxygen-warnings
       doc: fix/improve markup for awful.tooltip
       layout.arrange: delay a call per screen
-      Merge pull request #121 from awesomeWM/doc-fix-tooltip
-      Merge pull request #128 from psychon/client-valid
       Send old_screen with "property::screen" client signal
       Use delayed calls for autofocus signal handlers
       Fix doc for textbox:set_markup
       minor
       doc: improve meta info / structure for gears.timer
       doc: config.ld: setup @client alias, and use it
-      Merge branch 'autofocus-delayed-call'
       doc: link to github in README for bugs
       awful.tag: fix call to update_urgent from client_untagged
       minor: code style fixes
-      Merge pull request #142 from psychon/check-cairo-setup
-      Merge pull request #125 from blueyed/fix-placement-no-offscreen-xy-at-0
-      Merge pull request #124 from blueyed/cmake-add-dirty-to-git-describe
       spec: fix "require" statements for busted 2.0.rc6
       awful.tooltip: add "delay_show" arg
-      Merge pull request #123 from blueyed/tooltip-add-delay_show
-      Merge pull request #132 from awesomeWM/doc-fixes
-      Merge pull request #95 from blueyed/signal-client-property-screen-old
-      Merge pull request #147 from kmiller13/master
-      Merge pull request #144 from actionless/menubar-paginated-scroll
       autofocus: emit `request::activate` signal
       Add README.md symlink
       doc: fix typos and add type information to screen module
@@ -153,29 +129,21 @@ Daniel Hahler (539):
       docs: ignore awful/widget/init.lua, not common
       docs: fix HTML / table param with awful/widget/tasklist.lua
       doc: fix markup with wibox.widget.textbox:set_markup
-      Merge branch 'docs-overhaul'
-      Merge branch 'taptap-notification-text-update'
       tag.lua: add "property::icon_only" signal
       ewmh: screen_change: fix off-screen geometries
       minor: formatting
       Fix awful.completion for zsh
       Set &error in parse_command, return it from luaA_spawn
-      Merge pull request #186 from blueyed/parse_command-handle-parse-error
-      Merge pull request #175 from blueyed/ewmh-fullmax-fix-offscreen
       Fix ldoc target for awful.widget.keyboardlayout
       Default config: fix folding from last commit
       awesomeConfig.cmake: remove version requirement for xcb-xkb
-      Merge pull request #206 from dodo/menu-fixes
       Add config for Travis CI
       travis: only install and run if make succeeded
       minor: doc fix for awful.widget.keyboardlayout
-      Merge pull request #221 from anatol/master
       Make client.focusable writable from Lua
       autofocus: use focus.filter, via new arg to focus.history.get
       Travis: output cmake version in before_install
       travis: install libxkbcommon-dev libxkbcommon-x11-dev
-      Merge pull request #243 from Elv13/fix_lua53
-      Merge pull request #227 from petoju/master
       Travis: use tarballs instead of git-clone
       Improve git-version-stamp's error messages
       Travis: update luarocks to 2.2.2
@@ -189,20 +157,16 @@ Daniel Hahler (539):
       Travis: install CMake 3+ (for newer FindLua)
       cmake: s/ESCAPE_QUOTE/ESCAPE_QUOTES
       Make stdout/stderr line buffered
-      Merge pull request #266 from awesomeWM/juw-docs
       CMakeLists.txt: fix installation of themes
       Call `warn` in case of errors in luaA_spawn
       awesomeConfig.cmake: do not use GLOB_RECURSE with *.c/*.h
       default config: raise with "maximize" and "fullscreen"
-      Merge branch 'psychon-weak_connect'
       Add request::focus signal, with ewmh.focus being the default handler
       autofocus: use request::focus instead of request::activate
       Use request::activate with raise=false instead
       client.focus.byidx: handle raising in the function itself
       docs: include lib/awful/ewmh.lua
       Use `hints` table argument with `request::activate` signal
-      Merge pull request #224 from blueyed/request-focus-signal
-      Merge pull request #273 from blueyed/cmake-no-recurse-into-build-dir
       Make use of the new `oldscreen` argument with property::screen handlers
       doc: signals: minor improvements, mainly for "tagged"
       awful.tag.delete: single call to #c:tags()
@@ -222,7 +186,6 @@ Daniel Hahler (539):
       minor: fix/improve doc comments
       doc: improve docs/02-contributing.md
       screen_client_moveto: add comment/whitespace for 'emit signal'
-      Merge pull request #307 from blueyed/minor-style
       Improved awesome-client: exit code, bash, prompt
       Add client.first_tag, as a shortcut for `c:tags()[1]`
       Improve tests/run.sh
@@ -240,7 +203,6 @@ Daniel Hahler (539):
       awful.widget.tasklist: reset queued_update before tasklist_update
       beautiful.init: use xpcall / debug.backtrace
       Use luaL_traceback with luaA_warn and luaA_typerror
-      Merge branch 'better-error-handling'
       Add beautiful.get_merged_font; fix doc / load_font
       naughty: skip permanent notifications when there is no more room
       beautiful.xresources: allow to set/get DPI per screen
@@ -257,13 +219,11 @@ Daniel Hahler (539):
       client.get: add `stacked` argument
       awful.client: add support for stacking order
       screen_getbycoord: fallback to nearest screen
-      Merge pull request #155 from silverhammermba/pango_color
       awesome-client: do not send empty requests
       doc: distinguish between client.object and client.class
       screen_client_moveto: only emit property::screen if it changed
       wibox.widget.base: add __tostring method to widgets
       Travis: update docs only for relevant changes
-      Merge pull request #352 from psychon/gears_cache
       Fixes to awful.client's lazy-loading of awful.screen
       naughty.notify: default to screen.focused()
       doc: naughty: config.mapping moved to dbus.config.mapping
@@ -278,17 +238,14 @@ Daniel Hahler (539):
       awesome_atexit: keep client order always
       Travis: build apidoc only once, for latest Lua
       doc: tooltip: add type/optional information
-      Merge pull request #377 from blueyed/naughty-focused-screen
       make_widget: keep original "tostring" value in parenthesis
       wibox.drawable: add __tostring meta method
       wibox: add __tostring metamethod
-      Merge pull request #376 from blueyed/more-tostring
       gears.debug: add support for limited depth
       Do not call `xcb_ungrab_key` twice (before `xwindow_grabkeys`)
       widget.common.list_update: improve margins (dpi / imagebox)
       naughty: use beautiful.xresources.apply_dpi for margin and border
       awful.menu: use beautiful.xresources.apply_dpi for margins
-      Add dpi handling to naughty, awful.menu and awful.widget.common
       luaA_dofunction_on_error: call luaL_tolstring on error
       textbox.set_markup: handle `parsed.message` from Pango.parse_markup
       CMakeLists.txt: a_icon_convert: skip existing sources
@@ -297,7 +254,6 @@ Daniel Hahler (539):
       doc: fix for set_markup
       awful.tooltip: do not hide when entering its wibox
       titlebar: add tooltips for icon buttons
-      Merge branch 'tooltips'
       Apply left/top titlebars in event_handle_configurerequest
       Travis: apidoc: script, compare view, PR comment
       xresources.apply_dpi: use "round" instead of "ceil"
@@ -310,11 +266,8 @@ Daniel Hahler (539):
       Travis: add lgi 0.7.0 to the build matrix
       tests/run: handle 'expr 1 - 1' (exitcode 1); check for running awesome
       Bump required lgi version to 0.7.1
-      Merge pull request #393 from psychon/ci-script-improvements
-      Merge pull request #401 from psychon/simpler-timers
       Add awful.placement.next_to_mouse
       tooltip: use new next_to_mouse placement
-      Merge pull request #388 from blueyed/placement-next-to-mouse
       drawin.c: check for integer for x, y, width, height
       Add awful.util.round
       Use awful.util.round in wibox.layout.flex
@@ -322,42 +275,27 @@ Daniel Hahler (539):
       Use awful.util.round in beautiful.xresources.apply_dpi
       Add client.get_transient_for_matching and .is_transient_for
       tasklist: handle transient_for with skip_taskbar clients
-      Merge pull request #324 from blueyed/improve-transient_for
-      Merge pull request #320 from blueyed/widget-handle-non-int-geom
       doc: textbox:set_markup: link to Pango markup documentation
       tooltip: re-add `no_offscreen` back to `place`
       doc: awful.placement.no_offscreen
       tooltips: re-place them on width/height changes
       menubar: fix height to be rounded
       Do not unset max/fullscreen when setting the other
-      Merge pull request #408 from psychon/strict-fit
       awful.widget.common.list_update: expose textbox to label callback
-      Merge pull request #406 from psychon/spawn_with_pipes2
-      Merge pull request #323 from actionless/grow-master
       Fix awful.rules.does_match: use _rules as arg
       awful.rules: factor out `matches`
       Activate focused client with `awful.client.movetoscreen`
       Fix client.cycle's screen param handling
       ewmh.activate: make hints optional
-      Merge pull request #433 from nuko8/keyboardlayout-ext
       placement.no_offscreen: add optional screen argument
-      Merge pull request #462 from psychon/gears.matrix2
-      Merge pull request #458 from psychon/explicit_widget_deps
-      Merge pull request #454 from psychon/remove_gears.debug.assert
       Fix tooltip.set_geometry: provide textbox context
       naughty.notify: improve doc for args.run
-      Merge pull request #384 from blueyed/more-robust-errors
       ewmh.activate: raise a client always
       ewmh.activate: only focus visible clients
       Rename client_maybevisible to client_on_selected_tags
       awful.widget.taglist: handle/display urgent property always
       minor: taglist.taglist_label: join if / remove indent
-      Merge pull request #476 from blueyed/taglist-handle-urgent-always
-      Merge pull request #475 from blueyed/rename-client_maybevisible
-      Merge pull request #474 from blueyed/ewmh-activate-only-focus-visible
-      Merge pull request #438 from blueyed/ewmh-activate-raise-always
       Travis: add luajit-5.1
-      Merge pull request #479 from psychon/leaks
       Improve test runner to be usable for git-bisect
       Raise client in awful.client.movetoscreen
       Fix awful.util.spawn*/.pread deprecation wrappers
@@ -366,19 +304,10 @@ Daniel Hahler (539):
       icon_theme.find_icon_path: fix typo: s/filaname/filename
       menubar.icon_theme: minor code style fixes
       menubar.icon_theme: use GLib.build_filenamev to join paths
-      Merge branch 'fix-icon_theme' [#515]
       Move is_readable_directory to awful.util.dir_readable
-      Merge pull request #510 from psychon/fixups_size_hints
-      Merge pull request #514 from psychon/quit_during_startup
-      Merge pull request #513 from psychon/WM_Sn_selection
       Default config: use shorter `awful.spawn`
-      Merge pull request #517 from blueyed/move-is_readable_directory
-      Merge pull request #509 from psychon/systray_substructure_redirect
-      Merge pull request #508 from psychon/systray_only_in_wibox
-      Merge pull request #505 from psychon/fix_window_gravities
       client.focus.history.get: use stacking order
       doc: clarify 'stacked' argument: top to bottom
-      Merge pull request #527 from blueyed/client-focus-history-get-stacked
       ewmh.activate: document focus handling
       awful.client: handle focus history through `manage` on startup
       Fix signature for recursive find_icon_path_helper
@@ -393,104 +322,38 @@ Daniel Hahler (539):
       Some doc fixes
       doc: params for request::activate
       doc: typos/grammar
-      Merge pull request #529 from blueyed/doc-fixes
-      Merge pull request #528 from blueyed/doc-spawn-spawn
       awesomerc.lua: remove trailing whitespace
       Add awful.util.is_dir
-      Merge pull request #507 from psychon/closest_screen
       travis-apidoc.sh: fix diff -I pattern for h2
-      Merge pull request #523 from blueyed/fix-menubar
       travis-apidoc: swap 'relevant' and 'boilerplate' commits
-      Merge pull request #535 from psychon/textbox_preferred_size
       Improve doc for awful.spawn: module/spawn/with_shell
       Travis: use dist=trusty
       Add failing test: c.startup_id should be nil when snid is disabled
       doc: fix format for wibox.widget.base.make_widget
-      Merge pull request #537 from psychon/timer-signals
-      Merge pull request #531 from psychon/property_geometry
-      Merge pull request #544 from blueyed/client-snid-should-be-nil-without-snid
       Add awful.widget.prompt.spawn_and_handle_error helper
       awful.prompt.run: handle command return value from hooks
-      Merge pull request #483 from blueyed/Elv13-prompt_hook_v2
       doc: fix example with awful.prompt.run hooks
-      Merge pull request #558 from psychon/xkb-detectable-autorepeat
       Only use useless_gap with multiple tiled clients
       layout.arrange: fix screen arg in call to tag.getgap
       default config: enhance list of default floating clients
       Make textbox widget respect the current theme
-      Merge pull request #576 from psychon/spawn_exit_code
-      Merge pull request #586 from psychon/widget_funcs
-      Merge pull request #593 from psychon/editorconfig
-      Merge pull request #571 from psychon/scrolling_layout
       doc fixes to awful.menu.clients
-      Merge pull request #594 from blueyed/pr-552
-      Merge pull request #578 from lukash/client_icon_size
       Travis: use travis_retry with `apt-get update`
-      Merge pull request #609 from psychon/icons
-      Merge pull request #605 from psychon/api-doc
-      Merge pull request #625 from actionless/fix-hotkeys-widget-multiscreen
-      Merge pull request #618 from actionless/titlebar-optional-tooltips
-      Merge pull request #637 from psychon/set_markup
-      Merge pull request #636 from psychon/fix-integration-tests
-      Merge pull request #657 from baguette/master
-      Merge pull request #671 from psychon/number_vs_int
-      Merge pull request #651 from psychon/client-leaks
-      Merge pull request #649 from psychon/make-benchmark-less-exact
       .travis.yml: fix indent
-      Merge pull request #675 from psychon/remove-gears.sort
-      Merge pull request #685 from actionless/hotkeys_extended_mathes
-      Merge pull request #687 from psychon/fix-harmless-luacheck-warnings
-      Merge pull request #682 from actionless/vim-bindings-improvements
-      Merge pull request #693 from psychon/enable-titlebars-by-default
-      Merge pull request #700 from psychon/lua-compat
-      Merge pull request #690 from psychon/make-test-runner-more-robust
-      Merge pull request #702 from psychon/fix-test-urgent
-      Merge pull request #695 from psychon/fix-bugs-luacheck-found
-      Merge pull request #701 from psychon/client-gravity-fullscreen
-      Merge pull request #676 from psychon/luacheck
-      Merge pull request #707 from psychon/bullet_proof_transient_for
-      Merge pull request #706 from psychon/maximized-workarea-changed
       menubar: look for .desktop files recursively
       menubar: rename utils.parse to utils.parse_desktop_file
-      Merge pull request #708 from psychon/less_screen_indicies2
-      Merge pull request #710 from psychon/primary-screen
-      Merge pull request #712 from psychon/protected_calls
-      Merge pull request #713 from psychon/no_focus_window
-      Merge pull request #715 from psychon/lazy_border_update
-      Merge pull request #714 from psychon/tooltip-windows
       Add callback support for client.jumpto
-      Merge pull request #717 from blueyed/callback-for-client.jumpto
       doc: link to automatically built docs for master
       awful.client.jumpto: un-minimize clients
-      Merge pull request #730 from actionless/fix-menubar-pagination-again
-      Merge pull request #716 from psychon/wallpaper_cleanup
       tests/run.sh: avoid warnings by setting up fg/bg/colors in xrdb
-      Merge pull request #734 from blueyed/readme-apidocs
-      Merge pull request #745 from psychon/small-things
       Minor doc fixes
       Add exclamation mark with error in luaA_dofunction_on_error
-      Merge pull request #748 from blueyed/minor
-      Merge pull request #736 from blueyed/fix-integration-tests-runner
-      Merge pull request #743 from psychon/keygrabber-errors
-      Merge pull request #741 from psychon/systray-screen
-      Merge pull request #744 from psychon/dbus-string
-      Merge pull request #746 from psychon/indexless-screen-iteration
       README: link to contributing guide on master
       Fix indenting for code in list
-      Merge branch 'docs-fix-contributing-guide'
-      Merge pull request #79 from akdor1154/versioningFix
-      Merge pull request #732 from psychon/nicer-tooltip
-      Merge pull request #788 from aroig/gh/fix-number-check
-      Merge pull request #787 from awesomeWM/lgi-stream-end
-      Merge pull request #780 from psychon/screen-add-signal
-      Merge pull request #782 from psychon/wallpaper-change
       luaA_checkscreen: display number of existing screens with error
       minor: doc / formatting
       doc: fixes for spawn.with_line_callback
       minor: clarify mod-ctrl-shift-X comment; fix typo
-      Merge pull request #797 from blueyed/display-screen-count-with-checkscreen
-      Merge pull request #798 from blueyed/fix-crash-in-screen_getbycoord
-      Merge pull request #800 from blueyed/doc-fixes
       Travis: update luarocks: 2.2.2 => 2.3.0
       Travis: pin lua-term to 0.4-1 to fix the Lua 5.3 build
       docs: add section about gdb to readme
@@ -499,7 +362,6 @@ Daniel Hahler (539):
       travis-apidoc: add link to pull request to commit messages
       travis-apidoc: reference PR only in merge commit for less noise in the PR
       travis-apidoc: important note about valid json
-      Merge branch 'travis-fix-apidoc-revs'
       naughty.notify: handle non-existing screen, print a warning
       travis-apidoc: shellcheck fixes, especially for non-empty GH_TOKEN
       tests/run.sh: display number of errors [ci skip]
@@ -507,67 +369,40 @@ Daniel Hahler (539):
       Travis: move luarocks install into single block
       Travis: cleanup LGIVER matrix assignment
       Travis: move BUILD_APIDOC=true (Lua 5.2) to the beginning
-      Merge pull request #833 from psychon/cmake-output
-      Merge pull request #831 from psychon/naughty-no-screen
-      Merge pull request #812 from blueyed/travis-luajit-from-source
       .travis.yml: improve comments
       Streamline/cleanup util.deprecate calls
-      Merge pull request #838 from blueyed/streamline-util.deprecate-calls
       Handle `awful.util.deprecate('Use …')` style (#837)
       Use gears.protected_call with awful.rules callbacks (#843)
       awful.placement.no_overlap: use screen.workarea as fallback
       Make awful.client.focus.history.list public (#842)
-      Merge pull request #858 from psychon/wallpaper-function
-      Merge pull request #864 from psychon/menubar-query-file-type
-      Merge pull request #828 from psychon/screen-scan2
       Travis: use new GH_APIDOC_TOKEN
       Travis: apidoc: improve merge commit's message
       doc: fix usage of "mouse.move" as a string (#871)
       tests: fail if $AWESOME does not exist / is not executable (#872)
       Use an uneven screen width/height (1921x1079) in one Travis job (#870)
-      Merge pull request #880 from psychon/workarea-cache
       travis-apidoc.sh: add `|| true` to grep calls (#887)
       gears.surface: add a traceback for "Failed to load" errors
       awful.client.history: allow to disable history tracking
-      Merge pull request #899 from Jajauma/naughty-action-text
       Travis: redirect/filter stderr for git-clone/git-push/curl (#911)
-      Merge pull request #904 from psychon/xembed-fixes
       tooltip: improve doc, call self.timer_function with self (#381)
-      Merge pull request #926 from psychon/signals-and-hostname
       objects/screen.c: fix warning about unused var: "found" (#943)
       Travis: run "make check" only once with DO_COVERAGE=true (#940)
       Travis: kill awesome after max. 60s per test file
       tests/run: clarify timeout in wait_until_success
-      Merge pull request #937 from blueyed/travis-kill-stale-awesome
-      Merge pull request #886 from psychon/fake-screen-resize
-      Merge pull request #948 from psychon/deprecate-add-signal
-      Merge pull request #945 from psychon/tests-runner
-      Merge pull request #979 from Elv13/mix_fix
       Travis: check each commit separately (for the sake of git-bisect) (#936)
-      Merge pull request #994 from psychon/fix-drawable-bgimage
       tests/run: change to script dir first
       Travis: allow failures with LuaJIT (#1025)
       Travis: fix return/exit usage (#1043)
       travis-apidoc.sh: remove misleading comment
-      Merge pull request #1011 from psychon/commandline-search
       doc: fix missing parenthesis with client examples (#1046)
       Travis: pin ldoc at 1.4.4
-      Merge pull request #1063 from psychon/getopt_errors
-      Merge pull request #1062 from psychon/use-awesome-client-arguments
-      Merge pull request #1097 from psychon/lazy_client_geometry_update
       Travis: fix codecov (#1105)
-      Merge pull request #1099 from Elv13/fix_1091
-      Merge pull request #1111 from psychon/assorted-fixes
-      Merge pull request #1115 from psychon/timeouts
       minor: fix doc for tests/examples/CMakeLists.txt
       Improve messages with tests/examples/CMakeLists.txt
-      Merge pull request #1135 from blueyed/improve-examples-CMakeLists
       doc fixes for awful.{client,screen,tag} (#1134)
       progressbar: keep set_height/set_width working (#1141)
-      Merge pull request #1147 from psychon/remove_weak_tables
       awesome-client: allow override of rlwrap (#1150)
       awesome-client: simplify/fix ISATTY usage (#1151)
-      Merge pull request #1161 from psychon/ldoc-errors
       Emit screen::arrange signal outside of arrange_lock (#1191)
       Travis: use Lua 5.3.3, from GitHub mirror (#1208)
       doc: improve client class (#1221)
@@ -578,21 +413,16 @@ Daniel Hahler (539):
       lib/wibox/widget/base.lua: doc fixes
       Travis: branches: only: master, 3.5
       doc: s/Wether/Whether/
-      Merge pull request #1143 from awesomeWM/doc-fix-wibox.widget.base
       Travis: run luacheck just once (#1230)
       Travis: use Lua from lua.org again (#1244)
-      Merge pull request #1240 from psychon/fix-sn-callbacks
-      Merge pull request #1261 from psychon/fix-some-ldoc-see
       tests/run.sh: shellcheck and other fixes
       fixup! tests/run.sh: shellcheck and other fixes
       tests: remove TEST_QUIT_ON_TIMEOUT/quit_awesome_on_timeout (#1288)
       Fix tests/test-awesomerc.lua (#1289)
-      Merge pull request #1290 from blueyed/tests-run-shellcheck-etc
       tests/run.sh: SHELL=/bin/sh, HOME=/dev/null (#1291)
       tests: fix incrementing errors (#1297)
       Travis: use travis_fold function for folds
       Travis: fix "Testing previous commits"
-      Merge pull request #1295 from blueyed/travis-fix-test-each-commit
 
 Dario Gjorgjevski (1):
       Add an optional filter to `awful.menu.clients`
@@ -1150,150 +980,15 @@ Emmanuel Lepage Vallee (548):
       doc: Add a porting guide.
       change codename
 
-Emmanuel Lepage Vallée (143):
-      Merge pull request #106 from blueyed/traceback-with-imagebox-set_image-error
-      Merge pull request #104 from blueyed/util.file_readable-check-for-not-dir
-      Merge pull request #137 from blueyed/fix-urgent-tags
-      Merge pull request #101 from silverhammermba/drylayouts
-      Merge pull request #152 from blueyed/autofocus-use-request-activate
-      Merge pull request #150 from Elv13/fix_arrange_error
-      Merge pull request #165 from psychon/unfocus-client
-      Merge pull request #149 from lexa/master
-      Merge pull request #210 from Bew78LesellB/patch-1
-      Merge pull request #265 from blueyed/doc-improve-key
-      Merge pull request #274 from blueyed/spawn-warn-for-errors
-      Merge pull request #279 from actionless/useless_gapv3
-      Merge pull request #295 from blueyed/doc-signals
-      Merge pull request #297 from blueyed/tag-delete-single-call-to-client-tags
-      Merge pull request #315 from Elv13/fix_wfact
-      Merge pull request #491 from actionless/awful-key-data
-      Merge pull request #542 from awesomeWM/actionless_keybindings
-      Merge pull request #629 from Elv13/upstream_dynamic_p1
-      Merge pull request #612 from Elv13/fix_awful.client_idx
-      Merge pull request #638 from Elv13/upstream_shape_api
-      Merge pull request #631 from Elv13/upstream_dynamic_p2
-      Merge pull request #632 from Elv13/upstream_dynamic_p3
-      Merge pull request #633 from Elv13/upstream_dynamic_p4
-      Merge pull request #655 from Elv13/upstream_shape_api_p3
-      Merge pull request #630 from Elv13/upstream_dynamic_p5
-      Merge pull request #665 from actionless/hotkeys-merge-descriptions
-      Merge pull request #664 from Elv13/background_border
-      Merge pull request #486 from Elv13/new_widget_syntax
-      Merge pull request #678 from Elv13/bgimage
-      Merge pull request #683 from actionless/fix-hotkeys-sorting
-      Merge pull request #642 from Elv13/upstream_dynamic_p6
-      Merge pull request #684 from Elv13/decl_widget2
-      Merge pull request #691 from psychon/fix-titlebars
-      Merge pull request #720 from Elv13/allow_no_tag
-      Merge pull request #722 from Elv13/expose_graph
-      Merge pull request #721 from Elv13/fix_awful_screen
-      Merge pull request #727 from psychon/fix-wibox.layout.mirror
-      Merge pull request #709 from psychon/implement-set-children-sanely
-      Merge pull request #738 from awesomeWM/add_transparent
-      Merge pull request #731 from Elv13/fix_awful_place
-      Merge pull request #737 from Elv13/minor_widget_enhancements
-      Merge pull request #754 from Elv13/add_volatile
-      Merge pull request #753 from Elv13/add_shapes
-      Merge pull request #763 from psychon/luacov-shapes
-      Merge pull request #768 from bmwiedemann/master
-      Merge pull request #771 from Elv13/doc_argb
-      Merge pull request #767 from Elv13/widget_alias
-      Merge pull request #770 from Elv13/background_clip
-      Merge pull request #775 from Elv13/margins_redraw
-      Merge pull request #776 from Elv13/awful_screen_improvments
-      Merge pull request #778 from Elv13/dummy2
-      Merge pull request #757 from Elv13/properties
-      Merge pull request #789 from aroig/gh/layout-names
-      Merge pull request #773 from Elv13/add_testing_framework
-      Merge pull request #785 from Elv13/geometry_overhaul_p1
-      Merge pull request #792 from Elv13/fix_build
-      Merge pull request #810 from Elv13/del_gears_screen
-      Merge pull request #790 from Elv13/client_properties
-      Merge pull request #827 from Elv13/fix_path
-      Merge pull request #830 from aroig/gh/deprecation-warning
-      Merge pull request #820 from Elv13/layout_tests
-      Merge pull request #824 from Elv13/rules_refactor
-      Merge pull request #849 from actionless/fix-awful-rule-floating
-      Merge pull request #854 from actionless/use-gio-in-awful-util-is-dir
-      Merge pull request #844 from Elv13/geometry_overhaul_p2
-      Merge pull request #873 from Elv13/geometry_overhaul_p3.01
-      Merge pull request #862 from psychon/import-some-docs
-      Merge pull request #875 from psychon/sn-fix
-      Merge pull request #890 from psychon/fix-merge-mistake
-      Merge pull request #874 from Elv13/add_botton_test
-      Merge pull request #909 from psychon/screen-getbycoord
-      Merge pull request #878 from Elv13/geometry_overhaul_p3.02
-      Merge pull request #915 from Elv13/undo_layoutbox_fail-fix
-      Merge pull request #913 from Elv13/gear_obj_props
-      Merge pull request #912 from Elv13/fix_tag_delete_race
-      Merge pull request #918 from actionless/fix-wibar-visible
-      Merge pull request #919 from Elv13/add_wibox_ctr_args
-      Merge pull request #923 from Elv13/widget_api_refactor
-      Merge pull request #931 from jmitchener/add_fullscreen_description
-      Merge pull request #955 from Elv13/fix_multiscreen
+Emmanuel Lepage Vallée (8):
       resize: restore the fleur cursor and add a beautiful option (#957)
       tag: Fix restoring invalid tags from history (#963)
-      Merge pull request #959 from Elv13/cairo_lgi_doc
       tests: Don't use arbitrary build dir path (#898)
-      Merge pull request #970 from salorium/master
-      Merge pull request #972 from Elv13/prompt_fix
-      Merge pull request #1006 from actionless/fix-minimize-recolor
-      Merge pull request #1009 from Elv13/add_event_metadata
-      Merge pull request #1010 from Elv13/fix_declarative_widgets
-      Merge pull request #1020 from cmertz/master
-      Merge pull request #1017 from juw/master
-      Merge pull request #1013 from psychon/screen_area_signals
-      Merge pull request #1026 from Elv13/misc_fixes
-      Merge pull request #1034 from Elv13/fix_spawn_crash
-      Merge pull request #1036 from cmertz/master
       Revert "screen: Fix potential nil index" (#1037)
-      Merge pull request #1041 from Elv13/fix_1039
-      Merge pull request #1008 from blueyed/tests-run-from-tests-dir
-      Merge pull request #1031 from Elv13/add_recursive_signal
-      Merge pull request #929 from Elv13/geometry_overhaul_p3.03
-      Merge pull request #1051 from Elv13/fix_tag_index
       tooltip: Stop using a fallback font (#1061)
       client: Fix a potential crash due to a race condition. (#1055)
-      Merge pull request #1056 from Elv13/better_tag_index
-      Merge pull request #1067 from BlueUsername/tiling-to-floating-window-fix
-      Merge pull request #1083 from Elv13/menubar-priority-category-fix
-      Merge pull request #1082 from Elv13/fix_1018
-      Merge pull request #1081 from Elv13/fix_screen_memory_leak
-      Merge pull request #1084 from Elv13/use_screen_props
-      Merge pull request #1078 from hoelzro/master
-      Merge pull request #1095 from hishamhm/minimize-compat-3.5
-      Merge pull request #1066 from Akulen/fix_gap_ignore
-      Merge pull request #1085 from Elv13/remove_dead_code
-      Merge pull request #1112 from Elv13/upstream_shape_api_p4.01
-      Merge pull request #1113 from Elv13/upstream_shape_api_p4.02
-      Merge pull request #1119 from Elv13/upstream_shape_api_p4.03
-      Merge pull request #1136 from Elv13/fix_missing_rclua
-      Merge pull request #1123 from Elv13/focus_stealing_filter
-      Merge pull request #1124 from Elv13/prompt_args_refactor
-      Merge pull request #1165 from psychon/fix-deprecation-warning
-      Merge pull request #1121 from Elv13/add_slider_widget
-      Merge pull request #1169 from Elv13/fix_prompt_deprecation_warnings
-      Merge pull request #1182 from psychon/screen_swap
-      Merge pull request #1206 from psychon/xkb
-      Merge pull request #1220 from Elv13/tl_doc_fix
-      Merge pull request #1222 from morethanoneanimal/master
-      Merge pull request #1232 from blueyed/doc-fix-client
-      Merge pull request #1227 from morethanoneanimal/gears-color-refactoring
-      Merge pull request #1236 from Elv13/fix_new_tag_rule
       doc: Document the client layouts. (#1247)
-      Merge pull request #1262 from Elv13/changelog
-      Merge pull request #1264 from Elv13/improve_prompt
-      Merge pull request #1263 from Elv13/fix_bad_deprecation
-      Merge pull request #1265 from Elv13/improve_deprecation
-      Merge pull request #1267 from Elv13/fix_rules_screen_mismatch
-      Merge pull request #1271 from psychon/executable-flag
-      Merge pull request #1269 from psychon/remove-doing-a-release
-      Merge pull request #1274 from Elv13/more_spawn_doc
-      Merge pull request #1272 from kiike/fix-docs-grammar
-      Merge pull request #1277 from psychon/fix-typo
       Remove traces of the old URL (#1280)
-      Merge pull request #1279 from Elv13/tag_doc
-      Merge pull request #1283 from Elv13/add_porting_tips
 
 Enric Morales (6):
       Fix typos in declarative layout docs
@@ -1493,7 +1188,7 @@ Tin Benjamin Matuka (1):
 Tristan B. Kildaire (1):
       awesomerc.lua: spelling fix in comment
 
-Uli Schlachter (778):
+Uli Schlachter (688):
       scan(): Use less iterations for scanning for windows
       Client: Add (and use) visualtype member to client_t objects
       drawin: Inline drawin_init() into its only caller
@@ -1530,18 +1225,12 @@ Uli Schlachter (778):
       Use signals on classes instead of instances where appropriate
       gears.color.create_opaque_pattern: Fix for SurfacePatterns (FS#1236)
       drawin: Correctly add property::shape_* signals
-      Merge remote-tracking branch 'blueyed/client-set-screen-with-tags'
-      Merge remote-tracking branch 'blueyed/expand-tilde-path-in-beautiful-init'
       Revert "Set c.screen in ewmh.tag and before tags in rules.execute"
       awful.tag: Don't tag clients before manage() (FS#1238)
-      Merge remote-tracking branch 'blueyed/client-set-screen-with-tags'
-      Merge remote-tracking branch 'blueyed/magnifier-fix-raising'
       Revert "awful.client.movetoscreen: Don't untag clients completely (FS#1196)"
       awful.tag.withcurrent: Try harder at finding a tag (FS#1196)
       Ignore enter/leave events when unmanaging a window (FS#1239)
-      Merge remote-tracking branch 'blueyed/fix-tag-signal-handler-wrt-startup'
       Use awful.layout.layouts for implementing optional parameters
-      Merge remote-tracking branch 'blueyed/fix-restore-in-tag.delete'
       gears.surface: Cache files from disk
       gears.color: Add a pattern cache
       Don't set a background-pixel for our client frame windows
@@ -1556,60 +1245,40 @@ Uli Schlachter (778):
       systray: Don't set WM_STATE on embedded windows (FS#1246)
       Revert "root: Make sure cairo doesn't cache our temporary connection" (FS#1245)
       wibox.drawable: Assert that no cairo error occurred
-      Merge remote-tracking branch 'blueyed/awful-rules-optional-callback'
       imagebox: Don't try to scale by infinite (FS#1248)
       gears.color: Handle nil arguments correctly again
-      Merge remote-tracking branch 'blueyed/README'
       naughty: Don't use the cache when loading icons (FS#1253)
       gears.surface: Handle the cache more intelligently
       awful.tag.move: Fix tag index setting (FS#1249)
       awful.tag.setscreen: Check if old_screen == new_screen (FS#1249)
       remove awful.widget.taglist.gettag (FS#1256)
-      Merge git://github.com/Teknocrat/awesome
       naughty: Support file:// URIs for icon paths
       Only include awesome-version-internal.h in one place
       Fix some random ldoc warnings
       xwindow_shape_pixmap: Correctly handle invalid geometry
       awful.client.shape: Import client shape handling (FS#1051)
       Call AllowEvents after grabbed events on a drawin
-      Merge remote-tracking branch 'blueyed/remember-layout-across-restarts'
       Remove unused argument to awful.client.property.persist
       awful.util.geticonpath: Correctly localize variables
       systray: Small consistency fixes
       wibox.widget.systray: Special case the empty systray
-      Merge branch 'fix-clients-length' of https://github.com/tail/awesome
       cmake: Remove useless program checks
       wbox: Make :find_widgets() easily accessible
-      Merge branch 'master' of git://github.com/memeplex/awesome
       systray: Only intern the atom once
       systray: Only register/unregister when needed
       Add a lost comment to CMakeLists.txt
       Add unit tests
       Makefile: distclean is a phony target
-      Merge branch 'patch-1' of git://github.com/SammysHP/awesome
       gears.wallpaper: Make code more readable
-      Merge branch 'master' of git://github.com/tusj/awesome
-      Merge branch 'fix-ldoc-usage' of git://github.com/blueyed/awesome
       PATCHES: Mention the unit tests
       gears.color: Add a way to bypass the pattern cache
       gears.color: Use proper references in the doc comments
       awful.widget.button: Override :set_image() to do the right thing
-      Merge branch 'menubar-skip-comments-in-desktop-files' of git://github.com/blueyed/awesome
       wibox.layout.base.rect_to_device_geometry: Fix for "weird" rotations
       drawin: Don't special-case moves
       drawin_update_drawing: Remove optimization for invisible drawins
       gears.color spec: Don't depend on order of pairs() (FS#1301)
-      Merge branch 'fix_tag_history_V2' of git://github.com/Elv13/awesome-1
-      Merge branch 'tag_swap_V2' of git://github.com/Elv13/awesome-1
-      Merge branch 'layout_unit_testability_V2' of git://github.com/Elv13/awesome-1
-      Merge branch 'fix_tag_remove_v1' of git://github.com/Elv13/awesome-1
       Add signals for titlebar resizes (FS#1233)
-      Merge branch 'tag_index_v1' of git://github.com/Elv13/awesome-1
-      Merge branch 'request_context_v2' of git://github.com/Elv13/awesome-1
-      Merge branch 'ewmh-activate-on-startup' of git://github.com/blueyed/awesome
-      Merge branch 'layout_spacing' of git://github.com/Elv13/awesome-1
-      Merge branch 'fix_FS1155' of git://github.com/Elv13/awesome-1
-      Merge branch 'fix-ldoc-set-spacing' of git://github.com/actionless/awesome
       Don't move clients on ConfigureRequests (FS#1030)
       drawable/drawin: Pass both lua_State and stack index around
       drawin: Use the correct lua_State for the stack index
@@ -1622,10 +1291,6 @@ Uli Schlachter (778):
       timer: Add a backwards-compatibility hack to awful
       Implement icon_pixmap and icon_mask from WM_HINTS (FS#1297)
       Unmap minimized clients
-      Merge branch 'notification_actions_master' of git://github.com/fbarthelery/awesome
-      Merge branch 'master' of git://github.com/barlik/awesome
-      Merge branch 'simplify-calc_timeout' of git://github.com/blueyed/awesome
-      Merge branch 'patch-1' of git://github.com/findkiko/awesome
       gears.timer: Don't assert() that no error occured
       naughty: Fix builds without dbus
       naughty: Add a destroy callback argument to naughty.notify
@@ -1641,8 +1306,6 @@ Uli Schlachter (778):
       awful.tag: Use delayed_call to call withcurrent on manage
       a_dbus_message_iter: Handle DBUS_TYPE_DOUBLE
       Partly revert commit 90fde1393f
-      Merge branch 'master' of git://github.com/AlexisBRENON/awesome
-      Merge branch 'pr=desktop-name' of git://github.com/roysc/awesome
       awful.util.unittest: Move into spec/
       Add c:apply_size_hints() to client objects
       awesome: Add startup signal
@@ -1652,7 +1315,6 @@ Uli Schlachter (778):
       Ignore more events while minimizing a client
       cmake: Really add '--dirty' flag to 'git describe' for version
       Make client.focus = nil work (Closes #164)
-      Merge branch 'master' of https://github.com/heirecka/awesome
       corner layout: Properly "local"ize variables
       corner layout: Don't set geometries directly
       keyboardlayout: Don't mess with undefined variables
@@ -1680,8 +1342,6 @@ Uli Schlachter (778):
       Add a missing "_" in "__newindex"
       Fix sporadic test failure due to lgi
       awful.widget.keyboardlayout: Rename private members
-      Merge branch 'do-not-require-xdotool' of https://github.com/blueyed/awesome
-      Merge branch 'keyboardlayout_no_layout_entry' of https://github.com/psychon/awesome
       tests/run.sh: Start dbus after X server startup
       tests/run.sh: Move definition of AWESOME_CLIENT up
       tests/run.sh: Use a temporary directory
@@ -1704,12 +1364,6 @@ Uli Schlachter (778):
       lgi-check.sh: Add dependencies to GLib and Gio
       tests/run.sh: Start Xvfb with -noreset
       drawin: lazily configure drawin windows
-      Merge branch 'tooltips-replace-on-geometry-changes' of https://github.com/blueyed/awesome
-      Merge branch 'master' of https://github.com/kindlycat/awesome
-      Merge branch 'Xvfb-noreset'
-      Merge branch 'widget_context'
-      Merge branch 'add_gears_matrix'
-      Merge branch 'add-resize-option' of https://github.com/actionless/awesome
       wibox.layout.align: Correctly size second widget
       fit_widget(): Sanitize the result of :fit()
       tests/_runner.lua: Load all dependencies
@@ -1745,7 +1399,6 @@ Uli Schlachter (778):
       wibox.hierarchy: Remove _parent member
       imagebox: Don't emit signals if same image is set again
       Fix wibox.hierarchy:draw()
-      Merge branch 'new_widget_system3'
       wibox.drawable: Fix complete repaints
       Remove gears.debug.assert
       Explicitly track dependencies between widgets
@@ -1780,13 +1433,6 @@ Uli Schlachter (778):
       Refactor code a little
       Apply window gravity for titlebar resizes
       Apply window gravity for border width changes
-      Merge branch 'client-movetoscreen-raise-true' of https://github.com/blueyed/awesome
-      Merge branch 'remember-mouse-pos-per-screen' of https://github.com/Bew78LesellB/awesome
-      Merge branch 'test-runner-for-bisect' of https://github.com/blueyed/awesome
-      Merge branch 'snid_callback' of https://github.com/Elv13/awesome-1
-      Merge branch 'enhance_menubar_icon_path_lookup' of https://github.com/nuko8/awesome
-      Merge branch 'client_resize_do-prefer-current' of https://github.com/blueyed/awesome
-      Merge branch 'master' of https://github.com/everslick/awesome
       screen_getbycoord: Change definition of 'closest screen'
       awful.screen.getbycoord: Use the same algorithm as in C
       systray: Make sure the widget is only placed in a wibox
@@ -1863,12 +1509,6 @@ Uli Schlachter (778):
       naughty: Don't try to parse our version number
       Add support for short/long colors
       gears.color: Add support for named colors
-      Merge branch 'util-getdir' of https://github.com/psychon/awesome
-      Merge branch 'rgb-xresources' of https://github.com/actionless/awesome
-      Merge branch 'handle_long_colors' of https://github.com/psychon/awesome
-      Merge branch 'async-spawn-optional-callbacks' of https://github.com/actionless/awesome
-      Merge branch 'surface-errors' of https://github.com/psychon/awesome
-      Merge branch 'naughty-version' of https://github.com/psychon/awesome
       test/run.sh: Handle updated beauitful.init call in default config
       Textbox:set_markup(): Print errors to stderr
       awful.widget.common: Follow :set_markup() API change
@@ -1911,11 +1551,6 @@ Uli Schlachter (778):
       Enable titlebars by default
       Make the functional test runner more robust
       Fix images in the documentation
-      Merge branch 'remove-awful-mouse-finder' of https://github.com/psychon/awesome
-      Merge branch 'coveralls' of https://github.com/psychon/awesome
-      Merge branch 'more-luacheck-fixes' of https://github.com/psychon/awesome
-      Merge branch 'fix-images-in-doc' of https://github.com/awesomeWM/awesome
-      Merge branch 'easy-async-spawn' of https://github.com/actionless/awesome
       Fix wibox.layout.mirror
       Fix naughty.reset_timeout
       Fix typo in awful.tag.swap
@@ -1924,7 +1559,6 @@ Uli Schlachter (778):
       Mark a bug in awful.widget.common as such
       Fix this master fill policy stuff
       Fix one more luacheck warning in awful.widget.tasklist
-      Merge pull request #698 from actionless/fix-awful-prompt-after-luacheck
       Lua 5.3: Disable Lua 5.2 compatibility
       Fix awful.ewmh to handle window gravities
       Fix test-urgent.lua
@@ -1964,7 +1598,6 @@ Uli Schlachter (778):
       Add gears.protected_call
       Make gears.widget.{fit,layout}_widget more robust
       Use gears.protected_call where applicable
-      Merge branch 'new-watch-widget' of https://github.com/actionless/awesome
       Make client key bindings for e.g. xeyes work again
       awful.tooltip: Inline place() into set_geometry()
       awful.tooltip: Create wibox lazily
@@ -1973,7 +1606,6 @@ Uli Schlachter (778):
       gears.surface: Change the way that caching works
       gears.wallpaper: Free wallpaper from memory when done
       Make xrdb_get_value() behave as documented
-      Merge branch 'Return-nil-in-xrdb_get_value' of https://github.com/psychon/awesome
       Fix the mirror layout
       awful.tooltip: Use metatable magic to create wiboxes lazily
       Add a property::visible signal to tooltips
@@ -1992,7 +1624,6 @@ Uli Schlachter (778):
       Remove another useless iteration over screens
       Add a non-index way to iterate over screens
       Use the new way to iterate over screens in Lua
-      Merge branch 'lua-index-handlers' of https://github.com/psychon/awesome
       Run shape-example-generation under LuaCov
       C-API: Return screen objects instead of indicies
       Remove luaA_pushscreen
@@ -2000,7 +1631,6 @@ Uli Schlachter (778):
       gears.shape: Stop using _call on a matrix
       gears.matrix: Remove (now-)unused code
       Update API doc for mouse.screen
-      Merge branch 'return-screen-objects'
       screen: Add "added" signal
       Add functions for calling something for every screen
       naughty: Use connect_for_each_screen()
@@ -2019,7 +1649,6 @@ Uli Schlachter (778):
       Clean up static variables in event_handle
       Update root window size on ConfigureNotify
       Update root window size on RandR notify
-      Merge branch 'randr-stuff'
       awful.rules: Fix a typo in the docs
       awful.rules: Add support for screen names
       Add awful.tag.find_by_name
@@ -2029,9 +1658,6 @@ Uli Schlachter (778):
       test-urgent.lua: Test "tag by name" rules
       awful.rules: Fix switchtotag with tag names
       awful.rules.execute: Make for loop easier to read
-      Merge branch 'master' of https://github.com/kiryl/awesome
-      Merge branch 'root-size' of https://github.com/psychon/awesome
-      Merge branch 'rules-screen' of https://github.com/psychon/awesome
       Fix build warning
       xutil.h: Add defines for valid coordinates and sizes
       Add range-checking Lua stack -> C value converters
@@ -2047,9 +1673,6 @@ Uli Schlachter (778):
       default config: Only have a single connect_for_each_screen()
       Default config: Remove tags table
       Fix awful.screen.getbycoord when no screens exist
-      Merge branch 'screen-gc' of https://github.com/psychon/awesome
-      Merge branch 'placement-fallback-to-screen.workarea' of https://github.com/blueyed/awesome
-      Merge branch 'replace-popen-to-async' of https://github.com/actionless/awesome
       Default config: Allow beautiful.wallpaper to be a wallpaper
       xresources theme: Let beautiful.wallpaper be a function
       xresources theme: Use a RecordingSurface for wallpaper
@@ -2088,23 +1711,12 @@ Uli Schlachter (778):
       gears.wallpaper: Handle concurrent screen changes
       "make check": Support out-of-tree builds
       Use an out-of-tree build for one Travis job
-      Merge branch 'no-screens' of https://github.com/psychon/awesome
-      Merge branch 'fake-screen2' of https://github.com/psychon/awesome
-      Merge branch 'useful-env-vars' of https://github.com/psychon/awesome
-      Merge branch 'superflous-enter-leave' of https://github.com/psychon/awesome
-      Merge branch 'more-travis-variance' of https://github.com/psychon/awesome
-      Merge branch 'doc_shared' of https://github.com/Elv13/awesome-1
       Fix screen.fake_add()
       Update workarea when drawin moves to another screen
       Fix fallback for the window type
       Fix mouse clicks on titlebars (#901)
       Fix awful.screen.getbycoord() for top-left corner of a screen
       Fix awful.screen.getbycoord when no screens exist
-      Merge branch 'workarea-change-on-wibox-move' of https://github.com/psychon/awesome
-      Merge branch 'wallpaper-while-randr-change' of https://github.com/psychon/awesome
-      Merge branch 'traceback-with-failed-to-load-error' of https://github.com/blueyed/awesome
-      Merge branch 'fix_window_type_fallback' of https://github.com/psychon/awesome
-      Merge branch 'allow-to-disable-history-tracking' of https://github.com/awesomewm/awesome
       struts: Avoid an integer underflow
       Travis: Build Lua 5.3 with -DLUA_USE_APICHECK (#907)
       Add awesome.{kill,unix_signal}
@@ -2114,7 +1726,6 @@ Uli Schlachter (778):
       xembed: Use sane defaults if _XEMBED_INFO is not present
       Properly support the XEMBED_MAPPED bit
       "Fix" client properties which can be absent (#932)
-      Merge branch 'dev_fix_desktop' of https://github.com/schmellow/awesome
       Test if _NET_CURRENT_DESKTOP is set correctly
       Fix the test that the previous commit added
       C code: Move docs for signals away from signal_add()
@@ -2192,8 +1803,6 @@ Uli Schlachter (778):
       drawin_map: Ignore enter/leave after apply_moveresize
       Speed up client_ignore_enterleave_events()
       Rewrite tests/_client.lua
-      Merge branch 'speedup-ignore_enterleave'
-      Merge branch 'faster-client-deamon'
       C: Add a .data table to all C objects
       shims: Add support the new .data property
       gears.object.properties: Use the new .data table
@@ -2216,8 +1825,6 @@ Uli Schlachter (778):
       awful.tag: Save dynamic_cache as a tag property
       awful.tag: Save all "generic" tag properties as real props
       Fix short flicker when new clients appear (#1138)
-      Merge branch 'widget-mouse-signals' of https://github.com/psychon/awesome
-      Merge branch 'drawable-visibility' of https://github.com/psychon/awesome
       Delay client frame window destruction (#1148)
       Remove @release @AWESOME_VERSION@ everywhere (#1157)
       keyboardlayout: Don't break if parsing the layout fails (#1154)
@@ -2226,7 +1833,6 @@ Uli Schlachter (778):
       menubar.utils: Use a protected call (#1174)
       gears.surface.widget_to_*: Ignore repaints (#1155)
       Fix traceback in gears.protected_call (#1178)
-      Merge branch 'fix-missing-args' of https://github.com/hexchain/awesome
       Fix unbalanced Lua stack operation (#1162)
       Check for pending events after the main loop (#1163)
       Ignore warnings from ldoc by default
@@ -2267,7 +1873,6 @@ Uli Schlachter (778):
       Sync instead of flush after setting a wallpaper (#1278)
       Fix luacheck warnings in tests/_multi_screen.lua
       Sign release tarballs (#1286)
-      Merge branch 'force-drawable-screen' of https://github.com/psychon/awesome
       Fix luacheck warnings in wibox.drawable
       Fix error handling in awesome.spawn()
       Small cleanup to test-spawn.lua

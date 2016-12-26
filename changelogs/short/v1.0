@@ -1,4 +1,4 @@
-Julien Danjou (196):
+Julien Danjou (192):
       remove bpos from global var, added in jdwmconf
       rename handler functions
       remove doc on clean
@@ -53,9 +53,7 @@ Julien Danjou (196):
       move some netatom back but only in setup()
       change compileregs proto, simplify
       change compileregs proto, simplify
-      Merge branch 'master' of ssh://git.naquadah.org/var/cache/git/awesome
       fix regression
-      Merge branch 'master' of ssh://git.naquadah.org/var/cache/git/awesome
       export netatom or we die
       fix regression in restack()
       documentation and simplify uicb_settrans
@@ -144,7 +142,6 @@ Julien Danjou (196):
       add TODO file
       don't grab keys if we don't know them
       add TODO file
-      Merge branch 'master' of ssh://git.naquadah.org/var/cache/git/awesome
       don't grab keys if we don't know them
       add TODO file
       enhance multihead support, with N conf/dc
@@ -161,7 +158,6 @@ Julien Danjou (196):
       move this fucking netatom stuff elsewhere or we overflow
       bug fix: wheel on root was infinite looping
       switch to -O3
-      Merge branch 'master' of ssh://git.naquadah.org/var/cache/git/awesome
       allow tiled window to be resize/moved, setting them to the floating state
       bug fix: correctly check if tag is occupied by checking screen number
       bug fix: move/resize with tiled windows

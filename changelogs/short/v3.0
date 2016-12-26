@@ -129,7 +129,7 @@ Jay Bromley (2):
       client: return instance and class (FS#236)
       awesomerc: improve management of floating/predefined tags (FS#241)
 
-Julien Danjou (991):
+Julien Danjou (990):
       Fix Xinerama detection
       [screen] Use default screen on Xinerama for root window
       [ewmh] Fix data type in EWMH icon
@@ -668,7 +668,6 @@ Julien Danjou (991):
       "recent version" has no mean
       awful: add more documentation
       awful: rename menu to prompt
-      Merge commit 'madcoder/master'
       client: set fullscreen/modal windows on top of statusbars
       awesomerc: use table for floating rules
       client: honor size hints is now by client
