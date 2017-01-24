@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>mpc - awesome window manager</title>
+<link rel="icon" href="../../images/icons/aw_16.png" type="image/png" />
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+<link rel="stylesheet" href="../../local.css" type="text/css" />
+
+
+</head>
+<body>
+
+<div id="wrap">
+    <a href="https://github.com/awesomeWM/awesome"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
+    <div id="top">
+      
+	<div id="center-logo">
+	  <a href="../../index.html" title="Back to main page">
+	    <img alt="awesome-logo" src="../../images/awesome-logo.svg">
+	  </a>
+	</div>
+        <div id="menu">
+          <ul class="active-menu-mpc">
+            <li class="menu-about"><a href="../../index.html">home</a></li>
+            <li class="menu-download"><a href="../../download/">download</a></li>
+            <li class="menu-community"><a href="../../community/">community</a></li>
+            <li class="menu-recipes"><a href="../../recipes/">recipes</a></li>
+            <li class="menu-screenshots"><a href="../../screenshots/">screenshots</a></li>
+            <li class="menu-doc"><a href="../../doc/">doc</a></li>
+            <li class="menu-issues"><a href="https://github.com/awesomeWM/awesome/issues">bugs/issues</a></li>
+            </ul>
+        </div>
+    </div>
+
+    
+
+    
+
+    <div id="content">
+    <!--    <h1>mpc</h1> -->
+        <div id="left">
+          <h1>MPD integration</h1>
+
+<p>This page describes an integration with the <a href="https://www.musicpd.org/">Music Player
+Daemon</a>. This consists of two parts: A <a href="../mpc.lua">pure Lua
+library for talking to mpc</a> and an example on how to use this for a
+widget with awesome.</p>
+
+<h2>The library</h2>
+
+<p>The library provides a function <code>mpc.new</code> that creates a new object representing
+a connection to MPD. It can be used as follows:</p>
+
+<pre><code>local connection = require("mpc").new(host, port, password, error_handler, idle_commands...)
+</code></pre>
+
+<p>This will establish a TCP connection to the given host and port and, if a
+password is given, log in to the MPD server. Whenever an error happens (for
+example the connection is lost or the password is rejected), the given error
+handler function is called with the error as its argument. The next time the
+connection is used, an automatic reconnection is attempted.</p>
+
+<p>A description of the MPD protocol can be fined
+<a href="https://www.musicpd.org/doc/protocol/">here</a>. This library only provides
+low-level access to the protocol. However, special support for the idle command
+is provided via extra arguments to the <code>new</code> function. This will be made clear
+in an example below.</p>
+
+<p>For example, to get information about the currently playing song:</p>
+
+<pre><code>connection:send("currentsong", function(success, data)
+    if not success then print("command failed") end
+    print("Information about the current song:")
+    require("gears.debug").dump(data)
+end)
+</code></pre>
+
+<h2>A sample widget</h2>
+
+<p>The following keeps a textbox up-to-date with the MPD status. It automatically
+updates when the current MPD state changes.</p>
+
+<pre><code>local mpc = require("mpc")
+local textbox = require("wibox.widget.textbox")
+local mpd_widget = textbox()
+local state, title, artist, file = "stop", "", "", ""
+local function update_widget()
+    local text = "Current MPD status: "
+    text = text .. tostring(artist or "") .. " - " .. tostring(title or "")
+    if state == "pause" then
+        text = text .. " (paused)"
+    end
+    if state == "stop" then
+        text = text .. " (stopped)"
+    end
+    mpd_widget.text = text
+end
+local function error_handler(err)
+    mpd_widget:set_text("Error: " .. tostring(err))
+end
+local connection = mpc.new("localhost", 6600, "", error_handler,
+    "status", function(_, result)
+        state = result.state
+    end,
+    "currentsong", function(_, result)
+        title, artist, file = result.title, result.artist, result.file
+        pcall(update_widget)
+    end)
+</code></pre>
+
+<p>If you actually want to be able to control MPD's behaviour, you could for
+example do the following to pause/unpause when clicking on the widget:</p>
+
+<pre><code>mpd_widget:buttons(awful.button({}, 1, function() connection:toggle_play() end))
+</code></pre>
+
+        </div>
+        <!--
+        <div id="right">
+            <ul id="nav">
+                <li><a href="/">home</a></li>
+            </ul>
+            <div class="box">
+                <h2 style="margin-top:17px">Latest news</h2>
+                <ul>
+                    <li><a href="#">Recent Entries1</a> <i>01 Des 06</i></li>
+               </ul>
+            </div>
+       </div>
+        -->
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="pageinfo">
+
+    
+
+    <script type='text/javascript' src='https://www.openhub.net/p/awesome/widgets/project_factoids_stats?format=js'></script>
+
+    <div id="donate">
+      <strong>Donations:</strong>
+      <div>
+      <script id='fbirvwx'>(function(i){var f,s=document.getElementById(i);f=document.createElement('iframe');f.src='https://button.flattr.com/view/?fid=mqwonm&button=compact&url=https%3A%2F%2Fawesomewm.org%2F';f.title='Flattr';f.height=20;f.width=110;f.style.borderWidth=0;s.parentNode.insertBefore(f,s);})('fbirvwx');</script>
+      </div>
+      <p>Bitcoin: 1A2LsrF81rWEEJ7qnXdkCUJpdCYUxqfQoP</p>
+    </div>
+
+    <div class="copyright">
+        <a id="pagecopyright"></a>
+        
+        Copyleft 2007-2017, awesome project
+    </div>
+    
+
+    <div class="pagedate">
+        Last edited <span class="date">Tue 24 Jan 2017 08:10:13 AM UTC</span>
+    </div>
+
+    </div>
+
+<!-- from about -->
+</div>
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setCookieDomain", "*.awesomewm.org"]);
+  _paq.push(["setDomains", ["*.awesomewm.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://piwik.awesomewm.org/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 26]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="https://piwik.awesomewm.org/piwik.php?idsite=26" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+</body>
+</html>
