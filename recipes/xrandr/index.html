@@ -3,10 +3,10 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>community - awesome window manager</title>
-<link rel="icon" href="../images/icons/aw_16.png" type="image/png" />
-<link rel="stylesheet" href="../style.css" type="text/css" />
-<link rel="stylesheet" href="../local.css" type="text/css" />
+<title>xrandr - awesome window manager</title>
+<link rel="icon" href="../../images/icons/aw_16.png" type="image/png" />
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+<link rel="stylesheet" href="../../local.css" type="text/css" />
 
 
 </head>
@@ -17,18 +17,18 @@
     <div id="top">
       
 	<div id="center-logo">
-	  <a href="../index.html" title="Back to main page">
-	    <img alt="awesome-logo" src="../images/awesome-logo.svg">
+	  <a href="../../index.html" title="Back to main page">
+	    <img alt="awesome-logo" src="../../images/awesome-logo.svg">
 	  </a>
 	</div>
         <div id="menu">
-          <ul class="active-menu-community">
-            <li class="menu-about"><a href="../index.html">home</a></li>
-            <li class="menu-download"><a href="../download/">download</a></li>
-            <li class="menu-community"><a href="../community/">community</a></li>
-            <li class="menu-recipes"><a href="../recipes/">recipes</a></li>
-            <li class="menu-screenshots"><a href="../screenshots/">screenshots</a></li>
-            <li class="menu-doc"><a href="../doc/">doc</a></li>
+          <ul class="active-menu-xrandr">
+            <li class="menu-about"><a href="../../index.html">home</a></li>
+            <li class="menu-download"><a href="../../download/">download</a></li>
+            <li class="menu-community"><a href="../../community/">community</a></li>
+            <li class="menu-recipes"><a href="../../recipes/">recipes</a></li>
+            <li class="menu-screenshots"><a href="../../screenshots/">screenshots</a></li>
+            <li class="menu-doc"><a href="../../doc/">doc</a></li>
             <li class="menu-issues"><a href="https://github.com/awesomeWM/awesome/issues">bugs/issues</a></li>
             </ul>
         </div>
@@ -39,57 +39,32 @@
     
 
     <div id="content">
-    <!--    <h1>community</h1> -->
+    <!--    <h1>xrandr</h1> -->
         <div id="left">
-          <h1>Community</h1>
+          <h1>Multiple Monitor Helper</h1>
 
-<p><strong>awesome</strong> has an active and growing community.</p>
+<p>This page is intended to show how to user <code>xrandr.lua</code> script to help the way you deal with multiple monitors.
+Using this snippet you can set a keybinding where you swap to all possible arrangements of monitors.</p>
 
-<h1>IRC</h1>
+<p>The process of setting up this script goes as follow:</p>
 
-<p>You can join us in the <code>#awesome</code> channel on the <a href="http://www.oftc.net"><code>OFTC</code></a> IRC network.</p>
+<ol>
+<li><p>Create a file called <code>xrandr.lua</code> in your file system (preferably in awesome's folder) with the <a href="xrandr.lua">script</a> content.</p></li>
+<li><p>Import the script in your <code>rc.lua</code></p>
 
-<p><a href="https://webchat.oftc.net/?channels=awesome">IRC Webchat</a></p>
-
-<h1>Stack Overflow</h1>
-
-<p>You can ask questions on
-<a href="http://stackoverflow.com/questions/tagged/awesome-wm">Stack Overflow</a>.</p>
-
-<h1>Reddit</h1>
-
-<p>We also have a <a href="https://www.reddit.com/r/awesomewm/">awesome subreddit</a> where
-you can share your work and ask questions.</p>
-
-<h1>GitHub</h1>
-
-<p>Awesome is <a href="https://github.com/awesomeWM/awesome/">developed on GitHub</a>.
-You can follow (watch) us there, contribute to our decision making and help
-triage issues.  Also pull requests and issues are welcome there.</p>
-
-<p>This web page also is <a href="https://github.com/awesomeWM/awesome-www">on GitHub</a> and
-can be changed via pull requests. To locally test your changes, the web page can
-be build with <code>make</code>. For this, you need to have
-<a href="https://ikiwiki.info/">ikiwiki</a> installed.</p>
-
-<h1>Old mailing list (now closed)</h1>
-
-<ul>
-<li><a href="http://www.mail-archive.com/awesome@naquadah.org/">The Mail Archive</a></li>
-<li><a href="http://dir.gmane.org/gmane.comp.window-managers.awesome">Gmane archive</a></li>
-<li><a href="http://dir.gmane.org/gmane.comp.window-managers.awesome.devel">Gmane developers list archive</a></li>
-<li><a href="http://www.mail-archive.com/awesome-devel@naquadah.org/">The Mail Archive developers list</a></li>
-</ul>
+<pre><code>   local xrandr = require("/path/to/file/xrandr")
+</code></pre></li>
+<li><p>Create a keybinding to the script in the appropriated globalkeys table</p></li>
+</ol>
 
 
-<h1>Old wiki</h1>
+<p>Pressing this key binding will open a popup with a possible screen arrangement.
+Pressing the key again will replace this popup with another possibility, eventually arriving at "keep the current configuration".</p>
 
-<p>The old wiki has been shut down, but can be still viewed at
-<a href="https://web.archive.org/web/20160701200046/https://awesome.naquadah.org/wiki/Main_Page">archive.org</a>.</p>
+<p>If the key is not pressed again within four seconds, the configuration described in the current popup is applied.</p>
 
-<h1>Authors</h1>
-
-<p><a href="https://github.com/awesomeWM/awesome/graphs/contributors">See our GitHub page</a></p>
+<pre><code>       awful.key({}, "Some Key", function() xrandr.xrandr() end)
+</code></pre>
 
         </div>
         <!--
