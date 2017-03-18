@@ -48,8 +48,9 @@
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
+  <li><a href="../documentation/07-my-first-awesome.md.html">My first awesome</a></li>
   <li><a href="../documentation/16-using-cairo.md.html">Using Cairo and LGI</a></li>
-  <li><a href="../documentation/17-porting-tips.md.html">Porting tips</a></li>
+  <li><a href="../documentation/17-porting-tips.md.html">Tips for upgrading your configuration</a></li>
   <li><a href="../documentation/89-NEWS.md.html">NEWS</a></li>
   <li><strong>FAQ</strong></li>
 </ul>
@@ -78,15 +79,20 @@
   <li><a href="../libraries/awful.util.html">awful.util</a></li>
   <li><a href="../libraries/awful.wibox.html">awful.wibox</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
+  <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
   <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
   <li><a href="../libraries/gears.color.html">gears.color</a></li>
   <li><a href="../libraries/gears.debug.html">gears.debug</a></li>
+  <li><a href="../libraries/gears.filesystem.html">gears.filesystem</a></li>
   <li><a href="../libraries/gears.geometry.html">gears.geometry</a></li>
+  <li><a href="../libraries/gears.math.html">gears.math</a></li>
   <li><a href="../libraries/gears.object.properties.html">gears.object.properties</a></li>
   <li><a href="../libraries/gears.protected_call.html">gears.protected_call</a></li>
   <li><a href="../libraries/gears.shape.html">gears.shape</a></li>
+  <li><a href="../libraries/gears.string.html">gears.string</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
+  <li><a href="../libraries/gears.table.html">gears.table</a></li>
   <li><a href="../libraries/gears.wallpaper.html">gears.wallpaper</a></li>
   <li><a href="../libraries/keygrabber.html">keygrabber</a></li>
   <li><a href="../libraries/menubar.html">menubar</a></li>
@@ -108,16 +114,23 @@
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.hierarchy.html">wibox.hierarchy</a></li>
 </ul>
+<h2>Sample files</h2>
+<ul class="nowrap">
+  <li><a href="../sample files/rc.lua.html">rc.lua</a></li>
+</ul>
 <h2>Classes</h2>
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
   <li><a href="../classes/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../classes/awful.widget.button.html">awful.widget.button</a></li>
+  <li><a href="../classes/awful.widget.clienticon.html">awful.widget.clienticon</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/awful.widget.graph.html">awful.widget.graph</a></li>
+  <li><a href="../classes/awful.widget.keyboardlayout.html">awful.widget.keyboardlayout</a></li>
   <li><a href="../classes/awful.widget.launcher.html">awful.widget.launcher</a></li>
   <li><a href="../classes/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
+  <li><a href="../classes/awful.widget.only_on_screen.html">awful.widget.only_on_screen</a></li>
   <li><a href="../classes/awful.widget.progressbar.html">awful.widget.progressbar</a></li>
   <li><a href="../classes/awful.widget.prompt.html">awful.widget.prompt</a></li>
   <li><a href="../classes/awful.widget.taglist.html">awful.widget.taglist</a></li>
@@ -143,6 +156,7 @@
   <li><a href="../classes/wibox.container.constraint.html">wibox.container.constraint</a></li>
   <li><a href="../classes/wibox.container.margin.html">wibox.container.margin</a></li>
   <li><a href="../classes/wibox.container.mirror.html">wibox.container.mirror</a></li>
+  <li><a href="../classes/wibox.container.place.html">wibox.container.place</a></li>
   <li><a href="../classes/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../classes/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../classes/wibox.container.scroll.html">wibox.container.scroll</a></li>
@@ -151,6 +165,7 @@
   <li><a href="../classes/wibox.layout.constraint.html">wibox.layout.constraint</a></li>
   <li><a href="../classes/wibox.layout.fixed.html">wibox.layout.fixed</a></li>
   <li><a href="../classes/wibox.layout.flex.html">wibox.layout.flex</a></li>
+  <li><a href="../classes/wibox.layout.grid.html">wibox.layout.grid</a></li>
   <li><a href="../classes/wibox.layout.margin.html">wibox.layout.margin</a></li>
   <li><a href="../classes/wibox.layout.mirror.html">wibox.layout.mirror</a></li>
   <li><a href="../classes/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
@@ -162,7 +177,6 @@
   <li><a href="../classes/wibox.widget.checkbox.html">wibox.widget.checkbox</a></li>
   <li><a href="../classes/wibox.widget.graph.html">wibox.widget.graph</a></li>
   <li><a href="../classes/wibox.widget.imagebox.html">wibox.widget.imagebox</a></li>
-  <li><a href="../classes/wibox.widget.keyboardlayout.html">wibox.widget.keyboardlayout</a></li>
   <li><a href="../classes/wibox.widget.piechart.html">wibox.widget.piechart</a></li>
   <li><a href="../classes/wibox.widget.progressbar.html">wibox.widget.progressbar</a></li>
   <li><a href="../classes/wibox.widget.slider.html">wibox.widget.slider</a></li>
@@ -196,7 +210,7 @@ from the TV series HIMYM.</p>
 
 <p>In the default configuration file one layout is set for all tags, it happens to
 be the <code>floating</code> layout. You can change that by editing your tag creation
-loop in the <code>rc.lua</code>:</p>
+loop in the <a href="../sample files/rc.lua.html#">rc.lua</a>:</p>
 
 
 <pre>
@@ -213,7 +227,7 @@ use another window management layout.</p>
 <p>You can modify your tag section, there are many possible implementations, here
 is a simple one:</p>
 
-<p>At the beginning of <code>rc.lua</code>:</p>
+<p>At the beginning of <a href="../sample files/rc.lua.html#">rc.lua</a>:</p>
 
 
 <pre>
@@ -236,7 +250,7 @@ tags[s] = awful.tag(tags.names, s, tags.layout)
 
 <p>Another demonstration for your tag section:</p>
 
-<p>At the beginning of <code>rc.lua</code>:</p>
+<p>At the beginning of <a href="../sample files/rc.lua.html#">rc.lua</a>:</p>
 
 
 <pre>
@@ -365,7 +379,7 @@ awful.key({ modkey }, <span class="string">"b"</span>, <span class="keyword">fun
 
 <h3>How to toggle clients floating state?</h3>
 
-<p>The default <code>rc.lua</code> already has a key binding for this, it is "Mod4 + Control +
+<p>The default <a href="../sample files/rc.lua.html#">rc.lua</a> already has a key binding for this, it is "Mod4 + Control +
 Space". You can easily change it to something easier like "Mod4 + f" or "Mod4 +
 Shift + f".</p>
 
@@ -427,7 +441,7 @@ awful.key({ modkey, <span class="string">"Shift"</span> }, <span class="string">
 
 <h3>How to change awesome configuration while it's running?</h3>
 
-<p>You can modify <code>rc.lua</code>, but you have to restart awesome for changes to take
+<p>You can modify <a href="../sample files/rc.lua.html#">rc.lua</a>, but you have to restart awesome for changes to take
 effect. The default keybinding for restarting awesome is "Mod4 + Control + r".</p>
 
 <h3>How to find window's class and other identifiers?</h3>
@@ -460,7 +474,7 @@ See the next FAQ answer for some examples.</p>
 <h3>How to start clients on specific tags and others as floating?</h3>
 
 <p>You can add matching rules to your <a href="../libraries/awful.rules.html#rules">awful.rules.rules</a> table. The default
-<code>rc.lua</code> already has several examples, but some more can be found in the
+<a href="../sample files/rc.lua.html#">rc.lua</a> already has several examples, but some more can be found in the
 <a href="../libraries/awful.rules.html#rules">documentation</a>.</p>
 
 <h3>How to start clients as slave windows instead of master?</h3>
@@ -487,7 +501,7 @@ awful.key({}, <span class="string">"#160"</span>, <span class="keyword">function
 
 <h3>How to add a keyboard layout switcher?</h3>
 
-<p>The <a href="../classes/wibox.widget.keyboardlayout.html#">wibox.widget.keyboardlayout</a> is a widget that shows the current keyboard
+<p>The <code>wibox.widget.keyboardlayout</code> is a widget that shows the current keyboard
 layout and allows to change it by clicking on it.</p>
 
 <h3>How to make windows spawn under the mouse cursor?</h3>
@@ -587,7 +601,7 @@ $ pkill -INT awesome
 <p>If awesome cannot find <code>$XDG_CONFIG_HOME/awesome/rc.lua</code>, or fails to load it,
 it falls back to using <code>/etc/xdg/awesome/rc.lua</code> (you haven't edited it, I hope,
 have you?). Even if <code>awesome --check</code> hasn't reported any error, it only means
-that your <code>rc.lua</code> is syntactically correct, but absence of runtime errors is
+that your <a href="../sample files/rc.lua.html#">rc.lua</a> is syntactically correct, but absence of runtime errors is
 not guaranteed. Moreover, awesome could apply half of your config then encounter
 an error and load stock one, and that could lead to bizzare result, like two
 sets of tags. See the next entry on how to find out where the problem lurks.</p>
@@ -642,11 +656,11 @@ EOF
 
 <p>Awesome 4.0+ support dynamic screen plugging and unplugging without restarting.</p>
 
-<p>This avoids losing your tags, layout and focus history. Olders <code>rc.lua</code> were not
+<p>This avoids losing your tags, layout and focus history. Olders <a href="../sample files/rc.lua.html#">rc.lua</a> were not
 designed to support such changes and assumed Awesome would restart. To add
 multi-screen support to existing configs, see how
-<code>awful.screen.connect_for_each_screen</code> is used in the new <code>rc.lua</code> or rebuild
-your config on a newer revision of <code>rc.lua</code>.</p>
+<code>awful.screen.connect_for_each_screen</code> is used in the new <a href="../sample files/rc.lua.html#">rc.lua</a> or rebuild
+your config on a newer revision of <a href="../sample files/rc.lua.html#">rc.lua</a>.</p>
 
 <h3>Can I have a client or the system tray on multiple screens at once?</h3>
 
@@ -695,7 +709,7 @@ for any coding, documentation or patch guidelines.</p>
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2017-03-05 03:13:56 </i>
+<i style="float:right;">Last updated 2017-03-18 10:22:44 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

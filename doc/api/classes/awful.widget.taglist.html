@@ -43,10 +43,13 @@
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
   <li><a href="../classes/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../classes/awful.widget.button.html">awful.widget.button</a></li>
+  <li><a href="../classes/awful.widget.clienticon.html">awful.widget.clienticon</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/awful.widget.graph.html">awful.widget.graph</a></li>
+  <li><a href="../classes/awful.widget.keyboardlayout.html">awful.widget.keyboardlayout</a></li>
   <li><a href="../classes/awful.widget.launcher.html">awful.widget.launcher</a></li>
   <li><a href="../classes/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
+  <li><a href="../classes/awful.widget.only_on_screen.html">awful.widget.only_on_screen</a></li>
   <li><a href="../classes/awful.widget.progressbar.html">awful.widget.progressbar</a></li>
   <li><a href="../classes/awful.widget.prompt.html">awful.widget.prompt</a></li>
   <li><strong>awful.widget.taglist</strong></li>
@@ -72,6 +75,7 @@
   <li><a href="../classes/wibox.container.constraint.html">wibox.container.constraint</a></li>
   <li><a href="../classes/wibox.container.margin.html">wibox.container.margin</a></li>
   <li><a href="../classes/wibox.container.mirror.html">wibox.container.mirror</a></li>
+  <li><a href="../classes/wibox.container.place.html">wibox.container.place</a></li>
   <li><a href="../classes/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../classes/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../classes/wibox.container.scroll.html">wibox.container.scroll</a></li>
@@ -80,6 +84,7 @@
   <li><a href="../classes/wibox.layout.constraint.html">wibox.layout.constraint</a></li>
   <li><a href="../classes/wibox.layout.fixed.html">wibox.layout.fixed</a></li>
   <li><a href="../classes/wibox.layout.flex.html">wibox.layout.flex</a></li>
+  <li><a href="../classes/wibox.layout.grid.html">wibox.layout.grid</a></li>
   <li><a href="../classes/wibox.layout.margin.html">wibox.layout.margin</a></li>
   <li><a href="../classes/wibox.layout.mirror.html">wibox.layout.mirror</a></li>
   <li><a href="../classes/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
@@ -91,7 +96,6 @@
   <li><a href="../classes/wibox.widget.checkbox.html">wibox.widget.checkbox</a></li>
   <li><a href="../classes/wibox.widget.graph.html">wibox.widget.graph</a></li>
   <li><a href="../classes/wibox.widget.imagebox.html">wibox.widget.imagebox</a></li>
-  <li><a href="../classes/wibox.widget.keyboardlayout.html">wibox.widget.keyboardlayout</a></li>
   <li><a href="../classes/wibox.widget.piechart.html">wibox.widget.piechart</a></li>
   <li><a href="../classes/wibox.widget.progressbar.html">wibox.widget.progressbar</a></li>
   <li><a href="../classes/wibox.widget.slider.html">wibox.widget.slider</a></li>
@@ -125,15 +129,20 @@
   <li><a href="../libraries/awful.util.html">awful.util</a></li>
   <li><a href="../libraries/awful.wibox.html">awful.wibox</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
+  <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
   <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
   <li><a href="../libraries/gears.color.html">gears.color</a></li>
   <li><a href="../libraries/gears.debug.html">gears.debug</a></li>
+  <li><a href="../libraries/gears.filesystem.html">gears.filesystem</a></li>
   <li><a href="../libraries/gears.geometry.html">gears.geometry</a></li>
+  <li><a href="../libraries/gears.math.html">gears.math</a></li>
   <li><a href="../libraries/gears.object.properties.html">gears.object.properties</a></li>
   <li><a href="../libraries/gears.protected_call.html">gears.protected_call</a></li>
   <li><a href="../libraries/gears.shape.html">gears.shape</a></li>
+  <li><a href="../libraries/gears.string.html">gears.string</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
+  <li><a href="../libraries/gears.table.html">gears.table</a></li>
   <li><a href="../libraries/gears.wallpaper.html">gears.wallpaper</a></li>
   <li><a href="../libraries/keygrabber.html">keygrabber</a></li>
   <li><a href="../libraries/menubar.html">menubar</a></li>
@@ -155,6 +164,10 @@
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.hierarchy.html">wibox.hierarchy</a></li>
 </ul>
+<h2>Sample files</h2>
+<ul class="nowrap">
+  <li><a href="../sample files/rc.lua.html">rc.lua</a></li>
+</ul>
 <h2>Documentation</h2>
 <ul class="nowrap">
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
@@ -164,8 +177,9 @@
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
+  <li><a href="../documentation/07-my-first-awesome.md.html">My first awesome</a></li>
   <li><a href="../documentation/16-using-cairo.md.html">Using Cairo and LGI</a></li>
-  <li><a href="../documentation/17-porting-tips.md.html">Porting tips</a></li>
+  <li><a href="../documentation/17-porting-tips.md.html">Tips for upgrading your configuration</a></li>
   <li><a href="../documentation/89-NEWS.md.html">NEWS</a></li>
   <li><a href="../documentation/90-FAQ.md.html">FAQ</a></li>
 </ul>
@@ -240,6 +254,14 @@
 	<td class="summary">The tag list empty elements foreground (text) color.</td>
 	</tr>
 	<tr>
+	<td class="name" ><a href="#beautiful.taglist_bg_volatile">beautiful.taglist_bg_volatile</a></td>
+	<td class="summary">The tag list volatile elements background color.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.taglist_fg_volatile">beautiful.taglist_fg_volatile</a></td>
+	<td class="summary">The tag list volatile elements foreground (text) color.</td>
+	</tr>
+	<tr>
 	<td class="name" ><a href="#beautiful.taglist_squares_sel">beautiful.taglist_squares_sel</a></td>
 	<td class="summary">The selected elements background image.</td>
 	</tr>
@@ -266,6 +288,10 @@
 	<tr>
 	<td class="name" ><a href="#beautiful.taglist_font">beautiful.taglist_font</a></td>
 	<td class="summary">The taglist font.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.taglist_spacing">beautiful.taglist_spacing</a></td>
+	<td class="summary">The space between the taglist elements.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.taglist_shape">beautiful.taglist_shape</a></td>
@@ -314,6 +340,18 @@
 	<tr>
 	<td class="name" ><a href="#beautiful.taglist_shape_border_color_urgent">beautiful.taglist_shape_border_color_urgent</a></td>
 	<td class="summary">The urgents elements shape border color.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.taglist_shape_volatile">beautiful.taglist_shape_volatile</a></td>
+	<td class="summary">The shape used for the volatile elements.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.taglist_shape_border_width_volatile">beautiful.taglist_shape_border_width_volatile</a></td>
+	<td class="summary">The shape used for the volatile elements border width.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.taglist_shape_border_color_volatile">beautiful.taglist_shape_border_color_volatile</a></td>
+	<td class="summary">The volatile elements shape border color.</td>
 	</tr>
 </table>
 
@@ -399,6 +437,20 @@
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">fg_empty</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
+
+
+
+         (<em>default</em> nil)
+        </li>
+        <li><span class="parameter">bg_volatile</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
+
+
+
+         (<em>default</em> nil)
+        </li>
+        <li><span class="parameter">fg_volatile</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
 
 
@@ -795,6 +847,58 @@
 
 </dd>
     <dt>
+    <a name = "beautiful.taglist_bg_volatile"></a>
+    <strong>beautiful.taglist_bg_volatile</strong>
+    </dt>
+    <dd>
+    The tag list volatile elements background color.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">color</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.color.html#">gears.color</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.taglist_fg_volatile"></a>
+    <strong>beautiful.taglist_fg_volatile</strong>
+    </dt>
+    <dd>
+    The tag list volatile elements foreground (text) color.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">color</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.color.html#">gears.color</a>
+    </ul>
+
+
+</dd>
+    <dt>
     <a name = "beautiful.taglist_squares_sel"></a>
     <strong>beautiful.taglist_squares_sel</strong>
     </dt>
@@ -965,6 +1069,28 @@
 
 </dd>
     <dt>
+    <a name = "beautiful.taglist_spacing"></a>
+    <strong>beautiful.taglist_spacing</strong>
+    </dt>
+    <dd>
+    The space between the taglist elements.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">spacing</span>
+            <span class="types"><span class="type">number</span></span>
+         The spacing between tags.
+         (<em>default</em> 0)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
     <a name = "beautiful.taglist_shape"></a>
     <strong>beautiful.taglist_shape</strong>
     </dt>
@@ -983,6 +1109,7 @@
          <li><a href="../classes/awful.widget.taglist.html#beautiful.taglist_shape_empty">beautiful.taglist_shape_empty</a></li>
          <li><a href="../classes/awful.widget.taglist.html#beautiful.taglist_shape_focus">beautiful.taglist_shape_focus</a></li>
          <li><a href="../classes/awful.widget.taglist.html#beautiful.taglist_shape_urgent">beautiful.taglist_shape_urgent</a></li>
+         <li><a href="../classes/awful.widget.taglist.html#beautiful.taglist_shape_volatile">beautiful.taglist_shape_volatile</a></li>
     </ul>
 
 
@@ -1253,6 +1380,77 @@
 
 
 </dd>
+    <dt>
+    <a name = "beautiful.taglist_shape_volatile"></a>
+    <strong>beautiful.taglist_shape_volatile</strong>
+    </dt>
+    <dd>
+    The shape used for the volatile elements.
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.shape.html#">gears.shape</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.taglist_shape_border_width_volatile"></a>
+    <strong>beautiful.taglist_shape_border_width_volatile</strong>
+    </dt>
+    <dd>
+    The shape used for the volatile elements border width.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">number</span>
+
+
+
+         (<em>default</em> 0)
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/wibox.container.background.html#">wibox.container.background</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.taglist_shape_border_color_volatile"></a>
+    <strong>beautiful.taglist_shape_border_color_volatile</strong>
+    </dt>
+    <dd>
+    The volatile elements shape border color.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">color</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.color.html#">gears.color</a>
+    </ul>
+
+
+</dd>
 </dl>
 
 
@@ -1260,7 +1458,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2017-03-05 03:13:56 </i>
+<i style="float:right;">Last updated 2017-03-18 10:22:44 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

@@ -32,6 +32,7 @@
 
 <h2>Contents</h2>
 <ul>
+<li><a href="#License">License </a></li>
 <li><a href="#About_awesome">About awesome </a></li>
 <li><a href="#Building_and_installation">Building and installation </a></li>
 <li><a href="#Running_awesome">Running awesome </a></li>
@@ -40,7 +41,6 @@
 <li><a href="#Reporting_issues">Reporting issues </a></li>
 <li><a href="#Status">Status </a></li>
 <li><a href="#Documentation">Documentation </a></li>
-<li><a href="#License">License </a></li>
 </ul>
 
 
@@ -53,8 +53,9 @@
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
+  <li><a href="../documentation/07-my-first-awesome.md.html">My first awesome</a></li>
   <li><a href="../documentation/16-using-cairo.md.html">Using Cairo and LGI</a></li>
-  <li><a href="../documentation/17-porting-tips.md.html">Porting tips</a></li>
+  <li><a href="../documentation/17-porting-tips.md.html">Tips for upgrading your configuration</a></li>
   <li><a href="../documentation/89-NEWS.md.html">NEWS</a></li>
   <li><a href="../documentation/90-FAQ.md.html">FAQ</a></li>
 </ul>
@@ -83,15 +84,20 @@
   <li><a href="../libraries/awful.util.html">awful.util</a></li>
   <li><a href="../libraries/awful.wibox.html">awful.wibox</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
+  <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
   <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
   <li><a href="../libraries/gears.color.html">gears.color</a></li>
   <li><a href="../libraries/gears.debug.html">gears.debug</a></li>
+  <li><a href="../libraries/gears.filesystem.html">gears.filesystem</a></li>
   <li><a href="../libraries/gears.geometry.html">gears.geometry</a></li>
+  <li><a href="../libraries/gears.math.html">gears.math</a></li>
   <li><a href="../libraries/gears.object.properties.html">gears.object.properties</a></li>
   <li><a href="../libraries/gears.protected_call.html">gears.protected_call</a></li>
   <li><a href="../libraries/gears.shape.html">gears.shape</a></li>
+  <li><a href="../libraries/gears.string.html">gears.string</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
+  <li><a href="../libraries/gears.table.html">gears.table</a></li>
   <li><a href="../libraries/gears.wallpaper.html">gears.wallpaper</a></li>
   <li><a href="../libraries/keygrabber.html">keygrabber</a></li>
   <li><a href="../libraries/menubar.html">menubar</a></li>
@@ -113,16 +119,23 @@
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.hierarchy.html">wibox.hierarchy</a></li>
 </ul>
+<h2>Sample files</h2>
+<ul class="nowrap">
+  <li><a href="../sample files/rc.lua.html">rc.lua</a></li>
+</ul>
 <h2>Classes</h2>
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
   <li><a href="../classes/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../classes/awful.widget.button.html">awful.widget.button</a></li>
+  <li><a href="../classes/awful.widget.clienticon.html">awful.widget.clienticon</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/awful.widget.graph.html">awful.widget.graph</a></li>
+  <li><a href="../classes/awful.widget.keyboardlayout.html">awful.widget.keyboardlayout</a></li>
   <li><a href="../classes/awful.widget.launcher.html">awful.widget.launcher</a></li>
   <li><a href="../classes/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
+  <li><a href="../classes/awful.widget.only_on_screen.html">awful.widget.only_on_screen</a></li>
   <li><a href="../classes/awful.widget.progressbar.html">awful.widget.progressbar</a></li>
   <li><a href="../classes/awful.widget.prompt.html">awful.widget.prompt</a></li>
   <li><a href="../classes/awful.widget.taglist.html">awful.widget.taglist</a></li>
@@ -148,6 +161,7 @@
   <li><a href="../classes/wibox.container.constraint.html">wibox.container.constraint</a></li>
   <li><a href="../classes/wibox.container.margin.html">wibox.container.margin</a></li>
   <li><a href="../classes/wibox.container.mirror.html">wibox.container.mirror</a></li>
+  <li><a href="../classes/wibox.container.place.html">wibox.container.place</a></li>
   <li><a href="../classes/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../classes/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../classes/wibox.container.scroll.html">wibox.container.scroll</a></li>
@@ -156,6 +170,7 @@
   <li><a href="../classes/wibox.layout.constraint.html">wibox.layout.constraint</a></li>
   <li><a href="../classes/wibox.layout.fixed.html">wibox.layout.fixed</a></li>
   <li><a href="../classes/wibox.layout.flex.html">wibox.layout.flex</a></li>
+  <li><a href="../classes/wibox.layout.grid.html">wibox.layout.grid</a></li>
   <li><a href="../classes/wibox.layout.margin.html">wibox.layout.margin</a></li>
   <li><a href="../classes/wibox.layout.mirror.html">wibox.layout.mirror</a></li>
   <li><a href="../classes/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
@@ -167,7 +182,6 @@
   <li><a href="../classes/wibox.widget.checkbox.html">wibox.widget.checkbox</a></li>
   <li><a href="../classes/wibox.widget.graph.html">wibox.widget.graph</a></li>
   <li><a href="../classes/wibox.widget.imagebox.html">wibox.widget.imagebox</a></li>
-  <li><a href="../classes/wibox.widget.keyboardlayout.html">wibox.widget.keyboardlayout</a></li>
   <li><a href="../classes/wibox.widget.piechart.html">wibox.widget.piechart</a></li>
   <li><a href="../classes/wibox.widget.progressbar.html">wibox.widget.progressbar</a></li>
   <li><a href="../classes/wibox.widget.slider.html">wibox.widget.slider</a></li>
@@ -219,6 +233,15 @@ sudo dpkg -i awesome-x.y.z.deb
 sudo rpm -Uvh awesome-x.y.z.rpm
 </pre>
 
+<p>NOTE: awesome uses <a href="https://cmake.org"><code>cmake</code></a> to build. In case you want to
+pass arguments to cmake, please use the <code>CMAKE_ARGS</code> environment variable. For
+instance:</p>
+
+
+<pre>
+CMAKE_ARGS=<span class="string">"-DCMAKE_INSTALL_PREFIX=/opt/awesome"</span> make
+</pre>
+
 <h3>Build dependencies</h3>
 
 <p>Awesome has the following dependencies (besides a more-or-less standard POSIX
@@ -227,7 +250,7 @@ environment):</p>
 <ul>
     <li><a href="https://cmake.org">CMake >= 3.0.0</a></li>
     <li><a href="https://www.lua.org">Lua >= 5.1.0</a> or <a href="http://luajit.org">LuaJIT</a></li>
-    <li><a href="https://github.com/pavouk/lgi">LGI >= 0.7.1</a></li>
+    <li><a href="https://github.com/pavouk/lgi">LGI >= 0.8.0</a></li>
     <li><a href="https://www.x.org/archive//individual/proto/">xproto >= 7.0.15</a></li>
     <li><a href="https://xcb.freedesktop.org/">libxcb >= 1.6</a> with support for the RandR, XTest, Xinerama, SHAPE and
     XKB extensions</li>
@@ -299,7 +322,7 @@ DISPLAY=foo.bar:<span class="number">1</span> exec awesome
 <p>The configuration of awesome is done by creating a
 <code>$XDG_CONFIG_HOME/awesome/rc.lua</code> file, typically <code>~/.config/awesome/rc.lua</code>.</p>
 
-<p>An example configuration named <code>awesomerc.lua.in</code> is provided in the source.</p>
+<p>An example configuration named <code>awesomerc.lua</code> is provided in the source.</p>
 
 <p><a name="Troubleshooting"></a></p>
 <h2>Troubleshooting</h2>
@@ -364,7 +387,7 @@ or <a href="http://www.gnu.org/licenses/gpl.html">v3</a>).</p>
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2017-03-05 03:13:56 </i>
+<i style="float:right;">Last updated 2017-03-18 10:22:44 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

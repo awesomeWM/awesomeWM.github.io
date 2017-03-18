@@ -33,8 +33,8 @@
 <h2>Contents</h2>
 <ul>
 <li><a href="#awesome___awesome_window_manager">awesome - awesome window manager </a></li>
-<li><a href="#License_">License: </a></li>
-<li><a href="#Originally_based_on_dwm_code_">Originally based on dwm code: </a></li>
+<li><a href="#License">License </a></li>
+<li><a href="#Originally_based_on_dwm_code">Originally based on dwm code </a></li>
 </ul>
 
 
@@ -47,8 +47,9 @@
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
+  <li><a href="../documentation/07-my-first-awesome.md.html">My first awesome</a></li>
   <li><a href="../documentation/16-using-cairo.md.html">Using Cairo and LGI</a></li>
-  <li><a href="../documentation/17-porting-tips.md.html">Porting tips</a></li>
+  <li><a href="../documentation/17-porting-tips.md.html">Tips for upgrading your configuration</a></li>
   <li><a href="../documentation/89-NEWS.md.html">NEWS</a></li>
   <li><a href="../documentation/90-FAQ.md.html">FAQ</a></li>
 </ul>
@@ -77,15 +78,20 @@
   <li><a href="../libraries/awful.util.html">awful.util</a></li>
   <li><a href="../libraries/awful.wibox.html">awful.wibox</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
+  <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
   <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
   <li><a href="../libraries/gears.color.html">gears.color</a></li>
   <li><a href="../libraries/gears.debug.html">gears.debug</a></li>
+  <li><a href="../libraries/gears.filesystem.html">gears.filesystem</a></li>
   <li><a href="../libraries/gears.geometry.html">gears.geometry</a></li>
+  <li><a href="../libraries/gears.math.html">gears.math</a></li>
   <li><a href="../libraries/gears.object.properties.html">gears.object.properties</a></li>
   <li><a href="../libraries/gears.protected_call.html">gears.protected_call</a></li>
   <li><a href="../libraries/gears.shape.html">gears.shape</a></li>
+  <li><a href="../libraries/gears.string.html">gears.string</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
+  <li><a href="../libraries/gears.table.html">gears.table</a></li>
   <li><a href="../libraries/gears.wallpaper.html">gears.wallpaper</a></li>
   <li><a href="../libraries/keygrabber.html">keygrabber</a></li>
   <li><a href="../libraries/menubar.html">menubar</a></li>
@@ -107,16 +113,23 @@
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.hierarchy.html">wibox.hierarchy</a></li>
 </ul>
+<h2>Sample files</h2>
+<ul class="nowrap">
+  <li><a href="../sample files/rc.lua.html">rc.lua</a></li>
+</ul>
 <h2>Classes</h2>
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
   <li><a href="../classes/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../classes/awful.widget.button.html">awful.widget.button</a></li>
+  <li><a href="../classes/awful.widget.clienticon.html">awful.widget.clienticon</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/awful.widget.graph.html">awful.widget.graph</a></li>
+  <li><a href="../classes/awful.widget.keyboardlayout.html">awful.widget.keyboardlayout</a></li>
   <li><a href="../classes/awful.widget.launcher.html">awful.widget.launcher</a></li>
   <li><a href="../classes/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
+  <li><a href="../classes/awful.widget.only_on_screen.html">awful.widget.only_on_screen</a></li>
   <li><a href="../classes/awful.widget.progressbar.html">awful.widget.progressbar</a></li>
   <li><a href="../classes/awful.widget.prompt.html">awful.widget.prompt</a></li>
   <li><a href="../classes/awful.widget.taglist.html">awful.widget.taglist</a></li>
@@ -142,6 +155,7 @@
   <li><a href="../classes/wibox.container.constraint.html">wibox.container.constraint</a></li>
   <li><a href="../classes/wibox.container.margin.html">wibox.container.margin</a></li>
   <li><a href="../classes/wibox.container.mirror.html">wibox.container.mirror</a></li>
+  <li><a href="../classes/wibox.container.place.html">wibox.container.place</a></li>
   <li><a href="../classes/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../classes/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../classes/wibox.container.scroll.html">wibox.container.scroll</a></li>
@@ -150,6 +164,7 @@
   <li><a href="../classes/wibox.layout.constraint.html">wibox.layout.constraint</a></li>
   <li><a href="../classes/wibox.layout.fixed.html">wibox.layout.fixed</a></li>
   <li><a href="../classes/wibox.layout.flex.html">wibox.layout.flex</a></li>
+  <li><a href="../classes/wibox.layout.grid.html">wibox.layout.grid</a></li>
   <li><a href="../classes/wibox.layout.margin.html">wibox.layout.margin</a></li>
   <li><a href="../classes/wibox.layout.mirror.html">wibox.layout.mirror</a></li>
   <li><a href="../classes/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
@@ -161,7 +176,6 @@
   <li><a href="../classes/wibox.widget.checkbox.html">wibox.widget.checkbox</a></li>
   <li><a href="../classes/wibox.widget.graph.html">wibox.widget.graph</a></li>
   <li><a href="../classes/wibox.widget.imagebox.html">wibox.widget.imagebox</a></li>
-  <li><a href="../classes/wibox.widget.keyboardlayout.html">wibox.widget.keyboardlayout</a></li>
   <li><a href="../classes/wibox.widget.piechart.html">wibox.widget.piechart</a></li>
   <li><a href="../classes/wibox.widget.progressbar.html">wibox.widget.progressbar</a></li>
   <li><a href="../classes/wibox.widget.slider.html">wibox.widget.slider</a></li>
@@ -178,53 +192,52 @@
 
 <h1>Authors</h1>
 
-
 <p><a name="awesome___awesome_window_manager"></a></p>
 <h2>awesome - awesome window manager</h2>
 
 <p><strong>Maintainer</strong>:</p>
 
 <ul>
-    <li>© 2009- Uli Schlachter &lt;psychon@znc.in></li>
+    <li>© 2009- <a href="mailto:psychon@znc.in">Uli Schlachter</a></li>
 </ul>
 
 <p><strong>Main contributors</strong>:</p>
 
 <ul>
-    <li>© 2013- Emmanuel Lepage-Vallee &lt;elv1313@gmail.com></li>
-    <li>© 2014- Daniel Hahler &lt;https://daniel.hahler.de></li>
-    <li>© 2014- Yauhen Kirylau &lt;actionless.loveless@gmail.com></li>
+    <li>© 2013- <a href="mailto:elv1313@gmail.com">Emmanuel Lepage-Vallee</a></li>
+    <li>© 2014- <a href="https://daniel.hahler.de">Daniel Hahler</a></li>
+    <li>© 2014- <a href="mailto:actionless.loveless@gmail.com">Yauhen Kirylau</a></li>
 </ul>
 
 <p><strong>Original author</strong>:</p>
 
 <ul>
-    <li>© 2007-2009 Julien Danjou &lt;julien@danjou.info></li>
+    <li>© 2007-2009 <a href="mailto:julien@danjou.info">Julien Danjou</a></li>
 </ul>
 
 <p><strong>Past contributors</strong>:</p>
 
 <ul>
-    <li>© 2007-2008 Marco Candrian &lt;mac@calmar.ws></li>
-    <li>© 2007 Aldo Cortesi &lt;aldo@nullcube.com></li>
-    <li>© 2008 Lucas de Vries &lt;lucasdevries@gmail.com></li>
-    <li>© 2008 Pierre Habouzit &lt;madcoder@debian.org></li>
-    <li>© 2008 Félix C. Morency &lt;felix.morency@gmail.com></li>
-    <li>© 2008 Michael Gehring &lt;mg@ebfe.org></li>
-    <li>© 2008 Hans Ulrich Niedermann &lt;hun@n-dimensional.de></li>
-    <li>© 2007-2009 Nikos Ntarmos &lt;ntarmos@ceid.upatras.gr></li>
-    <li>© 2008-2009 Damien Leone &lt;damien.leone@gmail.com></li>
-    <li>© 2008-2009 Maarten Maathuis &lt;madman2003@gmail.com></li>
-    <li>© 2008-2010 koniu &lt;gkusnierz@gmail.com></li>
-    <li>© 2007-2011 Arnaud Fontaine &lt;arnau@debian.org></li>
-    <li>© 2008-2012 Gregor Best &lt;farhaven@googlemail.com></li>
+    <li>© 2007-2008 <a href="mailto:mac@calmar.ws">Marco Candrian</a></li>
+    <li>© 2007 <a href="mailto:aldo@nullcube.com">Aldo Cortesi</a></li>
+    <li>© 2008 <a href="mailto:lucasdevries@gmail.com">Lucas de Vries</a></li>
+    <li>© 2008 <a href="mailto:madcoder@debian.org">Pierre Habouzit</a></li>
+    <li>© 2008 <a href="mailto:felix.morency@gmail.com">Félix C. Morency</a></li>
+    <li>© 2008 <a href="mailto:mg@ebfe.org">Michael Gehring</a></li>
+    <li>© 2008 <a href="mailto:hun@n-dimensional.de">Hans Ulrich Niedermann</a></li>
+    <li>© 2007-2009 <a href="mailto:ntarmos@ceid.upatras.gr">Nikos Ntarmos</a></li>
+    <li>© 2008-2009 <a href="mailto:damien.leone@gmail.com">Damien Leone</a></li>
+    <li>© 2008-2009 <a href="mailto:madman2003@gmail.com">Maarten Maathuis</a></li>
+    <li>© 2008-2010 <a href="mailto:gkusnierz@gmail.com">koniu</a></li>
+    <li>© 2007-2011 <a href="mailto:arnau@debian.org">Arnaud Fontaine</a></li>
+    <li>© 2008-2012 <a href="mailto:farhaven@googlemail.com">Gregor Best</a></li>
 </ul>
 
-<p>For a more complete list of contributors, see our
+<p>For a complete list of contributors, see our
 <a href="https://github.com/awesomeWM/awesome/graphs/contributors">GitHub page</a>.</p>
 
-<p><a name="License_"></a></p>
-<h2>License:</h2>
+<p><a name="License"></a></p>
+<h2>License</h2>
 
 <p>This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -240,17 +253,17 @@ GNU General Public License for more details.</p>
 with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.</p>
 
-<p><a name="Originally_based_on_dwm_code_"></a></p>
-<h2>Originally based on dwm code:</h2>
+<p><a name="Originally_based_on_dwm_code"></a></p>
+<h2>Originally based on dwm code</h2>
 
 <p>MIT/X Consortium License</p>
 
 <ul>
-    <li>© 2006-2007 Anselm R. Garbe &lt;garbeam@gmail.com></li>
-    <li>© 2006-2007 Sander van Dijk &lt;a.h.vandijk@gmail.com></li>
-    <li>© 2006-2007 Jukka Salmi &lt;jukka@salmi.ch></li>
-    <li>© 2007 Premysl Hruby &lt;dfenze@gmail.com></li>
-    <li>© 2007 Szabolcs Nagy &lt;nszabolcs@gmail.com></li>
+    <li>© 2006-2007 <a href="mailto:garbeam@gmail.com">Anselm R. Garbe</a></li>
+    <li>© 2006-2007 <a href="mailto:a.h.vandijk@gmail.com">Sander van Dijk</a></li>
+    <li>© 2006-2007 <a href="mailto:jukka@salmi.ch">Jukka Salmi</a></li>
+    <li>© 2007 <a href="mailto:dfenze@gmail.com">Premysl Hruby</a></li>
+    <li>© 2007 <a href="mailto:nszabolcs@gmail.com">Szabolcs Nagy</a></li>
 </ul>
 
 <p>Permission is hereby granted, free of charge, to any person obtaining a
@@ -268,7 +281,7 @@ all copies or substantial portions of the Software.</p>
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2017-03-05 03:13:56 </i>
+<i style="float:right;">Last updated 2017-03-18 10:22:44 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

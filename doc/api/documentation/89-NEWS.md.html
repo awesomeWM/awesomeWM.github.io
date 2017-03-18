@@ -47,8 +47,9 @@
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
+  <li><a href="../documentation/07-my-first-awesome.md.html">My first awesome</a></li>
   <li><a href="../documentation/16-using-cairo.md.html">Using Cairo and LGI</a></li>
-  <li><a href="../documentation/17-porting-tips.md.html">Porting tips</a></li>
+  <li><a href="../documentation/17-porting-tips.md.html">Tips for upgrading your configuration</a></li>
   <li><strong>NEWS</strong></li>
   <li><a href="../documentation/90-FAQ.md.html">FAQ</a></li>
 </ul>
@@ -77,15 +78,20 @@
   <li><a href="../libraries/awful.util.html">awful.util</a></li>
   <li><a href="../libraries/awful.wibox.html">awful.wibox</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
+  <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
   <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
   <li><a href="../libraries/gears.color.html">gears.color</a></li>
   <li><a href="../libraries/gears.debug.html">gears.debug</a></li>
+  <li><a href="../libraries/gears.filesystem.html">gears.filesystem</a></li>
   <li><a href="../libraries/gears.geometry.html">gears.geometry</a></li>
+  <li><a href="../libraries/gears.math.html">gears.math</a></li>
   <li><a href="../libraries/gears.object.properties.html">gears.object.properties</a></li>
   <li><a href="../libraries/gears.protected_call.html">gears.protected_call</a></li>
   <li><a href="../libraries/gears.shape.html">gears.shape</a></li>
+  <li><a href="../libraries/gears.string.html">gears.string</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
+  <li><a href="../libraries/gears.table.html">gears.table</a></li>
   <li><a href="../libraries/gears.wallpaper.html">gears.wallpaper</a></li>
   <li><a href="../libraries/keygrabber.html">keygrabber</a></li>
   <li><a href="../libraries/menubar.html">menubar</a></li>
@@ -107,16 +113,23 @@
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.hierarchy.html">wibox.hierarchy</a></li>
 </ul>
+<h2>Sample files</h2>
+<ul class="nowrap">
+  <li><a href="../sample files/rc.lua.html">rc.lua</a></li>
+</ul>
 <h2>Classes</h2>
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
   <li><a href="../classes/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../classes/awful.widget.button.html">awful.widget.button</a></li>
+  <li><a href="../classes/awful.widget.clienticon.html">awful.widget.clienticon</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/awful.widget.graph.html">awful.widget.graph</a></li>
+  <li><a href="../classes/awful.widget.keyboardlayout.html">awful.widget.keyboardlayout</a></li>
   <li><a href="../classes/awful.widget.launcher.html">awful.widget.launcher</a></li>
   <li><a href="../classes/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
+  <li><a href="../classes/awful.widget.only_on_screen.html">awful.widget.only_on_screen</a></li>
   <li><a href="../classes/awful.widget.progressbar.html">awful.widget.progressbar</a></li>
   <li><a href="../classes/awful.widget.prompt.html">awful.widget.prompt</a></li>
   <li><a href="../classes/awful.widget.taglist.html">awful.widget.taglist</a></li>
@@ -142,6 +155,7 @@
   <li><a href="../classes/wibox.container.constraint.html">wibox.container.constraint</a></li>
   <li><a href="../classes/wibox.container.margin.html">wibox.container.margin</a></li>
   <li><a href="../classes/wibox.container.mirror.html">wibox.container.mirror</a></li>
+  <li><a href="../classes/wibox.container.place.html">wibox.container.place</a></li>
   <li><a href="../classes/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../classes/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../classes/wibox.container.scroll.html">wibox.container.scroll</a></li>
@@ -150,6 +164,7 @@
   <li><a href="../classes/wibox.layout.constraint.html">wibox.layout.constraint</a></li>
   <li><a href="../classes/wibox.layout.fixed.html">wibox.layout.fixed</a></li>
   <li><a href="../classes/wibox.layout.flex.html">wibox.layout.flex</a></li>
+  <li><a href="../classes/wibox.layout.grid.html">wibox.layout.grid</a></li>
   <li><a href="../classes/wibox.layout.margin.html">wibox.layout.margin</a></li>
   <li><a href="../classes/wibox.layout.mirror.html">wibox.layout.mirror</a></li>
   <li><a href="../classes/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
@@ -161,7 +176,6 @@
   <li><a href="../classes/wibox.widget.checkbox.html">wibox.widget.checkbox</a></li>
   <li><a href="../classes/wibox.widget.graph.html">wibox.widget.graph</a></li>
   <li><a href="../classes/wibox.widget.imagebox.html">wibox.widget.imagebox</a></li>
-  <li><a href="../classes/wibox.widget.keyboardlayout.html">wibox.widget.keyboardlayout</a></li>
   <li><a href="../classes/wibox.widget.piechart.html">wibox.widget.piechart</a></li>
   <li><a href="../classes/wibox.widget.progressbar.html">wibox.widget.progressbar</a></li>
   <li><a href="../classes/wibox.widget.slider.html">wibox.widget.slider</a></li>
@@ -178,6 +192,7 @@
 
 <h1>NEWS</h1>
 
+<p><a name="v4"></a></p>
 <h1>Awesome window manager framework version 4.0 changes</h1>
 
 <p><center> <img src="../images/AUTOGEN_wibox_logo_logo_and_name.svg" /> </center></p>
@@ -343,10 +358,6 @@ following ones have been added:</p>
     <li>The <code>focus</code> is now going through the focus filters instead of being applied
     as-is (see the focus filter section).</li>
 </ul>
-
-<p>Rules execution has been re-ordered to minimize the race conditions (one rule
-affecting the outcome of another). This may create a slightly different
-behavior for some users, but is usually considered to be an improvement.</p>
 
 <h4>User rules</h4>
 
@@ -632,10 +643,8 @@ widgets (think of scaling and rotations).</p>
 <p><strong>See:</strong></p>
 
 <ul>
-    <li><code>gears.hierarchy</code></li>
-    <li><ul>
-        <li><a href="./04-new-widgets.md.html">Creating new widget</a></li>
-    </ul></li>
+    <li><a href="../libraries/wibox.hierarchy.html#">wibox.hierarchy</a></li>
+    <li><a href="./04-new-widgets.md.html">Creating new widget</a></li>
 </ul>
 
 <h3>New themes</h3>
@@ -743,7 +752,7 @@ includes a widget to view the current layout.</p>
     <li><a href="../libraries/awesome.html#xkb_set_layout_group">awesome.xkb_set_layout_group</a></li>
     <li><a href="../libraries/awesome.html#xkb_get_layout_group">awesome.xkb_get_layout_group</a></li>
     <li><a href="../libraries/awesome.html#xkb_get_group_names">awesome.xkb_get_group_names</a></li>
-    <li><a href="../classes/wibox.widget.keyboardlayout.html#">wibox.widget.keyboardlayout</a></li>
+    <li><code>wibox.widget.keyboardlayout</code></li>
 </ul>
 
 <h3>Other minor features</h3>
@@ -787,7 +796,8 @@ Many changes now cause a deprecation warning instead of breaking hard.
 However, it is important to take note of these changes in order to avoid new
 bugs.</p>
 
-<p>Also see the <a href="./17-porting-tips.md.html">porting tips</a></p>
+<p>Also see the <a href="17-porting-tips.md.html#v4">tips for porting your
+configuration</a>.</p>
 
 <h3>There can be off-screen clients unless rc.lua is adapted</h3>
 
@@ -851,14 +861,14 @@ now broken. Use screen objects instead of numbers.</p>
 
 <h3>Awesome no longer restarts when a new screen is added</h3>
 
-<p>By default, <code>rc.lua</code> now handles screen changes without restarting.
-It allows to preserve the tag and layout state across changes. Old <code>rc.lua</code> can
-either be ported to handle this by taking clues from the new <code>rc.lua</code> or
+<p>By default, <a href="../sample files/rc.lua.html#">rc.lua</a> now handles screen changes without restarting.
+It allows to preserve the tag and layout state across changes. Old <a href="../sample files/rc.lua.html#">rc.lua</a> can
+either be ported to handle this by taking clues from the new <a href="../sample files/rc.lua.html#">rc.lua</a> or
 restore the old behavior by adding the following at the end:</p>
 
 
 <pre>
-screen.connect(<span class="string">"list"</span>, awesome.restart)
+screen.connect_signal(<span class="string">"list"</span>, awesome.restart)
 </pre>
 
 <p><strong>See:</strong></p>
@@ -1143,7 +1153,7 @@ visibility count and reduced our infrastructure maintenance cost.</p>
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2017-03-05 03:13:56 </i>
+<i style="float:right;">Last updated 2017-03-18 10:22:44 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

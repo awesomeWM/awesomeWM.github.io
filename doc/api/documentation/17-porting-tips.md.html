@@ -45,8 +45,9 @@
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
+  <li><a href="../documentation/07-my-first-awesome.md.html">My first awesome</a></li>
   <li><a href="../documentation/16-using-cairo.md.html">Using Cairo and LGI</a></li>
-  <li><strong>Porting tips</strong></li>
+  <li><strong>Tips for upgrading your configuration</strong></li>
   <li><a href="../documentation/89-NEWS.md.html">NEWS</a></li>
   <li><a href="../documentation/90-FAQ.md.html">FAQ</a></li>
 </ul>
@@ -75,15 +76,20 @@
   <li><a href="../libraries/awful.util.html">awful.util</a></li>
   <li><a href="../libraries/awful.wibox.html">awful.wibox</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
+  <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
   <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
   <li><a href="../libraries/gears.color.html">gears.color</a></li>
   <li><a href="../libraries/gears.debug.html">gears.debug</a></li>
+  <li><a href="../libraries/gears.filesystem.html">gears.filesystem</a></li>
   <li><a href="../libraries/gears.geometry.html">gears.geometry</a></li>
+  <li><a href="../libraries/gears.math.html">gears.math</a></li>
   <li><a href="../libraries/gears.object.properties.html">gears.object.properties</a></li>
   <li><a href="../libraries/gears.protected_call.html">gears.protected_call</a></li>
   <li><a href="../libraries/gears.shape.html">gears.shape</a></li>
+  <li><a href="../libraries/gears.string.html">gears.string</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
+  <li><a href="../libraries/gears.table.html">gears.table</a></li>
   <li><a href="../libraries/gears.wallpaper.html">gears.wallpaper</a></li>
   <li><a href="../libraries/keygrabber.html">keygrabber</a></li>
   <li><a href="../libraries/menubar.html">menubar</a></li>
@@ -105,16 +111,23 @@
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.hierarchy.html">wibox.hierarchy</a></li>
 </ul>
+<h2>Sample files</h2>
+<ul class="nowrap">
+  <li><a href="../sample files/rc.lua.html">rc.lua</a></li>
+</ul>
 <h2>Classes</h2>
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
   <li><a href="../classes/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../classes/awful.widget.button.html">awful.widget.button</a></li>
+  <li><a href="../classes/awful.widget.clienticon.html">awful.widget.clienticon</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/awful.widget.graph.html">awful.widget.graph</a></li>
+  <li><a href="../classes/awful.widget.keyboardlayout.html">awful.widget.keyboardlayout</a></li>
   <li><a href="../classes/awful.widget.launcher.html">awful.widget.launcher</a></li>
   <li><a href="../classes/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
+  <li><a href="../classes/awful.widget.only_on_screen.html">awful.widget.only_on_screen</a></li>
   <li><a href="../classes/awful.widget.progressbar.html">awful.widget.progressbar</a></li>
   <li><a href="../classes/awful.widget.prompt.html">awful.widget.prompt</a></li>
   <li><a href="../classes/awful.widget.taglist.html">awful.widget.taglist</a></li>
@@ -140,6 +153,7 @@
   <li><a href="../classes/wibox.container.constraint.html">wibox.container.constraint</a></li>
   <li><a href="../classes/wibox.container.margin.html">wibox.container.margin</a></li>
   <li><a href="../classes/wibox.container.mirror.html">wibox.container.mirror</a></li>
+  <li><a href="../classes/wibox.container.place.html">wibox.container.place</a></li>
   <li><a href="../classes/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../classes/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../classes/wibox.container.scroll.html">wibox.container.scroll</a></li>
@@ -148,6 +162,7 @@
   <li><a href="../classes/wibox.layout.constraint.html">wibox.layout.constraint</a></li>
   <li><a href="../classes/wibox.layout.fixed.html">wibox.layout.fixed</a></li>
   <li><a href="../classes/wibox.layout.flex.html">wibox.layout.flex</a></li>
+  <li><a href="../classes/wibox.layout.grid.html">wibox.layout.grid</a></li>
   <li><a href="../classes/wibox.layout.margin.html">wibox.layout.margin</a></li>
   <li><a href="../classes/wibox.layout.mirror.html">wibox.layout.mirror</a></li>
   <li><a href="../classes/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
@@ -159,7 +174,6 @@
   <li><a href="../classes/wibox.widget.checkbox.html">wibox.widget.checkbox</a></li>
   <li><a href="../classes/wibox.widget.graph.html">wibox.widget.graph</a></li>
   <li><a href="../classes/wibox.widget.imagebox.html">wibox.widget.imagebox</a></li>
-  <li><a href="../classes/wibox.widget.keyboardlayout.html">wibox.widget.keyboardlayout</a></li>
   <li><a href="../classes/wibox.widget.piechart.html">wibox.widget.piechart</a></li>
   <li><a href="../classes/wibox.widget.progressbar.html">wibox.widget.progressbar</a></li>
   <li><a href="../classes/wibox.widget.slider.html">wibox.widget.slider</a></li>
@@ -174,29 +188,30 @@
 <div id="content">
 
 
-<h1>Porting tips</h1>
+<h1>Tips for upgrading your configuration</h1>
 
-<p><a name="From_3_5_to_4_0"></a></p>
+<p><a name="v4"></a>
+<a name="From_3_5_to_4_0"></a></p>
 <h2>From 3.5 to 4.0</h2>
 
 <p>The
-**best advice is to start from the default <code>rc.lua</code> and backport any changes**
-you might have added to your <code>rc.lua</code>.
+**best advice is to start from the default <a href="../sample files/rc.lua.html#">rc.lua</a> and backport any changes**
+you might have added to your <a href="../sample files/rc.lua.html#">rc.lua</a>.
 This avoids most of the possible errors due to missing important changes.</p>
 
 <p>If you still wish to ignore this advice, first read the
-<a href="./89-NEWS.md.html">NEWS</a> section about the breaking changes. This
+<a href="89-NEWS.md.html#v4">NEWS</a> section about the breaking changes. This
 document assumes you did.</p>
 
 <p>Be warned, even if it looks like it's working after changing some lines, <strong>it wont
 supports dynamic screen changes and will have many subtle bugs</strong>. The changes
 mentioned below <strong>are important for the stability of your window manager</strong>.</p>
 
-<p>Here is a diff of the 3.5.9 <code>rc.lua</code> with the 4.0 one. All changes due to
+<p>Here is a diff of the 3.5.9 <a href="../sample files/rc.lua.html#">rc.lua</a> with the 4.0 one. All changes due to
 new features and new syntaxes have been removed. A <code>-</code> in front of the line
-correspond to content of the 3.5 <code>rc.lua</code> and <code>+</code> its replacement in 4.0.</p>
+correspond to content of the 3.5 <a href="../sample files/rc.lua.html#">rc.lua</a> and <code>+</code> its replacement in 4.0.</p>
 
-<p>This document does not cover the new features added in the Awesome 4 <code>rc.lua</code>,
+<p>This document does not cover the new features added in the Awesome 4 <a href="../sample files/rc.lua.html#">rc.lua</a>,
 it only covers the minimal required changes to have a properly behaving config.</p>
 
 <p>To test during the port, we recommend the <code>Xephyr</code> X11 server.</p>
@@ -228,7 +243,7 @@ DISPLAY=:<span class="number">1</span> $HOME/awesome4_test/bin/awesome \
     <span class="comment">--search $HOME/awesome4_test/share/awesome/lib</span>
 </pre>
 
-<p>If Awesome 4 is <strong>already installed</strong>, then backup your old <code>rc.lua</code> and overwrite
+<p>If Awesome 4 is <strong>already installed</strong>, then backup your old <a href="../sample files/rc.lua.html#">rc.lua</a> and overwrite
 <code>~/.config/awesome/rc.lua</code> (replace this by another path if you use a custom
 XDH config local directory). And only execute:</p>
 
@@ -238,7 +253,7 @@ Xephyr :<span class="number">1</span> -screen <span class="number">1280</span>x8
 DISPLAY=:<span class="number">1</span> awesome
 </pre>
 
-<p>Screens are now added and removed without reloading <code>rc.lua</code>. The wallpaper are
+<p>Screens are now added and removed without reloading <a href="../sample files/rc.lua.html#">rc.lua</a>. The wallpaper are
 now set in a signal callback.</p>
 
 
@@ -282,11 +297,27 @@ work. Remove this section.</p>
 <span class="comment">--- }}}</span>
 </pre>
 
+<p>The <code>quit</code> menu command must be wrapped in a function, otherwise an error
+occurs due to mismatched argument types from the v4.0 <a href="../libraries/awful.menu.html#">awful.menu</a> library.</p>
+
+
+<pre>
+ <span class="comment">-- {{{ Menu
+</span> <span class="comment">-- Create a laucher widget and a main menu
+</span> myawesomemenu = {
+   { <span class="string">"manual"</span>, terminal .. <span class="string">" -e man awesome"</span> },
+   { <span class="string">"edit config"</span>, editor_cmd .. <span class="string">" "</span> .. awesome.conffile },
+   { <span class="string">"restart"</span>, awesome.restart },
+-  { <span class="string">"quit"</span>, awesome.quit }
++  { <span class="string">"quit"</span>, <span class="keyword">function</span>() awesome.quit() <span class="keyword">end</span>}
+ }
+</pre>
+
 <p>The textclock is now part of the <a href="../classes/wibox.html#">wibox</a> library, rename it.</p>
 
 
 <pre>
-<span class="comment">-- {{{ Wibar
+ <span class="comment">-- {{{ Wibar
 </span> <span class="comment">-- Create a textclock widget
 </span>-mytextclock = <span class="backtick"><a href="../classes/awful.widget.textclock.html#">awful.widget.textclock</a></span>()
 +mytextclock = <span class="backtick"><a href="../classes/wibox.widget.textclock.html#">wibox.widget.textclock</a></span>()
@@ -297,12 +328,12 @@ behave correctly when screen are added and removed. Remove this section.</p>
 
 
 <pre>
-<span class="comment">-- Create a wibox for each screen and add it
-</span>mywibox = {}
-mypromptbox = {}
-mylayoutbox = {}
-mytaglist = {}
-mytasklist = {}
+<span class="comment">--- Create a wibox for each screen and add it
+</span>-mywibox = {}
+-mypromptbox = {}
+-mylayoutbox = {}
+-mytaglist = {}
+-mytasklist = {}
 </pre>
 
 <p>Many functions have been converted to methods. The old functions are deprecated,
@@ -338,6 +369,7 @@ they are still supported, but will be removed in the next release.</p>
                       awful.button({ }, <span class="number">1</span>, <span class="keyword">function</span> (c)
                                                <span class="keyword">if</span> c == <span class="backtick"><a href="../classes/client.html#client.focus">client.focus</a></span> <span class="keyword">then</span>
                                                    c.minimized = <span class="keyword">true</span>
+                                               <span class="keyword">else</span>
                                                    <span class="comment">-- Without this, the following
 </span>                                                   <span class="comment">-- :isvisible() makes no sense
 </span>                                                   c.minimized = <span class="keyword">false</span>
@@ -348,7 +380,8 @@ they are still supported, but will be removed in the next release.</p>
                                                    <span class="keyword">end</span>
                                                    <span class="comment">-- This will also un-minimize
 </span>                                                   <span class="comment">-- the client, if needed
-</span>                                                   c:raise()
+</span>                                                   <span class="backtick"><a href="../classes/client.html#client.focus">client.focus</a></span> = c
+                                                   c:raise()
                                                <span class="keyword">end</span>
                                            <span class="keyword">end</span>),
 </pre>
@@ -434,9 +467,9 @@ previously removed are replaced by custom screens attributes.</p>
 
 
 <pre>
-<span class="comment">-- Prompt
-</span>    awful.key({ modkey },            <span class="string">"r"</span>,     <span class="keyword">function</span> () mypromptbox[mouse.screen]:run() <span class="keyword">end</span>),
-    awful.key({ modkey },            <span class="string">"r"</span>,     <span class="keyword">function</span> () <span class="backtick"><code>awful.screen.focused</code></span>().mypromptbox:run() <span class="keyword">end</span>),
+⠀<span class="comment">-- Prompt
+</span>-    awful.key({ modkey },            <span class="string">"r"</span>,     <span class="keyword">function</span> () mypromptbox[mouse.screen]:run() <span class="keyword">end</span>),
++    awful.key({ modkey },            <span class="string">"r"</span>,     <span class="keyword">function</span> () <span class="backtick"><code>awful.screen.focused</code></span>().mypromptbox:run() <span class="keyword">end</span>),
 </pre>
 
 <p><a href="../libraries/awful.prompt.html#">awful.prompt</a> now uses a more future proof arguments table instead of many
@@ -444,20 +477,20 @@ optional arguments.</p>
 
 
 <pre>
-awful.key({ modkey }, <span class="string">"x"</span>,
-          <span class="keyword">function</span> ()
-              <span class="backtick"><a href="../libraries/awful.prompt.html#run">awful.prompt.run</a></span>({ prompt = <span class="string">"Run Lua code: "</span> },
-              mypromptbox[mouse.screen].widget,
-              <span class="backtick"><a href="../libraries/awful.util.html#eval">awful.util.eval</a></span>, <span class="keyword">nil</span>,
-              <span class="backtick"><a href="../libraries/awful.util.html#getdir">awful.util.getdir</a></span>(<span class="string">"cache"</span>) .. <span class="string">"/history_eval"</span>)
-          <span class="keyword">end</span>),
-              awful.prompt.run {
-                prompt       = <span class="string">"Run Lua code: "</span>,
-                textbox      = <span class="backtick"><code>awful.screen.focused</code></span>().mypromptbox.widget,
-                exe_callback = <span class="backtick"><a href="../libraries/awful.util.html#eval">awful.util.eval</a></span>,
-                history_path = <span class="backtick"><a href="../libraries/awful.util.html#get_cache_dir">awful.util.get_cache_dir</a></span>() .. <span class="string">"/history_eval"</span>
-              }
-          <span class="keyword">end</span>),
+⠀    awful.key({ modkey }, <span class="string">"x"</span>,
+               <span class="keyword">function</span> ()
+-                  <span class="backtick"><a href="../libraries/awful.prompt.html#run">awful.prompt.run</a></span>({ prompt = <span class="string">"Run Lua code: "</span> },
+-                  mypromptbox[mouse.screen].widget,
+-                  <span class="backtick"><a href="../libraries/awful.util.html#eval">awful.util.eval</a></span>, <span class="keyword">nil</span>,
+-                  <span class="backtick"><a href="../libraries/awful.util.html#getdir">awful.util.getdir</a></span>(<span class="string">"cache"</span>) .. <span class="string">"/history_eval"</span>)
+-              <span class="keyword">end</span>),
++                  awful.prompt.run {
++                    prompt       = <span class="string">"Run Lua code: "</span>,
++                    textbox      = <span class="backtick"><code>awful.screen.focused</code></span>().mypromptbox.widget,
++                    exe_callback = <span class="backtick"><a href="../libraries/awful.util.html#eval">awful.util.eval</a></span>,
++                    history_path = <span class="backtick"><a href="../libraries/awful.util.html#get_cache_dir">awful.util.get_cache_dir</a></span>() .. <span class="string">"/history_eval"</span>
++                  }
++              <span class="keyword">end</span>),
 </pre>
 
 <p>Another function-to-method API change:</p>
@@ -556,13 +589,25 @@ now access tags by name.</p>
 </span>+    <span class="comment">--   properties = { screen = 1, tag = "2" } },</span>
 </pre>
 
+<p>If you need to get the current client object in global context, currently you can use
+<a href="../classes/client.html#client.focus">client.focus</a> for it. E.g., to mark/unmark the client:</p>
+
+
+<pre>
+-    awful.client.mark()
++    client.focus.marked = <span class="keyword">true</span>
+
+-    awful.client.unmark()
++    client.focus.marked = <span class="keyword">false</span>
+</pre>
+
 
 
 </div> <!-- id="content" -->
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2017-03-05 03:13:56 </i>
+<i style="float:right;">Last updated 2017-03-18 10:22:44 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
