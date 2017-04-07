@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>mpc - awesome window manager</title>
+<title>countdown - awesome window manager</title>
 <link rel="icon" href="../../images/icons/aw_16.png" type="image/png" />
 <link rel="stylesheet" href="../../style.css" type="text/css" />
 <link rel="stylesheet" href="../../local.css" type="text/css" />
@@ -22,7 +22,7 @@
 	  </a>
 	</div>
         <div id="menu">
-          <ul class="active-menu-mpc">
+          <ul class="active-menu-countdown">
             <li class="menu-about"><a href="../../index.html">home</a></li>
             <li class="menu-download"><a href="../../download/">download</a></li>
             <li class="menu-community"><a href="../../community/">community</a></li>
@@ -39,88 +39,74 @@
     
 
     <div id="content">
-    <!--    <h1>mpc</h1> -->
+    <!--    <h1>countdown</h1> -->
         <div id="left">
-          <h1>MPD integration</h1>
+          <h1>Countdown widget</h1>
 
-<p>This page describes an integration with the <a href="https://www.musicpd.org/">Music Player
-Daemon</a>. This consists of two parts: A <a href="../mpc.lua">pure Lua
-library for talking to mpc</a> and an example on how to use this for a
-widget with awesome.</p>
+<p>Add the following in your <code>rc.lua</code>:</p>
 
-<h2>The library</h2>
+<pre><code class="lua">local countdown = {
+    widget   = wibox.widget.textbox(),
+    checkbox = wibox.widget {
+        checked      = false,
+        check_color  = beautiful.fg_focus,  -- customize
+        border_color = beautiful.fg_normal, -- customize
+        border_width = 2,                   -- customize
+        shape        = gears.shape.circle,
+        widget       = wibox.widget.checkbox
+    }
+}
 
-<p>The library provides a function <code>mpc.new</code> that creates a new object representing
-a connection to MPD. It can be used as follows:</p>
-
-<pre><code>local connection = require("mpc").new(host, port, password, error_handler, idle_commands...)
-</code></pre>
-
-<p>This will establish a TCP connection to the given host and port and, if a
-password is given, log in to the MPD server. Whenever an error happens (for
-example the connection is lost or the password is rejected), the given error
-handler function is called with the error as its argument. The next time the
-connection is used, an automatic reconnection is attempted.</p>
-
-<p>A description of the MPD protocol can be fined
-<a href="https://www.musicpd.org/doc/protocol/">here</a>. This library only provides
-low-level access to the protocol. However, special support for the idle command
-is provided via extra arguments to the <code>new</code> function. This will be made clear
-in an example below.</p>
-
-<p>For example, to get information about the currently playing song:</p>
-
-<pre><code>connection:send("currentsong", function(success, data)
-    if not success then print("command failed") end
-    print("Information about the current song:")
-    require("gears.debug").dump(data)
-end)
-</code></pre>
-
-<h2>A sample widget</h2>
-
-<p>The following keeps a textbox up-to-date with the MPD status. It automatically
-updates when the current MPD state changes.</p>
-
-<pre><code>local mpc = require("mpc")
-local textbox = require("wibox.widget.textbox")
-local timer = require("gears.timer")
-local mpd_widget = textbox()
-local state, title, artist, file = "stop", "", "", ""
-local function update_widget()
-    local text = "Current MPD status: "
-    text = text .. tostring(artist or "") .. " - " .. tostring(title or "")
-    if state == "pause" then
-        text = text .. " (paused)"
-    end
-    if state == "stop" then
-        text = text .. " (stopped)"
-    end
-    mpd_widget.text = text
+function countdown.set()
+    awful.prompt.run {
+        prompt       = "Countdown minutes: ", -- floats accepted
+        textbox      = awful.screen.focused().mypromptbox.widget,
+        exe_callback = function(timeout)
+            countdown.seconds = tonumber(timeout)
+            if not countdown.seconds then return end
+            countdown.checkbox.checked = false
+            countdown.minute_t = countdown.seconds &gt; 1 and "minutes" or "minute"
+            countdown.seconds = countdown.seconds * 60
+            countdown.timer = gears.timer({ timeout = 1 })
+            countdown.timer:connect_signal("timeout", function()
+                if countdown.seconds &gt; 0 then
+                    local minutes = math.floor(countdown.seconds / 60)
+                    local seconds = math.fmod(countdown.seconds, 60)
+                    countdown.widget:set_markup(string.format("%d:%02d", minutes, seconds))
+                    countdown.seconds = countdown.seconds - 1
+                else
+                    naughty.notify({
+                        title = "Countdown",
+                        text  = string.format("%s %s timeout", timeout, countdown.minute_t)
+                    })
+                    countdown.widget:set_markup("")
+                    countdown.checkbox.checked = true
+                    countdown.timer:stop()
+                end
+            end)
+            countdown.timer:start()
+        end
+    }
 end
-local connection
-local function error_handler(err)
-    mpd_widget:set_text("Error: " .. tostring(err))
-    -- Try a reconnect soon-ish
-    timer.start_new(10, function()
-        connection:send("ping")
+
+countdown.checkbox:buttons(awful.util.table.join(
+    awful.button({}, 1, function() countdown.set() end), -- left click
+    awful.button({}, 3, function() -- right click
+        if countdown.timer and countdown.timer.started then
+            countdown.widget:set_markup("")
+            countdown.checkbox.checked = false
+            countdown.timer:stop()
+            naughty.notify({ title = "Countdown", text  = "Timer stopped" })
+        end
     end)
-end
-connection = mpc.new(nil, nil, nil, error_handler,
-    "status", function(_, result)
-        state = result.state
-    end,
-    "currentsong", function(_, result)
-        title, artist, file = result.title, result.artist, result.file
-        pcall(update_widget)
-    end)
+))
 </code></pre>
 
-<p>If you actually want to be able to control MPD's behaviour, you could for
-example do the following to pause/unpause when clicking on the widget:</p>
+<p>then, add <code>countdown.widget</code> and <code>countdown.checkbox</code> to your favourite <code>wibox</code>.</p>
 
-<pre><code>mpd_widget:buttons(awful.button({}, 1, function() connection:toggle_play() end))
-</code></pre>
+<p>Left clicking on the <code>checkbox</code> will prompt for a countdown, right clicking will stop the timer.</p>
+
+<p>The <code>widget</code> will display the countdown.</p>
 
         </div>
         <!--
