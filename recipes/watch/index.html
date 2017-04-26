@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>watch - awesome window manager</title>
+<link rel="icon" href="../../images/icons/aw_16.png" type="image/png" />
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+<link rel="stylesheet" href="../../local.css" type="text/css" />
+
+
+</head>
+<body>
+
+<div id="wrap">
+    <a href="https://github.com/awesomeWM/awesome"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
+    <div id="top">
+      
+	<div id="center-logo">
+	  <a href="../../index.html" title="Back to main page">
+	    <img alt="awesome-logo" src="../../images/awesome-logo.svg">
+	  </a>
+	</div>
+        <div id="menu">
+          <ul class="active-menu-watch">
+            <li class="menu-about"><a href="../../index.html">home</a></li>
+            <li class="menu-download"><a href="../../download/">download</a></li>
+            <li class="menu-community"><a href="../../community/">community</a></li>
+            <li class="menu-recipes"><a href="../../recipes/">recipes</a></li>
+            <li class="menu-screenshots"><a href="../../screenshots/">screenshots</a></li>
+            <li class="menu-doc"><a href="../../doc/">doc</a></li>
+            <li class="menu-issues"><a href="https://github.com/awesomeWM/awesome/issues">bugs/issues</a></li>
+            </ul>
+        </div>
+    </div>
+
+    
+
+    
+
+    <div id="content">
+    <!--    <h1>watch</h1> -->
+        <div id="left">
+          <h1><a href="https://awesomewm.org/doc/api/classes/awful.widget.watch.html"><code>awful.util.watch</code></a> use case examples</h1>
+
+<h2>bitcoin</h2>
+
+<p>Requires <code>curl</code> and <a href="https://github.com/LuaDist/dkjson">dkjson</a> or <a href="https://github.com/copycat-killer/lain">lain</a>.</p>
+
+<pre><code class="lua">local bitcoin = awful.widget.watch(
+    "curl -m5 -s 'https://coinbase.com/api/v1/prices/buy'",
+    43200, -- half day
+    function(widget, stdout)
+        local btc, pos, err = require("dkjson").decode(stdout, 1, nil) -- dkjson
+        --local btc, pos, err = require("lain.util").dkjson.decode(stdout, 1, nil) -- lain
+        local btc_price = (not err and btc and btc["subtotal"]["amount"]) or "N/A"
+
+        -- customize here
+        widget:set_text(btc_price)
+    end
+)
+</code></pre>
+
+<h2>brtfs</h2>
+
+<pre><code class="lua">-- btrfs root df
+local myrootfs = awful.widget.watch(
+    "btrfs filesystem df -g /",
+    600, -- 10 minutes
+    function(widget, stdout)
+        local total, used  = string.match(stdout, "Data.-total=(%d+%.%d+)GiB.-used=(%d+%.%d+)GiB")
+        local percent_used = math.ceil((tonumber(used) / tonumber(total)) * 100)
+
+        -- customize here
+        widget:set_text(" [/: " .. percent_used .. "%] ")
+    end
+)
+</code></pre>
+
+<h2>cmus</h2>
+
+<pre><code class="lua">-- cmus audio player
+local cmus, cmus_timer = awful.widget.watch(
+    "cmus-remote -Q",
+    2,
+    function(widget, stdout)
+        local cmus_now = {
+            state   = "N/A",
+            artist  = "N/A",
+            title   = "N/A",
+            album   = "N/A"
+        }
+
+        for w in string.gmatch(stdout, "(.-)tag") do
+            a, b = w:match("(%w+) (.-)\n")
+            cmus_now[a] = b
+        end
+
+        -- customize here
+        widget:set_text(cmus_now.artist .. " - " .. cmus_now.title)
+    end
+)
+</code></pre>
+
+<h2>maildir</h2>
+
+<pre><code class="lua">-- checks whether there are files in the "new" directories of a mail dirtree
+local mailpath = "~/Mail"
+local mymaildir = awful.widget.watch(
+    { awful.util.shell, "-c", string.format("ls -1dr %s/*/new/*", mailpath) },
+    60,
+    function(widget, stdout)
+        local inbox_now = { digest = "" }
+
+        for dir in stdout:gmatch(".-/(%w+)/new") do
+            inbox_now[dir] = 1
+            for _ in stdout:gmatch(dir) do
+                inbox_now[dir] = inbox_now[dir] + 1
+            end
+            if #inbox_now.digest &gt; 0 then inbox_now.digest = inbox_now.digest .. ", " end
+            inbox_now.digest = inbox_now.digest .. string.format("%s (%d)", dir, inbox_now[dir])
+        end
+
+        -- customize here
+        widget:set_text("mail: " .. inbox_now.digest)
+    end
+)
+</code></pre>
+
+<h2>mpris</h2>
+
+<pre><code class="lua">-- infos from mpris clients such as spotify and VLC
+-- based on https://github.com/acrisci/playerctl
+local mpris, mpris_timer = awful.widget.watch(
+    { awful.util.shell, "-c", "playerctl status &amp;&amp; playerctl metadata" },
+    2,
+    function(widget, stdout)
+         local escape_f  = require("awful.util").escape
+         local mpris_now = {
+             state        = "N/A",
+             artist       = "N/A",
+             title        = "N/A",
+             art_url      = "N/A",
+             album        = "N/A",
+             album_artist = "N/A"
+         }
+
+         mpris_now.state = string.match(stdout, "Playing") or
+                           string.match(stdout, "Paused")  or "N/A"
+
+         for k, v in string.gmatch(stdout, "'[^:]+:([^']+)':[%s]&lt;%[?'([^']+)'%]?&gt;")
+         do
+             if     k == "artUrl"      then mpris_now.art_url      = v
+             elseif k == "artist"      then mpris_now.artist       = escape_f(v)
+             elseif k == "title"       then mpris_now.title        = escape_f(v)
+             elseif k == "album"       then mpris_now.album        = escape_f(v)
+             elseif k == "albumArtist" then mpris_now.album_artist = escape_f(v)
+             end
+         end
+
+        -- customize here
+        widget:set_text(mpris_now.artist .. " - " .. mpris_now.title)
+    end
+)
+</code></pre>
+
+<h2>upower</h2>
+
+<pre><code class="lua">-- battery infos from freedesktop upower
+local mybattery = awful.widget.watch(
+    { awful.util.shell, "-c", "upower -i /org/freedesktop/UPower/devices/battery_BAT | sed -n '/present/,/icon-name/p'" },
+    30,
+    settings = function(widget, stdout)
+        local bat_now = {
+            present      = "N/A",
+            state        = "N/A",
+            warninglevel = "N/A",
+            energy       = "N/A",
+            energyfull   = "N/A",
+            energyrate   = "N/A",
+            voltage      = "N/A",
+            percentage   = "N/A",
+            capacity     = "N/A",
+            icon         = "N/A"
+        }
+
+        for k, v in string.gmatch(stdout, '([%a]+[%a|-]+):%s*([%a|%d]+[,|%a|%d]-)') do
+            if     k == "present"       then bat_now.present      = v
+            elseif k == "state"         then bat_now.state        = v
+            elseif k == "warning-level" then bat_now.warninglevel = v
+            elseif k == "energy"        then bat_now.energy       = string.gsub(v, ",", ".") -- Wh
+            elseif k == "energy-full"   then bat_now.energyfull   = string.gsub(v, ",", ".") -- Wh
+            elseif k == "energy-rate"   then bat_now.energyrate   = string.gsub(v, ",", ".") -- W
+            elseif k == "voltage"       then bat_now.voltage      = string.gsub(v, ",", ".") -- V
+            elseif k == "percentage"    then bat_now.percentage   = tonumber(v)              -- %
+            elseif k == "capacity"      then bat_now.capacity     = string.gsub(v, ",", ".") -- %
+            elseif k == "icon-name"     then bat_now.icon         = v
+            end
+        end
+
+        -- customize here
+        widget:set_text("Bat: " .. bat_now.percentage .. " " .. bat_now.state)
+    end
+)
+</code></pre>
+
+        </div>
+        <!--
+        <div id="right">
+            <ul id="nav">
+                <li><a href="/">home</a></li>
+            </ul>
+            <div class="box">
+                <h2 style="margin-top:17px">Latest news</h2>
+                <ul>
+                    <li><a href="#">Recent Entries1</a> <i>01 Des 06</i></li>
+               </ul>
+            </div>
+       </div>
+        -->
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="pageinfo">
+
+    
+
+    <script type='text/javascript' src='https://www.openhub.net/p/awesome/widgets/project_factoids_stats?format=js'></script>
+
+    <div id="donate">
+      <strong>Donations:</strong>
+      <div>
+      <script id='fbirvwx'>(function(i){var f,s=document.getElementById(i);f=document.createElement('iframe');f.src='https://button.flattr.com/view/?fid=mqwonm&button=compact&url=https%3A%2F%2Fawesomewm.org%2F';f.title='Flattr';f.height=20;f.width=110;f.style.borderWidth=0;s.parentNode.insertBefore(f,s);})('fbirvwx');</script>
+      </div>
+      <p>Bitcoin: 1A2LsrF81rWEEJ7qnXdkCUJpdCYUxqfQoP</p>
+    </div>
+
+    <div class="copyright">
+        <a id="pagecopyright"></a>
+        
+        Copyleft 2007-2017, awesome project
+    </div>
+    
+
+    <div class="pagedate">
+        Last edited <span class="date">Wed 26 Apr 2017 08:48:46 PM UTC</span>
+    </div>
+
+    </div>
+
+<!-- from about -->
+</div>
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setCookieDomain", "*.awesomewm.org"]);
+  _paq.push(["setDomains", ["*.awesomewm.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://piwik.awesomewm.org/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 26]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="https://piwik.awesomewm.org/piwik.php?idsite=26" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+</body>
+</html>
