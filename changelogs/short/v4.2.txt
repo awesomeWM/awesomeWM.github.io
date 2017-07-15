@@ -1,0 +1,249 @@
+Benoit de Chezelles (1):
+      naughty: avoid notification flickering on replace (#1785)
+
+BuildTools (1):
+      client: emit ewmh geometry requests as signals
+
+Caleb Maclennan (1):
+      Add aweful.util.pread() so API docs have deprication notice (#1502)
+
+Daniel Hahler (30):
+      Travis: merge BUILD_APIDOC and DO_CHECKQA
+      doc fixes for awful.mouse.resize, awful.rules, awful.util (#1717)
+      doc: fix filesystem.make_parent_directories (#1739)
+      doc: FAQ: fix/improve size_hints_honor section (#1740)
+      beautiful.load_font: handle font height of 0 (#1782)
+      client: update_implicitly_floating on manage (#1803)
+      dbus.c: fix compiler warning (#1870)
+      CMakeLists.txt: remove check-unit from ALL (#1867)
+      doc: fix awful.completion.shell (#1866)
+      awful.spawn: fix doc for spawn.easy_async{,_with_shell} (#1877)
+      awful.completion.shell: fix cur_pos return value
+      awful.completion: zsh: fix command completion from PWD
+      awful.completion: handle first word as command always
+      Add spec/awful/completion_spec.lua
+      awful.prompt: fix Shift-Tab
+      minor: check textbox earlier, whitespace
+      Travis: use exit code 1 for failures, not errors (#1887)
+      cmake: define check-unit always (#1896)
+      dbus.c: fix some comments, remove confusing ones
+      dbus.c: fix warning in a_dbus_connect
+      rules: switchtotag: fix usage of awful.tag.viewmore (#1895)
+      tests: fix test-menubar for when there are no desktop files (#1898)
+      cmake: abort if Lua was not found (#1892)
+      lib/awful/completion.lua: handle missing SHELL environ var (#1897)
+      spec/awful/completion_spec.lua: handle missing bash/zsh (#1889)
+      Fix wrapper Makefile dependency on CMake outcome (#1905)
+      Makefile: remove `ln -s` for `awesome` (#1906)
+      Improve tests/run.sh (#1904)
+      CMake: only run ldoc with changed input (#1911)
+      tests/run.sh: use temporary RC_FILE again (#1910)
+
+Emmanuel Lepage Vallee (30):
+      Update the NEWS
+      wallpaper: Turn asserts into warning
+      menu: Check if the client is still valid before accessing props
+      tests: Add gravity to the test client
+      test: Use the test client in test-maximize
+      client: Handle maximize differently at startup
+      client: Add request::geometry for client maximization
+      client: Honor the client maximization requests again
+      tests: Add maximization support to the test client
+      tests: Test more maximization corner cases
+      tests: Add resizing support to the test client
+      tests: Add client self-resizing support to the tests
+      beautiful: Save the theme path
+      rules: Replace switchtotag implementation with awful.tag.viewmore.
+      tag: Save history after the first iteration
+      quality: Remove trailing white spaces
+      tests: Minor changes to the wibox template.
+      wibox.layout: Add a `manual` layout.
+      tests: Test the `manual` layout.
+      doc: Fix a taglist copy/paste oversaw
+      notification: Fix `font` and use `beautiful` directly
+      layoutbox: Use a textbox as the fallback when no images are found
+      ratio: Add a fill strategy for empty entries
+      doc: Add examples for the ratio layout
+      shims: Add a missing drawin member
+      mirror: Fix documentation
+      stack: Add offset support
+      tests: Add tests for the stack layout
+      release: Update the NEWS
+      release: Change the codename
+
+Emmanuel Lepage Vallée (5):
+      doc: find_by_name: Fix the doc
+      doc: Add 2 missing tag singals
+      tests: Test imagebox:set_image(nil)
+      wibar: Fix with width and height beautiful properties (#1826)
+      debug: Add a signal for deprecation warnings (#1832)
+
+FireFish5000 (1):
+      Add null check to set imagebox to blank state
+
+Giuseppe Bilotta (3):
+      Update physical size on RRChangeNotifyEvent
+      Add root.size_mm
+      Make beautiful fallback properly if Xft.dpi is missing
+
+Haochen Tong (1):
+      parse_desktop_file: rtrim lines before parsing (#1677)
+
+Jonathan (1):
+      Allow to add group rules to hotkeys_popup default instance
+
+Kevin Zander (2):
+      Fix some deprecated calls in code and docs Add missing newline in test runner
+      Remove deprecated calls in tests Change deprecated util.table call in lib/awful/widget/clienticon.lua to gears.table call
+
+Luke Bonham (1):
+      awful.spawn: add easy_async_with_shell and fixed easy_async doc (#1541)
+
+Matt (1):
+      Add timezone option for textclock widget (#1743)
+
+Quentin Minster (1):
+      Fix single layout not appearing in the keyboardlayout widget (#1771)
+
+ReVMatthias (1):
+      Fix comment typo in default config file (#1796)
+
+SammysHP (2):
+      Fix documentation
+      Fix documentation of activation filter
+
+Simon Désaulniers (1):
+      hotkeys_popup: keys for qutebrowser (#1829)
+
+Thomas G (1):
+      Update notification size in `naughty.replace_text` (#1756)
+
+Tim Roes (3):
+      Add the ignore_suspend flag to naughty (#1729)
+      Add missing awful.widget.common require (#1850)
+      Pass freedesktop hints to naughty.notify (#1875)
+
+Tomoya Tabuchi (1):
+      Add iconv library detection for FreeBSD by using code for macOS.
+
+Uli Schlachter (81):
+      Remove obsolete entries from check_for_invalid_requires.lua (#1673)
+      Asynchronously update the keyboard state
+      Speed up tests/run.sh on Travis (#1682)
+      Fix travis package list (#1681)
+      awful.ewmh.add_activate_filter: Fix doc example
+      Ignore MappingNotify events
+      Make the output of the gears.object.signal example stable (#1703)
+      gears.filesystem: Convert tabs to spaces
+      Add gears.filesystem.make_parent_dir(path)
+      awful.prompt: Use g.filesystem.make_parent_dir()
+      g.fs.get_cache_dir: Ensure the dir exists
+      menubar: assert() that io.open() succeeds
+      Fix parameters docs in awful.hotkeys_popup.widget
+      Add a header to hotkeys_popup.keys.firefox to make LDoc happy
+      Rename filesystem.mkdir to make_directories
+      Initialize globalconf.timestamp at startup
+      xembed: Stop using XCB_CURRENT_TIME
+      Remove most uses of XCB_CURRENT_TIME
+      Stop grabbing mouse buttons on frame windows (#1724)
+      Fix recursive enterleave ignore (#1747)
+      Run menubar.utils.parse_dir in protected context
+      menubar.utils: Don't switch between path and GFile
+      menubar.utils: Fix for invalid utf8 file names
+      Fix the LuaJIT Travis build (#1769)
+      Also track coverage information for C code
+      Drop our use of iconv (#1772)
+      Stabilize awful.tooltip code coverage (#1773)
+      Fix a tiny typo
+      Always emit property::floating when needed
+      Add & use a non-fatal kind of assert() (#1779)
+      Add signal property::size_hints to clients (#1768)
+      Add a test for gravity handling (#1760)
+      Fix fullscreen clients with gravity != NorthWest (#1764)
+      awful.autofocus: Discriminate sticky clients (#1697)
+      test-maximize: Improve error messages
+      client_resize(): Stop trying to force on screen
+      screen_client_moveto: Make sure client ends up on target screen
+      Add a new disposition to _multi_screen.lua
+      Don't print warnings for non-existing xrdb values
+      Abort on in-source-builds (#1788)
+      Fix Luacheck warnings (#1798)
+      test-maximize: Restore old border width
+      Add a test case for some recent bug
+      test-maximize.lua: Test all gravities
+      Emit wallpaper_changed less often (#1800)
+      Get rid of broken hint in the readme (#1801)
+      Add functions to draw widgets to a cairo surface
+      example tests: Switch to new API
+      Deprecate widget-drawing functions in gears.surface
+      Makefile: Add a hint that cmake can be used directly
+      Makefile: Stop creating .build-* directories, use build directly
+      Makefile: Run cmake less often
+      Reap children even across a restart
+      spawn: Use CLOEXEC for pipes (#1811)
+      Restart by calling execvp() directly
+      Use command line instead of env for passing children
+      Add tests for get_children of layouts
+      Add tests for get_children of containers
+      DPIfy all themes (mostly zenburn)
+      awful.menu: DPIfy the default menu size
+      Re-arrange the magnifier layout on focus changes
+      Fix menubar under Lua 5.1 (#1838)
+      Revert "Travis: pin lua-term to 0.4-1 to fix the Lua 5.3 build" (#1841)
+      Re-add documentation of xproperty API (#1843)
+      menubar.icon_theme: Never use nil as icon theme name
+      docs/06-appearance.md.lua: Add vim modeline
+      Fix cyclic build dependency for 06-appearance.md.lua
+      awful.layout: Apply layouts in a protected context
+      awful.tag.new: Handle too few given layouts
+      Make beautiful.foo = bar work properly
+      .travis.yml: Move EMPTY_THEME_WHILE_LOADING=1 to another build
+      tests: Add a very basic test for the menubar
+      tests: Disable test-menubar.lua where needed
+      test-menubar.lua: Filter calls to gears.debug.print_error
+      test-menubar.lua: Also skip the test with LuaJIT
+      menubar: Produce better errors for broken .desktop files
+      Provide better error message for unknown screen names
+      Move project() call to CMakeLists.txt (#1909)
+      calendar_popup: Fix style documentation
+      calendar_popup: Fix method name entries
+      wibox.widget.calendar: Stop using make_widget_declarative
+
+Yauhen Kirylau (1):
+      fix(awful: hotkeys_popup: keys): require all modules in init.lua
+
+actionless (3):
+      feat(beatiful: theme_assets; themes: xresources): recolor titlebar icons for `hover` and `press` states
+      chore(travis): use `xresources` theme on one of the test targets
+      fix(tests: screen-changes): take in account useless_gap
+
+axujen (1):
+      Fix imagebox:set_image not returning anything
+
+getzze (6):
+      Remove deprecated function call
+      doc: improve doc for creating new widget
+      wibox.widget.base: do not call set_children if children is nil
+      widget: Add a calendar widget
+      awful: Add a calendar popup widget
+      tests: Test the calendar widget
+
+morethanoneanimal (2):
+      Add naughty.destroy_all_notifications (#1871)
+      Tests for awful.prompt (#1916)
+
+nahsi (1):
+      hotkeys-popup: tmux hotkeys
+
+paul-axe (1):
+      naughty: fix offset calculation for *_middle position (#1727)
+
+romildo (4):
+      Add string split function to gears.string
+      Add map function to gears.table
+      Add get_xdg_data_home and get_xdg_data_dirs functions to gears.filesystem
+      menubar: consider XDG_HOME_DIR and XDG_DATA_DIRS
+
+Åsmund Ervik (1):
+      Updated porting tips with new section on how to obtain clean 3.5.9 and 4.0 rc.lua versions to diff existing config with / port into. Fixes issue #1576
+

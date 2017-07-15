@@ -32,9 +32,12 @@
 
 <h2>Contents</h2>
 <ul>
+<li><a href="#Noteworthy_fixes">Noteworthy fixes </a></li>
 <li><a href="#New_features">New features </a></li>
-<li><a href="#Breaking_changes">Breaking changes </a></li>
+<li><a href="#Behavior_changes">Behavior changes </a></li>
+<li><a href="#New_theme_variables">New theme variables </a></li>
 <li><a href="#Other">Other </a></li>
+<li><a href="#Breaking_changes">Breaking changes </a></li>
 </ul>
 
 
@@ -61,6 +64,9 @@
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.keys.html">awful.hotkeys_popup.keys</a></li>
+  <li><a href="../libraries/awful.hotkeys_popup.keys.firefox.html">awful.hotkeys_popup.keys.firefox</a></li>
+  <li><a href="../libraries/awful.hotkeys_popup.keys.qutebrowser.html">awful.hotkeys_popup.keys.qutebrowser</a></li>
+  <li><a href="../libraries/awful.hotkeys_popup.keys.tmux.html">awful.hotkeys_popup.keys.tmux</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.keys.vim.html">awful.hotkeys_popup.keys.vim</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
@@ -116,6 +122,7 @@
 <h2>Sample files</h2>
 <ul class="nowrap">
   <li><a href="../sample files/rc.lua.html">rc.lua</a></li>
+  <li><a href="../sample files/theme.lua.html">theme.lua</a></li>
 </ul>
 <h2>Classes</h2>
 <ul class="nowrap">
@@ -123,6 +130,7 @@
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
   <li><a href="../classes/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../classes/awful.widget.button.html">awful.widget.button</a></li>
+  <li><a href="../classes/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></li>
   <li><a href="../classes/awful.widget.clienticon.html">awful.widget.clienticon</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/awful.widget.graph.html">awful.widget.graph</a></li>
@@ -165,14 +173,17 @@
   <li><a href="../classes/wibox.layout.fixed.html">wibox.layout.fixed</a></li>
   <li><a href="../classes/wibox.layout.flex.html">wibox.layout.flex</a></li>
   <li><a href="../classes/wibox.layout.grid.html">wibox.layout.grid</a></li>
+  <li><a href="../classes/wibox.layout.manual.html">wibox.layout.manual</a></li>
   <li><a href="../classes/wibox.layout.margin.html">wibox.layout.margin</a></li>
   <li><a href="../classes/wibox.layout.mirror.html">wibox.layout.mirror</a></li>
   <li><a href="../classes/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
   <li><a href="../classes/wibox.layout.rotate.html">wibox.layout.rotate</a></li>
   <li><a href="../classes/wibox.layout.scroll.html">wibox.layout.scroll</a></li>
   <li><a href="../classes/wibox.layout.stack.html">wibox.layout.stack</a></li>
+  <li><a href="../classes/wibox.widget.html">wibox.widget</a></li>
   <li><a href="../classes/wibox.widget.background.html">wibox.widget.background</a></li>
   <li><a href="../classes/wibox.widget.base.html">wibox.widget.base</a></li>
+  <li><a href="../classes/wibox.widget.calendar.html">wibox.widget.calendar</a></li>
   <li><a href="../classes/wibox.widget.checkbox.html">wibox.widget.checkbox</a></li>
   <li><a href="../classes/wibox.widget.graph.html">wibox.widget.graph</a></li>
   <li><a href="../classes/wibox.widget.imagebox.html">wibox.widget.imagebox</a></li>
@@ -192,10 +203,291 @@
 
 <h1>NEWS</h1>
 
+<p><a name="v42"></a></p>
+<h1>Awesome window manager framework version 4.2 changes</h1>
+
+<p><center> <img src="../images/AUTOGEN_wibox_logo_logo_and_name.svg" /> </center></p>
+
+<p>Awesome v4.2 is the second release of the 4.x API. It mostly fix the bugs
+reported over the last 3 months and add a couple widgets. Almost 150 issues
+have been resolved or decided to be obsolete.</p>
+
+<p><a name="Noteworthy_fixes"></a></p>
+<h2>Noteworthy fixes</h2>
+
+<ul>
+    <li>The annoying maximization regression from v4.1 have been fixed</li>
+    <li>Fixes broken drag&amp;drop with some applications like FlowBlade</li>
+    <li>Changing the keyboard layout using <code>xmodmap</code> is now much faster</li>
+    <li>Fixes a regression that prevents Awesome to start with the wallpaper is invalid</li>
+    <li>The client history is now more reliable</li>
+    <li>Another instance where clients ended up in the wrong screen has been fixed</li>
+    <li>Awesome will no longer generate zombie processes when restarted</li>
+    <li>All official themes now support HiDPI screens</li>
+    <li>The <code>magnifier</code> layout has been fixed</li>
+    <li>The menubar has been fixed for Lua 5.1 users</li>
+</ul>
+
+<p><a name="New_features"></a></p>
+<h2>New features</h2>
+
+<ul>
+    <li>The hotkey popup has been extended to support Firefox, Qutebrowser and TMUX</li>
+    <li>Naughty (the notification system) has a new <code>ignore_suspend</code> flag</li>
+    <li>The <code>textclock</code> widget now supports timezones</li>
+    <li>New utility functions have been added:</li>
+    <li><a href="../libraries/gears.string.html#split">gears.string.split</a></li>
+    <li><a href="../libraries/gears.table.html#map">gears.table.map</a></li>
+    <li><a href="../libraries/gears.filesystem.html#make_parent_directories">gears.filesystem.make_parent_directories</a></li>
+    <li>New widget functions (moved out of the <code>gears</code> module):</li>
+    <li><a href="../classes/wibox.widget.html#wibox.widget:draw_to_cairo_context">wibox.widget.draw_to_cairo_context</a></li>
+    <li><a href="../classes/wibox.widget.html#wibox.widget:draw_to_svg_file">wibox.widget.draw_to_svg_file</a></li>
+    <li><a href="../classes/wibox.widget.html#wibox.widget:draw_to_image_surface">wibox.widget.draw_to_image_surface</a></li>
+    <li>Maximization requests from clients can now be intercepted using a
+    <code>request::geometry</code> signal handler.</li>
+    <li>A new <a href="../classes/wibox.layout.manual.html#">wibox.layout.manual</a> layout has been added (see below)</li>
+    <li>Two new <code>calendar</code> widgets have been added, a widget and a popup (see below)</li>
+    <li>The <code>ratio</code> layout now supports various strategies to redistribute space</li>
+    <li>The <code>stack</code> layout now supports offsets</li>
+    <li>The notifications now have a <code>naughty.destroy_all_notifications()</code> function</li>
+    <li>The <code>xresources</code> theme now supports the titlebar <code>hover</code> and <code>press</code> states</li>
+</ul>
+
+<p>The stack layout offsets:</p>
+
+<p><a href="../classes/wibox.layout.stack.html"><img src="../images/AUTOGEN_wibox_layout_stack_offset.svg" alt="The stack offset"/></a></p>
+
+<p>The ratio layout new full strategies:</p>
+
+<p><a href="../classes/wibox.layout.ratio.html"><img src="../images/AUTOGEN_wibox_layout_ratio_strategy.svg" alt="The ratio strategies"/></a></p>
+
+<p>The <code>manual</code> layout fix a capability gap where hierarchical elements need to be
+placed manually. It has multiple modes including an <a href="../libraries/awful.placement.html#">awful.placement</a> integration.</p>
+
+<p><a href="../classes/wibox.layout.manual.html"><img src="../images/AUTOGEN_wibox_layout_manual_add_at.svg" alt="The manual layout"/></a></p>
+
+<p>The new calendar widgets are very flexible and can be themed down to the very small details:</p>
+
+<p><a href="../classes/wibox.widget.calendar.html"><img src="../images/AUTOGEN_wibox_widget_calendar_fn_embed_cell.svg" alt="The calendar widget"/></a>
+<a href="../classes/wibox.widget.calendar.html"><img src="../images/AUTOGEN_wibox_widget_calendar_font.svg" alt="The calendar widget"/></a></p>
+
+
+<p><a name="Behavior_changes"></a></p>
+<h2>Behavior changes</h2>
+
+<ul>
+    <li>The client <code>property::floating</code> is now also emitted when when the floating
+    state changes implicitly, e.g. because the client gets maximized or
+    fullscreened.</li>
+    <li>Building Awesome from its root source directory is no longer supported and
+    will print an error.</li>
+</ul>
+
+
+<hr />
+
+
+<p><a name="v41"></a></p>
+<h1>Awesome window manager framework version 4.1 changes</h1>
+
+<p>Awesome v4.1 is the first stable release for the Awesome 4.0 API. It adds
+non-breaking new features and fixes bugs. The main purpose of the release is to
+provide stability while also adding features submitted by our contributors.
+This release contains about 350 commits by 35 contributors, including many new
+developers. Thanks a lot.</p>
+
+<p><a name="New_features"></a></p>
+<h2>New features</h2>
+
+<p>The shape API has been extended to both client, notifications and wibox.</p>
+
+<p><a href="../libraries/awful.prompt.html"><img src="../images/AUTOGEN_wibox_awidget_prompt_highlight.svg" alt="Client geometry"/></a></p>
+
+<p>The prompt now supports syntax highlight and more advanced key hooks.</p>
+
+<p><a href="../libraries/awful.prompt.html"><img src="../images/AUTOGEN_wibox_awidget_defaults_prompt.svg" alt="Client geometry"/></a></p>
+
+<p>The prompt widget gained many new themes variables.</p>
+
+<p><a href="../classes/wibox.layout.grid.html"><img src="../images/AUTOGEN_wibox_layout_grid_imperative.svg" alt="Client geometry"/></a></p>
+
+<p>There is a new 2D grid layout with rowspan and colspan support.</p>
+
+<p><a href="../classes/awful.widget.only_on_screen.html"><img src="../images/AUTOGEN_wibox_container_defaults_only_on_screen.svg" alt="Client geometry"/></a></p>
+
+<p>There is a new <a href="../classes/awful.widget.only_on_screen.html#">awful.widget.only_on_screen</a> container to make it easier to
+share wiboxes across multiple screens.</p>
+
+<p>Various documentation improvements. Thanks for the feedbacks.</p>
+
+<p>The <a href="../classes/awful.widget.taglist.html#">awful.widget.taglist</a> now has <code>volatile</code> theme variables.</p>
+
+<p>There is now extra enviroment variables such as <code>AWESOME_ICON_PATH</code> and
+<code>AWESOME_THEMES_PATH</code> for those who prefer not installing Awesome.</p>
+
+<p>Dynamic "C" Lua libraries are now detected like pure Lua ones.</p>
+
+<p><a href="../classes/gears.timer.html#">gears.timer</a> gained many new constructor arguments to make it easier to use.</p>
+
+<p><a href="https://awesomewm.org/apidoc/classes/wibox.html#wibox.shape_input">Input shape</a>
+mask are now supported. It is possible to create a wibox with passthough inputs.</p>
+
+<p>There is a new <a href="../classes/awful.widget.clienticon.html#">awful.widget.clienticon</a> widget capable of fetching icons of
+different sizes.</p>
+
+<p><a name="New_theme_variables"></a></p>
+<h2>New theme variables</h2>
+
+<p>This release adds a ton of new theme variables to make Awesome prettier. We also
+thank all users who <a href="https://github.com/awesomeWM/awesome/issues/1395">submitted screenshot</a>.</p>
+
+
+<pre>
+theme.arcchart_thickness
+theme.enable_spawn_cursor
+theme.fullscreen_hide_border
+theme.hotkeys_bg
+theme.hotkeys_border_colo
+theme.hotkeys_border_width
+theme.hotkeys_description_font
+theme.hotkeys_fg
+theme.hotkeys_font
+theme.hotkeys_group_margin
+theme.hotkeys_label_bg
+theme.hotkeys_label_fg
+theme.hotkeys_modifiers_fg
+theme.hotkeys_shape
+theme.maximized_honor_padding
+theme.notification_bg
+theme.notification_border_color
+theme.notification_border_width
+theme.notification_fg
+theme.notification_font
+theme.notification_height
+theme.notification_margin
+theme.notification_opacity
+theme.notification_shape
+theme.notification_width
+theme.prompt_bg_cursor
+theme.prompt_bg
+theme.prompt_fg_cursor
+theme.prompt_fg
+theme.prompt_font
+theme.taglist_bg_volatile
+theme.taglist_fg_volatile
+theme.taglist_shape_border_color_volatile
+theme.taglist_shape_border_width_volatile
+theme.taglist_shape_volatile
+theme.taglist_spacing
+theme.tasklist_disable_icon
+theme.tasklist_disable_task_name
+theme.titlebar_close_button_focus_hover
+theme.titlebar_close_button_focus_press
+theme.titlebar_close_button_normal_hover
+theme.titlebar_close_button_normal_press
+theme.titlebar_floating_button_focus_active_hover
+theme.titlebar_floating_button_focus_active_press
+theme.titlebar_floating_button_focus_inactive_hover
+theme.titlebar_floating_button_focus_inactive_press
+theme.titlebar_floating_button_normal_active_hover
+theme.titlebar_floating_button_normal_active_press
+theme.titlebar_floating_button_normal_inactive_hover
+theme.titlebar_floating_button_normal_inactive_press
+theme.titlebar_maximized_button_focus_active_hover
+theme.titlebar_maximized_button_focus_active_press
+theme.titlebar_maximized_button_focus_inactive_hover
+theme.titlebar_maximized_button_focus_inactive_press
+theme.titlebar_maximized_button_normal_active_hover
+theme.titlebar_maximized_button_normal_active_press
+theme.titlebar_maximized_button_normal_inactive_hover
+theme.titlebar_maximized_button_normal_inactive_press
+theme.titlebar_minimize_button_focus_hover
+theme.titlebar_minimize_button_focus_press
+theme.titlebar_minimize_button_normal_hover
+theme.titlebar_minimize_button_normal_press
+theme.titlebar_ontop_button_focus_active_hover
+theme.titlebar_ontop_button_focus_active_press
+theme.titlebar_ontop_button_focus_inactive_hover
+theme.titlebar_ontop_button_focus_inactive_press
+theme.titlebar_ontop_button_normal_active_hover
+theme.titlebar_ontop_button_normal_active_press
+theme.titlebar_ontop_button_normal_inactive_hover
+theme.titlebar_ontop_button_normal_inactive_press
+theme.titlebar_sticky_button_focus_active_hover
+theme.titlebar_sticky_button_focus_active_press
+theme.titlebar_sticky_button_focus_inactive_hover
+theme.titlebar_sticky_button_focus_inactive_press
+theme.titlebar_sticky_button_normal_active_hover
+theme.titlebar_sticky_button_normal_active_press
+theme.titlebar_sticky_button_normal_inactive_hover
+theme.titlebar_sticky_button_normal_inactive_press
+theme.wibar_bgimage
+theme.wibar_bg
+theme.wibar_border_color
+theme.wibar_border_width
+theme.wibar_cursor
+theme.wibar_fg
+theme.wibar_height
+theme.wibar_ontop
+theme.wibar_opacity
+theme.wibar_shape
+theme.wibar_stretch
+theme.wibar_type
+theme.wibar_width
+</pre>
+
+<p><a name="Noteworthy_fixes"></a></p>
+<h2>Noteworthy fixes</h2>
+
+<ul>
+    <li>Some applications such as VLC and Terminator had large unpainted areas</li>
+    <li>The magnifier layout has been fixed</li>
+    <li>Un-maximization misbehaved</li>
+    <li>Docking area is now per-tag again</li>
+    <li>CMake missing dependencies detection is fixed</li>
+    <li>Support for FreeBSD and OpenBSD have been restored.</li>
+    <li>Dialog and transient window can be moved to other screens again</li>
+    <li>The fallback mode (when Awesome fails to load <a href="../sample files/rc.lua.html#">rc.lua</a>) is now more robust</li>
+</ul>
+
+<p><a name="Behavior_changes"></a></p>
+<h2>Behavior changes</h2>
+
+<p>This is a stable release and we tried to minimize any upgrade impact. However
+various bugfixes induced minor, not noticeable, changes:</p>
+
+<ul>
+    <li>HiDPI support fix changed the default theme "taglist square". This is only
+    true if the original theme file is used (not a copy).</li>
+    <li>Maximization now honor the screen padding. There is an option to restore the
+    previous behavior.</li>
+    <li>Un-maximized clients are now restored to their current screen instead of the
+    screen where they were maximized.</li>
+    <li>Hotkey popup no longer enable the Vim module by default due to user
+    complaints</li>
+</ul>
+
+<p><a href="../libraries/awful.util.html#">awful.util</a> has been split into multiple modules in the <code>gears</code> library to
+reduce the dependency graph. This allows for better unit testing. <a href="../libraries/awful.util.html#">awful.util</a>
+will be deprecated in Awesome v5. For now, it is still safe to use it. However,
+new code should use the functions from <code>gears</code> instead of <a href="../libraries/awful.util.html#">awful.util</a>.</p>
+
+<p><a name="Other"></a></p>
+<h2>Other</h2>
+
+<ul>
+    <li>The minimal LGI version is now 0.8.0. It was found that Awesome 4.0 also had
+    an issue in the menubar module when used with 0.7.3.</li>
+    <li>GTK+3 is now required to run the integration tests.</li>
+</ul>
+
+
+<hr />
+
+
 <p><a name="v4"></a></p>
 <h1>Awesome window manager framework version 4.0 changes</h1>
 
-<p><center> <img src="../images/AUTOGEN_wibox_logo_logo_and_name.svg" /> </center></p>
 
 <p>Awesome 4.0 is the first release of the v4 API level, breaking the proven
 v3.5 API level after 4 years. This requires to port the existing user
@@ -1153,7 +1445,7 @@ visibility count and reduced our infrastructure maintenance cost.</p>
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2017-06-10 17:36:06 </i>
+<i style="float:right;">Last updated 2017-07-15 14:22:53 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
