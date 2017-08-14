@@ -3,10 +3,10 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>doc - awesome window manager</title>
-<link rel="icon" href="../images/icons/aw_16.png" type="image/png" />
-<link rel="stylesheet" href="../style.css" type="text/css" />
-<link rel="stylesheet" href="../local.css" type="text/css" />
+<title>gpmdp - awesome window manager</title>
+<link rel="icon" href="../../images/icons/aw_16.png" type="image/png" />
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+<link rel="stylesheet" href="../../local.css" type="text/css" />
 
 
 </head>
@@ -17,18 +17,18 @@
     <div id="top">
       
 	<div id="center-logo">
-	  <a href="../index.html" title="Back to main page">
-	    <img alt="awesome-logo" src="../images/awesome-logo.svg">
+	  <a href="../../index.html" title="Back to main page">
+	    <img alt="awesome-logo" src="../../images/awesome-logo.svg">
 	  </a>
 	</div>
         <div id="menu">
-          <ul class="active-menu-doc">
-            <li class="menu-about"><a href="../index.html">home</a></li>
-            <li class="menu-download"><a href="../download/">download</a></li>
-            <li class="menu-community"><a href="../community/">community</a></li>
-            <li class="menu-recipes"><a href="../recipes/">recipes</a></li>
-            <li class="menu-screenshots"><a href="../screenshots/">screenshots</a></li>
-            <li class="menu-doc"><a href="../doc/">doc</a></li>
+          <ul class="active-menu-gpmdp">
+            <li class="menu-about"><a href="../../index.html">home</a></li>
+            <li class="menu-download"><a href="../../download/">download</a></li>
+            <li class="menu-community"><a href="../../community/">community</a></li>
+            <li class="menu-recipes"><a href="../../recipes/">recipes</a></li>
+            <li class="menu-screenshots"><a href="../../screenshots/">screenshots</a></li>
+            <li class="menu-doc"><a href="../../doc/">doc</a></li>
             <li class="menu-issues"><a href="https://github.com/awesomeWM/awesome/issues">bugs/issues</a></li>
             </ul>
         </div>
@@ -39,32 +39,30 @@
     
 
     <div id="content">
-    <!--    <h1>doc</h1> -->
+    <!--    <h1>gpmdp</h1> -->
         <div id="left">
-          <h1>Documentation</h1>
+          <h1>Google Play Music Desktop Player watcher</h1>
 
-<ul>
-<li>LUA API documentation built by <a href="http://stevedonovan.github.io/ldoc/">ldoc</a>
+<p>This widget can be used to display the current track information and state of <a href="https://www.googleplaymusicdesktopplayer.com/">Google Play Music Desktop Player</a>.</p>
 
-<ul>
-<li><a href="api">Lua API documentation for the stable release</a></li>
-<li><a href="../apidoc/">Lua API documentation for Git master (development version)</a></li>
-</ul>
-</li>
-<li><a href="manpages/awesome.1.html">awesome(1) manpage</a></li>
-<li><a href="manpages/awesomerc.5.html">awesomerc(5) manpage</a></li>
-<li><a href="manpages/awesome-client.1.html">awesome-client(1) manpage</a></li>
-</ul>
-
-
-<p><a id="v4"></a></p>
-
-<h1>Awesome 4.0</h1>
-
-<ul>
-<li><a href="https://awesomewm.org/apidoc/documentation/89-NEWS.md.html#v4">News / breaking changes</a></li>
-<li><a href="https://awesomewm.org/apidoc/documentation/17-porting-tips.md.html#v4">Configuration porting tips</a></li>
-</ul>
+<ol>
+<li>Download <code>gpmdp.lua</code> <a href="https://awesomewm.org/recipes/gpmdp.lua">here</a></li>
+<li>Add your customization to <code>gpmdp.lua</code> after <code>-- customize here</code></li>
+<li>Import <code>gpmdp.lua</code> into your <code>rc.lua</code>
+ <code>lua
+ local gpmdp = require("path/to/gpmdp.lua")
+</code></li>
+<li>Add the widget to your wibar
+ <code>lua
+ s.mywibox:setup {
+     layout = wibox.layout.align.horizontal,
+     {
+         layout = wibox.layout.fixed.horizontal,
+         gpmdp.widget,
+         -- ...
+     }
+</code></li>
+</ol>
 
 
         </div>
