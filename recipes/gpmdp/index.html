@@ -43,25 +43,26 @@
         <div id="left">
           <h1>Google Play Music Desktop Player watcher</h1>
 
-<p>This widget can be used to display the current track information and state of <a href="https://www.googleplaymusicdesktopplayer.com/">Google Play Music Desktop Player</a>.</p>
+<p>This widget can be used to display the current track information and state of
+<a href="https://www.googleplaymusicdesktopplayer.com/">Google Play Music Desktop Player</a>.</p>
 
 <ol>
 <li>Download <code>gpmdp.lua</code> <a href="https://awesomewm.org/recipes/gpmdp.lua">here</a></li>
 <li>Add your customization to <code>gpmdp.lua</code> after <code>-- customize here</code></li>
-<li>Import <code>gpmdp.lua</code> into your <code>rc.lua</code>
- <code>lua
- local gpmdp = require("path/to/gpmdp.lua")
-</code></li>
-<li>Add the widget to your wibar
- <code>lua
- s.mywibox:setup {
+<li><p>Import <code>gpmdp.lua</code> into your <code>rc.lua</code></p>
+
+<pre><code class="`lua"> local gpmdp = require("path/to/gpmdp.lua")
+</code></pre></li>
+<li><p>Add the widget to your wibar</p>
+
+<pre><code class="`lua"> s.mywibox:setup {
      layout = wibox.layout.align.horizontal,
      {
          layout = wibox.layout.fixed.horizontal,
          gpmdp.widget,
          -- ...
      }
-</code></li>
+</code></pre></li>
 </ol>
 
 
@@ -107,7 +108,7 @@
     
 
     <div class="pagedate">
-        Last edited <span class="date">Wed 23 Aug 2017 09:35:54 AM UTC</span>
+        Last edited <span class="date">Wed 23 Aug 2017 09:37:37 AM UTC</span>
     </div>
 
     </div>
