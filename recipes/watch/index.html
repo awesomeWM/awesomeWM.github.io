@@ -41,7 +41,7 @@
     <div id="content">
     <!--    <h1>watch</h1> -->
         <div id="left">
-          <h1><a href="https://awesomewm.org/doc/api/classes/awful.widget.watch.html"><code>awful.util.watch</code></a> use case examples</h1>
+          <h1><a href="https://awesomewm.org/doc/api/classes/awful.widget.watch.html"><code>awful.widget.watch</code></a> use case examples</h1>
 
 <h2>bitcoin</h2>
 
@@ -98,6 +98,25 @@ local cmus, cmus_timer = awful.widget.watch(
 
         -- customize here
         widget:set_text(cmus_now.artist .. " - " .. cmus_now.title)
+    end
+)
+</code></pre>
+
+<h2>iostat</h2>
+
+<pre><code class="lua">-- disk I/O using iostat from sysstat utilities
+local iotable = {}
+local iostat = awful.widget.watch("iostat -dk", 2, -- in Kb, use -dm for Mb
+    function(widget, stdout)
+        for line in stdout:match("(sd.*)\n"):gmatch("(.-)\n") do
+            local device, tps, read_s, wrtn_s, read, wrtn =
+            line:match("(%w+)%s*(%d+,?%d*)%s*(%d+,?%d*)%s*(%d+,?%d*)%s*(%d+,?%d*)%s*(%d+,?%d*)")
+            --                  [1]  [2]     [3]     [4]   [5]
+            iotable[device] = { tps, read_s, wrtn_s, read, wrtn }
+        end
+
+        -- customize here
+        widget:set_text("sda: "..iotable["sda"][2].."/"..iotable["sda"][3]) -- read_s/wrtn_s
     end
 )
 </code></pre>
@@ -246,7 +265,7 @@ local mybattery = awful.widget.watch(
     
 
     <div class="pagedate">
-        Last edited <span class="date">Wed 06 Sep 2017 02:19:58 PM UTC</span>
+        Last edited <span class="date">Fri 13 Oct 2017 05:48:19 PM UTC</span>
     </div>
 
     </div>
