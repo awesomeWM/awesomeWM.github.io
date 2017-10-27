@@ -3,10 +3,10 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>screenshots - awesome window manager</title>
-<link rel="icon" href="../images/icons/aw_16.png" type="image/png" />
-<link rel="stylesheet" href="../style.css" type="text/css" />
-<link rel="stylesheet" href="../local.css" type="text/css" />
+<title>awesome-taglist - awesome window manager</title>
+<link rel="icon" href="../../images/icons/aw_16.png" type="image/png" />
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+<link rel="stylesheet" href="../../local.css" type="text/css" />
 
 
 </head>
@@ -17,18 +17,18 @@
     <div id="top">
       
 	<div id="center-logo">
-	  <a href="../index.html" title="Back to main page">
-	    <img alt="awesome-logo" src="../images/awesome-logo.svg">
+	  <a href="../../index.html" title="Back to main page">
+	    <img alt="awesome-logo" src="../../images/awesome-logo.svg">
 	  </a>
 	</div>
         <div id="menu">
-          <ul class="active-menu-screenshots">
-            <li class="menu-about"><a href="../index.html">home</a></li>
-            <li class="menu-download"><a href="../download/">download</a></li>
-            <li class="menu-community"><a href="../community/">community</a></li>
-            <li class="menu-recipes"><a href="../recipes/">recipes</a></li>
-            <li class="menu-screenshots"><a href="../screenshots/">screenshots</a></li>
-            <li class="menu-doc"><a href="../doc/">doc</a></li>
+          <ul class="active-menu-awesome-taglist">
+            <li class="menu-about"><a href="../../index.html">home</a></li>
+            <li class="menu-download"><a href="../../download/">download</a></li>
+            <li class="menu-community"><a href="../../community/">community</a></li>
+            <li class="menu-recipes"><a href="../../recipes/">recipes</a></li>
+            <li class="menu-screenshots"><a href="../../screenshots/">screenshots</a></li>
+            <li class="menu-doc"><a href="../../doc/">doc</a></li>
             <li class="menu-issues"><a href="https://github.com/awesomeWM/awesome/issues">bugs/issues</a></li>
             </ul>
         </div>
@@ -39,15 +39,41 @@
     
 
     <div id="content">
-    <!--    <h1>screenshots</h1> -->
+    <!--    <h1>awesome-taglist</h1> -->
         <div id="left">
-          <h1>Screenshots</h1>
+          <h1>Awesome taglist</h1>
 
-<p>Screenshots of different AwesomeWM configurations are available
-<a href="https://github.com/awesomeWM/awesome/issues/1395">at GitHub</a>.</p>
+<p>Here is nice-looking and super easy way to customize taglist. The idea is simple - literally write 'awesome' or 'awesomewm' (if you want to keep 9 tags) in the taglist using characters from the Awesome logo.</p>
 
-<p>Feel free to add your own screenshots in the thread along with configuration
-details.</p>
+<p>To do it you need to install a font which was generated from the svg images of the letters from the logo. Download it from <a href="../awesomewm-font.ttf">here</a> and place it under <code>~/.local/share/fonts</code>. Then name your tags in <strong>rc.lua</strong> using it. The font has two types of letters: uppercase are for the bold characters:</p>
+
+<pre><code>awful.tag({ "A", "W", "E", "S", "O", "M", "E", "W", "M"},
+</code></pre>
+
+<div class="screenshot">
+<a href="../../images/awesome-taglist.png"><img src="../../images/awesome-taglist.png" width="481" height="165" alt="awesome taglist screenshot" class="img" /></a>
+</div>
+
+
+<p>and lowercase for the outline characters:</p>
+
+<pre><code>awful.tag({ "a", "w", "e", "s", "o", "m", "e", "w", "m"},
+</code></pre>
+
+<div class="screenshot">
+<a href="../../images/awesome-taglist-outline.png"><img src="../../images/awesome-taglist-outline.png" width="449" height="157" alt="awesome taglist screenshot" class="img" /></a>
+</div>
+
+
+<p>Almost done! The last step is to theme it, below is the config which is used for the screenshots above (add it to the <strong>theme.lua</strong>):</p>
+
+<pre><code>theme.taglist_fg_focus    = "#3992af"
+theme.taglist_fg_occupied = "#164b5d"
+theme.taglist_fg_urgent   = "#ED7572"
+theme.taglist_fg_empty    = "#828282"
+theme.taglist_spacing     = 2
+theme.taglist_font = "awesomewm-font 13"
+</code></pre>
 
         </div>
         <!--
