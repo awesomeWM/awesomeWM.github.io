@@ -1,0 +1,5229 @@
+commit 8b5d79792b1cc39249d554277f8604e59bc92de2
+Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
+Date:   Sun Jan 27 22:01:10 2019 -0500
+
+    doc: Fix a copy+paste mistake
+    
+    The current `awful.widget.layoutlist` is a fork of the so far uncommitted `naughty.widget.actionlist`. It was created because some of the support code for the new `naughty` implementation needed "easier to merge" usage examples. The `layoutlist` was chosen because it was both a low hanging fruit and genuinely useful.
+
+commit 1166acd73c1adaeb4f9605a808bacb7f38c60fc0
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Jan 27 16:21:31 2019 +0100
+
+    Honor *some* Enter/Leave events with detail==Inferior
+    
+    Commit 19086d70fa9eb made AwesomeWM ignore all Enter/Leave events with
+    detail==Inferior. However, when leaving a titlebar by moving the cursor
+    into the actual client window, the corresponding event actually has
+    detail==Inferior. The same is true for the opposite direction: Leaving a
+    client window by entering the titlebar.
+    
+    Thus, this commit fixes the code to handle theses cases again.
+    
+    This was tested with the following in rc.lua (and with a systray icon
+    and a client with titlebars).
+    
+    screen[1].mywibox:connect_signal("mouse::enter", function() print("enter mywibox") end)
+    screen[1].mywibox:connect_signal("mouse::leave", function() print("leave mywibox") end)
+    client.connect_signal("mouse::enter", function() print("enter client") end)
+    client.connect_signal("mouse::leave", function() print("leave client") end)
+    client.connect_signal("manage", function(c)
+        local d = c:titlebar_top()
+        d:connect_signal("mouse::enter", function() print("enter titlebar") end)
+        d:connect_signal("mouse::leave", function() print("leave titlebar") end)
+    end)
+    
+    Fixes: https://github.com/awesomeWM/awesome/pull/2611#issuecomment-457892746
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 22b6e80cad499dccee7b6dad59d8d267e4ac6abc
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Fri Dec 21 22:38:22 2018 -0500
+
+    Update the NEWS for 4.3
+
+commit 2cb5a0f0e101e6a4a0aa8d6978a95486901bb5f3
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon Jan 21 03:04:15 2019 -0500
+
+    codename: Change for "Too long"
+
+commit 4c53f9cbc6a2596b25e7cc958c83cf8df953905e
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Sat Jan 26 18:54:31 2019 +0100
+
+    spec/beautiful: Don't print noise (#2612)
+    
+    This gets rid of the following output when running the unit tests:
+    
+    2019-01-26 18:31:44 E: awesome: beautiful: error loading theme: got an empty table
+    2019-01-26 18:31:44 E: awesome: beautiful: error loading theme: got an empty table from: ./spec/beautiful/tests/Bad_1.lua
+    2019-01-26 18:31:44 E: awesome: beautiful: error loading theme: got a function from: ./spec/beautiful/tests/Bad_2.lua
+    2019-01-26 18:31:44 E: awesome: beautiful: error loading theme: got a number from: ./spec/beautiful/tests/Bad_3.lua
+    2019-01-26 18:31:44 E: awesome: beautiful: error loading theme: got a nil from: ./spec/beautiful/tests/Bad_4.lua
+    2019-01-26 18:31:44 E: awesome: Error during a protected call: ./spec/beautiful/tests/Bad_5.lua:2: attempt to index local 'var' (a nil value)
+    stack traceback:
+            ./spec/beautiful/tests/Bad_5.lua:2: in main chunk
+            [C]: in function 'dofile'
+            [C]: in function 'xpcall'
+            lib/gears/protected_call.lua:36: in function <lib/gears/protected_call.lua:35>
+            (...tail calls...)
+            lib/beautiful/init.lua:224: in function 'init'
+            spec/beautiful/init_spec.lua:56: in function <spec/beautiful/init_spec.lua:25>
+            [C]: in function 'xpcall'
+            /usr/share/lua/5.2/busted/core.lua:178: in function 'safe'
+            /usr/share/lua/5.2/busted/init.lua:40: in function 'executor'
+            ...
+            /usr/share/lua/5.2/busted/core.lua:312: in function 'execute'
+            /usr/share/lua/5.2/busted/block.lua:155: in function 'execute'
+            /usr/share/lua/5.2/busted/init.lua:7: in function 'executor'
+            /usr/share/lua/5.2/busted/core.lua:312: in function </usr/share/lua/5.2/busted/core.lua:312>
+            [C]: in function 'xpcall'
+            /usr/share/lua/5.2/busted/core.lua:178: in function 'safe'
+            /usr/share/lua/5.2/busted/core.lua:312: in function 'execute'
+            /usr/share/lua/5.2/busted/execute.lua:58: in function 'execute'
+            /usr/share/lua/5.2/busted/runner.lua:174: in function </usr/share/lua/5.2/busted/runner.lua:11>
+            /usr/bin/busted:3: in main chunk
+            [C]: in ?
+    2019-01-26 18:31:44 E: awesome: beautiful: error loading theme: got a nil from: ./spec/beautiful/tests/Bad_5.lua
+    2019-01-26 18:31:44 E: awesome: Error during a protected call: cannot open ./spec/beautiful/tests/NO_FILE: No such file or directory
+    stack traceback:
+            [C]: in function 'dofile'
+            [C]: in function 'xpcall'
+            lib/gears/protected_call.lua:36: in function <lib/gears/protected_call.lua:35>
+            (...tail calls...)
+            lib/beautiful/init.lua:224: in function 'init'
+            spec/beautiful/init_spec.lua:57: in function <spec/beautiful/init_spec.lua:25>
+            [C]: in function 'xpcall'
+            /usr/share/lua/5.2/busted/core.lua:178: in function 'safe'
+            /usr/share/lua/5.2/busted/init.lua:40: in function 'executor'
+            /usr/share/lua/5.2/busted/core.lua:312: in function </usr/share/lua/5.2/busted/core.lua:312>
+            ...
+            /usr/share/lua/5.2/busted/core.lua:312: in function 'execute'
+            /usr/share/lua/5.2/busted/block.lua:155: in function 'execute'
+            /usr/share/lua/5.2/busted/init.lua:7: in function 'executor'
+            /usr/share/lua/5.2/busted/core.lua:312: in function </usr/share/lua/5.2/busted/core.lua:312>
+            [C]: in function 'xpcall'
+            /usr/share/lua/5.2/busted/core.lua:178: in function 'safe'
+            /usr/share/lua/5.2/busted/core.lua:312: in function 'execute'
+            /usr/share/lua/5.2/busted/execute.lua:58: in function 'execute'
+            /usr/share/lua/5.2/busted/runner.lua:174: in function </usr/share/lua/5.2/busted/runner.lua:11>
+            /usr/bin/busted:3: in main chunk
+            [C]: in ?
+    2019-01-26 18:31:44 E: awesome: beautiful: error loading theme: got a nil from: ./spec/beautiful/tests/NO_FILE
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 19086d70fa9eb8abe9af61a814be76b5ba722dc2
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Jan 26 18:26:35 2019 +0100
+
+    Ignore all Enter/Leave events with detail==Inferior
+    
+    These events are generated when the mouse pointer moves between our
+    window and one of its child windows. For our purposes, this never counts
+    as an enter or leave, so just ignore these events completely.
+    
+    Fixes: https://github.com/awesomeWM/awesome/issues/2560
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit bf62695f7603b63617a3f2fdd8fb10f54ec640f7
+Author: Sorky <43520033+Sorky@users.noreply.github.com>
+Date:   Sun Jan 27 04:19:05 2019 +1100
+
+    awful.menu: Move code from rc.lua to awful.menu
+    
+    
+    Fixes: #2524
+
+commit dbb552097c51a7b961012880525ccb787a09eaac
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Jan 26 11:03:39 2019 -0500
+
+    arcchart: Also compute the sum when the limits are provided.
+    
+    The result was used even when it wasn't computed.
+
+commit 090f80d173cd27b33cb7689f6b507e05c728db96
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Jan 26 10:57:26 2019 -0500
+
+    arcchart: Place the rounded edge in the right side of the arc.
+
+commit 9efcf9df877f5bc08b98dc19a406bb9d21b68dba
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Jan 26 10:50:43 2019 -0500
+
+    shape.arc: Prevent an angle underflow when rounded edges are enabled.
+    
+    Fixes #2604
+
+commit 4524a7880d9de5ac64dc5e6004122a9983bbb3ca
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Jan 13 03:33:27 2018 -0500
+
+    tests: Test the layoutlist
+
+commit 8b60c05118d7e3e0dafc221294beef6a773b0ce9
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Jan 13 03:32:35 2018 -0500
+
+    widget: Add a layoutlist widget
+    
+    Like taglist and tasklist, but for layouts
+
+commit 366be2105a44364c1e2c67897acae992e0ace840
+Author: Sorky <davidsorkovsky@hotmail.com>
+Date:   Fri Jan 25 22:56:41 2019 +1100
+
+    beautiful.init: Fix return values and improve doco. fixes: #2588 #2592
+    
+    squashing updates from review by blueyed
+    
+    Added busted tests
+    
+    Fixed test files EOF
+    
+    Remove Travis warning
+
+commit e3c1ecfd40af5a87ccc1dc06e313ba76e0626bbd
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Fri Jan 12 02:17:36 2018 -0500
+
+    docs: Better document how widgets work
+    
+    Ref: #1373
+
+commit 6c1f9ec6510eab17d89f04e055a50b87e7fdddc0
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Thu Aug 10 00:34:09 2017 -0400
+
+    tests: Test the awful.popup
+
+commit 031c773658f4852efae6495d79368b4e72e90660
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sun Feb 21 02:31:31 2016 -0500
+
+    popup: Add a popup module to awful
+    
+    This module is half way between the tooltip and the raw wibox.
+    
+    It supports the following features:
+    
+     * Auto resize to its widget size
+     * Support parent objects and placement
+    
+    Fix #1683
+
+commit 063ae48438a8fdb46b00b66f43d7c79bd6fa14ac
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon Dec 24 23:56:45 2018 -0500
+
+    awful.tag: Select the fallback layout from the list of layouts.
+    
+    This isn't 100% consistent with the old fallback, but avoids the
+    case where it has an explicit list to pick from and picks something
+    else.
+
+commit 831e92410e090c02c70c4002bcf91beebb46baf0
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon Dec 24 23:48:22 2018 -0500
+
+    tag.layouts: Skip get_layout when looking for the current layout.
+    
+    If the `layouts` are set during initialization, `t.layout` will
+    return `floating` if `t.layouts` is added before `t.layout`. By
+    using the raw layout, the fallback doesn't kicks in.
+
+commit 28926489166839946982fd8e0351de14b3f98fc3
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon Dec 24 23:04:44 2018 -0500
+
+    awful.layout: Add a deprecated notice.
+    
+    It was already deprecated, but this wasn't documented and silently
+    fixed.
+
+commit eb3ca746ca17198f9751d880a565bee02180b2b6
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon Dec 24 23:01:13 2018 -0500
+
+    awful.layout: Support the current tag layouts in `.inc()`.
+    
+    Also "modernize" the code by leveraging gears.table for more logic.
+
+commit 8757e15d30b68833f965b44c7be26d87742277e7
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon Dec 24 22:59:33 2018 -0500
+
+    gears: Add `find_keys` and `find_first_key` to `gears.table`.
+    
+    Fills a small gap between keys_filters and hasitem.
+
+commit f31fbe12208a145e8be7349134a53001c4e488da
+Author: Sorky <43520033+Sorky@users.noreply.github.com>
+Date:   Thu Jan 24 19:46:56 2019 +1100
+
+    menubar.utils.lua - remove "function is_format_supported" by making i… #2601
+    
+    Removing an end of comment block that got left in by accident
+
+commit 012f1307381961a1c17cd744e078aee12e905ce6
+Author: Kevin Zander <veratil@gmail.com>
+Date:   Mon Jan 21 11:58:44 2019 -0600
+
+    Add Science category to menubar menu generation categories table. Fixes #2602
+
+commit 9927b7a88d538e62929f2fb818ed8b20e95191f9
+Author: Sorky <davidsorkovsky@hotmail.com>
+Date:   Mon Jan 21 21:37:45 2019 +1100
+
+    squash
+
+commit 94937595c2db60e3f024955a90cf7542080e39b1
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sun Jan 20 23:05:06 2019 -0500
+
+    doc: Use the modifier name instead of the keysym for the alttab example
+
+commit 0d80b3f0e947694492c16647adf024c371fb7c52
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sun Jan 20 23:04:39 2019 -0500
+
+    keygrabber: Do not try to guess the modifiers name
+    
+    There is no an API to query the correct value
+    
+    Fixes #2515
+
+commit b466db955f54c283c6e224f2e50cd4a041b42d2c
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sun Jan 20 23:04:29 2019 -0500
+
+    shims: Add awesome._modifiers
+
+commit 5e6b02274eb03f84cf75d502b798ff135e1751ad
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon Jan 21 00:50:35 2019 -0500
+
+    luaa: Add a way to query the currently pressed modifiers.
+    
+    This will make awful.key.execute less unreliable
+
+commit 6f2b7435c34525863b9e459cbc06225201d6ee17
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Jan 18 17:34:12 2019 +0100
+
+    Remove unused Xlib Display* from luaA_get_modifiers
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 333f92098a34c253c03d16d83144a6be030ef8ca
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Jan 18 17:33:17 2019 +0100
+
+    Use existing keymap to map codes to symbols
+    
+    This also ports the code from libX11 to using xkbcommon for the job.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 33cd091d02eb6a2c0cdbb2b43aeec009f6adc057
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Jan 18 17:24:27 2019 +0100
+
+    Use existing xkbcommon functionality instead of XKeysymToString
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 56db19fbef53b14dbf20a13029d9bbee15874caf
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Jan 18 17:11:15 2019 +0100
+
+    luaA_get_modifiers: XCBify XGetModifierMapping
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 5b7edf0574f3c73b7ab567ec5cbb27ecbf08f9ed
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Jan 18 17:04:56 2019 +0100
+
+    get_modifier_name: Use XCB defines instead of Xlib's
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 5ab547fbfda58df8a6ce54e0139c81112f6a4c52
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sun Dec 30 02:23:57 2018 -0500
+
+    tests: Test the awesome.modifiers
+
+commit 44c5ca41d9ec96069597a18a86c104bf94830bd8
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sun Dec 30 02:11:50 2018 -0500
+
+    awesome: Add a `modifiers` field.
+
+commit 81a0a8cc48654f3670c377e11ce8ee07366c0de5
+Author: Daniel Hahler <git@thequod.de>
+Date:   Sat Jan 19 09:48:01 2019 +0100
+
+    awesomerc.lua: fix sloppy focus: do not raise
+    
+    Fixes https://github.com/awesomeWM/awesome/issues/2594.
+
+commit 3145272292f677f6c28695e96f2756a10f1d8bae
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Mon Jan 14 09:18:58 2019 +0100
+
+    beautiful.init(): reset theme_path if called with a table
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 69a0de3f03df473d81781e2c89277482c70f0220
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Mon Jan 14 09:16:13 2019 +0100
+
+    Make beautiful.theme_path actually work
+    
+    Commit ac8af66005 added beautiful.theme_path, which is used to save the
+    directory that contains the theme file that was loaded. Just two months
+    later, commit ca12473584 broke this code by adding a __newindex
+    metamethod. This caused the assignment to beautiful.theme_path to be
+    redirected to the theme. However, the theme is immediately replaced by
+    beautiful.init() after setting up the theme_path, so this assignment got
+    lost.
+    
+    Fix this by using rawset() to bypass the metamethod.
+    
+    Fixes: https://github.com/awesomeWM/awesome/issues/2573
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 4b76ca9d385236e0ba5b6f83c3a8fae9c64a701e
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sun Jan 13 23:56:11 2019 -0500
+
+    doc: Fix awful.hotkeys_popup.show_help formatting.
+
+commit fec7aaa569766ce1a784afa5059a5c54bf448c54
+Author: Sorky <43520033+Sorky@users.noreply.github.com>
+Date:   Sun Jan 13 23:52:21 2019 -0500
+
+    Unify the myawesomemenu style
+
+commit cf5b0b51ef5350a2b54d7018a37471eb2f132fc6
+Author: Sorky <43520033+Sorky@users.noreply.github.com>
+Date:   Mon Jan 14 11:47:33 2019 +1100
+
+    Update awesomerc.lua
+    
+    Alternative fix for hotkey_popup via awful menu showing on wrong screen
+
+commit 415c92a08a32e0deb8facccba3db197c89be56fd
+Author: Daniel Hahler <git@thequod.de>
+Date:   Sat Jan 12 15:41:02 2019 +0100
+
+    squash! Makefile: run CMake with CMAKE_ARGS defined
+    
+    Only if specified on command line.
+
+commit c20573e6ddf781f272795b0e594747e52cc1d631
+Author: Daniel Hahler <github@thequod.de>
+Date:   Sat Jan 12 11:46:23 2019 +0100
+
+    Makefile: keep cmake-build as default target (#2579)
+    
+    Fixes https://github.com/awesomeWM/awesome/issues/2576.
+
+commit d2fd15cf993c77e4e402dea3af36ad9d047ea252
+Author: Daniel Hahler <github@thequod.de>
+Date:   Fri Jan 11 17:04:23 2019 +0100
+
+    cmake: pass DO_COVERAGE=1 in env for tests/run.sh (#2575)
+    
+    `$DO_COVERAGE` is used in tests/run.sh, and should be set with the
+    `DO_COVERAGE` CMake option.
+
+commit 0b36da27300be7f077f858e01154e2fd1090246c
+Author: Daniel Hahler <github@thequod.de>
+Date:   Fri Jan 11 17:04:04 2019 +0100
+
+    Makefile: get rid of cmake-build (#2547)
+    
+    * Makefile: all: only depend on cmake-build
+    
+    Previously `make` would first run `cmake-build` (`make` in `build/`),
+    and then run `make -C build awesome` afterwards again (which gets built
+    by the first step already).
+    
+    * Makefile: get rid of cmake-build
+    
+    * Travis: testing previous commits: make distclean
+    
+    Otherwise it might fail due to permission errors for existing files:
+    
+    https://travis-ci.org/awesomeWM/awesome/jobs/476612117#L2785
+    
+        -- Build files have been written to: /home/travis/build/awesomeWM/awesome/build
+        [  1%] Generating manpages/man1/awesome.1
+        [  2%] Generating manpages/man1/awesome.1.gz
+        /bin/sh: 1: cannot create /home/travis/build/awesomeWM/awesome/build/manpages/man1/awesome.1.gz: Permission denied
+        make[3]: *** [manpages/man1/awesome.1.gz] Error 2
+        make[2]: *** [CMakeFiles/man.dir/all] Error 2
+        make[1]: *** [all] Error 2
+        make: *** [cmake-build] Error 2
+
+commit d00d3d470269261b40e1e83549441a158d325bb9
+Author: Daniel Hahler <github@thequod.de>
+Date:   Fri Jan 11 17:03:32 2019 +0100
+
+    cmake: improve check target(s) deps (#2571)
+    
+    * cmake: use add_custom_target/add_dependencies instead of CHECK_TARGETS
+    
+    This makes it fail in case of errors explicitly.  Previously appending
+    to CHECK_TARGETS in tests/examples/CMakeLists.txt was silently ignored.
+    
+    * cmake: check: depend on check-unit always
+    
+    Without busted this will print a message only, but that is good to have.
+    (I was confused why "check" would not depend on "check-unit" when
+    looking at the generated Makefile (which was caused due to some luarocks
+    environment being active without busted))
+
+commit 3804040dbe56de80c003bba962c30bf719253300
+Author: Daniel Hahler <github@thequod.de>
+Date:   Thu Jan 10 23:06:54 2019 +0100
+
+    Travis: coverage: gcov: process .gnco separately (#2574)
+    
+    Also uses consistent flags with codecov, i.e. lua53 also with gcov / `#c_code`.
+
+commit f75dacb50435e3c2a1078098c6c22fee19512eb8
+Author: Daniel Hahler <github@thequod.de>
+Date:   Thu Jan 10 19:10:11 2019 +0100
+
+    awesome-client: handle multiple args (#2551)
+    
+    `awesome-client 'return 1' 'return 2'` would only run the first command.
+    
+    This also fixes other issues reported by shellcheck, and uses `read`
+    directly to allow `shellcheck` to parse that construct correctly.
+
+commit ac34a687c0aff28f70ecd9822909eef686608d82
+Author: Daniel Hahler <github@thequod.de>
+Date:   Thu Jan 10 19:09:40 2019 +0100
+
+    cmake: clarify comment for check-unit with not found busted (#2566)
+
+commit 0acaaf68635a1d40dabee68dc8069ae67cf550ad
+Author: Daniel Hahler <github@thequod.de>
+Date:   Thu Jan 10 19:08:36 2019 +0100
+
+    Travis: coverage: report check-themes with separate flag (#2570)
+    
+    This makes sense in general (every check target should get its own
+    flag), and might help with tracking down unexpected coverage changes
+    (although those appear to be related to the C code only (gcov)).
+
+commit b392e2ce740f038ba9302c3882defda11768560b
+Author: Daniel Hahler <github@thequod.de>
+Date:   Thu Jan 10 13:30:58 2019 +0100
+
+    cmake: remove check-unit-coverage (#2568)
+    
+    Just configure `check-unit` to use `--coverage` with `busted` with
+    `DO_COVERAGE=1`.
+    
+    I got confused why `check-unit` would not generate coverage.
+    This keeps it in line with other targets that generate coverage when
+    used with the same name.
+
+commit 7e68305f9812910832461c93d68fb290ada54ce9
+Author: Daniel Hahler <github@thequod.de>
+Date:   Thu Jan 10 10:58:11 2019 +0100
+
+    Travis: update LuaRocks: 2.4.2 => 3.0.4 (#2569)
+
+commit 2b3707ccfcd8c446f50d32898f3a38cbd8dd0130
+Author: Daniel Hahler <github@thequod.de>
+Date:   Thu Jan 10 10:56:39 2019 +0100
+
+    Travis: codecov: use -f with luacov output (#2563)
+    
+    - do not use `-c` to remove discovered file
+    - configure path for luacov reportfile to also reside in build directory
+
+commit b67e0a123cb2c013f6b4665cb6030717a1463422
+Author: Daniel Hahler <github@thequod.de>
+Date:   Thu Jan 10 10:55:49 2019 +0100
+
+    Travis: use Ubuntu Xenial image (#2565)
+    
+    This has lua5.3 already.
+
+commit 39cc36a979ce7606235709800bcb177cb2739920
+Author: Daniel Hahler <git@thequod.de>
+Date:   Wed Jan 9 21:19:15 2019 +0100
+
+    Makefile: run CMake with CMAKE_ARGS defined
+    
+    This ensures to re-run CMake when using something like:
+    
+    > CMAKE_ARGS="-DSTRICT_TESTS=true -DDO_COVERAGE=1 make check-unit
+
+commit a01669693e98b9627521429200e708d33d985e90
+Author: Aire-One <Aire-One@users.noreply.github.com>
+Date:   Wed Jan 9 06:31:14 2019 +0100
+
+    layout.manual: Implement the `:insert()` method. (#2557)
+    
+    It was documented but not implemented. It is necessary when the
+    "Z index" needs to be manually specified.
+
+commit eb8bfa6407e8fdabb0ae2d2f61909733f4d529df
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Jan 5 04:32:37 2019 -0500
+
+    doc: Fix a copy/paste mistake in the screen module
+
+commit aae9b25457c448798678aa4b3d89c3c027df744f
+Author: Daniel Hahler <git@thequod.de>
+Date:   Fri Jan 4 14:25:36 2019 +0100
+
+    ldoc.ltp: improve HTML title
+
+commit 6792415cef33e2a251a11cedf3a24430a03d7fc6
+Author: Daniel Hahler <git@thequod.de>
+Date:   Fri Jan 4 14:19:21 2019 +0100
+
+    ldoc: prepare for custom ldoc.ltp
+    
+    ldoc.ltp is copied from ldoc (ldoc/html/ldoc_ltp.lua).
+
+commit 7e5e3a8b8138832db0c67cccb0c8203cbcf23dba
+Author: Daniel Hahler <git@thequod.de>
+Date:   Fri Jan 4 16:16:45 2019 +0100
+
+    manpages/awesome.1.de.txt: fix headings
+    
+    Not clear if needed, but fixes:
+    
+    > asciidoctor: WARNING: awesome.1.de.txt: line 10: unterminated listing
+
+commit 6be0f3945462114b6b8e6315e44572a9743bc639
+Author: Daniel Hahler <git@thequod.de>
+Date:   Fri Jan 4 16:15:44 2019 +0100
+
+    cmake: man: use txtfile directly
+    
+    This helps with warnings:
+    
+    > [ 94%] Generating manpages/de/man1/awesome.1
+    > asciidoctor: WARNING: awesome.1.de.txt: line 10: unterminated listing block
+    > [ 94%] Generating manpages/de/man1/awesome.1.gz
+    > …
+    > [ 98%] Built target man
+
+commit a732301306c69e81b213663f21aeafc5302b6b58
+Author: Daniel Hahler <git@thequod.de>
+Date:   Thu Jan 3 18:33:06 2019 +0100
+
+    tests: add basic tests for gears.string.split
+
+commit 25fca23772b8de4289f00c9e83049473a5bd1c16
+Author: Daniel Hahler <git@thequod.de>
+Date:   Thu Jan 3 17:06:05 2019 +0100
+
+    doc: revisit gears.table
+
+commit ef4f3277b02cc19edff8955a74ed793d5d137ff5
+Author: Daniel Hahler <git@thequod.de>
+Date:   Thu Jan 3 14:30:21 2019 +0100
+
+    doc: fix @treturn usage with index_theme:get_per_directory_keys
+
+commit 5dbb5b499262b97b2d69683e0b9625742750a316
+Author: Daniel Hahler <git@thequod.de>
+Date:   Thu Jan 3 13:43:54 2019 +0100
+
+    tests/run.sh: fix handling of test args
+    
+    Fixes `tests/run.sh tests/test-signal.lua`.
+
+commit f7c144f36561a1b30715272a501de05d0b348a12
+Author: Daniel Hahler <github@thequod.de>
+Date:   Thu Jan 3 13:46:11 2019 +0100
+
+    doc: fix type for cmd with easy_async_with_shell (#2531)
+    
+    It only accepts a string.
+    
+    With a table it will return an error (string):
+    
+    > "spawn: parse error: Non-string argument at table index 3"
+    
+    [ci skip]
+
+commit 6f2ab576b869f9e41780c45da266ccc6d81942f7
+Author: Daniel Hahler <git@thequod.de>
+Date:   Thu Jan 3 13:25:37 2019 +0100
+
+    awesome.kill: use luaL_checknumber
+    
+    Fixes https://github.com/awesomeWM/awesome/issues/2534.
+
+commit a2cd9186036104eeb7086cda0d183c592a49da61
+Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
+Date:   Tue Jan 1 15:04:47 2019 -0500
+
+    wibox: Stop monkey-patching the `get_children_by_id` function. (#2513)
+    
+    Before this commit, it was added by `wibox.widget.base` if
+    `:setup()` is used. However it doesn't work for the `awful.popup`
+    because of the extra indirection.
+    
+    This commit stops the monkey-patching and make sure the function
+    always exists. This doesn't prevent it from not working and in
+    the long run this should still be moved into the hierarchy.
+    
+    However for now it makes the situation a lot more consistent and is a
+    quick band-aid without too much controversy.
+    
+    Mitigate #2181
+
+commit d121780366db02b78303fdb62bbdc99881851d64
+Author: actionless <actionless.loveless@gmail.com>
+Date:   Tue Jan 1 18:43:43 2019 +0100
+
+    doc(readme): add receipts for installing current git master
+
+commit 6ca970395cf7654b319e0a55f7b6694720b9440e
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon Dec 31 17:50:37 2018 -0500
+
+    doc: Merge gears.object and gears.object.properties
+    
+    The `properties` submodule is almost for private use anyway. It is
+    not worth poluting the API index for it.
+
+commit 491a46875c66f43893d655c3cce4fbcd61d550e4
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon Dec 31 17:49:44 2018 -0500
+
+    doc: Merge the beautiful documentation
+    
+    Given they are all small, it makes more sense to just merge them like
+    we did for the client API
+    
+    For some reasons GTK doesn't want to be merged. To be investigated.
+
+commit f0df2d6e8fd64eb762e419fd632747eee80fee8f
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon Dec 31 17:49:14 2018 -0500
+
+    doc: Merge the `termite` hotkey popup doc
+    
+    The other components are already merged as such.
+
+commit a559f55c6a5d4f8eb4f28fd35b14d8dce9bb54e9
+Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
+Date:   Mon Dec 31 15:38:14 2018 -0500
+
+    prompt: Add a `with_shell` property. (#2500)
+    
+    Fixes #2486
+
+commit 61970761fbe0e9a2b84f1bef0bcb51a096501059
+Author: glenvt18 <glenvt18@gmail.com>
+Date:   Mon Dec 31 23:35:52 2018 +0300
+
+    fix(menubar): escape XML entities in the item name (#2522)
+
+commit 5268a89262935377b584be4d139ab5e9dfb096f9
+Author: ArenaL5 <37388405+ArenaL5@users.noreply.github.com>
+Date:   Thu Dec 27 15:53:46 2018 +0000
+
+    Add files via upload
+    
+    Sorting list of clients and adding comment to Tor Browser's entry, [as requested.](https://github.com/awesomeWM/awesome/pull/2505)
+
+commit e2f164208c1c1665fa992f50f5a6788220bce9a2
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon Dec 24 21:52:08 2018 -0500
+
+    doc: Better document awful.placement.next_to
+
+commit 8bcdd0b79492e80e76680151fa7cde5ed723e745
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Fri Dec 21 21:09:24 2018 -0500
+
+    placement: Add some extra checks to limit the risk of regressions.
+    
+    Given noone understand this code, this will prevent some semi likely
+    regressions from going unnoticed. The main risk is the shims not
+    producing the exact same results as the real implementation and
+    cause different code paths to be taken.
+    
+    As of this commit, both the "real" and "shim" implementation were given
+    the same set of tests with print() at every step of next_to. The
+    resulting log was then checksummed to ensure both are identical.
+
+commit 89867386c55f3681653f7780231418803a464921
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sun Sep 30 02:12:57 2018 -0400
+
+    tests: Add images to the tooltip documentation
+    
+    It also add some properties such as `border_width`, `border_color`
+    and `preferred_alignments`.
+    
+    It also fix a documentation bug where the `margin_topleft` was called
+    `margins_topleft`. To conform to the documentation, both are now valid
+    but one should be removed the next time the API changes.
+    
+    Fixes #1978
+
+commit 52f62b712ceb2a53755949f3b64d0350ca8ee28f
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Fri Dec 21 21:34:29 2018 -0500
+
+    tooltip: Allow the border to be configured.
+    
+    Given the tooltip border is "client side" instead of X11 to allow
+    anti-aliasing to work when a shape is used, it doesn't use the wibox
+    border.
+
+commit 2b52926b4882c6499485843e882d8f8f7b19cdda
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Fri Dec 21 21:32:19 2018 -0500
+
+    tooltip: Pass the parent object to awful.placement, not the position.
+    
+    By passing the geometry, important information used by
+    awful.placement.next_to were "lost". Given `next_to` supports both
+    widget position, the mouse and client/wibox relative positioning, it
+    has to know the object type.
+
+commit 68bfde45e152468e160684d0334d258bee1cba90
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Fri Dec 21 21:31:26 2018 -0500
+
+    tooltip: Cleanup the margin API.
+    
+    Make it closer to other APIs across Awesome.
+
+commit 3380fd85fccc5279f4adbbd0c02806e797eff8f8
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Fri Dec 21 21:29:56 2018 -0500
+
+    tooltip: Add alignment options.
+    
+    It's a list of preferred alignments because sometime the best one wont
+    fit in the screen.
+
+commit 7d6f52c4dca11f4a83e1605ba50bacb923cf7b45
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Wed Jan 10 07:49:35 2018 -0500
+
+    wibox: Add the wibox reference to `find_widgets`
+    
+    This is necessary to compute the widget real position on screen
+    because it's the only way to know the border_width offset.
+
+commit d8a7782bf442dd03e9e43b55ad31cb6b2a938326
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Tue Jan 9 09:26:00 2018 -0500
+
+    tests: Add an awful.placement.next_to test
+    
+    It was overdue
+
+commit 33a39ce38d8aa1d207aa3c209ee3204086abdf57
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Tue Jan 16 02:38:17 2018 -0500
+
+    placement: Make sure `next_to` result is consistent across calls
+    
+    It depended on a hash `pairs` iteration. This caused an issue only when
+    the primary position wasn't available.
+
+commit f1145af49d5965495aa0b9a782db61a8e8f496c2
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Tue Jan 9 08:40:19 2018 -0500
+
+    placement: Allow to configure the next_to anchors
+    
+    They were previously hardcoded to match the classic context menu
+    behavior. It isn't flexible enough for some popup type.
+
+commit 3fa42f3b1ae5a4b7fd014728340ef08cfe2b11dd
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Tue Jan 9 00:39:53 2018 -0500
+
+    placement: Fix `border_width` for `next_to`
+    
+    All previous users used client side borders so the issue went
+    unnoticed. This code will be unit tested by the `popup` module
+    in a few commits.
+
+commit c3302c4bbeb8bb5a04b96eb585387dbb83424391
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Thu Aug 10 00:27:09 2017 -0400
+
+    tests: Improve the awful example template
+    
+     * Support async operations
+     * Support `awful.popup`
+     * Support minimized clients
+
+commit 90342b62c61260d3ab74d19f2d661c11a0764051
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Fri Dec 21 21:19:59 2018 -0500
+
+    shims: Make sure the wibox boolean properties are set
+    
+    Also make some changes to support tooltips.
+
+commit 4c45d292dd8f467166e4ca0ca94335e507fa1ce1
+Author: ArenaL5 <37388405+ArenaL5@users.noreply.github.com>
+Date:   Sun Dec 23 17:39:12 2018 +0000
+
+    Making Tor Browser a floating window by default.
+    
+    Responding to issue #2504 at awesomeWM/awesome
+
+commit 820094c3c4306ce732553f0441b8a64703770206
+Author: Yauhen Kirylau <actionless.loveless@gmail.com>
+Date:   Mon Dec 17 18:47:14 2018 +0100
+
+    feat(awful: titlebar): expose fallback title (#2459)
+    
+    feat(awful: titlebar): expose fallback title
+
+commit 1da5554fdc3a558bc0ab4a421bd5f1e91bc58815
+Author: actionless <actionless.loveless@gmail.com>
+Date:   Mon Dec 17 16:27:09 2018 +0100
+
+    fix(hotkeys_popup): rebase fix for keygrabber instance
+
+commit 7231087bdbf2778f87d0f88aa1ae51730720e8f7
+Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
+Date:   Mon Dec 17 09:37:08 2018 -0500
+
+    Update widget.lua
+
+commit e55cc7c9124de48dd4fed9393d4600983a267239
+Author: Peter Nerlich <PeterNerlich@users.noreply.github.com>
+Date:   Mon Oct 15 12:09:20 2018 +0200
+
+    stop keygrabber on hide through click
+    
+    fixes #2434
+
+commit f1541a87b86c0f56c89fe557b9d33f9449a0fae1
+Author: legion151 <42674335+legion151@users.noreply.github.com>
+Date:   Mon Dec 17 15:40:04 2018 +0100
+
+    Update awesomerc.lua (#2451)
+    
+    * Update awesomerc.lua
+
+commit c292b6709d075a0c8a6bdf078076bbec6575c7a9
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Nov 21 12:51:19 2018 +0100
+
+    Improve docs for client class and instance
+    
+    No idea what "If the client has multiple classes" is supposed to refer
+    to, but this commit gets rid of that reference. Also, this commit
+    clarifies how to get the class and instance out of xprop.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 29b2b7138deba04b281fc25276bbf031ed726b3c
+Author: actionless <actionless.loveless@gmail.com>
+Date:   Mon Nov 19 22:09:46 2018 +0100
+
+    doc(readme): add section about IRC
+
+commit 86084690b277e49239a4800df5714adabdfdf5cb
+Author: actionless <actionless.loveless@gmail.com>
+Date:   Mon Nov 19 22:01:37 2018 +0100
+
+    doc(readme): add questions section; split issues and contributing; fix apidoc link (in ldoc)
+
+commit 2308509f39e2d5a50ecab862f68b3728d1596711
+Author: Michele Lazzeri <19763535+mlazze@users.noreply.github.com>
+Date:   Wed Nov 14 21:23:05 2018 +0100
+
+    lib/awful/rules.lua fix requesting nil tag name (#2479)
+    
+    Related PR: #2354
+    
+    We always passed a nil value, guess it's a typo.
+
+commit f0878941ab5ec9c709a419c5ddf14e36f23c7cbb
+Author: Sergey Vlasov <sigprof@gmail.com>
+Date:   Mon Nov 12 11:28:50 2018 +0300
+
+    doc: Fix c.requests_no_titlebar example
+    
+    Signed-off-by: Sergey Vlasov <sigprof@gmail.com>
+
+commit d17433f6c9cfa1add62fc4bc3a99be150477af54
+Author: Sergey Vlasov <sigprof@gmail.com>
+Date:   Mon Nov 12 11:19:24 2018 +0300
+
+    tests: Add test for Motif titlebar hints
+    
+    Test the c.requests_no_titlebar and titlebars_enabled=function...
+    features.
+    
+    Signed-off-by: Sergey Vlasov <sigprof@gmail.com>
+
+commit d266309ef8b466c3b1c4b26f66d4093dfd8f1f56
+Author: Sergey Vlasov <sigprof@gmail.com>
+Date:   Mon Nov 12 11:26:16 2018 +0300
+
+    awful.client: Fix c.requests_no_titlebar
+    
+    The property was always false because of a typo.
+    
+    Signed-off-by: Sergey Vlasov <sigprof@gmail.com>
+
+commit 55639547a242fe426e8eb6027ab34a3f8550f0b6
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Nov 7 13:23:25 2018 +0100
+
+    menubar.utils: Remove some (basically) dead code
+    
+    This removes unused public functions from menubar.utils. This is not an
+    API break, because these functions were only added in commit
+    8d34201ec3dd76ce9d8, which is after v4.2. These new functions became
+    unused in commit e88f1e873594bf, not long after they were added.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 41a9370dd876ae9ddb78f11e28c853c82f492adf
+Author: Julien Danjou <julien@danjou.info>
+Date:   Tue Nov 6 12:32:33 2018 +0100
+
+    mergify: fix Travis job name (#2466)
+
+commit c80bf6f46ed451ad8c4d17a612f5c238b15aa669
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Mon Nov 5 09:34:17 2018 +0100
+
+    wibox.layout.flex: Do not leave empty space behind
+    
+    It is not possible to distribute 100px to three widgets equally. The
+    current version of wibox.layout.flex tries to do that anyway, by giving
+    each widget 33px and leaving one pixel outside of any widget. Thus, if
+    the widgets e.g. have a common background, this leads to a one pixel gap
+    in the background.
+    
+    This patch changes the flex layout so that the extra pixel is assigned
+    to some widget instead. It does so by basically keeping a sum of
+    space_per_item for the widgets that was assigned so far. This sum is
+    rounded and when this leads to rounding, the corresponding child widget
+    gets an extra pixel.
+    
+    More precisely, this tracks a pos as before. Widgets get their position
+    still assigned based on rounding pos. However, this now also remembers
+    this rounded position for the next iteration of the loop. This allows to
+    assign the size of widgets based on the difference between the current
+    and last rounded position.
+    
+    (Possibly) fixes: https://github.com/awesomeWM/awesome/issues/2461
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit b6b6bc0bd63ab73122f72d432c4d3dc896b54b80
+Author: actionless <actionless.loveless@gmail.com>
+Date:   Wed Oct 17 04:59:11 2018 +0200
+
+    feat(awful: hotkeys_popup): add args.show_awesome_keys option
+    
+    Update lib/awful/hotkeys_popup/widget.lua
+    
+    Update lib/awful/hotkeys_popup/widget.lua
+    
+    fix(awful: hotkeys_popup): caching issue if showing the same widget instance with and without AwesomeWM hotkeys
+    
+    doc(awful: hotkeys_popup): extend docstring for args.show_awesome_keys
+
+commit 38505a00a29b093c5619cb93381703ccaad01c08
+Author: tototest99 <42334167+tototest99@users.noreply.github.com>
+Date:   Fri Nov 2 15:19:31 2018 +0100
+
+    doc(awful: spawn): Correct a typo in spawn.lua, Fixes #2456 (#2458)
+
+commit 1a96642615e7a27eb45a43313d7e8f8c0a88fbe8
+Author: Aire-One <erwan.maugere@gmail.com>
+Date:   Wed Oct 31 11:42:36 2018 +0100
+
+    format code and doc
+
+commit bc822c0af7cbd25dcfb417d192a2644b42e99f68
+Author: Aire-One <erwan.maugere@gmail.com>
+Date:   Wed Oct 31 11:35:56 2018 +0100
+
+    Add all parameters from awful.prompt to awful.widget.prompt constructor.
+
+commit d5f20a7e0b12da2451d9f661f1b92b7e70572d33
+Author: Aire-One <erwan.maugere@gmail.com>
+Date:   Wed Oct 31 09:00:18 2018 +0100
+
+    Add `done_callback` parameter to awful.widget.prompt constructor.
+
+commit da585439ffc2e74f93ba4e97a5db36e50826ac46
+Author: Daniel Hahler <github@thequod.de>
+Date:   Sat Oct 20 21:15:01 2018 +0200
+
+    docs: update URL for vicious (#2446)
+    
+    It has been turned into an organization [1].
+    
+    1: https://github.com/vicious-widgets/vicious/issues/60
+    
+    [ci skip]
+
+commit fded6acf97f524ba5eec4a70bf170320562a27ba
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Tue Oct 16 10:04:34 2018 -0400
+
+    tests: Fix a race condition in the spawn test.
+    
+    To happen, both of these races have to be lost by client3
+    
+     * client2 have to take more time to `:kill()` than client3 take
+       to be spawned.
+     * client4 have to start faster than client3
+    
+    It is very unlikely to happen on normal systems, but on server it
+    happens. Some factor that may or may not be involved
+    
+     * The scheduler assigned client2 on a very busy CPU and client 3
+       on a CPU still busy while some other CPUs are idle
+     * Linux is bad at scheduling hyper-threading
+     * The system is NUMA and the memory bandwidth is lacking on a core
+     * There is some "Z" memory compression or drive based swap
+     * Extreme bad luck
+    
+    Fix #2424
+
+commit 4744a744f014e974aa9f7c092bac82752bab547b
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Tue Oct 16 16:17:45 2018 +0200
+
+    gears.table.join: Ignore nil arguments (#2440)
+    
+    When calling join with e.g. arguments (nil, {"a"}), then everything past
+    the nil was ignored, because the code internally used ipairs() to
+    iterate over the arguments and this stops at the first nil it
+    encounters.
+    
+    Fix this by using select() to iterate over the arguments.
+    
+    This also adds a unit test for this problem.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 35130169c9b616097ab06b0d42e4718d0062a8f0
+Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
+Date:   Tue Oct 16 08:42:56 2018 -0400
+
+    keygrabber: Rename release_event to stop_event (#2422)
+    
+    In the earlier revision of the keygrabber PR, there was a `release_key`
+    and it was suggested to rename it `stop_key`. However its sibling
+    `release_event` wasn't, so it is now confusing.
+    
+    The commit adds a mild deprecation codepath to avoid breaking configs
+    based on git-master. However it isn't a "long term" deprecation notice
+    and the code can probably be removed in 5.0 without further delay.
+
+commit 23c122e89af279a14875ecbc3fe1561c6e7290fc
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Oct 13 22:42:28 2018 -0400
+
+    tests: Test awful.tag.object.set_layouts
+
+commit 990b1ddb9d14871289cd7d177787758032384692
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Aug 18 17:58:06 2018 -0400
+
+    awful.tag: Add a "tag centric" way to manage a layout list.
+    
+    Previously, the layout list was global. However it wasn't covering all
+    possible use cases and make using `awful.widget.layoutlist` hard since
+    a layout could be excluded from the `awful.layout.layouts` but still
+    used for a tag (by setting it explicitly).
+
+commit ae5fc042aed9e161db0ea325b996f2ae5b79a3be
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Aug 18 17:57:23 2018 -0400
+
+    layout: Add a get_tag_layout_index function.
+    
+    It helps check of the current tag layout is part of
+    
+        awful.layout.layouts
+
+commit b07c5dab379abf363e736732e687251307458438
+Author: Julien Danjou <julien@danjou.info>
+Date:   Mon Oct 15 16:00:34 2018 +0200
+
+    Migrate Mergify configuration to v2
+    
+    This just convert the file to the new configuration format.
+    The action "delete_head_branch" is added to clean up branches after they are
+    merged.
+
+commit 3cef72bb3058da10a39e2bc3f5419cf006beb158
+Author: actionless <actionless.loveless@gmail.com>
+Date:   Sun Oct 14 20:41:45 2018 +0200
+
+    fix(awful: rules): don't raise every focusable client on awesome startup
+    
+    re #2095
+
+commit bb357dd33e75bcb97002665aabfa93b824fae62d
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Wed Oct 10 00:53:14 2018 -0400
+
+    doc: Restore the example width limit to fit in 1024x768.
+    
+    The old stylesheet did this and it forced the examples to be smaller.
+    
+    This commit restore this limit.
+
+commit 43a82f34f08d02eb84860fef46b7b2afc72b626a
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Wed Oct 10 00:50:22 2018 -0400
+
+    doc: Add more examples about the spawn.easy_async
+    
+    Ref #1373
+    Ref https://stackoverflow.com/questions/52634985/awesome-wm-os-execute-vs-afwul-spawn
+
+commit cd6979618ff1b1380c40400c5952cfd84ee56ac2
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Wed Oct 10 00:18:45 2018 -0400
+
+    doc: Update the CSS to support our custom table class
+    
+    Other change:
+    
+     * Use GitHub style <code> border
+     * Add support for HTML <kbd> tags
+
+commit 845b9a930ce8b8eb9c2108589e5c25cb52b67758
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Fri Oct 12 14:10:02 2018 -0400
+
+    doc: Refactor awful.spawn doc to have a property list.
+
+commit b4e0363ac387b125e000172241ffe0a415b7618b
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sun Oct 7 01:37:35 2018 -0400
+
+    doc: Move the awful.rules to the header.
+    
+    It's easier to find.
+
+commit b49f7e22dd2b34d2118b1f0e20271eb863352598
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sun Oct 7 01:29:41 2018 -0400
+
+    doc: Add an index of valid properties to awful.spawn and awful.rules.
+
+commit 62c95d5fe6b14e9b26900e13c20b1f21748a034c
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Oct 6 23:29:37 2018 -0400
+
+    build: Move the meta file parser to an helper module
+    
+    The commit also re-work the build target so if the file are deleted,
+    then they are created again. Using `file(COPY ...)` and
+    `file(MAKE_DIRECTORY ...)` as done previously caused some file to be out
+    of date or not being regenerated at all.
+    
+    This commit also fixes some broken target that depended on `file(` and
+    `configure_file` CMake command not being part of any target.
+    
+    Fix #2342
+
+commit 6ac8f30d62413758c1b0e9bc6813d2987650563c
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Fri Oct 12 14:01:11 2018 -0400
+
+    build: Add more dependencies to the ldoc target
+    
+    Right now it was possible to modify `rc.lua` without the doc being
+    aware of it.
+
+commit 90b17bdc094adcfb873fb214a00cebbbc262074f
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Oct 6 19:40:36 2018 -0400
+
+    awful.rules: Add proper documentation to the extra client properties.
+    
+    Until now there wasn't much documentation available about how to use
+    these properties. With the new work on `awful.spawn` that rely more and
+    more on `awful.rules` integration, it is worth fixing.
+    
+    This commit add a new documentation section and a future commit will
+    aggregate them to generate an index.
+
+commit 7519c6966a50994c546a56c557a21f2a87e37108
+Author: gabriel klawitter <gabreal@users.noreply.github.com>
+Date:   Sun Oct 7 16:09:12 2018 +0200
+
+    dbus: fix nil notifications (#2180)
+    
+    When mangling notifications via naughty.config.notify_callback it is
+    advised (1) to return nil to reject a notification. The underlaying dbus
+    library tries to access a field of that notification table and fails.
+    
+    (1) https://awesomewm.org/doc/api/libraries/naughty.html
+
+commit 6229783e16240f26008799b383e8ad7783e21382
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Oct 6 18:19:19 2018 -0400
+
+    tests: Add a titlebar integration suite
+    
+    It doesn't do all that much, but will prevent #2419 from regressing
+
+commit 789cf11d8d51a0f0070310a572cfe5c3cb927630
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Oct 6 18:11:23 2018 -0400
+
+    titlebar: Emit `request::titlebars` from `awful.titlebar`.
+    
+    The toggle/show/hide function were incompatible with the current
+    `rc.lua` is `titlebars_enabled` was removed from the rules because
+    they were never created. This has always been the case but the
+    introduction os `request::titlebars` in Awesome 4.0 allows to solve
+    this longstanding issue. However until now it didn't.
+    
+    Fix #2419
+
+commit ee9670b1eabd3f95512d6715ca9783cfbb668dc5
+Author: Alyssa Ross <hi@alyssa.is>
+Date:   Sat Oct 6 22:53:48 2018 +0200
+
+    Gracefully fail when history file is inaccessible (#2410)
+    
+    If the history file (or its parents) can't be created, running a command
+    will fail entirely. Since saving command history is not an integral part
+    of running a command, it would be nicer if it carried on, just without
+    saving history. This is what shells usually do.
+    
+    This patch removes assertions in the history saving function and
+    instead adds an early return, so if the history isn't saved the command
+    invocation simply carries on.
+    
+    Signed-off-by: Alyssa Ross <hi@alyssa.is>
+
+commit aaed083755c2778eb7df6db2a65e8fc1ce071c02
+Author: Daniel Hahler <git@thequod.de>
+Date:   Sat Oct 6 22:49:29 2018 +0200
+
+    signal_child: use "(void) res" to silence compiler warning
+    
+    Fixes https://github.com/awesomeWM/awesome/issues/2418.
+
+commit 4c7bcf044cd84147de3ee4f8c702790712b99652
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Wed Oct 3 08:29:39 2018 -0400
+
+    tests: Add more spawn tests
+
+commit c21e8b980a9e9b25fe9874c4f3fbb96f103bfc5e
+Author: Daniel Hahler <github@thequod.de>
+Date:   Thu Oct 4 19:09:01 2018 +0200
+
+    minor: spawn_child_exited: use "signal" for signals in warning (#2417)
+
+commit 021a1feec8f626f2c12ef4768575649595342637
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon Oct 1 16:12:26 2018 -0400
+
+    awful.spawn: Add a `raise_or_spawn` method.
+
+commit 0ac99a5dc5d61ef86a2581effb9fd8d46fcd1f1d
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon Oct 1 16:18:08 2018 -0400
+
+    awful.rules: Rename switchtotag to switch_to_tags.
+    
+    First of all, it select many tags, so there is an "s". Also, Awesome
+    standardised naming to snake case in v4.0, but this was missed.
+
+commit 927e7b2796807c1ce8d4da5370ee0976cf845152
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sun Sep 30 23:55:57 2018 -0400
+
+    awful.spawn: Add an `once` and `single_instance` methods.
+    
+    This commit adds a way to leverage the xproperty and startup_id APIs
+    to persist an execution token across restarts. It allows to use
+    `awful.rules` on clients that were executed by a previous Awesome
+    instance.
+    
+    The main limitations of these methods is the lack of entropy used to
+    build the token. If the command is the same in multiple
+    `awful.spawn.once`, then it will not work as expected. To mitigate this
+    issue, the system try to concatenate the `awful.rules` table after the
+    command and hash the resulting string. Given rules are a table, it can
+    have loops and/or issues with keys ordering. The hash function sort and
+    limite recursion to prevent a stack overflow. Another issue is the
+    unreliability of startup notifications.
+
+commit 03b8a35c5cdeb8899383a97d7589da4469712235
+Author: Daniel Hahler <git@thequod.de>
+Date:   Wed Oct 3 17:37:35 2018 +0200
+
+    themes/xresources/assets.lua: use raw=true with deprecation
+
+commit 9250610a772f440ca408e78926b305b15a1f1edd
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon Oct 1 16:09:47 2018 -0400
+
+    activate: Add `switch_tag_tag` and `switch_to_tags`.
+    
+    Also bring some consistency with `awful.rules` naming. A future commit
+    will add a `TODO v5` to resolve this naming issue.
+
+commit 9e45e016e9abe2390d4dfd6905f9e6bdb2abac90
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon Oct 1 16:08:33 2018 -0400
+
+    tag.viewmore: Add an optional limit to the number of selection.
+
+commit da68b3cbaf9c2c8b7d36ac224790aae84b1fe686
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon Oct 1 14:55:53 2018 -0400
+
+    table.join: Make deterministic.
+    
+    `pairs` order isn't defined and `{...}` will always be ordered.
+    There is no reason to have random behavior where it can be
+    predicted at no additional cost.
+
+commit 3931ae370ce1462ee78ef3d906b649ab9518804c
+Author: Yauhen Kirylau <actionless.loveless@gmail.com>
+Date:   Fri Sep 28 06:35:10 2018 +0200
+
+    feat(menubar): expose menubar styling to beautiful (#2375)
+
+commit 3927dbcf0200f83547dc3e3e93065b53ff78ab24
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Sep 26 10:37:59 2018 +0200
+
+    Fix incorrect @name annotation in gears.string
+    
+    gears.string.xml_escape was annotated with "@name escape" and
+    gears.string.xml_unescape was annotated with "@name unescape".
+    
+    Reference: https://github.com/awesomeWM/awesome/issues/2397#issuecomment-424630100
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 16b5803fda7d81f472dec6b946f4e96960b5a4d5
+Author: Sergey Vlasov <sigprof@gmail.com>
+Date:   Wed Sep 12 10:24:53 2018 +0300
+
+    Add a test for awful.placement.no_overlap+awful.placement.no_offscreen
+    
+    Test that the placement function used in the default configuration
+    behaves as intended.  This test was failing before the no_overlap and
+    no_offscreen fixes in two previous commits.
+    
+    Signed-off-by: Sergey Vlasov <sigprof@gmail.com>
+
+commit 61cdc405959ed738648a26459a5d0297c37b3432
+Author: Sergey Vlasov <sigprof@gmail.com>
+Date:   Wed Sep 12 10:30:17 2018 +0300
+
+    awful.placement: Fix no_offscreen when composed with other functions
+    
+    The awful.placement.no_offscreen function did not work properly when
+    composed with other placement functions; in particular, the default
+    configuration (awful.placement.no_overlap+awful.placement.no_offscreen)
+    was broken.  The compose function sets args.pretend=true and puts the
+    result of the previous placement function into args.override_geometry
+    before calling the next placement function, but no_offscreen did not use
+    args.override_geometry, therefore the result of the previous placement
+    function was discarded.
+    
+    All other placement functions use `geometry_common(c, args)` to get the
+    current client geometry; `area_common(c)` should be used only when
+    getting geometry of other clients.
+    
+    This change also fixes the problem with margin handling (adding margins
+    should not affect the window size, only the window position should
+    change); the test output which was adjusted in commit 0275d3537d05b66b9f
+    is adjusted again to account for this change.
+    
+    Signed-off-by: Sergey Vlasov <sigprof@gmail.com>
+
+commit db11c7e9dabc8edb4f59fdac25978883afad3be9
+Author: Sergey Vlasov <sigprof@gmail.com>
+Date:   Wed Sep 12 10:46:21 2018 +0300
+
+    awful.placement: Fix client size corruption in no_overlap
+    
+    The awful.placement.no_overlap function was adding the window border
+    width to the client width and height (this is performed in
+    area_common(), which is called by geometry_common()), but did not
+    reverse this operation by calling remove_border() before returning the
+    final geometry; because of this, using no_overlap resulted in increasing
+    the window width and height by 2*border_width.
+    
+    The bug was probably introduced in commit ebcc19844e25705270 (before
+    that commit no_overlap changed the window position directly instead of
+    relying on the new placement infrastructure), but was not noticed
+    because of other problems (e.g., in the default configuration the result
+    of no_overlap was overridden by the buggy no_offscreen).
+    
+    Signed-off-by: Sergey Vlasov <sigprof@gmail.com>
+
+commit 7f11bc11081e2e26ece725774a1563769e79a7d2
+Author: Sergey Vlasov <sigprof@gmail.com>
+Date:   Wed Sep 12 08:20:53 2018 +0300
+
+    tests: Add initial size support to the test client
+    
+    Signed-off-by: Sergey Vlasov <sigprof@gmail.com>
+
+commit 0e3979b8e46f2d1531abdf404ca5dffc54631278
+Author: Sergey Vlasov <sigprof@gmail.com>
+Date:   Wed Sep 12 08:15:38 2018 +0300
+
+    tests: Fix resize width/height mixup in the test client
+    
+    Signed-off-by: Sergey Vlasov <sigprof@gmail.com>
+
+commit b48782671967425618759fc34ce07287547c57a8
+Author: Michael Perlov <perlovka@gmail.com>
+Date:   Thu Aug 30 17:04:37 2018 +0300
+
+    Check for non-empty utils.wm_name before checking OnlyShowIn attribute
+    
+    Signed-off-by: Michael Perlov <perlovka@gmail.com>
+
+commit cbb8f41261d940df309a2e9e1f6b68c81855f362
+Author: Michael Perlov <perlovka@gmail.com>
+Date:   Wed Aug 29 22:39:07 2018 +0300
+
+    menubar.utils: Allow to add programs with OnlyShowIn option being set
+    
+    Bug: https://github.com/awesomeWM/awesome/issues/2377
+    
+    Signed-off-by: Michael Perlov <perlovka@gmail.com>
+
+commit 96bbbc82f33470b52be1a2500998b836bb574a5b
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Aug 18 16:30:15 2018 -0400
+
+    widget.common: Add custom sources for the taglist and tasklist.
+    
+    The current taglist/tasklist allow filter function to remove elements
+    from the list. However they don't allow sorting or additional entries
+    to be listed.
+    
+    This commit introduced such a concept. It will later be used by the
+    layoutlist where it becomes more relevant since layouts are used created
+    "objects".
+
+commit 3fe5798a97bd22d29d6d3dfa73098f36a5363754
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Aug 18 16:26:59 2018 -0400
+
+    ldoc: Add a @sourcefunction section.
+    
+    It will be used by features introduced in the next commit.
+
+commit 45430daf7f22724b89004afa0cd06a5f937ff51d
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Aug 26 19:26:19 2018 +0200
+
+    rc.lua: Move Motif hints example to generated docs
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit e332e2d868be3a768247403a3a13ea255f211320
+Author: Yauhen Kirylau <actionless.loveless@gmail.com>
+Date:   Sun Aug 26 18:35:14 2018 +0200
+
+    fix(menubar): apply both menu bg and fg, not only bg (#2372)
+
+commit 9d41488e43bd9cc2824272df3026dc40a8a20da9
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Aug 22 13:25:18 2018 +0200
+
+    awesomerc: Add comment mentioning c.requests_no_titlebar
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit fa1728d749d4af27794f10eb072ee4d8ba5e8aee
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Aug 22 13:23:20 2018 +0200
+
+    Add c.requests_to_titlebar
+    
+    This property is based on Motif WM hints and checks if the client
+    requests that it is not decorated with a titlebar.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 48d4a31b171498b00f38d5a0ac7dd82f7ec4a901
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Aug 22 13:22:51 2018 +0200
+
+    awful.rules: Support titlebars_enabled being a function
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 0275d3537d05b66b9fb2e51c5c5795cd1a4f15d0
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Aug 22 13:35:09 2018 +0200
+
+    Fix no_offscreen test
+    
+    Commit fec8d6aa8fe257f2d1 fixes awful.placement.no_offscreen to behave
+    like other placement functions. This means that the margins=40 argument
+    that this test used and that was previously was just ignored, now
+    started working. Thus, there are now 40 pixels less on each side of the
+    client in this test.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit e907f44db974c6164d32756c13cebae710686aed
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Aug 21 15:30:58 2018 +0200
+
+    a_glib_poll: Preserve errno from g_poll()
+    
+    When poll() is interrupted because of a signal, it sets errno to EINTR.
+    GLib ignores this kind of failure.
+    
+    However, a_glib_poll() calls a_xcb_check() at its end. This will call
+    xcb_poll_for_event() which internally might call recv(), which can fail
+    with EAGAIN if no new events are available. Thus, a_glib_poll() will
+    return an error and set errno to EAGAIN. This leads to the following
+    error message being printed by GLib:
+    
+      GLib-WARNING: poll(2) failed due to: Resource temporarily unavailable.
+    
+    Fix this by preserving the errno from g_poll() in a_glib_poll().
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 6c559e188c2aa3b6e3777c2bd81d0219967eeb38
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Aug 21 15:30:07 2018 +0200
+
+    Handle SIGCHLD ourselves instead of through GLib
+    
+    GLib is very careful not to "fetch" any children that it was not asked
+    to fetch. Thus, if awesome inherits some children, it does not reap them
+    and starts collecting zombies.
+    
+    Thus, this commit makes awesome handle SIGCHLD directly: On SIGCHLD, a
+    byte is written to a pipe. The main loop reads from this pipe and
+    collects children via waitpid(-1). Unknown children cause a warning to
+    be printed. We might want to remove this warning if it turns out to be
+    annoying.
+    
+    This commit adds 79 lines and removes 89 lines. Thus, this is a net
+    reduction in lines of codes. This is because previously, we gave the
+    list of still-running children that we know about to the next awesome
+    instance we a --reap command line argument. This was added so that
+    awesome does not get zombie children. However, this commit fixes this
+    problem and makes all the code for this 'feature' unnecessary.
+    
+    Fixes: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=886393
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 016be728b1e05bced16ecb77c0f89eb1ff434e81
+Author: Peter Kasza <peter.kasza@itinsight.hu>
+Date:   Tue Aug 21 13:19:02 2018 +0200
+
+    Remove unsatisifiable condition when destination screen is empty
+    
+    This commit fixes the following issue: https://github.com/awesomeWM/awesome/issues/2365
+
+commit a54fea40ef83cac377ef8d38a067a4b0f6922b73
+Author: Uli Schlachter <uli.schlachter@informatik.uni-oldenburg.de>
+Date:   Mon Aug 20 10:40:58 2018 +0200
+
+    event_handle_configurerequest: Add missing test
+    
+    c->size_hints.win_gravity only contains something valid if the
+    XCB_ICCCM_SIZE_HINT_P_WIN_GRAVITY bit is set in the flags. Most likely
+    this wasn't noticed before, because most code just happens to
+    zero-initialize this field and gravity 0 is NorthWest, which does not do
+    anything.
+    
+    Signed-off-by: Uli Schlachter <uli.schlachter@informatik.uni-oldenburg.de>
+
+commit 62d27950faaef7b3328e3d53f1d75c082d131fd5
+Author: Uli Schlachter <uli.schlachter@informatik.uni-oldenburg.de>
+Date:   Mon Aug 20 10:33:06 2018 +0200
+
+    Handle border width changes in ConfigureRequests early
+    
+    The function window_set_border_width() causes its own gravity handling.
+    Thus, to make sure that this gravity handling does not interfere with
+    what the code in here does later, we just apply changes to the border
+    width first, and then do everything else.
+    
+    Signed-off-by: Uli Schlachter <uli.schlachter@informatik.uni-oldenburg.de>
+
+commit 2ebd1202239a90586e907323ec5ff6b264419c49
+Author: Uli Schlachter <uli.schlachter@informatik.uni-oldenburg.de>
+Date:   Mon Aug 20 10:28:21 2018 +0200
+
+    Refactor event_handle_configurerequest
+    
+    Before this commit, the code in here first handled clients changing its
+    x/y position and afterwards it handled resizes. This meant that the
+    special case of "client resizes without moving itself so we need to
+    apply gravity" had to have special checks on whether the client moved
+    itself or not.
+    
+    Change the code so that resizes are handled first and moves later. This
+    naturally handles the problem: If the client resizes and moves itself,
+    the move done for the resize is later overwritten when the move is
+    handled.
+    
+    No functional changes are intended.
+    
+    Signed-off-by: Uli Schlachter <uli.schlachter@informatik.uni-oldenburg.de>
+
+commit 3301e9b0ffa24542336af851321e38cdb33e8676
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Aug 19 17:59:34 2018 +0200
+
+    naughty.dbus: Duplicate surface data
+    
+    When an icon is sent over dbus, we turn this into a cairo ImageSurface.
+    This is done by turning the actual icon data into a string and using
+    cairo.ImageSurface.create_for_data() to create a surface for this data.
+    However, this function only creates an ImageSurface that refers to this
+    data. It does not copy the data. Thus, when the Lua GC later frees the
+    string, we have a cairo surface that refers to already-freed data.
+    
+    Fix this by duplicating the cairo surface, which makes cairo create a
+    copy of the data. Then, we finish the original surface. While doing
+    this, the string is kept alive in a local variable.
+    
+    (Possibly) Fixes: https://github.com/awesomeWM/awesome/issues/2361
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 250475d65c74c6aa3261badbfea48e37a4b0ab2c
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Aug 18 15:47:56 2018 -0400
+
+    widget.common: Use the new ldoc filter section.
+
+commit 3792a17c2f8e5fee513d2f2a474cfd12c7bc06dd
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Aug 18 15:47:14 2018 -0400
+
+    ldoc: Add a "filter" section for the taglist and tasklist
+
+commit 5b45442c7341a572bd224bd87ab7af14bf3c6287
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Aug 17 14:20:31 2018 +0200
+
+    Fix documentation of awful.menu.new
+    
+    Fixes: https://github.com/awesomeWM/awesome/issues/2348
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit a996b21ee2a63d16b136374d9f5709652b4b8781
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Aug 17 11:48:49 2018 +0200
+
+    test-gravity.c: Accept different roundings
+    
+    Some window gravities require a division by two. Up to now,
+    test-gravity.c expected this division to always be rounded up. This
+    commit changes the code to also allow rounding down.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 21b7b29630d19f946ea497defab3f4424d5f20a2
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Aug 17 09:58:30 2018 +0200
+
+    xwindow_translate_for_gravity: Change instead of set argument
+    
+    Previously, this function overwrote the value of its argument with the
+    result. After this change, the function merely changes the given
+    variable by the calculated argument.
+    
+    Thus, the old behaviour is achieved by setting the variable to zero
+    before the call, which all callers already did. However, for most
+    callers this change means that a temporary variable can be removed and
+    instead xwindow_translate_for_gravity() will directly change the target
+    variable.
+    
+    No change in behaviour intended.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit ea98919f6120e0e8f8ecc959a6a1ad869dee48b7
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Aug 17 09:44:29 2018 +0200
+
+    awful.rules: Also check for tag on other screens
+    
+    When a tag is specified by name, awful.rules only searched for the tag
+    on the client's screen. This commit extends the search to all screens,
+    but only if no specific screen was specified for the new client by some
+    rule.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 56e727e0265c4480f6dcc4a3649c62277fcd0d2a
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Aug 16 18:03:22 2018 +0200
+
+    Fix a race with setting the focus
+    
+    There are two ways in which the input focus can change: Lua can request
+    a change and the X11 server can inform us that the input focus changed
+    (because some application changed it).
+    
+    In the first case, we still have to inform the X11 server about the
+    desired change, in the second case we must not to avoid races due to
+    X11's asynchronous nature.
+    
+    However, there was a case where we screwed up: When a focus change is
+    still pending, meaning that Lua assigned the focus elsewhere, but we
+    have not yet sent this focus change to the X11 server, we could get an
+    event from the X11 server telling us that the focus changed. To make
+    sure that the pending focus change is not lost, we sent the focus change
+    out in this case (call to client_focus_refresh() in
+    event_handle_focusin()). After sending out this pending call, we updated
+    the internal state to record that whatever the X11 server just told us
+    had the focus. The intention was that our just sent-out focus change
+    will cause the X11 server to send a new event and our to-be-focused
+    client then has the focus.
+    
+    However, if the pending focus change was for a client which only showed
+    up in this event loop iteration, the client was still banned. This means
+    that client_focus_refresh() would call client_unban() to be able to give
+    the focus to this client. However, since awesome (partly) allows to
+    "focus" currently banned clients, client_unban() recorded that there is
+    a pending focus change. This caused confusion later on.
+    
+    In this specific bug, a main window opened a dialog, and when this
+    dialog was closed, a new dialog window was opened immediately. When the
+    first dialog was closed, Lua (the focus history) gave the input focus to
+    the main window. Now, a new dialog showed up and Lua focused it. Next,
+    we received the event from the X11 server telling us that the main
+    window was focused. Because there was still a pending focus change to
+    the new dialog window, event_handle_focusin() called
+    client_focus_refresh() to send out this focus change. This set
+    globalconf.focus.need_update to false and continued. However, because
+    the new dialog only just now appeared, it was still banned, meaning that
+    client_focus_refresh() had to call client_unban(). This set
+    globalconf.focus.need_update to true. Thus, when client_focus_refresh()
+    returned, globalconf.focus.need_update was incorrectly true. Next,
+    event_handle_focusin() recorded that the main window had the focus.
+    Thus, it now appeared as if there was a pending focus change for the
+    main window. Next, we got the event from the X11 server telling us that
+    the dialog is now focused, and because focus.need_update was set,
+    awesome now send out a focus change request for the main window.
+    
+    Fix this race by unsetting globalconf.focus.need_update at the end of
+    client_focus_refresh() and not at the beginning, thus making sure that
+    client_unban() cannot set this flag again.
+    
+    Fixes: https://github.com/awesomeWM/awesome/issues/2220
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 24df2ecd6b9895cbbaaa5dfddf255b413bb54d8a
+Author: Mak Kolybabi <mak@kolybabi.com>
+Date:   Tue Aug 14 06:47:41 2018 -0500
+
+    Grammar correction.
+
+commit 8b5dd10f3205853b5847d36817a58a72c55ad157
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Mon Aug 13 10:26:10 2018 +0200
+
+    awful.menu: Fix typo "moue" -> "mouse"
+    
+    The typo was introduced in commit a1941efc9.
+    
+    Its effect should be minimal: :item_enter() itself does not care about
+    the 'mouse' option, but it forwards to :exec(). Here, an action is
+    invoked either if it was not caused by the mouse, or if it was caused by
+    the mouse and either auto_expand is enabled (which is the default), or
+    the item-to-be-executed is actually the active item.
+    
+    In other words, it is quite non-trivial to come up with a case where
+    this typo made a difference. But of course that's no reason to leave the
+    typo in.
+    
+    Fixes: https://github.com/awesomeWM/awesome/issues/2347
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 297003126d44d8a31bb6c3899817f8f2dff29b80
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Aug 10 16:39:46 2018 +0200
+
+    Handle unsetting of .transient_for
+    
+    When a window has a WM_TRANSIENT_FOR property that is later unset,
+    awesome would still keep c.transient_for pointing to the previous
+    "parent client". This commit fixes that.
+    
+    First, property_update_wm_transient_for() is fixed so that it unsets
+    c->transient_for_window if the WM_TRANSIENT_FOR property is deleted.
+    Additionally, this then calls client_find_transient_for() to update the
+    c->transient_for pointer.
+    
+    Secondly (and a bit unrelated), this changes client_find_transient_for()
+    so that it always sets c->transient_for. Previously, if updating this
+    property would introduce a cycle in the transient_for relation, it would
+    just leave c->transient_for with its old value. After this change, it
+    gets explicitly set to NULL instead.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit f11c0b47b9d65cb6b0196364ddd6ced4a97cfbd8
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon Aug 6 18:26:24 2018 -0400
+
+    doc: Remove capi.keygrabber from the official doc
+    
+    `awful.keygrabber` should be the only one used directly.
+
+commit 106fba6dd6680accaa18aa417f9fe1132985ea7c
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sun Aug 5 16:52:34 2018 -0400
+
+    timer: Add a reminder to apply the existing naming conventions
+    
+    Not now because changing things for the sake of changing things in
+    a point release is a bad idea, but eventually.
+
+commit efe82faf1cc58d7cf05c9e39857bf69beaecbabf
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sun Jul 29 16:30:50 2018 -0400
+
+    hotkey_popup: Use awful.keygrabber instead of capi.keygrabber
+
+commit ff743b375f68f41f9eb50b3931e9f25fee854979
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Jul 21 14:23:47 2018 -0400
+
+    doc: Add fake_inputs examples.
+
+commit a961c5f002ad43ed549311bca632427675f39664
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Jul 21 14:25:15 2018 -0400
+
+    tests: Add keygrabber tests.
+
+commit e05222088ad6850478169275af3424e1e2707343
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Jul 21 14:25:06 2018 -0400
+
+    tests: Add fake_input tests
+
+commit 2bf930b044f4b926bed70030272f83ae7e8dfdfc
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Jul 21 14:18:44 2018 -0400
+
+    keygrabber: Refactor to be an object instead of a function.
+    
+    The old keygrabber API wasn't doing what the users want from a
+    keygrabber module. With tons of boilerplate code, everything could
+    be done, but it wasn't trivial.
+    
+    This commit add a default grabber function that implements the
+    keybinding API already used by `awful.key` and `awful.prompt`.
+    
+    It also add syntax candy left and right to make the module "feel"
+    like a native CAPI object.
+    
+    Nothing is perfect and some parts, like adding root keybindings, are not
+    vevy pleasing. However it fulfill its goal when it comes to make
+    previously non-trivial use case very easy to implement and deploy.
+
+commit 0765772c176051d1fc7d4b1154436c6713144177
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sun Aug 5 18:45:01 2018 -0400
+
+    shims: Fix a typo in a root.fake_input name
+
+commit a32d892988d6b47222d641add46ef6b178b2e0c0
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sun Jul 29 10:10:11 2018 -0400
+
+    tests: Add ways to input fake strings and keybindings.
+    
+    This commit add a way for the test to avoid all the boiler-plate code
+    necessary to perform higher level input emulation.
+
+commit 2769bdbc5b60d20d014f2ff290dd6bdef263e8d8
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Aug 3 14:51:52 2018 +0200
+
+    tests/examples: Run example-tests in build phase, not configure phase
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit be728324ef71bb2465995ebaa3d40c4053f329b9
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Aug 3 14:40:45 2018 +0200
+
+    tests/examples: Change ENV handling
+    
+    Instead of messing with CMake's environment and having that implicitly
+    inherited when running a process, explicitly set $SOURCE_DIRECTORY where
+    required.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 0e94f8bd6bac48aea70067dd6d2a339ae6e68305
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Mon Aug 6 16:03:17 2018 +0200
+
+    tests/run.sh: Print log on awesome-client failures
+    
+    tests/run.sh uses awesome-client to actually make awesome run the test.
+    If awesome-client fails, then the only error message that is printed look like:
+    
+    == Running /home/travis/build/awesomeWM/awesome/tests/test-leaks.lua ==
+    Error org.freedesktop.DBus.Error.NoReply: Message did not receive a reply (timeout by message bus)
+    E: dbus-send failed.
+    make[4]: *** [CMakeFiles/check-integration] Error 1
+    
+    To also get the output from awesome, this commit makes failures from
+    awesome-client non-fatal so that the following shell code can notice the
+    failure and hopefully print some useful information.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit e889caba913d0c296fa8df32507d885dd3e13663
+Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
+Date:   Mon Aug 6 09:30:59 2018 -0400
+
+    build: Auto-add example tests outputs. (#2339)
+    
+    This commit allow the file to be auto added when it doesn't exist. This
+    save the useless process of writing it by hand.
+
+commit 73b519d38b115a5e2d902eee1cd7bd302a31deed
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Mon Aug 6 15:05:51 2018 +0200
+
+    Fix STRICT_TESTS (#2338)
+    
+    STRICT_TESTS was introduced in commit c22b93963. Some people have setups
+    where e.g. fontconfig produces warnings. These warnings made the tests
+    under tests/examples/ fail. The above commit changes things so that
+    these warnings are ignored by default, unless STRICT_TESTS is enabled.
+    
+    Commit b5ca8bf9377 broke this by making example test failures fatal
+    again.
+    
+    Fix this by appending "|| true" to the command to run in case strict
+    tests are disabled. Thus, all failures from tests/examples/runner.sh get
+    ignored.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit dd7161ee0a6753d15fffee934693b1197dd0d76f
+Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
+Date:   Mon Aug 6 09:05:31 2018 -0400
+
+    build: Fix a regression when adding new example tests. (#2337)
+    
+    If the example had a text output, it would cause an error
+    
+    Regression from b5ca8bf93
+
+commit d76143f97b731764e0230dda65021ec2bfad2e14
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Aug 3 19:19:43 2018 +0200
+
+    Add support for motif wm hints
+    
+    This makes motif wm hints available on clients as c.motif_wm_hints.
+    Actually interpreting all the values is up to Lua. The definition of the
+    necessary properties is taken from motif.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 477af1b14540e61080feb06211b01ba12998a7ab
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Jul 25 16:48:29 2018 +0200
+
+    test runner: Move running to a shell script
+    
+    Instead of running the example tests directly from CMake and checking
+    the results via CMake, the tests are now run through a shell script.
+    
+    So far, there are too many variables involved for me to easily figure
+    out how to run this shell script in the building phase instead of the
+    configuring phase, but at least this commit moves the "actual running"
+    out of CMake, bringing us a step closer to that goal.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit e0d1b404c596ac46674243d9a34ac07c7fb0daf5
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Jul 28 14:34:29 2018 -0400
+
+    rc.lua: Use request::activate instead of client.focus.
+    
+    For a long time, it was deemed overkill and made rc.lua less readable
+    without the documentation.
+    
+    However it is now clear that it's handling of unfocusable clients and
+    general bypassing of both `awful.client.focus.filter` and
+    `awful.ewmh.activate` filters causes bugs. Fixing them individually
+    in each instance of `rc.lua` `client.focus = c` would add so much code
+    that all the clarity provided by not using request::activate would be
+    burried in boilerplate code.
+    
+    Fix #2328
+
+commit 091adca070b078755268ed651a2b3c1476c82432
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sun Jul 29 18:04:12 2018 -0400
+
+    activate: Merge the old hardcoded focus filter with awful.ewmh one.
+    
+    This code was attached to mouse::enter in `rc.lua` instead of being part
+    of the unified request::activate architecture.
+    
+    There is currently no way to detach this focus filter because it is
+    generally correct.
+
+commit 26e4856821da72a2213ceb65610983fbd7ea1295
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sun Jul 29 17:52:28 2018 -0400
+
+    activate: Raise unfocusable clients.
+    
+    I am sure there is corner cases where this is considered wrong, but it
+    allows to simplify rc.lua handling of such clients.
+
+commit 69e9cc4cbdcb241f66519ca64eb745090e11b553
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Jul 28 14:30:43 2018 -0400
+
+    request::activate: Unminimize clients
+    
+    Fixes #927
+
+commit 6240ec113feab8a5e24810274f4a34d560fecc2f
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Tue Jul 24 17:13:36 2018 -0400
+
+    tests: Implement keybindings, keygrabber and fake_inputs
+
+commit 3adad38c0a8f833aa6842697d8a6541ebb7ccd92
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Tue Jul 24 17:12:04 2018 -0400
+
+    tests: Make the capi.screen shim more robust
+    
+    Also add some private properties to be consumed by the template for a
+    better rendered documentation example image.
+
+commit 2c8c274193876f31c1d3725c81f5dbcacf9e044f
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Tue Jul 24 17:11:00 2018 -0400
+
+    tests: Add the capi.object miss handle support to the capi.mouse shim
+
+commit 1df44210c81ae5ed3c037adc1346882df95a416e
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Tue Jul 24 17:09:59 2018 -0400
+
+    tests: Add many missing client properties so the tilebar loads correctly
+
+commit ff9f78ef7eb2840fa5c27c1f8eebe0cb04e6f9b1
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Tue Jul 24 17:09:16 2018 -0400
+
+    tests: Add the cursor and focus colors to the generated images theme.
+
+commit bf6ab0ba4c35362337ea5228ac731e734bec49a1
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Tue Jul 24 17:08:10 2018 -0400
+
+    tests: Mock the keyboard layout API enough to stop getting errors.
+    
+    It IS NOT correct, the point is to be able to load the keyboard widget
+    with errors.
+
+commit f1245f083c3b93f17eb0a4bb748f5af2f41810ce
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Tue Jul 24 17:07:11 2018 -0400
+
+    tests: Add a basic `key` shim
+
+commit 3c79f1c8d551759933947647d832aa4391778134
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Jul 21 14:24:37 2018 -0400
+
+    awful.key: Add more fields to the description
+    
+    There is currently no centralized way to manage active keybindings so
+    the description data case be used to fill part of that role until an
+    official API is added.
+
+commit 980c47d775c808d7845c2dce266ee8b4bca472d9
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sun Jul 22 16:10:46 2018 -0400
+
+    tests: Mock capi.keygrabger
+    
+    It will now run "static code" when the module is loaded, so need
+    to exist.
+
+commit 647756fd152f75e8e21b5432264d943a6c88d9c3
+Author: Laszlo Toth <laszlth@gmail.com>
+Date:   Sun Jul 1 12:18:50 2018 +0200
+
+    Add a beautiful option to remove borders when maximized
+    
+    No intended change in previous behavior, so it's disabled by default.
+
+commit b5ca8bf93779bd5fef55980f7608c0c9131ca362
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Jul 25 16:03:26 2018 +0200
+
+    example tests: Save expected test output in a txt file
+    
+    This commit adds a .txt file next to each example test that generates a
+    text output. This text file contains the expected output and it is an
+    error if the actual output does not match the expected output. This
+    means that we no longer have to run the example tests before we can
+    expand all the @foo@ expressions that occur.
+    
+    While touching this, I also fixed some typos and unexpected newlines in
+    the tests' output.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 0060d1149b3620fe6f32127a53258a212edcf177
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Jul 24 14:30:40 2018 +0200
+
+    .travis.yml: Enable -Werror
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 7db0188cb257d42b8be128ed783d288c4bc60475
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Jul 24 14:47:58 2018 +0200
+
+    CMake: Use check_symbol_exists instead of check_function_exists
+    
+    The documentation for the CheckFunctionExists module says that it is
+    better to use CheckSymbolExists and lists some reasons. For our purpose,
+    the reason is that check_function_exists is incompatible with -Werror.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit ef110361dc34124531a607d244c1458ff8cd3f25
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Thu Jul 26 00:31:02 2018 +0200
+
+    Reduce code duplication with luaA_*_call_handler (#2321)
+    
+    The functions luaA_class_call_handler() and luaA_mouse_call_handler()
+    are basically identical. Fix this code duplication by moving this to
+    luaA_call_handler() in lualib.h.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 3876b182403b3ee6287b3812f22b751f10ab17ea
+Author: Daniel Hahler <git@thequod.de>
+Date:   Sat Oct 21 01:54:36 2017 +0200
+
+    doc: Add missing C-object documentation and fix some papercuts.
+    
+    Ref: https://github.com/awesomeWM/awesome/issues/1373
+
+commit 40a55a3d2ff31f3106cbab7d473383822380f7d9
+Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
+Date:   Wed Jul 25 18:03:09 2018 -0400
+
+    client: Add client_set_startup_id definition (#2318)
+    
+    Fixes #2309
+
+commit 492d07a9cd90abb2d3924356e757077a142275cb
+Author: actionless <actionless.loveless@gmail.com>
+Date:   Wed Jul 25 14:31:51 2018 +0200
+
+    fixup! fix(awful: placement: no_offsceen): use new placement infrastructure
+    
+    doc(awful: placement: no_offscreen): update comment and print deprecation warning
+
+commit def50af43990700c50ff0124c9602776676509e1
+Author: Daniel Hahler <github@thequod.de>
+Date:   Wed Jul 25 00:38:13 2018 +0200
+
+    Mergify: do not use strict mode (#2319)
+    
+    It has the drawback of having intermediate merge commits for when
+    Mergify merges master before because of this, and then does not
+    squash-merge or rebases it when merging.
+
+commit 4e8d90704400ed51f35a65de1dd03069d8f72e60
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sun Jul 22 10:35:38 2018 -0400
+
+    tests: Restore support for newlines in examples
+    
+    Since last year luacheck change, trailing spaces are no longer
+    allowed. This caused all documentaiton examples that used them
+    as a way to mark newlines to look plain wrong.
+    
+    This commit add an explicit flag to make longer examples more
+    readable.
+
+commit c340c14cf248ffae4424832b9d5227d1258df1cc
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Jul 21 14:10:54 2018 -0400
+
+    tests: Improve the CMakeLists.txt
+    
+    * Add a FOLLOW_SYMLINKS so Awesome 3rd party module can share the
+      awesome test infrastructure by adding themselves as symlinks in
+      `lib/`, `tests/` and `tests/examples` and otherwise use AwesomeWM
+      Travis config.
+    
+    * Add an option to add examples to the C documentation. Previously only
+      Lua functions could be documented using this framework.
+
+commit e1a90ecf5b913ec5e36a1b736117e57f07de8e63
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Jul 24 14:27:41 2018 +0200
+
+    tests/examples: Explicitly mark tests generating text
+    
+    This is similar to the previous commit, but for text output that is
+    produced by some test.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 654eecd40d70d9a5aac0cd20fb4f237631d913c6
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Jul 24 14:12:44 2018 +0200
+
+    tests/examples: Explicitly mark tests generating an image
+    
+    This allows to figure out if a test will generate an image without
+    having to run it. The long term plan for this is to run the tests during
+    compiling ("make") and not during configuring ("cmake"). Since the list
+    of files to e.g. install needs to be known during configuring, this
+    commit is a necessary step in that direction.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit efe23dc7d21c15ea82e69335a508a69c954a576d
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Jul 24 13:49:43 2018 +0200
+
+    tests/examples: Drop support for PNG output images
+    
+    No currently existing test produces a PNG image, so why do we even check
+    for such an output file?
+    
+    I did 'rm -rf build && make -j9 && cp -r build /tmp', then applied this
+    patch, and then did another 'rm -rf build && make -j9'. According to
+    diff, the resulting directories are basically the same (except for lots
+    of timestamps and some non-determinism in CMake).
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit fec8d6aa8fe257f2d1fbab9a908b1e3a9a98bed3
+Author: actionless <actionless.loveless@gmail.com>
+Date:   Sat Sep 9 23:00:36 2017 +0200
+
+    fix(awful: placement: no_offsceen): use new placement infrastructure
+    
+    fix(tests: examples: awful: placement: no_offscreen): uncomment context
+    
+    fix(awful: placement): common function to remove border from geometries
+
+commit 7e17bcd026a39403f8da81172826faca75df2efb
+Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
+Date:   Mon Jul 23 04:04:07 2018 -0400
+
+    client: Make startup_id writable (#2275)
+    
+    And document how to use it on Linux to fix broken startup_id
+
+commit 355383844392d3e80f3532e623a4be1a6ce8f6e6
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Jul 21 10:19:32 2018 +0200
+
+    Fix function pointer casts in client.c
+    
+    The getters for properties already get the object as their second
+    argument, so there is no need to get the object again from Lua.
+    
+    Fixes: https://github.com/awesomeWM/awesome/issues/2299
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 94d3918d149533d0cbb22715cfc8efecb38159bc
+Author: Yauhen Kirylau <actionless.loveless@gmail.com>
+Date:   Mon Jul 23 00:33:59 2018 +0200
+
+    fix(awful: widget: only_on_screen): update for screen API changes from #2293 (#2304)
+
+commit 6c27f4295b3cd24e08c1e6c2814e922f0c388a73
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Sun Jul 22 22:05:11 2018 +0200
+
+    client_manage(): Check that reparenting works (#2298)
+    
+    When a new client appears, we reparent its window into a window of our
+    choice so that we can add decorations. However, windows can be difficult
+    making the reparenting fail. For example, some snapshots of GTK+ set a
+    parent-relative background, which means that its parent windows have to
+    have the same depth as the window itself. This makes reparenting fail if
+    transparency is used/supported.
+    
+    Make the failure mode... different, by checking if reparenting
+    succeeded. If it failed, we print an error message and unmanage the
+    window immediately. This means that those GTK+ windows just do not
+    appear at all, instead of behaving weirdly.
+    
+    This idea of this patch came from i3.
+    
+    Related-to: https://github.com/awesomeWM/awesome/issues/2279
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 3e24303f1527c6a704741de95df4b1b41fdeae6a
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Sat Jul 21 20:53:30 2018 +0200
+
+    tile: Apply size hints correctly (#2305)
+    
+    Layouts work with the client's geometry in "space on screen that is
+    assigned to this client". This means that the geometry should include
+    decoration (titlebar and borders) and useless gaps.
+    
+    Everything else (especially the C code) works with client's geometry in
+    "space that the client can draw on". This means that the titlebar,
+    borders and the useless gaps are not included into this size.
+    
+    Thus, when applying size hints, the tile layout has to convert between
+    these two representations. Otherwise, size hints are applied incorrectly
+    and to a wrong geometry.
+    
+    Fixes: https://github.com/awesomeWM/awesome/issues/1418
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 41e66c16f8571a514f49a97a9260ec36192bd862
+Author: Sergey Vlasov <sigprof@gmail.com>
+Date:   Fri Jul 20 14:11:09 2018 +0300
+
+    Remove systray_cleanup() from drawin_systray_kickout() (#2301)
+    
+    The systray_cleanup() function gives up the _NET_SYSTEM_TRAY_Sn
+    selection ownership and should be called only when Awesome exits.
+    Calling systray_cleanup() from drawin_systray_kickout() is not correct,
+    because drawin_systray_kickout() is called when the system tray window
+    needs to be hidden, including the case when the last tray icon was
+    removed and the tray became empty.
+    
+    Fixes: https://github.com/awesomeWM/awesome/issues/2301
+    Signed-off-by: Sergey Vlasov <sigprof@gmail.com>
+
+commit 6e393917e4fb039391ad90535488198ebec0aa3e
+Author: Sam Banks <sam.banks@auspost.com.au>
+Date:   Thu Jul 12 14:30:46 2018 +1000
+
+    Correct descriptions of border colors
+
+commit b3311674d2073a0fdea35f033dcc06d6373d4873
+Author: Daniel Hahler <git@thequod.de>
+Date:   Thu Jun 28 15:28:14 2018 +0200
+
+    awesome.kill: allow negative PIDs (and 0) to support process groups
+    
+    From `kill(3p)`:
+    
+    > If pid is greater than 0, sig shall be sent to the process whose
+    > process ID is equal to pid.
+    
+    > If pid is 0, sig shall be sent to all processes (excluding an
+    > unspecified set of system processes) whose process group ID is equal to
+    > the process group ID of the sender, and for which the process has
+    > permission to send a signal.
+    
+    > If pid is −1, sig shall be sent to all processes (excluding an
+    > unspecified set of system processes) for which the process has
+    > permission to send that signal.
+    
+    > If  pid  is  negative,  but not −1, sig shall be sent to all processes
+    > (excluding an unspecified set of system processes) whose process group
+    > ID is equal to the absolute value of pid, and for which the process has
+    > permission to send a signal.
+
+commit 79d7567a1d879fb06fb4484f7984a6f87f7affbd
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Thu Jun 28 15:36:53 2018 +0200
+
+    screen_refresh(): Fake a screen when the last one is removed (#2223)
+    
+    Thanks to @ewhac for the suggestion.
+    
+    Fixes: https://github.com/awesomeWM/awesome/issues/2221
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 5d2d296e20822f120142d5437fddc91c3449f5c5
+Author: Kevin Zander <veratil@gmail.com>
+Date:   Sun Jun 24 14:34:20 2018 -0500
+
+    Return nil when indexing screen by number
+
+commit 20b1594e179d33830af2330c5709377c28304b8c
+Author: Kevin Zander <veratil@gmail.com>
+Date:   Wed Jun 20 17:24:45 2018 -0500
+
+    Return nil for screen string index lookup instead of throwing error
+
+commit 4bd5b1940dbfb7d8275cc8a55b870b5fde55ebfc
+Author: Yauhen Kirylau <actionless.loveless@gmail.com>
+Date:   Tue Jun 26 16:43:20 2018 +0200
+
+    feat(themes; beautiful): add partial support for GTK+3 themes (#2129)
+
+commit 13984af8aa468c1fba1702a3efa315691dd27b05
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Tue Jun 26 15:56:32 2018 +0200
+
+    awful.spawn.read_lines: Shrink input stream buffer when done (#2289)
+    
+    I do not know how a GDataInputStream / GBufferedInputStream decides
+    about the size of its internal buffer when reading input by line, but in
+    issue #2288, an example where the output of date (about 30 bytes) was
+    read ten times per second caused ten megabytes of memory usage for this
+    internal buffer. Try to save some memory by explicitly shrinking the
+    buffer size when we are done reading from the stream.
+    
+    Reference: https://github.com/awesomeWM/awesome/issues/2288
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit b77ffa86e02ed0ce4ce4a5e786e395871b8b17d7
+Author: Yauhen Kirylau <actionless.loveless@gmail.com>
+Date:   Wed Jun 13 03:57:14 2018 +0200
+
+    fix(naughty: core): don't attempt to upscale small icons (#2283)
+
+commit 619d922538640bc82ea7d1d409a76ef4ae2c9159
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Tue Jun 12 19:16:44 2018 +0200
+
+    tests/run.sh: Allow setting timeout via $TEST_TIMEOUT (#2281)
+    
+    This allows to e.g. easily run awesome from source (for an hour) via
+    TEST_TIMEOUT=42d tests/run.sh /dev/null.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit dc8229fd5a29e11ef9d2625da5b09d74b299d493
+Author: Piotr Śliwka <contact@psliwka.info>
+Date:   Sun Jun 10 01:35:08 2018 +0200
+
+    Default config: Unify mouse dragging behavior (#2278)
+    
+    * Default config: Unify mouse dragging behavior
+    
+    When moving or resizing a client by dragging its titlebar with mouse,
+    the client is automatically focused and raised. However, this behavior
+    is not replicated by tne other dragging method, i.e. grabbing it with
+    mouse while pressing the modkey. Sometimes, this causes a client to
+    disappear below another one while moving.
+    
+    This commit unifies handling of dragging clients with mouse, by ensuring
+    that the client is focused and raised, whichever dragging method is
+    used. The fix applies both to moving and resizing clients.
+    
+    Signed-off-by: Piotr Śliwka <contact@psliwka.info>
+    
+    * Default config: Fix clientbuttons style
+    
+    This commit unifies code style of click handling functions defined in
+    `clientbuttons` table, to match the style introduced in a228696.
+    
+    Signed-off-by: Piotr Śliwka <contact@psliwka.info>
+
+commit 2e7547a26e696a1824c79d02374fb1d6cda1c516
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed May 30 10:36:32 2018 +0200
+
+    Add configuration for https://mergify.io
+    
+    Fixes: https://github.com/awesomeWM/awesome/issues/2260
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 05b8836b014ed223068a7ab4a8ed425d4277dfe2
+Author: Kevin Zander <veratil@gmail.com>
+Date:   Mon May 28 19:54:58 2018 -0500
+
+    Fix minor issues with calendar_popup (#2269)
+
+commit 6615931a6ecb0b3a9f83ef25c3a112f9918522da
+Author: Kevin Zander <veratil@gmail.com>
+Date:   Mon May 28 19:54:14 2018 -0500
+
+    Enhance tooltip customization options (#2267)
+
+commit f234dcabf68c4625f252b86e2d42f7fc72b8efc2
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon May 28 14:05:05 2018 -0400
+
+    doc: Add `[deprecated]` after some function names.
+    
+    It use a little XSS-ish HTML tag injection, but it works
+
+commit c6491e169c76e6101e3077cfe3debfcf7984d51a
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon May 28 14:02:49 2018 -0400
+
+    doc: Remove the signal name hack
+
+commit 0a2b05dfbbca3b2157aece8261a9cc8ffb7720e7
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon May 28 13:59:22 2018 -0400
+
+    doc: Use the newer LDoc ability to use special handler for objects types
+    
+    The `@signal` and `@property` are now correctly rendered. The need for
+    the extra `.` in front of the signal is no longer needed.
+
+commit 7a273778d85829ff9a546dbc95699e6348a9a93e
+Author: Rastislav Barlik <barlik@gmx.com>
+Date:   Sun May 27 20:34:53 2018 +0100
+
+    Add test for window factor on maximized clients
+
+commit 2d39e53ef3f003d9e2ee5f98593c44caca05ce2a
+Author: Rastislav Barlik <barlik@users.noreply.github.com>
+Date:   Sat May 26 22:55:14 2018 +0100
+
+    Fix incwfact() error with maximized windows
+    
+    When the window is maximized, calling incwfact() results in an error because `w` is nil, return instead.
+
+commit 4e17cc6bfc1c97a3f4a965d5878c0de1faae3cdd
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Mon May 21 09:01:09 2018 +0200
+
+    Fix summary of TEST_PREV_COMMITS (#2261)
+    
+    Instead of printing the list of commits for which tests failed, this
+    printed all commits.
+    
+    Testing done on this change: None. Testing the infrastructure for Travis
+    is a bit hard and quite meta. (Tests for the tests?)
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit cbfe8274be63a7b5e8a0b1a60da6a333b1d8eac1
+Author: Anatolii Aniskovych <lin.aaa.lin@gmail.com>
+Date:   Fri May 18 23:55:39 2018 +0300
+
+    awful.placement: Keep client position when no space available in no_overlap() (#2139)
+
+commit da418b56ab2f93b45c58317c611bffe74198e9df
+Author: Anatolii Aniskovych <lin.aaa.lin@gmail.com>
+Date:   Fri May 18 23:44:35 2018 +0300
+
+    gears.geometry: Make area_intersect_area() public
+
+commit dd3658bb1c3ce60459f4a824339dbeab45d9737c
+Author: Anatolii Aniskovych <lin.aaa.lin@gmail.com>
+Date:   Wed May 16 23:37:37 2018 +0300
+
+    awful.placement: Ignore fullscreen/maximized clients in no_overlap()
+    
+    Fullscreen/maximized client takes full workspace area making free space detection logic useless.
+
+commit 347238b57af6a39d5575cd00497ed7b9b032a853
+Author: Kevin Zander <veratil@gmail.com>
+Date:   Sun Apr 29 19:12:04 2018 -0500
+
+    Check for layout spacing before theme spacing. Fixes #2250 (#2253)
+
+commit 405c14496a90e0c7ef8a9c88d795f04fca121a4c
+Author: Alphonse Mariya <alphonse.mariya@hotmail.com>
+Date:   Fri Apr 27 14:06:55 2018 +0200
+
+    wibox.layout.flex: remove exit condition (#2252)
+
+commit b2f8c8df89648e2634eb9dfca9e5ad0a8ecaf5bf
+Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
+Date:   Thu Apr 26 20:47:33 2018 -0400
+
+    placement: Check if the stored screen is valid (#2246)
+    
+    Fixes #2088
+
+commit c58e7d4fc87f183ca96b2652fde4d30fd900c00f
+Author: Aire-One <erwan.maugere@gmail.com>
+Date:   Sun Apr 22 16:32:25 2018 +0200
+
+    add busted tests for signal "property::value"
+
+commit 7521a861e69ae8cdf1efc6e81194e13f80482235
+Author: Aire-One <erwan.maugere@gmail.com>
+Date:   Sun Apr 22 15:33:04 2018 +0200
+
+    add documentation for signal "property::value"
+
+commit 681025dc50fce3f7b03096b0193923cd7d8b049b
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Sun Apr 22 08:07:31 2018 +0200
+
+    Make fake screens permanent (#2201)
+    
+    * Make fake screens permanent
+    
+    Before this, screen_scan() made sure that awesome's information about
+    available screens conforms to what the X11 server reports. Since fake
+    screens are, well, fake, this meant that they were deleted.
+    
+    This commit marks fake screen and handles them specially in
+    screen_scan() so that they are not deleted.
+    
+    Note that I did not test this commit at all since I still haven't
+    figured out how to test RandR stuff without actually messing with
+    hardware.
+    
+    Thanks to @madduck for bringing this up and making me fix this long
+    standing "huh? is that really supposed to work like that?".
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 6617d786b34120ad89f6bd7045eaeb3e6e3cd143
+Author: Sagar Tewari <sagartewariym@yahoo.com>
+Date:   Sun Apr 22 11:36:38 2018 +0530
+
+    program.Terminal is a boolean, not a string (#2239)
+
+commit 301d5b80c435b84613f358b956ca478aae0b9943
+Author: Jim Garrison <jim@garrison.cc>
+Date:   Sun Apr 22 02:05:40 2018 -0400
+
+    Move timezone determination to callback (#2229)
+    
+    Patch by @psychon.  Fixes #2218.
+
+commit c49095fc23385fade504af036aeff60238839aef
+Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
+Date:   Sun Apr 22 02:04:01 2018 -0400
+
+    doc: Fix a tasklist/taglist documentation issue (#2228)
+    
+    * doc: Fix a tasklist/taglist documentation issue
+
+commit e8c23bd9e7c021e9b1e4f5ccd50568a9beac3fa6
+Author: Reiner Herrmann <reiner@reiner-h.de>
+Date:   Sun Apr 22 08:03:28 2018 +0200
+
+    Add categories path to icon lookup (#2224)
+    
+    In #2112 the way of loading category icons was changed to use
+    utils.lookup_icon. However this function does not look in the
+    categories paths where the categories icons are located, and
+    so the category icons are no longer being displayed.
+
+commit bed7abf5d1fa1ad7859dee3c8f9b2bc3d28b9d25
+Author: ma9e <36235154+ma9e@users.noreply.github.com>
+Date:   Sun Apr 22 01:02:52 2018 -0500
+
+    Add support for gaps between snapped contents (#2208)
+
+commit 38f7b17f0b0486d836036cf2f60f1d8afcdecb0a
+Author: Kirill Funtov <funtaps@gmail.com>
+Date:   Thu Apr 5 11:04:17 2018 +0300
+
+    Added link to awful.prompt.run to documentation
+
+commit 94856f48b48766ff8b4280d414835503f8044f40
+Author: Funtov Kirill <funtaps@gmail.com>
+Date:   Wed Apr 4 21:43:36 2018 +0300
+
+    Allow use of custom completion callback in prompt widget
+
+commit d9cc56538f05a9a2ab9569319570c6cfc77711ec
+Author: Joseph Herlant <aerostitch@users.noreply.github.com>
+Date:   Wed Apr 4 02:28:50 2018 -0700
+
+    build: man pages: use asciidoctor instead of asciidoc (#2234)
+
+commit 5e6f5343653a3f69ce353f3a3388a9b6f48e370a
+Author: Alphonse Mariya <alphonse.mariya@hotmail.com>
+Date:   Mon Apr 2 22:12:15 2018 +0200
+
+    naughty: add notification max width and height (#2232)
+
+commit 98e59225d74b026a4a655997c4bc1bcb423e6369
+Author: actionless <actionless.loveless@gmail.com>
+Date:   Tue Mar 20 18:39:47 2018 +0100
+
+    chore(ldoc: css): return bullets style for unordered list items
+
+commit bdbc11e7df574054f2c021357bce6ad7d937d0f2
+Author: actionless <actionless.loveless@gmail.com>
+Date:   Tue Mar 20 18:19:27 2018 +0100
+
+    style(ldoc: css): apply some manual code formatting
+
+commit d5d46a43734712966244fd10c69ba28ece88cd9b
+Author: actionless <actionless.loveless@gmail.com>
+Date:   Tue Mar 20 18:12:04 2018 +0100
+
+    fixup! chore(ldoc: css): new style for the tables
+
+commit 8762588082287fa5cda20fe6f3ce16aa8e1d97b8
+Author: actionless <actionless.loveless@gmail.com>
+Date:   Tue Mar 20 18:10:30 2018 +0100
+
+    fixup! chore(ldoc: css): new style for the tables
+
+commit 0a6f3aa3daf16c65da24ee12f22e3caa192dcd65
+Author: actionless <actionless.loveless@gmail.com>
+Date:   Tue Mar 20 17:59:58 2018 +0100
+
+    fixup! chore(ldoc: css): new style for the tables
+
+commit dafbd48375d22201789fdd7e6f0a90045a02a62e
+Author: actionless <actionless.loveless@gmail.com>
+Date:   Tue Mar 20 17:52:38 2018 +0100
+
+    chore(ldoc: css): new style for the tables
+
+commit 154a76198e8af2ca19b2c646b35824562a6c6104
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Tue Mar 13 03:54:12 2018 +0100
+
+    Remove a weird comment (#2217)
+    
+    No idea what this is meant to tell us, but color_init_unchecked()
+    pointing at itself with "use this instead" makes no sense.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 3fe913f17a3fa12e344916c4fdb9fc8e91970a50
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Tue Mar 13 03:53:44 2018 +0100
+
+    Default config: Align up a series of conditions (#2215)
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 0a588e099aedf08a34f2861788a9291e87d03e6c
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Tue Mar 13 03:53:00 2018 +0100
+
+    Add a client shape test (#2214)
+    
+    This is not really a test. It just starts xeyes and sees if anything
+    explodes.
+    
+    However, the reason for this test is to stabilise code coverage.
+    Apparently, Gtk(?) sometimes creates shaped windows. This had the effect
+    that codecov always reports random changes to code coverage, depending
+    on if this specific test run saw any shaped client windows or not.
+    
+    Thus, by explicitly adding a test that runs a shaped client, hopefully
+    these random fluctuations disappear.
+    
+    Hopefully-fixes: https://github.com/awesomeWM/awesome/issues/1975
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 34f6cfccd805fe6c1c80bb1cb00f27687dfbf757
+Author: README Bot <35302948+codetriage-readme-bot@users.noreply.github.com>
+Date:   Mon Mar 12 21:52:43 2018 -0500
+
+    Add CodeTriage badge to awesomewm/awesome (#2209)
+    
+    Adds a badge showing the number of people helping this repo on CodeTriage.
+    
+    [![Open Source Helpers](https://www.codetriage.com/awesomewm/awesome/badges/users.svg)](https://www.codetriage.com/awesomewm/awesome)
+    
+    ## What is CodeTriage?
+    
+    CodeTriage is an Open Source app that is designed to make contributing to Open Source projects easier. It works by sending subscribers a few open issues in their inbox. If subscribers get busy, there is an algorithm that backs off issue load so they do not get overwhelmed
+    
+    [Read more about the CodeTriage project](https://www.codetriage.com/what).
+    
+    ## Why am I getting this PR?
+    
+    Your project was picked by the human, @schneems. They selected it from the projects submitted to https://www.codetriage.com and hand edited the PR. How did your project get added to [CodeTriage](https://www.codetriage.com/what)? Roughly over 1 year ago, [cameronjacobson](https://github.com/cameronjacobson) added this project to CodeTriage in order to start contributing. Since then, 8 people have subscribed to help this repo.
+    
+    ## What does adding a badge accomplish?
+    
+    Adding a badge invites people to help contribute to your project. It also lets developers know that others are invested in the longterm success and maintainability of the project.
+    
+    You can see an example of a CodeTriage badge on these popular OSS READMEs:
+    
+    - [![Email clients like GMAIL do not render SVG images](https://www.codetriage.com/rails/rails/badges/users.svg)](https://www.codetriage.com/rails/rails) https://github.com/rails/rails
+    - [![Email clients like GMAIL do not render SVG images](https://www.codetriage.com/crystal-lang/crystal/badges/users.svg)](https://www.codetriage.com/crystal-lang/crystal) https://github.com/crystal-lang/crystal
+    
+    ## Have a question or comment?
+    
+    While I am a bot, this PR was manually reviewed and monitored by a human - @schneems. My job is writing commit messages and handling PR logistics.
+    
+    If you have any questions, you can reply back to this PR and they will be answered by @schneems. If you do not want a badge right now, no worries, close the PR, you will not hear from me again.
+    
+    Thanks for making your project Open Source! Any feedback is greatly appreciated.
+
+commit 44587cec359415e7891fffe2f0297d3c5b92b9b6
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Tue Mar 13 03:51:11 2018 +0100
+
+    awful.remote: Run code in a protected context (#2203)
+    
+    This change makes errors messages show up in the replies, too.
+    
+    Before (notice how the third command does not generate output):
+    
+    $ awesome-client 'return 42' ; awesome-client 'sdfsdf' ; awesome-client 'error("foo")'
+       double 42
+       string "[string "sdfsdf"]:1: syntax error near <eof>"
+    
+    After:
+    
+    $ awesome-client 'return 42' ; awesome-client 'sdfsdf' ; awesome-client 'error("foo")'
+       double 42
+       string "[string "sdfsdf"]:1: syntax error near <eof>"
+       string "Error during execution: [string "error("foo")"]:1: foo"
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit f9eec13144762c4e0b34fb08bcd36d27c64fb108
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Tue Mar 13 03:50:44 2018 +0100
+
+    awful.tag.object.set_screen: Cope with screen being nil (#2202)
+    
+    For "stuff around screen's 'removed' signal", it might make sense to
+    temporarily set a tags screen to nil. The idea is that it will only
+    later be assigned to a new screen, not immediately.
+    
+    However, currently a tag with screen nil causes quite some problems in
+    the set_screen() function. This commit works around this with a generous
+    amount of "wrap this in if".
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 675900407a770f12d268e8cc50ced6b4ddc849e6
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Mar 11 15:58:04 2018 +0100
+
+    Deprecate gears.filesystem.get_dir
+    
+    It is a useless thin wrapper around other functions. It's better to use
+    these other functions directly.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit c8d6b7d28ab68889b0f1128f1d95ac770cc18475
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Mar 11 16:07:36 2018 +0100
+
+    Use get_cache_dir() where appropriate
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 3e7ab86fae8c7e9a52560db779e5bd0ff3d3bd5d
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Mar 11 16:05:52 2018 +0100
+
+    sample_theme: Use get_configuration_dir()
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 128c1ec32fe3d19d49c9fc80624283d437f4f71c
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Mar 11 16:04:27 2018 +0100
+
+    Fix the reference to the default config in my-first-awesome
+    
+    The line in the default config changed at some point.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 6921dc9f4cc87a9c31ae0b294b4385272a7a68cc
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sun Jul 2 10:56:53 2017 -0400
+
+    doc: Add a titlebar example
+
+commit 017077a33a79994dcd2c7c5611b752945b683727
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Tue Mar 14 17:36:02 2017 -0400
+
+    spawn: Add a TODO to remove an useless/broken signal from v5
+    
+    It has a race condition causing it to be useless.
+
+commit aae9655e41e5de9c6a6bb83abd4acf65e70c4642
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Jan 28 21:39:25 2017 -0500
+
+    tests: Test the custom rule sources
+
+commit 23d9727590871d18290d8d0d14f16b3909c0ce6c
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Jan 28 17:03:36 2017 -0500
+
+    tests: Make sure clients really end up on the right screen
+    
+    Prevent #1482 from regressing
+
+commit 74508098de42c24b37fde7d4b50102a9ab72b656
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Jan 28 16:12:39 2017 -0500
+
+    rules: Add a rule building chain of responsability
+    
+    Before this commit, there was a conflict between the spawn and
+    awful.rules rules.
+    
+    Also, modules such as Tryannical monkey-patched this function to
+    add their own rules to the mix. This commit introduce a proper
+    API to add handlers.
+    
+    The order is crutial for this to work, so a dependency system is
+    also added.
+    
+    Fix #1482
+
+commit 20db37f89254ba1b46acfa20c163b1e92c3ab74f
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Jan 27 01:08:57 2018 -0500
+
+    tests: Test the gears.sort module
+
+commit 4e0915674d929a3da0e602067a1bc48dcec27da0
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Jan 27 01:08:15 2018 -0500
+
+    gears: Add a new sort module
+    
+    The first use case is a topological sort to handle dependency graphs
+    
+    Closes #2159
+
+commit 8a44d59716b75ec6b763696778dabf80ab8cbfb6
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Mar 3 10:56:25 2018 +0100
+
+    Correctly convert colors with alpha to a Lua string
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit d82f883c0ba5f3768b5b42b3646d8f74d66c97dc
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Mar 3 10:46:49 2018 +0100
+
+    test-focus.lua: Improve error messages on assertion failure
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 1acae2aa6c7732f7224aa45c2dddd99c70963358
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Mar 2 14:16:51 2018 +0100
+
+    Make alpha work on window borders
+    
+    Up to now, we always asked the X11 server for color allocation ("which
+    pixel value corresponds to (r,g,b)?", an AllocCollor request).
+    
+    This commit adds direct support for TrueColor and DirectColor visuals.
+    In such a visual, the X11 server gives tells us where the red, green,
+    and blue color components are in a pixel value and we can then just
+    directly compute the pixel value.
+    
+    Additionally, this commit adds code that assumes that in a depth=32
+    visual, the remaining values (after handling red, green, blue) is the
+    alpha channel for colors. Thus, this adds support for transparent client
+    borders.
+    
+    This commit also touches code for the systray. However, the systray must
+    always use the X11 server's default visual and that one always(?) has
+    depth=24, i.e. does not support an alpha channel. Thus, the systray
+    background still cannot be transparent.
+    
+    Also, in theory this commit should support visuals where some color
+    component does not have 8 bits, for example RGB565. However, this is
+    just theoretic and I have no idea how to actually test this (without
+    jumping through too many hoops).
+    
+    Fixes: https://github.com/awesomeWM/awesome/issues/162
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit cfaf7d8fe8c6b10605a98ad2d7334f5ebb87a93a
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sun Oct 9 01:27:39 2016 -0400
+
+    titlebar: Expose some previously private properties.
+    
+    I am not happy with this API in general, I keep it undocumented
+    for now. In a perfect world, the whole client frame would be
+    a hierarchy.
+
+commit 45135b28b129750d4957b6ef978b8f482dd74eec
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Fri Jan 12 22:58:06 2018 -0500
+
+    shims: Use cairo PNG support instead of GDK
+    
+    It is inferior, but at least doesn't print warnings on Travis due
+    to the lack of X server.
+
+commit fb0ccc3220e470da7c2946d819c66a3d732434ac
+Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
+Date:   Sun Feb 25 17:21:32 2018 -0500
+
+    doc: Add a common problem section
+
+commit c5f2aa8e838c458dc103da8917ae2c34935b544b
+Author: Daniel Hahler <git@thequod.de>
+Date:   Wed Feb 7 21:49:16 2018 +0100
+
+    doc: improve gears.table.iterate
+
+commit 584c5cedb1f2f970612e245db3f30d026eff8e8d
+Author: Alexander Melnyk <Watkurem@users.noreply.github.com>
+Date:   Tue Feb 6 18:01:40 2018 +0200
+
+    Add support for resizing notification icon with respect to aspect (#2176)
+    
+    * Add support for resizing notification icon with respect to aspect
+    
+    Previously, if an icon was not exactly square, an icon size set in configuration
+    would cause the notification to pad the icon with empty space so dimensions are
+    equal.
+    
+    Now behaviour is different: the bigger dimension of the icon is scaled to fit
+    the icon_size value, while smaller is scaled same amount to preserve aspect.
+    
+    Also, ImageSurface is now not created as fixed size square, but it's dimensions
+    are computed in similar way.
+    
+    * Round the computed dimensions of ImageSurface
+    
+    Even one pixel off is still off.
+
+commit 859d7b20fed57038a4c31ed0308703ebc0c56165
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Jan 26 13:13:06 2018 +0100
+
+    awesome-client.1.de.txt: Improve wording
+    
+    As suggested by @ff2000.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 30a09167645622d2500267e22dd7b1b8b028a940
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Jan 25 09:06:19 2018 +0100
+
+    Translate the new English text in awesome.1.de.txt
+    
+    Thanks to @ff2000 for coming up with a better translation than what I
+    originally had!
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit cfe9231e593a28bef42bef5b7b862d4cb68478c1
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Wed Jan 24 19:13:08 2018 +0100
+
+    awful.keygrabber.run: Fix example (#2169)
+    
+    Fixes: https://github.com/awesomeWM/awesome/issues/2167
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 477cb25d1c1e0c12631040dabcdaab48676af773
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Mon Jan 22 10:45:24 2018 +0100
+
+    Translate the English text in awesome-client.1.de.txt
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 3f93bf4cd5fae46785378c4591aa6759f4b8b74a
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Jan 24 09:13:35 2018 +0100
+
+    Use signal_array_getbyname() where appropriate
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 782adcfd29c1d19a903b85e1519acf8902e00d2b
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Jan 24 09:05:00 2018 +0100
+
+    signal.h: Introduce signal_array_getbyname()
+    
+    This is a nice utility function that actually does what most callers
+    want, instead of signal_array_getbyid() which requires callers to come
+    up with the signal id.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 7dcdefbb4185090dd03c5a67efa9d02dfce03adc
+Author: actionless <actionless.loveless@gmail.com>
+Date:   Mon Jan 22 13:56:39 2018 +0100
+
+    doc(manpages: awesome): mention Mod4+s keybinding (show keybondings popup)
+
+commit ac3735ea32f6405b0489b117b1e57439cd8d8795
+Author: actionless <actionless.loveless@gmail.com>
+Date:   Mon Jan 22 13:56:08 2018 +0100
+
+    doc(manpages: awesome-client: ru): translation)
+
+commit 28e8894f05bf3316a0aed3515e7f60164cc9c0cd
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Mon Jan 22 11:53:39 2018 +0100
+
+    Give the docs for gears.color some improvements
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 0864829c0a03f70e4ca50a55351bd5b8117e1016
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Mon Jan 22 11:22:05 2018 +0100
+
+    Add some introductionary documentation to gears.wallpaper
+    
+    Related-to: https://github.com/awesomeWM/awesome/issues/1373
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 80b21cfbc33c8dbea20d8937c32937dd5d7bc490
+Author: Kevin Zander <veratil@gmail.com>
+Date:   Sun Jan 21 20:20:33 2018 -0600
+
+    Fix manpage warnings during build (#2161)
+    
+    Fixes #1392
+
+commit 1149e0339671cebcdd4714e6b1a4aeed2c792a3b
+Author: Kevin Zander <veratil@gmail.com>
+Date:   Sun Jan 21 16:40:38 2018 -0600
+
+    Add examples and help text for awesome-client (#2162)
+    
+    This adds a -h|--help option to awesome-client. In addition it adds
+    examples to the awesome-client manpage.
+
+commit 3687d198f26d49f71d5260e59d611cc88d005ed1
+Author: Otto Modinos <ottomodinos@gmail.com>
+Date:   Sun Jan 21 02:18:54 2018 +0200
+
+    textclock: mimick other widgets for docs/naming
+
+commit 1e685635a83a97fb2c4b5cbbab01dde0297f214c
+Author: Otto Modinos <ottomodinos@gmail.com>
+Date:   Sun Jan 21 01:57:59 2018 +0200
+
+    textclock: rename timeout to refresh
+
+commit 9d3a9547b13d94724bac37613fcb024c5988c3d5
+Author: Otto Modinos <ottomodinos@gmail.com>
+Date:   Thu Jan 11 16:00:07 2018 +0200
+
+    Add set/get for textclock attributes
+    
+    To allow "declarative" construction of clocks.
+
+commit ee944f4da8342187c2244edb01b90c54567129c4
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Jan 18 18:19:07 2018 +0100
+
+    gears.surface: Use GdkPixbuf
+    
+    This now does directly what previously awesome.load_image() did. Also,
+    this commit removes the only caller of awesome.load_image(), so that
+    function could (in theory) be removed now.
+    
+    Fixes: https://github.com/awesomeWM/awesome/issues/1235
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit c5badcbe373dd1487951437977e919daf19280ca
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Jan 18 18:10:35 2018 +0100
+
+    Add awesome.pixbuf_to_surface
+    
+    This function takes a GdkPixbuf, copies it to a cairo image surface and
+    returns the image surface.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 19a1ee6c16cddb5b312122be5be590682bfcf2a4
+Author: Yauhen Kirylau <actionless.loveless@gmail.com>
+Date:   Thu Jan 18 04:43:15 2018 +0100
+
+    fix(beautiful: xresources): don't return fallback colorscheme if only some of the values are missing (#2151)
+    
+    related to #2150
+
+commit a4936c963c17237f33ea8d1417aba00c41704bb8
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Wed Jan 17 03:15:49 2018 +0100
+
+    Fix 'creating new widgets' link (#2157)
+    
+    This was broken ever since it was introduced in commit b1e69dba8c606cb.
+    Yay. :-(
+    
+    Fixes: https://github.com/awesomeWM/awesome/issues/1373#issuecomment-357891791
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 5b882f3b2e1387b9d2acfb7e57832f1cd6b60783
+Author: get <ole.johan.varingstad@gmail.com>
+Date:   Mon Jan 15 23:26:17 2018 +0100
+
+    Add unit tests for #2152
+    
+    Adds unit tests for menubar.utils.lookup_icon_uncached.
+    
+    Tests that icons and themes are found in the icon base directories, and
+    icons are resolved with the correct priority.
+    
+    Creates directories and symlinks in spec/menubar/{home,usr} as test
+    data.
+
+commit a65079b104f098cd7adfa6497f24d84c1cd68f4c
+Author: get <ole.johan.varingstad@gmail.com>
+Date:   Mon Jan 15 22:35:41 2018 +0100
+
+    Fix icon path resolution in menubar.utils
+    
+    Issue #2152
+    
+    Rewrites get_icon_lookup_path to find icons and themes in
+    $HOME/.icons. Also adds 'scalable' as the top priority icon size.
+
+commit c9bd787fd6e3728b0abd9b309e24047d7f659cb7
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Sat Jan 13 03:33:25 2018 +0100
+
+    Check for xdgInitHandle() failures (#2146)
+    
+    Before this, running "env -i ./awesome" resulted in a segfault. This was
+    because xdgInitHandle() failed and the following
+    xdgSearchableConfigDirectories() followed a NULL pointer.
+    
+    After this commit, awesome fails with an error message.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 5c6e25fe0af5aed86daffa67ba171adc230732a2
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Sat Jan 13 03:32:51 2018 +0100
+
+    Revert 31b8623ff6c4e6e0c and fix things properly (#2142)
+    
+    The code here has things like "if cache.bgb" which suggests that "bgb"
+    (great name, by the way) is supposed to be optional. However,
+    31b8623ff6c4e6e0c made this thing definitely not optional by making it
+    *the* widget that is displayed. That feels wrong.
+    
+    Also, after the above commit, the ".primary" entry is no longer used,
+    which is at least surprising for something which is called "primary".
+    
+    None of this is explicitly documented (I didn't find anything when
+    looking for "primary" in common.lua nor tasklist.lua; I know that there
+    are examples for using this, but still that doesn't say how this is
+    supposed to work), so I'm not quite sure how this was intended to work.
+    Instead, I am just proposing this commit as a better fix with the above
+    rational and see what feedback I get...
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 8cc469322f8043b262b36dd7743bb330bdde753d
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Dec 7 10:47:58 2017 +0100
+
+    ensure_pango_color: Support hex values with alpha
+    
+    Reference: https://github.com/awesomeWM/awesome/pull/2129#discussion_r155397507
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 9b6cea5a1305a1fcea2e09daab52aea797b958c2
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Dec 7 10:45:04 2017 +0100
+
+    Add unit tests for gears.color.ensure_pango_color
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit cc68ac929209c8b33c2ece662d075ab20ec1458f
+Author: Daniel Hahler <github@thequod.de>
+Date:   Wed Dec 20 01:26:06 2017 +0100
+
+    doc: fix wallpaper_changed signal, SETUP_SIGNAL comment (#2141)
+
+commit 31b8623ff6c4e6e0c0cdc83dd8e9aef483d17c46
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Tue Dec 5 19:52:36 2017 -0500
+
+    widget.common: Fix the background color
+    
+    regression from f147f0d28a1ab7f
+
+commit 19fd21111abfc96cad7408e754aa373e8a53c002
+Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
+Date:   Sun Dec 3 15:05:19 2017 -0500
+
+    awful.placement: Fix `next_to` logic. (#2130)
+    
+    Fix #2128
+
+commit 0300f6484a71a0aae752581790e0fe6ab3502672
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Thu Aug 10 00:35:06 2017 -0400
+
+    tests: Test the taglist
+
+commit acb4c36ac4e195acc3a8cb5b9a091a4e71b5114e
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Thu Aug 10 00:34:57 2017 -0400
+
+    tests: Test the tasklist
+
+commit 20c4f71e190b922db15ba5fb2c69019266335730
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Thu Aug 10 00:33:00 2017 -0400
+
+    taglist: Support externally defined layouts and widgets
+
+commit 329c06fbcafd2496017cdf04e5806072af8ee8ce
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Thu Aug 10 00:32:30 2017 -0400
+
+    tasklist: Support externally defined layouts and widgets
+
+commit f147f0d28a1ab7f3b7d40923eab8e5bb975c329e
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Thu Aug 10 00:28:06 2017 -0400
+
+    common: Refactor awful.widget.common to support external extensions
+    
+    This commit allow user defined delegates to be used as list elements.
+    This put an end to the endless attempt to cram more features into this
+    code.
+    
+    A widget template (non-instantiated) is passed to the arguments and
+    is created by the common code. It also supports "roles" where some
+    user defined widgets can replace the old textbox or imagebox.
+
+commit 2e7cd2b2ef809222ed5a45aa8c8affc5d672de20
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Wed Aug 9 00:19:03 2017 -0400
+
+    tasklist: Add a sync way to force an update
+    
+    It simplifies the tests
+
+commit b59495e1e72632136e5c7394ffa91b331da1fd6d
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon Nov 27 00:50:03 2017 -0500
+
+    tag/tasklist: Update rc.lua
+    
+    And the tests to avoid some deprecation warnings
+
+commit b446a9bdb8fba06a13fa23b52712fa615ac6472a
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon Aug 7 18:14:35 2017 -0400
+
+    tasklist: Deprecate the old function signature
+
+commit 8dedd19fcf79a3ef020cd94b64aa1db9b7dac0f7
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon Aug 7 17:46:51 2017 -0400
+
+    taglist: Deprecate the old function signature
+    
+    The old function didn't scale at all. As no replacements are going
+    to be merged anytime soon, start to make it meta-extensible.
+    
+    This is the first step to be able to let the widget be extended
+    directly from rc.lua without adding yet more silly parameters.
+    
+    It never scaled and has reached the point of no return a very long
+    time ago.
+    
+    My first ever contribution to Awesome was to attempt to fix this,
+    but the solution was a bad hack. The radical module later solved
+    this by delegating the style, layout, theme, item layout and item
+    style to various "visitor" objects. While this is superior to this
+    commit, it was also a very large and complicated codebase. After
+    5 years, it is now obvious it will never be merged "whole".
+
+commit d99504775ba18eca2d5e3ccbe25db2c62823d91b
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Thu Nov 23 23:19:41 2017 -0500
+
+    doc: Mutualize the wibar and wibox constructor documentation.
+    
+    Do it now since the future awful.popup and notification widget
+    also uses it.
+    
+    The `load_ldoc.cmake` changes allow to include `.ldoc` blocks in
+    existing ldoc comments. Previously, it added some extra newlines
+    and an autogenerated comments saying the content below was imported.
+    The problem is that this prevented the system to be used for shared
+    function arguments.
+    
+    This commit also renames the `wibar` argument table from `arg` to
+    `args` as the name has to be the same in the `wibox` and `wibar`
+    constructor for this to work.
+
+commit 9e81045d42aee40661ebad1492c4d1eb69d9c40a
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Thu Nov 23 22:56:20 2017 -0500
+
+    tests: Test the input_passthrough property
+
+commit 4e54aea6a9755abd3d9163aea7cd84659612e564
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Thu Nov 23 22:54:13 2017 -0500
+
+    wibox: Add an input_passthrough property.
+    
+    Allows, for example, to have semi translucent wibars on top of
+    the fullscreens clients without having issues with inputs.
+
+commit f1b4850bdc79bcadd0b881289786af486e9506d5
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon Aug 7 16:50:11 2017 -0400
+
+    tests: Test the spacing widgets
+
+commit e12c000b9708680a542349e19f267ad49987c555
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon Aug 7 16:12:29 2017 -0400
+
+    layout: Add separator widget support to 3 layouts
+    
+    The ratio, fixed and flex layout can now display a widget between
+    each layout elements.
+    
+    The align layout was left out because it doesn't support spacing
+
+commit a9c06fb8c52be2fa0faea93bac9e875e9b5b4a8a
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon Aug 7 16:49:48 2017 -0400
+
+    template: Add configurable margins to the generic layout widget
+
+commit 14c074fb6be3fb1231df6b3ba6f88bfac1217fba
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Nov 18 23:23:24 2017 -0500
+
+    screen: Disable trying to auto-compute the DPI by default.
+    
+    As long as Awesome provides APIs that uses pixels are points, this
+    cannot be enabled by default.
+    
+    For example, a wibar size defined in pixels may be too small to
+    render the text once a dense display is connected.
+
+commit 314e307cd6c7fbd630baaaddb87337df0beac344
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Nov 18 22:42:48 2017 -0500
+
+    textbox: Ensure that the DPI arguments are not nil
+    
+    Otherwise it fails. This allows better error message to be sent to the
+    user.
+
+commit 5ef937c07cf2d4b8787eadad02145ca4cac696eb
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Fri Nov 24 05:27:18 2017 +0100
+
+    textclock: Detect failures from g_date_time_format (#2119)
+    
+    If g_date_time_format() fails, it returns a NULL pointer. This change
+    makes the textclock detect this and print a warning. This warning
+    contains 'g_date_time_format()' so that people can ask their favorite
+    search engine for the supported formats of this function. This warning
+    also contains the actual format string so that all the information is
+    available in one place and possible bug reports hopefully include the
+    format string.
+    
+    Reference: https://github.com/awesomeWM/awesome/issues/2118
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit b0220a38044869a720a818a4629c04a61e893850
+Author: Daniel Hahler <github@thequod.de>
+Date:   Fri Nov 24 05:26:54 2017 +0100
+
+    tests: do not set Xft.dpi with integration tests (#2121)
+    
+    This should help with covering the methods for detection/fallback during
+    tests.
+    
+    Ref: https://github.com/awesomeWM/awesome/pull/2109#issuecomment-346224956
+    
+    Uses xrdb -q to check for X server being available.
+    
+    Ignores the following warning:
+    
+    > W: awesome: beautiful: can't get colorscheme from xrdb (using fallback).
+
+commit c51a2c2f47bf956c12d650a3c86be123c3e14147
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Nov 19 15:53:07 2017 +0100
+
+    screen_refresh: Protect against globalconf.screens changing
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit ea413969f3444525d1c29773a57c7fa5335f1a9a
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Nov 19 15:40:20 2017 +0100
+
+    screen:swap(): Avoid segfault on almost-deleted screens
+    
+    When a screen is in the process of being removed, it is still valid, but
+    no longer in the global list of screens (globalconf.screens). In this
+    time frame, trying to swap screens could cause a NULL pointer
+    dereference.
+    
+    Fix this by throwing a Lua error in this case instead.
+    
+    Fixes: https://github.com/awesomeWM/awesome/issues/2110
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit fccd35b45cb21f7c61df7d3cfa0711fd6eee3492
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sun Nov 19 00:20:56 2017 -0500
+
+    doc: Remove entries for modules that have been moved for a year or more.
+    
+    To make the index looks smaller.
+
+commit 9f7a365447976c792c499fd66a38d1142a583fde
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sun Jul 2 11:12:12 2017 -0400
+
+    doc: Cleanup useless index entries
+    
+    Entries such as the empty `objects.client` or `awful.hotkeys_popup.keys`
+    are no longer in the main index.
+
+commit 73ebf452eccdef983d672f5f4ebae945b0816ba3
+Author: Daniel Hahler <github@thequod.de>
+Date:   Sat Nov 18 01:52:48 2017 +0100
+
+    tests: improve coverage with integration tests (#2082)
+    
+    - install luacov.runner in tests/_runner.lua.
+    - use Lua's `dofile` to execute the test files, which will give us
+      coverage for them.
+    - CMakeLists.txt: revert DO_COVERAGE env injection
+    - revert cd: make f absolute if not in source_dir
+
+commit 7cf99719b5927671ee3de0c23378921b7309f3a6
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Nov 17 10:31:50 2017 +0100
+
+    'Fix' codacy complaining about unused value
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit e7982b7aba78f6370551ba4d2d05632f1ad21ebd
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Nov 17 10:30:56 2017 +0100
+
+    Reduce some variable scopes
+    
+    Codacy things this is a good idea...
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 1a8acd32928f9c7b3196c9c233ee54a985538a43
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Nov 17 10:23:11 2017 +0100
+
+    Add missing va_end()s to buffer_addvf()
+    
+    Not only does every va_start() need a corresponding va_end(), this is
+    also true for va_end(). Thus, buffer_addvf() needs to call va_end().
+    
+    Found by Codacy.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 5f5bf24aa8b3b5e8f90bf9ad23f1a53d14798f8b
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Nov 17 09:48:24 2017 +0100
+
+    .travis.yml: Enable even more assertions for Lua 5.3
+    
+    It might be well known that test-menubar.lua fails with "cannot do calls
+    on non-normal thread" when run under our Lua 5.3 build with coverage
+    tracking enabled. This new, extra assertion catches the error earlier
+    and in a different way. Since more assertions means more errors caught,
+    let's add this.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 5363225217a174a800b56c528f153186022981b7
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Nov 16 13:58:25 2017 +0100
+
+    Deprecate menubar.index_theme
+    
+    The previous commit deprecated its only user.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 0b0b466705b8f8e4f4cc3a2a4ad353fc0e544b82
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Nov 16 13:12:59 2017 +0100
+
+    Deprecate menubar.icon_theme
+    
+    The code in menubar.icon_theme naively implements the algorithm from the
+    base dir specification. This is a problem: On this system,
+    /usr/share/icons/{Adwaita,hicolor}/index.theme list 91, respectively 649
+    subdirectories. Since we check for three file extensions (png, svg,
+    xpm), this means that a failing icon lookup for the Adwaita theme checks
+    for (91+649)*3 = 2220 files (in practice it might be a bit better since
+    the directories have specific meanings, but still). That's insane.
+    
+    Since we only use this code for looking up category icons anyway, just
+    deprecate this mess. Category icons are now looked up in the same way
+    that icons for individual applications are looked up.
+    
+    Since menubar.init does not require("menubar.icon_theme"), this means
+    that menubar.icon_theme is no longer actually loaded. That's bad.
+    
+    (Hopefully) Fixes: https://github.com/awesomeWM/awesome/issues/1496
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 5d21e85bfbc6ee80a4ec7cfe129d9baa7845db0c
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Nov 15 15:21:22 2017 +0100
+
+    menubar.utils.parse_desktop_file: Improve type handling
+    
+    This is a slight API break, but should not cause many problems for
+    people. This makes parse_desktop_file() handle the type of keys
+    correctly, so that e.g. booleans are actually parsed as booleans. Also,
+    locale-sensitive entries are now looked up in a way that obeys the
+    current locale.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit e88f1e873594bff1cd2894cac47f3d70f0442a79
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Nov 15 15:02:25 2017 +0100
+
+    menubar.utils.parse_desktop_file: Use GKeyFile
+    
+    This replaces our own, hand-written parser of desktop files with the one
+    that GLib provides. No functional changes intended.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit e20068cb4a781b7bb2f384fecee9bb6aa80de7e7
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Wed Nov 8 18:47:37 2017 +0100
+
+    luaA_warn: Balance stack (#2106)
+    
+    In Lua 5.2 or newer, this function left a string on the Lua stack. Fix
+    this by popping this string.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit b2fac56b9c56c03492e14706fdc17700d843bfe6
+Author: ikselven <ikselven@users.noreply.github.com>
+Date:   Mon Nov 6 20:41:18 2017 +0100
+
+    hotkey: added hotkeys for termite to hotkeys popup widget (#2098)
+
+commit dcdd491ce375742dd61c3286f137e86037d08046
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sun Nov 5 21:54:45 2017 +0100
+
+    tests: Check that the "after" resize mode doesn't print errors
+    
+    Something is broken elsewhere that makes the test irrelevant, but
+    it proves there is no errors.
+
+commit 9f6fed4e7b496b2fbd18e2df0af73cddc66bf297
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon Aug 7 16:12:12 2017 -0400
+
+    tests: Test the separator widget
+
+commit 33124d8605894ce62c51998fee76f3b62bd1a9f1
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon Aug 7 16:11:38 2017 -0400
+
+    widget: Add a separator widget.
+
+commit 3ffbe4c03bbb9371c05d7b0fa0fe254896db76aa
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sun Nov 5 20:29:47 2017 +0100
+
+    client: Prevent an error when using the "after" mode
+    
+    Fix: #2101
+
+commit 8ebea11df01a3557c35e10f5e17a30bb3c29a88f
+Author: Stefan Loewen <4498831+stloewen@users.noreply.github.com>
+Date:   Fri Nov 3 17:27:17 2017 +0100
+
+    Fix doc: get_clients methods belong to screen (#2099)
+    
+    not to client
+
+commit 926c12673873ff961183d9dfedccf8a4c12ead9c
+Author: lePerdu <zdpeltzer@gmail.com>
+Date:   Thu Nov 2 15:45:38 2017 -0400
+
+    Fix typo: "OnlyShownIn" -> "OnlyShowIn"
+
+commit aa64978c315c94d35a6e8fcb50a61ad2dc5474c2
+Author: necauqua <necauqua@gmail.com>
+Date:   Mon Oct 30 21:05:02 2017 +0200
+
+    Add call_now argument to gears.timer
+
+commit cdb95e6633a561f84f476fb201f160e03fec6363
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Oct 31 15:25:21 2017 +0100
+
+    Three small fixes to the client docs
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit b871c247ba6e0aa5154bdc286e5610ba02f00ee5
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Oct 31 15:20:34 2017 +0100
+
+    client.c: Set WM_STATE_NORMAL before checking _NET_WM_STATE
+    
+    _NET_WM_STATE could contain _NET_WM_STATE_HIDDEN, which we interpret as
+    minimized. Minimized clients have WM_STATE set to WM_STATE_ICONIC, but
+    the code in client_manage() would later overwrite this to
+    WM_STATE_NORMAL.
+    
+    Fix this by setting the initial WM_STATE_NORMAL by doing so before
+    processing _NET_WM_STATE.
+    
+    Fixes: https://github.com/awesomeWM/awesome/issues/2095
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 7fda5d32735f0865d883d59258e113d5dc1d7193
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Oct 31 13:23:12 2017 +0100
+
+    awful.rules: Handle non-existing tags
+    
+    If a tag is specified by name, but no such tags exist, awful.rules would
+    cause an error (attempt to index a nil value). Fix this and add a test
+    for this case.
+    
+    Fixes: https://github.com/awesomeWM/awesome/issues/2087
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit fb93003cc5f8cacc2d91096c6870cbfd2dc83e8e
+Author: Daniel Hahler <git@thequod.de>
+Date:   Mon Oct 23 22:30:42 2017 +0200
+
+    docs/ldoc.css: just use system fonts
+
+commit 5c9bc988bb6cca2cbae8b074d07bef41b3bcaf7f
+Author: Daniel Hahler <git@thequod.de>
+Date:   Sat Oct 21 21:27:30 2017 +0200
+
+    navigation: less margin to the left
+
+commit 102e1046b9469bf291232f280850377cf8f3c510
+Author: Daniel Hahler <git@thequod.de>
+Date:   Sat Oct 21 21:04:18 2017 +0200
+
+    add our logo
+
+commit b291880fa1dc721016fcc2cc2ab0a1bb29de2e8d
+Author: Daniel Hahler <git@thequod.de>
+Date:   Sat Oct 21 20:19:00 2017 +0200
+
+    add css
+    
+    Source: https://github.com/stevedonovan/LDoc/pull/287
+    https://raw.githubusercontent.com/hishamhm/LDoc/7214818f0ff580e5607a4de764340aa7e3b55d1a/ldoc/html/ldoc_new_css.lua
+
+commit 678ead26341bd2e0aa27a4b4707b562b1b5c770f
+Author: Daniel Hahler <github@thequod.de>
+Date:   Wed Oct 25 15:36:00 2017 +0200
+
+    Add client.object.immobilized_{horizontal,vertical} (#2066)
+    
+    ewmh.client_geometry_requests: ignore immobilized clients
+    
+    Fixes https://github.com/awesomeWM/awesome/issues/1676.
+    Fixes https://github.com/awesomeWM/awesome/issues/2036.
+
+commit 579159a8cc71e65b4660d3dc97fba82678468752
+Author: Daniel Hahler <github@thequod.de>
+Date:   Tue Oct 24 20:59:51 2017 +0200
+
+    CMakeLists.txt: check-integration: depend on main target (#2081)
+    
+    This makes `make check-integration DO_COVERAGE=1` on a clean build work.
+
+commit eb5cab5cfe94fb66abad3335783f0ec1c63f696e
+Author: Daniel Hahler <github@thequod.de>
+Date:   Tue Oct 24 20:59:31 2017 +0200
+
+    Travis: codecov: use LUANAME as a flag (#2085)
+
+commit a5e00347e12c0cf21db88c3f21f503e70c291c3c
+Author: Daniel Hahler <github@thequod.de>
+Date:   Tue Oct 24 00:29:56 2017 +0200
+
+    tests: tests/run.sh: timeout after 30 seconds (#2083)
+
+commit fbb576635931fdbfdcb730f9c7f38ed81a0f79f0
+Author: Daniel Hahler <github@thequod.de>
+Date:   Tue Oct 24 00:29:22 2017 +0200
+
+    Travis: checks: unset set -x (#2084)
+
+commit e9b5e28d15efc3fc950374423f6aa786ac1869a4
+Author: Daniel Hahler <github@thequod.de>
+Date:   Mon Oct 23 22:25:18 2017 +0200
+
+    Makefile: distclean: do not try to rm `awesome` (#2077)
+    
+    Follow-up to ec51e3f93, where we stopped creating the symlink.
+    
+    [ci skip]
+
+commit 1ca3fff86c3695fb0e0b7417a51610b446f7e3ac
+Author: Daniel Hahler <github@thequod.de>
+Date:   Mon Oct 23 22:24:58 2017 +0200
+
+    Makefile: fix invoking cmake in the build dir (#2078)
+    
+    `"(@D)"` is the dir of the target, i.e. "build" for BUILDDIR=build,
+    which results in calling `cmake build ..`.
+    
+    cmake appears to ignore the "build" in this case, and works the same way
+    without it.
+    
+    Instead of ".." this patch uses `$(CURDIR)`, which is the absolute path
+    to the source dir, which is relevant in case `BUILDDIR` is not just a
+    direct subdirectory.
+
+commit 5ac6db5696c2626371fda8b3234db1989b0a1177
+Author: Daniel Hahler <github@thequod.de>
+Date:   Sun Oct 22 18:46:38 2017 +0200
+
+    Travis: use stable SOURCE_DATE_EPOCH for predictable calendar examples (#2075)
+    
+    Fixes https://github.com/awesomeWM/awesome/issues/2070.
+
+commit 1ab861ea3a9f5138c97dce685324126aaa2d1cbf
+Author: Daniel Hahler <github@thequod.de>
+Date:   Sun Oct 22 18:05:00 2017 +0200
+
+    tests: busted: add config file, use --verbose by default (#2076)
+
+commit 288b7030f3d7706b94ef6951587f84b33a89e42d
+Author: Daniel Hahler <github@thequod.de>
+Date:   Sun Oct 22 16:34:04 2017 +0200
+
+    build-utils/dist.sh: remove "-dirty" suffix (#2074)
+    
+    Calling `make dist` on a dirty tree caused an error when trying to use
+    `git log` with the `-dirty` suffix.
+    
+    This patch removes any "-dirty" suffix from the argument.
+    
+    [ci skip]
+
+commit d1d794ab2ddb54441af021de3c21f9c0e2b5bd25
+Author: Daniel Hahler <git@thequod.de>
+Date:   Sun Oct 22 15:00:15 2017 +0200
+
+    tests/examples/CMakeLists.txt: remove EXAMPLE_DOC_SOURCE_FILES
+    
+    The caching is not reliable, and cannot be made so easily.
+
+commit 386e74b852c128991661e625fc1c8c7e8253297c
+Author: Daniel Hahler <git@thequod.de>
+Date:   Sun Oct 22 14:59:09 2017 +0200
+
+    CMakeLists.txt: ldoc: depend on generate-examples
+
+commit f3baf499aab8f9c006ac1c446962f4e025bbfb3d
+Author: Daniel Hahler <github@thequod.de>
+Date:   Sun Oct 22 15:47:53 2017 +0200
+
+    tests/examples/CMakeLists.txt: set env via LUA_COV_RUNNER only (#2072)
+    
+    LUA_COV_RUNNER is used with `add_custom_command` for the command to
+    generate the images, and AWESOME_THEMES_PATH should be set there.
+    
+    Since LUA_COV_RUNNER is used also with `execute_process` there is no
+    need for `set(ENV …)` anymore.
+
+commit 7117c6a7203165bee87b3fd0ffd2c995f0b754b1
+Author: Daniel Hahler <github@thequod.de>
+Date:   Sun Oct 22 15:32:37 2017 +0200
+
+    Makefile: add explicit rule for Makefile to not "update" it (#2071)
+    
+    Typically the implicit rule below will trigger a "make -C build
+    Makefile" run, whenever build/Makefile is newer than our Makefile.
+    
+    Ref: https://www.gnu.org/software/make/manual/html_node/Remaking-Makefiles.html
+
+commit 2a506b03ae483887bf195c54d5991dc17409ec4a
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Jul 1 22:34:54 2017 -0400
+
+    tests: Port the screen template to wibox.layout.manual
+    
+    It's more flexible than raw cairo code and it's what it was
+    originally designed for (see #1153).
+
+commit cedeb2bb5ab1934ce3364d1fab22f9788de39b9e
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Jul 1 22:43:01 2017 -0400
+
+    wibox: Add a `to_widget()` and `save_to_svg()` method.
+    
+    Take a wibox snapshot as a widget. It also add an helper to save
+    it to a file. This is useful for debugging when called from
+    `awesome-client`
+
+commit 1592180c83ab18fafe8eb2d7b060212d4879e2f9
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Sat Oct 21 19:32:35 2017 +0200
+
+    textbox: Make some screen arguments optional again (#2057)
+    
+    Since beautiful.xresources.get_dpi(s) allows nil as argument to query
+    some "global DPI", the functions to query the size of a textbox also
+    allowed to use nil as the screen, even though this was never documented
+    to work. Commit a1376557917a88 broke this by assuming a valid screen
+    object.
+    
+    This commit makes a nil argument work again, but will cause a
+    deprecation warning in awesome 5.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit c7d75ed119b6a21161135d95378a36d2c540dd17
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Sat Oct 21 19:23:04 2017 +0200
+
+    awful.screen.object.get_dpi: Ignore outputs with size 0 (#2063)
+    
+    For example, Xephyr reports its output with a size of 0x0. Since a
+    division by zero is in no one's interest, just ignore such outputs when
+    trying to compute the DPI value.
+    
+    Thanks to @timroes for pointing this out:
+    https://github.com/awesomeWM/awesome/commit/c8fac753c45c14df25101ad5ea50c30b78a9e34d#commitcomment-25072296
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 8e87bd7c648b19dca9aaa5c0dc74d38b315d295b
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon May 15 02:24:52 2017 -0400
+
+    tests: Add some methods to the shims
+
+commit 15b025ff915e41c718d6d37c220ffbe3bee23589
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sun Jul 2 10:55:21 2017 -0400
+
+    tests: Add the theme path ENV variable
+    
+    That way theme assets can be used by the documentation images
+
+commit 74a6cbedcef7a5f369625ddef9327002f6d7bc7a
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Oct 8 14:53:58 2017 +0200
+
+    Fix menubar screen handling
+    
+    Running test-menubar.lua just failed for me locally. The reason was that
+    the textbox was indexing a nil value when doing 's.dpi'.
+    
+    This commit fixes the menubar so that its optional screen arguments are
+    really handled correctly. In fact, a default screen is now chosen way
+    earlier than before, so that no nil values are used as screens later on.
+    
+    In other news: I guess test-menubar.lua is not run on any of our Travis
+    targets...
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit d0fbb96d2d935102b4a50f09edb006e8b3e1a475
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Oct 8 14:40:20 2017 +0200
+
+    screen.dpi: Use RandR for per-screen DPI
+    
+    This commit makes awesome automatically compute the DPI of a screen
+    based on its RandR outputs. If multiple outputs exist, the lowest DPI is
+    used.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit a1376557917a8859222c49f59ba42373c02905c7
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Oct 8 12:30:21 2017 +0200
+
+    Add & use a dpi property on screen objects
+    
+    Once upon a time, beautiful.xresources.get_dpi was added to query
+    Xft.dpi. That made sense since this queried an xresources property. Over
+    time, other, non-xresources-based ways to query DPI were added to this
+    function. Now, it makes no more sense to have this function here.
+    
+    Also, recently it became possible to add new properties to C objects
+    from Lua code. Thus, we no longer need to have a get_dpi() function
+    somewhere, but can add s.dpi directly.
+    
+    Thus, this commit adds s.dpi and makes everything use it. No functional
+    changes are intended.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 7e395e7bc0daa648144f178606171e99ae2abfef
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Sat Oct 7 18:22:50 2017 +0200
+
+    Use memory shorter with awful.client.shape (#2051)
+    
+    To apply the shape of a client, we have to create an image and draw the
+    shape we want to it. Since clients can be quite large, we have to make
+    sure that we do not keep this image alive unnecessarily long.
+    
+    The code in awful.client.shape.get_transformed() however needs another
+    temporary surface in case the client has its own shape and another one
+    was set in Lua (side note: currently the code also creates this extra
+    temporary surface if the client does not have its own shape; that might
+    be worth fixing). This temporary surface is then used as the source of a
+    cairo context to draw it to the image that will be used as the client's
+    final source.
+    
+    After we are done, the temporary surface is still kept alive since it is
+    the current source of the cairo context. The cairo context in turn is
+    only freed when Lua's garbage collector collects it, which may take
+    quite a while.
+    
+    Improve this by setting a different source to the cairo context. Thus,
+    it now releases the temporary surface as soon as possible and it is only
+    allocated for a short time.
+    
+    Fixes: https://github.com/awesomeWM/awesome/issues/2050
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit a9b65833e78296301faf12884decd193b126c13f
+Author: Reiner Herrmann <reiner@reiner-h.de>
+Date:   Sat Oct 7 13:47:10 2017 +0200
+
+    Travis: export SOURCE_DATE_EPOCH in one build job
+
+commit 9d7eaf020d75a970c216e95f6c7cd256e7300d4b
+Author: Reiner Herrmann <reiner@reiner-h.de>
+Date:   Fri Sep 29 20:00:21 2017 +0200
+
+    Use reproducible timestamp during build
+    
+    During build svg images of the calendar widget are generated, which
+    differ based on the current date.
+    By honouring the environment variable SOURCE_DATE_EPOCH, which is
+    set by distributions during build, a deterministic date can be used
+    at build time while keeping the normal behaviour during runtime.
+    
+    See also: https://reproducible-builds.org/specs/source-date-epoch/
+
+commit cce65aa6d3995b1f8c87ebf561d4da49031a4f57
+Author: Reiner Herrmann <reiner@reiner-h.de>
+Date:   Fri Sep 29 18:41:39 2017 +0200
+
+    Sort list of files used in generated table
+
+commit 4e42996d9a7e6a3f2da294f072b5288a6c34e4cd
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Sat Sep 30 21:37:33 2017 +0200
+
+    naughty: Fix replaces_id + changing colors (#2041)
+    
+    This fixes a regression introduced in be29ee67688. This commit changed
+    naughty to reuse an already-existing wibox when replaces_id is used,
+    instead of creating a new wibox. However, some of the properties that
+    are set only when creating a wibox were ignored due to this.
+    
+    Fixes: https://github.com/awesomeWM/awesome/issues/2040
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit a6613c08a9eedc716036bcb7fc917c9cf992aba5
+Author: Reiner Herrmann <reiner@reiner-h.de>
+Date:   Fri Sep 29 17:45:11 2017 +0200
+
+    Typo in manpage (#2048)
+
+commit 013abf5a39f1b9e3f1011b10bd15a11b9b7608b5
+Author: Zach Peltzer <zdpeltzer@gmail.com>
+Date:   Thu Sep 28 15:58:14 2017 -0500
+
+    Display desktop entries with no categories (#2039)
+
+commit 8d34201ec3dd76ce9d8f1ede8d9e8df5f4395684
+Author: Zach Peltzer <zdpeltzer@gmail.com>
+Date:   Thu Sep 28 15:57:39 2017 -0500
+
+    Unescape strings when parsing desktop entries (#2043)
+    
+    * Unescape strings when parsing desktop entries
+    
+    * Fix unused value warning in menubar/utils.lua
+    
+    * Move menubar.utils.unescape() tests
+    
+    * Clean up menubar.utils.unescape() function
+    
+    * Fix warning for using "_" in a non-local context
+    
+    * Do not ignore trailing whitespace in menubar.utils.parse_list()
+
+commit 55dee1ea87cdc3e9a3a6e435a8a2a2e318947a78
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Thu Sep 28 22:56:41 2017 +0200
+
+    magnifier layout: Never manage floating windows (#2046)
+    
+    The magnifier layout handles the currently focused client specially.
+    However, if the currently floating client is floating, it should not be
+    handled by the layout at all. A bug caused the magnifier layout to
+    handle a focused and floating client anyway if it was the only tiled
+    client.
+    
+    Fix this by removing the '#cls > 0'-case. If #cls == 0, then no client
+    is available to be managed. Thus, cls[1] will be nil, which is fine
+    since, well, no client is available to be managed. This only made a
+    difference in the specific bug that I described above. Thus, drop this
+    case.
+    
+    Fixes: https://github.com/awesomeWM/awesome/issues/2045
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 790a669029688c8953208012e6f72010007a89df
+Author: Daniel Hahler <github@thequod.de>
+Date:   Mon Sep 11 14:20:43 2017 +0200
+
+    cmake: add strict mode for ldoc, based on STRICT_TESTS (#2035)
+    
+    This allows for building the docs with an older ldoc version, and it
+    makes sense in general to make warnings not fatal by default.
+    
+    Ref: https://github.com/awesomeWM/awesome/pull/2027#issuecomment-328354095
+
+commit b04b1b27af84fc892c63ee428d4c623a829e4036
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Sun Sep 10 20:12:25 2017 +0200
+
+    Add a force_update() method to the textclock (#2034)
+    
+    Reference: https://github.com/awesomeWM/awesome/issues/344
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit ebcc19844e25705270243c614a35ca138a68f152
+Author: Yauhen Kirylau <actionless.loveless@gmail.com>
+Date:   Sat Sep 9 22:26:54 2017 +0200
+
+    fix(awful: placement: no_overlap): use new placement infrastructure (#2032)
+    
+    Fixes #2030
+
+commit 43e268373d1913eb28f7c26fcfc9ce7c2ab80db3
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Sat Sep 9 05:14:41 2017 +0200
+
+    Mention minimum ldoc version in the readme (#2027)
+    
+    See commit 2c741f8e1d934da32a which introduced this dependency.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 35432e9f21ce0be9699f28be3510281372a680eb
+Author: getzze <getzze@gmail.com>
+Date:   Fri Sep 8 21:08:47 2017 +0100
+
+    Avoid skipping a month if the day is 31 (#2028)
+
+commit c9fbecd1e8afdc0a3bb4f9285fa2f2a480f1d656
+Author: actionless <actionless.loveless@gmail.com>
+Date:   Fri Sep 1 22:43:57 2017 +0200
+
+    refactor(awful: widget: calendar_popup): s/_calendar_clicked/_calendar_clicked_on/
+
+commit 23613bac0548acdab7adc9a3469abc8bd32d3eda
+Author: actionless <actionless.loveless@gmail.com>
+Date:   Fri Sep 1 22:43:07 2017 +0200
+
+    fix(awful: widget: calendar_popup): hover was not working anymore if hiding popup by clicking on it
+
+commit 02f894ce0cb14f05b78ee76dacdf1ecab7ecc09a
+Author: Daniel Hahler <github@thequod.de>
+Date:   Thu Aug 31 21:21:19 2017 +0200
+
+    Improve tests/examples: generate deps for output files (#1962)
+    
+    This still runs all the tests in the configure phase, since the tests
+    report back what output file (png/svg/none) will be generated.. :/
+    
+    This could be improved by having this table in CMakeLists directly, or
+    by having a callback into the tests that only reports back that
+    information.  The latter would still execute all the tests (via a Lua
+    process).
+    
+    Adds an explicit check-examples target.
+
+commit cc2d4e918923eed8484cd7fd4eead840057588cf
+Author: Daniel Hahler <github@thequod.de>
+Date:   Thu Aug 31 21:20:08 2017 +0200
+
+    build-utils/dist.sh: reproducible builds (fixes shellcheck issues, adds usage) (#1983)
+
+commit 8923df4a5f658887c457b4671d20079b4b7bbe03
+Author: Daniel Hahler <git@thequod.de>
+Date:   Wed Aug 16 00:48:42 2017 +0200
+
+    build: make DO_COVERAGE a CMake variable
+    
+    Travis: remove CXXFLAGS (not used), LDFLAGS (typo, not used)
+    
+    Closes https://github.com/awesomeWM/awesome/pull/2001.
+
+commit 69d06f7e3a967f7962016fa56920b9b92ae67ef6
+Author: Daniel Hahler <github@thequod.de>
+Date:   Mon Aug 28 10:55:56 2017 +0200
+
+    default config: improve floating windows (#2023)
+    
+    * default config: floating windows: fix pinentry-gtk-2
+    
+    We have class "pinentry" there already, but it seems to have changed to
+    "Pinentry"?!  This uses "instance" instead, which hopefully works in the
+    old case also.
+    
+    pinentry 1.0.0-1, gnupg 2.1.23-1
+    
+    Also adds Blueman-manager and ConfigManager.
+
+commit 9e4446060e85b56b362c7ccf94d5ca69ec61c86e
+Author: Yauhen Kirylau <actionless.loveless@gmail.com>
+Date:   Sun Aug 27 21:01:24 2017 +0200
+
+    feat(awful: widget: calendar_popup: attach): implement 'on_hover' option (#2008)
+    
+    * feat(awful: widget: calendar_popup: attach): implement 'on_hover' option
+    
+    * feat(awful: widget: calendar_popup): smarter handling of click and hover at the same time
+
+commit fd66d12a4b775f3f2e6d6640e19d90e03642835e
+Author: Yauhen Kirylau <actionless.loveless@gmail.com>
+Date:   Sun Aug 27 14:23:43 2017 +0200
+
+    feat(awful: widget: calendar_popup): implement 'margin' widget property (#2010)
+
+commit ec08af4e7605abbc7b517cf5693c163fefd5f4db
+Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
+Date:   Sun Aug 27 08:23:06 2017 -0400
+
+    clienticon: add a client setter (#2018)
+    
+    It's required to work with the declarative syntax and be used
+    in the tasklist due to its limitations.
+
+commit 596b7443e74ce231161db0702d9e37c1b5efa744
+Author: actionless <actionless.loveless@gmail.com>
+Date:   Mon Aug 21 14:51:25 2017 +0200
+
+    feat(tests: run.sh): treat luaA_panic as an error
+
+commit 162cf1854c8054ed44d20da51397c26eb6811f88
+Author: actionless <actionless.loveless@gmail.com>
+Date:   Sat Aug 19 23:24:53 2017 +0200
+
+    fix(tests: run.sh): add one more error log pattern
+
+commit 6e53143401da1a693ec1ff8500f55f6ecfc6ed14
+Author: Daniel Hahler <git@thequod.de>
+Date:   Sun Aug 20 22:53:51 2017 +0200
+
+    tests/themes/run.sh: whitespace: sw=4
+
+commit e1da4b030f2bb49366e6175809da292fd427aba0
+Author: Daniel Hahler <git@thequod.de>
+Date:   Sun Aug 20 22:53:22 2017 +0200
+
+    tests/themes/run.sh: use themes from build dir
+
+commit 0a75f09d1d5ccbd39a9dcebf33acfa6be60e5501
+Author: actionless <actionless.loveless@gmail.com>
+Date:   Mon Aug 21 15:12:38 2017 +0200
+
+    fix(menubar: utils: parse_dir): print to log the current failed directory instead of the root one
+
+commit 960f59b228574131b448a063fef539159104bd08
+Author: actionless <actionless.loveless@gmail.com>
+Date:   Mon Aug 21 14:22:50 2017 +0200
+
+    fix(menubar: utils: parse_dir): print warning instead of error if directory can't be opened
+
+commit 98e762e5f72c32b286428de4b341da811076638c
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Aug 24 22:53:27 2017 +0200
+
+    fix(tests: menubar): ignore warning about opening applications dir in /dev/null
+
+commit 25dea5bd2a4dc239c651f907c7b14c248a4a1b00
+Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
+Date:   Mon Aug 21 15:15:18 2017 -0400
+
+    drawin: add a `get()` function. (#2013)
+    
+    Identical to `client.get()`. Same use cases.
+
+commit fd2307afd0e596e6c9c4589ec18def38b15017fb
+Author: Emmanuel Lepage Vallée <elv1313@gmail.com>
+Date:   Mon Aug 21 15:10:43 2017 -0400
+
+    grid: fix an unavoidable assert (#2017)
+    
+    `:add()` was called with the optional `...` arguments, but the
+    function required at least one argument.
+
+commit e7bf8de081948fb1a3e8bd6087bce3795b4c5752
+Author: Uli Schlachter <uli.schlachter@informatik.uni-oldenburg.de>
+Date:   Mon Aug 21 09:05:37 2017 +0200
+
+    Add tests for gears.string.startswith and endswith
+    
+    Signed-off-by: Uli Schlachter <uli.schlachter@informatik.uni-oldenburg.de>
+
+commit cdd58cc355470c307bd39956b4516bfadd248fc7
+Author: Daniel Hahler <github@thequod.de>
+Date:   Sun Aug 20 22:50:30 2017 +0200
+
+    luacheck: enable cache (#2004)
+    
+    * luacheck: enable cache
+    
+    * Cleanup .gitignore: remove .build* and awesome
+    
+    We only use the "build" dir by now, where also the "awesome" binary gets
+    created.
+
+commit 784472f212d129a551d5175411cc9664d7a48ea0
+Author: Daniel Hahler <github@thequod.de>
+Date:   Sun Aug 20 19:37:03 2017 +0200
+
+    doc: improve/fix doc for awful.rules (#2005)
+
+commit ce3be7ca1b811b30f707791eedfe1199b1594e90
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sat Jul 15 23:15:29 2017 -0400
+
+    object: Add support for signal forwarding
+    
+    The CAPI signal system already has this mechanism.
+
+commit 2303e313554001f6d8de563aa54335487e0772a3
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Sun Oct 9 01:26:09 2016 -0400
+
+    mouse: Fix a bad refactoring
+    
+    The `wibox_under_mouse` property was renamed `current_wibox` but
+    a call wasn't updated.
+
+commit 7e8f3e9b9b64fffc33debcabf919673d0bc6c96c
+Author: Emmanuel Lepage Vallee <elv1313@gmail.com>
+Date:   Mon Aug 7 17:04:36 2017 -0400
+
+    widget: Add a flexible generic constructor
+    
+    This avoid copy pasting this kind of code in many places.
+
+commit a20dd4ad6115ca1cbfeff4de986472a22882ba5a
+Author: SpiritCroc <spiritcroc@gmail.com>
+Date:   Thu Aug 17 17:21:40 2017 +0200
+
+    KeyboardLayout widget: add EurKey (#2003)
+
+commit 202be62157103c34fab12283fe8d6e46df615b67
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Wed Aug 16 23:32:04 2017 +0200
+
+    Automatically make LuaRocks modules available in awesome (#1999)
+    
+    Running eval $(luarocks path --bin) before running awesome is not all
+    that easy. It's a lot easier to do the equivalent for this in rc.lua.
+    Plus, if LuaRocks is not installed, this will silently do nothing.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 4fc3108e0f839e1691bed3252022f9f802815a66
+Author: Luke Bonham <copycat-killer@users.noreply.github.com>
+Date:   Wed Aug 16 20:07:08 2017 +0200
+
+    Fix doc typos and optimised PNGs (#2000)
+
+commit 2c741f8e1d934da32ad50ab79981e9ba1e66a4a7
+Author: Daniel Hahler <github@thequod.de>
+Date:   Wed Aug 16 19:23:10 2017 +0200
+
+    build: use --fatalwarnings with ldoc, remove check-ldoc-warnings (#1963)
+    
+    Instead of having a custom target with redirection magic, just use
+    `--fatalwarnings` with ldoc.  This requires ldoc 1.4.5.
+
+commit 12bb7f5a9e6c9a105e137bccba512bacb7f14d8f
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Wed Aug 16 13:37:14 2017 +0200
+
+    Improve docs for emit_signal_recursive (#1998)
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit ef04fa688e23fc46b0515c61f53a03621c8fc098
+Author: Daniel Hahler <github@thequod.de>
+Date:   Wed Aug 16 13:27:49 2017 +0200
+
+    tests/themes/run.sh: use themes from source dir (#1994)
+    
+    This makes it easier to track their coverage.
+
+commit a222e5c0afd7c2456a806364ebf38a4748782428
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Aug 13 17:48:45 2017 +0200
+
+    spawn: Fix some comments and messages
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 9f8ff760796dc1e23062e68df53bce427729d8a7
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Aug 12 16:39:39 2017 +0200
+
+    awesome.spawn: Add a new argument for env
+    
+    This adds a new argument to awesome.spawn that can be used to specify
+    the environment of the spawned process.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit aac519b946627d23b4e923eb542dcab68cbd50ec
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Aug 12 16:32:27 2017 +0200
+
+    Refactor spawn.c
+    
+    This moves some code of parse_command() out into a new helper function.
+    No functional changes intended.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit cc0871498c74a3a11daaaf93b978982b6d0fbdbf
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Aug 12 16:23:35 2017 +0200
+
+    Make awesome.spawn() live up to its documentation
+    
+    This function is documented to return "an error string if an error
+    occurred". However, the function actually threw a Lua error instead.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 2b6350009e1b2ca6b00d4cb51a37c80ea9c4d8e1
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Aug 12 16:10:45 2017 +0200
+
+    Fix a typo in spawn.c
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit cdaf0dd294fe11e18017832fe6a69626a5f66870
+Author: Daniel Hahler <github@thequod.de>
+Date:   Wed Aug 16 11:27:32 2017 +0200
+
+    tests/run.sh: fix verbose mode (#1997)
+    
+    Fixes https://github.com/awesomeWM/awesome/issues/1996.
+    
+    Also improves usage information.
+
+commit b8ad56ad81447fca57a4614bd37adae1778b04e0
+Author: Daniel Hahler <github@thequod.de>
+Date:   Wed Aug 16 10:57:23 2017 +0200
+
+    Travis: build luarocks in /tmp also (#1995)
+
+commit 30df31509e2628459b206c369bd6e6fc533236b6
+Author: Daniel Hahler <github@thequod.de>
+Date:   Tue Aug 15 17:58:22 2017 +0200
+
+    Travis: update luarocks: 2.3.0 => 2.4.2 (#1977)
+
+commit 52548a2bee005fe3c8c8a5764acf9d695137a3a5
+Author: Daniel Hahler <git@thequod.de>
+Date:   Mon Aug 14 16:15:56 2017 +0200
+
+    tests/run.sh: add -v option, replacing/using VERBOSE
+
+commit 5d0e9fd9e300a95119264419b00c388bd9f91475
+Author: Kevin Zander <veratil@gmail.com>
+Date:   Mon Aug 14 10:48:12 2017 -0500
+
+    Add startswith and endswith function to gears.string, change awful.completion to use startswith over local function
+
+commit 934ad741a79b84efeb89d9f73d57945409baa0a2
+Author: Daniel Hahler <github@thequod.de>
+Date:   Mon Aug 14 17:18:46 2017 +0200
+
+    tests: keep check-themes separate from check-integration (#1991)
+    
+    Ref: https://github.com/awesomeWM/awesome/pull/1973#issuecomment-322183782
+
+commit bfe58d65f14dbdf3bcf57d069e7090637bcecc6e
+Author: Nick Diego Yamane <nick.diego@gmail.com>
+Date:   Mon Aug 14 10:06:44 2017 -0400
+
+    docs: fix some typos/leftovers (#1989)
+    
+    Signed-off-by: Nick Yamane <nick.diego@gmail.com>
+
+commit f8d1e46eaa7606833edbdd74005ff0a21c5e6576
+Author: Daniel Hahler <git@thequod.de>
+Date:   Mon Aug 14 13:38:49 2017 +0200
+
+    CMakeLists.txt: pass TEST_RUN_ARGS to tests/run.sh, default to -W
+
+commit 062f9d6a15eacec9068753533b3ea8917dd75d2d
+Author: Daniel Hahler <git@thequod.de>
+Date:   Sun Aug 13 12:06:12 2017 +0200
+
+    tests/themes/run.sh: distinguish header from tests/run.sh
+
+commit 730b706217a3ff0fabbeaeaf7860d6fc7cc119ac
+Author: Daniel Hahler <git@thequod.de>
+Date:   Fri Aug 11 01:03:22 2017 +0200
+
+    check-integration: fail on warnings
+    
+    Those are most likely deprecation warnings, but the tests should be free
+    of warnings (from awesome) anyway.
+    
+    The "Last main loop iteration took X seconds!" warning is filtered out.
+
+commit e852455308e4cbe67161482802edbb819097d228
+Author: Daniel Hahler <git@thequod.de>
+Date:   Fri Aug 11 01:00:27 2017 +0200
+
+    tests/run.sh: add support for -W to turn warnings into errors
+
+commit eb7ee7072cfa9cbd374cd453faba63f7f7b5bd65
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Sun Aug 13 22:26:07 2017 +0200
+
+    Fix an old todo in the docs (#1981)
+    
+    This new paragraph might not be great and it certainly is less
+    informative than what the wiki said here (it suggested to use some
+    library for widgets and explained how to use it). However, this new
+    paragraph is definitely better than the todo that was here for far too
+    long.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit c33d85c19557471022f25f2bc92ec6e5e2d54d71
+Author: Daniel Hahler <github@thequod.de>
+Date:   Sun Aug 13 22:10:29 2017 +0200
+
+    Travis: update Lua/luajit; build in /tmp (#1985)
+    
+    Building in /tmp avoids files to be looked at / searched for e.g. with
+    luacov.
+
+commit 8166e2ff8b567059459076f052cfe3863b616839
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Sun Aug 13 12:23:40 2017 +0200
+
+    Fix the example in the tooltip docs (#1980)
+    
+    Reference: https://github.com/awesomeWM/awesome/pull/1978
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 26f32f5ce4173be0e37c6e9807d9e7ce2d34d52a
+Author: Daniel Hahler <github@thequod.de>
+Date:   Sun Aug 13 11:57:59 2017 +0200
+
+    tests/run.sh: cleanup: wait for process(es) to finish (#1982)
+    
+    Ref: https://github.com/awesomeWM/awesome/pull/1967#issuecomment-321978955
+
+commit 1193007d348c59f95af1e2daa166a4a12c9dc2e6
+Author: Daniel Hahler <git@thequod.de>
+Date:   Thu Aug 10 15:03:31 2017 +0200
+
+    Travis: remove custom AWESOME_THEME
+    
+    It causes different code coverage paths, and loading for all themes is
+    tested by now.
+
+commit f698a17138cd9c1d55f3d8f146c1337bf28798de
+Author: Daniel Hahler <git@thequod.de>
+Date:   Thu Aug 10 12:16:27 2017 +0200
+
+    Add check-themes, which tests themes via tests/themes/
+    
+    It relies on tests/run.sh to handle failures.
+
+commit f36738f115d755a59eb311f1cac0de4335421e8a
+Author: Daniel Hahler <git@thequod.de>
+Date:   Thu Aug 10 11:56:59 2017 +0200
+
+    tests/run.sh: allow to provide RC_FILE and theme/icon paths
+
+commit fbea595f60c3888bf361d7c7385a56f3be62c790
+Author: Daniel Hahler <git@thequod.de>
+Date:   Thu Aug 10 16:01:08 2017 +0200
+
+    tests/_runner.lua: write "Running step …" to stderr
+
+commit afb81640b5d5e53c24ebbabc9d43558c6c499dd9
+Author: Daniel Hahler <git@thequod.de>
+Date:   Thu Aug 10 13:21:54 2017 +0200
+
+    Travis: use check-integration instead of tests/run.sh (coverage builds)
+
+commit 56ac221544a17f3500d12bda7c35345df1417b13
+Author: Daniel Hahler <git@thequod.de>
+Date:   Thu Aug 10 11:54:41 2017 +0200
+
+    CMakeLists.txt: copy all icons to build dir
+
+commit 68497dffc457af013f4860cab0be64f6231a754e
+Author: Daniel Hahler <github@thequod.de>
+Date:   Thu Aug 10 14:08:32 2017 +0200
+
+    gears.debug.print_{warning_error}: add "awesome: " prefix (#1968)
+    
+    This makes it consistent with the C functions (`_warn` and `_fatal`).
+
+commit 31e25dc6a53f517ca903648990667b9167b9f680
+Author: Daniel Hahler <github@thequod.de>
+Date:   Thu Aug 10 12:18:54 2017 +0200
+
+    Cleanup usages/patching of awful.util.deprecate (#1966)
+
+commit 2effc8e8dfe1bb5d945f4a2f5908a84580243900
+Author: Daniel Hahler <git@thequod.de>
+Date:   Wed Aug 9 17:46:47 2017 +0200
+
+    Travis: use cluacov for improved performance
+    
+    Closes https://github.com/awesomeWM/awesome/pull/1964.
+
+commit da987582a63ab450fad4ded7813648e2eaba3496
+Author: Florian Gamböck <mail@floga.de>
+Date:   Sat Jul 15 17:39:30 2017 +0200
+
+    Check for correct ordering of completed items
+    
+    The correct and consistent ordering is lexicographic. Not mtime, not
+    ctime, but pure lexicographic ordering.
+
+commit 7ab57e1953f4fcf7d0ec03639f1b34c9dcb6f8b1
+Author: Florian Gamböck <mail@floga.de>
+Date:   Mon Jul 10 20:48:17 2017 +0200
+
+    Check for not completing lone directories
+    
+    Even if there is a sole directory with the name of the current
+    completion item, if it does not start with `./` then do not complete it!
+
+commit 51e5381b67f467a30b95709bc07a74374a1cfe17
+Author: Florian Gamböck <mail@floga.de>
+Date:   Sun Jul 2 16:11:31 2017 +0200
+
+    Check for local directory completion
+    
+    A directory in the current working directory (starting with `./`) should
+    be completed with a slash appended.
+
+commit 79bdcc9ee1b7b704b3ed35ed36c76dd1abf1759f
+Author: Florian Gamböck <mail@floga.de>
+Date:   Sat Jul 15 17:36:17 2017 +0200
+
+    Create some directories with ambiguous prefix
+    
+    The chaotic order is intended. Some completion algorithms tend to sort
+    their results by modification time or something similar.
+    
+    The "huge" number of directories is also intended. With more items the
+    chance is higher to hit a bug if no sorting took place.
+    
+    Since Zsh just completes non-empty directories, some files have to be
+    created, too.
+
+commit 8a13f1cb75259d4f54e395c39471e84eb185b1a5
+Author: Florian Gamböck <mail@floga.de>
+Date:   Sun Jul 2 16:08:28 2017 +0200
+
+    Check for command with directory in PWD
+    
+    Even if there is a directory in the current working directory with the
+    same name as a command, the directory must not be completed.
+    
+    So, if we want to complete "true" and there is a directory "true" in the
+    current working directory, the completion list has to be just {"true"},
+    not {"true", "true/"}, or anything else!
+
+commit c296a0b91d3a8b4eac2d3324a9b3c8e0a618817a
+Author: Florian Gamböck <mail@floga.de>
+Date:   Sun Jul 2 16:04:54 2017 +0200
+
+    Remove obsolete redefinition of popen
+    
+    With the directory being changed via luafilesystem, there is no need to
+    redefine internal functions.
+
+commit 8e2d844f6051c01c37a8a2e1f83c053e1ebc0197
+Author: Florian Gamböck <mail@floga.de>
+Date:   Sun Jul 2 16:02:36 2017 +0200
+
+    Use luafilesystem to change directory
+    
+    In some circumstances, if not every syscall was somehow redefined, the
+    directory was not changed correctly. With luafilesystem.chdir it is
+    assured that we are in the wanted directory afterwards.
+
+commit c279dd32ce6063407d654c59ad809146d5158775
+Author: Florian Gamböck <mail@floga.de>
+Date:   Sun Jul 2 15:59:20 2017 +0200
+
+    Make some directories in testing area
+
+commit 13b3a18a75ba680ca6cc30ac8e0669b1bd114495
+Author: Florian Gamböck <mail@floga.de>
+Date:   Sun Jul 2 16:06:54 2017 +0200
+
+    Extend prefix for local file
+    
+    Since we want some folders in the testing area, we need to be a bit more
+    explicit about the file completion.
+
+commit 0bd74b4f722c0d94d96b374cf2c3466b2b3c570a
+Author: Florian Gamböck <mail@floga.de>
+Date:   Mon Jul 10 20:50:04 2017 +0200
+
+    Append slash on true local directories
+    
+    A slash must only be added if the current completion item starts with
+    `./` and is actually a directory.
+
+commit 7c677e01cce7a293ac44a60c569dcbc210a121a2
+Author: Florian Gamböck <mail@floga.de>
+Date:   Sun Jul 2 16:18:55 2017 +0200
+
+    Replace os.execute with gfs function
+
+commit e8ad3a32f58a1562c429bbd04b57e8dda8d86dfa
+Author: Florian Gamböck <mail@floga.de>
+Date:   Sun Jul 2 16:15:48 2017 +0200
+
+    Add string helper function
+    
+    This function returns true if a string starts with a given prefix.
+
+commit 1802a440183f636ab9f045a6bf7ef6bd625e8a45
+Author: Florian Gamböck <mail@floga.de>
+Date:   Sun Jul 2 16:14:53 2017 +0200
+
+    Import gears.filesystem
+    
+    This is needed for some future filesystem checks.
+
+commit a68cc783c9fdb20782bb02eb59c39996cd14d71e
+Author: Florian Gamböck <mail@floga.de>
+Date:   Sun Jul 2 15:55:19 2017 +0200
+
+    Add function to check file executable bit
+    
+    This is just a plain copy of the file_readable function, with "read"
+    replaced with "execute".
+
+commit 0def266c842859003fbef2da1cbef7185c34b858
+Author: José Romildo Malaquias <malaquias@gmail.com>
+Date:   Mon Aug 7 15:36:41 2017 -0300
+
+    Add entry for menu font in theme (#1961)
+
+commit c32096a31136de7bf95d5f3421410519757991b2
+Author: Jagannathan Tiruvallur Eachambadi <jagannathante@gmail.com>
+Date:   Mon Aug 7 18:35:39 2017 +0000
+
+    tags: specify layout in add_tag doc snippet (#1950)
+    
+    Adding a tag without layout causes errors while using the tag. For
+    example resizing with mouse causes indexing a null error.
+
+commit 829e887806a93fc31a47cfb60a9dd8e1ed57009e
+Author: Florian Gamböck <mail@floga.de>
+Date:   Tue Aug 1 20:23:53 2017 +0200
+
+    Create and destroy temp PATH in tests
+    
+    Since busted seems to spawn isolated child processes for every test
+    suite, the temporary PATH directories have to be created at the
+    beginning and destroyed at the end of a test suite.
+
+commit a716009caa6ebadd9f7540ca3911e80d6cdbabfa
+Author: Florian Gamböck <mail@floga.de>
+Date:   Tue Aug 1 20:01:46 2017 +0200
+
+    Set up isolated PATH directory for testing
+    
+    We cannot possibly know what is in the PATH of a user. The completion
+    test cases however assume that there is nothing else in the PATH that
+    starts with `true` other than `true` itself.
+    
+    These two methods create or respectively destroy a temporary PATH
+    directory especially for testing. We can put commands in there via
+    symlinks and verify the correct functionality of the complete commands.
+    The PATH environment variable is set and reset via GLib.
+
+commit 828eefed79d40dd3a28b482f36bd42be760a7463
+Author: Daniel Hahler <github@thequod.de>
+Date:   Sat Aug 5 16:07:47 2017 +0200
+
+    awful.tooltip: border: do not default to border_width (#1955)
+    
+    Several themes use `dpi(2)` which is quite thick, and it is better to
+    use the default of 0 here, instead of `beautiful.border_width`, which is
+    meant for borders on clients.
+
+commit e73eb3ad3867ba6b4da280aa40d891722090ab93
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Aug 4 13:18:01 2017 +0200
+
+    gears.surface.apply_shape_bounding: Finish temporary image
+    
+    This function draws the wanted shape to a cairo image surface and then
+    uses it to set the shape of the passed-in object. After this commit,
+    this temporary image is finished afterwards, making it free most of its
+    memory immediately instead of only later when the garbage collector
+    collects the image surface.
+    
+    Related-to: https://github.com/awesomeWM/awesome/issues/1958
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 0da790c026e658d0c7c56c687bc8b535c90c977f
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Aug 4 13:16:12 2017 +0200
+
+    awful.tooltip: Finish temporary image
+    
+    For setting the shape of the tooltip, this code creates an image surface
+    describing the wanted shape. After this commit, this image surface is
+    finished when it is no longer needed. This results in most of the
+    image's memory to be freed immediately instead of only later when the
+    garbage collector collects the image surface.
+    
+    Related-to: https://github.com/awesomeWM/awesome/issues/1958
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 11216d8ca4b4e8bb08242e5382fb7984cff6ae50
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Aug 4 13:14:51 2017 +0200
+
+    awful.mouse.snap: Finish temporary image
+    
+    This function creates a temporary image surface to set the shape of a
+    wibox. After this commit, the image is now finished after use. This
+    results in most of the image's memory to be freed immediately instead of
+    waiting for the garbage collected to collect it.
+    
+    Related-to: https://github.com/awesomeWM/awesome/issues/1958
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit efb8134815e87eaed463893bdebd67336f723db3
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Aug 4 13:13:22 2017 +0200
+
+    awful.client.shape: Finish the shape image when done with it
+    
+    This function queries the shape of a client and then does something with
+    it. This commit makes sure the image is finished afterwards, which means
+    that most of its memory is released immediately instead of waiting for
+    the garbage collector to collect it.
+    
+    Related-to: https://github.com/awesomeWM/awesome/issues/1958
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 8dfe18a3825c4a6a554de3e2d4d70e76ccd4b600
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Aug 4 13:10:14 2017 +0200
+
+    Fix wibox to forward shapes directly
+    
+    When doing w.shape_bounding = foo on a wibox, the code would first read
+    shape_bounding from the underlying drawin. This would create a
+    (possibly) huge cairo image surface that just waits to be collected by
+    the garbage collector, resulting in increased memory usage.
+    
+    Fix this by checking the force_forward table first. This tables contains
+    the names of shape properties. Thus, the evaluation of this statement
+    gets short-circuited and the property is on the drawin is not read.
+    
+    Helps-with: https://github.com/awesomeWM/awesome/issues/1958
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 2886095358edd73a33f76bb30d733d4f7da8c261
+Author: Crazy Lemon <tlrgue17@gmail.com>
+Date:   Sun Jul 30 10:42:20 2017 -0700
+
+    Specifies the wibox dependency on the menubar utils (#1953)
+    
+    Only this particular module is needed
+
+commit 60b5df1308135d460d6980bc5110f544555300f0
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Sat Jul 29 19:58:45 2017 +0200
+
+    awful.tag: Apply a default layout to tags (#1952)
+    
+    Related-to: https://github.com/awesomeWM/awesome/pull/1950
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 0836cf90c501fa1e49c524bacdd2aaf39b9e5dfa
+Author: Tomoya Tabuchi <t@tomoyat1.com>
+Date:   Sat Jul 29 22:58:52 2017 +0900
+
+    Add notification_icon_size as a beautiful variable (#1951)
+
+commit 82fd7ea8e59b6006d72a9b6d5fee086f2b675c48
+Author: Daniel Hahler <github@thequod.de>
+Date:   Wed Jul 26 13:04:52 2017 +0200
+
+    Travis: exit with 1 when check-unit-coverage fails (#1944)
+    
+    Same as done in 1cdd7ef8 already, but missed this one.
+
+commit acc012353d03ad2c1e0783e19fe5f1f1c6a4c798
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Tue Jul 25 18:17:32 2017 +0200
+
+    Make keyboardlayout widget more robust (#1941)
+    
+    I am not sure what exactly goes on in the below bug report, so this will
+    just paper over the problem. I still think that this patch is a good
+    idea even when it is not a proper fix, since keyboard layouts are
+    complicated and so this code should be robust and hard to break.
+    
+    Fixes: https://github.com/awesomeWM/awesome/issues/1933
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit ee1dc784345273f01c9e9a3f080d10af55c3ef6f
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Mon Jul 24 07:52:55 2017 +0200
+
+    awful.tooltip: Set wibox.type = "tooltip"
+    
+    Fixes: https://github.com/awesomeWM/awesome/issues/1938
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 58bb3dde4a78cebf941ba3e6d344e43ed4789d3e
+Author: Daniel Hahler <github@thequod.de>
+Date:   Fri Jul 21 01:06:59 2017 +0200
+
+    Packaging.cmake: cache CPACK_GENERATOR (#1924)
+
+commit 458981710cd34527b05272b2b16d6b6402d18e1a
+Author: Jan Larres <jan@majutsushi.net>
+Date:   Fri Jul 21 07:21:51 2017 +1200
+
+    Treat certain layouts as single client for gaps (#1914)
+    
+    When gap_single_client is set to 'false', no gap is used when only one
+    client is shown in a tag. Since the max layout only ever shows one
+    client at a time it makes sense to apply this setting for this layout
+    regardless of the actual number of clients in that tag.
+    
+    Additionally, if the 'master_fill_policy' property is set to
+    'master_width_factor', then use a gap even if there is only one client
+    visible and 'gap_single_client' is false.
+
+commit 140481a3e566fd2b7c99191fd9e0da9daa3d26f4
+Author: Daniel Hahler <github@thequod.de>
+Date:   Thu Jul 20 01:03:33 2017 +0200
+
+    Makefile: do not call check-unit by default (#1931)
+    
+    It should get run explicitly only.
+    
+    As for Travis: we run it there initially (when just using `make`, and
+    later again - at least when using check-unit-coverage).
+
+commit bd5f0dd3fc1fbda607756aecf470904ec17b0468
+Author: mqus <marku.online@googlemail.com>
+Date:   Wed Jul 19 17:22:31 2017 +0200
+
+    Fix calendar_popup.lua documentation
+    
+    There were multiple things which stood out to me, as I was trying to setup a simple calendar popup for my textclock:
+    1.: The functions in https://awesomewm.org/doc/api/classes/awful.widget.calendar_popup.html#Functions were not named correctly (calendar vs calendar_popup) which (naturally) produced an error when used as awful.widget.calendar.month() .
+    2.: The example for calendar_popup.month() was obviously missing a line (where does the month_calendar come from?) . Resolved by copying the line from the attach-example
+    3.: The same examples also only refer to the function as calendar.month() which should be changed to awful.widget.calendar_popup.month()
+
+commit cb10a3fe45cae31d2304a03e9a55debac7340ec1
+Author: Daniel Hahler <github@thequod.de>
+Date:   Tue Jul 18 10:25:34 2017 +0200
+
+    Travis: fix gcov (#1930)
+    
+    codecov-bash runs it by default already, therefore we do not not have to
+    do so manually before do_codecov_gcov.
+    And with `do_codecov` itself, it gets disabled using `-X gcov`.
+
+commit d33d7d71d7fd3a78c0aa8ed61464338044d0b11c
+Author: Uli Schlachter <psychon@users.noreply.github.com>
+Date:   Mon Jul 17 10:11:52 2017 +0200
+
+    tests/examples/CMakeLists.txt: Add a project() call (#1926)
+    
+    project() automatically sets the PROJECT_NAME variable. Thus, when this
+    CMake code is run due to being included by awesome, this commit has no
+    effect.
+    
+    When this CMake code is run on its own, CMake will no longer check for a
+    C and C++ compiler.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit a5d6f877c5c70441c96403e9ac77526f70e708f0
+Author: Daniel Hahler <github@thequod.de>
+Date:   Sun Jul 16 15:25:22 2017 +0200
+
+    cmake: remove unused a_find_library (#1921)
+    
+    The last usage was removed in ea301194.
+
+commit 02ef4f3ce74f043a52d4ae99ca28638a5b628701
+Author: Daniel Hahler <github@thequod.de>
+Date:   Sun Jul 16 15:24:40 2017 +0200
+
+    cmake: check (and cache) check of required modules (#1920)
+    
+    This makes the CMake run much faster in general, and does not re-check
+    the dependencies every time again (since it gets cached).
+    
+    There are several reports where the reference to the missing module was
+    not provided, and they all appear to have happened with CMake 3.6.1.
+    
+    A missing "foobar" module gets reported there, but if you remove
+    /usr/lib/pkgconfig/libstartup-notification-1.0.pc, this does not get
+    reported:
+    
+        -- Checking for modules '…'
+        --
+        CMake Error at /tmp/cmake/share/cmake-3.6/Modules/FindPkgConfig.cmake:424 (message):
+          A required package was not found
+    
+    This apparently affects modules that have version requirements. After
+    removing that from "libstartup-notification-1.0>=0.10", it gets reported
+    also: "No package 'libstartup-notification-1.0' found".
+    
+    The workaround is to require the package without version information
+    before the requirement with the version information.
+    
+    This reverts https://github.com/awesomeWM/awesome/pull/1253.
+
+commit 0f5c7b3270de2f288babe73d886707a77580e0ff
+Author: Daniel Hahler <github@thequod.de>
+Date:   Sat Jul 15 20:19:36 2017 +0200
+
+    NEWS: fix typos/grammar (#1918)
+    
+    [ci skip]
+
+commit ddc51cf38c9159205132b732276c353311fb13e8
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Jun 13 15:02:55 2017 +0200
+
+    Port lgi-check.sh to C
+    
+    Previously, the lgi check used the normal Lua interpreter to check if
+    lgi is installed. However, nothing ensures/requires that awesome is
+    built against the same Lua version as the Lua interpreter. This means
+    that if lgi is only available for some Lua version, then the check could
+    succeed even though awesome would later fail to start. Also, the check
+    might have failed even though awesome would not have any problems
+    finding lgi.
+    
+    This commit replaces lgi-check.sh by a small C program which does the
+    same thing. This ensures that the same Lua version is used as awesome
+    will be using.
+    
+    There are some places that still use the Lua interpreter: Example tests
+    (run through the Lua interpreter directly) and unit tests (run through
+    busted). For unit tests, this should not make much of a difference and
+    example tests might later get similar treatment.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 93d5007c205af1f63ae0505f1511cfd71b0dd84d
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Jun 13 15:37:48 2017 +0200
+
+    .travis.yml: Link Lua 5.3 correctly
+    
+    This makes sure that the liblua.so that we built actually depends on the
+    libraries that it needs (libm and libdl). Previously we already tried
+    this, but specified "-ldl" at the beginning of the command line. Since
+    nothing needed this library yet, the linker just ignored it.
+    
+    Signed-off-by: Uli Schlachter <psychon@znc.in>

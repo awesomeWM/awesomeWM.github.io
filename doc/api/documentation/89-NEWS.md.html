@@ -1,10 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <head>
-    <title>awesome API documentation</title>
-    <link rel="stylesheet" href="../ldoc_pale.css" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Topic 89-NEWS.md - awesome API documentation</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
 </head>
 <body>
 
@@ -32,8 +32,8 @@
 
 <h2>Contents</h2>
 <ul>
-<li><a href="#Noteworthy_fixes">Noteworthy fixes </a></li>
 <li><a href="#New_features">New features </a></li>
+<li><a href="#Noteworthy_fixes">Noteworthy fixes </a></li>
 <li><a href="#Behavior_changes">Behavior changes </a></li>
 <li><a href="#New_theme_variables">New theme variables </a></li>
 <li><a href="#Other">Other </a></li>
@@ -46,11 +46,11 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><a href="../documentation/01-readme.md.html">Readme</a></li>
   <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The declarative layout system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
-  <li><a href="../documentation/07-my-first-awesome.md.html">My first awesome</a></li>
+  <li><a href="../documentation/07-my-first-awesome.md.html">My first Awesome</a></li>
   <li><a href="../documentation/16-using-cairo.md.html">Using Cairo and LGI</a></li>
   <li><a href="../documentation/17-porting-tips.md.html">Tips for upgrading your configuration</a></li>
   <li><strong>NEWS</strong></li>
@@ -63,14 +63,8 @@
   <li><a href="../libraries/awful.completion.html">awful.completion</a></li>
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.html">awful.hotkeys_popup.keys</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.firefox.html">awful.hotkeys_popup.keys.firefox</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.qutebrowser.html">awful.hotkeys_popup.keys.qutebrowser</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.tmux.html">awful.hotkeys_popup.keys.tmux</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.vim.html">awful.hotkeys_popup.keys.vim</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
-  <li><a href="../libraries/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
   <li><a href="../libraries/awful.menu.html">awful.menu</a></li>
   <li><a href="../libraries/awful.mouse.html">awful.mouse</a></li>
@@ -80,26 +74,23 @@
   <li><a href="../libraries/awful.screen.html">awful.screen</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
   <li><a href="../libraries/awful.tag.html">awful.tag</a></li>
-  <li><a href="../libraries/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../libraries/awful.util.html">awful.util</a></li>
   <li><a href="../libraries/awful.wibox.html">awful.wibox</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
-  <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
-  <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
+  <li><a href="../libraries/beautiful.gtk.html">beautiful.gtk</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
   <li><a href="../libraries/gears.color.html">gears.color</a></li>
   <li><a href="../libraries/gears.debug.html">gears.debug</a></li>
   <li><a href="../libraries/gears.filesystem.html">gears.filesystem</a></li>
   <li><a href="../libraries/gears.geometry.html">gears.geometry</a></li>
   <li><a href="../libraries/gears.math.html">gears.math</a></li>
-  <li><a href="../libraries/gears.object.properties.html">gears.object.properties</a></li>
   <li><a href="../libraries/gears.protected_call.html">gears.protected_call</a></li>
   <li><a href="../libraries/gears.shape.html">gears.shape</a></li>
+  <li><a href="../libraries/gears.sort.html">gears.sort</a></li>
   <li><a href="../libraries/gears.string.html">gears.string</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
   <li><a href="../libraries/gears.table.html">gears.table</a></li>
   <li><a href="../libraries/gears.wallpaper.html">gears.wallpaper</a></li>
-  <li><a href="../libraries/keygrabber.html">keygrabber</a></li>
   <li><a href="../libraries/menubar.html">menubar</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
@@ -107,14 +98,6 @@
   <li><a href="../libraries/mousegrabber.html">mousegrabber</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
   <li><a href="../libraries/naughty.dbus.html">naughty.dbus</a></li>
-  <li><a href="../libraries/objects.button.html">objects.button</a></li>
-  <li><a href="../libraries/objects.client.html">objects.client</a></li>
-  <li><a href="../libraries/objects.drawable.html">objects.drawable</a></li>
-  <li><a href="../libraries/objects.drawin.html">objects.drawin</a></li>
-  <li><a href="../libraries/objects.key.html">objects.key</a></li>
-  <li><a href="../libraries/objects.screen.html">objects.screen</a></li>
-  <li><a href="../libraries/objects.tag.html">objects.tag</a></li>
-  <li><a href="../libraries/objects.window.html">objects.window</a></li>
   <li><a href="../libraries/root.html">root</a></li>
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.hierarchy.html">wibox.hierarchy</a></li>
@@ -122,22 +105,25 @@
 <h2>Sample files</h2>
 <ul class="nowrap">
   <li><a href="../sample files/rc.lua.html">rc.lua</a></li>
+  <li><a href="../sample files/theme.lua.html">theme.lua</a></li>
 </ul>
 <h2>Classes</h2>
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
+  <li><a href="../classes/awful.keygrabber.html">awful.keygrabber</a></li>
+  <li><a href="../classes/awful.popup.html">awful.popup</a></li>
+  <li><a href="../classes/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
   <li><a href="../classes/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../classes/awful.widget.button.html">awful.widget.button</a></li>
   <li><a href="../classes/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></li>
   <li><a href="../classes/awful.widget.clienticon.html">awful.widget.clienticon</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
-  <li><a href="../classes/awful.widget.graph.html">awful.widget.graph</a></li>
   <li><a href="../classes/awful.widget.keyboardlayout.html">awful.widget.keyboardlayout</a></li>
   <li><a href="../classes/awful.widget.launcher.html">awful.widget.launcher</a></li>
   <li><a href="../classes/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
+  <li><a href="../classes/awful.widget.layoutlist.html">awful.widget.layoutlist</a></li>
   <li><a href="../classes/awful.widget.only_on_screen.html">awful.widget.only_on_screen</a></li>
-  <li><a href="../classes/awful.widget.progressbar.html">awful.widget.progressbar</a></li>
   <li><a href="../classes/awful.widget.prompt.html">awful.widget.prompt</a></li>
   <li><a href="../classes/awful.widget.taglist.html">awful.widget.taglist</a></li>
   <li><a href="../classes/awful.widget.tasklist.html">awful.widget.tasklist</a></li>
@@ -168,19 +154,13 @@
   <li><a href="../classes/wibox.container.scroll.html">wibox.container.scroll</a></li>
   <li><a href="../classes/wibox.drawable.html">wibox.drawable</a></li>
   <li><a href="../classes/wibox.layout.align.html">wibox.layout.align</a></li>
-  <li><a href="../classes/wibox.layout.constraint.html">wibox.layout.constraint</a></li>
   <li><a href="../classes/wibox.layout.fixed.html">wibox.layout.fixed</a></li>
   <li><a href="../classes/wibox.layout.flex.html">wibox.layout.flex</a></li>
   <li><a href="../classes/wibox.layout.grid.html">wibox.layout.grid</a></li>
   <li><a href="../classes/wibox.layout.manual.html">wibox.layout.manual</a></li>
-  <li><a href="../classes/wibox.layout.margin.html">wibox.layout.margin</a></li>
-  <li><a href="../classes/wibox.layout.mirror.html">wibox.layout.mirror</a></li>
   <li><a href="../classes/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
-  <li><a href="../classes/wibox.layout.rotate.html">wibox.layout.rotate</a></li>
-  <li><a href="../classes/wibox.layout.scroll.html">wibox.layout.scroll</a></li>
   <li><a href="../classes/wibox.layout.stack.html">wibox.layout.stack</a></li>
   <li><a href="../classes/wibox.widget.html">wibox.widget</a></li>
-  <li><a href="../classes/wibox.widget.background.html">wibox.widget.background</a></li>
   <li><a href="../classes/wibox.widget.base.html">wibox.widget.base</a></li>
   <li><a href="../classes/wibox.widget.calendar.html">wibox.widget.calendar</a></li>
   <li><a href="../classes/wibox.widget.checkbox.html">wibox.widget.checkbox</a></li>
@@ -188,6 +168,7 @@
   <li><a href="../classes/wibox.widget.imagebox.html">wibox.widget.imagebox</a></li>
   <li><a href="../classes/wibox.widget.piechart.html">wibox.widget.piechart</a></li>
   <li><a href="../classes/wibox.widget.progressbar.html">wibox.widget.progressbar</a></li>
+  <li><a href="../classes/wibox.widget.separator.html">wibox.widget.separator</a></li>
   <li><a href="../classes/wibox.widget.slider.html">wibox.widget.slider</a></li>
   <li><a href="../classes/wibox.widget.systray.html">wibox.widget.systray</a></li>
   <li><a href="../classes/wibox.widget.textbox.html">wibox.widget.textbox</a></li>
@@ -202,23 +183,215 @@
 
 <h1>NEWS</h1>
 
-<p><a name="v42"></a></p>
-<h1>Awesome window manager framework version 4.2 changes</h1>
+<p><a name="v43"></a></p>
+<h1>Awesome window manager framework version 4.3 changes</h1>
 
 <p><center> <img src="../images/AUTOGEN_wibox_logo_logo_and_name.svg" /> </center></p>
 
-<p>Awesome v4.2 is the second release of the 4.x API. It mostly fix the bugs
-reported over the last 3 months and add a couple widgets. Almost 150 issues
+<p>Awesome v4.3 is the third release of the 4.x API. It comes after one and a half
+years of little fixes and improvements. Awesome v4.2 was very stable thanks to
+everybody's effort to unit test everything. Given no major bug warranted a new
+release, this one adds a few large features while preserving full compatibility
+with existing user configurations.</p>
+
+<p><a name="New_features"></a></p>
+<h2>New features</h2>
+
+<ul>
+    <li><a href="../libraries/gears.string.html#">gears.string</a> now has a <code>endswith</code> and <code>startswith</code> functions</li>
+    <li><code>luarocks</code> modules are now automatically available in Awesome</li>
+    <li>A generic way to create or use widgets has been added
+    (<a href="../classes/wibox.widget.base.html#wibox.widget.base:make_widget_from_value">wibox.widget.base.make_widget_from_value</a>)</li>
+    <li>It is now possible to connect to signals from all instances of a widget at once</li>
+    <li>The calendar widget now supports margins</li>
+    <li>The documentation has a new theme</li>
+    <li>Wiboxes now have <code>to_widget()</code> and <code>save_to_svg()</code> methods.</li>
+    <li>The client objects now have a <code>immobilized_horizontal</code> and
+    <code>immobilized_vertical</code> property to know if they can currently be moved or
+    resized (for example, it is set to false when maximized)</li>
+    <li><a href="../classes/gears.timer.html#">gears.timer</a> objects now have a <code>call_now</code> method.</li>
+    <li>The hotkey popup now supports <code>termite</code> keybindings</li>
+    <li>The menubar loads faster</li>
+    <li>Wiboxes have an <code>input_passthrough</code> property to send mouse clicks
+    to the object below.</li>
+    <li>The <code>taglist</code> and <code>tasklist</code> now support the declarative constructor syntax</li>
+    <li>There is now an <a href="../libraries/awesome.html#pixbuf_to_surface">awesome.pixbuf_to_surface</a> to convert a <code>GdkPixbuf</code> to
+    a cairo surface.</li>
+    <li>The notifications icon can now be resized and limited with
+    <code>notification\_icon_\size</code></li>
+    <li>A <a href="../libraries/gears.sort.html#">gears.sort</a> module has been added with graph resolution</li>
+    <li><code>awesome-client</code> now runs code in a protected context</li>
+    <li>The <a href="./03-declarative-layout.md.html">widget documentation</a> has
+    been extended to be more friendly to new users.</li>
+    <li>There is a new <code>beautiful.maximized_hide_border</code> theme option to hide the
+    border for maximized clients.</li>
+    <li>The <a href="../classes/client.html#">client</a> <code>startup_id</code> field is now writable. This is useful when the
+    client native implementation is not present or too buggy to be used.</li>
+    <li>The <a href="../classes/awful.widget.prompt.html#">awful.widget.prompt</a> now has a <code>with_shell</code> option to allow Bash/ZSH
+    aliases, function and environment variables to be used in commands.</li>
+    <li>The <a href="../classes/awful.titlebar.html#">awful.titlebar</a>s now have a <code>fallback_name</code> when a client has no <code>name</code>
+    property.</li>
+    <li>Clients now have a <code>motif_wm_hints</code> property to reflect some hints using the
+    Motif X11 property extension. This is used by some modern toolkits including
+    GTK.</li>
+    <li>Clients now have a <code>requests_no_titlebar</code> property to expose when a client
+    has client side titlebars (also known as decorations and CSD)</li>
+    <li>The hotkey popup now has a <code>show_awesome_keys</code> option.</li>
+    <li>The <a href="../classes/awful.widget.prompt.html#">awful.widget.prompt</a> now has more of the <a href="../libraries/awful.prompt.html#">awful.prompt</a> constructor
+    arguments.</li>
+    <li>It is now possible to set a list of layouts per tag instead of a single
+    global one.</li>
+    <li>There is now a <code>awful.layout.get_tag_layout_index()</code> function to get the
+    index of the current layout in the global layout list
+    (<code>awful.layout..layouts</code>)</li>
+    <li>The <a href="../classes/wibox.layout.manual.html#">wibox.layout.manual</a> layout now has an <code>:insert()</code> method.</li>
+</ul>
+
+<h3>Better DPI handling</h3>
+
+<p>The screen now has a read/write <code>dpi</code> property and <code>awful.screen.set_auto_dpi_enabled(true)</code>
+can be used to automatically set the DPI for many Awesome elements. Please
+note that it is not backward compatible and breaks many widget. As AwesomeWM
+always used pixels as the de-facto metric for sizes, enabling <code>auto_dpi</code> will
+break most existing configs. However, for people who use such setup, it might be
+worth speding some time to fix their config.</p>
+
+<h3>Extendable <a href="../libraries/awful.rules.html#">awful.rules</a> providers and better <a href="../libraries/awful.spawn.html#">awful.spawn</a> functions</h3>
+
+<p>There is two new functions called <a href="../libraries/awful.rules.html#add_rule_source">awful.rules.add_rule_source</a> and
+<a href="../libraries/awful.rules.html#remove_rule_source">awful.rules.remove_rule_source</a>. They allow to create a dependency graph
+for where a rule comes from and which provider has the priority when setting it.</p>
+
+<p>Previously, there were the normal properties,
+<a href="../libraries/awful.rules.html#high_priority_properties">awful.rules.high_priority_properties</a> and <a href="../libraries/awful.rules.html#delayed_properties">awful.rules.delayed_properties</a>.
+This didn't scale and could not represent all corner cases. Those table still
+exist and are still honored, but there is now a system that can handle the full
+complexity of the property priority graph.</p>
+
+<p>This is used by default in <a href="../libraries/awful.spawn.html#">awful.spawn</a>. The reliability of attaching
+properties to <code>spawn</code> calls has been improved. On top of this, three new
+functions were added</p>
+
+<ul>
+    <li><a href="../libraries/awful.spawn.html#once">awful.spawn.once</a></li>
+    <li><a href="../libraries/awful.spawn.html#single_instance">awful.spawn.single_instance</a></li>
+    <li><a href="../libraries/awful.spawn.html#raise_or_spawn">awful.spawn.raise_or_spawn</a></li>
+</ul>
+
+<p>They allow to specify that a command should only have one running instance.
+This works across restart too, so all hacks to handle restarting Awesome are
+no longer required.</p>
+
+<p>Note that the <a href="../classes/client.html#client.startup_id">client.startup_id</a> isn't supported by all applications and a
+Linux-specific workaround is recommended to improve the reliability of the
+<a href="../libraries/awful.spawn.html#">awful.spawn</a> functions.</p>
+
+<h3>A brand new keygrabber API</h3>
+
+<p>The <code>keygrabber</code> module API was rebuilt from scratch to make it more usable.
+The previous API was very low level, very close to how it actually work, but
+was disconnected from how keygrabbers are used in a window manager. Getting
+anything done with the previous API required a lot of boilerplate code and had
+many corner cases to handle. The new API has built-in support for the most
+common use cases and is fully declarative.</p>
+
+<h3>A new GTK color palette based theme</h3>
+
+<p>A new theme has been added. It reads the GTK theme colors and use them in the
+<code>wibar</code>, <code>menu</code> and <code>titlebar</code>. It helps create an uniform look and feel
+between the window manager and client applications with minimal efforts.</p>
+
+<h3>Widgets improvements</h3>
+
+<p>The following widgets have been added:</p>
+
+
+<table class='widget_list' border=1>
+ <tr style='font-weight: bold;'>
+  <th align='center'>Name</th>
+  <th align='center'>Example</th>
+ </tr>
+<tr>
+ <td>
+  <a href='../classes/wibox.widget.checkbox.html'>wibox.widget.separator</a>
+ </td>
+ <td><img src='../images/AUTOGEN_wibox_widget_defaults_separator.svg' /></td>
+</tr>
+</table>
+
+
+<p>It is now possible to set <code>spacing</code> widgets for all layouts:</p>
+
+<p><a href="../classes/wibox.layout.flex.html#wibox.layout.flex.spacing_widget"><img src="../images/AUTOGEN_wibox_layout_flex_spacing_widget.svg" alt="The separator widget"/></a></p>
+
+<p>The <a href="../classes/awful.widget.taglist.html#">awful.widget.taglist</a> and <a href="../classes/awful.widget.tasklist.html#">awful.widget.tasklist</a> now support creating
+custom widgets for each elements:</p>
+
+<p><a href="../classes/wibox.layout.flex.html#wibox.layout.flex.spacing_widget"><img src="../images/AUTOGEN_wibox_awidget_taglist_indexed.svg" alt="The separator widget"/></a></p>
+
+<p><a href="../classes/wibox.layout.flex.html#wibox.layout.flex.spacing_widget"><img src="../images/AUTOGEN_wibox_awidget_tasklist_rounded.svg" alt="The separator widget"/></a></p>
+
+<p><a href="../classes/wibox.layout.flex.html#wibox.layout.flex.spacing_widget"><img src="../images/AUTOGEN_wibox_awidget_tasklist_windows10.svg" alt="The separator widget"/></a></p>
+
+<p>A new <code>popup</code> widget allows to bypass most of the boilerplate code and easily
+display widgets on the screen:</p>
+
+<p><a href="../classes/awful.popup.html"><img src="../images/AUTOGEN_awful_popup_wiboxtypes.svg" alt="The ratio strategies"/></a></p>
+
+
+<p>The <a href="../classes/awful.widget.layoutlist.html#">awful.widget.layoutlist</a> allows to easily display and select the client
+layout from a widget:</p>
+
+<p><a href="../classes/awful.widget.layoutlist.html"><img src="../images/AUTOGEN_awful_widget_layoutlist_bar.svg" alt="The layoutbox"/></a></p>
+
+
+<p><a name="Noteworthy_fixes"></a></p>
+<h2>Noteworthy fixes</h2>
+
+<ul>
+    <li>There is no longer an error when a tag defined by name in <a href="../libraries/awful.rules.html#">awful.rules</a> is
+    not found.</li>
+    <li>The menubar is now generally more robust thanks to a variety of improvements</li>
+    <li>Many dead links in the documentation have been fixed</li>
+    <li>The <code>textclock</code> is now generally more robust with formatting issues,
+    timezones and declarative constructors.</li>
+    <li>The last screen is never removed. Previously, some laptops removed all screens
+    during suspend, causing all clients to go to the first tag or getting lost
+    completely.</li>
+    <li>The new default <a href="../sample files/rc.lua.html#">rc.lua</a> uses <code>request::activate</code> to set the focus. This
+    fixes many corner case such as unfocusable clients getting the focus.</li>
+    <li>Calling <a href="../libraries/awful.spawn.html#">awful.spawn</a> with a set of properties is now more reliable.</li>
+    <li><a href="../libraries/awful.key.html#execute">awful.key.execute</a> is now much more reliable.</li>
+</ul>
+
+<p><a name="Behavior_changes"></a></p>
+<h2>Behavior changes</h2>
+
+<ul>
+    <li>Previously, when accessing a screen by RandR output name caused a Lua error
+    when no output with the given name exists. This was changed to now return
+    <code>nil</code> instead. This could break code that uses <a href="https://www.lua.org/manual/5.1/manual.html#pdf-pcall">pcall</a> to check if a screen
+    exists. This code now needs to be changed to check for a <code>nil</code> return instead.
+    In practice it is unlikely anyone will notice the difference.</li>
+    <li>In the previous release, unfocusable clients might also not be raised.
+    It was decided that this is a bug and the default behavior was changed.</li>
+</ul>
+
+<p><a name="v42"></a></p>
+<h1>Awesome window manager framework version 4.2 changes</h1>
+
+<p>Awesome v4.2 is the second release of the 4.x API. It mostly fixes the bugs
+reported over the last 3 months and adds a couple widgets. Almost 150 issues
 have been resolved or decided to be obsolete.</p>
 
 <p><a name="Noteworthy_fixes"></a></p>
 <h2>Noteworthy fixes</h2>
 
 <ul>
-    <li>The annoying maximization regression from v4.1 have been fixed</li>
+    <li>The annoying maximization regression from v4.1 has been fixed</li>
     <li>Fixes broken drag&amp;drop with some applications like FlowBlade</li>
     <li>Changing the keyboard layout using <code>xmodmap</code> is now much faster</li>
-    <li>Fixes a regression that prevents Awesome to start with the wallpaper is invalid</li>
+    <li>Fixes a regression that prevents Awesome to start when the wallpaper is invalid</li>
     <li>The client history is now more reliable</li>
     <li>Another instance where clients ended up in the wrong screen has been fixed</li>
     <li>Awesome will no longer generate zombie processes when restarted</li>
@@ -260,7 +433,7 @@ have been resolved or decided to be obsolete.</p>
 
 <p><a href="../classes/wibox.layout.ratio.html"><img src="../images/AUTOGEN_wibox_layout_ratio_strategy.svg" alt="The ratio strategies"/></a></p>
 
-<p>The <code>manual</code> layout fix a capability gap where hierarchical elements need to be
+<p>The <code>manual</code> layout fixes a capability gap where hierarchical elements need to be
 placed manually. It has multiple modes including an <a href="../libraries/awful.placement.html#">awful.placement</a> integration.</p>
 
 <p><a href="../classes/wibox.layout.manual.html"><img src="../images/AUTOGEN_wibox_layout_manual_add_at.svg" alt="The manual layout"/></a></p>
@@ -275,7 +448,7 @@ placed manually. It has multiple modes including an <a href="../libraries/awful.
 <h2>Behavior changes</h2>
 
 <ul>
-    <li>The client <code>property::floating</code> is now also emitted when when the floating
+    <li>The client <code>property::floating</code> is now also emitted when the floating
     state changes implicitly, e.g. because the client gets maximized or
     fullscreened.</li>
     <li>Building Awesome from its root source directory is no longer supported and
@@ -321,7 +494,7 @@ share wiboxes across multiple screens.</p>
 
 <p>The <a href="../classes/awful.widget.taglist.html#">awful.widget.taglist</a> now has <code>volatile</code> theme variables.</p>
 
-<p>There is now extra enviroment variables such as <code>AWESOME_ICON_PATH</code> and
+<p>There is now extra environment variables such as <code>AWESOME_ICON_PATH</code> and
 <code>AWESOME_THEMES_PATH</code> for those who prefer not installing Awesome.</p>
 
 <p>Dynamic "C" Lua libraries are now detected like pure Lua ones.</p>
@@ -556,8 +729,8 @@ awful.mouse.snap.client_enabled = <span class="keyword">false</span>
 
 <ul>
     <li><a href="../libraries/awful.hotkeys_popup.html#">awful.hotkeys_popup</a></li>
-    <li><a href="../libraries/awful.hotkeys_popup.keys.html#">awful.hotkeys_popup.keys</a></li>
-    <li><a href="../libraries/awful.hotkeys_popup.keys.vim.html#">awful.hotkeys_popup.keys.vim</a></li>
+    <li><code>awful.hotkeys_popup.keys</code></li>
+    <li><code>awful.hotkeys_popup.keys.vim</code></li>
     <li><a href="../libraries/awful.hotkeys_popup.widget.html#">awful.hotkeys_popup.widget</a></li>
 </ul>
 
@@ -1166,7 +1339,7 @@ screen.connect_signal(<span class="string">"list"</span>, awesome.restart)
 
 <ul>
     <li><a href="../classes/screen.html#">screen</a></li>
-    <li><a href="../classes/screen.html#.list">screen.list</a></li>
+    <li><a href="../classes/screen.html#screen.list">screen.list</a></li>
 </ul>
 
 
@@ -1256,7 +1429,7 @@ undertaking in 4.0 to make the API coherent and well documented.</p>
     <li>awful.<code>mouse.client.dragtotag.border</code></li>
     <li>awful.<code>mouse.client.corner</code></li>
     <li>awful.<a href="../classes/screen.html#awful.screen.getdistance_sq">screen.getdistance_sq</a></li>
-    <li>awful.<a href="../classes/screen.html#awful.screen.padding">screen.padding</a></li>
+    <li>awful.<a href="../classes/screen.html#screen.padding">screen.padding</a></li>
     <li>awful.<a href="../classes/tag.html#awful.tag.move">tag.move</a></li>
     <li>awful.<a href="../classes/tag.html#tag:swap">tag.swap</a></li>
     <li>awful.<a href="../classes/tag.html#tag:delete">tag.delete</a></li>
@@ -1322,15 +1495,15 @@ Note that theses aliases are temporary and will be removed.</p>
 
 <ul>
     <li><a href="../libraries/awful.wibox.html#">awful.wibox</a></li>
-    <li><a href="../classes/awful.widget.graph.html#">awful.widget.graph</a></li>
-    <li><a href="../classes/awful.widget.progressbar.html#">awful.widget.progressbar</a></li>
+    <li><code>awful.widget.graph</code></li>
+    <li><code>awful.widget.progressbar</code></li>
     <li><a href="../classes/awful.widget.textclock.html#">awful.widget.textclock</a></li>
-    <li><a href="../classes/wibox.layout.constraint.html#">wibox.layout.constraint</a></li>
-    <li><a href="../classes/wibox.layout.margin.html#">wibox.layout.margin</a></li>
-    <li><a href="../classes/wibox.layout.mirror.html#">wibox.layout.mirror</a></li>
-    <li><a href="../classes/wibox.layout.rotate.html#">wibox.layout.rotate</a></li>
-    <li><a href="../classes/wibox.layout.scroll.html#">wibox.layout.scroll</a></li>
-    <li><a href="../classes/wibox.widget.background.html#">wibox.widget.background</a></li>
+    <li><code>wibox.layout.constraint</code></li>
+    <li><code>wibox.layout.margin</code></li>
+    <li><code>wibox.layout.mirror</code></li>
+    <li><code>wibox.layout.rotate</code></li>
+    <li><code>wibox.layout.scroll</code></li>
+    <li><code>wibox.widget.background</code></li>
 </ul>
 
 <h3>The mouse finder module is gone</h3>
@@ -1444,7 +1617,7 @@ visibility count and reduced our infrastructure maintenance cost.</p>
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-10-20 13:20:04 </i>
+<i style="float:right;">Last updated 2019-01-28 07:42:01 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

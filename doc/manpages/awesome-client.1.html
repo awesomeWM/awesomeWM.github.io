@@ -745,7 +745,7 @@ asciidoc.install();
 <div class="sect1">
 <h2 id="_synopsis">SYNOPSIS</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>awesome-client</p></div>
+<div class="paragraph"><p>awesome-client [-h|--help] [command [command&#8230;]]</p></div>
 </div>
 </div>
 <div class="sect1">
@@ -758,9 +758,42 @@ It communicates with awesome via D-Bus, allowing remote execution of Lua code.</
 <div class="sect1">
 <h2 id="_usage">USAGE</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>awesome-client reads commands from standard input and sends them via D-Bus to awesome.
-If <em>rlwrap</em> is installed, it will be used to provide a readline command line interface.</p></div>
+<div class="paragraph"><p>awesome-client reads commands passed on the command line or from standard input
+and sends them via D-Bus to awesome.
+If <em>rlwrap</em> is installed, it will be used to provide a readline command line
+interface.</p></div>
 <div class="paragraph"><p>The <em>awful.remote</em> module has to be loaded if you want this command to work.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_examples">EXAMPLES</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre><code>$ awesome-client 'return 1+1, "Hello, world"\
+   double 2
+   string "Hello, world"
+
+# The following does not return anything on the command line,
+# but will show a notification.
+$ awesome-client '
+&gt; naughty = require("naughty")
+&gt; naughty.notify({
+&gt; title="CLI Notification",
+&gt; text="This is a notification sent from the command line!"})
+&gt; '
+
+# Entering read-eval-print-loop mode
+# This mode will send every line to awesome, exactly the same as passing
+# multiple commands on the command line.
+$ awesome-client
+awesome# return 1+1
+   double 2
+awesome# return 1+1, "Hello, world"
+   double 2
+   string "Hello, world"
+awesome#</code></pre>
+</div></div>
 </div>
 </div>
 <div class="sect1">
@@ -785,7 +818,7 @@ If <em>rlwrap</em> is installed, it will be used to provide a readline command l
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-20 13:19:01 UTC
+Last updated 2019-01-28 07:40:58 UTC
 </div>
 </div>
 </body>
