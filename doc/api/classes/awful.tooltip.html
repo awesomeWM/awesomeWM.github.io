@@ -188,11 +188,7 @@
 
 <h2> How to create a tooltip?</h2>
 
-
-
-<p><img src="../images/AUTOGEN_awful_tooltip_textclock.svg" alt="Usage example"/></p>
-
-
+<p><img src="../images/AUTOGEN_awful_tooltip_textclock.svg" alt="Usage example" /></p>
 
 <pre>
 <span class="keyword">local</span> mytextclock = wibox.widget.textclock()
@@ -205,13 +201,10 @@
 }
 </pre>
 
+
 <p> Alternatively, you can use <code>mouse::enter</code> signal:</p>
 
-
-
-<p><img src="../images/AUTOGEN_awful_tooltip_textclock2.svg" alt="Usage example"/></p>
-
-
+<p><img src="../images/AUTOGEN_awful_tooltip_textclock2.svg" alt="Usage example" /></p>
 
 <pre>
 <span class="keyword">local</span> mytextclock = wibox.widget.textclock()
@@ -225,13 +218,10 @@ mytextclock:connect_signal(<span class="string">'mouse::enter'</span>, <span cla
 <span class="keyword">end</span>)
 </pre>
 
+
 <h2> How to create a tooltip without objects?</h2>
 
-
-
-<p><img src="../images/AUTOGEN_awful_tooltip_mouse.svg" alt="Usage example"/></p>
-
-
+<p><img src="../images/AUTOGEN_awful_tooltip_mouse.svg" alt="Usage example" /></p>
 
 <pre>
 <span class="keyword">local</span> tt = awful.tooltip {
@@ -242,23 +232,24 @@ mytextclock:connect_signal(<span class="string">'mouse::enter'</span>, <span cla
 tt.bg = beautiful.bg_normal
 </pre>
 
-<h2> How to add the same tooltip to multiple objects?</h2>
 
+<h2> How to add the same tooltip to multiple objects?</h2>
 
 <pre>
 myclock_t:add_to_object(obj1)
 myclock_t:add_to_object(obj2)
 </pre>
 
+
 <p> Now the same tooltip is attached to <code>myclock</code>, <code>obj1</code>, <code>obj2</code>.</p>
 
 <h2> How to remove a tooltip from several objects?</h2>
-
 
 <pre>
 myclock_t:remove_from_object(obj1)
 myclock_t:remove_from_object(obj2)
 </pre>
+
 
 <p> Now the same tooltip is only attached to <code>myclock</code>.</p>
     <h3>Info:</h3>
@@ -315,7 +306,7 @@ myclock_t:remove_from_object(obj2)
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.tooltip.timeout">timeout</a></td>
-	<td class="summary">Change the tooltip's update interval.</td>
+	<td class="summary">Change the tooltip&rsquo;s update interval.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.tooltip.margins">margins</a></td>
@@ -539,8 +530,6 @@ myclock_t:remove_from_object(obj2)
     <ul>
         <li><span class="parameter">boolean</span>
 
-
-
         </li>
     </ul>
 
@@ -554,35 +543,27 @@ myclock_t:remove_from_object(obj2)
     <strong>align</strong>
     </dt>
     <dd>
-
-<p>The horizontal alignment. </p>
+    <p>The horizontal alignment.</p>
 
 <p> This is valid for the mouse mode only. For the outside mode, use
  <a href="../classes/awful.tooltip.html#awful.tooltip.preferred_positions">preferred_positions</a>.</p>
 
+<p><img src="../images/AUTOGEN_awful_tooltip_align.svg" alt="Usage example" /></p>
 
-
-<p><img src="../images/AUTOGEN_awful_tooltip_align.svg" alt="Usage example"/></p>
-
-
-
-
-<p><img src="../images/AUTOGEN_awful_tooltip_align2.svg" alt="Usage example"/></p>
-
+<p><img src="../images/AUTOGEN_awful_tooltip_align2.svg" alt="Usage example" /></p>
 
 <p> The following values are valid:</p>
 
 <ul>
-    <li>top_left</li>
-    <li>left</li>
-    <li>bottom_left</li>
-    <li>right</li>
-    <li>top_right</li>
-    <li>bottom_right</li>
-    <li>bottom</li>
-    <li>top</li>
+<li>top_left</li>
+<li>left</li>
+<li>bottom_left</li>
+<li>right</li>
+<li>top_right</li>
+<li>bottom_right</li>
+<li>bottom</li>
+<li>top</li>
 </ul>
-
 
 
 
@@ -606,9 +587,7 @@ myclock_t:remove_from_object(obj2)
     The shape of the tooltip window.
  If the shape require some parameters, use <a href="../classes/awful.tooltip.html#awful.tooltip:set_shape">set_shape</a>.</p>
 
-
-
-<p><img src="../images/AUTOGEN_awful_tooltip_shape.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_tooltip_shape.svg" alt="Usage example" />
 
 
 
@@ -628,41 +607,31 @@ myclock_t:remove_from_object(obj2)
     <strong>mode</strong>
     </dt>
     <dd>
-
-<p>Set the tooltip positioning mode.
+    <p>Set the tooltip positioning mode.
  This affects how the tooltip is placed. By default, the tooltip is <a href="../classes/awful.tooltip.html#awful.tooltip.align">align</a>ed
  close to the mouse cursor. It is also possible to place the tooltip relative
  to the widget geometry.</p>
 
 <p> <strong>mouse:</strong></p>
 
-
-
-<p><img src="../images/AUTOGEN_awful_tooltip_mode.svg" alt="Usage example"/></p>
-
+<p><img src="../images/AUTOGEN_awful_tooltip_mode.svg" alt="Usage example" /></p>
 
 <p> <strong>outside:</strong></p>
 
-
-
-<p><img src="../images/AUTOGEN_awful_tooltip_mode2.svg" alt="Usage example"/></p>
-
+<p><img src="../images/AUTOGEN_awful_tooltip_mode2.svg" alt="Usage example" /></p>
 
 <p> Valid modes are:</p>
 
 <ul>
-    <li>"mouse": Next to the mouse cursor</li>
-    <li>"outside": Outside of the widget</li>
+<li>&ldquo;mouse&rdquo;: Next to the mouse cursor</li>
+<li>&ldquo;outside&rdquo;: Outside of the widget</li>
 </ul>
-
 
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
-
-
 
         </li>
     </ul>
@@ -677,13 +646,9 @@ myclock_t:remove_from_object(obj2)
     <strong>preferred_positions</strong>
     </dt>
     <dd>
+    <p>The preferred positions when in <code>outside</code> mode.</p>
 
-<p>The preferred positions when in <code>outside</code> mode. </p>
-
-
-
-<p><img src="../images/AUTOGEN_awful_tooltip_preferred_positions.svg" alt="Usage example"/></p>
-
+<p><img src="../images/AUTOGEN_awful_tooltip_preferred_positions.svg" alt="Usage example" /></p>
 
 <p> If the tooltip fits on multiple sides of the drawable, then this defines the
  priority.</p>
@@ -691,18 +656,17 @@ myclock_t:remove_from_object(obj2)
 <p> The valid table values are:</p>
 
 <ul>
-    <li>"top"</li>
-    <li>"right"</li>
-    <li>"left"</li>
-    <li>"bottom"</li>
+<li>&ldquo;top&rdquo;</li>
+<li>&ldquo;right&rdquo;</li>
+<li>&ldquo;left&rdquo;</li>
+<li>&ldquo;bottom&rdquo;</li>
 </ul>
+
 
 <p> The default is:</p>
 
 <pre><code>{"top", "right", "left", "bottom"}
 </code></pre>
-
-
 
 
     <h3>Type:</h3>
@@ -729,40 +693,31 @@ myclock_t:remove_from_object(obj2)
     <strong>preferred_alignments</strong>
     </dt>
     <dd>
-
-<p>The preferred alignment when using the <code>outside</code> mode. </p>
+    <p>The preferred alignment when using the <code>outside</code> mode.</p>
 
 <p> The values of the table are ordered by priority, the first one that fits
  will be used.</p>
 
 <p> <strong>front:</strong></p>
 
-
-
-<p><img src="../images/AUTOGEN_awful_tooltip_preferred_alignment.svg" alt="Usage example"/></p>
-
+<p><img src="../images/AUTOGEN_awful_tooltip_preferred_alignment.svg" alt="Usage example" /></p>
 
 <p> <strong>middle:</strong></p>
 
-
-
-<p><img src="../images/AUTOGEN_awful_tooltip_preferred_alignment2.svg" alt="Usage example"/></p>
-
+<p><img src="../images/AUTOGEN_awful_tooltip_preferred_alignment2.svg" alt="Usage example" /></p>
 
 <p> <strong>back:</strong></p>
 
-
-
-<p><img src="../images/AUTOGEN_awful_tooltip_preferred_alignment3.svg" alt="Usage example"/></p>
-
+<p><img src="../images/AUTOGEN_awful_tooltip_preferred_alignment3.svg" alt="Usage example" /></p>
 
 <p> The valid table values are:</p>
 
 <ul>
-    <li>front</li>
-    <li>middle</li>
-    <li>back</li>
+<li>front</li>
+<li>middle</li>
+<li>back</li>
 </ul>
+
 
 <p> The default is:</p>
 
@@ -770,13 +725,9 @@ myclock_t:remove_from_object(obj2)
 </code></pre>
 
 
-
-
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
-
-
 
         </li>
     </ul>
@@ -855,7 +806,7 @@ myclock_t:remove_from_object(obj2)
     <strong>timeout</strong>
     </dt>
     <dd>
-    Change the tooltip's update interval.
+    Change the tooltip&rsquo;s update interval.
 
 
     <h3>Type:</h3>
@@ -880,9 +831,9 @@ myclock_t:remove_from_object(obj2)
     <strong>margins</strong>
     </dt>
     <dd>
-    Set all margins around the tooltip textbox  </p>
+    Set all margins around the tooltip textbox</p>
 
-<p><img src="../images/AUTOGEN_awful_tooltip_margins.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_tooltip_margins.svg" alt="Usage example" />
 
 
     <h3>Type:</h3>
@@ -907,18 +858,14 @@ myclock_t:remove_from_object(obj2)
     <strong>border_width</strong>
     </dt>
     <dd>
-    The border width. </p>
+    The border width.</p>
 
-
-
-<p><img src="../images/AUTOGEN_awful_tooltip_border_width.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_tooltip_border_width.svg" alt="Usage example" />
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">number</span>
-
-
 
         </li>
     </ul>
@@ -933,11 +880,9 @@ myclock_t:remove_from_object(obj2)
     <strong>border_color</strong>
     </dt>
     <dd>
-    The border color. </p>
+    The border color.</p>
 
-
-
-<p><img src="../images/AUTOGEN_awful_tooltip_border_color.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_tooltip_border_color.svg" alt="Usage example" />
 
 
 
@@ -951,9 +896,9 @@ myclock_t:remove_from_object(obj2)
     <strong>margins_leftright</strong>
     </dt>
     <dd>
-    Set the margins around the left and right of the tooltip textbox  </p>
+    Set the margins around the left and right of the tooltip textbox</p>
 
-<p><img src="../images/AUTOGEN_awful_tooltip_margins_leftright.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_tooltip_margins_leftright.svg" alt="Usage example" />
 
 
     <h3>Type:</h3>
@@ -978,9 +923,9 @@ myclock_t:remove_from_object(obj2)
     <strong>margins_topbottom</strong>
     </dt>
     <dd>
-    Set the margins around the top and bottom of the tooltip textbox  </p>
+    Set the margins around the top and bottom of the tooltip textbox</p>
 
-<p><img src="../images/AUTOGEN_awful_tooltip_margins_topbottom.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_tooltip_margins_topbottom.svg" alt="Usage example" />
 
 
     <h3>Type:</h3>
@@ -1129,8 +1074,6 @@ myclock_t:remove_from_object(obj2)
     <ul>
         <li><span class="parameter">string</span>
 
-
-
         </li>
     </ul>
 
@@ -1230,7 +1173,7 @@ myclock_t:remove_from_object(obj2)
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-02-25 14:00:40 </i>
+<i style="float:right;">Last updated 2019-02-26 10:13:58 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

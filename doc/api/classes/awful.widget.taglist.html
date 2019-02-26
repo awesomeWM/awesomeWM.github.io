@@ -182,20 +182,16 @@
 <p>Taglist widget module for awful</p>
 
 <p> Here is a more advanced example of how to extent the <a href="../classes/awful.widget.taglist.html">taglist</a>.</p>
-<p>
-<p> It provides:</p>
+<p><p> It provides:</p>
 
 <ul>
-    <li>mouse "hover" color</li>
-    <li>an extra index field</li>
-    <li>a powerline look and feel</li>
+<li>mouse &ldquo;hover&rdquo; color</li>
+<li>an extra index field</li>
+<li>a powerline look and feel</li>
 </ul>
 
 
-
-<p><img src="../images/AUTOGEN_wibox_awidget_taglist_indexed.svg" alt="Usage example"/></p>
-
-
+<p><img src="../images/AUTOGEN_wibox_awidget_taglist_indexed.svg" alt="Usage example" /></p>
 
 <pre>
 s.mytaglist = awful.widget.taglist {
@@ -271,33 +267,36 @@ s.mytaglist = awful.widget.taglist {
 }
 </pre>
 
-<p> As demonstrated in the example above, there are a few "shortcuts" to avoid
+
+<p> As demonstrated in the example above, there are a few &ldquo;shortcuts&rdquo; to avoid
  re-inventing the wheel. By setting the predefined roles as widget <code>id</code>s,
  <a href="../classes/awful.widget.common.html#">awful.widget.common</a> will do most of the work to update the values
  automatically. All of them are optional. The supported roles are:</p>
 
 <ul>
-    <li><code>icon_role</code>: A <a href="../classes/wibox.widget.imagebox.html#">wibox.widget.imagebox</a></li>
-    <li><code>text_role</code>: A <a href="../classes/wibox.widget.textbox.html#">wibox.widget.textbox</a></li>
-    <li><code>background_role</code>: A <a href="../classes/wibox.container.background.html#">wibox.container.background</a></li>
-    <li><code>text_margin_role</code>: A <a href="../classes/wibox.container.margin.html#">wibox.container.margin</a></li>
-    <li><code>icon_margin_role</code>: A <a href="../classes/wibox.container.margin.html#">wibox.container.margin</a></li>
+<li><code>icon_role</code>: A <a href="../classes/wibox.widget.imagebox.html#">wibox.widget.imagebox</a></li>
+<li><code>text_role</code>: A <a href="../classes/wibox.widget.textbox.html#">wibox.widget.textbox</a></li>
+<li><code>background_role</code>: A <a href="../classes/wibox.container.background.html#">wibox.container.background</a></li>
+<li><code>text_margin_role</code>: A <a href="../classes/wibox.container.margin.html#">wibox.container.margin</a></li>
+<li><code>icon_margin_role</code>: A <a href="../classes/wibox.container.margin.html#">wibox.container.margin</a></li>
 </ul>
+
 
 <p> <a href="../classes/awful.widget.common.html#">awful.widget.common</a> also has 2 callbacks to give more control over the widget:</p>
 
 <ul>
-    <li><code>create_callback</code>: Called once after the widget instance is created</li>
-    <li><code>update_callback</code>: Called everytime the data is refreshed</li>
+<li><code>create_callback</code>: Called once after the widget instance is created</li>
+<li><code>update_callback</code>: Called everytime the data is refreshed</li>
 </ul>
+
 
 <p> Both callback have the same parameters:</p>
 
 <ul>
-    <li><code>self</code>: The widget instance (<em>widget</em>).</li>
-    <li><code>t</code>: The tag (<em>tag</em>)</li>
-    <li><code>index</code>: The widget position in the list (<em>number</em>)</li>
-    <li><code>tags</code>: The list of tag, in order (<em>table</em>)</li>
+<li><code>self</code>: The widget instance (<em>widget</em>).</li>
+<li><code>t</code>: The tag (<em>tag</em>)</li>
+<li><code>index</code>: The widget position in the list (<em>number</em>)</li>
+<li><code>tags</code>: The list of tag, in order (<em>table</em>)</li>
 </ul>
 </p>
     <h3>Info:</h3>
@@ -484,18 +483,16 @@ s.mytaglist = awful.widget.taglist {
     <strong>awful.taglist (args, filter, buttons, style[, update_function[, base_widget]])</strong>
     </dt>
     <dd>
-    Create a new taglist widget.  The last two arguments (update<em>function
+    Create a new taglist widget.  The last two arguments (update_function
  and layout) serve to customize the layout of the taglist (eg. to
  make it vertical). For that, you will need to copy the
- awful.widget.common.list</em>update function, make your changes to it
+ awful.widget.common.list_update function, make your changes to it
  and pass it as update_function here. Also change the layout if the
  default is not what you want.
 
 
     <ul>
         <li><span class="parameter">args</span>
-
-
         <ul>
         <li><span class="parameter">screen</span>
             <span class="types"><a class="type" href="../classes/screen.html#">screen</a></span>
@@ -556,42 +553,30 @@ s.mytaglist = awful.widget.taglist {
         <li><span class="parameter">style.bg_occupied</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
 
-
-
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.fg_occupied</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
-
-
 
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.bg_empty</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
 
-
-
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.fg_empty</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
-
-
 
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.bg_volatile</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
 
-
-
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.fg_volatile</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
-
-
 
          (<em>default</em> nil)
         </li>
@@ -622,8 +607,6 @@ s.mytaglist = awful.widget.taglist {
         </li>
         <li><span class="parameter">style.disable_icon</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-
-
 
          (<em>default</em> nil)
         </li>
@@ -720,8 +703,6 @@ s.mytaglist = awful.widget.taglist {
     <ul>
         <li><span class="parameter">color</span>
 
-
-
          (<em>default</em> fg_focus)
         </li>
     </ul>
@@ -746,8 +727,6 @@ s.mytaglist = awful.widget.taglist {
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">color</span>
-
-
 
          (<em>default</em> bg_focus)
         </li>
@@ -774,8 +753,6 @@ s.mytaglist = awful.widget.taglist {
     <ul>
         <li><span class="parameter">color</span>
 
-
-
          (<em>default</em> fg_urgent)
         </li>
     </ul>
@@ -800,8 +777,6 @@ s.mytaglist = awful.widget.taglist {
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">color</span>
-
-
 
          (<em>default</em> bg_urgent)
         </li>
@@ -828,8 +803,6 @@ s.mytaglist = awful.widget.taglist {
     <ul>
         <li><span class="parameter">color</span>
 
-
-
         </li>
     </ul>
 
@@ -853,8 +826,6 @@ s.mytaglist = awful.widget.taglist {
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">color</span>
-
-
 
         </li>
     </ul>
@@ -880,8 +851,6 @@ s.mytaglist = awful.widget.taglist {
     <ul>
         <li><span class="parameter">color</span>
 
-
-
         </li>
     </ul>
 
@@ -905,8 +874,6 @@ s.mytaglist = awful.widget.taglist {
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">color</span>
-
-
 
         </li>
     </ul>
@@ -932,8 +899,6 @@ s.mytaglist = awful.widget.taglist {
     <ul>
         <li><span class="parameter">color</span>
 
-
-
         </li>
     </ul>
 
@@ -957,8 +922,6 @@ s.mytaglist = awful.widget.taglist {
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">color</span>
-
-
 
         </li>
     </ul>
@@ -984,8 +947,6 @@ s.mytaglist = awful.widget.taglist {
     <ul>
         <li><span class="parameter">surface</span>
 
-
-
         </li>
     </ul>
 
@@ -1009,8 +970,6 @@ s.mytaglist = awful.widget.taglist {
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
-
 
         </li>
     </ul>
@@ -1036,8 +995,6 @@ s.mytaglist = awful.widget.taglist {
     <ul>
         <li><span class="parameter">surface</span>
 
-
-
         </li>
     </ul>
 
@@ -1061,8 +1018,6 @@ s.mytaglist = awful.widget.taglist {
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
-
 
         </li>
     </ul>
@@ -1088,8 +1043,6 @@ s.mytaglist = awful.widget.taglist {
     <ul>
         <li><span class="parameter">boolean</span>
 
-
-
         </li>
     </ul>
 
@@ -1110,8 +1063,6 @@ s.mytaglist = awful.widget.taglist {
     <ul>
         <li><span class="parameter">boolean</span>
 
-
-
         </li>
     </ul>
 
@@ -1131,8 +1082,6 @@ s.mytaglist = awful.widget.taglist {
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
-
-
 
         </li>
     </ul>
@@ -1200,8 +1149,6 @@ s.mytaglist = awful.widget.taglist {
     <ul>
         <li><span class="parameter">number</span>
 
-
-
          (<em>default</em> 0)
         </li>
     </ul>
@@ -1226,8 +1173,6 @@ s.mytaglist = awful.widget.taglist {
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">color</span>
-
-
 
         </li>
     </ul>
@@ -1271,8 +1216,6 @@ s.mytaglist = awful.widget.taglist {
     <ul>
         <li><span class="parameter">number</span>
 
-
-
          (<em>default</em> 0)
         </li>
     </ul>
@@ -1297,8 +1240,6 @@ s.mytaglist = awful.widget.taglist {
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">color</span>
-
-
 
         </li>
     </ul>
@@ -1342,8 +1283,6 @@ s.mytaglist = awful.widget.taglist {
     <ul>
         <li><span class="parameter">number</span>
 
-
-
          (<em>default</em> 0)
         </li>
     </ul>
@@ -1368,8 +1307,6 @@ s.mytaglist = awful.widget.taglist {
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">color</span>
-
-
 
         </li>
     </ul>
@@ -1413,8 +1350,6 @@ s.mytaglist = awful.widget.taglist {
     <ul>
         <li><span class="parameter">number</span>
 
-
-
          (<em>default</em> 0)
         </li>
     </ul>
@@ -1439,8 +1374,6 @@ s.mytaglist = awful.widget.taglist {
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">color</span>
-
-
 
         </li>
     </ul>
@@ -1484,8 +1417,6 @@ s.mytaglist = awful.widget.taglist {
     <ul>
         <li><span class="parameter">number</span>
 
-
-
          (<em>default</em> 0)
         </li>
     </ul>
@@ -1511,8 +1442,6 @@ s.mytaglist = awful.widget.taglist {
     <ul>
         <li><span class="parameter">color</span>
 
-
-
         </li>
     </ul>
 
@@ -1534,7 +1463,7 @@ s.mytaglist = awful.widget.taglist {
     <strong>awful.taglist.source.for_screen</strong>
     </dt>
     <dd>
-    All tags for the defined screen ordered by indices. </p>
+    All tags for the defined screen ordered by indices.</p>
 
 <p> This is the default source.
 
@@ -1612,7 +1541,7 @@ s.mytaglist = awful.widget.taglist {
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-02-25 14:00:40 </i>
+<i style="float:right;">Last updated 2019-02-26 10:13:58 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

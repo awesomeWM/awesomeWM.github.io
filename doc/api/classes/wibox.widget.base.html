@@ -178,12 +178,8 @@
 <div id="content">
 
 <h1>Class <code>wibox.widget.base</code></h1>
-<p>
-
-</p>
-<p>
-
-</p>
+<p></p>
+<p></p>
     <h3>Info:</h3>
     <ul>
         <li><strong>Copyright</strong>: 2010 Uli Schlachter</li>
@@ -245,11 +241,11 @@
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#wibox.widget.base:buttons">wibox.widget.base:buttons (_buttons)</a></td>
-	<td class="summary">Set/get a widget's buttons.</td>
+	<td class="summary">Set/get a widget&rsquo;s buttons.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.widget.base:set_visible">wibox.widget.base:set_visible (b)</a></td>
-	<td class="summary">Set a widget's visibility.</td>
+	<td class="summary">Set a widget&rsquo;s visibility.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.widget.base:get_visible">wibox.widget.base:get_visible ()</a></td>
@@ -257,31 +253,31 @@
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.widget.base:set_opacity">wibox.widget.base:set_opacity (o)</a></td>
-	<td class="summary">Set a widget's opacity.</td>
+	<td class="summary">Set a widget&rsquo;s opacity.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.widget.base:get_opacity">wibox.widget.base:get_opacity ()</a></td>
-	<td class="summary">Get the widget's opacity.</td>
+	<td class="summary">Get the widget&rsquo;s opacity.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.widget.base:set_forced_width">wibox.widget.base:set_forced_width ([width])</a></td>
-	<td class="summary">Set the widget's forced width.</td>
+	<td class="summary">Set the widget&rsquo;s forced width.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.widget.base:get_forced_width">wibox.widget.base:get_forced_width ()</a></td>
-	<td class="summary">Get the widget's forced width.</td>
+	<td class="summary">Get the widget&rsquo;s forced width.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.widget.base:set_height">wibox.widget.base:set_height ([height])</a></td>
-	<td class="summary">Set the widget's forced height.</td>
+	<td class="summary">Set the widget&rsquo;s forced height.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.widget.base:get_forced_height">wibox.widget.base:get_forced_height ()</a></td>
-	<td class="summary">Get the widget's forced height.</td>
+	<td class="summary">Get the widget&rsquo;s forced height.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.widget.base:get_children">wibox.widget.base:get_children ()</a></td>
-	<td class="summary">Get the widget's direct children widgets.</td>
+	<td class="summary">Get the widget&rsquo;s direct children widgets.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.widget.base:set_children">wibox.widget.base:set_children (children)</a></td>
@@ -322,7 +318,7 @@
     <strong>wibox.widget.base.rect_to_device_geometry ()</strong>
     </dt>
     <dd>
-    Figure out the geometry in the device coordinate space. </p>
+    Figure out the geometry in the device coordinate space.</p>
 
 <p> This gives only tight bounds if no rotations by non-multiples of 90° are
  used.
@@ -339,9 +335,9 @@
     <strong>wibox.widget.base.fit_widget (parent, context, widget, width, height)</strong>
     </dt>
     <dd>
-    Fit a widget for the given available width and height. </p>
+    Fit a widget for the given available width and height.</p>
 
-<p> This calls the widget's <code>:fit</code> callback and caches the result for later use.
+<p> This calls the widget&rsquo;s <code>:fit</code> callback and caches the result for later use.
  Never call <code>:fit</code> directly, but always through this function!
 
 
@@ -388,11 +384,11 @@
     <strong>wibox.widget.base.layout_widget (parent, context, widget, width, height)</strong>
     </dt>
     <dd>
-    Lay out a widget for the given available width and height. </p>
+    Lay out a widget for the given available width and height.</p>
 
-<p> This calls the widget's <code>:layout</code> callback and caches the result for later
+<p> This calls the widget&rsquo;s <code>:layout</code> callback and caches the result for later
  use.  Never call <code>:layout</code> directly, but always through this function!
- However, normally there shouldn't be any reason why you need to use this
+ However, normally there shouldn&rsquo;t be any reason why you need to use this
  function.
 
 
@@ -424,7 +420,7 @@
     <ol>
 
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-        The result from the widget's <code>:layout</code> callback.
+        The result from the widget&rsquo;s <code>:layout</code> callback.
     </ol>
 
 
@@ -436,7 +432,7 @@
     <strong>wibox.widget.base.handle_button ()</strong>
     </dt>
     <dd>
-    Handle a button event on a widget. </p>
+    Handle a button event on a widget.</p>
 
 <p> This is used internally and should not be called directly.
 
@@ -452,7 +448,7 @@
     <strong>wibox.widget.base.place_widget_via_matrix (widget, mat, width, height)</strong>
     </dt>
     <dd>
-    Create widget placement information.  This should be used in a widget's
+    Create widget placement information.  This should be used in a widget&rsquo;s
  <code>:layout()</code> callback.
 
 
@@ -462,7 +458,7 @@
          The widget that should be placed.
         </li>
         <li><span class="parameter">mat</span>
-         A matrix transforming from the parent widget's coordinate
+         A matrix transforming from the parent widget&rsquo;s coordinate
    system. For example, use matrix.create_translate(1, 2) to draw a
    widget at position (1, 2) relative to the parent widget.
         </li>
@@ -494,7 +490,7 @@
     <strong>wibox.widget.base.place_widget_at (widget, x, y, width, height)</strong>
     </dt>
     <dd>
-    Create widget placement information.  This should be used for a widget's
+    Create widget placement information.  This should be used for a widget&rsquo;s
  <code>:layout()</code> callback.
 
 
@@ -539,7 +535,7 @@
     <strong>wibox.widget.base.make_widget_declarative (args)</strong>
     </dt>
     <dd>
-    Create a widget from a declarative description. </p>
+    Create a widget from a declarative description.</p>
 
 <p> See <a href="../documentation/03-declarative-layout.md.html">The declarative layout system</a>.
 
@@ -561,7 +557,7 @@
     <strong>wibox.widget.base.make_widget ([proxy[, widget_name[, args={}]]])</strong>
     </dt>
     <dd>
-    Create an empty widget skeleton. </p>
+    Create an empty widget skeleton.</p>
 
 <p> See <a href="../documentation/04-new-widgets.md.html">Creating new widgets</a>.
 
@@ -624,7 +620,7 @@
     <strong>wibox.widget.base.check_widget ()</strong>
     </dt>
     <dd>
-    Do some sanity checking on a widget. </p>
+    Do some sanity checking on a widget.</p>
 
 <p> This function raises an error if the widget is not valid.
 
@@ -662,7 +658,7 @@
     <strong>wibox.widget.base:buttons (_buttons)</strong>
     </dt>
     <dd>
-    Set/get a widget's buttons.
+    Set/get a widget&rsquo;s buttons.
 
 
     <ul>
@@ -682,7 +678,7 @@
     <strong>wibox.widget.base:set_visible (b)</strong>
     </dt>
     <dd>
-    Set a widget's visibility.
+    Set a widget&rsquo;s visibility.
 
 
     <ul>
@@ -711,8 +707,6 @@
 
            <span class="types"><span class="type">boolean</span></span>
 
-
-
     </ol>
 
 
@@ -724,7 +718,7 @@
     <strong>wibox.widget.base:set_opacity (o)</strong>
     </dt>
     <dd>
-    Set a widget's opacity.
+    Set a widget&rsquo;s opacity.
 
 
     <ul>
@@ -745,7 +739,7 @@
     <strong>wibox.widget.base:get_opacity ()</strong>
     </dt>
     <dd>
-    Get the widget's opacity.
+    Get the widget&rsquo;s opacity.
 
 
 
@@ -765,7 +759,7 @@
     <strong>wibox.widget.base:set_forced_width ([width])</strong>
     </dt>
     <dd>
-    Set the widget's forced width.
+    Set the widget&rsquo;s forced width.
 
 
     <ul>
@@ -791,11 +785,11 @@
     <strong>wibox.widget.base:get_forced_width ()</strong>
     </dt>
     <dd>
-    Get the widget's forced width. </p>
+    Get the widget&rsquo;s forced width.</p>
 
 <p> Note that widget instances can be used in different places simultaneously,
  and therefore can have multiple dimensions.
- If there is no forced width/height, then the only way to get the widget's
+ If there is no forced width/height, then the only way to get the widget&rsquo;s
  actual size is during a <code>mouse::enter</code>, <code>mouse::leave</code> or button event.
 
 
@@ -820,7 +814,7 @@
     <strong>wibox.widget.base:set_height ([height])</strong>
     </dt>
     <dd>
-    Set the widget's forced height.
+    Set the widget&rsquo;s forced height.
 
 
     <ul>
@@ -846,11 +840,11 @@
     <strong>wibox.widget.base:get_forced_height ()</strong>
     </dt>
     <dd>
-    Get the widget's forced height. </p>
+    Get the widget&rsquo;s forced height.</p>
 
 <p> Note that widget instances can be used in different places simultaneously,
  and therefore can have multiple dimensions.
- If there is no forced width/height, then the only way to get the widget's
+ If there is no forced width/height, then the only way to get the widget&rsquo;s
  actual size is during a <code>mouse::enter</code>, <code>mouse::leave</code> or button event.
 
 
@@ -871,7 +865,7 @@
     <strong>wibox.widget.base:get_children ()</strong>
     </dt>
     <dd>
-    Get the widget's direct children widgets. </p>
+    Get the widget&rsquo;s direct children widgets.</p>
 
 <p> This method should be re-implemented by the relevant widgets.
 
@@ -893,7 +887,7 @@
     <strong>wibox.widget.base:set_children (children)</strong>
     </dt>
     <dd>
-    Replace the layout children. </p>
+    Replace the layout children.</p>
 
 <p> The default implementation does nothing, this must be re-implemented by
  all layout and container widgets.
@@ -916,7 +910,7 @@
     <strong>wibox.widget.base:get_all_children ()</strong>
     </dt>
     <dd>
-    Get all direct and indirect children widgets. </p>
+    Get all direct and indirect children widgets.</p>
 
 <p> This will scan all containers recursively to find widgets.</p>
 
@@ -941,32 +935,28 @@
     <strong>wibox.widget.base:emit_signal_recursive (signal_name, ...)</strong>
     </dt>
     <dd>
-
-<p>Emit a signal and ensure all parent widgets in the hierarchies also
+    <p>Emit a signal and ensure all parent widgets in the hierarchies also
  forward the signal.  This is useful to track signals when there is a dynamic
  set of containers and layouts wrapping the widget.</p>
 
 <p> Note that this function has some flaws:</p>
 
 <ol>
-    <li>The signal is only forwarded once the widget tree has been built. This
-    happens after all currently scheduled functions have been executed.
-    Therefore, it will not start to work right away.</li>
-    <li>In case the widget is present multiple times in a single widget tree,
-    this function will also forward the signal multiple times (once per upward
-    tree path).</li>
-    <li>If the widget is removed from the widget tree, the signal is still
-    forwarded for some time, similar to the first case.</li>
+<li>The signal is only forwarded once the widget tree has been built. This
+happens after all currently scheduled functions have been executed.
+Therefore, it will not start to work right away.</li>
+<li>In case the widget is present multiple times in a single widget tree,
+this function will also forward the signal multiple times (once per upward
+tree path).</li>
+<li>If the widget is removed from the widget tree, the signal is still
+forwarded for some time, similar to the first case.</li>
 </ol>
-
 
 
 
     <ul>
         <li><span class="parameter">signal_name</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-
-
 
         </li>
         <li><span class="parameter">...</span>
@@ -999,7 +989,7 @@
         </li>
         <li><span class="parameter">...</span>
             <span class="types"><a class="type" href="../classes/wibox.widget.html">widget</a></span>
-         Additional widgets to add at the end of the "path"
+         Additional widgets to add at the end of the &ldquo;path&rdquo;
          (<em>optional</em>)
         </li>
     </ul>
@@ -1014,7 +1004,7 @@
         The parent widget.</li>
         <li>
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-        The path between "self" and "widget".</li>
+        The path between &ldquo;self&rdquo; and &ldquo;widget&rdquo;.</li>
     </ol>
 
 
@@ -1026,7 +1016,7 @@
     <strong>wibox.widget.base:setup (args)</strong>
     </dt>
     <dd>
-    Set a declarative widget hierarchy description. </p>
+    Set a declarative widget hierarchy description.</p>
 
 <p> See <a href="../documentation/03-declarative-layout.md.html">The declarative layout system</a>.
 
@@ -1034,7 +1024,7 @@
     <ul>
         <li><span class="parameter">args</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-         A table containing the widget's disposition.
+         A table containing the widget&rsquo;s disposition.
         </li>
     </ul>
 
@@ -1048,18 +1038,16 @@
     <strong>wibox.widget.base:make_widget_from_value (wdg[, ...=nil])</strong>
     </dt>
     <dd>
-
-<p>Create a widget from an undetermined value. </p>
+    <p>Create a widget from an undetermined value.</p>
 
 <p> The value can be:</p>
 
 <ul>
-    <li>A widget (in which case nothing new is created)</li>
-    <li>A declarative construct</li>
-    <li>A constructor function</li>
-    <li>A metaobject</li>
+<li>A widget (in which case nothing new is created)</li>
+<li>A declarative construct</li>
+<li>A constructor function</li>
+<li>A metaobject</li>
 </ul>
-
 
 
 
@@ -1091,7 +1079,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-02-25 14:00:40 </i>
+<i style="float:right;">Last updated 2019-02-26 10:13:58 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

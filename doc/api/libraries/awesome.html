@@ -324,7 +324,7 @@
 	</tr>
 	<tr>
 	<td class="name" ><a href="#spawn::timeout">spawn::timeout</a></td>
-	<td class="summary">An application started a spawn event but didn't start in time.</td>
+	<td class="summary">An application started a spawn event but didn&rsquo;t start in time.</td>
 	</tr>
 </table>
 <h2><a href="#Fields">Fields</a></h2>
@@ -394,7 +394,7 @@
         </li>
         <li><span class="parameter">type</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-         One of "string", "number" or "boolean".
+         One of &ldquo;string&rdquo;, &ldquo;number&rdquo; or &ldquo;boolean&rdquo;.
         </li>
     </ul>
 
@@ -569,7 +569,7 @@
     <strong>set_preferred_icon_size (size)</strong>
     </dt>
     <dd>
-    Set the preferred size for client icons. </p>
+    Set the preferred size for client icons.</p>
 
 <p> The closest equal or bigger size is picked if present, otherwise the closest
  smaller size is picked. The default is 0 pixels, ie. the smallest icon.
@@ -665,7 +665,7 @@
         <li><span class="parameter">cmd</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          The environment to use for the spawned program.
-   Without this the spawned process inherits awesome's environment.
+   Without this the spawned process inherits awesome&rsquo;s environment.
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">use_sn</span>
@@ -691,14 +691,14 @@
         <li><span class="parameter">exit_callback</span>
             <span class="types"><span class="type">function</span></span>
          Function to call on process exit. The
-   function arguments will be type of exit ("exit" or "signal") and the exit
+   function arguments will be type of exit (&ldquo;exit&rdquo; or &ldquo;signal&rdquo;) and the exit
    code / the signal number causing process termination.
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">cmd</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          The environment to use for the spawned program.
-   Without this the spawned process inherits awesome's environment.
+   Without this the spawned process inherits awesome&rsquo;s environment.
          (<em>default</em> nil)
         </li>
     </ul>
@@ -786,7 +786,7 @@
 
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
         A string describing the current layout settings,
-   e.g.: 'pc+us+de:2+inet(evdev)+group(alt<em>shift</em>toggle)+ctrl(nocaps)'
+   e.g.: &lsquo;pc+us+de:2+inet(evdev)+group(alt_shift_toggle)+ctrl(nocaps)&rsquo;
     </ol>
 
 
@@ -802,7 +802,7 @@
     <strong>debug::error</strong>
     </dt>
     <dd>
-    A call into the Lua code aborted with an error. </p>
+    A call into the Lua code aborted with an error.</p>
 
 <p> This signal is used in the example configuration, <a href="../documentation/05-awesomerc.md.html#">05-awesomerc.md</a>,
  to let a notification box pop up.
@@ -858,7 +858,7 @@
     <strong>debug::index::miss</strong>
     </dt>
     <dd>
-    An invalid key was read from an object. </p>
+    An invalid key was read from an object.</p>
 
 <p> This can happen if <code>foo</code> in an <code>c.foo</code> access does not exist.
 
@@ -883,9 +883,9 @@
     <strong>debug::newindex::miss</strong>
     </dt>
     <dd>
-    An invalid key was written to an object. </p>
+    An invalid key was written to an object.</p>
 
-<p> This can happen if <code>foo</code> in an <code>c.foo = &quot;bar&quot;</code> assignment doesn't exist.
+<p> This can happen if <code>foo</code> in an <code>c.foo = &quot;bar&quot;</code> assignment doesn&rsquo;t exist.
 
 
     <h3>Arguments:</h3>
@@ -911,7 +911,7 @@
     <strong>systray::update</strong>
     </dt>
     <dd>
-    The systray should be updated. </p>
+    The systray should be updated.</p>
 
 <p> This signal is used in <a href="../classes/wibox.widget.systray.html#">wibox.widget.systray</a>.
 
@@ -927,7 +927,7 @@
     <strong>wallpaper_changed</strong>
     </dt>
     <dd>
-    The wallpaper has changed. </p>
+    The wallpaper has changed.</p>
 
 <p> This signal is used for pseudo-transparency in <a href="../classes/wibox.drawable.html#">wibox.drawable</a> if no
  composite manager is running.
@@ -944,7 +944,7 @@
     <strong>xkb::map_changed</strong>
     </dt>
     <dd>
-    Keyboard map has changed. </p>
+    Keyboard map has changed.</p>
 
 <p> This signal is sent after the new keymap has been loaded. It is used in
  <a href="../classes/awful.widget.keyboardlayout.html#">awful.widget.keyboardlayout</a> to redraw the layout.
@@ -961,9 +961,9 @@
     <strong>xkb::group_changed.</strong>
     </dt>
     <dd>
-    Keyboard group has changed. </p>
+    Keyboard group has changed.</p>
 
-<p> It's used in <a href="../classes/awful.widget.keyboardlayout.html#">awful.widget.keyboardlayout</a> to redraw the layout.
+<p> It&rsquo;s used in <a href="../classes/awful.widget.keyboardlayout.html#">awful.widget.keyboardlayout</a> to redraw the layout.
 
 
     <h3>Arguments:</h3>
@@ -983,7 +983,7 @@
     <strong>refresh</strong>
     </dt>
     <dd>
-    Refresh. </p>
+    Refresh.</p>
 
 <p> This signal is emitted as a kind of idle signal in the event loop.
  One example usage is in <a href="../classes/gears.timer.html#">gears.timer</a> to executed delayed calls.
@@ -1000,7 +1000,7 @@
     <strong>startup</strong>
     </dt>
     <dd>
-    Awesome is about to enter the event loop. </p>
+    Awesome is about to enter the event loop.</p>
 
 <p> This means all initialization has been done.
 
@@ -1016,7 +1016,7 @@
     <strong>exit</strong>
     </dt>
     <dd>
-    Awesome is exiting / about to restart. </p>
+    Awesome is exiting / about to restart.</p>
 
 <p> This signal is emitted in the <code>atexit</code> handler as well when awesome
  restarts.
@@ -1050,8 +1050,8 @@
         </li>
         <li><span class="parameter">connection_state</span>
          String containing the connection status of
- the output: It will be either "Connected", "Disconnected" or
- "Unknown".
+ the output: It will be either &ldquo;Connected&rdquo;, &ldquo;Disconnected&rdquo; or
+ &ldquo;Unknown&rdquo;.
         </li>
     </ul>
 
@@ -1071,7 +1071,7 @@
     <h3>Arguments:</h3>
     <ul>
         <li><span class="parameter">arg</span>
-         Table which only got the "id" key set
+         Table which only got the &ldquo;id&rdquo; key set
         </li>
     </ul>
 
@@ -1111,7 +1111,7 @@
     <h3>Arguments:</h3>
     <ul>
         <li><span class="parameter">arg</span>
-         Table which only got the "id" key set
+         Table which only got the &ldquo;id&rdquo; key set
         </li>
     </ul>
 
@@ -1145,13 +1145,13 @@
     <strong>spawn::timeout</strong>
     </dt>
     <dd>
-    An application started a spawn event but didn't start in time.
+    An application started a spawn event but didn&rsquo;t start in time.
 
 
     <h3>Arguments:</h3>
     <ul>
         <li><span class="parameter">arg</span>
-         Table which only got the "id" key set
+         Table which only got the &ldquo;id&rdquo; key set
         </li>
     </ul>
 
@@ -1176,8 +1176,6 @@
         <li><span class="parameter">version</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
-
-
         </li>
     </ul>
 
@@ -1197,8 +1195,6 @@
     <ul>
         <li><span class="parameter">release</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-
-
 
         </li>
     </ul>
@@ -1220,8 +1216,6 @@
         <li><span class="parameter">conffile</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
-
-
         </li>
     </ul>
 
@@ -1241,8 +1235,6 @@
     <ul>
         <li><span class="parameter">startup</span>
             <span class="types"><span class="type">boolean</span></span>
-
-
 
         </li>
     </ul>
@@ -1265,8 +1257,6 @@
         <li><span class="parameter">startup_errors</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
-
-
         </li>
     </ul>
 
@@ -1286,8 +1276,6 @@
     <ul>
         <li><span class="parameter">composite_manager_running</span>
             <span class="types"><span class="type">boolean</span></span>
-
-
 
         </li>
     </ul>
@@ -1309,8 +1297,6 @@
         <li><span class="parameter">unix_signal</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
 
-
-
         </li>
     </ul>
 
@@ -1330,8 +1316,6 @@
     <ul>
         <li><span class="parameter">hostname</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-
-
 
         </li>
     </ul>
@@ -1353,8 +1337,6 @@
         <li><span class="parameter">themes_path</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
-
-
         </li>
     </ul>
 
@@ -1375,8 +1357,6 @@
         <li><span class="parameter">icon_path</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
-
-
         </li>
     </ul>
 
@@ -1392,7 +1372,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-02-25 14:00:40 </i>
+<i style="float:right;">Last updated 2019-02-26 10:13:58 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

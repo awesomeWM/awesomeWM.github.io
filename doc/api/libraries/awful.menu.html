@@ -179,9 +179,7 @@
 
 <h1>Module <code>awful.menu</code></h1>
 <p>A menu for awful</p>
-<p>
-
-</p>
+<p></p>
     <h3>Info:</h3>
     <ul>
         <li><strong>Copyright</strong>: 2008, 2011 Damien Leone, Julien Danjou, dodo</li>
@@ -226,7 +224,7 @@
 	</tr>
 	<tr>
 	<td class="name" ><a href="#client_list">client_list ([args[, item_args[, filter]]])</a></td>
-	<td class="summary">Use menu.clients to build and open the client menu if it isn't already open.</td>
+	<td class="summary">Use menu.clients to build and open the client menu if it isn&rsquo;t already open.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#entry">entry (parent, args)</a></td>
@@ -281,7 +279,7 @@
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.menu_submenu">beautiful.menu_submenu</a></td>
-	<td class="summary">The default sub-menu indicator if no menu<em>submenu</em>icon is provided.</td>
+	<td class="summary">The default sub-menu indicator if no menu_submenu_icon is provided.</td>
 	</tr>
 </table>
 <h2><a href="#Tables">Tables</a></h2>
@@ -480,7 +478,7 @@
     <strong>client_list ([args[, item_args[, filter]]])</strong>
     </dt>
     <dd>
-    Use menu.clients to build and open the client menu if it isn't already open.
+    Use menu.clients to build and open the client menu if it isn&rsquo;t already open.
  Close the client menu if it is already open.
  See <a href="../libraries/awful.menu.html#clients">awful.menu.clients</a> for more information.
 
@@ -536,7 +534,7 @@
     <h3>Returns:</h3>
     <ol>
 
-        table with 'widget', 'cmd', 'akey' and all the properties the user wants to change
+        table with &lsquo;widget&rsquo;, &lsquo;cmd&rsquo;, &lsquo;akey&rsquo; and all the properties the user wants to change
     </ol>
 
 
@@ -553,17 +551,15 @@
 
     <ul>
         <li><span class="parameter">args</span>
-
-<p> Table containing the menu informations.</p>
+        <p> Table containing the menu informations.</p>
 
 <ul>
-    <li>Key items: Table containing the displayed items. Each element is a table by default (when element 'new' is
-    awful.menu.entry) containing: item name, triggered action (submenu table or function), item icon (optional).</li>
-    <li>Keys theme.[fg|bg]<em>[focus|normal], theme.border</em>color, theme.border<em>width, theme.submenu</em>icon, theme.height
-    and theme.width override the default display for your menu and/or of your menu entry, each of them are optional.</li>
-    <li>Key auto_expand controls the submenu auto expand behaviour by setting it to true (default) or false.</li>
+<li>Key items: Table containing the displayed items. Each element is a table by default (when element &lsquo;new&rsquo; is
+awful.menu.entry) containing: item name, triggered action (submenu table or function), item icon (optional).</li>
+<li>Keys theme.[fg|bg]_[focus|normal], theme.border_color, theme.border_width, theme.submenu_icon, theme.height
+and theme.width override the default display for your menu and/or of your menu entry, each of them are optional.</li>
+<li>Key auto_expand controls the submenu auto expand behaviour by setting it to true (default) or false.</li>
 </ul>
-
 
         </li>
         <li><span class="parameter">parent</span>
@@ -632,8 +628,6 @@
     <ul>
         <li><span class="parameter">string</span>
 
-
-
         </li>
     </ul>
 
@@ -659,8 +653,6 @@
         <li><span class="parameter">menu_height</span>
             <span class="types"><span class="type">number</span></span>
 
-
-
          (<em>default</em> 16)
         </li>
     </ul>
@@ -682,8 +674,6 @@
     <ul>
         <li><span class="parameter">menu_width</span>
             <span class="types"><span class="type">number</span></span>
-
-
 
          (<em>default</em> 100)
         </li>
@@ -707,8 +697,6 @@
         <li><span class="parameter">menu_border_color</span>
             <span class="types"><span class="type">number</span></span>
 
-
-
          (<em>default</em> 0)
         </li>
     </ul>
@@ -731,8 +719,6 @@
         <li><span class="parameter">menu_border_width</span>
             <span class="types"><span class="type">number</span></span>
 
-
-
          (<em>default</em> 0)
         </li>
     </ul>
@@ -753,8 +739,6 @@
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">color</span>
-
-
 
         </li>
     </ul>
@@ -780,8 +764,6 @@
     <ul>
         <li><span class="parameter">color</span>
 
-
-
         </li>
     </ul>
 
@@ -805,8 +787,6 @@
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">color</span>
-
-
 
         </li>
     </ul>
@@ -832,8 +812,6 @@
     <ul>
         <li><span class="parameter">color</span>
 
-
-
         </li>
     </ul>
 
@@ -851,7 +829,7 @@
     <strong>beautiful.menu_submenu</strong>
     </dt>
     <dd>
-    The default sub-menu indicator if no menu<em>submenu</em>icon is provided.
+    The default sub-menu indicator if no menu_submenu_icon is provided.
 
 
     <h3>Type:</h3>
@@ -883,7 +861,7 @@
     <dd>
     Key bindings for menu navigation.
  Keys are: up, down, exec, enter, back, close. Value are table with a list of valid
- keys for the action, i.e. menu_keys.up =  { "j", "k" } will bind 'j' and 'k'
+ keys for the action, i.e. menu_keys.up =  { &ldquo;j&rdquo;, &ldquo;k&rdquo; } will bind &lsquo;j&rsquo; and &lsquo;k&rsquo;
  key to up action. This is common to all created menu.
 
 
@@ -891,12 +869,8 @@
     <ul>
         <li><span class="parameter">up</span>
 
-
-
         </li>
         <li><span class="parameter">k</span>
-
-
 
         </li>
     </ul>
@@ -913,7 +887,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-02-25 14:00:40 </i>
+<i style="float:right;">Last updated 2019-02-26 10:13:58 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

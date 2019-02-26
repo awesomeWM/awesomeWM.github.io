@@ -178,10 +178,8 @@
 <div id="content">
 
 <h1>Class <code>wibox.layout.align</code></h1>
-<p>
-
-</p>
-<p><img src="../images/AUTOGEN_wibox_layout_defaults_align.svg" alt="Usage example"/></p>
+<p></p>
+<p><img src="../images/AUTOGEN_wibox_layout_defaults_align.svg" alt="Usage example" /></p>
     <h3>Usage:</h3>
     <ul>
         <pre class="example">wibox.widget {
@@ -203,15 +201,15 @@
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#wibox.layout.align.first">first</a></td>
-	<td class="summary">Set the layout's first widget.</td>
+	<td class="summary">Set the layout&rsquo;s first widget.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.layout.align.second">second</a></td>
-	<td class="summary">Set the layout's second widget.</td>
+	<td class="summary">Set the layout&rsquo;s second widget.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.layout.align.third">third</a></td>
-	<td class="summary">Set the layout's third widget.</td>
+	<td class="summary">Set the layout&rsquo;s third widget.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.layout.align.children">children</a></td>
@@ -310,7 +308,7 @@
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.layout.align:buttons">wibox.layout.align:buttons (_buttons)</a></td>
-	<td class="summary">Set/get a widget's buttons.</td>
+	<td class="summary">Set/get a widget&rsquo;s buttons.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.layout.align:emit_signal_recursive">wibox.layout.align:emit_signal_recursive (signal_name, ...)</a></td>
@@ -343,7 +341,7 @@
     <strong>first</strong>
     </dt>
     <dd>
-    Set the layout's first widget.
+    Set the layout&rsquo;s first widget.
  This is the widget that is at the left/top
 
 
@@ -358,7 +356,7 @@
     <strong>second</strong>
     </dt>
     <dd>
-    Set the layout's second widget.  This is the centered one.
+    Set the layout&rsquo;s second widget.  This is the centered one.
 
 
 
@@ -372,7 +370,7 @@
     <strong>third</strong>
     </dt>
     <dd>
-    Set the layout's third widget.
+    Set the layout&rsquo;s third widget.
  This is the widget that is at the right/bottom
 
 
@@ -410,19 +408,18 @@
     <ul>
         <li><span class="parameter">mode</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-
-<p> How to use unused space.</p>
+        <p> How to use unused space.</p>
 
 <ul>
-    <li>"inside" - Default option. Size of outside widgets is determined using
-    their fit function. Second, middle, or center widget expands to fill
-    remaining space.</li>
-    <li>"outside" - Center widget is sized using its fit function and placed in
-    the center of the allowed space. Outside widgets expand (or contract) to
-    fill remaining space on their side.</li>
-    <li>"none" - All widgets are sized using their fit function, drawn to only the
-    returned space, or remaining space, whichever is smaller. Center widget
-    gets priority.</li>
+<li>&ldquo;inside&rdquo; - Default option. Size of outside widgets is determined using
+their fit function. Second, middle, or center widget expands to fill
+remaining space.</li>
+<li>&ldquo;outside&rdquo; - Center widget is sized using its fit function and placed in
+the center of the allowed space. Outside widgets expand (or contract) to
+fill remaining space on their side.</li>
+<li>&ldquo;none&rdquo; - All widgets are sized using their fit function, drawn to only the
+returned space, or remaining space, whichever is smaller. Center widget
+gets priority.</li>
 </ul>
 
          (<em>default</em> inside)
@@ -530,8 +527,6 @@
     <ul>
         <li><span class="parameter">boolean</span>
 
-
-
         </li>
     </ul>
 
@@ -629,7 +624,7 @@
         <li><span class="parameter">hierarchy</span>
             <span class="types"><span class="type">wibox.hierarchy</span></span>
          The hierarchy
- managing the widget's geometry.
+ managing the widget&rsquo;s geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -716,7 +711,7 @@
         <li><span class="parameter">hierarchy</span>
             <span class="types"><span class="type">wibox.hierarchy</span></span>
          The hierarchy
- managing the widget's geometry.
+ managing the widget&rsquo;s geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -785,7 +780,7 @@
         <li><span class="parameter">hierarchy</span>
             <span class="types"><span class="type">wibox.hierarchy</span></span>
          The hierarchy
- managing the widget's geometry.
+ managing the widget&rsquo;s geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -854,7 +849,7 @@
         <li><span class="parameter">hierarchy</span>
             <span class="types"><span class="type">wibox.hierarchy</span></span>
          The hierarchy
- managing the widget's geometry.
+ managing the widget&rsquo;s geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -908,7 +903,7 @@
     </dt>
     <dd>
     Returns a new horizontal align layout.  An align layout can display up to
- three widgets. The widget set via :set<em>left() is left-aligned. :set</em>right()
+ three widgets. The widget set via :set_left() is left-aligned. :set_right()
  sets a widget which will be right-aligned. The remaining space between those
  two will be given to the widget set via :set_middle().
 
@@ -942,7 +937,7 @@
     </dt>
     <dd>
     Returns a new vertical align layout.  An align layout can display up to
- three widgets. The widget set via :set<em>top() is top-aligned. :set</em>bottom()
+ three widgets. The widget set via :set_top() is top-aligned. :set_bottom()
  sets a widget which will be bottom-aligned. The remaining space between those
  two will be given to the widget set via :set_middle().
 
@@ -1171,7 +1166,7 @@
     <strong>wibox.layout.align:buttons (_buttons)</strong>
     </dt>
     <dd>
-    Set/get a widget's buttons.
+    Set/get a widget&rsquo;s buttons.
 
 
     <ul>
@@ -1198,8 +1193,6 @@
     <ul>
         <li><span class="parameter">signal_name</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-
-
 
         </li>
         <li><span class="parameter">...</span>
@@ -1266,7 +1259,7 @@
     <strong>wibox.layout.align:weak_connect_signal (name, func)</strong>
     </dt>
     <dd>
-    Connect to a signal weakly. </p>
+    Connect to a signal weakly.</p>
 
 <p> This allows the callback function to be garbage collected and
  automatically disconnects the signal when that happens.</p>
@@ -1299,7 +1292,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-02-25 14:00:40 </i>
+<i style="float:right;">Last updated 2019-02-26 10:13:58 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

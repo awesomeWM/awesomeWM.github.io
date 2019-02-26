@@ -183,9 +183,7 @@
 <p> Use cases include desktop icons, complex custom composed widgets, a floating
  client layout and fine grained control over the output.</p>
 
-
-
-<p><img src="../images/AUTOGEN_wibox_layout_defaults_manual.svg" alt="Usage example"/></p>
+<p><img src="../images/AUTOGEN_wibox_layout_defaults_manual.svg" alt="Usage example" /></p>
     <h3>Usage:</h3>
     <ul>
         <pre class="example">local w1, w2 = generic_widget(), generic_widget()
@@ -306,7 +304,7 @@ wibox.layout {
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.layout.manual:buttons">wibox.layout.manual:buttons (_buttons)</a></td>
-	<td class="summary">Set/get a widget's buttons.</td>
+	<td class="summary">Set/get a widget&rsquo;s buttons.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.layout.manual:emit_signal_recursive">wibox.layout.manual:emit_signal_recursive (signal_name, ...)</a></td>
@@ -339,48 +337,54 @@ wibox.layout {
     <strong>manual_layout:add_at (widget, point)</strong>
     </dt>
     <dd>
-    Add a widget at a specific point. </p>
+    Add a widget at a specific point.</p>
 
 <p> The point can either be a function or a table. The table follow the generic
  geometry format used elsewhere in Awesome.</p>
 
 <ul>
-    <li><em>x</em>: The horizontal position.</li>
-    <li><em>y</em>: The vertical position.</li>
-    <li><em>width</em>: The width.</li>
-    <li><em>height</em>: The height.</li>
+<li><em>x</em>: The horizontal position.</li>
+<li><em>y</em>: The vertical position.</li>
+<li><em>width</em>: The width.</li>
+<li><em>height</em>: The height.</li>
 </ul>
+
 
 <p> If a function is used, it follows the same prototype as <a href="../libraries/awful.placement.html#">awful.placement</a>
  functions.</p>
 
 <ul>
-    <li><em>geo</em>:
-    <ul>
-        <li><em>x</em>: The horizontal position (always 0).</li>
-        <li><em>y</em>: The vertical position (always 0).</li>
-        <li><em>width</em>: The width.</li>
-        <li><em>height</em>: The height.</li>
-        <li><em>geometry</em>: A function to get or set the geometry (for compatibility).
-        The function is compatible with the <a href="../libraries/awful.placement.html#">awful.placement</a> prototype.</li>
-    </ul></li>
-    <li><em>args</em>:
-    <ul>
-        <li><em>parent</em> The layout own geometry
-        <ul>
-            <li><em>x</em>: The horizontal position (always 0).</li>
-            <li><em>y</em>: The vertical position (always 0).</li>
-            <li><em>width</em>: The width.</li>
-            <li><em>height</em>: The height.</li>
-            <li><em>geometry</em>: A function to get or set the geometry (for compatibility)
-            The function is compatible with the <a href="../libraries/awful.placement.html#">awful.placement</a> prototype.</li>
-        </ul></li>
-    </ul></li>
+<li><em>geo</em>:
+
+<ul>
+<li><em>x</em>: The horizontal position (always 0).</li>
+<li><em>y</em>: The vertical position (always 0).</li>
+<li><em>width</em>: The width.</li>
+<li><em>height</em>: The height.</li>
+<li><em>geometry</em>: A function to get or set the geometry (for compatibility).
+The function is compatible with the <a href="../libraries/awful.placement.html#">awful.placement</a> prototype.</li>
+</ul>
+</li>
+<li><em>args</em>:
+
+<ul>
+<li><em>parent</em> The layout own geometry
+
+<ul>
+<li><em>x</em>: The horizontal position (always 0).</li>
+<li><em>y</em>: The vertical position (always 0).</li>
+<li><em>width</em>: The width.</li>
+<li><em>height</em>: The height.</li>
+<li><em>geometry</em>: A function to get or set the geometry (for compatibility)
+The function is compatible with the <a href="../libraries/awful.placement.html#">awful.placement</a> prototype.</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 
-
-<p><img src="../images/AUTOGEN_wibox_layout_manual_add_at.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_wibox_layout_manual_add_at.svg" alt="Usage example" />
 
 
     <ul>
@@ -471,11 +475,9 @@ l:add_at(w4, awful.placement.centered + awful.placement.maximize_horizontally)</
     <strong>manual_layout:move_widget (widget, point)</strong>
     </dt>
     <dd>
-    Move a widget. </p>
+    Move a widget.</p>
 
-
-
-<p><img src="../images/AUTOGEN_wibox_layout_manual_move_widget.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_wibox_layout_manual_move_widget.svg" alt="Usage example" />
 
 
     <ul>
@@ -591,8 +593,6 @@ l:move_widget(w1, awful.placement.bottom_right)</pre>
     <ul>
         <li><span class="parameter">boolean</span>
 
-
-
         </li>
     </ul>
 
@@ -690,7 +690,7 @@ l:move_widget(w1, awful.placement.bottom_right)</pre>
         <li><span class="parameter">hierarchy</span>
             <span class="types"><span class="type">wibox.hierarchy</span></span>
          The hierarchy
- managing the widget's geometry.
+ managing the widget&rsquo;s geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -777,7 +777,7 @@ l:move_widget(w1, awful.placement.bottom_right)</pre>
         <li><span class="parameter">hierarchy</span>
             <span class="types"><span class="type">wibox.hierarchy</span></span>
          The hierarchy
- managing the widget's geometry.
+ managing the widget&rsquo;s geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -846,7 +846,7 @@ l:move_widget(w1, awful.placement.bottom_right)</pre>
         <li><span class="parameter">hierarchy</span>
             <span class="types"><span class="type">wibox.hierarchy</span></span>
          The hierarchy
- managing the widget's geometry.
+ managing the widget&rsquo;s geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -915,7 +915,7 @@ l:move_widget(w1, awful.placement.bottom_right)</pre>
         <li><span class="parameter">hierarchy</span>
             <span class="types"><span class="type">wibox.hierarchy</span></span>
          The hierarchy
- managing the widget's geometry.
+ managing the widget&rsquo;s geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -1053,7 +1053,7 @@ l:move_widget(w1, awful.placement.bottom_right)</pre>
 
     <ul>
         <li><span class="parameter">widget</span>
-         ... Widgets that should be removed (must at least be one)
+         &hellip; Widgets that should be removed (must at least be one)
         </li>
     </ul>
 
@@ -1116,7 +1116,7 @@ l:move_widget(w1, awful.placement.bottom_right)</pre>
     <strong>wibox.layout.manual:buttons (_buttons)</strong>
     </dt>
     <dd>
-    Set/get a widget's buttons.
+    Set/get a widget&rsquo;s buttons.
 
 
     <ul>
@@ -1143,8 +1143,6 @@ l:move_widget(w1, awful.placement.bottom_right)</pre>
     <ul>
         <li><span class="parameter">signal_name</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-
-
 
         </li>
         <li><span class="parameter">...</span>
@@ -1211,7 +1209,7 @@ l:move_widget(w1, awful.placement.bottom_right)</pre>
     <strong>wibox.layout.manual:weak_connect_signal (name, func)</strong>
     </dt>
     <dd>
-    Connect to a signal weakly. </p>
+    Connect to a signal weakly.</p>
 
 <p> This allows the callback function to be garbage collected and
  automatically disconnects the signal when that happens.</p>
@@ -1244,7 +1242,7 @@ l:move_widget(w1, awful.placement.bottom_right)</pre>
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-02-25 14:00:40 </i>
+<i style="float:right;">Last updated 2019-02-26 10:13:58 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

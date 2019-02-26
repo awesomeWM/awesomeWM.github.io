@@ -179,10 +179,7 @@
 
 <h1>Module <code>awful.prompt</code></h1>
 <p>Prompt module for awful.</p>
-<p>
-
-
-<p> <strong>Keyboard navigation</strong>:</p>
+<p><p> <strong>Keyboard navigation</strong>:</p>
 
 <p> The following readline keyboard shortcuts are implemented as expected:
  <table class='widget_list' border=1>
@@ -210,18 +207,19 @@
  character to cursor position.</p>
 
 <ul>
-    <li><kbd>CTRL+R</kbd>: reverse history search, matches any history entry
-    containing search term.</li>
-    <li><kbd>CTRL+S</kbd>: forward history search, matches any history entry
-    containing search term.</li>
-    <li><kbd>CTRL+UP</kbd>: ZSH up line or search, matches any history entry
-    starting with search term.</li>
-    <li><kbd>CTRL+DOWN</kbd>: ZSH down line or search, matches any history
-    entry starting with search term.</li>
-    <li><kbd>CTRL+DELETE</kbd>: delete the currently visible history entry from
-    history file. This does not delete new commands or history entries under
-    user editing.</li>
+<li><kbd>CTRL+R</kbd>: reverse history search, matches any history entry
+containing search term.</li>
+<li><kbd>CTRL+S</kbd>: forward history search, matches any history entry
+containing search term.</li>
+<li><kbd>CTRL+UP</kbd>: ZSH up line or search, matches any history entry
+starting with search term.</li>
+<li><kbd>CTRL+DOWN</kbd>: ZSH down line or search, matches any history
+entry starting with search term.</li>
+<li><kbd>CTRL+DELETE</kbd>: delete the currently visible history entry from
+history file. This does not delete new commands or history entries under
+user editing.</li>
 </ul>
+
 
 <p> <strong>Basic usage</strong>:</p>
 
@@ -229,11 +227,7 @@
  <code>mypromptbox</code>. It is used for both the command execution (<code>mod4+r</code>) and
  Lua prompt (<code>mod4+x</code>). It can be re-used for random inputs using:</p>
 
-
-
-<p><img src="../images/AUTOGEN_wibox_awidget_prompt_simple.svg" alt="Usage example"/></p>
-
-
+<p><img src="../images/AUTOGEN_wibox_awidget_prompt_simple.svg" alt="Usage example" /></p>
 
 <pre>
 <span class="keyword">local</span> atextbox = wibox.widget.textbox()
@@ -258,6 +252,7 @@
     {description = <span class="string">"Echo a string"</span>, group = <span class="string">"custom"</span>}),
 </pre>
 
+
 <p> Note that this assumes an <a href="../sample files/rc.lua.html#">rc.lua</a> file based on the default one. The way
  to access the screen prompt may vary.</p>
 
@@ -267,13 +262,9 @@
  keyboard keybindings. Those keybindings have precedence over the built-in
  ones. Therefor, they can be used to override the default ones.</p>
 
-<p> *[Example one] Adding pre-configured <a href="../libraries/awful.spawn.html#">awful.spawn</a> commands:*</p>
+<p> <em>[Example one] Adding pre-configured <a href="../libraries/awful.spawn.html#">awful.spawn</a> commands:</em></p>
 
-
-
-<p><img src="../images/AUTOGEN_wibox_awidget_prompt_hooks.svg" alt="Usage example"/></p>
-
-
+<p><img src="../images/AUTOGEN_wibox_awidget_prompt_hooks.svg" alt="Usage example" /></p>
 
 <pre>
 <span class="keyword">local</span> atextbox = wibox.widget.textbox()
@@ -322,16 +313,13 @@ awful.prompt.run {
 }
 </pre>
 
+
 <p> <em>[Example two] Modifying the command (+ vi like input)</em>:</p>
 
 <p> The hook system also allows to modify the command before interpreting it in
  the <a href="../libraries/awful.prompt.html#exe_callback">exe_callback</a>.</p>
 
-
-
-<p><img src="../images/AUTOGEN_wibox_awidget_prompt_vilike.svg" alt="Usage example"/></p>
-
-
+<p><img src="../images/AUTOGEN_wibox_awidget_prompt_vilike.svg" alt="Usage example" /></p>
 
 <pre>
 <span class="keyword">local</span> atextbox = wibox.widget.textbox()
@@ -373,22 +361,20 @@ awful.prompt.run {
 }
 </pre>
 
+
 <p> <em>[Example three] Key listener</em>:</p>
 
 <p> The 2 previous examples were focused on changing the prompt behavior. This
- one explains how to "spy" on the prompt events. This can be used for</p>
+ one explains how to &ldquo;spy&rdquo; on the prompt events. This can be used for</p>
 
 <ul>
-    <li>Implementing more complex mutator</li>
-    <li>Synchronising other widgets</li>
-    <li>Showing extra tips to the user</li>
+<li>Implementing more complex mutator</li>
+<li>Synchronising other widgets</li>
+<li>Showing extra tips to the user</li>
 </ul>
 
 
-
-<p><img src="../images/AUTOGEN_wibox_awidget_prompt_keypress.svg" alt="Usage example"/></p>
-
-
+<p><img src="../images/AUTOGEN_wibox_awidget_prompt_keypress.svg" alt="Usage example" /></p>
 
 <pre>
 <span class="keyword">local</span> atextbox = wibox.widget.textbox()
@@ -411,15 +397,12 @@ awful.prompt.run {
 }
 </pre>
 
+
 <p> <strong>highlighting</strong>:</p>
 
 <p> The prompt also support custom highlighters:</p>
 
-
-
-<p><img src="../images/AUTOGEN_wibox_awidget_prompt_highlight.svg" alt="Usage example"/></p>
-
-
+<p><img src="../images/AUTOGEN_wibox_awidget_prompt_highlight.svg" alt="Usage example" /></p>
 
 <pre>
 <span class="keyword">local</span> amp = <span class="string">'&amp;amp'</span>..<span class="global">string</span>.char(<span class="number">0x3B</span>)
@@ -468,7 +451,6 @@ awful.prompt.run {
     }
 <span class="keyword">end</span>
 </pre>
-
 </p>
     <h3>Info:</h3>
     <ul>
@@ -560,56 +542,40 @@ awful.prompt.run {
         <li><span class="parameter">fg_cursor</span>
             <span class="types"><span class="type">gears.color</span></span>
 
-
-
          (<em>optional</em>)
         </li>
         <li><span class="parameter">bg_cursor</span>
             <span class="types"><span class="type">gears.color</span></span>
-
-
 
          (<em>optional</em>)
         </li>
         <li><span class="parameter">ul_cursor</span>
             <span class="types"><span class="type">gears.color</span></span>
 
-
-
          (<em>optional</em>)
         </li>
         <li><span class="parameter">prompt</span>
             <span class="types"><span class="type">widget</span></span>
-
-
 
          (<em>optional</em>)
         </li>
         <li><span class="parameter">text</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
-
-
          (<em>optional</em>)
         </li>
         <li><span class="parameter">selectall</span>
             <span class="types"><span class="type">boolean</span></span>
-
-
 
          (<em>optional</em>)
         </li>
         <li><span class="parameter">font</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
-
-
          (<em>optional</em>)
         </li>
         <li><span class="parameter">autoexec</span>
             <span class="types"><span class="type">boolean</span></span>
-
-
 
          (<em>optional</em>)
         </li>
@@ -670,30 +636,27 @@ awful.prompt.run {
         </li>
         <li><span class="parameter">hooks</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-
-<p> The "hooks" argument uses a syntax similar to
+         The &ldquo;hooks&rdquo; argument uses a syntax similar to
    <a href="../libraries/awful.key.html#">awful.key</a>.  It will call a function for the matching modifiers + key.
    It receives the command (widget text/input) as an argument.
    If the callback returns a command, this will be passed to the
    <a href="../libraries/awful.prompt.html#exe_callback">exe_callback</a>, otherwise nothing gets executed by default, and the hook
-   needs to handle it.</p>
-<pre><code> hooks = {
-   -- Apply startup notification properties with Shift-Return.
-   {{"Shift"  }, "Return", function(command)
-     awful.screen.focused().mypromptbox:spawn_and_handle_error(
-       command, {floating=true})
-   end},
-   -- Override default behavior of "Return": launch commands prefixed
-   -- with ":" in a terminal.
-   {{}, "Return", function(command)
-     if command:sub(1,1) == ":" then
-       return terminal .. ' -e ' .. command:sub(2)
-     end
-     return command
-   end}
- }
-</code></pre>
-
+   needs to handle it.
+     hooks = {
+       &ndash; Apply startup notification properties with Shift-Return.
+       {{&ldquo;Shift&rdquo;  }, &ldquo;Return&rdquo;, function(command)
+         awful.screen.focused().mypromptbox:spawn_and_handle_error(
+           command, {floating=true})
+       end},
+       &ndash; Override default behavior of &ldquo;Return&rdquo;: launch commands prefixed
+       &ndash; with &ldquo;:&rdquo; in a terminal.
+       {{}, &ldquo;Return&rdquo;, function(command)
+         if command:sub(1,1) == &ldquo;:&rdquo; then
+           return terminal .. &lsquo; -e &rsquo; .. command:sub(2)
+         end
+         return command
+       end}
+     }
          (<em>optional</em>)
         </li>
         </li></ul>
@@ -762,8 +725,6 @@ awful.prompt.run {
     <ul>
         <li><span class="parameter">color</span>
 
-
-
         </li>
     </ul>
 
@@ -788,8 +749,6 @@ awful.prompt.run {
     <ul>
         <li><span class="parameter">color</span>
 
-
-
         </li>
     </ul>
 
@@ -813,8 +772,6 @@ awful.prompt.run {
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
-
-
 
         </li>
     </ul>
@@ -956,7 +913,7 @@ awful.prompt.run {
     <ul>
         <li><span class="parameter">mod</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-         The current modifiers (like "Control" or "Shift").
+         The current modifiers (like &ldquo;Control&rdquo; or &ldquo;Shift&rdquo;).
         </li>
         <li><span class="parameter">key</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -992,7 +949,7 @@ awful.prompt.run {
     <ul>
         <li><span class="parameter">mod</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-         The current modifiers (like "Control" or "Shift").
+         The current modifiers (like &ldquo;Control&rdquo; or &ldquo;Shift&rdquo;).
         </li>
         <li><span class="parameter">key</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -1028,13 +985,9 @@ awful.prompt.run {
         <li><span class="parameter">before_cursor</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
-
-
         </li>
         <li><span class="parameter">after_cursor</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-
-
 
         </li>
     </ul>
@@ -1060,10 +1013,11 @@ awful.prompt.run {
  This callback can return many things:</p>
 
 <ul>
-    <li>a modified command</li>
-    <li><code>true</code> If the command is successful (then it won't exit)</li>
-    <li>nothing or <code>nil</code> to execute the <a href="../libraries/awful.prompt.html#exe_callback">exe_callback</a> and <a href="../libraries/awful.prompt.html#done_callback">done_callback</a> and exit</li>
+<li>a modified command</li>
+<li><code>true</code> If the command is successful (then it won&rsquo;t exit)</li>
+<li>nothing or <code>nil</code> to execute the <a href="../libraries/awful.prompt.html#exe_callback">exe_callback</a> and <a href="../libraries/awful.prompt.html#done_callback">done_callback</a> and exit</li>
 </ul>
+
 
 <p> An optional second return value controls if the prompt should exit or simply
  update the command (from the first return value) and keep going. The default
@@ -1096,7 +1050,7 @@ awful.prompt.run {
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-02-25 14:00:40 </i>
+<i style="float:right;">Last updated 2019-02-26 10:13:58 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

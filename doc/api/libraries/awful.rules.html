@@ -179,80 +179,77 @@
 
 <h1>Module <code>awful.rules</code></h1>
 <p>Rules for clients.</p>
-<p>
-
-
-<p> This module applies <a href="../libraries/awful.rules.html">rules</a> to clients during startup (via <a href="../classes/client.html#client.manage">client.manage</a>,
+<p><p> This module applies <a href="../libraries/awful.rules.html">rules</a> to clients during startup (via <a href="../classes/client.html#client.manage">client.manage</a>,
  but its functions can be used for client matching in general.</p>
 
 <p> All existing <a href="../classes/client.html#">client</a> properties can be used in rules. It is also possible
  to add random properties that will be later accessible as <code>c.property_name</code>
  (where <code>c</code> is a valid client object)</p>
 
-<h1> Syntax</h1>
+<h2> Syntax</h2>
+
 <p> You should fill this table with your rule and properties to apply.
  For example, if you want to set xterm maximized at startup, you can add:</p>
-
 
 <pre>
 { rule = { class = <span class="string">"xterm"</span> },
   properties = { maximized_vertical = <span class="keyword">true</span>, maximized_horizontal = <span class="keyword">true</span> } }
 </pre>
 
-<p> If you want to set mplayer floating at startup, you can add:</p>
 
+<p> If you want to set mplayer floating at startup, you can add:</p>
 
 <pre>
 { rule = { name = <span class="string">"MPlayer"</span> },
   properties = { floating = <span class="keyword">true</span> } }
 </pre>
 
-<p> If you want to put Firefox on a specific tag at startup, you can add:</p>
 
+<p> If you want to put Firefox on a specific tag at startup, you can add:</p>
 
 <pre>
 { rule = { instance = <span class="string">"firefox"</span> },
   properties = { tag = mytagobject } }
 </pre>
 
-<p> Alternatively, you can specify the tag by name:</p>
 
+<p> Alternatively, you can specify the tag by name:</p>
 
 <pre>
 { rule = { instance = <span class="string">"firefox"</span> },
   properties = { tag = <span class="string">"3"</span> } }
 </pre>
 
-<p> If you want to put Thunderbird on a specific screen at startup, use:</p>
 
+<p> If you want to put Thunderbird on a specific screen at startup, use:</p>
 
 <pre>
 { rule = { instance = <span class="string">"Thunderbird"</span> },
   properties = { screen = <span class="number">1</span> } }
 </pre>
 
+
 <p> Assuming that your X11 server supports the RandR extension, you can also specify
  the screen by name:</p>
-
 
 <pre>
 { rule = { instance = <span class="string">"Thunderbird"</span> },
   properties = { screen = <span class="string">"VGA1"</span> } }
 </pre>
 
+
 <p> If you want to put Emacs on a specific tag at startup, and immediately switch
  to that tag you can add:</p>
-
 
 <pre>
 { rule = { class = <span class="string">"Emacs"</span> },
   properties = { tag = mytagobject, switchtotag = <span class="keyword">true</span> } }
 </pre>
 
+
 <p> If you want to apply a custom callback to execute when a rule matched,
  for example to pause playing music from mpd when you start dosbox, you
  can add:</p>
-
 
 <pre>
 { rule = { class = <span class="string">"dosbox"</span> },
@@ -261,28 +258,28 @@
   <span class="keyword">end</span> }
 </pre>
 
-<p> Note that all "rule" entries need to match. If any of the entry does not
- match, the rule won't be applied.</p>
+
+<p> Note that all &ldquo;rule&rdquo; entries need to match. If any of the entry does not
+ match, the rule won&rsquo;t be applied.</p>
 
 <p> If a client matches multiple rules, they are applied in the order they are
  put in this global rules table. If the value of a rule is a string, then the
  match function is used to determine if the client matches the rule.</p>
 
 <p> If the value of a property is a function, that function gets called and
- function's return value is used for the property.</p>
+ function&rsquo;s return value is used for the property.</p>
 
 <p> To match multiple clients to a rule one need to use slightly different
  syntax:</p>
-
 
 <pre>
 { rule_any = { class = { <span class="string">"MPlayer"</span>, <span class="string">"Nitrogen"</span> }, instance = { <span class="string">"xterm"</span> } },
   properties = { floating = <span class="keyword">true</span> } }
 </pre>
 
+
 <p> To match multiple clients with an exception one can couple <code>rules.except</code> or
  <code>rules.except_any</code> with the rules:</p>
-
 
 <pre>
 { rule = { class = <span class="string">"Firefox"</span> },
@@ -301,13 +298,13 @@
 }
 </pre>
 
-<h1> Applicable client properties</h1>
+
+<h2> Applicable client properties</h2>
 
 <p> The table below holds the list of default client properties along with
  some extra properties that are specific to the rules. Note that any property
  can be set in the rules and interpreted by user provided code. This table
  only represent those offered by default.</p>
-
 
 <table class='widget_list' border=1>
  <tr>
@@ -381,7 +378,6 @@
    <tr><td><a href='../classes/client.html#client.valid'>valid</a></td><td>If the client that this object refers to is still managed by awesome</td></tr>
    <tr><td><a href='../classes/client.html#client.first_tag'>first\_tag</a></td><td>The first tag of the client</td></tr>
  </table>
-
 </p>
     <h3>Info:</h3>
     <ul>
@@ -556,8 +552,6 @@
 
            <span class="types"><span class="type">bool</span></span>
 
-
-
     </ol>
 
 
@@ -579,8 +573,8 @@
         </li>
         <li><span class="parameter">_rules</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-         The rules to check. List with "rule", "rule<em>any", "except" and
-   "except</em>any" keys.
+         The rules to check. List with &ldquo;rule&rdquo;, &ldquo;rule_any&rdquo;, &ldquo;except&rdquo; and
+   &ldquo;except_any&rdquo; keys.
         </li>
     </ul>
 
@@ -631,16 +625,17 @@
     <strong>add_rule_source (name, callback, depends_on, precede)</strong>
     </dt>
     <dd>
-    Add a new rule source. </p>
+    Add a new rule source.</p>
 
 <p> A rule source is a provider called when a client is managed (started). It
  allows to configure the client by providing properties that should be applied.
  By default, Awesome provides 2 sources:</p>
 
 <ul>
-    <li><a href="../libraries/awful.rules.html#">awful.rules</a>: A declarative matcher</li>
-    <li><a href="../libraries/awful.spawn.html#">awful.spawn</a>: Launch clients with pre-defined properties</li>
+<li><a href="../libraries/awful.rules.html#">awful.rules</a>: A declarative matcher</li>
+<li><a href="../libraries/awful.spawn.html#">awful.spawn</a>: Launch clients with pre-defined properties</li>
 </ul>
+
 
 <p> It is possible to register new callbacks to modify the properties table
  before it is applied. Each provider is executed sequentially and modifies the
@@ -792,7 +787,7 @@
     <strong>awful.rules</strong>
     </dt>
     <dd>
-    The default <a href="../libraries/awful.rules.html#">awful.rules</a> source. </p>
+    The default <a href="../libraries/awful.rules.html#">awful.rules</a> source.</p>
 
 <p> <strong>Has priority over:</strong></p>
 
@@ -810,15 +805,13 @@
     <strong>awful.spawn</strong>
     </dt>
     <dd>
-
-<p>The rule source for clients spawned by <a href="../libraries/awful.spawn.html#">awful.spawn</a>. </p>
+    <p>The rule source for clients spawned by <a href="../libraries/awful.spawn.html#">awful.spawn</a>.</p>
 
 <p> <strong>Has priority over:</strong></p>
 
 <ul>
-    <li><a href="../libraries/awful.rules.html#">awful.rules</a></li>
+<li><a href="../libraries/awful.rules.html#">awful.rules</a></li>
 </ul>
-
 
 
 
@@ -833,21 +826,20 @@
     <strong>awful.spawn_once</strong>
     </dt>
     <dd>
-
-<p>The rule source for clients spawned by <a href="../libraries/awful.spawn.html#once">awful.spawn.once</a> and <code>single_instance</code>. </p>
+    <p>The rule source for clients spawned by <a href="../libraries/awful.spawn.html#once">awful.spawn.once</a> and <code>single_instance</code>.</p>
 
 <p> <strong>Has priority over:</strong></p>
 
 <ul>
-    <li><a href="../libraries/awful.rules.html#">awful.rules</a></li>
+<li><a href="../libraries/awful.rules.html#">awful.rules</a></li>
 </ul>
+
 
 <p> <strong>Depends on:</strong></p>
 
 <ul>
-    <li><a href="../libraries/awful.spawn.html#">awful.spawn</a></li>
+<li><a href="../libraries/awful.spawn.html#">awful.spawn</a></li>
 </ul>
-
 
 
 
@@ -880,8 +872,7 @@
     <strong>extra_properties</strong>
     </dt>
     <dd>
-
-<p>Extra rules properties. </p>
+    <p>Extra rules properties.</p>
 
 <p> These properties are used in the rules only and are not sent to the client
  afterward.</p>
@@ -896,10 +887,9 @@ end
 <p> By default, the table has the following functions:</p>
 
 <ul>
-    <li>geometry</li>
-    <li>placement</li>
+<li>geometry</li>
+<li>placement</li>
 </ul>
-
 
 
 
@@ -914,8 +904,7 @@ end
     <strong>high_priority_properties</strong>
     </dt>
     <dd>
-
-<p>Extra high priority properties. </p>
+    <p>Extra high priority properties.</p>
 
 <p> Some properties, such as anything related to tags, geometry or focus, will
  cause a race condition if set in the main property section. This is why
@@ -931,10 +920,9 @@ end
 <p> By default, the table has the following functions:</p>
 
 <ul>
-    <li>tag</li>
-    <li>new_tag</li>
+<li>tag</li>
+<li>new_tag</li>
 </ul>
-
 
 
 
@@ -966,7 +954,7 @@ end
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-02-25 14:00:40 </i>
+<i style="float:right;">Last updated 2019-02-26 10:13:58 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

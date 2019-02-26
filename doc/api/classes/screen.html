@@ -187,21 +187,21 @@
 <p> To get a callback for all
  current and future screens, use <a href="../classes/screen.html#awful.screen.connect_for_each_screen">awful.screen.connect_for_each_screen</a>:</p>
 
-
 <pre>
 awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <span class="comment">-- do something
 </span><span class="keyword">end</span>)
 </pre>
 
-<p> It is also possible loop over all current screens using:</p>
 
+<p> It is also possible loop over all current screens using:</p>
 
 <pre>
 <span class="keyword">for</span> s <span class="keyword">in</span> screen <span class="keyword">do</span>
     <span class="comment">-- do something
 </span><span class="keyword">end</span>
 </pre>
+
 
 <p> Most basic Awesome objects also have a screen property, see <a href="../libraries/mouse.html#screen">mouse.screen</a>
  <a href="../classes/client.html#client.screen">client.screen</a>, <a href="../classes/wibox.html#wibox.screen">wibox.screen</a> and <a href="../classes/tag.html#request::screen">tag.screen</a>.</p>
@@ -243,7 +243,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.screen.disconnect_for_each_screen">awful.screen.disconnect_for_each_screen (func)</a></td>
-	<td class="summary">Undo the effect of connect<em>for</em>each_screen.</td>
+	<td class="summary">Undo the effect of connect_for_each_screen.</td>
 	</tr>
 </table>
 <h2><a href="#Object_properties">Object properties</a></h2>
@@ -306,9 +306,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#screen.primary_changed">primary_changed</a></td>
-	<td class="summary">
-
-</td>
+	<td class="summary"></td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#screen.added">added</a></td>
@@ -441,7 +439,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <strong>awful.screen.getbycoord (x, y)</strong>
     </dt>
     <dd>
-    Return the screen index corresponding to the given (pixel) coordinates. </p>
+    Return the screen index corresponding to the given (pixel) coordinates.</p>
 
 <p> The number returned can be used as an index into the global
  <a href="../classes/screen.html#">screen</a> table/object.
@@ -474,7 +472,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <strong>awful.screen.focus (_screen)</strong>
     </dt>
     <dd>
-    Move the focus to a screen. </p>
+    Move the focus to a screen.</p>
 
 <p> This moves the mouse pointer to the last known position on the new screen,
  or keeps its position relative to the current focused screen.
@@ -497,7 +495,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <strong>awful.screen.focus_bydirection (dir, _screen)</strong>
     </dt>
     <dd>
-    Move the focus to a screen in a specific direction. </p>
+    Move the focus to a screen in a specific direction.</p>
 
 <p> This moves the mouse pointer to the last known position on the new screen,
  or keeps its position relative to the current focused screen.
@@ -505,7 +503,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
 
     <ul>
         <li><span class="parameter">dir</span>
-         The direction, can be either "up", "down", "left" or "right".
+         The direction, can be either &ldquo;up&rdquo;, &ldquo;down&rdquo;, &ldquo;left&rdquo; or &ldquo;right&rdquo;.
         </li>
         <li><span class="parameter">_screen</span>
          Screen.
@@ -544,7 +542,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <strong>awful.screen.focused ([args])</strong>
     </dt>
     <dd>
-    Get the focused screen. </p>
+    Get the focused screen.</p>
 
 <p> It is possible to set <a href="../classes/screen.html#awful.screen.default_focused_args">awful.screen.default_focused_args</a> to override the
  default settings.
@@ -552,8 +550,6 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
 
     <ul>
         <li><span class="parameter">args</span>
-
-
         <ul>
         <li><span class="parameter">client</span>
             <span class="types"><span class="type">boolean</span></span>
@@ -609,7 +605,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <strong>awful.screen.disconnect_for_each_screen (func)</strong>
     </dt>
     <dd>
-    Undo the effect of connect<em>for</em>each_screen.
+    Undo the effect of connect_for_each_screen.
 
 
     <ul>
@@ -633,13 +629,14 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <strong>geometry</strong>
     </dt>
     <dd>
-    The screen coordinates. </p>
+    The screen coordinates.</p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::geometry</em></li>
+<li><em>property::geometry</em></li>
 </ul>
+
 
 <p> <strong>Immutable:</strong> true
 
@@ -647,8 +644,6 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">table</span>
-
-
         <ul>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">integer</span></span>
@@ -679,15 +674,16 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <strong>index</strong>
     </dt>
     <dd>
-    The internal screen number. </p>
+    The internal screen number.</p>
 
 <ul>
-    <li>The indeces are a continuous sequence from 1 to <code>screen.count()</code>.</li>
-    <li>It is <strong>NOT</strong> related to the actual screen position relative to each
-    other.</li>
-    <li>1 is <strong>NOT</strong> necessarily the primary screen.</li>
-    <li>When screens are added and removed indices <strong>CAN</strong> change.</li>
+<li>The indeces are a continuous sequence from 1 to <code>screen.count()</code>.</li>
+<li>It is <strong>NOT</strong> related to the actual screen position relative to each
+other.</li>
+<li>1 is <strong>NOT</strong> necessarily the primary screen.</li>
+<li>When screens are added and removed indices <strong>CAN</strong> change.</li>
 </ul>
+
 
 <p> If you really want to keep an array of screens you should use something
  along:</p>
@@ -715,8 +711,6 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <ul>
         <li><span class="parameter">integer</span>
 
-
-
         </li>
     </ul>
 
@@ -735,15 +729,16 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     </dt>
     <dd>
     If RANDR information is available, a list of outputs
-   for this screen and their size in mm. </p>
+   for this screen and their size in mm.</p>
 
 <p> Please note that the table content may vary.</p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::outputs</em></li>
+<li><em>property::outputs</em></li>
 </ul>
+
 
 <p> <strong>Immutable:</strong> true
 
@@ -751,8 +746,6 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">table</span>
-
-
         <ul>
         <li><span class="parameter">name</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
@@ -779,8 +772,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <strong>workarea</strong>
     </dt>
     <dd>
-
-<p>The screen workarea. </p>
+    <p>The screen workarea.</p>
 
 <p> The workarea is a subsection of the screen where clients can be placed. It
  usually excludes the toolbars (see <a href="../classes/awful.wibar.html#">awful.wibar</a>) and dockable clients
@@ -791,17 +783,14 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::workarea</em></li>
+<li><em>property::workarea</em></li>
 </ul>
-
 
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">table</span>
-
-
         <ul>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">integer</span></span>
@@ -836,25 +825,21 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <strong>padding</strong>
     </dt>
     <dd>
+    <p>The screen padding.</p>
 
-<p>The screen padding. </p>
-
-<p> This adds a "buffer" section on each side of the screen.</p>
+<p> This adds a &ldquo;buffer&rdquo; section on each side of the screen.</p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::padding</em></li>
+<li><em>property::padding</em></li>
 </ul>
-
 
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">table</span>
-
-
         <ul>
         <li><span class="parameter">left</span>
             <span class="types"><span class="type">integer</span></span>
@@ -885,7 +870,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <strong>clients</strong>
     </dt>
     <dd>
-    The list of visible clients for the screen. </p>
+    The list of visible clients for the screen.</p>
 
 <p> Minimized and unmanaged clients are not included in this list as they are
  technically not on the screen.</p>
@@ -920,7 +905,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <strong>hidden_clients</strong>
     </dt>
     <dd>
-    Get the list of clients assigned to the screen but not currently visible. </p>
+    Get the list of clients assigned to the screen but not currently visible.</p>
 
 <p> This includes minimized clients and clients on hidden tags.
 
@@ -974,17 +959,15 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <strong>tiled_clients</strong>
     </dt>
     <dd>
-
-<p>Tiled clients for the screen. </p>
+    <p>Tiled clients for the screen.</p>
 
 <p> Same as <a href="../classes/screen.html#screen.clients">clients</a>, but excluding:</p>
 
 <ul>
-    <li>fullscreen clients</li>
-    <li>maximized clients</li>
-    <li>floating clients</li>
+<li>fullscreen clients</li>
+<li>maximized clients</li>
+<li>floating clients</li>
 </ul>
-
 
 
 
@@ -1005,7 +988,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <strong>tags</strong>
     </dt>
     <dd>
-    A list of all tags on the screen. </p>
+    A list of all tags on the screen.</p>
 
 <p> This property is read only, use <a href="../classes/tag.html#request::screen">tag.screen</a>, <code>awful.tag.add</code>,
  <code>awful.tag.new</code> or <code>t:delete()</code> to alter this list.
@@ -1014,8 +997,6 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">table</span>
-
-
 
         </li>
     </ul>
@@ -1036,8 +1017,6 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">table</span>
-
-
 
         </li>
     </ul>
@@ -1063,8 +1042,6 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">tag</span>
-
-
 
         </li>
     </ul>
@@ -1102,8 +1079,6 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <strong>primary_changed</strong>
     </dt>
     <dd>
-
-
 
 
 
@@ -1242,8 +1217,8 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
          The screen object to change the padding on
         </li>
         <li><span class="parameter">padding</span>
-         The padding, a table with 'top', 'left', 'right' and/or
- 'bottom' or a number value to apply set the same padding on all sides. Can be
+         The padding, a table with &lsquo;top&rsquo;, &lsquo;left&rsquo;, &lsquo;right&rsquo; and/or
+ &lsquo;bottom&rsquo; or a number value to apply set the same padding on all sides. Can be
   nil if you only want to retrieve padding
          (<em>default</em> nil)
         </li>
@@ -1273,8 +1248,6 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <ul>
         <li><span class="parameter">primary</span>
             <span class="types"><a class="type" href="../classes/screen.html#">screen</a></span>
-
-
 
         </li>
     </ul>
@@ -1365,7 +1338,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <strong>screen:fake_add (x, y, width, height)</strong>
     </dt>
     <dd>
-    Add a fake screen. </p>
+    Add a fake screen.</p>
 
 <p> To vertically split the first screen in 2 equal parts, use:</p>
 
@@ -1582,7 +1555,7 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
     <strong>screen:get_next_in_direction (self, dir)</strong>
     </dt>
     <dd>
-    Get the next screen in a specific direction. </p>
+    Get the next screen in a specific direction.</p>
 
 <p> This gets the next screen relative to this one in
  the specified direction.
@@ -1593,7 +1566,7 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
          Screen.
         </li>
         <li><span class="parameter">dir</span>
-         The direction, can be either "up", "down", "left" or "right".
+         The direction, can be either &ldquo;up&rdquo;, &ldquo;down&rdquo;, &ldquo;left&rdquo; or &ldquo;right&rdquo;.
         </li>
     </ul>
 
@@ -1607,7 +1580,7 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
     <strong>screen:preferred (c)</strong>
     </dt>
     <dd>
-    Get the preferred screen in the context of a client. </p>
+    Get the preferred screen in the context of a client.</p>
 
 <p> This is exactly the same as <a href="../classes/screen.html#awful.screen.focused">awful.screen.focused</a> except that it avoids
  clients being moved when Awesome is restarted.
@@ -1638,9 +1611,9 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
     <strong>screen:get_bounding_geometry ([args={}])</strong>
     </dt>
     <dd>
-    Get a placement bounding geometry. </p>
+    Get a placement bounding geometry.</p>
 
-<p> This method computes the different variants of the "usable" screen geometry.
+<p> This method computes the different variants of the &ldquo;usable&rdquo; screen geometry.
 
 
     <ul>
@@ -1648,12 +1621,12 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
         <ul>
         <li><span class="parameter">honor_padding</span>
             <span class="types"><span class="type">boolean</span></span>
-         Whether to honor the screen's padding.
+         Whether to honor the screen&rsquo;s padding.
          (<em>default</em> false)
         </li>
         <li><span class="parameter">honor_workarea</span>
             <span class="types"><span class="type">boolean</span></span>
-         Whether to honor the screen's workarea.
+         Whether to honor the screen&rsquo;s workarea.
          (<em>default</em> false)
         </li>
         <li><span class="parameter">margins</span>
@@ -1665,7 +1638,7 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
         </li>
         <li><span class="parameter">tag</span>
             <span class="types"><a class="type" href="../classes/tag.html#">tag</a></span>
-         Use this tag's screen.
+         Use this tag&rsquo;s screen.
          (<em>optional</em>)
         </li>
         <li><span class="parameter">parent</span>
@@ -1708,7 +1681,7 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
     <strong>screen:get_clients ([stacked=true])</strong>
     </dt>
     <dd>
-    Get the list of visible clients for the screen. </p>
+    Get the list of visible clients for the screen.</p>
 
 <p> This is used by <a href="../classes/screen.html#screen.clients">screen.clients</a> internally (with <code>stacked=true</code>).
 
@@ -1737,7 +1710,7 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
     <strong>screen:get_all_clients ([stacked=true])</strong>
     </dt>
     <dd>
-    Get all clients assigned to the screen. </p>
+    Get all clients assigned to the screen.</p>
 
 <p> This is used by <a href="../classes/screen.html#screen.all_clients">all_clients</a> internally (with <code>stacked=true</code>).
 
@@ -1766,7 +1739,7 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
     <strong>screen:get_tiled_clients ([stacked=true])</strong>
     </dt>
     <dd>
-    Get tiled clients for the screen. </p>
+    Get tiled clients for the screen.</p>
 
 <p> This is used by <code>tiles_clients</code> internally (with <code>stacked=true</code>).
 
@@ -1795,7 +1768,7 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
     <strong>screen:set_auto_dpi_enabled (enabled)</strong>
     </dt>
     <dd>
-    Enable the automatic calculation of the screen DPI (experimental). </p>
+    Enable the automatic calculation of the screen DPI (experimental).</p>
 
 <p> This will cause many elements such as the font and some widgets to be scaled
  so they look the same (physical) size on different devices with different
@@ -1835,7 +1808,7 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-02-25 14:00:40 </i>
+<i style="float:right;">Last updated 2019-02-26 10:13:58 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

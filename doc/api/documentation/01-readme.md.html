@@ -185,35 +185,35 @@
 
 <div id="content">
 
-
-<h1>Readme</h1>
+    <h1>Readme</h1>
 
 <p><a name="About_Awesome"></a></p>
+
 <h2>About Awesome</h2>
 
 <p>Awesome is a highly configurable, next generation framework window manager for X.</p>
 
 <p><a name="Building_and_installation"></a></p>
+
 <h2>Building and installation</h2>
 
 <p>After extracting the dist tarball, run:</p>
-
 
 <pre>
 make
 </pre>
 
+
 <p>This will create a build directory, run cmake in it and build Awesome.</p>
 
 <p>After building is finished, you can either install via <code>make install</code>:</p>
-
 
 <pre>
 make install  # you might need root permissions
 </pre>
 
-<p>or by auto-generating a .deb or .rpm package, for easy removal later on:</p>
 
+<p>or by auto-generating a .deb or .rpm package, for easy removal later on:</p>
 
 <pre>
 make <span class="global">package</span>
@@ -223,14 +223,15 @@ sudo dpkg -i awesome-x.y.z.deb
 sudo rpm -Uvh awesome-x.y.z.rpm
 </pre>
 
+
 <p>NOTE: Awesome uses <a href="https://cmake.org"><code>cmake</code></a> to build. In case you want to
 pass arguments to cmake, please use the <code>CMAKE_ARGS</code> environment variable. For
 instance:</p>
 
-
 <pre>
 CMAKE_ARGS=<span class="string">"-DCMAKE_INSTALL_PREFIX=/opt/awesome"</span> make
 </pre>
+
 
 <h3>Installing current git master as a package receipts</h3>
 
@@ -242,7 +243,6 @@ CMAKE_ARGS=<span class="string">"-DCMAKE_INSTALL_PREFIX=/opt/awesome"</span> mak
  makepkg -fsri
 </code></pre>
 
-
 <h4>Debian-based</h4>
 
 <pre><code> sudo apt build-dep awesome
@@ -252,84 +252,86 @@ CMAKE_ARGS=<span class="string">"-DCMAKE_INSTALL_PREFIX=/opt/awesome"</span> mak
  sudo apt install *.deb
 </code></pre>
 
-
-
 <h3>Build dependencies</h3>
 
 <p>Awesome has the following dependencies (besides a more-or-less standard POSIX
 environment):</p>
 
 <ul>
-    <li><a href="https://cmake.org">CMake >= 3.0.0</a></li>
-    <li><a href="https://www.lua.org">Lua >= 5.1.0</a> or <a href="http://luajit.org">LuaJIT</a></li>
-    <li><a href="https://github.com/pavouk/lgi">LGI >= 0.8.0</a></li>
-    <li><a href="https://www.x.org/archive//individual/proto/">xproto >= 7.0.15</a></li>
-    <li><a href="https://xcb.freedesktop.org/">libxcb >= 1.6</a> with support for the RandR, XTest, Xinerama, SHAPE and
-    XKB extensions</li>
-    <li><a href="https://xcb.freedesktop.org/">libxcb-cursor</a></li>
-    <li><a href="https://xcb.freedesktop.org/">libxcb-util >= 0.3.8</a></li>
-    <li><a href="https://xcb.freedesktop.org/">libxcb-keysyms >= 0.3.4</a></li>
-    <li><a href="https://xcb.freedesktop.org/">libxcb-icccm >= 0.3.8</a></li>
-    <li><a href="https://github.com/Airblader/xcb-util-xrm">xcb-util-xrm >= 1.0</a></li>
-    <li><a href="http://xkbcommon.org/">libxkbcommon</a> with X11 support enabled</li>
-    <li><a href="https://www.freedesktop.org/wiki/Software/startup-notification/">libstartup-notification >=
-    0.10</a></li>
-    <li><a href="https://www.cairographics.org/">cairo</a> with support for XCB and GObject
-    introspection</li>
-    <li><a href="http://www.pango.org/">Pango</a> with support for Cairo and GObject
-    introspection</li>
-    <li><a href="https://wiki.gnome.org/Projects/GLib">GLib >= 2.40</a> with support for GObject
-    introspection</li>
-    <li><a href="https://developer.gnome.org/gio/stable/">GIO</a> with support for GObject
-    introspection</li>
-    <li><a href="https://wiki.gnome.org/Projects/GdkPixbuf">GdkPixbuf</a></li>
-    <li>libX11 with xcb support</li>
-    <li><a href="http://www.imagemagick.org/script/index.php">Imagemagick's convert utility</a></li>
-    <li><a href="https://github.com/devnev/libxdg-basedir">libxdg-basedir >= 1.0.0</a></li>
+<li><a href="https://cmake.org">CMake >= 3.0.0</a></li>
+<li><a href="https://www.lua.org">Lua >= 5.1.0</a> or <a href="http://luajit.org">LuaJIT</a></li>
+<li><a href="https://github.com/pavouk/lgi">LGI >= 0.8.0</a></li>
+<li><a href="https://www.x.org/archive//individual/proto/">xproto >= 7.0.15</a></li>
+<li><a href="https://xcb.freedesktop.org/">libxcb >= 1.6</a> with support for the RandR, XTest, Xinerama, SHAPE and
+XKB extensions</li>
+<li><a href="https://xcb.freedesktop.org/">libxcb-cursor</a></li>
+<li><a href="https://xcb.freedesktop.org/">libxcb-util >= 0.3.8</a></li>
+<li><a href="https://xcb.freedesktop.org/">libxcb-keysyms >= 0.3.4</a></li>
+<li><a href="https://xcb.freedesktop.org/">libxcb-icccm >= 0.3.8</a></li>
+<li><a href="https://github.com/Airblader/xcb-util-xrm">xcb-util-xrm >= 1.0</a></li>
+<li><a href="http://xkbcommon.org/">libxkbcommon</a> with X11 support enabled</li>
+<li><a href="https://www.freedesktop.org/wiki/Software/startup-notification/">libstartup-notification >=
+0.10</a></li>
+<li><a href="https://www.cairographics.org/">cairo</a> with support for XCB and GObject
+introspection</li>
+<li><a href="http://www.pango.org/">Pango</a> with support for Cairo and GObject
+introspection</li>
+<li><a href="https://wiki.gnome.org/Projects/GLib">GLib >= 2.40</a> with support for GObject
+introspection</li>
+<li><a href="https://developer.gnome.org/gio/stable/">GIO</a> with support for GObject
+introspection</li>
+<li><a href="https://wiki.gnome.org/Projects/GdkPixbuf">GdkPixbuf</a></li>
+<li>libX11 with xcb support</li>
+<li><a href="http://www.imagemagick.org/script/index.php">Imagemagick&rsquo;s convert utility</a></li>
+<li><a href="https://github.com/devnev/libxdg-basedir">libxdg-basedir >= 1.0.0</a></li>
 </ul>
+
 
 <p>Additionally, the following optional dependencies exist:</p>
 
 <ul>
-    <li><a href="https://www.freedesktop.org/wiki/Software/dbus/">DBus</a> for DBus integration
-    and the <code>awesome-client</code> utility</li>
-    <li><a href="https://asciidoctor.org/">asciidoctor</a> for generating man pages</li>
-    <li><a href="http://www.gzip.org/">gzip</a> for compressing man pages</li>
-    <li><a href="https://stevedonovan.github.io/ldoc/">ldoc >= 1.4.5</a> for generating the
-    documentation</li>
-    <li><a href="https://olivinelabs.com/busted/">busted</a> for running unit tests</li>
-    <li><a href="https://github.com/mpeterv/luacheck">luacheck</a> for static code analysis</li>
-    <li><a href="https://keplerproject.github.io/luacov/">LuaCov</a> for collecting code coverage
-    information</li>
-    <li>libexecinfo on systems where libc does not provide <code>backtrace_symbols()</code> to
-    generate slightly better backtraces on crashes</li>
-    <li><code>Xephyr</code> or <code>Xvfb</code> for running integration tests</li>
-    <li><a href="https://www.gtk.org/">GTK+ >= 3.10</a> for <code>./themes/gtk/</code></li>
+<li><a href="https://www.freedesktop.org/wiki/Software/dbus/">DBus</a> for DBus integration
+and the <code>awesome-client</code> utility</li>
+<li><a href="https://asciidoctor.org/">asciidoctor</a> for generating man pages</li>
+<li><a href="http://www.gzip.org/">gzip</a> for compressing man pages</li>
+<li><a href="https://stevedonovan.github.io/ldoc/">ldoc >= 1.4.5</a> for generating the
+documentation</li>
+<li><a href="https://olivinelabs.com/busted/">busted</a> for running unit tests</li>
+<li><a href="https://github.com/mpeterv/luacheck">luacheck</a> for static code analysis</li>
+<li><a href="https://keplerproject.github.io/luacov/">LuaCov</a> for collecting code coverage
+information</li>
+<li>libexecinfo on systems where libc does not provide <code>backtrace_symbols()</code> to
+generate slightly better backtraces on crashes</li>
+<li><code>Xephyr</code> or <code>Xvfb</code> for running integration tests</li>
+<li><a href="https://www.gtk.org/">GTK+ >= 3.10</a> for <code>./themes/gtk/</code></li>
 </ul>
 
+
 <p><a name="Running_Awesome"></a></p>
+
 <h2>Running Awesome</h2>
 
 <p>You can directly select Awesome from your display manager. If not, you can
 add the following line to your .xinitrc to start Awesome using startx
 or to <code>.xsession</code> to start Awesome using your display manager:</p>
 
-
 <pre>
 exec awesome
 </pre>
 
+
 <p>In order to connect Awesome to a specific display, make sure that
 the <code>DISPLAY</code> environment variable is set correctly, e.g.:</p>
-
 
 <pre>
 DISPLAY=foo.bar:<span class="number">1</span> exec awesome
 </pre>
 
+
 <p>(This will start Awesome on display <code>:1</code> of the host foo.bar.)</p>
 
 <p><a name="Configuration"></a></p>
+
 <h2>Configuration</h2>
 
 <p>The configuration of Awesome is done by creating a
@@ -338,6 +340,7 @@ DISPLAY=foo.bar:<span class="number">1</span> exec awesome
 <p>An example configuration named <code>awesomerc.lua</code> is provided in the source.</p>
 
 <p><a name="Troubleshooting"></a></p>
+
 <h2>Troubleshooting</h2>
 
 <p>On most systems any message printed by Awesome (including warnings and errors)
@@ -351,20 +354,21 @@ problem.</p>
 
 <p>You can call <a href="../libraries/awesome.html#">awesome</a> with <code>gdb</code> like this:</p>
 
-
 <pre>
 DISPLAY=:<span class="number">2</span> gdb awesome
 </pre>
 
-<p>Then in gdb set any args and run it:</p>
 
+<p>Then in gdb set any args and run it:</p>
 
 <pre>
 (gdb) set arg <span class="comment">--replace
 </span>(gdb) run
 </pre>
 
+
 <p><a name="Asking_questions"></a></p>
+
 <h2>Asking questions</h2>
 
 <h4>IRC</h4>
@@ -374,44 +378,51 @@ DISPLAY=:<span class="number">2</span> gdb awesome
 <p><a href="https://webchat.oftc.net/?channels=awesome">IRC Webchat</a></p>
 
 <h4>Stack Overflow</h4>
+
 <p>You can ask questions on <a href="http://stackoverflow.com/questions/tagged/awesome-wm">Stack Overflow</a>.</p>
 
 <h4>Reddit</h4>
+
 <p>We also have a <a href="https://www.reddit.com/r/awesomewm/">awesome subreddit</a> where you can share your work and ask questions.</p>
 
 <p><a name="Reporting_issues"></a></p>
+
 <h2>Reporting issues</h2>
 
 <p>Please report any issues you may find on <a href="https://github.com/awesomeWM/awesome/issues">our bugtracker</a>.</p>
 
 <p><a name="Contributing_code"></a></p>
+
 <h2>Contributing code</h2>
 
 <p>You can submit pull requests on the <a href="https://github.com/awesomeWM/awesome">github repository</a>.
 Please read the <a href="https://github.com/awesomeWM/awesome/blob/master/docs/02-contributing.md">contributing guide</a> for any coding, documentation or patch guidelines.</p>
 
 <p><a name="Status"></a></p>
+
 <h2>Status</h2>
-<p><a href="https://travis-ci.org/awesomeWM/awesome"><img src="https://travis-ci.org/awesomeWM/awesome.svg?branch=master" alt="Build Status"/></a></p>
+
+<p><a href="https://travis-ci.org/awesomeWM/awesome"><img src="https://travis-ci.org/awesomeWM/awesome.svg?branch=master" alt="Build Status" /></a></p>
 
 <p><a name="Documentation"></a></p>
+
 <h2>Documentation</h2>
 
 <p>Online documentation is available <a href="https://awesomewm.org/apidoc/">here</a>.</p>
 
 <p><a name="License"></a></p>
+
 <h2>License</h2>
 
 <p>The project is licensed under GNU General Publice License v2 or later.
 You can read it online at (<a href="http://www.gnu.org/licenses/gpl-2.0.html">v2</a>
 or <a href="http://www.gnu.org/licenses/gpl.html">v3</a>).</p>
 
-
 </div> <!-- id="content" -->
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-02-25 14:00:40 </i>
+<i style="float:right;">Last updated 2019-02-26 10:13:58 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

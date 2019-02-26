@@ -182,16 +182,9 @@
 
 <h1>Class <code>awful.widget.layoutlist</code></h1>
 <p>Display the available client layouts for a screen.</p>
-<p>
+<p><p> This is what the layoutlist looks like by default with a vertical layout:</p>
 
-
-<p> This is what the layoutlist looks like by default with a vertical layout:</p>
-
-
-
-<p><img src="../images/AUTOGEN_awful_widget_layoutlist_default.svg" alt="Usage example"/></p>
-
-
+<p><img src="../images/AUTOGEN_awful_widget_layoutlist_default.svg" alt="Usage example" /></p>
 
 <pre>
 awful.popup {
@@ -205,14 +198,11 @@ awful.popup {
 }
 </pre>
 
+
 <p> In the second example, it is shown how to create a popup in the center of
  the screen:</p>
 
-
-
-<p><img src="../images/AUTOGEN_awful_widget_layoutlist_popup.svg" alt="Usage example"/></p>
-
-
+<p><img src="../images/AUTOGEN_awful_widget_layoutlist_popup.svg" alt="Usage example" /></p>
 
 <pre>
 <span class="keyword">local</span> ll = awful.widget.layoutlist {
@@ -273,13 +263,10 @@ awful.popup {
 }
 </pre>
 
-<p> This example extends 'awful.widget.layoutbox' to show a layout list popup:</p>
 
+<p> This example extends &lsquo;awful.widget.layoutbox&rsquo; to show a layout list popup:</p>
 
-
-<p><img src="../images/AUTOGEN_awful_widget_layoutlist_bar.svg" alt="Usage example"/></p>
-
-
+<p><img src="../images/AUTOGEN_awful_widget_layoutlist_bar.svg" alt="Usage example" /></p>
 
 <pre>
 <span class="comment">-- Normally you would use your existing bars, but for this example, we add one
@@ -327,13 +314,10 @@ awful.wibar { widget = l }
 p:bind_to_widget(lb)
 </pre>
 
+
 <p> This example shows how to add a layout subset to the default wibar:</p>
 
-
-
-<p><img src="../images/AUTOGEN_awful_widget_layoutlist_wibar.svg" alt="Usage example"/></p>
-
-
+<p><img src="../images/AUTOGEN_awful_widget_layoutlist_wibar.svg" alt="Usage example" /></p>
 
 <pre>
 wb:setup {
@@ -365,7 +349,6 @@ wb:setup {
     },
 }
 </pre>
-
 </p>
     <h3>Info:</h3>
     <ul>
@@ -553,7 +536,7 @@ wb:setup {
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.widget.layoutlist:buttons">awful.widget.layoutlist:buttons (_buttons)</a></td>
-	<td class="summary">Set/get a widget's buttons.</td>
+	<td class="summary">Set/get a widget&rsquo;s buttons.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.widget.layoutlist:emit_signal_recursive">awful.widget.layoutlist:emit_signal_recursive (signal_name, ...)</a></td>
@@ -591,8 +574,6 @@ wb:setup {
 
     <ul>
         <li><span class="parameter">args</span>
-
-
         <ul>
         <li><span class="parameter">layout</span>
             <span class="types"><span class="type">widget</span></span>
@@ -633,49 +614,33 @@ wb:setup {
         <li><span class="parameter">style.disable_icon</span>
             <span class="types"><span class="type">boolean</span></span>
 
-
-
         </li>
         <li><span class="parameter">style.disable_name</span>
             <span class="types"><span class="type">boolean</span></span>
-
-
 
         </li>
         <li><span class="parameter">style.fg_normal</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
 
-
-
         </li>
         <li><span class="parameter">style.bg_normal</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
-
-
 
         </li>
         <li><span class="parameter">style.fg_selected</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
 
-
-
         </li>
         <li><span class="parameter">style.bg_selected</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
-
-
 
         </li>
         <li><span class="parameter">style.font</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
-
-
         </li>
         <li><span class="parameter">style.font_selected</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-
-
 
         </li>
         <li><span class="parameter">style.align</span>
@@ -685,43 +650,29 @@ wb:setup {
         <li><span class="parameter">style.spacing</span>
             <span class="types"><span class="type">number</span></span>
 
-
-
         </li>
         <li><span class="parameter">style.shape</span>
             <span class="types"><span class="type">gears.shape</span></span>
-
-
 
         </li>
         <li><span class="parameter">style.shape_border_width</span>
             <span class="types"><span class="type">number</span></span>
 
-
-
         </li>
         <li><span class="parameter">style.shape_border_color</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
-
-
 
         </li>
         <li><span class="parameter">style.shape_selected</span>
             <span class="types"><span class="type">gears.shape</span></span>
 
-
-
         </li>
         <li><span class="parameter">style.shape_border_width_selected</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
 
-
-
         </li>
         <li><span class="parameter">style.shape_border_color_selected</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
-
-
 
         </li>
         </li></ul>
@@ -756,8 +707,6 @@ wb:setup {
     <ul>
         <li><span class="parameter">widget</span>
 
-
-
         </li>
     </ul>
 
@@ -783,8 +732,6 @@ wb:setup {
     <ul>
         <li><span class="parameter">table</span>
 
-
-
         </li>
     </ul>
 
@@ -805,8 +752,6 @@ wb:setup {
     <ul>
         <li><span class="parameter">screen</span>
 
-
-
         </li>
     </ul>
 
@@ -826,8 +771,6 @@ wb:setup {
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">function</span>
-
-
 
          (<em>default</em> awful.widget.layoutlist.source.for_screen)
         </li>
@@ -850,8 +793,6 @@ wb:setup {
     <ul>
         <li><span class="parameter">function</span>
 
-
-
          (<em>default</em> awful.widget.layoutlist.source.for_screen)
         </li>
     </ul>
@@ -866,8 +807,7 @@ wb:setup {
     <strong>buttons</strong>
     </dt>
     <dd>
-
-<p>The layoutlist buttons. </p>
+    <p>The layoutlist buttons.</p>
 
 <p> The default is:</p>
 
@@ -877,13 +817,9 @@ wb:setup {
 </code></pre>
 
 
-
-
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">table</span>
-
-
 
         </li>
     </ul>
@@ -905,8 +841,6 @@ wb:setup {
     <ul>
         <li><span class="parameter">table</span>
 
-
-
         </li>
     </ul>
 
@@ -926,8 +860,6 @@ wb:setup {
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">layout</span>
-
-
 
         </li>
     </ul>
@@ -1012,8 +944,6 @@ wb:setup {
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
-
-
 
         </li>
     </ul>
@@ -1112,7 +1042,7 @@ wb:setup {
         <li><span class="parameter">hierarchy</span>
             <span class="types"><span class="type">wibox.hierarchy</span></span>
          The hierarchy
- managing the widget's geometry.
+ managing the widget&rsquo;s geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -1199,7 +1129,7 @@ wb:setup {
         <li><span class="parameter">hierarchy</span>
             <span class="types"><span class="type">wibox.hierarchy</span></span>
          The hierarchy
- managing the widget's geometry.
+ managing the widget&rsquo;s geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -1268,7 +1198,7 @@ wb:setup {
         <li><span class="parameter">hierarchy</span>
             <span class="types"><span class="type">wibox.hierarchy</span></span>
          The hierarchy
- managing the widget's geometry.
+ managing the widget&rsquo;s geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -1337,7 +1267,7 @@ wb:setup {
         <li><span class="parameter">hierarchy</span>
             <span class="types"><span class="type">wibox.hierarchy</span></span>
          The hierarchy
- managing the widget's geometry.
+ managing the widget&rsquo;s geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -1398,8 +1328,6 @@ wb:setup {
         <li><span class="parameter">fg_normal</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
 
-
-
          (<em>default</em> nil)
         </li>
     </ul>
@@ -1425,8 +1353,6 @@ wb:setup {
     <ul>
         <li><span class="parameter">bg_normal</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
-
-
 
          (<em>default</em> nil)
         </li>
@@ -1454,8 +1380,6 @@ wb:setup {
         <li><span class="parameter">fg_selected</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
 
-
-
          (<em>default</em> nil)
         </li>
     </ul>
@@ -1481,8 +1405,6 @@ wb:setup {
     <ul>
         <li><span class="parameter">bg_selected</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
-
-
 
          (<em>default</em> nil)
         </li>
@@ -1510,8 +1432,6 @@ wb:setup {
         <li><span class="parameter">layoutlist_disable_icon</span>
             <span class="types"><span class="type">boolean</span></span>
 
-
-
          (<em>default</em> false)
         </li>
     </ul>
@@ -1534,8 +1454,6 @@ wb:setup {
         <li><span class="parameter">layoutlist_disable_name</span>
             <span class="types"><span class="type">boolean</span></span>
 
-
-
          (<em>default</em> false)
         </li>
     </ul>
@@ -1557,8 +1475,6 @@ wb:setup {
     <ul>
         <li><span class="parameter">font</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-
-
 
          (<em>default</em> nil)
         </li>
@@ -1604,8 +1520,6 @@ wb:setup {
         <li><span class="parameter">font_selected</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
-
-
          (<em>default</em> nil)
         </li>
     </ul>
@@ -1650,8 +1564,6 @@ wb:setup {
         <li><span class="parameter">shape</span>
             <span class="types"><span class="type">gears.shape</span></span>
 
-
-
          (<em>default</em> nil)
         </li>
     </ul>
@@ -1674,8 +1586,6 @@ wb:setup {
         <li><span class="parameter">shape_border_width</span>
             <span class="types"><span class="type">number</span></span>
 
-
-
          (<em>default</em> 0)
         </li>
     </ul>
@@ -1697,8 +1607,6 @@ wb:setup {
     <ul>
         <li><span class="parameter">shape_border_color</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">color</span></span>
-
-
 
          (<em>default</em> nil)
         </li>
@@ -1726,8 +1634,6 @@ wb:setup {
         <li><span class="parameter">shape_selected</span>
             <span class="types"><span class="type">gears.shape</span></span>
 
-
-
          (<em>default</em> nil)
         </li>
     </ul>
@@ -1750,8 +1656,6 @@ wb:setup {
         <li><span class="parameter">shape_border_width_selected</span>
             <span class="types"><span class="type">number</span></span>
 
-
-
          (<em>default</em> 0)
         </li>
     </ul>
@@ -1773,8 +1677,6 @@ wb:setup {
     <ul>
         <li><span class="parameter">shape_border_color_selected</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">color</span></span>
-
-
 
          (<em>default</em> nil)
         </li>
@@ -1897,7 +1799,7 @@ wb:setup {
     <strong>awful.widget.layoutlist:buttons (_buttons)</strong>
     </dt>
     <dd>
-    Set/get a widget's buttons.
+    Set/get a widget&rsquo;s buttons.
 
 
     <ul>
@@ -1924,8 +1826,6 @@ wb:setup {
     <ul>
         <li><span class="parameter">signal_name</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-
-
 
         </li>
         <li><span class="parameter">...</span>
@@ -1992,7 +1892,7 @@ wb:setup {
     <strong>awful.widget.layoutlist:weak_connect_signal (name, func)</strong>
     </dt>
     <dd>
-    Connect to a signal weakly. </p>
+    Connect to a signal weakly.</p>
 
 <p> This allows the callback function to be garbage collected and
  automatically disconnects the signal when that happens.</p>
@@ -2025,7 +1925,7 @@ wb:setup {
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-02-25 14:00:40 </i>
+<i style="float:right;">Last updated 2019-02-26 10:13:58 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

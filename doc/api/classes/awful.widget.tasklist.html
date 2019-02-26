@@ -180,10 +180,7 @@
 
 <h1>Class <code>awful.widget.tasklist</code></h1>
 <p>Tasklist widget module for awful.</p>
-<p>
-
-
-<p> <a name="status_icons"></a>
+<p><p> <a name="status_icons"></a>
  <strong>Status icons:</strong></p>
 
 <p> By default, the tasklist prepends some symbols in front of the client name.
@@ -210,14 +207,10 @@
 
 <p> The <a href="../classes/awful.widget.tasklist.html">tasklist</a> created by <a href="../sample files/rc.lua.html#">rc.lua</a> use the default values for almost
  everything. However, it is possible to override each aspects to create a
- very different widget. Here's an example that create a tasklist similar to
+ very different widget. Here&rsquo;s an example that create a tasklist similar to
  the default one, but with an explicit layout and some spacing widgets:</p>
 
-
-
-<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_rounded.svg" alt="Usage example"/></p>
-
-
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_rounded.svg" alt="Usage example" /></p>
 
 <pre>
 s.mytasklist = awful.widget.tasklist {
@@ -272,45 +265,45 @@ s.mytasklist = awful.widget.tasklist {
 }
 </pre>
 
-<p> As demonstrated in the example above, there are a few "shortcuts" to avoid
+
+<p> As demonstrated in the example above, there are a few &ldquo;shortcuts&rdquo; to avoid
  re-inventing the wheel. By setting the predefined roles as widget <code>id</code>s,
  <a href="../classes/awful.widget.common.html#">awful.widget.common</a> will do most of the work to update the values
  automatically. All of them are optional. The supported roles are:</p>
 
 <ul>
-    <li><code>icon_role</code>: A <a href="../classes/wibox.widget.imagebox.html#">wibox.widget.imagebox</a></li>
-    <li><code>text_role</code>: A <a href="../classes/wibox.widget.textbox.html#">wibox.widget.textbox</a></li>
-    <li><code>background_role</code>: A <a href="../classes/wibox.container.background.html#">wibox.container.background</a></li>
-    <li><code>text_margin_role</code>: A <a href="../classes/wibox.container.margin.html#">wibox.container.margin</a></li>
-    <li><code>icon_margin_role</code>: A <a href="../classes/wibox.container.margin.html#">wibox.container.margin</a></li>
+<li><code>icon_role</code>: A <a href="../classes/wibox.widget.imagebox.html#">wibox.widget.imagebox</a></li>
+<li><code>text_role</code>: A <a href="../classes/wibox.widget.textbox.html#">wibox.widget.textbox</a></li>
+<li><code>background_role</code>: A <a href="../classes/wibox.container.background.html#">wibox.container.background</a></li>
+<li><code>text_margin_role</code>: A <a href="../classes/wibox.container.margin.html#">wibox.container.margin</a></li>
+<li><code>icon_margin_role</code>: A <a href="../classes/wibox.container.margin.html#">wibox.container.margin</a></li>
 </ul>
+
 
 <p> <a href="../classes/awful.widget.common.html#">awful.widget.common</a> also has 2 callbacks to give more control over the widget:</p>
 
 <ul>
-    <li><code>create_callback</code>: Called once after the widget instance is created</li>
-    <li><code>update_callback</code>: Called everytime the data is refreshed</li>
+<li><code>create_callback</code>: Called once after the widget instance is created</li>
+<li><code>update_callback</code>: Called everytime the data is refreshed</li>
 </ul>
+
 
 <p> Both callback have the same parameters:</p>
 
 <ul>
-    <li><code>self</code>: The widget instance (<em>widget</em>).</li>
-    <li><code>c</code>: The client (<em>client</em>)</li>
-    <li><code>index</code>: The widget position in the list (<em>number</em>)</li>
-    <li><code>clients</code>: The list of client, in order (<em>table</em>)</li>
+<li><code>self</code>: The widget instance (<em>widget</em>).</li>
+<li><code>c</code>: The client (<em>client</em>)</li>
+<li><code>index</code>: The widget position in the list (<em>number</em>)</li>
+<li><code>clients</code>: The list of client, in order (<em>table</em>)</li>
 </ul>
+
 
 <p> It is also possible to omit some roles and create an icon only tasklist.
  Notice that this example use the <a href="../classes/awful.widget.clienticon.html#">awful.widget.clienticon</a> widget instead
  of an <code>imagebox</code>. This allows higher resoluton icons to be loaded. This
  example reproduces the Windows 10 tasklist look and feel:</p>
 
-
-
-<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_windows10.svg" alt="Usage example"/></p>
-
-
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_windows10.svg" alt="Usage example" /></p>
 
 <pre>
 s.mytasklist = awful.widget.tasklist {
@@ -359,14 +352,11 @@ s.mytasklist = awful.widget.tasklist {
 }
 </pre>
 
+
 <p> The tasklist can also be created in an <a href="../classes/awful.popup.html#">awful.popup</a> in case there is no
  permanent <a href="../classes/awful.wibar.html#">awful.wibar</a>:</p>
 
-
-
-<p><img src="../images/AUTOGEN_awful_popup_alttab.svg" alt="Usage example"/></p>
-
-
+<p><img src="../images/AUTOGEN_awful_popup_alttab.svg" alt="Usage example" /></p>
 
 <pre>
 awful.popup {
@@ -407,7 +397,6 @@ awful.popup {
     shape        = gears.shape.rounded_rect
 }
 </pre>
-
 </p>
     <h3>Info:</h3>
     <ul>
@@ -602,18 +591,16 @@ awful.popup {
     </dt>
     <dd>
     Create a new tasklist widget.
- The last two arguments (update<em>function
+ The last two arguments (update_function
  and layout) serve to customize the layout of the tasklist (eg. to
  make it vertical). For that, you will need to copy the
- awful.widget.common.list</em>update function, make your changes to it
+ awful.widget.common.list_update function, make your changes to it
  and pass it as update_function here. Also change the layout if the
  default is not what you want.
 
 
     <ul>
         <li><span class="parameter">args</span>
-
-
         <ul>
         <li><span class="parameter">screen</span>
             <span class="types"><a class="type" href="../classes/screen.html#">screen</a></span>
@@ -658,105 +645,75 @@ awful.popup {
         <li><span class="parameter">style.fg_normal</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
 
-
-
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.bg_normal</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
-
-
 
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.fg_focus</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
 
-
-
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.bg_focus</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
-
-
 
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.fg_urgent</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
 
-
-
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.bg_urgent</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
-
-
 
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.fg_minimize</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
 
-
-
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.bg_minimize</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
-
-
 
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.bg_image_normal</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
-
-
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.bg_image_focus</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-
-
 
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.bg_image_urgent</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
-
-
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.bg_image_minimize</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-
-
 
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.tasklist_disable_icon</span>
             <span class="types"><span class="type">boolean</span></span>
 
-
-
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.disable_task_name</span>
             <span class="types"><span class="type">boolean</span></span>
 
-
-
          (<em>default</em> false)
         </li>
         <li><span class="parameter">style.font</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-
-
 
          (<em>default</em> nil)
         </li>
@@ -768,21 +725,15 @@ awful.popup {
         <li><span class="parameter">style.font_focus</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
-
-
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.font_minimized</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
-
-
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.font_urgent</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-
-
 
          (<em>default</em> nil)
         </li>
@@ -794,84 +745,60 @@ awful.popup {
         <li><span class="parameter">style.shape</span>
             <span class="types"><span class="type">gears.shape</span></span>
 
-
-
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.shape_border_width</span>
             <span class="types"><span class="type">number</span></span>
-
-
 
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.shape_border_color</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">color</span></span>
 
-
-
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.shape_focus</span>
             <span class="types"><span class="type">gears.shape</span></span>
-
-
 
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.shape_border_width_focus</span>
             <span class="types"><span class="type">number</span></span>
 
-
-
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.shape_border_color_focus</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">color</span></span>
-
-
 
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.shape_minimized</span>
             <span class="types"><span class="type">gears.shape</span></span>
 
-
-
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.shape_border_width_minimized</span>
             <span class="types"><span class="type">number</span></span>
-
-
 
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.shape_border_color_minimized</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">color</span></span>
 
-
-
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.shape_urgent</span>
             <span class="types"><span class="type">gears.shape</span></span>
-
-
 
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.shape_border_width_urgent</span>
             <span class="types"><span class="type">number</span></span>
 
-
-
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">style.shape_border_color_urgent</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">color</span></span>
-
-
 
          (<em>default</em> nil)
         </li>
@@ -915,8 +842,6 @@ awful.popup {
         <li><span class="parameter">fg_normal</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
 
-
-
          (<em>default</em> nil)
         </li>
     </ul>
@@ -942,8 +867,6 @@ awful.popup {
     <ul>
         <li><span class="parameter">bg_normal</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
-
-
 
          (<em>default</em> nil)
         </li>
@@ -971,8 +894,6 @@ awful.popup {
         <li><span class="parameter">fg_focus</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
 
-
-
          (<em>default</em> nil)
         </li>
     </ul>
@@ -998,8 +919,6 @@ awful.popup {
     <ul>
         <li><span class="parameter">bg_focus</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
-
-
 
          (<em>default</em> nil)
         </li>
@@ -1027,8 +946,6 @@ awful.popup {
         <li><span class="parameter">fg_urgent</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
 
-
-
          (<em>default</em> nil)
         </li>
     </ul>
@@ -1054,8 +971,6 @@ awful.popup {
     <ul>
         <li><span class="parameter">bg_urgent</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
-
-
 
          (<em>default</em> nil)
         </li>
@@ -1083,8 +998,6 @@ awful.popup {
         <li><span class="parameter">fg_minimize</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
 
-
-
          (<em>default</em> nil)
         </li>
     </ul>
@@ -1110,8 +1023,6 @@ awful.popup {
     <ul>
         <li><span class="parameter">bg_minimize</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">pattern</span></span>
-
-
 
          (<em>default</em> nil)
         </li>
@@ -1139,8 +1050,6 @@ awful.popup {
         <li><span class="parameter">bg_image_normal</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
-
-
          (<em>default</em> nil)
         </li>
     </ul>
@@ -1162,8 +1071,6 @@ awful.popup {
     <ul>
         <li><span class="parameter">bg_image_focus</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-
-
 
          (<em>default</em> nil)
         </li>
@@ -1187,8 +1094,6 @@ awful.popup {
         <li><span class="parameter">bg_image_urgent</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
-
-
          (<em>default</em> nil)
         </li>
     </ul>
@@ -1210,8 +1115,6 @@ awful.popup {
     <ul>
         <li><span class="parameter">bg_image_minimize</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-
-
 
          (<em>default</em> nil)
         </li>
@@ -1235,8 +1138,6 @@ awful.popup {
         <li><span class="parameter">tasklist_disable_icon</span>
             <span class="types"><span class="type">boolean</span></span>
 
-
-
          (<em>default</em> false)
         </li>
     </ul>
@@ -1259,8 +1160,6 @@ awful.popup {
         <li><span class="parameter">tasklist_disable_task_name</span>
             <span class="types"><span class="type">boolean</span></span>
 
-
-
          (<em>default</em> false)
         </li>
     </ul>
@@ -1275,7 +1174,7 @@ awful.popup {
     <strong>beautiful.tasklist_plain_task_name</strong>
     </dt>
     <dd>
-    Disable the extra tasklist client property notification icons. </p>
+    Disable the extra tasklist client property notification icons.</p>
 
 <p> See the <a href="status_icons">Status icons</a> section for more details.
 
@@ -1284,8 +1183,6 @@ awful.popup {
     <ul>
         <li><span class="parameter">tasklist_plain_task_name</span>
             <span class="types"><span class="type">boolean</span></span>
-
-
 
          (<em>default</em> false)
         </li>
@@ -1308,8 +1205,6 @@ awful.popup {
     <ul>
         <li><span class="parameter">font</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-
-
 
          (<em>default</em> nil)
         </li>
@@ -1355,8 +1250,6 @@ awful.popup {
         <li><span class="parameter">font_focus</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
-
-
          (<em>default</em> nil)
         </li>
     </ul>
@@ -1379,8 +1272,6 @@ awful.popup {
         <li><span class="parameter">font_minimized</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
-
-
          (<em>default</em> nil)
         </li>
     </ul>
@@ -1402,8 +1293,6 @@ awful.popup {
     <ul>
         <li><span class="parameter">font_urgent</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-
-
 
          (<em>default</em> nil)
         </li>
@@ -1449,8 +1338,6 @@ awful.popup {
         <li><span class="parameter">shape</span>
             <span class="types"><span class="type">gears.shape</span></span>
 
-
-
          (<em>default</em> nil)
         </li>
     </ul>
@@ -1473,8 +1360,6 @@ awful.popup {
         <li><span class="parameter">shape_border_width</span>
             <span class="types"><span class="type">number</span></span>
 
-
-
          (<em>default</em> 0)
         </li>
     </ul>
@@ -1496,8 +1381,6 @@ awful.popup {
     <ul>
         <li><span class="parameter">shape_border_color</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">color</span></span>
-
-
 
          (<em>default</em> nil)
         </li>
@@ -1525,8 +1408,6 @@ awful.popup {
         <li><span class="parameter">shape_focus</span>
             <span class="types"><span class="type">gears.shape</span></span>
 
-
-
          (<em>default</em> nil)
         </li>
     </ul>
@@ -1549,8 +1430,6 @@ awful.popup {
         <li><span class="parameter">shape_border_width_focus</span>
             <span class="types"><span class="type">number</span></span>
 
-
-
          (<em>default</em> 0)
         </li>
     </ul>
@@ -1572,8 +1451,6 @@ awful.popup {
     <ul>
         <li><span class="parameter">shape_border_color_focus</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">color</span></span>
-
-
 
          (<em>default</em> nil)
         </li>
@@ -1601,8 +1478,6 @@ awful.popup {
         <li><span class="parameter">shape_minimized</span>
             <span class="types"><span class="type">gears.shape</span></span>
 
-
-
          (<em>default</em> nil)
         </li>
     </ul>
@@ -1625,8 +1500,6 @@ awful.popup {
         <li><span class="parameter">shape_border_width_minimized</span>
             <span class="types"><span class="type">number</span></span>
 
-
-
          (<em>default</em> 0)
         </li>
     </ul>
@@ -1648,8 +1521,6 @@ awful.popup {
     <ul>
         <li><span class="parameter">shape_border_color_minimized</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">color</span></span>
-
-
 
          (<em>default</em> nil)
         </li>
@@ -1677,8 +1548,6 @@ awful.popup {
         <li><span class="parameter">shape_urgent</span>
             <span class="types"><span class="type">gears.shape</span></span>
 
-
-
          (<em>default</em> nil)
         </li>
     </ul>
@@ -1700,8 +1569,6 @@ awful.popup {
     <ul>
         <li><span class="parameter">shape_border_width_urgent</span>
             <span class="types"><span class="type">number</span></span>
-
-
 
          (<em>default</em> 0)
         </li>
@@ -1725,8 +1592,6 @@ awful.popup {
         <li><span class="parameter">shape_border_color_urgent</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">color</span></span>
 
-
-
          (<em>default</em> nil)
         </li>
     </ul>
@@ -1749,7 +1614,7 @@ awful.popup {
     <strong>awful.tasklist.source.all_clients</strong>
     </dt>
     <dd>
-    Get all the clients in an undefined order. </p>
+    Get all the clients in an undefined order.</p>
 
 <p> This is the default source.
 
@@ -1873,7 +1738,7 @@ awful.popup {
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-02-25 14:00:40 </i>
+<i style="float:right;">Last updated 2019-02-26 10:13:58 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

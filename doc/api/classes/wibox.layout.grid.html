@@ -185,11 +185,7 @@
  declarative system.
  Instead, create the grid layout and call the <a href="../classes/wibox.layout.grid.html#wibox.layout.grid:add_widget_at">add_widget_at</a> method.</p>
 
-
-
-<p><img src="../images/AUTOGEN_wibox_layout_grid_imperative.svg" alt="Usage example"/></p>
-
-
+<p><img src="../images/AUTOGEN_wibox_layout_grid_imperative.svg" alt="Usage example" /></p>
 
 <pre>
 <span class="keyword">local</span> l = wibox.widget {
@@ -208,12 +204,11 @@ l:insert_row(<span class="number">1</span>)
 l:add_widget_at(lorem, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">3</span>)
 </pre>
 
+
 <p> Using the declarative system, widgets are automatically added next to each
  other spanning only one cell.</p>
 
-
-
-<p><img src="../images/AUTOGEN_wibox_layout_defaults_grid.svg" alt="Usage example"/></p>
+<p><img src="../images/AUTOGEN_wibox_layout_defaults_grid.svg" alt="Usage example" /></p>
     <h3>Usage:</h3>
     <ul>
         <pre class="example">wibox.widget {
@@ -447,7 +442,7 @@ l:add_widget_at(lorem, <span class="number">1</span>, <span class="number">1</sp
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.layout.grid:buttons">wibox.layout.grid:buttons (_buttons)</a></td>
-	<td class="summary">Set/get a widget's buttons.</td>
+	<td class="summary">Set/get a widget&rsquo;s buttons.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.layout.grid:emit_signal_recursive">wibox.layout.grid:emit_signal_recursive (signal_name, ...)</a></td>
@@ -480,7 +475,7 @@ l:add_widget_at(lorem, <span class="number">1</span>, <span class="number">1</sp
     <strong>wibox.layout.grid ([orientation="y"])</strong>
     </dt>
     <dd>
-    Return a new grid layout. </p>
+    Return a new grid layout.</p>
 
 <p> A grid layout sets widgets in a grids of custom number of rows and columns.
 
@@ -503,10 +498,10 @@ l:add_widget_at(lorem, <span class="number">1</span>, <span class="number">1</sp
     <strong>wibox.layout.grid.horizontal (forced_num_rows, ...)</strong>
     </dt>
     <dd>
-    Return a new horizontal grid layout. </p>
+    Return a new horizontal grid layout.</p>
 
 <p> Each new widget is positioned below the last widget on the same column
- up to <a href="../classes/wibox.layout.grid.html#wibox.layout.grid.forced_num_rows">forced_num_rows</a>. Then the next column is filled, creating it if it doesn't exist.
+ up to <a href="../classes/wibox.layout.grid.html#wibox.layout.grid.forced_num_rows">forced_num_rows</a>. Then the next column is filled, creating it if it doesn&rsquo;t exist.
 
 
     <ul>
@@ -530,10 +525,10 @@ l:add_widget_at(lorem, <span class="number">1</span>, <span class="number">1</sp
     <strong>wibox.layout.grid.vertical (forced_num_cols, ...)</strong>
     </dt>
     <dd>
-    Return a new vertical grid layout. </p>
+    Return a new vertical grid layout.</p>
 
 <p> Each new widget is positioned left of the last widget on the same row
- up to <a href="../classes/wibox.layout.grid.html#wibox.layout.grid.forced_num_cols">forced_num_cols</a>. Then the next row is filled, creating it if it doesn't exist.
+ up to <a href="../classes/wibox.layout.grid.html#wibox.layout.grid.forced_num_cols">forced_num_cols</a>. Then the next row is filled, creating it if it doesn&rsquo;t exist.
 
 
     <ul>
@@ -561,24 +556,22 @@ l:add_widget_at(lorem, <span class="number">1</span>, <span class="number">1</sp
     <strong>orientation</strong>
     </dt>
     <dd>
+    <p>Set the preferred orientation of the grid layout.</p>
 
-<p>Set the preferred orientation of the grid layout. </p>
-
-<p> Allowed values are "horizontal" and "vertical".
+<p> Allowed values are &ldquo;horizontal&rdquo; and &ldquo;vertical&rdquo;.
  When calling <a href="../classes/wibox.layout.grid.html#wibox.layout.grid:get_next_empty">get_next_empty</a>, empty cells are browsed differently:</p>
 
 <ul>
-    <li><p>for "horizontal", the grid can be extended horizontally. The current
-    column is filled first; if no empty cell is found up to <a href="../classes/wibox.layout.grid.html#wibox.layout.grid.forced_num_rows">forced_num_rows</a>,
-    the next column is filled, creating it if it does not exist.</p></li>
-    <li><p>for "vertical", the grid can be extended vertically. The current row is
-    filled first; if no empty cell is found up to <a href="../classes/wibox.layout.grid.html#wibox.layout.grid.forced_num_cols">forced_num_cols</a>, the next
-    row is filled, creating it if it does not exist.</p></li>
+<li><p>for &ldquo;horizontal&rdquo;, the grid can be extended horizontally. The current
+column is filled first; if no empty cell is found up to <a href="../classes/wibox.layout.grid.html#wibox.layout.grid.forced_num_rows">forced_num_rows</a>,
+the next column is filled, creating it if it does not exist.</p></li>
+<li><p>for &ldquo;vertical&rdquo;, the grid can be extended vertically. The current row is
+filled first; if no empty cell is found up to <a href="../classes/wibox.layout.grid.html#wibox.layout.grid.forced_num_cols">forced_num_cols</a>, the next
+row is filled, creating it if it does not exist.</p></li>
 </ul>
 
 
-
-<p><img src="../images/AUTOGEN_wibox_layout_grid_orientation.svg" alt="Usage example"/></p>
+<p><img src="../images/AUTOGEN_wibox_layout_grid_orientation.svg" alt="Usage example" /></p>
 
 <p><strong>Usage example output</strong>:</p>
 
@@ -593,13 +586,10 @@ l:add(...)
 </code></pre>
 
 
-
-
-
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
-         Preferred orientation: "horizontal" or "vertical".
+         Preferred orientation: &ldquo;horizontal&rdquo; or &ldquo;vertical&rdquo;.
          (<em>default</em> "vertical")
         </li>
     </ul>
@@ -618,16 +608,12 @@ l:add(...)
  If false, check before adding a new widget if it will superpose with another
  widget and prevent from adding it.</p>
 
-
-
-<p><img src="../images/AUTOGEN_wibox_layout_grid_superpose.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_wibox_layout_grid_superpose.svg" alt="Usage example" />
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
-
-
 
          (<em>default</em> false)
         </li>
@@ -687,11 +673,9 @@ l:add(...)
     <strong>min_cols_size</strong>
     </dt>
     <dd>
-    Set the minimum size for the columns. </p>
+    Set the minimum size for the columns.</p>
 
-
-
-<p><img src="../images/AUTOGEN_wibox_layout_grid_min_size.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_wibox_layout_grid_min_size.svg" alt="Usage example" />
 
 
     <h3>Type:</h3>
@@ -733,7 +717,7 @@ l:add(...)
     <strong>horizontal_spacing</strong>
     </dt>
     <dd>
-    The spacing between columns. </p>
+    The spacing between columns.</p>
 
 <p> see <a href="../classes/wibox.layout.grid.html#wibox.layout.grid.spacing">spacing</a>
 
@@ -756,7 +740,7 @@ l:add(...)
     <strong>vertical_spacing</strong>
     </dt>
     <dd>
-    The spacing between rows. </p>
+    The spacing between rows.</p>
 
 <p> see <a href="../classes/wibox.layout.grid.html#wibox.layout.grid.spacing">spacing</a>
 
@@ -784,9 +768,7 @@ l:add(...)
  Get the value <a href="../classes/wibox.layout.grid.html#wibox.layout.grid.horizontal_spacing">horizontal_spacing</a> or <a href="../classes/wibox.layout.grid.html#wibox.layout.grid.vertical_spacing">vertical_spacing</a> defined by the
  preferred <a href="../classes/wibox.layout.grid.html#wibox.layout.grid.orientation">orientation</a>.</p>
 
-
-
-<p><img src="../images/AUTOGEN_wibox_layout_grid_spacing.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_wibox_layout_grid_spacing.svg" alt="Usage example" />
 
 
     <h3>Type:</h3>
@@ -807,7 +789,7 @@ l:add(...)
     <strong>horizontal_expand</strong>
     </dt>
     <dd>
-    Controls if the columns are expanded to use all the available width. </p>
+    Controls if the columns are expanded to use all the available width.</p>
 
 <p> see <a href="../classes/wibox.layout.grid.html#wibox.layout.grid.expand">expand</a>
 
@@ -830,7 +812,7 @@ l:add(...)
     <strong>vertical_expand</strong>
     </dt>
     <dd>
-    Controls if the rows are expanded to use all the available height. </p>
+    Controls if the rows are expanded to use all the available height.</p>
 
 <p> see <a href="../classes/wibox.layout.grid.html#wibox.layout.grid.expand">expand</a>
 
@@ -858,9 +840,7 @@ l:add(...)
  Get the value <a href="../classes/wibox.layout.grid.html#wibox.layout.grid.horizontal_expand">horizontal_expand</a> or <a href="../classes/wibox.layout.grid.html#wibox.layout.grid.vertical_expand">vertical_expand</a> defined by the
  preferred <a href="../classes/wibox.layout.grid.html#wibox.layout.grid.orientation">orientation</a>.</p>
 
-
-
-<p><img src="../images/AUTOGEN_wibox_layout_grid_expand.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_wibox_layout_grid_expand.svg" alt="Usage example" />
 
 
     <h3>Type:</h3>
@@ -882,7 +862,7 @@ l:add(...)
     </dt>
     <dd>
     Controls if the columns all have the same width or if the width of each
- column depends on the content. </p>
+ column depends on the content.</p>
 
 <p> see <a href="../classes/wibox.layout.grid.html#wibox.layout.grid.homogeneous">homogeneous</a>
 
@@ -906,7 +886,7 @@ l:add(...)
     </dt>
     <dd>
     Controls if the rows all have the same height or if the height of each row
- depends on the content. </p>
+ depends on the content.</p>
 
 <p> see <a href="../classes/wibox.layout.grid.html#wibox.layout.grid.homogeneous">homogeneous</a>
 
@@ -935,9 +915,7 @@ l:add(...)
  Get the value <a href="../classes/wibox.layout.grid.html#wibox.layout.grid.horizontal_homogeneous">horizontal_homogeneous</a> or <a href="../classes/wibox.layout.grid.html#wibox.layout.grid.vertical_homogeneous">vertical_homogeneous</a> defined
  by the preferred <a href="../classes/wibox.layout.grid.html#wibox.layout.grid.orientation">orientation</a>.</p>
 
-
-
-<p><img src="../images/AUTOGEN_wibox_layout_grid_expand.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_wibox_layout_grid_expand.svg" alt="Usage example" />
 
 
     <h3>Type:</h3>
@@ -1028,8 +1006,6 @@ l:add(...)
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
-
-
 
         </li>
     </ul>
@@ -1144,7 +1120,7 @@ l:add(...)
         <li><span class="parameter">hierarchy</span>
             <span class="types"><span class="type">wibox.hierarchy</span></span>
          The hierarchy
- managing the widget's geometry.
+ managing the widget&rsquo;s geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -1231,7 +1207,7 @@ l:add(...)
         <li><span class="parameter">hierarchy</span>
             <span class="types"><span class="type">wibox.hierarchy</span></span>
          The hierarchy
- managing the widget's geometry.
+ managing the widget&rsquo;s geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -1300,7 +1276,7 @@ l:add(...)
         <li><span class="parameter">hierarchy</span>
             <span class="types"><span class="type">wibox.hierarchy</span></span>
          The hierarchy
- managing the widget's geometry.
+ managing the widget&rsquo;s geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -1369,7 +1345,7 @@ l:add(...)
         <li><span class="parameter">hierarchy</span>
             <span class="types"><span class="type">wibox.hierarchy</span></span>
          The hierarchy
- managing the widget's geometry.
+ managing the widget&rsquo;s geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -1527,20 +1503,14 @@ l:add(...)
     <strong>wibox.layout.grid:add_widget_at (child, row, col[, row_span=1[, col_span=1]])</strong>
     </dt>
     <dd>
+    <p>Add a widget to the grid layout at specific coordinate.</p>
 
-<p>Add a widget to the grid layout at specific coordinate. </p>
-
-
-
-<p><img src="../images/AUTOGEN_wibox_layout_grid_add.svg" alt="Usage example"/></p>
+<p><img src="../images/AUTOGEN_wibox_layout_grid_add.svg" alt="Usage example" /></p>
 
 <p><strong>Usage example output</strong>:</p>
 
 <pre><code>l:add_widget_at(new, 1, 4, 1, 1)
 </code></pre>
-
-
-
 
 
     <ul>
@@ -1608,20 +1578,14 @@ l:add(...)
     <strong>wibox.layout.grid:remove_widgets_at (row, col[, row_span=1[, col_span=1]])</strong>
     </dt>
     <dd>
+    <p>Remove widgets at the coordinates.</p>
 
-<p>Remove widgets at the coordinates. </p>
-
-
-
-<p><img src="../images/AUTOGEN_wibox_layout_grid_remove.svg" alt="Usage example"/></p>
+<p><img src="../images/AUTOGEN_wibox_layout_grid_remove.svg" alt="Usage example" /></p>
 
 <p><strong>Usage example output</strong>:</p>
 
 <pre><code>l:remove_widgets_at(1,1)
 </code></pre>
-
-
-
 
 
     <ul>
@@ -1755,20 +1719,14 @@ l:add(...)
     <strong>wibox.layout.grid:insert_column (index)</strong>
     </dt>
     <dd>
+    <p>Insert column at index.</p>
 
-<p>Insert column at index. </p>
-
-
-
-<p><img src="../images/AUTOGEN_wibox_layout_grid_insert_column.svg" alt="Usage example"/></p>
+<p><img src="../images/AUTOGEN_wibox_layout_grid_insert_column.svg" alt="Usage example" /></p>
 
 <p><strong>Usage example output</strong>:</p>
 
 <pre><code>l:insert_column(2)
 </code></pre>
-
-
-
 
 
     <ul>
@@ -1794,20 +1752,14 @@ l:add(...)
     <strong>wibox.layout.grid:extend_column (index)</strong>
     </dt>
     <dd>
+    <p>Extend column at index.</p>
 
-<p>Extend column at index. </p>
-
-
-
-<p><img src="../images/AUTOGEN_wibox_layout_grid_extend_column.svg" alt="Usage example"/></p>
+<p><img src="../images/AUTOGEN_wibox_layout_grid_extend_column.svg" alt="Usage example" /></p>
 
 <p><strong>Usage example output</strong>:</p>
 
 <pre><code>l:extend_column(2)
 </code></pre>
-
-
-
 
 
     <ul>
@@ -1833,20 +1785,14 @@ l:add(...)
     <strong>wibox.layout.grid:remove_column (index)</strong>
     </dt>
     <dd>
+    <p>Remove column at index.</p>
 
-<p>Remove column at index. </p>
-
-
-
-<p><img src="../images/AUTOGEN_wibox_layout_grid_remove_column.svg" alt="Usage example"/></p>
+<p><img src="../images/AUTOGEN_wibox_layout_grid_remove_column.svg" alt="Usage example" /></p>
 
 <p><strong>Usage example output</strong>:</p>
 
 <pre><code>l:remove_column(2)
 </code></pre>
-
-
-
 
 
     <ul>
@@ -1872,7 +1818,7 @@ l:add(...)
     <strong>wibox.layout.grid:insert_row (index)</strong>
     </dt>
     <dd>
-    Insert row at index. </p>
+    Insert row at index.</p>
 
 <p> see <a href="../classes/wibox.layout.grid.html#wibox.layout.grid:insert_column">insert_column</a>
 
@@ -1900,7 +1846,7 @@ l:add(...)
     <strong>wibox.layout.grid:extend_row (index)</strong>
     </dt>
     <dd>
-    Extend row at index. </p>
+    Extend row at index.</p>
 
 <p> see <a href="../classes/wibox.layout.grid.html#wibox.layout.grid:extend_column">extend_column</a>
 
@@ -1928,7 +1874,7 @@ l:add(...)
     <strong>wibox.layout.grid:remove_row (index)</strong>
     </dt>
     <dd>
-    Remove row at index. </p>
+    Remove row at index.</p>
 
 <p> see <a href="../classes/wibox.layout.grid.html#wibox.layout.grid:remove_column">remove_column</a>
 
@@ -2016,7 +1962,7 @@ l:add(...)
     <strong>wibox.layout.grid:buttons (_buttons)</strong>
     </dt>
     <dd>
-    Set/get a widget's buttons.
+    Set/get a widget&rsquo;s buttons.
 
 
     <ul>
@@ -2043,8 +1989,6 @@ l:add(...)
     <ul>
         <li><span class="parameter">signal_name</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-
-
 
         </li>
         <li><span class="parameter">...</span>
@@ -2111,7 +2055,7 @@ l:add(...)
     <strong>wibox.layout.grid:weak_connect_signal (name, func)</strong>
     </dt>
     <dd>
-    Connect to a signal weakly. </p>
+    Connect to a signal weakly.</p>
 
 <p> This allows the callback function to be garbage collected and
  automatically disconnects the signal when that happens.</p>
@@ -2144,7 +2088,7 @@ l:add(...)
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-02-25 14:00:40 </i>
+<i style="float:right;">Last updated 2019-02-26 10:13:58 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

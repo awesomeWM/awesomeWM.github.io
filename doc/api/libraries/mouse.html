@@ -186,24 +186,24 @@
 <p>awesome mouse API.</p>
 <p> The mouse buttons are represented as index. The common ones are:</p>
 
-<p> <img src="../images/mouse.svg" alt="Client geometry"/></p>
+<p> <img src="../images/mouse.svg" alt="Client geometry" /></p>
 
 <p> It is possible to be notified of mouse events by connecting to various
  <a href="../classes/client.html#">client</a>, <code>widget</code>s and <a href="../classes/wibox.html#">wibox</a> signals:</p>
 
 <ul>
-    <li><code>mouse::enter</code></li>
-    <li><code>mouse::leave</code></li>
-    <li><code>mouse::press</code></li>
-    <li><code>mouse::release</code></li>
-    <li><code>mouse::move</code></li>
+<li><code>mouse::enter</code></li>
+<li><code>mouse::leave</code></li>
+<li><code>mouse::press</code></li>
+<li><code>mouse::release</code></li>
+<li><code>mouse::move</code></li>
 </ul>
+
 
 <p> It is also possible to add generic mouse button callbacks for <a href="../classes/client.html#">client</a>s,
  <code>wiboxe</code>s and the <a href="../libraries/root.html#">root</a> window. Those are set in the default <a href="../sample files/rc.lua.html#">rc.lua</a> as such:</p>
 
 <p> <strong>root</strong>:</p>
-
 
 <pre>
 root.buttons(awful.util.<span class="global">table</span>.join(
@@ -213,8 +213,8 @@ root.buttons(awful.util.<span class="global">table</span>.join(
 ))
 </pre>
 
-<p> <strong>client</strong>:</p>
 
+<p> <strong>client</strong>:</p>
 
 <pre>
 clientbuttons = awful.util.<span class="global">table</span>.join(
@@ -223,6 +223,7 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
     awful.button({ modkey }, <span class="number">3</span>, awful.mouse.client.resize)
 )
 </pre>
+
 
 <p> See also <a href="../libraries/mousegrabber.html#">mousegrabber</a></p>
     <h3>Info:</h3>
@@ -302,7 +303,7 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#awful.mouse.resize_handler">awful.mouse.resize_handler</a></td>
-	<td class="summary">Default handler for <code>request::geometry</code> signals with "mouse.resize" context.</td>
+	<td class="summary">Default handler for <code>request::geometry</code> signals with &ldquo;mouse.resize&rdquo; context.</td>
 	</tr>
 </table>
 <h2><a href="#Theme_variables">Theme variables</a></h2>
@@ -378,11 +379,11 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.mouse.resize.add_move_callback">awful.mouse.resize.add_move_callback (cb, context)</a></td>
-	<td class="summary">Add a "move" callback.</td>
+	<td class="summary">Add a &ldquo;move&rdquo; callback.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.mouse.resize.add_leave_callback">awful.mouse.resize.add_leave_callback (cb, context)</a></td>
-	<td class="summary">Add a "leave" callback
+	<td class="summary">Add a &ldquo;leave&rdquo; callback
  This callback is executed just before the <a href="../libraries/mousegrabber.html#">mousegrabber</a> stop</td>
 	</tr>
 	<tr>
@@ -509,20 +510,14 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
     <strong>coords ([coords_table=nil[, silent=nil]])</strong>
     </dt>
     <dd>
+    <p>Get or set the mouse coords.</p>
 
-<p>Get or set the mouse coords. </p>
-
-
-
-<p><img src="../images/AUTOGEN_awful_mouse_coords.svg" alt="Usage example"/></p>
+<p><img src="../images/AUTOGEN_awful_mouse_coords.svg" alt="Usage example" /></p>
 
 <p><strong>Usage example output</strong>:</p>
 
 <pre><code>235
 </code></pre>
-
-
-
 
 
     <ul>
@@ -591,8 +586,6 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">screen</span>
-
-
 
         </li>
     </ul>
@@ -752,8 +745,6 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
     <ul>
         <li><span class="parameter">boolean</span>
 
-
-
         </li>
     </ul>
 
@@ -773,8 +764,6 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
-
-
 
         </li>
     </ul>
@@ -796,8 +785,6 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
     <ul>
         <li><span class="parameter">boolean</span>
 
-
-
         </li>
     </ul>
 
@@ -815,7 +802,7 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
     <strong>awful.mouse.resize_handler</strong>
     </dt>
     <dd>
-    Default handler for <code>request::geometry</code> signals with "mouse.resize" context.
+    Default handler for <code>request::geometry</code> signals with &ldquo;mouse.resize&rdquo; context.
 
 
     <h3>Arguments:</h3>
@@ -857,8 +844,6 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
         <li><span class="parameter">color</span>
             <span class="types"><span class="type">color</span>, <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a>, <span class="type">gradient</span> or <span class="type">pattern</span></span>
 
-
-
         </li>
     </ul>
 
@@ -878,8 +863,6 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">integer</span>
-
-
 
         </li>
     </ul>
@@ -990,8 +973,8 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
         </li>
         <li><span class="parameter">corner</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-         The corner to use: auto, top<em>left, top</em>right, bottom<em>left,
- bottom</em>right, left, right, top bottom. Default is auto, and auto find the
+         The corner to use: auto, top_left, top_right, bottom_left,
+ bottom_right, left, right, top bottom. Default is auto, and auto find the
  nearest corner.
         </li>
     </ul>
@@ -1016,8 +999,6 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
     <ul>
         <li><span class="parameter">default_distance</span>
             <span class="types"><span class="type">integer</span></span>
-
-
 
          (<em>default</em> 8)
         </li>
@@ -1091,8 +1072,6 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
         <li><span class="parameter">cursor</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
-
-
          (<em>default</em> cross)
         </li>
     </ul>
@@ -1115,8 +1094,6 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
         <li><span class="parameter">cursor</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
-
-
          (<em>default</em> fleur)
         </li>
     </ul>
@@ -1135,9 +1112,10 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
  The available modes are:</p>
 
 <ul>
-    <li><strong>live</strong>: Resize the layout everytime the mouse moves.</li>
-    <li><strong>after</strong>: Resize the layout only when the mouse is released.</li>
+<li><strong>live</strong>: Resize the layout everytime the mouse moves.</li>
+<li><strong>after</strong>: Resize the layout only when the mouse is released.</li>
 </ul>
+
 
 <p> Some clients, such as XTerm, may lose information if resized too often.
 
@@ -1184,8 +1162,8 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
     <strong>awful.mouse.resize.add_move_callback (cb, context)</strong>
     </dt>
     <dd>
-    Add a "move" callback.
- This callback is executed in "after" mode (see <a href="../libraries/mouse.html#awful.mouse.resize.set_mode">set_mode</a>) instead of
+    Add a &ldquo;move&rdquo; callback.
+ This callback is executed in &ldquo;after&rdquo; mode (see <a href="../libraries/mouse.html#awful.mouse.resize.set_mode">set_mode</a>) instead of
  applying the operation.
 
 
@@ -1210,7 +1188,7 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
     <strong>awful.mouse.resize.add_leave_callback (cb, context)</strong>
     </dt>
     <dd>
-    Add a "leave" callback
+    Add a &ldquo;leave&rdquo; callback
  This callback is executed just before the <a href="../libraries/mousegrabber.html#">mousegrabber</a> stop
 
 
@@ -1235,18 +1213,16 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
     <strong>awful.mouse.resize (client, context[, args={}])</strong>
     </dt>
     <dd>
-
-<p>Resize the drawable. </p>
+    <p>Resize the drawable.</p>
 
 <p> Valid <code>args</code> are:</p>
 
 <ul>
-    <li>*enter_callback*: A function called before the <a href="../libraries/mousegrabber.html#">mousegrabber</a> starts.</li>
-    <li>*move_callback*: A function called when the mouse moves.</li>
-    <li>*leave_callback*: A function called before the <a href="../libraries/mousegrabber.html#">mousegrabber</a> is released.</li>
-    <li><em>mode</em>: The resize mode.</li>
+<li><em>enter_callback</em>: A function called before the <a href="../libraries/mousegrabber.html#">mousegrabber</a> starts.</li>
+<li><em>move_callback</em>: A function called when the mouse moves.</li>
+<li><em>leave_callback</em>: A function called before the <a href="../libraries/mousegrabber.html#">mousegrabber</a> is released.</li>
+<li><em>mode</em>: The resize mode.</li>
 </ul>
-
 
 
 
@@ -1297,10 +1273,10 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
          The client y coordinate.
         </li>
         <li><span class="parameter">fixed_x</span>
-         True if the client isn't allowed to move in the x direction.
+         True if the client isn&rsquo;t allowed to move in the x direction.
         </li>
         <li><span class="parameter">fixed_y</span>
-         True if the client isn't allowed to move in the y direction.
+         True if the client isn&rsquo;t allowed to move in the y direction.
         </li>
     </ul>
 
@@ -1316,7 +1292,7 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-02-25 14:00:40 </i>
+<i style="float:right;">Last updated 2019-02-26 10:13:58 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

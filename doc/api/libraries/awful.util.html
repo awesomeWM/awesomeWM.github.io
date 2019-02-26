@@ -179,9 +179,7 @@
 
 <h1>Module <code>awful.util</code></h1>
 <p>Utility module for awful</p>
-<p>
-
-</p>
+<p></p>
     <h3>Info:</h3>
     <ul>
         <li><strong>Copyright</strong>: 2008 Julien Danjou</li>
@@ -252,7 +250,7 @@
 	</tr>
 	<tr>
 	<td class="name" ><a href="#get_configuration_dir">get_configuration_dir</a> <i class="deprecated_label">[deprecated]</i><a></a></td>
-	<td class="summary">Get the path to the user's config dir.</td>
+	<td class="summary">Get the path to the user&rsquo;s config dir.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#get_cache_dir">get_cache_dir</a> <i class="deprecated_label">[deprecated]</i><a></a></td>
@@ -268,7 +266,7 @@
 	</tr>
 	<tr>
 	<td class="name" ><a href="#getdir">getdir</a> <i class="deprecated_label">[deprecated]</i><a></a></td>
-	<td class="summary">Get the user's config or cache dir.</td>
+	<td class="summary">Get the user&rsquo;s config or cache dir.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#file_readable">file_readable</a> <i class="deprecated_label">[deprecated]</i><a></a></td>
@@ -373,8 +371,6 @@
     <ul>
         <li><span class="parameter">s</span>
 
-
-
         </li>
     </ul>
 
@@ -420,8 +416,8 @@
     </dt>
     <dd>
     Try to restart awesome.
- It checks if the configuration file is valid, and then restart if it's ok.
- If it's not ok, the error will be returned.
+ It checks if the configuration file is valid, and then restart if it&rsquo;s ok.
+ If it&rsquo;s not ok, the error will be returned.
 
 
 
@@ -450,10 +446,10 @@
          The name of the icon to search for.
         </li>
         <li><span class="parameter">exts</span>
-         Table of image extensions allowed, otherwise { 'png', gif' }
+         Table of image extensions allowed, otherwise { &lsquo;png&rsquo;, gif' }
         </li>
         <li><span class="parameter">dirs</span>
-         Table of dirs to search, otherwise { '/usr/share/pixmaps/' }
+         Table of dirs to search, otherwise { &lsquo;/usr/share/pixmaps/&rsquo; }
         </li>
         <li><span class="parameter">size</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -511,7 +507,7 @@
         </li>
         <li><span class="parameter">deprecated_in</span>
             <span class="types"><span class="type">integer</span></span>
-         Print the message only when Awesome's
+         Print the message only when Awesome&rsquo;s
    version is equal to or greater than deprecated_in.
         </li>
         </li></ul>
@@ -729,8 +725,8 @@
     <strong>get_configuration_dir</a> <i class="deprecated_label">[deprecated]</i><a></strong>
     </dt>
     <dd>
-    Get the path to the user's config dir.
- This is the directory containing the configuration file ("rc.lua").
+    Get the path to the user&rsquo;s config dir.
+ This is the directory containing the configuration file (&ldquo;rc.lua&rdquo;).
 
 
 
@@ -802,15 +798,15 @@
     <strong>getdir</a> <i class="deprecated_label">[deprecated]</i><a></strong>
     </dt>
     <dd>
-    Get the user's config or cache dir.
- It first checks XDG<em>CONFIG</em>HOME / XDG<em>CACHE</em>HOME, but then goes with the
+    Get the user&rsquo;s config or cache dir.
+ It first checks XDG_CONFIG_HOME / XDG_CACHE_HOME, but then goes with the
  default paths.
 
 
     <h3>param:</h3>
     <ul>
         <li><span class="parameter">d</span>
-         The directory to get (either "config" or "cache").
+         The directory to get (either &ldquo;config&rdquo; or &ldquo;cache&rdquo;).
         </li>
     </ul>
 
@@ -885,8 +881,6 @@
         <li><span class="parameter">path</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
-
-
         </li>
     </ul>
 
@@ -907,7 +901,7 @@
     Return all subsets of a specific set.
  This function, giving a set, will return all subset it.
  For example, if we consider a set with value { 10, 15, 34 },
- it will return a table containing 2^n set:
+ it will return a table containing 2<sup>n</sup> set:
  { }, { 10 }, { 15 }, { 34 }, { 10, 15 }, { 10, 34 }, etc.
 
 
@@ -933,13 +927,13 @@
     </dt>
     <dd>
     Get the nearest rectangle in the given direction.  Every rectangle is specified as a table
- with 'x', 'y', 'width', 'height' keys, the same as client or screen geometries.
+ with &lsquo;x&rsquo;, &lsquo;y&rsquo;, &lsquo;width&rsquo;, &lsquo;height&rsquo; keys, the same as client or screen geometries.
 
 
     <h3>param:</h3>
     <ul>
         <li><span class="parameter">dir</span>
-         The direction, can be either "up", "down", "left" or "right".
+         The direction, can be either &ldquo;up&rdquo;, &ldquo;down&rdquo;, &ldquo;left&rdquo; or &ldquo;right&rdquo;.
         </li>
         <li><span class="parameter">recttbl</span>
          A table of rectangle specifications.
@@ -988,9 +982,9 @@
     <strong>util.table.crush</a> <i class="deprecated_label">[deprecated]</i><a></strong>
     </dt>
     <dd>
-    Override elements in the first table by the one in the second. </p>
+    Override elements in the first table by the one in the second.</p>
 
-<p> Note that this method doesn't copy entries found in <code>__index</code>.
+<p> Note that this method doesn&rsquo;t copy entries found in <code>__index</code>.
 
 
     <h3>param:</h3>
@@ -1027,7 +1021,7 @@
     Pack all elements with an integer key into a new table
  While both lua and luajit implement __len over sparse
  table, the standard define it as an implementation
- detail. </p>
+ detail.</p>
 
 <p> This function remove any non numeric keys from the value set
 
@@ -1245,10 +1239,8 @@
     <h3>param:</h3>
     <ul>
         <li><span class="parameter">t</span>
-
-<pre><code>  the table to iterate
+        <pre><code>  the table to iterate
 </code></pre>
-
         </li>
         <li><span class="parameter">filter</span>
          a function that returns true to indicate a positive match
@@ -1310,8 +1302,6 @@
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
 
-
-
         </li>
     </ul>
 
@@ -1349,7 +1339,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-02-25 14:00:40 </i>
+<i style="float:right;">Last updated 2019-02-26 10:13:58 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

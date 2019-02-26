@@ -181,10 +181,10 @@
  conventions. This allow:</p>
 
 <ul>
-    <li>To use them in various other module as
-    <a href="https://en.wikipedia.org/wiki/Visitor_pattern">visitor objects</a></li>
-    <li>Turn each function into an API with various common customization parameters.</li>
-    <li>Re-use the same functions for the <a href="../libraries/mouse.html#">mouse</a>, <a href="../classes/client.html#">client</a>s, <a href="../classes/screen.html#">screen</a>s and <a href="../classes/wibox.html#">wibox</a>es</li>
+<li>To use them in various other module as
+<a href="https://en.wikipedia.org/wiki/Visitor_pattern">visitor objects</a></li>
+<li>Turn each function into an API with various common customization parameters.</li>
+<li>Re-use the same functions for the <a href="../libraries/mouse.html#">mouse</a>, <a href="../classes/client.html#">client</a>s, <a href="../classes/screen.html#">screen</a>s and <a href="../classes/wibox.html#">wibox</a>es</li>
 </ul>
 
 
@@ -192,11 +192,7 @@
 
 <p> It is possible to compose placement function using the <code>+</code> or <code>*</code> operator:</p>
 
-
-
-<p><img src="../images/AUTOGEN_awful_placement_compose.svg" alt="Usage example"/></p>
-
-
+<p><img src="../images/AUTOGEN_awful_placement_compose.svg" alt="Usage example" /></p>
 
 <pre>
 <span class="comment">-- 'right' will be replaced by 'left'
@@ -204,9 +200,8 @@
 f(client.focus)
 </pre>
 
-<p><img src="../images/AUTOGEN_awful_placement_compose2.svg" alt="Usage example"/></p>
 
-
+<p><img src="../images/AUTOGEN_awful_placement_compose2.svg" alt="Usage example" /></p>
 
 <pre>
 <span class="comment">-- Simulate Windows 7 'edge snap' (also called aero snap) feature
@@ -216,6 +211,7 @@ f(client.focus)
     + (axis <span class="keyword">and</span> awful.placement[<span class="string">'maximize_'</span>..axis] <span class="keyword">or</span> <span class="keyword">nil</span>)
 <span class="keyword">local</span> geo = f(client.focus, {honor_workarea=<span class="keyword">true</span>, to_percent = <span class="number">0.5</span>})
 </pre>
+
 
 <p> <h3>Common arguments</h3></p>
 
@@ -290,7 +286,7 @@ f(client.focus)
 	</tr>
 	<tr>
 	<td class="name" ><a href="#no_overlap">no_overlap (c[, args={}])</a></td>
-	<td class="summary">Place the client where there's place available with minimum overlap.</td>
+	<td class="summary">Place the client where there&rsquo;s place available with minimum overlap.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#under_mouse">under_mouse (d[, args={}])</a></td>
@@ -410,27 +406,22 @@ f(client.focus)
     <strong>closest_corner ([d=client.focus[, args={}]])</strong>
     </dt>
     <dd>
-
-<p>Move a drawable to the closest corner of the parent geometry (such as the
- screen). </p>
+    <p>Move a drawable to the closest corner of the parent geometry (such as the
+ screen).</p>
 
 <p> Valid arguments include the common ones and:</p>
 
 <ul>
-    <li><strong>include_sides</strong>: Also include the left, right, top and bottom positions</li>
+<li><strong>include_sides</strong>: Also include the left, right, top and bottom positions</li>
 </ul>
 
 
-
-<p><img src="../images/AUTOGEN_awful_placement_closest_mouse.svg" alt="Usage example"/></p>
+<p><img src="../images/AUTOGEN_awful_placement_closest_mouse.svg" alt="Usage example" /></p>
 
 <p><strong>Usage example output</strong>:</p>
 
 <pre><code>Closest corner: top_left
 </code></pre>
-
-
-
 
 
     <ul>
@@ -478,20 +469,15 @@ f(client.focus)
     <strong>no_offscreen (c[, args={}])</strong>
     </dt>
     <dd>
+    <p>Place the client so no part of it will be outside the screen (workarea).</p>
 
-<p>Place the client so no part of it will be outside the screen (workarea). </p>
-
-
-<p><img src="../images/AUTOGEN_awful_placement_no_offscreen.svg" alt="Usage example"/></p>
+<p><img src="../images/AUTOGEN_awful_placement_no_offscreen.svg" alt="Usage example" /></p>
 
 <p><strong>Usage example output</strong>:</p>
 
 <pre><code>Before: x=-30, y=-30, width=100, height=100
 After:  x=50, y=50, width=100, height=100
 </code></pre>
-
-
-
 
 
     <ul>
@@ -529,10 +515,9 @@ After:  x=50, y=50, width=100, height=100
     <strong>no_overlap (c[, args={}])</strong>
     </dt>
     <dd>
-    Place the client where there's place available with minimum overlap. </p>
+    Place the client where there&rsquo;s place available with minimum overlap.</p>
 
-
-<p><img src="../images/AUTOGEN_awful_placement_no_overlap.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_placement_no_overlap.svg" alt="Usage example" />
 
 
     <ul>
@@ -567,10 +552,9 @@ After:  x=50, y=50, width=100, height=100
     <strong>under_mouse (d[, args={}])</strong>
     </dt>
     <dd>
-    Place the client under the mouse. </p>
+    Place the client under the mouse.</p>
 
-
-<p><img src="../images/AUTOGEN_awful_placement_under_mouse.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_placement_under_mouse.svg" alt="Usage example" />
 
 
     <ul>
@@ -605,13 +589,12 @@ After:  x=50, y=50, width=100, height=100
     <strong>next_to_mouse (d[, args={}])</strong>
     </dt>
     <dd>
-    Place the client next to the mouse. </p>
+    Place the client next to the mouse.</p>
 
 <p> It will place <code>c</code> next to the mouse pointer, trying the following positions
  in this order: right, left, above and below.</p>
 
-
-<p><img src="../images/AUTOGEN_awful_placement_next_to_mouse.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_placement_next_to_mouse.svg" alt="Usage example" />
 
 
     <ul>
@@ -646,18 +629,17 @@ After:  x=50, y=50, width=100, height=100
     <strong>resize_to_mouse (d[, args={}])</strong>
     </dt>
     <dd>
-    Resize the drawable to the cursor. </p>
+    Resize the drawable to the cursor.</p>
 
 <p> Valid args:</p>
 
 <ul>
-    <li><em>axis</em>: The axis (vertical or horizontal). If none is
-    specified, then the drawable will be resized on both axis.</li>
+<li><em>axis</em>: The axis (vertical or horizontal). If none is
+ specified, then the drawable will be resized on both axis.</li>
 </ul>
 
 
-
-<p><img src="../images/AUTOGEN_awful_placement_resize_to_mouse.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_placement_resize_to_mouse.svg" alt="Usage example" />
 
 
     <ul>
@@ -688,27 +670,26 @@ After:  x=50, y=50, width=100, height=100
     <strong>align (d[, args={}])</strong>
     </dt>
     <dd>
-    Move the drawable (client or wibox) <code>d</code> to a screen position or side. </p>
+    Move the drawable (client or wibox) <code>d</code> to a screen position or side.</p>
 
 <p> Supported args.positions are:</p>
 
 <ul>
-    <li>top_left</li>
-    <li>top_right</li>
-    <li>bottom_left</li>
-    <li>bottom_right</li>
-    <li>left</li>
-    <li>right</li>
-    <li>top</li>
-    <li>bottom</li>
-    <li>centered</li>
-    <li>center_vertical</li>
-    <li>center_horizontal</li>
+<li>top_left</li>
+<li>top_right</li>
+<li>bottom_left</li>
+<li>bottom_right</li>
+<li>left</li>
+<li>right</li>
+<li>top</li>
+<li>bottom</li>
+<li>centered</li>
+<li>center_vertical</li>
+<li>center_horizontal</li>
 </ul>
 
 
-
-<p><img src="../images/AUTOGEN_awful_placement_align.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_placement_align.svg" alt="Usage example" />
 
 
     <ul>
@@ -739,9 +720,9 @@ After:  x=50, y=50, width=100, height=100
     <strong>top_left (d[, args={}])</strong>
     </dt>
     <dd>
-    Align a client to the top left of the parent area. </p>
+    Align a client to the top left of the parent area.</p>
 
-<p><img src="../images/AUTOGEN_awful_placement_top_left.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_placement_top_left.svg" alt="Usage example" />
 
 
     <ul>
@@ -776,9 +757,9 @@ After:  x=50, y=50, width=100, height=100
     <strong>top_right (d[, args={}])</strong>
     </dt>
     <dd>
-    Align a client to the top right of the parent area. </p>
+    Align a client to the top right of the parent area.</p>
 
-<p><img src="../images/AUTOGEN_awful_placement_top_right.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_placement_top_right.svg" alt="Usage example" />
 
 
     <ul>
@@ -813,9 +794,9 @@ After:  x=50, y=50, width=100, height=100
     <strong>bottom_left (d[, args={}])</strong>
     </dt>
     <dd>
-    Align a client to the bottom left of the parent area. </p>
+    Align a client to the bottom left of the parent area.</p>
 
-<p><img src="../images/AUTOGEN_awful_placement_bottom_left.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_placement_bottom_left.svg" alt="Usage example" />
 
 
     <ul>
@@ -850,9 +831,9 @@ After:  x=50, y=50, width=100, height=100
     <strong>bottom_right (d[, args={}])</strong>
     </dt>
     <dd>
-    Align a client to the bottom right of the parent area. </p>
+    Align a client to the bottom right of the parent area.</p>
 
-<p><img src="../images/AUTOGEN_awful_placement_bottom_right.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_placement_bottom_right.svg" alt="Usage example" />
 
 
     <ul>
@@ -887,9 +868,9 @@ After:  x=50, y=50, width=100, height=100
     <strong>left (d[, args={}])</strong>
     </dt>
     <dd>
-    Align a client to the left of the parent area. </p>
+    Align a client to the left of the parent area.</p>
 
-<p><img src="../images/AUTOGEN_awful_placement_left.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_placement_left.svg" alt="Usage example" />
 
 
     <ul>
@@ -924,9 +905,9 @@ After:  x=50, y=50, width=100, height=100
     <strong>right (d[, args={}])</strong>
     </dt>
     <dd>
-    Align a client to the right of the parent area. </p>
+    Align a client to the right of the parent area.</p>
 
-<p><img src="../images/AUTOGEN_awful_placement_right.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_placement_right.svg" alt="Usage example" />
 
 
     <ul>
@@ -961,9 +942,9 @@ After:  x=50, y=50, width=100, height=100
     <strong>top (d[, args={}])</strong>
     </dt>
     <dd>
-    Align a client to the top of the parent area. </p>
+    Align a client to the top of the parent area.</p>
 
-<p><img src="../images/AUTOGEN_awful_placement_top.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_placement_top.svg" alt="Usage example" />
 
 
     <ul>
@@ -999,9 +980,9 @@ After:  x=50, y=50, width=100, height=100
     <strong>bottom (d[, args={}])</strong>
     </dt>
     <dd>
-    Align a client to the bottom of the parent area. </p>
+    Align a client to the bottom of the parent area.</p>
 
-<p><img src="../images/AUTOGEN_awful_placement_bottom.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_placement_bottom.svg" alt="Usage example" />
 
 
     <ul>
@@ -1036,9 +1017,9 @@ After:  x=50, y=50, width=100, height=100
     <strong>centered (d[, args={}])</strong>
     </dt>
     <dd>
-    Align a client to the center of the parent area. </p>
+    Align a client to the center of the parent area.</p>
 
-<p><img src="../images/AUTOGEN_awful_placement_centered.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_placement_centered.svg" alt="Usage example" />
 
 
     <ul>
@@ -1073,9 +1054,9 @@ After:  x=50, y=50, width=100, height=100
     <strong>center_vertical (d[, args={}])</strong>
     </dt>
     <dd>
-    Align a client to the vertical center of the parent area. </p>
+    Align a client to the vertical center of the parent area.</p>
 
-<p><img src="../images/AUTOGEN_awful_placement_center_vertical.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_placement_center_vertical.svg" alt="Usage example" />
 
 
     <ul>
@@ -1104,9 +1085,9 @@ After:  x=50, y=50, width=100, height=100
     <strong>center_horizontal (d[, args={}])</strong>
     </dt>
     <dd>
-    Align a client to the horizontal center left of the parent area. </p>
+    Align a client to the horizontal center left of the parent area.</p>
 
-<p><img src="../images/AUTOGEN_awful_placement_center_horizontal.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_placement_center_horizontal.svg" alt="Usage example" />
 
 
     <ul>
@@ -1145,13 +1126,12 @@ After:  x=50, y=50, width=100, height=100
  Valid args:</p>
 
 <ul>
-    <li><strong>direction</strong>: The stretch direction (<em>left</em>, <em>right</em>, <em>up</em>, <em>down</em>) or
-    a table with multiple directions.</li>
+<li><strong>direction</strong>: The stretch direction (<em>left</em>, <em>right</em>, <em>up</em>, <em>down</em>) or
+a table with multiple directions.</li>
 </ul>
 
 
-
-<p><img src="../images/AUTOGEN_awful_placement_stretch.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_placement_stretch.svg" alt="Usage example" />
 
 
     <ul>
@@ -1183,9 +1163,9 @@ After:  x=50, y=50, width=100, height=100
     <strong>stretch_left (d[, args={}])</strong>
     </dt>
     <dd>
-    Stretch the drawable to the left of the parent area. </p>
+    Stretch the drawable to the left of the parent area.</p>
 
-<p><img src="../images/AUTOGEN_awful_placement_stretch_left.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_placement_stretch_left.svg" alt="Usage example" />
 
 
     <ul>
@@ -1220,9 +1200,9 @@ After:  x=50, y=50, width=100, height=100
     <strong>stretch_right (d[, args={}])</strong>
     </dt>
     <dd>
-    Stretch the drawable to the right of the parent area. </p>
+    Stretch the drawable to the right of the parent area.</p>
 
-<p><img src="../images/AUTOGEN_awful_placement_stretch_right.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_placement_stretch_right.svg" alt="Usage example" />
 
 
     <ul>
@@ -1257,9 +1237,9 @@ After:  x=50, y=50, width=100, height=100
     <strong>stretch_up (d[, args={}])</strong>
     </dt>
     <dd>
-    Stretch the drawable to the top of the parent area. </p>
+    Stretch the drawable to the top of the parent area.</p>
 
-<p><img src="../images/AUTOGEN_awful_placement_stretch_up.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_placement_stretch_up.svg" alt="Usage example" />
 
 
     <ul>
@@ -1294,9 +1274,9 @@ After:  x=50, y=50, width=100, height=100
     <strong>stretch_down (d[, args={}])</strong>
     </dt>
     <dd>
-    Stretch the drawable to the bottom of the parent area. </p>
+    Stretch the drawable to the bottom of the parent area.</p>
 
-<p><img src="../images/AUTOGEN_awful_placement_stretch_down.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_placement_stretch_down.svg" alt="Usage example" />
 
 
     <ul>
@@ -1335,13 +1315,12 @@ After:  x=50, y=50, width=100, height=100
  Valid args:</p>
 
 <ul>
-    <li><em>axis</em>:The axis (vertical or horizontal). If none is
-    specified, then the drawable will be maximized on both axis.</li>
+<li><em>axis</em>:The axis (vertical or horizontal). If none is
+ specified, then the drawable will be maximized on both axis.</li>
 </ul>
 
 
-
-<p><img src="../images/AUTOGEN_awful_placement_maximize.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_placement_maximize.svg" alt="Usage example" />
 
 
     <ul>
@@ -1373,9 +1352,9 @@ After:  x=50, y=50, width=100, height=100
     <strong>maximize_vertically (d[, args={}])</strong>
     </dt>
     <dd>
-    Vetically maximize the drawable in the parent area. </p>
+    Vetically maximize the drawable in the parent area.</p>
 
-<p><img src="../images/AUTOGEN_awful_placement_maximize_vertically.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_placement_maximize_vertically.svg" alt="Usage example" />
 
 
     <ul>
@@ -1404,9 +1383,9 @@ After:  x=50, y=50, width=100, height=100
     <strong>maximize_horizontally (d[, args={}])</strong>
     </dt>
     <dd>
-    Horizontally maximize the drawable in the parent area. </p>
+    Horizontally maximize the drawable in the parent area.</p>
 
-<p><img src="../images/AUTOGEN_awful_placement_maximize_horizontally.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_placement_maximize_horizontally.svg" alt="Usage example" />
 
 
     <ul>
@@ -1435,7 +1414,7 @@ After:  x=50, y=50, width=100, height=100
     <strong>scale ([d=client.focus[, args={}]])</strong>
     </dt>
     <dd>
-    Scale the drawable by either a relative or absolute percent. </p>
+    Scale the drawable by either a relative or absolute percent.</p>
 
 <p> Valid args:</p>
 
@@ -1443,7 +1422,7 @@ After:  x=50, y=50, width=100, height=100
   the parent geometry.
  <strong>by_percent</strong> : A number between 0 and 1. It represent a percent related to
   the current size.
- <strong>direction</strong>: Nothing or "left", "right", "up", "down".
+ <strong>direction</strong>: Nothing or &ldquo;left&rdquo;, &ldquo;right&rdquo;, &ldquo;up&rdquo;, &ldquo;down&rdquo;.
 
 
     <ul>
@@ -1475,13 +1454,13 @@ After:  x=50, y=50, width=100, height=100
     <strong>next_to (d, args)</strong>
     </dt>
     <dd>
-    Move a drawable to a relative position next to another one. </p>
+    Move a drawable to a relative position next to another one.</p>
 
 <p> This placement function offers two additional settings to align the drawable
  alongside the parent geometry. The first one, the position, sets the side
  relative to the parent. The second one, the anchor, set the alignment within
  the side selected by the <code>preferred_positions</code>. Both settings are tables of
- priorities. The first available slot will be used. If there isn't enough
+ priorities. The first available slot will be used. If there isn&rsquo;t enough
  space, then it will fallback to the next until it is possible to fit the
  drawable. This is meant to avoid going offscreen.</p>
 
@@ -1493,17 +1472,16 @@ After:  x=50, y=50, width=100, height=100
 <p> The <code>args.preferred_anchors</code> are:</p>
 
 <ul>
-    <li>"front": The closest to the origin (0,0)</li>
-    <li>"middle": Centered aligned with the parent</li>
-    <li>"back": The opposite side compared to <code>front</code></li>
+<li>&ldquo;front&rdquo;: The closest to the origin (0,0)</li>
+<li>&ldquo;middle&rdquo;: Centered aligned with the parent</li>
+<li>&ldquo;back&rdquo;: The opposite side compared to <code>front</code></li>
 </ul>
+
 
 <p> In that case, if there is room on the top of the geometry, then it will have
  priority, followed by all the others, in order.</p>
 
-
-
-<p><img src="../images/AUTOGEN_awful_placement_next_to.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_awful_placement_next_to.svg" alt="Usage example" />
 
 
     <ul>
@@ -1512,8 +1490,6 @@ After:  x=50, y=50, width=100, height=100
          A wibox or client
         </li>
         <li><span class="parameter">args</span>
-
-
         <ul>
         <li><span class="parameter">mode</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -1541,10 +1517,10 @@ After:  x=50, y=50, width=100, height=100
         The new geometry</li>
         <li>
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        The choosen position ("left", "right", "top" or "bottom")</li>
+        The choosen position (&ldquo;left&rdquo;, &ldquo;right&rdquo;, &ldquo;top&rdquo; or &ldquo;bottom&rdquo;)</li>
         <li>
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        The choosen anchor ("front", "middle" or "back")</li>
+        The choosen anchor (&ldquo;front&rdquo;, &ldquo;middle&rdquo; or &ldquo;back&rdquo;)</li>
     </ol>
 
 
@@ -1613,7 +1589,7 @@ source object from. The valid values are:
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-02-25 14:00:40 </i>
+<i style="float:right;">Last updated 2019-02-26 10:13:58 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
