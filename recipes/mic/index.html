@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>wirelessStatus - awesome window manager</title>
+<title>mic - awesome window manager</title>
 <link rel="icon" href="../../images/icons/aw_16.png" type="image/png" />
 <link rel="stylesheet" href="../../style.css" type="text/css" />
 <link rel="stylesheet" href="../../local.css" type="text/css" />
@@ -22,7 +22,7 @@
 	  </a>
 	</div>
         <div id="menu">
-          <ul class="active-menu-wirelessStatus">
+          <ul class="active-menu-mic">
             <li class="menu-about"><a href="../../index.html">home</a></li>
             <li class="menu-download"><a href="../../download/">download</a></li>
             <li class="menu-community"><a href="../../community/">community</a></li>
@@ -39,88 +39,65 @@
     
 
     <div id="content">
-    <!--    <h1>wirelessStatus</h1> -->
+    <!--    <h1>mic</h1> -->
         <div id="left">
-          <h1>Wireless status widget/watcher</h1>
+          <h1>Microphone state widget/watcher</h1>
 
-<p>Get wireless Quality link (converted to percentages) and wireless status.</p>
-
-<p>Data is taken from <code>/proc/net/wireless</code>.</p>
-
-<p>According to <a href="https://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/Linux.Wireless.Extensions.html">this</a>
-website <code>/proc/net/wireless</code> has the following information:</p>
-
-<ul>
-<li><p>Status: Its current state. This is a device dependent information.</p></li>
-<li><p>Quality - link: general quality of the reception.</p></li>
-<li><p>Quality - level: signal strength at the receiver.</p></li>
-<li><p>Quality - noise: silence level (no packet) at the receiver.</p></li>
-<li><p>Discarded - nwid: number of discarded packets due to invalid network id.</p></li>
-<li><p>Discarded - crypt: number of packet unable to decrypt.</p></li>
-<li><p>Discarded - misc: unused (for now).</p></li>
-</ul>
-
-
-<p>This widget uses <code>Quality - link</code> and converts it to percentages (<code>perc=Quality_link*10/7</code>).
-The above equation is taken from <a href="https://superuser.com/a/1360447">this</a> forum answer.</p>
-
-<p>It also stores <code>Status</code> information (note that this is presumably device dependent).</p>
+<p>This widget can be used to display the current microphone status.</p>
 
 <h2>Requirements</h2>
 
 <ul>
-<li><code>iw</code></li>
+<li><code>amixer</code> - this command is used to get and toggle microphone state</li>
 </ul>
 
 
 <h2>Usage</h2>
 
 <ul>
-<li><p>Download <a href="https://awesomewm.org/recipes/wirelessStatus.lua">wirelessStatus.lua</a> file and put it
-into awesome's folder (like <code>~/.config/awesome/widgets/wirelessStatus.lua</code>)</p></li>
+<li><p>Download <a href="https://awesomewm.org/recipes/mic.lua">mic.lua</a> file and put it into awesome's
+folder (like <code>~/.config/awesome/widgets/mic.lua</code>)</p></li>
 <li><p>Add widget to <code>theme.lua</code>:</p></li>
 </ul>
 
 
 <pre><code class="lua">local widgets = {
-    wirelessStatus = require("widgets/wirelessStatus"),
+    mic = require("widgets/mic"),
 }
--- Wireless status widget (`status` is presumably device dependent)
-theme.wirelessStatus = widgets.wirelessStatus({
-    notification_preset = { font = "Mononoki Nerd Font 10", fg = theme.fg_normal },
+theme.mic = widgets.mic({
     timeout = 10,
     settings = function(self)
-        if self.status == "1" or self.status == "" then
-            self.widget:set_image(theme.wifidisc)
+        if self.state == "muted" then
+            self.widget:set_image(theme.widget_micMuted)
         else
-            if self.perc &lt;= 5 then
-                self.widget:set_image(theme.wifinone)
-            elseif self.perc &lt;= 25 then
-                self.widget:set_image(theme.wifilow)
-            elseif self.perc &lt;= 50 then
-                self.widget:set_image(theme.wifimed)
-            elseif self.perc &lt;= 75 then
-                self.widget:set_image(theme.wifihigh)
-            else
-                self.widget:set_image(theme.wififull)
-            end
+            self.widget:set_image(theme.widget_micUnmuted)
         end
-    end,
+    end
 })
-local widget_wirelessStatus = wibox.widget { nil, theme.wirelessStatus.widget, layout = wibox.layout.align.horizontal }
+local widget_mic = wibox.widget { theme.mic.widget, layout = wibox.layout.align.horizontal }
 </code></pre>
 
 <ul>
-<li>Set which application to run on widget press (add to <code>rc.lua</code>):</li>
+<li>Create a shortcut to toggle microphone state (add to <code>rc.lua</code>):</li>
 </ul>
 
 
-<pre><code class="lua">-- wirelessStatus widget pressed function - open terminal and start `nmtui`
-beautiful.wirelessStatus.pressed = function(self, button)
-    if button == 1 then  -- left mouse click
-        awful.spawn(terminal.." -e nmtui")
-    end
-end
+<pre><code class="lua">-- Toggle microphone state
+awful.key({ modkey, "Shift" }, "m",
+          function ()
+              beautiful.mic:toggle()
+          end,
+          {description = "Toggle microphone (amixer)", group = "Hotkeys"}
+),
+</code></pre>
+
+<ul>
+<li>You can also add a command to mute the microphone state on boot. Add this to your <code>rc.lua</code>:</li>
+</ul>
+
+
+<pre><code class="lua">-- Mute microphone on boot
+beautiful.mic:mute()
 </code></pre>
 
         </div>
