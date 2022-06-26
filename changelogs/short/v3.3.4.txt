@@ -1,8 +1,0 @@
-Julien Danjou (3):
-      client: remove transient_for intelligence in manage
-      luaa: replace os.execute()
-      change codename
-
-Uli Schlachter (1):
-      spawn: add spawn_system() which works like system()
-

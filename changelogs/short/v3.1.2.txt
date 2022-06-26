@@ -1,4 +1,0 @@
-Julien Danjou (2):
-      wibox: reparent systray only if needed (FS#436)
-      change codename
-

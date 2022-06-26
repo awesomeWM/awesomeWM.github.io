@@ -1,6 +1,0 @@
-Julien Danjou (4):
-      client: fix key array leak
-      awful.util: fix typo in spawn description
-      dbus: do not exit on bus disconnection
-      change codename
-

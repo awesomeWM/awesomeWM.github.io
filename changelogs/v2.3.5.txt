@@ -1,7 +1,0 @@
-commit cdd673f6f4f513a79d0e27df5c5a0b7bf5013944
-Author: Hannes Schueller <mr_creosote@mutantwatch.de>
-Date:   Fri Oct 3 08:59:46 2008 +0200
-
-    awesome-menu: make autocomplete behaviour configurable (FS#336)
-    
-    Signed-off-by: Julien Danjou <julien@danjou.info>

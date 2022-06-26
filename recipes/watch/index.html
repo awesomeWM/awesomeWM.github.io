@@ -183,6 +183,24 @@ local mpris, mpris_timer = awful.widget.watch(
 )
 </code></pre>
 
+<h2>pipewire</h2>
+
+<pre><code class="lua">-- pactl based volume widget for pure pipewire setups
+local volume = awful.widget.watch(
+    "pactl get-sink-volume @DEFAULT_SINK@ | cut -s -d/ -f2,4; pactl get-sink-mute @DEFAULT_SINK@",
+    5, -- timeout 
+    function(widget, stdout)
+        local volume = "Volume: "
+        for v in stdout:gmatch("(%d+%%)") do volume = volume .. " " .. v end
+        if #volume == 8 then volume = "N/A" end
+        local mute = string.match(stdout, "Mute: (%S+)") or "N/A"
+
+        -- customize here
+        widget:set_markup(volume .. " " .. mute)
+    end
+)
+</code></pre>
+
 <h2>upower</h2>
 
 <pre><code class="lua">-- battery infos from freedesktop upower
@@ -265,7 +283,7 @@ local mybattery = awful.widget.watch(
     
 
     <div class="pagedate">
-        Last edited <span class="date">Fri 27 Aug 2021 06:55:21 PM UTC</span>
+        Last edited <span class="date">Sun Jun 26 21:57:25 2022</span>
     </div>
 
     </div>
