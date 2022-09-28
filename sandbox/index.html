@@ -1,47 +1,70 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
- "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>sandbox - awesome window manager</title>
-<link rel="icon" href="../images/icons/aw_16.png" type="image/png" />
-<link rel="stylesheet" href="../style.css" type="text/css" />
-<link rel="stylesheet" href="../local.css" type="text/css" />
+    <title>
+        sandbox - awesome window manager
+    </title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <meta name="supported-color-schemes" content="dark light">
+    <meta name="color-scheme" content="dark light">
+    <meta name="theme-color" content="">
 
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="../css/mode-switch.css">
+    <link rel="stylesheet" type="text/css" href="../css/local.css" />
+    <link id="css-lightmode" rel="stylesheet" type="text/css" href="../css/light.css"
+        media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)" />
+    <link id="css-darkmode" rel="stylesheet" type="text/css" href="../css/dark.css"
+        media="(prefers-color-scheme: dark)" />
+
+    <script src="../script/dark-light-mode.js"></script>
+
+    <link rel="icon" href="../images/icons/aw_16.png" type="image/png" />
+
+    
+    
+
+    <meta property="og:title" content="home" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="description" content="The awesomewm.org website" />
+    <meta property="og:description" content="The awesomewm.org website" />
+    <link rel="canonical" href="https://awesomewm.org/" />
+    <meta property="og:url" content="https://awesomewm.org/" />
+    <meta property="og:site_name" content="awesome window manager" />
+    <meta property="og:type" content="website" />
+    <script type="application/ld+json">
+        {"@context": "https://schema.org","@type": "WebSite","description": "The awesomewm.org website","headline": "home","name": "awesome window manager","publisher": {"@type": "Organization","logo": {"@type": "ImageObject","url": "https://awesomewm.org/images/icons/aw_64.png"}},"url": "https://awesomewm.org/"}</script>
 </head>
 <body>
+    <header id="pageheader">
+        <a href="https://github.com/awesomeWM/awesome"><img class="fork-me-banner"
+                src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67"
+                alt="Fork me on GitHub"
+                data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
 
-<div id="wrap">
-    <a href="https://github.com/awesomeWM/awesome"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
-    <div id="top">
-      
-	<div id="center-logo">
-	  <a href="../index.html" title="Back to main page">
-	    <img alt="awesome-logo" src="../images/awesome-logo.svg">
-	  </a>
-	</div>
-        <div id="menu">
-          <ul class="active-menu-sandbox">
-            <li class="menu-about"><a href="../index.html">home</a></li>
-            <li class="menu-download"><a href="../download/">download</a></li>
-            <li class="menu-community"><a href="../community/">community</a></li>
-            <li class="menu-recipes"><a href="../recipes/">recipes</a></li>
-            <li class="menu-screenshots"><a href="../screenshots/">screenshots</a></li>
-            <li class="menu-doc"><a href="../doc/">doc</a></li>
-            <li class="menu-issues"><a href="https://github.com/awesomeWM/awesome/issues">bugs/issues</a></li>
-            </ul>
-        </div>
-    </div>
+        <figure class="darkmode" id="justified-logo">
+            <img alt="awesome-logo" src="../images/awesome-dark-1.svg">
+        </figure>
+        <figure class="lightmode" id="justified-logo">
+            <img alt="awesome-logo" src="../images/awesome2.svg">
+        </figure>
 
-    
+        <nav id="navbar" class="container active-menu-sandbox">
+            <a class="menu-about" alt="home" href="../index.html">home</a>
+            <a class="menu-download" alt="download" href="../download/">download</a>
+            <a class="menu-community" alt="community" href="../community/">community</a>
+            <a class="menu-recipes" alt="recipes" href="../recipes/">recipes</a>
+            <a class="menu-screenshots" alt="screenshots" href="../screenshots/">screenshots</a>
+            <a class="menu-doc" alt="doc" href="../doc/">doc</a>
+            <a class="menu-issues" alt="bugs/issues" href="https://github.com/awesomeWM/awesome/issues">bugs/issues</a>
+        </nav>
+    </header>
 
-    
-
-    <div id="content">
-    <!--    <h1>sandbox</h1> -->
-        <div id="left">
-          <p>This is the SandBox, a page anyone can edit to learn how to use the wiki.</p>
+    <article id="content">
+        <p>This is the SandBox, a page anyone can edit to learn how to use the wiki.</p>
 
 <hr />
 
@@ -80,73 +103,69 @@
 
 <p><a href="../ikiwiki/wikilink/">WikiLink</a></p>
 
-        </div>
-        <!--
-        <div id="right">
-            <ul id="nav">
-                <li><a href="/">home</a></li>
-            </ul>
-            <div class="box">
-                <h2 style="margin-top:17px">Latest news</h2>
-                <ul>
-                    <li><a href="#">Recent Entries1</a> <i>01 Des 06</i></li>
-               </ul>
-            </div>
-       </div>
-        -->
-    </div>
-</div>
+    </article>
 
-<div id="clear"></div>
+    <section id="clear"></section>
 
-<div id="footer">
-    <div id="pageinfo">
+    <footer>
+        <section id="pageinfo">
+            <figure class="darkmode">
+                <img class="aw-anniversary" alt="15years anniversary" src="../images/awesome-15yrs-anniversary-dark.svg"
+                    width="250">
+            </figure>
+            <figure class="lightmode">
+                <img class="aw-anniversary" alt="15years anniversary" src="../images/awesome-15yrs-anniversary.svg" width="250">
+            </figure>
 
-    
+            <script type='text/javascript'
+                src='https://www.openhub.net/p/awesome/widgets/project_factoids_stats?format=js'></script>
 
-    <script type='text/javascript' src='https://www.openhub.net/p/awesome/widgets/project_factoids_stats?format=js'></script>
+            <section id="donate">
+                <strong>Donations:</strong>
+                <div>
+                    <script
+                        id='fbirvwx'>(function (i) { var f, s = document.getElementById(i); f = document.createElement('iframe'); f.src = 'https://button.flattr.com/view/?fid=mqwonm&button=compact&url=https%3A%2F%2Fawesomewm.org%2F'; f.title = 'Flattr'; f.height = 20; f.width = 110; f.style.borderWidth = 0; s.parentNode.insertBefore(f, s); })('fbirvwx');</script>
+                </div>
+                <p>Bitcoin: 1A2LsrF81rWEEJ7qnXdkCUJpdCYUxqfQoP</p>
+            </section>
 
-    <div id="donate">
-      <strong>Donations:</strong>
-      <div>
-      <script id='fbirvwx'>(function(i){var f,s=document.getElementById(i);f=document.createElement('iframe');f.src='https://button.flattr.com/view/?fid=mqwonm&button=compact&url=https%3A%2F%2Fawesomewm.org%2F';f.title='Flattr';f.height=20;f.width=110;f.style.borderWidth=0;s.parentNode.insertBefore(f,s);})('fbirvwx');</script>
-      </div>
-      <p>Bitcoin: 1A2LsrF81rWEEJ7qnXdkCUJpdCYUxqfQoP</p>
-    </div>
+            <section class="copyright">
+                <a id="pagecopyright"></a>
+                
+                Copyleft 2007-2022, AwesomeWM project
+            </section>
 
-    <div class="copyright">
-        <a id="pagecopyright"></a>
-        
-        Copyleft 2007-2020, AwesomeWM project
-    </div>
-    
+            
 
-    <div class="pagedate">
-        Last edited <span class="date">Sun Feb  2 20:23:50 2020</span>
-    </div>
+            <section class="pagedate">
+                Last edited <span class="date">Sun Feb  2 20:23:50 2020</span>
+            </section>
+        </section>
+    </footer>
 
-    </div>
-
-<!-- from about -->
-</div>
-
-<!-- Piwik -->
-<script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(["setCookieDomain", "*.awesomewm.org"]);
-  _paq.push(["setDomains", ["*.awesomewm.org"]]);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="https://piwik.awesomewm.org/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', 26]);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<noscript><p><img src="https://piwik.awesomewm.org/piwik.php?idsite=26" style="border:0;" alt="" /></p></noscript>
-<!-- End Piwik Code -->
-
+    <!-- dark/light support -->
+    <ul class="mode-switch">
+        <li class="mode-switch-icon"></li>
+        <li><label class="switch"><input type="checkbox"><span class="slider round"></span></label></li>
+    </ul>
+    <script defer src="../script/dark-light-mode-switch.js"></script>
+    <!-- Piwik -->
+    <script type="text/javascript">
+        var _paq = _paq || [];
+        _paq.push(["setCookieDomain", "*.awesomewm.org"]);
+        _paq.push(["setDomains", ["*.awesomewm.org"]]);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function () {
+            var u = "https://piwik.awesomewm.org/";
+            _paq.push(['setTrackerUrl', u + 'piwik.php']);
+            _paq.push(['setSiteId', 26]);
+            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+            g.type = 'text/javascript'; g.async = true; g.defer = true; g.src = u + 'piwik.js'; s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <noscript>
+        <p><img src="https://piwik.awesomewm.org/piwik.php?idsite=26" style="border:0;" alt="" /></p>
+    </noscript>
 </body>
 </html>
